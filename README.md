@@ -34,17 +34,17 @@ released.
 The R packages needed to run all code in this repo are listed in
 `required-packages.txt`. Two packages need special treatment:
 
-  - **demspaces** is not on CRAN. This package contains some custom
+  - **demspacesR** is not on CRAN. This package contains some custom
     model wrappers to make it easier to work with the 12 outcome
     variables we are modeling. It can be installed with:
     
     ``` r
-    remotes::install_github("andybega/demspaces")
+    remotes::install_github("vdeminstitute/demspacesR")
     ```
 
-  - **states** needs to be at least verion 0.2.2.9007, which by the time
-    you are reading this may be met by the version on CRAN. If not, you
-    can also install the development version from GitHub:
+  - **states** needs to be at least version 0.2.2.9007, which by the
+    time you are reading this may be met by the version on CRAN. If not,
+    you can also install the development version from GitHub:
     
     ``` r
     # Check the package version
@@ -151,9 +151,9 @@ output of these efforts.
 sessionInfo()
 ```
 
-    ## R version 4.0.0 (2020-04-24)
+    ## R version 4.0.3 (2020-10-10)
     ## Platform: x86_64-apple-darwin17.0 (64-bit)
-    ## Running under: macOS Catalina 10.15.4
+    ## Running under: macOS Big Sur 10.16
     ## 
     ## Matrix products: default
     ## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
@@ -166,10 +166,10 @@ sessionInfo()
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] compiler_4.0.0  magrittr_1.5    tools_4.0.0     htmltools_0.4.0
-    ##  [5] yaml_2.2.1      Rcpp_1.0.4.6    stringi_1.4.6   rmarkdown_2.1  
-    ##  [9] knitr_1.28      stringr_1.4.0   xfun_0.13       digest_0.6.25  
-    ## [13] rlang_0.4.6     evaluate_0.14
+    ##  [1] compiler_4.0.3  magrittr_2.0.1  tools_4.0.3     htmltools_0.5.0
+    ##  [5] yaml_2.2.1      stringi_1.5.3   rmarkdown_2.5   knitr_1.30     
+    ##  [9] stringr_1.4.0   xfun_0.19       digest_0.6.27   rlang_0.4.8    
+    ## [13] evaluate_0.14
 
 ``` r
 packs <- readLines("required-packages.txt")
@@ -179,24 +179,45 @@ rownames(packs) <- NULL
 packs
 ```
 
-    ##      Package    Version
-    ## 1   doFuture      0.9.0
-    ## 2      dplyr      0.8.5
-    ## 3     future     1.17.0
-    ## 4     glmnet      3.0-2
-    ## 5       here        0.1
-    ## 6   jsonlite      1.6.1
-    ## 7    leaflet      2.0.3
-    ## 8        lgr      0.3.4
-    ## 9   magrittr        1.5
-    ## 10    ranger     0.12.1
-    ## 11     readr      1.3.1
-    ## 12     rgeos      0.5-2
-    ## 13        sf      0.9-2
-    ## 14     shiny    1.4.0.2
-    ## 15    states 0.2.2.9008
-    ## 16   stringr      1.4.0
-    ## 17    tibble      3.0.1
-    ## 18     tidyr      1.0.2
-    ## 19 tidyverse      1.3.0
-    ## 20       zoo      1.8-7
+    ##         Package Version
+    ## 1      doFuture  0.10.0
+    ## 2         dplyr   1.0.2
+    ## 3        future  1.20.1
+    ## 4        glmnet   4.0-2
+    ## 5          here   1.0.0
+    ## 6   highcharter   0.8.2
+    ## 7      jsonlite   1.7.1
+    ## 8       leaflet   2.0.3
+    ## 9           lgr   0.4.1
+    ## 10     magrittr   2.0.1
+    ## 11       ranger  0.12.1
+    ## 12        readr   1.4.0
+    ## 13        rgdal  1.5-18
+    ## 14        rgeos   0.5-5
+    ## 15           sf   0.9-6
+    ## 16        shiny   1.5.0
+    ## 17      shinyBS    0.61
+    ## 18 shinyWidgets   0.5.4
+    ## 19        skimr   2.1.2
+    ## 20       states   0.3.0
+    ## 21      stringr   1.4.0
+    ## 22       tibble   3.0.4
+    ## 23        tidyr   1.1.2
+    ## 24    tidyverse   1.3.0
+    ## 25          zoo   1.8-8
+
+## Dev notes
+
+The original Democratic Spaces project development and code, which
+covers the 2019 and 2020 forecasts (V-Dem v9 and v10), was in these 3
+repos:
+
+  - [`andybega/closing-spaces`](https://github.com/andybega/closing-spaces)
+    (private): development repo with all the ugly bits
+  - [`andybega/democratic-spaces`](https://github.com/andybega/democratic-spaces):
+    a cleaned-up subset of the development repo for reproducibility
+  - [`andybega/demspaces`](https://github.com/andybega/demspaces):
+    companion R package with helper functions
+
+For the 2021 V-Dem v11 update I copied over the existing code in the
+last two repos to the corresponding V-Dem owned repos.
