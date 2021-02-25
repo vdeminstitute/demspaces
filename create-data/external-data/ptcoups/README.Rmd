@@ -1,0 +1,34 @@
+---
+title: "P&T Coups"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Coup data-derived indicators for 1816 to the present. 
+
+## Usage
+
+```{r}
+suppressPackageStartupMessages({
+  library("dplyr")
+  library("readr")
+  library("states")
+  library("ggplot2")
+})
+
+coups <- read_csv("output/ptcoups.csv")
+attr(coups, "spec") <- NULL
+
+head(coups)
+
+str(coups)
+
+range(coups$year)
+
+plot_missing(coups, colnames(coups)[3:10], "gwcode", "year", "year", "GW") +
+  ggtitle(sprintf("P&T Coups, %s to %s", min(coups$year), max(coups$year)))
+```
+
