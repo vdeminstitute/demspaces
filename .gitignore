@@ -12,3 +12,7 @@
 # since they are combined into the final forecast file.
 modelrunner/output/*/
 !modelrunner/output/log
+
+# copied alternative modelrunner for dev stuff over; keep around until
+# integrated into regular modelrunner
+modeldev
