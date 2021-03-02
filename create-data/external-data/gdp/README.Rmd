@@ -1,0 +1,62 @@
+---
+title: "Combined GDP data"
+output: 
+  github_document
+---
+
+*Last updated on: `r Sys.Date()`*
+
+GDP data from 1950 on, mostly based on WDI, with some gaps filled with KSG's extended GDP data and data from the UN.  
+
+Four step imputation procedure:
+
+1. Acquire the WDI data
+2. Where WDI is missing, drop in UN GDP figures, scaled by a linear model.
+3. Where WDI is missing, drop in KSG figures, scaled by a log-linear country-varying scaling model.
+4. Model-based extrapolation: use Kalman-smoothing to forward extrapolate missing GDP values (most notably Taiwan and several countries missing current year GDP values) and backward extrapolate GDP growth in first year of existences of a country.  
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Usage
+
+```{r, eval = TRUE}
+suppressPackageStartupMessages({
+  library("dplyr")
+  library("readr")
+  library("WDI")
+  library("states")
+  library("lubridate")
+  library("countrycode")
+  library("lme4")
+  library("imputeTS")
+  library("forecast")
+  
+  # for plot examples below
+  library("ggplot2")
+  library("tidyr")
+})
+
+source("gdp.R")
+
+example <- gdp_api(impute = TRUE)
+str(example)
+head(example)
+
+example %>%
+  gather(var, value, -gwcode, -year) %>%
+  ggplot(., aes(x = year, y = value, group = gwcode)) +
+  facet_wrap(~ var, ncol = 1, scales = "free_y") +
+  geom_line(alpha = .2) +
+  theme_minimal()
+
+example$date <- as.Date(sprintf("%s-12-31", example$year))
+plot_missing(example, "NY.GDP.MKTP.KD", "gwcode", "date", "year", "GW")
+
+plot_missing(example, "NY.GDP.MKTP.KD.ZG", "gwcode", "date", "year", "GW")
+
+fn <- sprintf("gdp_%s_%s.csv", min(example$year), max(example$year))
+write_csv(example, file.path("output", fn))
+```
+
