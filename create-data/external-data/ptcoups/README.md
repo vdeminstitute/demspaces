@@ -1,4 +1,4 @@
-P&T Coups
+P\&T Coups
 ================
 
 Coup data-derived indicators for 1816 to the present.

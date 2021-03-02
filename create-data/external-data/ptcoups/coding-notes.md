@@ -1,4 +1,4 @@
-P&T Coups
+P\&T Coups
 ================
 
 ## Update raw coup data
