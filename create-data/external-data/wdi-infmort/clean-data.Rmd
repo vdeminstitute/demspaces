@@ -9,6 +9,8 @@ output:
 
 Note that places that require attention during data updates are marked with *UPDATE:*
 
+This script gets updated infant mortality data from the World Bank's World Development Indicators using the WDI package. It will then do some pretty aggressive imputations for countries that are missing early parts of a series. The goal is to impute defensively, i.e. if someone looks at a series with imputed values, they look reasonable. The goal is _not_ to capture in some way imputation variance/uncertainty. 
+
 ```{r setup-local, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -42,6 +44,7 @@ wdi_to_gw <- function(x, iso2c = "iso2c", country = "country", year = "year") {
   
   # first pass G&W country code coding
   x$gwcode <- suppressWarnings(countrycode::countrycode(x[["iso2c"]], "iso2c", "gwn"))
+  x$gwcode <- as.integer(x$gwcode)
 
   # this misses some countries; first the fixed, non-year-varying, cases
   x <- x %>%
@@ -148,7 +151,7 @@ Download the raw source data. Since this takes a while, this will only raw if a 
 
 ```{r download-source}
 if (!file.exists("input/infmort.csv")) {
-  raw <- WDI(indicator = "infmort", country = "all", start = 1960, 
+  raw <- WDI(indicator = "SP.DYN.IMRT.IN", country = "all", start = 1960, 
            end = year(today()), extra = FALSE)
   write_csv(raw, "input/infmort.csv")
 }
@@ -160,7 +163,7 @@ if (!file.exists("input/infmort.csv")) {
 raw <- read_csv("input/infmort.csv")
 
 # UPDATE: check this is still the case
-# In the raw data all values for 2019 are missing; drop that year from the data
+# In the raw data all values for 2020 are missing; drop that year from the data
 last_year <- filter(raw, year==max(year))
 stopifnot(all(is.na(last_year[["SP.DYN.IMRT.IN"]])))
 raw <- filter(raw, year!=max(year))
@@ -188,7 +191,7 @@ wdi <- wdi %>%
 
 *UPDATE: make sure the lagging is still correct*
 
-Lag the data before we check for an if possible impute missing values because the lagging will introduce missingness as well.
+Lag the data before we check for and if possible impute missing values because the lagging will introduce missingness as well.
 
 ```{r}
 wdi$year <- wdi$year + 1
@@ -297,12 +300,13 @@ missing <- wdi %>%
   dplyr::summarize(N = unique(N), 
                    N_miss = n(),
                    Frac_miss = N_miss/N,
-                   years = paste0(range(year), collapse = " - ")) %>%
+                   years = paste0(range(year), collapse = " - "),
+                   .groups = "drop") %>%
   select(-id) %>%
   arrange(desc(Frac_miss), gwcode)
 
 missing %>% 
-  knitr::kable()
+  knitr::kable(digits = 2)
 
 # add an indicator if series is incomplete 
 wdi <- wdi %>%
@@ -348,7 +352,7 @@ fit %>%
   arrange(has_missing, mean_r2)
 ```
 
-If a model is not performing well on a series where wer are not looking to impute, who cares. Look at low R2 models for series we are looking to impute.
+If a model is not performing well on a series where we are not looking to impute, who cares. Look at low R2 models for series we are looking to impute.
 
 ```{r}
 check_gwcodes <- fit %>% 
@@ -439,6 +443,8 @@ if (nrow(tbl) > 0) stop("Still some missing values remaining", call. = FALSE)
 
 ## Add year-normalized version
 
+This adjusts each countries value for a year with the mean value of infant mortality across all countries in that year. So it is essentially a country's relative level of infant mortality given the standards of the time. 
+
 ```{r yearadj-version}
 wdi <- wdi %>%
   group_by(year) %>%
@@ -452,7 +458,10 @@ wdi <- wdi %>%
 ```{r}
 wdi <- wdi %>% 
   ungroup() %>%
-  select(gwcode, year, infmort, infmort_yearadj, infmort_imputed) 
-write_csv(wdi, path = "output/wdi-infmort.csv")
+  select(gwcode, year, infmort, infmort_yearadj, infmort_imputed) %>%
+  # UPDATE: make sure it's clear these are lagged (if they are)
+  rename(lag1_infmort = infmort, lag1_infmort_yearadj = infmort_yearadj,
+         lag1_infmort_imputed = infmort_imputed)
+write_csv(wdi, file = "output/wdi-infmort.csv")
 ```
 

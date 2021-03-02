@@ -15,10 +15,17 @@ WDI Infant mortality
   - [Add year-normalized version](#add-year-normalized-version)
   - [Done, save](#done-save)
 
-*Last updated on 11 April 2020*
+*Last updated on 02 March 2021*
 
 Note that places that require attention during data updates are marked
 with *UPDATE:*
+
+This script gets updated infant mortality data from the World Bank’s
+World Development Indicators using the WDI package. It will then do some
+pretty aggressive imputations for countries that are missing early parts
+of a series. The goal is to impute defensively, i.e. if someone looks at
+a series with imputed values, they look reasonable. The goal is *not* to
+capture in some way imputation variance/uncertainty.
 
 ## Functions / packages
 
@@ -27,16 +34,14 @@ library(WDI)
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ─────────────────────────────────────────────── tidyverse 1.2.1 ──
+    ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 
-    ## ✓ ggplot2 3.2.1     ✓ purrr   0.3.3
-    ## ✓ tibble  3.0.0     ✓ dplyr   0.8.5
-    ## ✓ tidyr   1.0.2     ✓ stringr 1.4.0
-    ## ✓ readr   1.3.1     ✓ forcats 0.5.0
+    ## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+    ## ✓ tibble  3.0.6     ✓ dplyr   1.0.4
+    ## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+    ## ✓ readr   1.4.0     ✓ forcats 0.5.1
 
-    ## Warning: package 'tibble' was built under R version 3.6.2
-
-    ## ── Conflicts ────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -57,10 +62,6 @@ library(lubridate)
 
     ## 
     ## Attaching package: 'lubridate'
-
-    ## The following objects are masked from 'package:dplyr':
-    ## 
-    ##     intersect, setdiff, union
 
     ## The following objects are masked from 'package:base':
     ## 
@@ -88,6 +89,7 @@ wdi_to_gw <- function(x, iso2c = "iso2c", country = "country", year = "year") {
   
   # first pass G&W country code coding
   x$gwcode <- suppressWarnings(countrycode::countrycode(x[["iso2c"]], "iso2c", "gwn"))
+  x$gwcode <- as.integer(x$gwcode)
 
   # this misses some countries; first the fixed, non-year-varying, cases
   x <- x %>%
@@ -197,7 +199,7 @@ manually run this chunk.*
 
 ``` r
 if (!file.exists("input/infmort.csv")) {
-  raw <- WDI(indicator = "infmort", country = "all", start = 1960, 
+  raw <- WDI(indicator = "SP.DYN.IMRT.IN", country = "all", start = 1960, 
            end = year(today()), extra = FALSE)
   write_csv(raw, "input/infmort.csv")
 }
@@ -209,7 +211,8 @@ if (!file.exists("input/infmort.csv")) {
 raw <- read_csv("input/infmort.csv")
 ```
 
-    ## Parsed with column specification:
+    ## 
+    ## ── Column specification ────────────────────────────────────────────────────────
     ## cols(
     ##   iso2c = col_character(),
     ##   country = col_character(),
@@ -219,7 +222,7 @@ raw <- read_csv("input/infmort.csv")
 
 ``` r
 # UPDATE: check this is still the case
-# In the raw data all values for 2019 are missing; drop that year from the data
+# In the raw data all values for 2020 are missing; drop that year from the data
 last_year <- filter(raw, year==max(year))
 stopifnot(all(is.na(last_year[["SP.DYN.IMRT.IN"]])))
 raw <- filter(raw, year!=max(year))
@@ -241,49 +244,49 @@ knitr::kable(nogwcode)
 
 | iso2c | country                        |  n |
 | :---- | :----------------------------- | -: |
-| AG    | Antigua and Barbuda            | 59 |
-| AS    | American Samoa                 | 59 |
-| AW    | Aruba                          | 59 |
-| BM    | Bermuda                        | 59 |
-| CW    | Curacao                        | 59 |
-| DM    | Dominica                       | 59 |
-| FM    | Micronesia, Fed. Sts.          | 59 |
-| FO    | Faroe Islands                  | 59 |
-| GD    | Grenada                        | 59 |
-| GI    | Gibraltar                      | 59 |
-| GL    | Greenland                      | 59 |
-| GU    | Guam                           | 59 |
-| HK    | Hong Kong SAR, China           | 59 |
-| IM    | Isle of Man                    | 59 |
-| JG    | Channel Islands                | 59 |
-| KI    | Kiribati                       | 59 |
-| KN    | St. Kitts and Nevis            | 59 |
-| KY    | Cayman Islands                 | 59 |
-| LC    | St. Lucia                      | 59 |
-| LI    | Liechtenstein                  | 59 |
-| MC    | Monaco                         | 59 |
-| MF    | St. Martin (French part)       | 59 |
-| MH    | Marshall Islands               | 59 |
-| MO    | Macao SAR, China               | 59 |
-| MP    | Northern Mariana Islands       | 59 |
-| NC    | New Caledonia                  | 59 |
-| NR    | Nauru                          | 59 |
-| PF    | French Polynesia               | 59 |
-| PR    | Puerto Rico                    | 59 |
-| PS    | West Bank and Gaza             | 59 |
-| PW    | Palau                          | 59 |
-| SC    | Seychelles                     | 59 |
-| SM    | San Marino                     | 59 |
-| ST    | Sao Tome and Principe          | 59 |
-| SX    | Sint Maarten (Dutch part)      | 59 |
-| TC    | Turks and Caicos Islands       | 59 |
-| TO    | Tonga                          | 59 |
-| TV    | Tuvalu                         | 59 |
-| VC    | St. Vincent and the Grenadines | 59 |
-| VG    | British Virgin Islands         | 59 |
-| VI    | Virgin Islands (U.S.)          | 59 |
-| VU    | Vanuatu                        | 59 |
-| WS    | Samoa                          | 59 |
+| AG    | Antigua and Barbuda            | 60 |
+| AS    | American Samoa                 | 60 |
+| AW    | Aruba                          | 60 |
+| BM    | Bermuda                        | 60 |
+| CW    | Curacao                        | 60 |
+| DM    | Dominica                       | 60 |
+| FM    | Micronesia, Fed. Sts.          | 60 |
+| FO    | Faroe Islands                  | 60 |
+| GD    | Grenada                        | 60 |
+| GI    | Gibraltar                      | 60 |
+| GL    | Greenland                      | 60 |
+| GU    | Guam                           | 60 |
+| HK    | Hong Kong SAR, China           | 60 |
+| IM    | Isle of Man                    | 60 |
+| JG    | Channel Islands                | 60 |
+| KI    | Kiribati                       | 60 |
+| KN    | St. Kitts and Nevis            | 60 |
+| KY    | Cayman Islands                 | 60 |
+| LC    | St. Lucia                      | 60 |
+| LI    | Liechtenstein                  | 60 |
+| MC    | Monaco                         | 60 |
+| MF    | St. Martin (French part)       | 60 |
+| MH    | Marshall Islands               | 60 |
+| MO    | Macao SAR, China               | 60 |
+| MP    | Northern Mariana Islands       | 60 |
+| NC    | New Caledonia                  | 60 |
+| NR    | Nauru                          | 60 |
+| PF    | French Polynesia               | 60 |
+| PR    | Puerto Rico                    | 60 |
+| PS    | West Bank and Gaza             | 60 |
+| PW    | Palau                          | 60 |
+| SC    | Seychelles                     | 60 |
+| SM    | San Marino                     | 60 |
+| ST    | Sao Tome and Principe          | 60 |
+| SX    | Sint Maarten (Dutch part)      | 60 |
+| TC    | Turks and Caicos Islands       | 60 |
+| TO    | Tonga                          | 60 |
+| TV    | Tuvalu                         | 60 |
+| VC    | St. Vincent and the Grenadines | 60 |
+| VG    | British Virgin Islands         | 60 |
+| VI    | Virgin Islands (U.S.)          | 60 |
+| VU    | Vanuatu                        | 60 |
+| WS    | Samoa                          | 60 |
 
 ``` r
 # Take those out
@@ -295,7 +298,7 @@ wdi <- wdi %>%
 
 *UPDATE: make sure the lagging is still correct*
 
-Lag the data before we check for an if possible impute missing values
+Lag the data before we check for and if possible impute missing values
 because the lagging will introduce missingness as well.
 
 ``` r
@@ -303,7 +306,7 @@ wdi$year <- wdi$year + 1
 range(wdi$year)
 ```
 
-    ## [1] 1961 2019
+    ## [1] 1961 2020
 
 ### Normalize to G\&W statelist
 
@@ -361,35 +364,35 @@ missing_country %>%
 
 | gwcode | country                    |  n |
 | -----: | :------------------------- | -: |
-|     54 | Dominica                   | 42 |
-|     55 | Grenada                    | 46 |
-|     56 | Saint Lucia                | 41 |
-|     57 | Saint Vincent              | 41 |
-|     58 | Antigua & Barbuda          | 39 |
-|     60 | Saint Kitts and Nevis      | 37 |
-|    221 | Monaco                     | 60 |
-|    223 | Liechtenstein              | 60 |
+|     54 | Dominica                   | 43 |
+|     55 | Grenada                    | 47 |
+|     56 | Saint Lucia                | 42 |
+|     57 | Saint Vincent              | 42 |
+|     58 | Antigua & Barbuda          | 40 |
+|     60 | Saint Kitts and Nevis      | 38 |
+|    221 | Monaco                     | 61 |
+|    223 | Liechtenstein              | 61 |
 |    265 | German Democratic Republic | 31 |
 |    315 | Czechoslovakia             | 33 |
-|    331 | San Marino                 | 60 |
-|    347 | Kosovo                     | 12 |
-|    396 | Abkhazia                   | 12 |
-|    397 | South Ossetia              | 12 |
-|    403 | Sao Tome and Principe      | 45 |
+|    331 | San Marino                 | 61 |
+|    347 | Kosovo                     | 13 |
+|    396 | Abkhazia                   | 13 |
+|    397 | South Ossetia              | 13 |
+|    403 | Sao Tome and Principe      | 46 |
 |    511 | Zanzibar                   |  2 |
-|    591 | Seychelles                 | 44 |
+|    591 | Seychelles                 | 45 |
 |    680 | South Yemen                | 24 |
-|    713 | Taiwan                     | 60 |
+|    713 | Taiwan                     | 61 |
 |    817 | South Vietnam              | 16 |
-|    935 | Vanuatu                    | 40 |
-|    970 | Kiribati                   | 41 |
-|    971 | Nauru                      | 52 |
-|    972 | Tonga                      | 50 |
-|    973 | Tuvalu                     | 42 |
-|    983 | Marshall Islands           | 34 |
-|    986 | Palau                      | 26 |
-|    987 | Micronesia                 | 34 |
-|    990 | Samoa/Western Samoa        | 58 |
+|    935 | Vanuatu                    | 41 |
+|    970 | Kiribati                   | 42 |
+|    971 | Nauru                      | 53 |
+|    972 | Tonga                      | 51 |
+|    973 | Tuvalu                     | 43 |
+|    983 | Marshall Islands           | 35 |
+|    986 | Palau                      | 27 |
+|    987 | Micronesia                 | 35 |
+|    990 | Samoa/Western Samoa        | 59 |
 
 ``` r
 # Take out countries missing all values
@@ -431,13 +434,13 @@ wdi <- wdi %>%
 sum(is.na(wdi$infmort))
 ```
 
-    ## [1] 559
+    ## [1] 515
 
 ``` r
 sum(is.na(wdi$infmort2))
 ```
 
-    ## [1] 491
+    ## [1] 438
 
 ``` r
 wdi <- wdi %>%
@@ -464,62 +467,55 @@ missing <- wdi %>%
   dplyr::summarize(N = unique(N), 
                    N_miss = n(),
                    Frac_miss = N_miss/N,
-                   years = paste0(range(year), collapse = " - ")) %>%
+                   years = paste0(range(year), collapse = " - "),
+                   .groups = "drop") %>%
   select(-id) %>%
   arrange(desc(Frac_miss), gwcode)
 
 missing %>% 
-  knitr::kable()
+  knitr::kable(digits = 2)
 ```
 
 | gwcode |  N | N\_miss | Frac\_miss | years       |
 | -----: | -: | ------: | ---------: | :---------- |
-|    345 | 47 |      25 |  0.5319149 | 1960 - 1984 |
-|    232 | 60 |      26 |  0.4333333 | 1960 - 1985 |
-|    731 | 60 |      26 |  0.4333333 | 1960 - 1985 |
-|    520 | 60 |      23 |  0.3833333 | 1960 - 1982 |
-|    352 | 60 |      20 |  0.3333333 | 1960 - 1979 |
-|    339 | 60 |      19 |  0.3166667 | 1960 - 1978 |
-|    481 | 60 |      19 |  0.3166667 | 1960 - 1978 |
-|    712 | 60 |      19 |  0.3166667 | 1960 - 1978 |
-|    812 | 60 |      19 |  0.3166667 | 1960 - 1978 |
-|    411 | 52 |      15 |  0.2884615 | 1968 - 1982 |
-|    811 | 60 |      16 |  0.2666667 | 1960 - 1975 |
-|    404 | 46 |      12 |  0.2608696 | 1974 - 1985 |
-|    230 | 60 |      15 |  0.2500000 | 1960 - 1974 |
-|    560 | 60 |      15 |  0.2500000 | 1960 - 1974 |
-|    666 | 60 |      15 |  0.2500000 | 1960 - 1974 |
-|    483 | 60 |      13 |  0.2166667 | 1960 - 1972 |
-|    670 | 60 |      13 |  0.2166667 | 1960 - 1972 |
-|    115 | 45 |       9 |  0.2000000 | 1975 - 1983 |
-|    630 | 60 |      12 |  0.2000000 | 1960 - 1971 |
-|    365 | 60 |      11 |  0.1833333 | 1960 - 1970 |
-|    160 | 60 |      10 |  0.1666667 | 1960 - 1969 |
-|    490 | 60 |      10 |  0.1666667 | 1960 - 1969 |
-|    710 | 60 |      10 |  0.1666667 | 1960 - 1969 |
-|    760 | 60 |      10 |  0.1666667 | 1960 - 1969 |
-|    260 | 60 |       9 |  0.1500000 | 1960 - 1968 |
-|    580 | 60 |       9 |  0.1500000 | 1960 - 1968 |
-|    775 | 60 |       9 |  0.1500000 | 1960 - 1968 |
-|    436 | 60 |       8 |  0.1333333 | 1960 - 1967 |
-|    540 | 45 |       6 |  0.1333333 | 1975 - 1980 |
-|    530 | 60 |       7 |  0.1166667 | 1960 - 1966 |
-|     94 | 60 |       6 |  0.1000000 | 1960 - 1965 |
-|    212 | 60 |       5 |  0.0833333 | 1960 - 1964 |
-|    475 | 60 |       5 |  0.0833333 | 1960 - 1964 |
-|    816 | 60 |       5 |  0.0833333 | 1960 - 1964 |
-|     40 | 60 |       4 |  0.0666667 | 1960 - 1963 |
-|    355 | 60 |       4 |  0.0666667 | 1960 - 1963 |
-|    360 | 60 |       4 |  0.0666667 | 1960 - 1963 |
-|    432 | 60 |       4 |  0.0666667 | 1960 - 1963 |
-|    438 | 60 |       4 |  0.0666667 | 1960 - 1963 |
-|    698 | 60 |       4 |  0.0666667 | 1960 - 1963 |
-|    553 | 56 |       3 |  0.0535714 | 1964 - 1966 |
-|    516 | 58 |       3 |  0.0517241 | 1962 - 1964 |
-|    616 | 60 |       3 |  0.0500000 | 1960 - 1962 |
-|    678 | 60 |       3 |  0.0500000 | 1960 - 1962 |
-|    482 | 60 |       2 |  0.0333333 | 1960 - 1961 |
-|    700 | 60 |       2 |  0.0333333 | 1960 - 1961 |
+|    345 | 47 |      25 |       0.53 | 1960 - 1984 |
+|    232 | 61 |      26 |       0.43 | 1960 - 1985 |
+|    731 | 61 |      26 |       0.43 | 1960 - 1985 |
+|    520 | 61 |      23 |       0.38 | 1960 - 1982 |
+|    339 | 61 |      19 |       0.31 | 1960 - 1978 |
+|    481 | 61 |      19 |       0.31 | 1960 - 1978 |
+|    712 | 61 |      19 |       0.31 | 1960 - 1978 |
+|    812 | 61 |      19 |       0.31 | 1960 - 1978 |
+|    411 | 53 |      15 |       0.28 | 1968 - 1982 |
+|    811 | 61 |      16 |       0.26 | 1960 - 1975 |
+|    404 | 47 |      12 |       0.26 | 1974 - 1985 |
+|    230 | 61 |      15 |       0.25 | 1960 - 1974 |
+|    560 | 61 |      15 |       0.25 | 1960 - 1974 |
+|    483 | 61 |      13 |       0.21 | 1960 - 1972 |
+|    670 | 61 |      13 |       0.21 | 1960 - 1972 |
+|    352 | 61 |      12 |       0.20 | 1960 - 1971 |
+|    630 | 61 |      12 |       0.20 | 1960 - 1971 |
+|    115 | 46 |       9 |       0.20 | 1975 - 1983 |
+|    365 | 61 |      11 |       0.18 | 1960 - 1970 |
+|    160 | 61 |      10 |       0.16 | 1960 - 1969 |
+|    490 | 61 |      10 |       0.16 | 1960 - 1969 |
+|    710 | 61 |      10 |       0.16 | 1960 - 1969 |
+|    760 | 61 |      10 |       0.16 | 1960 - 1969 |
+|    260 | 61 |       9 |       0.15 | 1960 - 1968 |
+|    580 | 61 |       9 |       0.15 | 1960 - 1968 |
+|    775 | 61 |       9 |       0.15 | 1960 - 1968 |
+|    436 | 61 |       8 |       0.13 | 1960 - 1967 |
+|    540 | 46 |       6 |       0.13 | 1975 - 1980 |
+|    530 | 61 |       7 |       0.11 | 1960 - 1966 |
+|    475 | 61 |       5 |       0.08 | 1960 - 1964 |
+|    816 | 61 |       5 |       0.08 | 1960 - 1964 |
+|    432 | 61 |       4 |       0.07 | 1960 - 1963 |
+|    516 | 59 |       3 |       0.05 | 1962 - 1964 |
+|    616 | 61 |       3 |       0.05 | 1960 - 1962 |
+|    678 | 61 |       3 |       0.05 | 1960 - 1962 |
+|    698 | 61 |       3 |       0.05 | 1960 - 1962 |
+|    700 | 61 |       3 |       0.05 | 1960 - 1962 |
+|    553 | 57 |       2 |       0.04 | 1964 - 1965 |
 
 ``` r
 # add an indicator if series is incomplete 
@@ -541,7 +537,7 @@ ggplot(wdi, aes(x = year, y = infmort, group = gwcode,
   theme_light()
 ```
 
-    ## Warning: Removed 491 rows containing missing values (geom_path).
+    ## Warning: Removed 438 row(s) containing missing values (geom_path).
 
 ![](clean-data_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
@@ -565,9 +561,9 @@ table(fit$model, cut(fit$r2, c(0, .4, .5, .6, .7, .8, .9, 1)))
 
     ##           
     ##            (0,0.4] (0.4,0.5] (0.5,0.6] (0.6,0.7] (0.7,0.8] (0.8,0.9] (0.9,1]
-    ##   mdl_log        0         2         1         3         4        15     149
-    ##   mdl_mix        0         2         1         3         4        19     145
-    ##   mdl_sqrt       0         2         1         3         3        21     144
+    ##   mdl_log        0         1         2         1         5        12     153
+    ##   mdl_mix        0         2         1         1         4        20     146
+    ##   mdl_sqrt       0         2         1         1         5        22     143
 
 ``` r
 fit %>% 
@@ -578,18 +574,20 @@ fit %>%
   arrange(has_missing, mean_r2)
 ```
 
+    ## `summarise()` has grouped output by 'model'. You can override using the `.groups` argument.
+
     ## # A tibble: 6 x 5
     ## # Groups:   model [3]
     ##   model    has_missing countries mean_r2 median_r2
     ##   <chr>    <lgl>           <int>   <dbl>     <dbl>
-    ## 1 mdl_sqrt FALSE             128    0.93      0.96
-    ## 2 mdl_log  FALSE             128    0.94      0.97
-    ## 3 mdl_mix  FALSE             128    0.94      0.96
-    ## 4 mdl_mix  TRUE               46    0.93      0.96
-    ## 5 mdl_sqrt TRUE               46    0.93      0.96
-    ## 6 mdl_log  TRUE               46    0.94      0.97
+    ## 1 mdl_mix  FALSE             136    0.94      0.96
+    ## 2 mdl_sqrt FALSE             136    0.94      0.96
+    ## 3 mdl_log  FALSE             136    0.95      0.97
+    ## 4 mdl_sqrt TRUE               38    0.93      0.96
+    ## 5 mdl_log  TRUE               38    0.94      0.97
+    ## 6 mdl_mix  TRUE               38    0.94      0.96
 
-If a model is not performing well on a series where wer are not looking
+If a model is not performing well on a series where we are not looking
 to impute, who cares. Look at low R2 models for series we are looking to
 impute.
 
@@ -631,11 +629,11 @@ wdi %>%
   theme_light()
 ```
 
-    ## Warning: Removed 103 rows containing non-finite values (stat_smooth).
+    ## Warning: Removed 99 rows containing non-finite values (stat_smooth).
     
-    ## Warning: Removed 103 rows containing non-finite values (stat_smooth).
+    ## Warning: Removed 99 rows containing non-finite values (stat_smooth).
 
-    ## Warning: Removed 103 rows containing missing values (geom_path).
+    ## Warning: Removed 99 row(s) containing missing values (geom_path).
 
 ![](clean-data_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
@@ -669,7 +667,7 @@ ggplot(wdi, aes(x = year)) +
   theme_light()
 ```
 
-    ## Warning: Removed 491 rows containing missing values (geom_path).
+    ## Warning: Removed 438 row(s) containing missing values (geom_path).
 
 ![](clean-data_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
@@ -696,6 +694,11 @@ if (nrow(tbl) > 0) stop("Still some missing values remaining", call. = FALSE)
 
 ## Add year-normalized version
 
+This adjusts each countries value for a year with the mean value of
+infant mortality across all countries in that year. So it is essentially
+a country’s relative level of infant mortality given the standards of
+the time.
+
 ``` r
 wdi <- wdi %>%
   group_by(year) %>%
@@ -708,6 +711,9 @@ wdi <- wdi %>%
 ``` r
 wdi <- wdi %>% 
   ungroup() %>%
-  select(gwcode, year, infmort, infmort_yearadj, infmort_imputed) 
-write_csv(wdi, path = "output/wdi-infmort.csv")
+  select(gwcode, year, infmort, infmort_yearadj, infmort_imputed) %>%
+  # UPDATE: make sure it's clear these are lagged (if they are)
+  rename(lag1_infmort = infmort, lag1_infmort_yearadj = infmort_yearadj,
+         lag1_infmort_imputed = infmort_imputed)
+write_csv(wdi, file = "output/wdi-infmort.csv")
 ```
