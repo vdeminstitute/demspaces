@@ -1,0 +1,8 @@
+Class: tbl_df, tbl, data.frame
+Size_in_mem: 0.8 Mb
+N_countries: 204
+Years: 1950 - 2019
+N_columns: 6
+Columns: gwcode, year, NY.GDP.MKTP.KD, NY.GDP.MKTP.KD.ZG, NY.GDP.PCAP.KD, NY.GDP.PCAP.KD.ZG
+N_rows: 11203
+N_complete_rows: 11175
