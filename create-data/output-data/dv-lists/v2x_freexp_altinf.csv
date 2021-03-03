@@ -49,8 +49,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 2,2015,same,0,0
 2,2016,same,0,0
 2,2017,same,0,0
-2,2018,same,NA,NA
+2,2018,same,0,0
 2,2019,same,NA,NA
+2,2020,same,NA,NA
 20,1968,first year of independence,0,0
 20,1969,same,0,0
 20,1970,same,0,0
@@ -101,8 +102,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 20,2015,same,0,0
 20,2016,same,0,0
 20,2017,same,0,0
-20,2018,same,NA,NA
+20,2018,same,0,0
 20,2019,same,NA,NA
+20,2020,same,NA,NA
 40,1968,first year of independence,0,0
 40,1969,same,0,0
 40,1970,same,0,0
@@ -153,8 +155,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 40,2015,same,0,0
 40,2016,same,0,0
 40,2017,same,0,0
-40,2018,same,NA,NA
+40,2018,same,0,0
 40,2019,same,NA,NA
+40,2020,same,NA,NA
 41,1968,first year of independence,0,0
 41,1969,same,0,0
 41,1970,same,0,0
@@ -190,9 +193,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 41,2000,same,0,0
 41,2001,same,0,0
 41,2002,same,0,0
-41,2003,same,0,0
-41,2004,same,0,0
-41,2005,same,0,0
+41,2003,same,1,0
+41,2004,same,1,0
+41,2005,up,0,0
 41,2006,same,0,0
 41,2007,same,0,0
 41,2008,same,0,0
@@ -201,12 +204,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 41,2011,same,0,0
 41,2012,same,0,0
 41,2013,same,0,0
-41,2014,same,1,0
-41,2015,same,1,0
-41,2016,up,0,0
+41,2014,same,0,0
+41,2015,same,0,0
+41,2016,same,0,0
 41,2017,same,0,0
-41,2018,same,NA,NA
+41,2018,same,0,1
 41,2019,same,NA,NA
+41,2020,down,NA,NA
 42,1968,first year of independence,0,0
 42,1969,same,0,0
 42,1970,same,0,0
@@ -252,13 +256,14 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 42,2010,same,0,0
 42,2011,same,0,0
 42,2012,same,0,0
-42,2013,same,0,0
-42,2014,same,0,0
-42,2015,same,0,0
+42,2013,same,0,1
+42,2014,same,0,1
+42,2015,down,0,0
 42,2016,same,0,0
-42,2017,same,0,0
-42,2018,same,NA,NA
-42,2019,same,NA,NA
+42,2017,same,0,1
+42,2018,same,1,1
+42,2019,down,NA,NA
+42,2020,up,NA,NA
 51,1968,first year of independence,0,0
 51,1969,same,0,0
 51,1970,same,0,0
@@ -279,9 +284,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 51,1985,same,0,0
 51,1986,same,0,0
 51,1987,same,0,0
-51,1988,same,1,0
-51,1989,same,1,0
-51,1990,up,0,0
+51,1988,same,0,0
+51,1989,same,0,0
+51,1990,same,0,0
 51,1991,same,0,0
 51,1992,same,0,0
 51,1993,same,0,0
@@ -309,8 +314,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 51,2015,same,0,0
 51,2016,same,0,0
 51,2017,same,0,0
-51,2018,same,NA,NA
+51,2018,same,0,0
 51,2019,same,NA,NA
+51,2020,same,NA,NA
 52,1968,first year of independence,0,0
 52,1969,same,0,0
 52,1970,same,0,0
@@ -361,8 +367,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 52,2015,same,0,0
 52,2016,same,0,0
 52,2017,same,0,0
-52,2018,same,NA,NA
+52,2018,same,0,0
 52,2019,same,NA,NA
+52,2020,same,NA,NA
 53,1968,first year of independence,0,0
 53,1969,same,0,0
 53,1970,same,0,0
@@ -413,11 +420,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 53,2015,same,0,0
 53,2016,same,0,0
 53,2017,same,0,0
-53,2018,same,NA,NA
+53,2018,same,0,0
 53,2019,same,NA,NA
-70,1968,first year of independence,0,0
-70,1969,same,0,0
-70,1970,same,0,0
+53,2020,same,NA,NA
+70,1968,first year of independence,1,0
+70,1969,same,1,0
+70,1970,up,0,0
 70,1971,same,0,0
 70,1972,same,0,0
 70,1973,same,0,0
@@ -462,11 +470,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 70,2012,same,0,0
 70,2013,same,0,0
 70,2014,same,0,0
-70,2015,same,0,1
-70,2016,same,1,1
-70,2017,down,1,1
-70,2018,up,NA,NA
+70,2015,same,0,0
+70,2016,same,1,0
+70,2017,same,1,1
+70,2018,up,0,1
 70,2019,down,NA,NA
+70,2020,same,NA,NA
 90,1968,first year of independence,0,0
 90,1969,same,0,0
 90,1970,same,0,0
@@ -491,15 +500,15 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 90,1989,same,0,0
 90,1990,same,0,0
 90,1991,same,0,0
-90,1992,same,0,0
-90,1993,same,0,0
-90,1994,same,0,0
+90,1992,same,1,0
+90,1993,same,1,0
+90,1994,up,1,0
 90,1995,same,1,0
-90,1996,same,1,0
-90,1997,up,0,0
-90,1998,same,0,0
-90,1999,same,0,0
-90,2000,same,0,0
+90,1996,up,0,0
+90,1997,same,0,0
+90,1998,same,1,0
+90,1999,same,1,0
+90,2000,up,0,0
 90,2001,same,0,0
 90,2002,same,0,0
 90,2003,same,0,0
@@ -515,10 +524,11 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 90,2013,same,0,0
 90,2014,same,0,0
 90,2015,same,0,0
-90,2016,same,0,0
-90,2017,same,0,0
-90,2018,same,NA,NA
+90,2016,same,0,1
+90,2017,same,0,1
+90,2018,down,1,0
 90,2019,same,NA,NA
+90,2020,up,NA,NA
 91,1968,first year of independence,0,0
 91,1969,same,0,0
 91,1970,same,0,0
@@ -558,19 +568,20 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 91,2004,same,0,0
 91,2005,same,0,0
 91,2006,same,0,0
-91,2007,same,0,0
+91,2007,same,0,1
 91,2008,same,0,1
-91,2009,same,0,1
+91,2009,down,0,1
 91,2010,down,0,0
 91,2011,same,0,0
 91,2012,same,0,0
 91,2013,same,0,0
 91,2014,same,0,0
 91,2015,same,0,0
-91,2016,same,0,1
-91,2017,same,0,1
-91,2018,down,NA,NA
+91,2016,same,0,0
+91,2017,same,0,0
+91,2018,same,0,0
 91,2019,same,NA,NA
+91,2020,same,NA,NA
 92,1968,first year of independence,0,0
 92,1969,same,0,0
 92,1970,same,0,0
@@ -601,18 +612,18 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 92,1995,same,0,0
 92,1996,same,0,0
 92,1997,same,0,0
-92,1998,same,0,0
-92,1999,same,0,0
-92,2000,same,0,0
+92,1998,same,1,0
+92,1999,same,1,0
+92,2000,up,0,0
 92,2001,same,0,0
 92,2002,same,0,0
 92,2003,same,0,0
 92,2004,same,0,0
 92,2005,same,0,0
 92,2006,same,0,0
-92,2007,same,1,0
-92,2008,same,1,0
-92,2009,up,0,0
+92,2007,same,0,0
+92,2008,same,0,0
+92,2009,same,0,0
 92,2010,same,0,0
 92,2011,same,0,0
 92,2012,same,0,0
@@ -621,8 +632,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 92,2015,same,0,0
 92,2016,same,0,1
 92,2017,same,0,1
-92,2018,down,NA,NA
+92,2018,down,0,1
 92,2019,same,NA,NA
+92,2020,down,NA,NA
 93,1968,first year of independence,0,0
 93,1969,same,0,0
 93,1970,same,0,0
@@ -635,15 +647,15 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 93,1977,same,0,0
 93,1978,same,1,0
 93,1979,same,1,0
-93,1980,up,1,1
-93,1981,up,0,1
-93,1982,down,1,0
-93,1983,same,1,0
-93,1984,up,0,0
+93,1980,up,0,1
+93,1981,same,0,1
+93,1982,down,0,0
+93,1983,same,0,0
+93,1984,same,0,0
 93,1985,same,0,0
-93,1986,same,0,0
-93,1987,same,0,0
-93,1988,same,1,0
+93,1986,same,1,0
+93,1987,same,1,0
+93,1988,up,1,0
 93,1989,same,1,0
 93,1990,up,1,0
 93,1991,up,0,0
@@ -666,15 +678,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 93,2008,same,0,0
 93,2009,same,0,0
 93,2010,same,0,0
-93,2011,same,0,0
-93,2012,same,0,0
-93,2013,same,0,0
+93,2011,same,0,1
+93,2012,same,0,1
+93,2013,down,0,0
 93,2014,same,0,0
 93,2015,same,0,0
 93,2016,same,0,1
 93,2017,same,0,1
-93,2018,down,NA,NA
+93,2018,down,0,0
 93,2019,same,NA,NA
+93,2020,same,NA,NA
 94,1968,first year of independence,0,0
 94,1969,same,0,0
 94,1970,same,0,0
@@ -725,8 +738,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 94,2015,same,0,0
 94,2016,same,0,0
 94,2017,same,0,0
-94,2018,same,NA,NA
+94,2018,same,0,0
 94,2019,same,NA,NA
+94,2020,same,NA,NA
 95,1968,first year of independence,0,0
 95,1969,same,0,0
 95,1970,same,0,0
@@ -777,8 +791,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 95,2015,same,0,0
 95,2016,same,0,0
 95,2017,same,0,0
-95,2018,same,NA,NA
+95,2018,same,0,0
 95,2019,same,NA,NA
+95,2020,same,NA,NA
 100,1968,first year of independence,0,0
 100,1969,same,0,0
 100,1970,same,0,0
@@ -789,8 +804,8 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 100,1975,same,0,0
 100,1976,same,0,1
 100,1977,same,0,1
-100,1978,down,0,0
-100,1979,same,0,0
+100,1978,down,0,1
+100,1979,down,0,0
 100,1980,same,0,0
 100,1981,same,1,0
 100,1982,same,1,0
@@ -811,9 +826,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 100,1997,same,0,0
 100,1998,same,0,0
 100,1999,same,0,0
-100,2000,same,0,0
-100,2001,same,0,0
-100,2002,same,0,0
+100,2000,same,0,1
+100,2001,same,0,1
+100,2002,down,0,0
 100,2003,same,0,0
 100,2004,same,0,0
 100,2005,same,0,0
@@ -829,8 +844,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 100,2015,same,0,0
 100,2016,same,0,1
 100,2017,same,0,1
-100,2018,down,NA,NA
+100,2018,down,0,1
 100,2019,down,NA,NA
+100,2020,same,NA,NA
 101,1968,first year of independence,0,0
 101,1969,same,0,0
 101,1970,same,0,0
@@ -878,11 +894,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 101,2012,same,0,1
 101,2013,down,0,0
 101,2014,same,0,0
-101,2015,same,0,1
+101,2015,same,0,0
 101,2016,same,0,1
-101,2017,down,0,1
-101,2018,down,NA,NA
+101,2017,same,0,1
+101,2018,down,0,0
 101,2019,same,NA,NA
+101,2020,same,NA,NA
 110,1968,first year of independence,0,1
 110,1969,same,0,1
 110,1970,down,0,0
@@ -890,9 +907,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 110,1972,same,0,0
 110,1973,same,0,0
 110,1974,same,0,0
-110,1975,same,0,1
-110,1976,same,0,1
-110,1977,down,0,0
+110,1975,same,0,0
+110,1976,same,0,0
+110,1977,same,0,0
 110,1978,same,0,0
 110,1979,same,0,1
 110,1980,same,0,1
@@ -928,30 +945,31 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 110,2010,same,0,0
 110,2011,same,0,0
 110,2012,same,0,0
-110,2013,same,0,0
+110,2013,same,1,0
 110,2014,same,1,0
-110,2015,same,1,0
-110,2016,up,0,0
+110,2015,up,0,0
+110,2016,same,0,0
 110,2017,same,0,0
-110,2018,same,NA,NA
+110,2018,same,0,0
 110,2019,same,NA,NA
+110,2020,same,NA,NA
 115,1975,first year of independence,0,0
 115,1976,same,0,0
 115,1977,same,0,0
 115,1978,same,0,1
 115,1979,same,0,1
 115,1980,down,0,1
-115,1981,down,0,0
-115,1982,same,0,0
-115,1983,same,0,0
-115,1984,same,0,0
-115,1985,same,0,0
+115,1981,same,0,1
+115,1982,down,0,0
+115,1983,same,1,0
+115,1984,same,1,0
+115,1985,up,1,0
 115,1986,same,1,0
-115,1987,same,1,0
+115,1987,up,1,0
 115,1988,up,1,0
-115,1989,same,1,0
-115,1990,up,0,0
-115,1991,same,0,0
+115,1989,up,1,0
+115,1990,same,1,0
+115,1991,up,0,0
 115,1992,same,0,0
 115,1993,same,0,0
 115,1994,same,0,0
@@ -978,12 +996,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 115,2015,same,0,0
 115,2016,same,0,0
 115,2017,same,0,0
-115,2018,same,NA,NA
+115,2018,same,0,0
 115,2019,same,NA,NA
+115,2020,same,NA,NA
 130,1968,first year of independence,0,1
-130,1969,down,0,0
-130,1970,same,0,0
-130,1971,same,0,1
+130,1969,down,1,0
+130,1970,same,1,0
+130,1971,up,0,1
 130,1972,same,0,1
 130,1973,down,0,0
 130,1974,same,0,0
@@ -1030,14 +1049,15 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 130,2015,same,0,0
 130,2016,same,1,0
 130,2017,same,1,0
-130,2018,up,NA,NA
+130,2018,up,0,0
 130,2019,same,NA,NA
+130,2020,same,NA,NA
 135,1968,first year of independence,0,1
 135,1969,down,0,0
 135,1970,same,0,0
-135,1971,same,0,1
-135,1972,same,0,1
-135,1973,down,0,0
+135,1971,same,0,0
+135,1972,same,0,0
+135,1973,same,0,0
 135,1974,same,1,0
 135,1975,same,1,0
 135,1976,up,0,0
@@ -1054,17 +1074,17 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 135,1987,same,0,0
 135,1988,same,0,1
 135,1989,same,0,1
-135,1990,down,0,0
+135,1990,down,0,1
 135,1991,same,0,1
-135,1992,same,0,1
-135,1993,down,0,0
-135,1994,same,0,0
-135,1995,same,0,0
-135,1996,same,0,0
+135,1992,down,0,1
+135,1993,same,0,1
+135,1994,down,1,0
+135,1995,same,1,0
+135,1996,up,0,0
 135,1997,same,0,0
-135,1998,same,0,0
+135,1998,same,1,0
 135,1999,same,1,0
-135,2000,same,1,0
+135,2000,up,1,0
 135,2001,up,0,0
 135,2002,same,0,0
 135,2003,same,0,0
@@ -1082,8 +1102,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 135,2015,same,0,0
 135,2016,same,0,0
 135,2017,same,0,0
-135,2018,same,NA,NA
+135,2018,same,0,0
 135,2019,same,NA,NA
+135,2020,same,NA,NA
 140,1968,first year of independence,0,0
 140,1969,same,0,0
 140,1970,same,0,0
@@ -1130,12 +1151,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 140,2011,same,0,0
 140,2012,same,0,0
 140,2013,same,0,0
-140,2014,same,0,0
+140,2014,same,0,1
 140,2015,same,0,1
-140,2016,same,0,1
-140,2017,down,0,1
-140,2018,same,NA,NA
+140,2016,down,0,0
+140,2017,same,0,1
+140,2018,same,0,1
 140,2019,down,NA,NA
+140,2020,same,NA,NA
 145,1968,first year of independence,0,0
 145,1969,same,0,1
 145,1970,same,0,1
@@ -1148,9 +1170,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 145,1977,same,1,0
 145,1978,up,1,1
 145,1979,up,0,1
-145,1980,down,0,0
+145,1980,down,1,0
 145,1981,same,1,0
-145,1982,same,1,0
+145,1982,up,1,0
 145,1983,up,0,0
 145,1984,same,0,0
 145,1985,same,0,0
@@ -1186,8 +1208,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 145,2015,same,0,0
 145,2016,same,0,0
 145,2017,same,0,0
-145,2018,same,NA,NA
+145,2018,same,0,1
 145,2019,same,NA,NA
+145,2020,down,NA,NA
 150,1968,first year of independence,0,0
 150,1969,same,0,0
 150,1970,same,0,0
@@ -1226,10 +1249,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 150,2003,same,0,0
 150,2004,same,0,0
 150,2005,same,0,0
-150,2006,same,1,0
+150,2006,same,0,0
 150,2007,same,1,0
-150,2008,up,0,0
-150,2009,same,0,0
+150,2008,same,1,0
+150,2009,up,0,0
 150,2010,same,0,0
 150,2011,same,0,1
 150,2012,same,0,1
@@ -1238,8 +1261,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 150,2015,same,0,0
 150,2016,same,0,0
 150,2017,same,0,0
-150,2018,same,NA,NA
+150,2018,same,0,0
 150,2019,same,NA,NA
+150,2020,same,NA,NA
 155,1968,first year of independence,0,0
 155,1969,same,0,0
 155,1970,same,0,0
@@ -1290,14 +1314,15 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 155,2015,same,0,0
 155,2016,same,0,0
 155,2017,same,0,1
-155,2018,same,NA,NA
+155,2018,same,0,1
 155,2019,down,NA,NA
+155,2020,same,NA,NA
 160,1968,first year of independence,0,0
 160,1969,same,1,0
 160,1970,same,1,0
 160,1971,up,1,0
 160,1972,up,1,0
-160,1973,same,1,0
+160,1973,up,1,0
 160,1974,up,0,1
 160,1975,same,0,1
 160,1976,down,0,1
@@ -1342,15 +1367,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 160,2015,same,0,0
 160,2016,same,0,0
 160,2017,same,0,0
-160,2018,same,NA,NA
+160,2018,same,1,0
 160,2019,same,NA,NA
+160,2020,up,NA,NA
 165,1968,first year of independence,0,1
 165,1969,same,0,1
-165,1970,down,0,1
-165,1971,down,0,1
+165,1970,down,0,0
+165,1971,same,0,1
 165,1972,same,0,1
-165,1973,down,0,1
-165,1974,down,0,0
+165,1973,down,0,0
+165,1974,same,0,0
 165,1975,same,0,0
 165,1976,same,0,0
 165,1977,same,0,0
@@ -1394,8 +1420,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 165,2015,same,0,0
 165,2016,same,0,0
 165,2017,same,0,0
-165,2018,same,NA,NA
+165,2018,same,0,0
 165,2019,same,NA,NA
+165,2020,same,NA,NA
 200,1968,first year of independence,0,0
 200,1969,same,0,0
 200,1970,same,0,0
@@ -1446,8 +1473,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 200,2015,same,0,0
 200,2016,same,0,0
 200,2017,same,0,0
-200,2018,same,NA,NA
+200,2018,same,0,0
 200,2019,same,NA,NA
+200,2020,same,NA,NA
 205,1968,first year of independence,0,0
 205,1969,same,0,0
 205,1970,same,0,0
@@ -1498,8 +1526,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 205,2015,same,0,0
 205,2016,same,0,0
 205,2017,same,0,0
-205,2018,same,NA,NA
+205,2018,same,0,0
 205,2019,same,NA,NA
+205,2020,same,NA,NA
 210,1968,first year of independence,0,0
 210,1969,same,0,0
 210,1970,same,0,0
@@ -1550,8 +1579,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 210,2015,same,0,0
 210,2016,same,0,0
 210,2017,same,0,0
-210,2018,same,NA,NA
+210,2018,same,0,0
 210,2019,same,NA,NA
+210,2020,same,NA,NA
 211,1968,first year of independence,0,0
 211,1969,same,0,0
 211,1970,same,0,0
@@ -1602,8 +1632,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 211,2015,same,0,0
 211,2016,same,0,0
 211,2017,same,0,0
-211,2018,same,NA,NA
+211,2018,same,0,0
 211,2019,same,NA,NA
+211,2020,same,NA,NA
 212,1968,first year of independence,0,0
 212,1969,same,0,0
 212,1970,same,0,0
@@ -1654,8 +1685,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 212,2015,same,0,0
 212,2016,same,0,0
 212,2017,same,0,0
-212,2018,same,NA,NA
+212,2018,same,0,0
 212,2019,same,NA,NA
+212,2020,same,NA,NA
 220,1968,first year of independence,0,0
 220,1969,same,0,0
 220,1970,same,0,0
@@ -1706,8 +1738,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 220,2015,same,0,0
 220,2016,same,0,0
 220,2017,same,0,0
-220,2018,same,NA,NA
+220,2018,same,0,0
 220,2019,same,NA,NA
+220,2020,same,NA,NA
 225,1968,first year of independence,0,0
 225,1969,same,0,0
 225,1970,same,0,0
@@ -1758,8 +1791,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 225,2015,same,0,0
 225,2016,same,0,0
 225,2017,same,0,0
-225,2018,same,NA,NA
+225,2018,same,0,0
 225,2019,same,NA,NA
+225,2020,same,NA,NA
 230,1968,first year of independence,0,0
 230,1969,same,0,0
 230,1970,same,0,0
@@ -1810,8 +1844,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 230,2015,same,0,0
 230,2016,same,0,0
 230,2017,same,0,0
-230,2018,same,NA,NA
+230,2018,same,0,0
 230,2019,same,NA,NA
+230,2020,same,NA,NA
 235,1968,first year of independence,0,0
 235,1969,same,0,0
 235,1970,same,0,0
@@ -1862,8 +1897,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 235,2015,same,0,0
 235,2016,same,0,0
 235,2017,same,0,0
-235,2018,same,NA,NA
+235,2018,same,0,0
 235,2019,same,NA,NA
+235,2020,same,NA,NA
 260,1968,first year of independence,0,0
 260,1969,same,0,0
 260,1970,same,0,0
@@ -1914,8 +1950,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 260,2015,same,0,0
 260,2016,same,0,0
 260,2017,same,0,0
-260,2018,same,NA,NA
+260,2018,same,0,0
 260,2019,same,NA,NA
+260,2020,same,NA,NA
 265,1968,first year of independence,0,0
 265,1969,same,0,0
 265,1970,same,0,0
@@ -1953,9 +1990,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 290,1979,same,1,0
 290,1980,up,0,1
 290,1981,same,0,1
-290,1982,down,1,0
-290,1983,same,1,0
-290,1984,up,0,0
+290,1982,down,0,0
+290,1983,same,0,0
+290,1984,same,0,0
 290,1985,same,0,0
 290,1986,same,0,0
 290,1987,same,1,0
@@ -1985,12 +2022,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 290,2011,same,0,0
 290,2012,same,0,0
 290,2013,same,0,0
-290,2014,same,0,0
+290,2014,same,0,1
 290,2015,same,0,1
-290,2016,same,0,1
-290,2017,down,0,0
-290,2018,same,NA,NA
+290,2016,down,0,0
+290,2017,same,0,0
+290,2018,same,0,0
 290,2019,same,NA,NA
+290,2020,same,NA,NA
 305,1968,first year of independence,0,0
 305,1969,same,0,0
 305,1970,same,0,0
@@ -2041,8 +2079,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 305,2015,same,0,0
 305,2016,same,0,0
 305,2017,same,0,0
-305,2018,same,NA,NA
+305,2018,same,0,0
 305,2019,same,NA,NA
+305,2020,same,NA,NA
 310,1968,first year of independence,0,0
 310,1969,same,0,0
 310,1970,same,0,0
@@ -2059,9 +2098,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 310,1981,same,0,0
 310,1982,same,0,0
 310,1983,same,0,0
-310,1984,same,1,0
-310,1985,same,1,0
-310,1986,up,1,0
+310,1984,same,0,0
+310,1985,same,0,0
+310,1986,same,1,0
 310,1987,same,1,0
 310,1988,up,1,0
 310,1989,up,1,0
@@ -2093,8 +2132,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 310,2015,down,0,0
 310,2016,same,0,1
 310,2017,same,0,1
-310,2018,down,NA,NA
+310,2018,down,0,0
 310,2019,same,NA,NA
+310,2020,same,NA,NA
 315,1968,first year of independence,0,1
 315,1969,down,0,1
 315,1970,down,0,0
@@ -2145,14 +2185,15 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 316,2015,same,0,0
 316,2016,same,0,0
 316,2017,same,0,0
-316,2018,same,NA,NA
+316,2018,same,0,0
 316,2019,same,NA,NA
+316,2020,same,NA,NA
 317,1993,first year of independence,0,0
 317,1994,same,0,0
 317,1995,same,0,0
-317,1996,same,0,0
+317,1996,same,1,0
 317,1997,same,1,0
-317,1998,same,1,0
+317,1998,up,1,0
 317,1999,up,0,0
 317,2000,same,0,0
 317,2001,same,0,0
@@ -2172,8 +2213,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 317,2015,same,0,0
 317,2016,same,0,0
 317,2017,same,0,0
-317,2018,same,NA,NA
+317,2018,same,0,0
 317,2019,same,NA,NA
+317,2020,same,NA,NA
 325,1968,first year of independence,0,0
 325,1969,same,0,0
 325,1970,same,0,0
@@ -2224,8 +2266,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 325,2015,same,0,0
 325,2016,same,0,0
 325,2017,same,0,0
-325,2018,same,NA,NA
+325,2018,same,0,0
 325,2019,same,NA,NA
+325,2020,same,NA,NA
 339,1968,first year of independence,0,0
 339,1969,same,0,0
 339,1970,same,0,0
@@ -2246,9 +2289,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 339,1985,same,0,0
 339,1986,same,0,0
 339,1987,same,0,0
-339,1988,same,1,0
+339,1988,same,0,0
 339,1989,same,1,0
-339,1990,up,1,0
+339,1990,same,1,0
 339,1991,up,0,0
 339,1992,same,0,0
 339,1993,same,0,0
@@ -2273,25 +2316,27 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 339,2012,same,0,1
 339,2013,down,0,0
 339,2014,same,0,0
-339,2015,same,1,0
-339,2016,same,1,1
-339,2017,up,0,1
-339,2018,down,NA,NA
+339,2015,same,0,0
+339,2016,same,0,1
+339,2017,same,0,1
+339,2018,down,0,1
 339,2019,down,NA,NA
+339,2020,same,NA,NA
 340,2006,first year of independence,0,0
 340,2007,same,0,0
 340,2008,same,0,0
 340,2009,same,0,0
 340,2010,same,0,0
-340,2011,same,0,0
+340,2011,same,0,1
 340,2012,same,0,1
-340,2013,same,0,1
-340,2014,down,0,1
-340,2015,down,0,1
+340,2013,down,0,1
+340,2014,down,0,0
+340,2015,same,0,1
 340,2016,same,0,1
-340,2017,down,0,1
-340,2018,down,NA,NA
+340,2017,down,0,0
+340,2018,same,0,0
 340,2019,same,NA,NA
+340,2020,same,NA,NA
 341,2006,first year of independence,0,0
 341,2007,same,0,0
 341,2008,same,0,0
@@ -2304,13 +2349,14 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 341,2015,same,0,0
 341,2016,same,0,0
 341,2017,same,0,0
-341,2018,same,NA,NA
+341,2018,same,0,0
 341,2019,same,NA,NA
+341,2020,same,NA,NA
 343,1991,first year of independence,0,0
 343,1992,same,0,0
-343,1993,same,1,0
-343,1994,same,1,0
-343,1995,up,0,0
+343,1993,same,0,0
+343,1994,same,0,0
+343,1995,same,0,0
 343,1996,same,0,0
 343,1997,same,0,0
 343,1998,same,0,0
@@ -2324,22 +2370,23 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 343,2006,same,0,0
 343,2007,same,0,0
 343,2008,same,0,0
-343,2009,same,0,0
+343,2009,same,0,1
 343,2010,same,0,1
-343,2011,same,0,1
+343,2011,down,0,1
 343,2012,down,0,0
 343,2013,same,0,0
 343,2014,same,0,0
 343,2015,same,1,0
 343,2016,same,1,0
 343,2017,up,0,0
-343,2018,same,NA,NA
+343,2018,same,0,0
 343,2019,same,NA,NA
+343,2020,same,NA,NA
 344,1992,first year of independence,0,0
 344,1993,same,0,0
-344,1994,same,0,0
-344,1995,same,0,0
-344,1996,same,0,0
+344,1994,same,1,0
+344,1995,same,1,0
+344,1996,up,0,0
 344,1997,same,0,0
 344,1998,same,1,0
 344,1999,same,1,0
@@ -2359,10 +2406,11 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 344,2013,same,0,0
 344,2014,same,0,1
 344,2015,same,0,1
-344,2016,down,0,1
-344,2017,down,0,0
-344,2018,same,NA,NA
+344,2016,down,0,0
+344,2017,same,0,0
+344,2018,same,0,0
 344,2019,same,NA,NA
+344,2020,same,NA,NA
 345,1968,first year of independence,0,0
 345,1969,same,0,0
 345,1970,same,0,0
@@ -2385,9 +2433,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 345,1987,same,0,0
 345,1988,same,1,0
 345,1989,same,1,0
-345,1990,up,1,1
-345,1991,up,0,1
-345,1992,down,0,0
+345,1990,up,0,0
+345,1991,same,0,0
+345,1992,same,0,0
 345,1993,same,0,0
 345,1994,same,0,0
 345,1995,same,0,0
@@ -2427,8 +2475,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 346,2015,same,0,0
 346,2016,same,0,0
 346,2017,same,0,0
-346,2018,same,NA,NA
+346,2018,same,0,0
 346,2019,same,NA,NA
+346,2020,same,NA,NA
 347,2008,first year of independence,0,0
 347,2009,same,0,0
 347,2010,same,0,0
@@ -2439,8 +2488,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 347,2015,same,0,0
 347,2016,same,0,0
 347,2017,same,0,0
-347,2018,same,NA,NA
+347,2018,same,0,0
 347,2019,same,NA,NA
+347,2020,same,NA,NA
 349,1992,first year of independence,0,0
 349,1993,same,0,0
 349,1994,same,0,0
@@ -2466,9 +2516,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 349,2014,same,0,0
 349,2015,same,0,0
 349,2016,same,0,0
-349,2017,same,0,1
-349,2018,same,NA,NA
-349,2019,down,NA,NA
+349,2017,same,0,0
+349,2018,same,0,1
+349,2019,same,NA,NA
+349,2020,down,NA,NA
 350,1968,first year of independence,0,0
 350,1969,same,0,0
 350,1970,same,0,0
@@ -2519,8 +2570,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 350,2015,same,0,0
 350,2016,same,0,0
 350,2017,same,0,0
-350,2018,same,NA,NA
+350,2018,same,0,0
 350,2019,same,NA,NA
+350,2020,same,NA,NA
 352,1968,first year of independence,0,0
 352,1969,same,0,0
 352,1970,same,0,0
@@ -2571,8 +2623,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 352,2015,same,0,0
 352,2016,same,0,0
 352,2017,same,0,0
-352,2018,same,NA,NA
+352,2018,same,0,1
 352,2019,same,NA,NA
+352,2020,down,NA,NA
 355,1968,first year of independence,0,0
 355,1969,same,0,0
 355,1970,same,0,0
@@ -2620,15 +2673,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 355,2012,same,0,0
 355,2013,same,0,0
 355,2014,same,0,0
-355,2015,same,0,1
-355,2016,same,0,1
-355,2017,down,0,0
-355,2018,same,NA,NA
+355,2015,same,0,0
+355,2016,same,0,0
+355,2017,same,0,0
+355,2018,same,0,0
 355,2019,same,NA,NA
+355,2020,same,NA,NA
 359,1991,first year of independence,0,0
-359,1992,same,0,0
-359,1993,same,0,0
-359,1994,same,0,0
+359,1992,same,0,1
+359,1993,same,0,1
+359,1994,down,0,0
 359,1995,same,0,0
 359,1996,same,0,0
 359,1997,same,0,0
@@ -2651,9 +2705,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 359,2014,same,0,1
 359,2015,same,0,1
 359,2016,down,0,0
-359,2017,same,0,0
-359,2018,same,NA,NA
-359,2019,same,NA,NA
+359,2017,same,1,0
+359,2018,same,1,0
+359,2019,up,NA,NA
+359,2020,same,NA,NA
 360,1968,first year of independence,0,0
 360,1969,same,0,0
 360,1970,same,0,0
@@ -2685,13 +2740,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 360,1996,same,0,0
 360,1997,same,0,0
 360,1998,same,0,0
-360,1999,same,0,0
-360,2000,same,0,0
-360,2001,same,0,0
+360,1999,same,0,1
+360,2000,same,0,1
+360,2001,down,0,0
 360,2002,same,0,0
-360,2003,same,0,0
-360,2004,same,0,0
-360,2005,same,0,0
+360,2003,same,1,0
+360,2004,same,1,0
+360,2005,up,0,0
 360,2006,same,0,0
 360,2007,same,0,0
 360,2008,same,0,0
@@ -2704,8 +2759,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 360,2015,same,0,1
 360,2016,same,0,1
 360,2017,down,1,0
-360,2018,same,NA,NA
+360,2018,same,1,0
 360,2019,up,NA,NA
+360,2020,up,NA,NA
 365,1968,first year of independence,0,0
 365,1969,same,0,0
 365,1970,same,0,0
@@ -2740,24 +2796,25 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 365,1999,same,0,1
 365,2000,down,0,1
 365,2001,down,0,0
-365,2002,same,0,0
-365,2003,same,0,0
-365,2004,same,0,0
+365,2002,same,0,1
+365,2003,same,0,1
+365,2004,down,0,0
 365,2005,same,0,0
 365,2006,same,0,0
 365,2007,same,0,0
 365,2008,same,0,0
 365,2009,same,0,0
 365,2010,same,0,0
-365,2011,same,0,1
-365,2012,same,0,1
-365,2013,down,0,1
-365,2014,same,0,1
-365,2015,down,0,0
+365,2011,same,0,0
+365,2012,same,0,0
+365,2013,same,0,0
+365,2014,same,0,0
+365,2015,same,0,0
 365,2016,same,0,0
 365,2017,same,0,0
-365,2018,same,NA,NA
+365,2018,same,0,0
 365,2019,same,NA,NA
+365,2020,same,NA,NA
 366,1991,first year of independence,0,0
 366,1992,same,0,0
 366,1993,same,0,0
@@ -2785,8 +2842,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 366,2015,same,0,0
 366,2016,same,0,0
 366,2017,same,0,0
-366,2018,same,NA,NA
+366,2018,same,0,0
 366,2019,same,NA,NA
+366,2020,same,NA,NA
 367,1991,first year of independence,0,0
 367,1992,same,0,0
 367,1993,same,0,0
@@ -2814,8 +2872,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 367,2015,same,0,0
 367,2016,same,0,0
 367,2017,same,0,0
-367,2018,same,NA,NA
+367,2018,same,0,0
 367,2019,same,NA,NA
+367,2020,same,NA,NA
 368,1991,first year of independence,0,0
 368,1992,same,0,0
 368,1993,same,0,0
@@ -2843,8 +2902,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 368,2015,same,0,0
 368,2016,same,0,0
 368,2017,same,0,0
-368,2018,same,NA,NA
+368,2018,same,0,0
 368,2019,same,NA,NA
+368,2020,same,NA,NA
 369,1991,first year of independence,1,0
 369,1992,up,0,0
 369,1993,same,0,0
@@ -2872,8 +2932,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 369,2015,same,0,0
 369,2016,same,0,0
 369,2017,same,0,0
-369,2018,same,NA,NA
+369,2018,same,1,0
 369,2019,same,NA,NA
+369,2020,up,NA,NA
 370,1991,first year of independence,1,0
 370,1992,up,0,0
 370,1993,same,0,1
@@ -2901,8 +2962,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 370,2015,same,0,0
 370,2016,same,0,0
 370,2017,same,0,0
-370,2018,same,NA,NA
+370,2018,same,0,1
 370,2019,same,NA,NA
+370,2020,down,NA,NA
 371,1991,first year of independence,0,0
 371,1992,same,0,0
 371,1993,same,0,0
@@ -2920,9 +2982,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 371,2005,same,0,0
 371,2006,same,0,0
 371,2007,same,0,0
-371,2008,same,0,0
-371,2009,same,0,0
-371,2010,same,0,0
+371,2008,same,1,0
+371,2009,same,1,0
+371,2010,up,0,0
 371,2011,same,0,0
 371,2012,same,0,0
 371,2013,same,0,0
@@ -2930,22 +2992,23 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 371,2015,same,0,0
 371,2016,same,1,0
 371,2017,same,1,0
-371,2018,up,NA,NA
+371,2018,up,1,0
 371,2019,up,NA,NA
+371,2020,same,NA,NA
 372,1991,first year of independence,1,0
 372,1992,up,0,0
 372,1993,same,0,0
-372,1994,same,1,0
-372,1995,same,1,0
-372,1996,up,0,0
+372,1994,same,0,0
+372,1995,same,0,0
+372,1996,same,0,0
 372,1997,same,0,0
 372,1998,same,0,0
 372,1999,same,0,0
 372,2000,same,0,0
 372,2001,same,0,0
-372,2002,same,1,0
-372,2003,same,1,0
-372,2004,up,0,0
+372,2002,same,0,0
+372,2003,same,0,0
+372,2004,same,0,0
 372,2005,same,0,0
 372,2006,same,0,0
 372,2007,same,0,0
@@ -2956,14 +3019,15 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 372,2012,same,1,0
 372,2013,up,0,0
 372,2014,same,0,0
-372,2015,same,0,1
-372,2016,same,0,1
-372,2017,down,0,0
-372,2018,same,NA,NA
+372,2015,same,0,0
+372,2016,same,0,0
+372,2017,same,0,0
+372,2018,same,0,0
 372,2019,same,NA,NA
-373,1991,first year of independence,1,0
+372,2020,same,NA,NA
+373,1991,first year of independence,1,1
 373,1992,up,0,1
-373,1993,same,0,1
+373,1993,down,0,1
 373,1994,down,0,0
 373,1995,same,0,0
 373,1996,same,0,0
@@ -2984,12 +3048,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 373,2011,same,0,0
 373,2012,same,0,0
 373,2013,same,0,0
-373,2014,same,0,0
-373,2015,same,0,0
-373,2016,same,0,0
+373,2014,same,1,0
+373,2015,same,1,0
+373,2016,up,0,0
 373,2017,same,0,0
-373,2018,same,NA,NA
+373,2018,same,0,0
 373,2019,same,NA,NA
+373,2020,same,NA,NA
 375,1968,first year of independence,0,0
 375,1969,same,0,0
 375,1970,same,0,0
@@ -3040,8 +3105,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 375,2015,same,0,0
 375,2016,same,0,0
 375,2017,same,0,0
-375,2018,same,NA,NA
+375,2018,same,0,0
 375,2019,same,NA,NA
+375,2020,same,NA,NA
 380,1968,first year of independence,0,0
 380,1969,same,0,0
 380,1970,same,0,0
@@ -3092,8 +3158,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 380,2015,same,0,0
 380,2016,same,0,0
 380,2017,same,0,0
-380,2018,same,NA,NA
+380,2018,same,0,0
 380,2019,same,NA,NA
+380,2020,same,NA,NA
 385,1968,first year of independence,0,0
 385,1969,same,0,0
 385,1970,same,0,0
@@ -3144,8 +3211,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 385,2015,same,0,0
 385,2016,same,0,0
 385,2017,same,0,0
-385,2018,same,NA,NA
+385,2018,same,0,0
 385,2019,same,NA,NA
+385,2020,same,NA,NA
 390,1968,first year of independence,0,0
 390,1969,same,0,0
 390,1970,same,0,0
@@ -3196,8 +3264,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 390,2015,same,0,0
 390,2016,same,0,0
 390,2017,same,0,0
-390,2018,same,NA,NA
+390,2018,same,0,0
 390,2019,same,NA,NA
+390,2020,same,NA,NA
 395,1968,first year of independence,0,0
 395,1969,same,0,0
 395,1970,same,0,0
@@ -3248,8 +3317,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 395,2015,same,0,0
 395,2016,same,0,0
 395,2017,same,0,0
-395,2018,same,NA,NA
+395,2018,same,0,0
 395,2019,same,NA,NA
+395,2020,same,NA,NA
 402,1975,first year of independence,1,0
 402,1976,up,0,0
 402,1977,same,0,0
@@ -3261,9 +3331,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 402,1983,same,0,0
 402,1984,same,0,0
 402,1985,same,0,0
-402,1986,same,1,0
-402,1987,same,1,0
-402,1988,up,0,0
+402,1986,same,0,0
+402,1987,same,0,0
+402,1988,same,0,0
 402,1989,same,1,0
 402,1990,same,1,0
 402,1991,up,0,0
@@ -3293,8 +3363,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 402,2015,same,0,0
 402,2016,same,0,0
 402,2017,same,0,0
-402,2018,same,NA,NA
+402,2018,same,0,0
 402,2019,same,NA,NA
+402,2020,same,NA,NA
 404,1974,first year of independence,0,0
 404,1975,same,0,0
 404,1976,same,0,0
@@ -3309,9 +3380,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 404,1985,same,0,0
 404,1986,same,0,0
 404,1987,same,0,0
-404,1988,same,0,0
-404,1989,same,0,0
-404,1990,same,1,0
+404,1988,same,1,0
+404,1989,same,1,0
+404,1990,up,1,0
 404,1991,same,1,0
 404,1992,up,1,0
 404,1993,up,1,0
@@ -3320,9 +3391,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 404,1996,same,0,0
 404,1997,same,0,0
 404,1998,same,0,0
-404,1999,same,1,0
-404,2000,same,1,0
-404,2001,up,0,0
+404,1999,same,0,0
+404,2000,same,0,0
+404,2001,same,0,0
 404,2002,same,0,0
 404,2003,same,0,0
 404,2004,same,0,0
@@ -3332,15 +3403,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 404,2008,same,0,0
 404,2009,same,0,0
 404,2010,same,0,0
-404,2011,same,1,0
-404,2012,same,1,0
-404,2013,up,0,0
+404,2011,same,0,0
+404,2012,same,0,0
+404,2013,same,0,0
 404,2014,same,0,0
-404,2015,same,0,1
-404,2016,same,0,1
-404,2017,down,0,0
-404,2018,same,NA,NA
+404,2015,same,0,0
+404,2016,same,0,0
+404,2017,same,0,0
+404,2018,same,0,0
 404,2019,same,NA,NA
+404,2020,same,NA,NA
 411,1968,first year of independence,0,1
 411,1969,down,0,0
 411,1970,same,0,0
@@ -3376,9 +3448,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 411,2000,same,0,0
 411,2001,same,0,0
 411,2002,same,0,0
-411,2003,same,0,1
-411,2004,same,0,1
-411,2005,down,0,0
+411,2003,same,0,0
+411,2004,same,0,0
+411,2005,same,0,0
 411,2006,same,0,0
 411,2007,same,0,0
 411,2008,same,0,0
@@ -3391,8 +3463,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 411,2015,same,0,0
 411,2016,same,0,0
 411,2017,same,0,0
-411,2018,same,NA,NA
+411,2018,same,0,0
 411,2019,same,NA,NA
+411,2020,same,NA,NA
 420,1968,first year of independence,1,0
 420,1969,same,1,0
 420,1970,up,0,0
@@ -3436,15 +3509,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 420,2008,same,0,0
 420,2009,same,0,0
 420,2010,same,0,0
-420,2011,same,0,1
-420,2012,same,0,1
-420,2013,down,0,0
+420,2011,same,0,0
+420,2012,same,0,0
+420,2013,same,0,0
 420,2014,same,0,0
 420,2015,same,1,0
 420,2016,same,1,0
-420,2017,up,1,1
-420,2018,up,NA,NA
-420,2019,down,NA,NA
+420,2017,up,1,0
+420,2018,up,0,0
+420,2019,same,NA,NA
+420,2020,same,NA,NA
 432,1968,first year of independence,0,0
 432,1969,same,0,0
 432,1970,same,0,0
@@ -3488,15 +3562,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 432,2008,same,0,0
 432,2009,same,0,0
 432,2010,same,0,0
-432,2011,same,0,1
-432,2012,same,0,1
-432,2013,down,0,0
+432,2011,same,0,0
+432,2012,same,0,0
+432,2013,same,0,0
 432,2014,same,0,0
-432,2015,same,0,1
-432,2016,same,0,1
-432,2017,down,0,0
-432,2018,same,NA,NA
+432,2015,same,0,0
+432,2016,same,0,0
+432,2017,same,0,0
+432,2018,same,0,0
 432,2019,same,NA,NA
+432,2020,same,NA,NA
 433,1968,first year of independence,0,0
 433,1969,same,0,0
 433,1970,same,0,0
@@ -3547,15 +3622,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 433,2015,same,0,0
 433,2016,same,0,0
 433,2017,same,0,0
-433,2018,same,NA,NA
+433,2018,same,0,0
 433,2019,same,NA,NA
+433,2020,same,NA,NA
 434,1968,first year of independence,0,0
 434,1969,same,0,0
 434,1970,same,0,1
 434,1971,same,0,1
 434,1972,down,0,1
-434,1973,down,0,1
-434,1974,down,0,0
+434,1973,down,0,0
+434,1974,same,0,0
 434,1975,same,0,0
 434,1976,same,0,0
 434,1977,same,0,0
@@ -3572,8 +3648,8 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 434,1988,same,1,0
 434,1989,same,1,0
 434,1990,up,1,0
-434,1991,up,0,0
-434,1992,same,0,0
+434,1991,up,1,0
+434,1992,up,0,0
 434,1993,same,0,0
 434,1994,same,0,0
 434,1995,same,0,0
@@ -3597,10 +3673,11 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 434,2013,same,0,0
 434,2014,same,0,0
 434,2015,same,0,0
-434,2016,same,0,0
+434,2016,same,0,1
 434,2017,same,0,1
-434,2018,same,NA,NA
+434,2018,down,0,1
 434,2019,down,NA,NA
+434,2020,same,NA,NA
 435,1968,first year of independence,0,0
 435,1969,same,0,0
 435,1970,same,0,0
@@ -3611,20 +3688,20 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 435,1975,same,0,0
 435,1976,same,0,1
 435,1977,same,0,1
-435,1978,down,0,1
-435,1979,down,0,0
+435,1978,down,0,0
+435,1979,same,0,0
 435,1980,same,0,0
 435,1981,same,0,0
-435,1982,same,1,0
-435,1983,same,1,0
-435,1984,up,0,0
-435,1985,same,1,0
-435,1986,same,1,0
-435,1987,up,0,0
-435,1988,same,1,0
+435,1982,same,0,0
+435,1983,same,0,0
+435,1984,same,0,0
+435,1985,same,0,0
+435,1986,same,0,0
+435,1987,same,0,0
+435,1988,same,0,0
 435,1989,same,1,0
-435,1990,up,1,0
-435,1991,same,1,0
+435,1990,same,1,0
+435,1991,up,1,0
 435,1992,up,0,0
 435,1993,same,0,0
 435,1994,same,0,0
@@ -3635,24 +3712,25 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 435,1999,same,0,0
 435,2000,same,0,0
 435,2001,same,0,0
-435,2002,same,1,0
+435,2002,same,0,0
 435,2003,same,1,0
-435,2004,up,1,0
+435,2004,same,1,0
 435,2005,up,1,0
 435,2006,up,0,0
 435,2007,same,0,0
 435,2008,same,0,0
 435,2009,same,0,0
 435,2010,same,0,0
-435,2011,same,0,0
+435,2011,same,0,1
 435,2012,same,0,1
-435,2013,same,0,1
-435,2014,down,0,0
+435,2013,down,0,0
+435,2014,same,0,0
 435,2015,same,0,1
 435,2016,same,0,1
 435,2017,down,1,0
-435,2018,same,NA,NA
+435,2018,same,1,1
 435,2019,up,NA,NA
+435,2020,down,NA,NA
 436,1968,first year of independence,0,0
 436,1969,same,0,0
 436,1970,same,0,0
@@ -3679,9 +3757,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 436,1991,same,1,0
 436,1992,same,1,0
 436,1993,up,0,0
-436,1994,same,0,0
-436,1995,same,0,0
-436,1996,same,0,0
+436,1994,same,0,1
+436,1995,same,0,1
+436,1996,down,0,0
 436,1997,same,0,0
 436,1998,same,0,0
 436,1999,same,0,0
@@ -3703,8 +3781,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 436,2015,same,0,0
 436,2016,same,0,0
 436,2017,same,0,0
-436,2018,same,NA,NA
+436,2018,same,0,0
 436,2019,same,NA,NA
+436,2020,same,NA,NA
 437,1968,first year of independence,0,0
 437,1969,same,0,0
 437,1970,same,0,0
@@ -3728,9 +3807,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 437,1988,same,1,0
 437,1989,same,1,0
 437,1990,up,0,0
-437,1991,same,1,0
+437,1991,same,0,0
 437,1992,same,1,0
-437,1993,up,1,0
+437,1993,same,1,0
 437,1994,up,0,0
 437,1995,same,0,0
 437,1996,same,0,0
@@ -3753,10 +3832,11 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 437,2013,same,0,0
 437,2014,same,0,0
 437,2015,same,0,0
-437,2016,same,1,0
-437,2017,same,1,1
-437,2018,up,NA,NA
-437,2019,down,NA,NA
+437,2016,same,0,0
+437,2017,same,0,0
+437,2018,same,0,0
+437,2019,same,NA,NA
+437,2020,same,NA,NA
 438,1968,first year of independence,0,0
 438,1969,same,0,0
 438,1970,same,0,0
@@ -3774,9 +3854,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 438,1982,same,0,0
 438,1983,same,1,0
 438,1984,same,1,0
-438,1985,up,1,0
-438,1986,same,1,0
-438,1987,up,0,0
+438,1985,up,0,0
+438,1986,same,0,0
+438,1987,same,0,0
 438,1988,same,1,0
 438,1989,same,1,0
 438,1990,up,1,0
@@ -3788,27 +3868,28 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 438,1996,same,0,0
 438,1997,same,0,0
 438,1998,same,0,0
-438,1999,same,1,0
-438,2000,same,1,0
-438,2001,up,0,0
+438,1999,same,0,0
+438,2000,same,0,0
+438,2001,same,0,0
 438,2002,same,0,0
 438,2003,same,0,0
 438,2004,same,0,0
 438,2005,same,0,0
 438,2006,same,0,0
-438,2007,same,0,1
-438,2008,same,0,1
-438,2009,down,1,0
-438,2010,same,1,0
-438,2011,up,0,0
+438,2007,same,0,0
+438,2008,same,1,0
+438,2009,same,1,0
+438,2010,up,0,0
+438,2011,same,0,0
 438,2012,same,0,0
 438,2013,same,0,0
 438,2014,same,0,0
 438,2015,same,0,0
 438,2016,same,0,0
 438,2017,same,0,0
-438,2018,same,NA,NA
+438,2018,same,0,0
 438,2019,same,NA,NA
+438,2020,same,NA,NA
 439,1968,first year of independence,0,0
 439,1969,same,0,0
 439,1970,same,0,0
@@ -3819,9 +3900,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 439,1975,same,0,0
 439,1976,same,1,0
 439,1977,same,1,0
-439,1978,up,0,0
-439,1979,same,0,0
-439,1980,same,0,0
+439,1978,up,0,1
+439,1979,same,0,1
+439,1980,down,0,0
 439,1981,same,0,0
 439,1982,same,0,0
 439,1983,same,0,0
@@ -3838,9 +3919,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 439,1994,same,0,0
 439,1995,same,0,0
 439,1996,same,0,0
-439,1997,same,1,0
+439,1997,same,0,0
 439,1998,same,1,0
-439,1999,up,1,0
+439,1999,same,1,0
 439,2000,up,0,0
 439,2001,same,0,0
 439,2002,same,0,0
@@ -3858,9 +3939,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 439,2014,same,0,0
 439,2015,same,0,0
 439,2016,same,0,0
-439,2017,same,0,1
-439,2018,same,NA,NA
-439,2019,down,NA,NA
+439,2017,same,0,0
+439,2018,same,0,0
+439,2019,same,NA,NA
+439,2020,same,NA,NA
 450,1968,first year of independence,0,0
 450,1969,same,0,0
 450,1970,same,1,0
@@ -3881,13 +3963,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 450,1985,same,1,0
 450,1986,up,0,0
 450,1987,same,0,0
-450,1988,same,0,0
+450,1988,same,1,0
 450,1989,same,1,0
-450,1990,same,1,0
+450,1990,up,1,0
 450,1991,up,0,0
-450,1992,same,0,0
-450,1993,same,0,0
-450,1994,same,0,1
+450,1992,same,0,1
+450,1993,same,0,1
+450,1994,down,0,1
 450,1995,same,0,1
 450,1996,down,0,0
 450,1997,same,0,0
@@ -3911,8 +3993,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 450,2015,same,0,0
 450,2016,same,0,0
 450,2017,same,0,0
-450,2018,same,NA,NA
+450,2018,same,0,0
 450,2019,same,NA,NA
+450,2020,same,NA,NA
 451,1968,first year of independence,0,1
 451,1969,down,1,0
 451,1970,same,1,0
@@ -3929,9 +4012,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 451,1981,same,0,0
 451,1982,same,0,0
 451,1983,same,0,0
-451,1984,same,1,0
-451,1985,same,1,0
-451,1986,up,0,0
+451,1984,same,0,0
+451,1985,same,0,0
+451,1986,same,0,0
 451,1987,same,0,0
 451,1988,same,0,0
 451,1989,same,0,0
@@ -3941,13 +4024,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 451,1993,same,0,0
 451,1994,same,1,0
 451,1995,same,1,0
-451,1996,up,1,0
-451,1997,up,0,0
+451,1996,up,0,0
+451,1997,same,0,0
 451,1998,same,0,0
 451,1999,same,0,0
-451,2000,same,1,0
-451,2001,same,1,0
-451,2002,up,0,0
+451,2000,same,0,0
+451,2001,same,0,0
+451,2002,same,0,0
 451,2003,same,0,0
 451,2004,same,0,0
 451,2005,same,0,0
@@ -3963,8 +4046,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 451,2015,same,0,0
 451,2016,same,0,0
 451,2017,same,0,0
-451,2018,same,NA,NA
+451,2018,same,0,0
 451,2019,same,NA,NA
+451,2020,same,NA,NA
 452,1968,first year of independence,1,0
 452,1969,up,0,0
 452,1970,same,0,1
@@ -3991,8 +4075,8 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 452,1991,same,1,0
 452,1992,same,1,0
 452,1993,up,1,0
-452,1994,up,1,0
-452,1995,up,0,0
+452,1994,up,0,0
+452,1995,same,0,0
 452,1996,same,0,0
 452,1997,same,0,0
 452,1998,same,1,0
@@ -4014,9 +4098,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 452,2014,same,0,0
 452,2015,same,0,0
 452,2016,same,0,0
-452,2017,same,0,1
-452,2018,same,NA,NA
-452,2019,down,NA,NA
+452,2017,same,0,0
+452,2018,same,0,0
+452,2019,same,NA,NA
+452,2020,same,NA,NA
 461,1968,first year of independence,0,0
 461,1969,same,0,0
 461,1970,same,0,0
@@ -4043,9 +4128,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 461,1991,up,1,0
 461,1992,up,0,0
 461,1993,same,0,0
-461,1994,same,1,0
-461,1995,same,1,0
-461,1996,up,0,0
+461,1994,same,0,0
+461,1995,same,0,0
+461,1996,same,0,0
 461,1997,same,0,0
 461,1998,same,0,0
 461,1999,same,0,0
@@ -4064,11 +4149,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 461,2012,same,0,0
 461,2013,same,0,0
 461,2014,same,0,0
-461,2015,same,0,0
-461,2016,same,0,0
-461,2017,same,0,0
-461,2018,same,NA,NA
+461,2015,same,0,1
+461,2016,same,0,1
+461,2017,down,0,0
+461,2018,same,0,0
 461,2019,same,NA,NA
+461,2020,same,NA,NA
 471,1968,first year of independence,0,0
 471,1969,same,0,0
 471,1970,same,0,0
@@ -4081,9 +4167,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 471,1977,same,0,0
 471,1978,same,0,0
 471,1979,same,0,0
-471,1980,same,1,0
+471,1980,same,0,0
 471,1981,same,1,0
-471,1982,up,1,0
+471,1982,same,1,0
 471,1983,up,0,0
 471,1984,same,0,0
 471,1985,same,0,0
@@ -4093,8 +4179,8 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 471,1989,same,1,0
 471,1990,up,1,0
 471,1991,up,1,0
-471,1992,up,1,0
-471,1993,up,0,0
+471,1992,up,0,0
+471,1993,same,0,0
 471,1994,same,0,0
 471,1995,same,0,0
 471,1996,same,0,0
@@ -4112,15 +4198,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 471,2008,same,0,0
 471,2009,same,0,0
 471,2010,same,0,0
-471,2011,same,0,1
-471,2012,same,0,1
-471,2013,down,0,0
+471,2011,same,0,0
+471,2012,same,0,0
+471,2013,same,0,0
 471,2014,same,0,1
 471,2015,same,0,1
 471,2016,down,0,0
-471,2017,same,1,0
-471,2018,same,NA,NA
-471,2019,up,NA,NA
+471,2017,same,0,0
+471,2018,same,0,0
+471,2019,same,NA,NA
+471,2020,same,NA,NA
 475,1968,first year of independence,0,0
 475,1969,same,0,0
 475,1970,same,0,0
@@ -4130,9 +4217,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 475,1974,same,0,0
 475,1975,same,0,0
 475,1976,same,0,0
-475,1977,same,1,0
-475,1978,same,1,0
-475,1979,up,0,0
+475,1977,same,0,0
+475,1978,same,0,0
+475,1979,same,0,0
 475,1980,same,0,0
 475,1981,same,0,0
 475,1982,same,0,1
@@ -4161,18 +4248,19 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 475,2005,same,0,0
 475,2006,same,0,0
 475,2007,same,0,0
-475,2008,same,1,0
-475,2009,same,1,0
-475,2010,up,0,0
+475,2008,same,0,0
+475,2009,same,0,0
+475,2010,same,0,0
 475,2011,same,0,0
 475,2012,same,0,0
 475,2013,same,0,0
 475,2014,same,0,0
 475,2015,same,0,0
 475,2016,same,0,0
-475,2017,same,0,1
-475,2018,same,NA,NA
-475,2019,down,NA,NA
+475,2017,same,0,0
+475,2018,same,0,0
+475,2019,same,NA,NA
+475,2020,same,NA,NA
 481,1968,first year of independence,1,0
 481,1969,same,1,0
 481,1970,up,0,0
@@ -4213,9 +4301,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 481,2005,same,0,0
 481,2006,same,0,0
 481,2007,same,0,0
-481,2008,same,1,0
-481,2009,same,1,0
-481,2010,up,0,0
+481,2008,same,0,0
+481,2009,same,0,0
+481,2010,same,0,0
 481,2011,same,1,0
 481,2012,same,1,0
 481,2013,up,0,0
@@ -4223,8 +4311,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 481,2015,same,0,0
 481,2016,same,0,0
 481,2017,same,0,0
-481,2018,same,NA,NA
+481,2018,same,0,0
 481,2019,same,NA,NA
+481,2020,same,NA,NA
 482,1968,first year of independence,0,0
 482,1969,same,0,0
 482,1970,same,0,0
@@ -4245,9 +4334,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 482,1985,same,0,0
 482,1986,same,0,0
 482,1987,same,0,0
-482,1988,same,0,0
+482,1988,same,1,0
 482,1989,same,1,0
-482,1990,same,1,0
+482,1990,up,1,0
 482,1991,up,1,0
 482,1992,up,0,0
 482,1993,same,0,0
@@ -4275,8 +4364,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 482,2015,same,0,0
 482,2016,same,0,0
 482,2017,same,0,0
-482,2018,same,NA,NA
+482,2018,same,0,1
 482,2019,same,NA,NA
+482,2020,down,NA,NA
 483,1968,first year of independence,0,0
 483,1969,same,0,0
 483,1970,same,0,0
@@ -4326,9 +4416,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 483,2014,same,0,0
 483,2015,same,0,1
 483,2016,same,0,1
-483,2017,down,0,1
-483,2018,same,NA,NA
-483,2019,down,NA,NA
+483,2017,down,0,0
+483,2018,same,0,0
+483,2019,same,NA,NA
+483,2020,same,NA,NA
 484,1968,first year of independence,0,0
 484,1969,same,0,0
 484,1970,same,0,0
@@ -4378,9 +4469,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 484,2014,same,0,0
 484,2015,same,0,0
 484,2016,same,0,0
-484,2017,same,0,0
-484,2018,same,NA,NA
-484,2019,same,NA,NA
+484,2017,same,0,1
+484,2018,same,0,1
+484,2019,down,NA,NA
+484,2020,same,NA,NA
 490,1968,first year of independence,0,0
 490,1969,same,0,0
 490,1970,same,0,0
@@ -4430,9 +4522,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 490,2014,same,0,0
 490,2015,same,0,0
 490,2016,same,0,0
-490,2017,same,0,1
-490,2018,same,NA,NA
-490,2019,down,NA,NA
+490,2017,same,0,0
+490,2018,same,0,0
+490,2019,same,NA,NA
+490,2020,same,NA,NA
 500,1968,first year of independence,0,0
 500,1969,same,0,1
 500,1970,same,0,1
@@ -4455,17 +4548,17 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 500,1987,same,0,0
 500,1988,same,0,0
 500,1989,same,0,0
-500,1990,same,1,0
-500,1991,same,1,0
-500,1992,up,1,0
+500,1990,same,0,0
+500,1991,same,0,0
+500,1992,same,1,0
 500,1993,same,1,0
 500,1994,up,0,0
 500,1995,same,0,0
 500,1996,same,0,0
 500,1997,same,0,0
-500,1998,same,1,0
-500,1999,same,1,0
-500,2000,up,0,0
+500,1998,same,0,0
+500,1999,same,0,0
+500,2000,same,0,0
 500,2001,same,0,0
 500,2002,same,0,0
 500,2003,same,0,0
@@ -4476,15 +4569,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 500,2008,same,0,0
 500,2009,same,0,0
 500,2010,same,0,0
-500,2011,same,0,1
-500,2012,same,0,1
-500,2013,down,0,0
+500,2011,same,0,0
+500,2012,same,0,0
+500,2013,same,0,0
 500,2014,same,0,0
-500,2015,same,1,0
-500,2016,same,1,0
-500,2017,up,0,0
-500,2018,same,NA,NA
+500,2015,same,0,0
+500,2016,same,0,0
+500,2017,same,0,0
+500,2018,same,0,0
 500,2019,same,NA,NA
+500,2020,same,NA,NA
 501,1968,first year of independence,0,0
 501,1969,same,0,0
 501,1970,same,0,0
@@ -4535,8 +4629,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 501,2015,same,0,0
 501,2016,same,0,0
 501,2017,same,0,0
-501,2018,same,NA,NA
+501,2018,same,0,0
 501,2019,same,NA,NA
+501,2020,same,NA,NA
 510,1968,first year of independence,0,0
 510,1969,same,0,0
 510,1970,same,0,0
@@ -4563,9 +4658,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 510,1991,same,1,0
 510,1992,up,0,0
 510,1993,same,0,0
-510,1994,same,1,0
-510,1995,same,1,0
-510,1996,up,0,0
+510,1994,same,0,0
+510,1995,same,0,0
+510,1996,same,0,0
 510,1997,same,0,0
 510,1998,same,0,0
 510,1999,same,0,0
@@ -4586,9 +4681,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 510,2014,same,0,1
 510,2015,same,0,1
 510,2016,down,0,0
-510,2017,same,0,1
-510,2018,same,NA,NA
-510,2019,down,NA,NA
+510,2017,same,0,0
+510,2018,same,0,0
+510,2019,same,NA,NA
+510,2020,same,NA,NA
 516,1968,first year of independence,0,0
 516,1969,same,0,0
 516,1970,same,0,0
@@ -4617,17 +4713,17 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 516,1993,up,0,0
 516,1994,same,0,0
 516,1995,same,0,0
-516,1996,same,0,1
-516,1997,same,0,1
-516,1998,down,0,0
+516,1996,same,0,0
+516,1997,same,0,0
+516,1998,same,0,0
 516,1999,same,0,0
 516,2000,same,1,0
 516,2001,same,1,0
 516,2002,up,0,0
 516,2003,same,0,0
-516,2004,same,0,1
-516,2005,same,0,1
-516,2006,down,0,0
+516,2004,same,0,0
+516,2005,same,0,0
+516,2006,same,0,0
 516,2007,same,0,0
 516,2008,same,0,1
 516,2009,same,0,1
@@ -4637,10 +4733,11 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 516,2013,same,0,1
 516,2014,same,0,1
 516,2015,down,0,1
-516,2016,down,0,1
-516,2017,down,0,0
-516,2018,same,NA,NA
+516,2016,down,0,0
+516,2017,same,0,0
+516,2018,same,0,0
 516,2019,same,NA,NA
+516,2020,same,NA,NA
 517,1968,first year of independence,0,0
 517,1969,same,0,0
 517,1970,same,0,0
@@ -4661,13 +4758,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 517,1985,same,0,0
 517,1986,same,0,0
 517,1987,same,0,0
-517,1988,same,0,0
+517,1988,same,1,0
 517,1989,same,1,0
-517,1990,same,1,0
+517,1990,up,1,0
 517,1991,up,0,0
-517,1992,same,0,0
+517,1992,same,0,1
 517,1993,same,0,1
-517,1994,same,0,1
+517,1994,down,0,1
 517,1995,down,0,0
 517,1996,same,0,0
 517,1997,same,0,0
@@ -4691,8 +4788,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 517,2015,same,0,0
 517,2016,same,0,0
 517,2017,same,0,0
-517,2018,same,NA,NA
+517,2018,same,0,0
 517,2019,same,NA,NA
+517,2020,same,NA,NA
 520,1968,first year of independence,0,1
 520,1969,down,0,1
 520,1970,down,0,0
@@ -4733,18 +4831,19 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 520,2005,same,0,0
 520,2006,same,0,0
 520,2007,same,0,0
-520,2008,same,0,0
-520,2009,same,0,0
-520,2010,same,1,0
-520,2011,same,1,1
-520,2012,up,0,1
+520,2008,same,1,0
+520,2009,same,1,0
+520,2010,up,0,0
+520,2011,same,0,1
+520,2012,same,0,1
 520,2013,down,0,0
 520,2014,same,0,0
 520,2015,same,0,0
-520,2016,same,0,0
+520,2016,same,0,1
 520,2017,same,0,1
-520,2018,same,NA,NA
-520,2019,down,NA,NA
+520,2018,down,1,0
+520,2019,same,NA,NA
+520,2020,up,NA,NA
 522,1977,first year of independence,1,0
 522,1978,up,0,0
 522,1979,same,0,0
@@ -4786,8 +4885,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 522,2015,same,0,0
 522,2016,same,1,0
 522,2017,same,1,0
-522,2018,up,NA,NA
+522,2018,up,0,0
 522,2019,same,NA,NA
+522,2020,same,NA,NA
 530,1968,first year of independence,0,0
 530,1969,same,0,0
 530,1970,same,0,0
@@ -4838,8 +4938,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 530,2015,same,0,0
 530,2016,same,1,0
 530,2017,same,1,0
-530,2018,up,NA,NA
+530,2018,up,1,0
 530,2019,up,NA,NA
+530,2020,same,NA,NA
 531,1993,first year of independence,0,0
 531,1994,same,0,0
 531,1995,same,1,0
@@ -4865,8 +4966,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 531,2015,same,0,0
 531,2016,same,0,0
 531,2017,same,0,0
-531,2018,same,NA,NA
+531,2018,same,0,0
 531,2019,same,NA,NA
+531,2020,same,NA,NA
 540,1975,first year of independence,0,0
 540,1976,same,0,0
 540,1977,same,0,0
@@ -4882,9 +4984,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 540,1987,same,0,0
 540,1988,same,0,0
 540,1989,same,0,0
-540,1990,same,0,0
+540,1990,same,1,0
 540,1991,same,1,0
-540,1992,same,1,0
+540,1992,up,1,0
 540,1993,up,0,0
 540,1994,same,0,0
 540,1995,same,0,0
@@ -4910,8 +5012,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 540,2015,same,0,0
 540,2016,same,1,0
 540,2017,same,1,0
-540,2018,up,NA,NA
-540,2019,up,NA,NA
+540,2018,up,0,0
+540,2019,same,NA,NA
+540,2020,same,NA,NA
 541,1975,first year of independence,0,0
 541,1976,same,0,0
 541,1977,same,0,0
@@ -4928,16 +5031,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 541,1988,same,1,0
 541,1989,same,1,0
 541,1990,up,1,0
-541,1991,up,0,0
-541,1992,same,1,0
+541,1991,up,1,0
+541,1992,up,1,0
 541,1993,same,1,0
 541,1994,up,0,0
 541,1995,same,0,0
 541,1996,same,0,0
-541,1997,same,0,1
-541,1998,same,1,1
-541,1999,down,1,0
-541,2000,up,0,0
+541,1997,same,0,0
+541,1998,same,0,0
+541,1999,same,0,0
+541,2000,same,0,0
 541,2001,same,0,0
 541,2002,same,0,0
 541,2003,same,0,0
@@ -4953,10 +5056,11 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 541,2013,same,0,0
 541,2014,same,0,0
 541,2015,same,0,0
-541,2016,same,0,0
-541,2017,same,0,0
-541,2018,same,NA,NA
+541,2016,same,0,1
+541,2017,same,0,1
+541,2018,down,0,0
 541,2019,same,NA,NA
+541,2020,same,NA,NA
 551,1968,first year of independence,0,0
 551,1969,same,0,0
 551,1970,same,0,0
@@ -4981,9 +5085,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 551,1989,same,1,0
 551,1990,up,1,0
 551,1991,up,1,0
-551,1992,up,0,0
-551,1993,same,0,0
-551,1994,same,0,0
+551,1992,up,1,0
+551,1993,same,1,0
+551,1994,up,0,0
 551,1995,same,0,0
 551,1996,same,0,0
 551,1997,same,0,0
@@ -5007,8 +5111,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 551,2015,same,0,1
 551,2016,down,0,0
 551,2017,same,0,0
-551,2018,same,NA,NA
+551,2018,same,0,0
 551,2019,same,NA,NA
+551,2020,same,NA,NA
 552,1968,first year of independence,0,0
 552,1969,same,0,0
 552,1970,same,0,0
@@ -5021,8 +5126,8 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 552,1977,same,0,0
 552,1978,same,1,0
 552,1979,same,1,0
-552,1980,up,0,0
-552,1981,same,0,0
+552,1980,up,1,0
+552,1981,up,0,0
 552,1982,same,0,0
 552,1983,same,0,0
 552,1984,same,0,0
@@ -5053,14 +5158,15 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 552,2009,same,1,0
 552,2010,up,0,0
 552,2011,same,1,0
-552,2012,same,1,1
-552,2013,up,0,1
-552,2014,down,0,1
-552,2015,same,0,1
-552,2016,down,1,0
+552,2012,same,1,0
+552,2013,up,0,0
+552,2014,same,0,0
+552,2015,same,0,0
+552,2016,same,1,0
 552,2017,same,1,1
-552,2018,up,NA,NA
+552,2018,up,0,1
 552,2019,down,NA,NA
+552,2020,same,NA,NA
 553,1968,first year of independence,0,0
 553,1969,same,0,0
 553,1970,same,0,0
@@ -5087,7 +5193,7 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 553,1991,same,1,0
 553,1992,same,1,0
 553,1993,up,1,0
-553,1994,same,1,0
+553,1994,up,1,0
 553,1995,up,0,0
 553,1996,same,0,0
 553,1997,same,0,0
@@ -5111,8 +5217,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 553,2015,same,0,0
 553,2016,same,0,0
 553,2017,same,0,0
-553,2018,same,NA,NA
+553,2018,same,0,0
 553,2019,same,NA,NA
+553,2020,same,NA,NA
 560,1968,first year of independence,0,0
 560,1969,same,0,0
 560,1970,same,0,0
@@ -5136,9 +5243,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 560,1988,same,1,0
 560,1989,same,1,0
 560,1990,up,0,0
-560,1991,same,1,0
+560,1991,same,0,0
 560,1992,same,1,0
-560,1993,up,1,0
+560,1993,same,1,0
 560,1994,up,0,0
 560,1995,same,0,0
 560,1996,same,0,0
@@ -5163,8 +5270,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 560,2015,same,0,0
 560,2016,same,0,0
 560,2017,same,0,0
-560,2018,same,NA,NA
+560,2018,same,0,0
 560,2019,same,NA,NA
+560,2020,same,NA,NA
 565,1990,first year of independence,0,0
 565,1991,same,0,0
 565,1992,same,0,0
@@ -5193,11 +5301,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 565,2015,same,0,0
 565,2016,same,0,0
 565,2017,same,0,0
-565,2018,same,NA,NA
+565,2018,same,0,0
 565,2019,same,NA,NA
-570,1968,first year of independence,0,0
-570,1969,same,0,0
-570,1970,same,0,0
+565,2020,same,NA,NA
+570,1968,first year of independence,0,1
+570,1969,same,0,1
+570,1970,down,0,0
 570,1971,same,0,0
 570,1972,same,0,0
 570,1973,same,0,0
@@ -5212,9 +5321,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 570,1982,same,0,0
 570,1983,same,0,0
 570,1984,same,0,0
-570,1985,same,0,0
-570,1986,same,0,0
-570,1987,same,0,0
+570,1985,same,1,0
+570,1986,same,1,0
+570,1987,up,0,0
 570,1988,same,0,0
 570,1989,same,0,0
 570,1990,same,0,0
@@ -5240,13 +5349,14 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 570,2010,same,0,0
 570,2011,same,0,0
 570,2012,same,0,0
-570,2013,same,0,1
-570,2014,same,0,1
-570,2015,down,0,0
-570,2016,same,1,0
-570,2017,same,1,0
-570,2018,up,NA,NA
+570,2013,same,0,0
+570,2014,same,0,0
+570,2015,same,0,0
+570,2016,same,0,0
+570,2017,same,0,0
+570,2018,same,0,0
 570,2019,same,NA,NA
+570,2020,same,NA,NA
 571,1968,first year of independence,0,0
 571,1969,same,0,0
 571,1970,same,0,0
@@ -5290,15 +5400,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 571,2008,same,0,0
 571,2009,same,0,0
 571,2010,same,0,0
-571,2011,same,0,1
-571,2012,same,0,1
-571,2013,down,0,0
+571,2011,same,0,0
+571,2012,same,0,0
+571,2013,same,0,0
 571,2014,same,0,0
 571,2015,same,0,0
 571,2016,same,0,0
 571,2017,same,0,0
-571,2018,same,NA,NA
+571,2018,same,0,0
 571,2019,same,NA,NA
+571,2020,same,NA,NA
 572,1968,first year of independence,0,0
 572,1969,same,0,0
 572,1970,same,0,0
@@ -5349,8 +5460,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 572,2015,same,0,0
 572,2016,same,0,0
 572,2017,same,0,0
-572,2018,same,NA,NA
+572,2018,same,0,0
 572,2019,same,NA,NA
+572,2020,same,NA,NA
 580,1968,first year of independence,0,0
 580,1969,same,0,0
 580,1970,same,1,0
@@ -5358,8 +5470,8 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 580,1972,up,0,0
 580,1973,same,0,1
 580,1974,same,0,1
-580,1975,down,0,0
-580,1976,same,0,0
+580,1975,down,0,1
+580,1976,down,0,0
 580,1977,same,0,0
 580,1978,same,0,0
 580,1979,same,0,0
@@ -5369,12 +5481,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 580,1983,same,0,0
 580,1984,same,0,0
 580,1985,same,0,0
-580,1986,same,0,0
-580,1987,same,0,0
-580,1988,same,0,0
-580,1989,same,1,0
+580,1986,same,1,0
+580,1987,same,1,0
+580,1988,up,0,0
+580,1989,same,0,0
 580,1990,same,1,0
-580,1991,up,1,0
+580,1991,same,1,0
 580,1992,up,0,0
 580,1993,same,0,0
 580,1994,same,0,0
@@ -5384,9 +5496,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 580,1998,same,0,0
 580,1999,same,0,0
 580,2000,same,0,1
-580,2001,same,0,1
-580,2002,down,0,0
-580,2003,same,0,0
+580,2001,same,1,1
+580,2002,down,1,0
+580,2003,up,0,0
 580,2004,same,0,0
 580,2005,same,0,0
 580,2006,same,0,0
@@ -5394,20 +5506,21 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 580,2008,same,0,1
 580,2009,down,0,0
 580,2010,same,0,0
-580,2011,same,1,0
-580,2012,same,1,0
-580,2013,up,0,0
+580,2011,same,0,0
+580,2012,same,0,0
+580,2013,same,0,0
 580,2014,same,0,0
 580,2015,same,0,0
 580,2016,same,0,0
-580,2017,same,0,0
-580,2018,same,NA,NA
-580,2019,same,NA,NA
+580,2017,same,0,1
+580,2018,same,0,1
+580,2019,down,NA,NA
+580,2020,same,NA,NA
 581,1975,first year of independence,0,0
 581,1976,same,0,0
-581,1977,same,0,0
-581,1978,same,0,0
-581,1979,same,0,0
+581,1977,same,1,0
+581,1978,same,1,0
+581,1979,up,0,0
 581,1980,same,0,0
 581,1981,same,0,0
 581,1982,same,0,0
@@ -5418,8 +5531,8 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 581,1987,same,0,0
 581,1988,same,1,0
 581,1989,same,1,0
-581,1990,up,0,0
-581,1991,same,0,0
+581,1990,up,1,0
+581,1991,up,0,0
 581,1992,same,0,0
 581,1993,same,0,0
 581,1994,same,0,0
@@ -5440,14 +5553,15 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 581,2009,same,0,0
 581,2010,same,0,0
 581,2011,same,0,0
-581,2012,same,1,0
-581,2013,same,1,0
-581,2014,up,0,0
+581,2012,same,0,0
+581,2013,same,0,0
+581,2014,same,0,0
 581,2015,same,0,0
 581,2016,same,0,0
 581,2017,same,0,0
-581,2018,same,NA,NA
+581,2018,same,0,1
 581,2019,same,NA,NA
+581,2020,down,NA,NA
 590,1968,first year of independence,0,0
 590,1969,same,0,0
 590,1970,same,0,0
@@ -5498,11 +5612,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 590,2015,same,0,0
 590,2016,same,0,0
 590,2017,same,0,0
-590,2018,same,NA,NA
+590,2018,same,0,1
 590,2019,same,NA,NA
-600,1968,first year of independence,1,0
-600,1969,same,1,0
-600,1970,up,0,0
+590,2020,down,NA,NA
+600,1968,first year of independence,0,0
+600,1969,same,0,0
+600,1970,same,0,0
 600,1971,same,0,0
 600,1972,same,0,0
 600,1973,same,0,0
@@ -5550,8 +5665,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 600,2015,same,0,0
 600,2016,same,0,0
 600,2017,same,0,0
-600,2018,same,NA,NA
+600,2018,same,0,0
 600,2019,same,NA,NA
+600,2020,same,NA,NA
 615,1968,first year of independence,0,0
 615,1969,same,0,0
 615,1970,same,0,0
@@ -5581,10 +5697,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 615,1994,same,0,0
 615,1995,same,0,0
 615,1996,same,0,0
-615,1997,same,1,0
+615,1997,same,0,0
 615,1998,same,1,0
-615,1999,up,0,0
-615,2000,same,0,0
+615,1999,same,1,0
+615,2000,up,0,0
 615,2001,same,0,0
 615,2002,same,0,0
 615,2003,same,0,0
@@ -5601,9 +5717,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 615,2014,same,0,1
 615,2015,same,0,1
 615,2016,down,0,0
-615,2017,same,0,0
-615,2018,same,NA,NA
-615,2019,same,NA,NA
+615,2017,same,0,1
+615,2018,same,0,1
+615,2019,down,NA,NA
+615,2020,same,NA,NA
 616,1968,first year of independence,0,0
 616,1969,same,0,0
 616,1970,same,0,0
@@ -5622,9 +5739,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 616,1983,same,0,0
 616,1984,same,0,0
 616,1985,same,0,0
-616,1986,same,0,0
-616,1987,same,0,0
-616,1988,same,0,0
+616,1986,same,0,1
+616,1987,same,0,1
+616,1988,down,0,0
 616,1989,same,0,0
 616,1990,same,0,0
 616,1991,same,0,0
@@ -5654,8 +5771,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 616,2015,same,0,0
 616,2016,same,0,0
 616,2017,same,0,0
-616,2018,same,NA,NA
+616,2018,same,0,0
 616,2019,same,NA,NA
+616,2020,same,NA,NA
 620,1968,first year of independence,0,1
 620,1969,down,0,1
 620,1970,down,0,0
@@ -5697,17 +5815,18 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 620,2006,same,0,0
 620,2007,same,0,0
 620,2008,same,0,0
-620,2009,same,0,0
+620,2009,same,1,0
 620,2010,same,1,0
-620,2011,same,1,1
+620,2011,up,1,1
 620,2012,up,0,1
 620,2013,down,0,0
 620,2014,same,0,0
 620,2015,same,0,1
 620,2016,same,0,1
 620,2017,down,0,0
-620,2018,same,NA,NA
+620,2018,same,0,0
 620,2019,same,NA,NA
+620,2020,same,NA,NA
 625,1968,first year of independence,0,1
 625,1969,down,0,0
 625,1970,same,0,0
@@ -5722,9 +5841,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 625,1979,same,0,0
 625,1980,same,0,0
 625,1981,same,0,0
-625,1982,same,1,0
+625,1982,same,0,0
 625,1983,same,1,0
-625,1984,up,1,0
+625,1984,same,1,0
 625,1985,up,1,0
 625,1986,up,0,0
 625,1987,same,0,1
@@ -5758,17 +5877,19 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 625,2015,same,0,0
 625,2016,same,0,0
 625,2017,same,1,0
-625,2018,same,NA,NA
+625,2018,same,1,0
 625,2019,up,NA,NA
+625,2020,up,NA,NA
 626,2011,first year of independence,0,1
 626,2012,same,0,1
 626,2013,down,0,0
 626,2014,same,0,1
-626,2015,same,0,1
-626,2016,down,0,0
-626,2017,same,0,0
-626,2018,same,NA,NA
+626,2015,same,1,1
+626,2016,down,1,0
+626,2017,up,0,0
+626,2018,same,1,0
 626,2019,same,NA,NA
+626,2020,up,NA,NA
 630,1968,first year of independence,0,0
 630,1969,same,0,0
 630,1970,same,0,0
@@ -5781,33 +5902,33 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 630,1977,same,1,0
 630,1978,same,1,1
 630,1979,up,0,1
-630,1980,down,0,1
-630,1981,same,0,1
-630,1982,down,0,0
+630,1980,down,0,0
+630,1981,same,0,0
+630,1982,same,0,0
 630,1983,same,0,0
 630,1984,same,0,0
 630,1985,same,0,0
 630,1986,same,0,0
 630,1987,same,0,0
-630,1988,same,1,0
-630,1989,same,1,0
-630,1990,up,0,0
+630,1988,same,0,0
+630,1989,same,0,0
+630,1990,same,0,0
 630,1991,same,0,0
 630,1992,same,0,0
 630,1993,same,0,0
 630,1994,same,0,0
 630,1995,same,1,0
 630,1996,same,1,0
-630,1997,up,1,0
-630,1998,up,0,0
+630,1997,up,0,0
+630,1998,same,0,0
 630,1999,same,0,0
 630,2000,same,0,0
 630,2001,same,0,0
 630,2002,same,0,0
-630,2003,same,0,0
+630,2003,same,0,1
 630,2004,same,0,1
-630,2005,same,0,1
-630,2006,down,0,0
+630,2005,down,0,0
+630,2006,same,0,0
 630,2007,same,0,0
 630,2008,same,0,0
 630,2009,same,0,0
@@ -5816,11 +5937,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 630,2012,same,0,0
 630,2013,same,0,0
 630,2014,same,0,0
-630,2015,same,1,0
-630,2016,same,1,1
-630,2017,up,0,1
-630,2018,down,NA,NA
+630,2015,same,0,0
+630,2016,same,0,0
+630,2017,same,0,0
+630,2018,same,0,0
 630,2019,same,NA,NA
+630,2020,same,NA,NA
 640,1968,first year of independence,0,1
 640,1969,same,0,1
 640,1970,down,0,1
@@ -5834,9 +5956,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 640,1978,same,0,1
 640,1979,same,0,1
 640,1980,down,0,1
-640,1981,down,0,0
+640,1981,down,1,0
 640,1982,same,1,0
-640,1983,same,1,0
+640,1983,up,1,0
 640,1984,up,0,0
 640,1985,same,0,0
 640,1986,same,0,0
@@ -5867,12 +5989,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 640,2011,same,0,1
 640,2012,same,0,1
 640,2013,down,0,1
-640,2014,down,0,0
+640,2014,down,0,1
 640,2015,same,0,1
-640,2016,same,0,1
+640,2016,down,0,1
 640,2017,down,0,0
-640,2018,same,NA,NA
+640,2018,same,0,0
 640,2019,same,NA,NA
+640,2020,same,NA,NA
 645,1968,first year of independence,0,0
 645,1969,same,0,0
 645,1970,same,0,0
@@ -5906,9 +6029,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 645,1998,same,0,0
 645,1999,same,0,0
 645,2000,same,0,0
-645,2001,same,0,0
+645,2001,same,1,0
 645,2002,same,1,0
-645,2003,same,1,0
+645,2003,up,1,0
 645,2004,up,0,0
 645,2005,same,0,0
 645,2006,same,0,0
@@ -5923,12 +6046,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 645,2015,same,0,1
 645,2016,same,0,1
 645,2017,down,0,0
-645,2018,same,NA,NA
+645,2018,same,0,1
 645,2019,same,NA,NA
+645,2020,down,NA,NA
 651,1968,first year of independence,0,0
-651,1969,same,1,0
-651,1970,same,1,0
-651,1971,up,0,0
+651,1969,same,0,0
+651,1970,same,0,0
+651,1971,same,0,0
 651,1972,same,0,0
 651,1973,same,0,0
 651,1974,same,0,0
@@ -5941,9 +6065,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 651,1981,same,0,0
 651,1982,same,0,0
 651,1983,same,0,0
-651,1984,same,1,0
-651,1985,same,1,0
-651,1986,up,0,0
+651,1984,same,0,0
+651,1985,same,0,0
+651,1986,same,0,0
 651,1987,same,0,0
 651,1988,same,0,0
 651,1989,same,0,0
@@ -5955,9 +6079,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 651,1995,same,0,0
 651,1996,same,0,0
 651,1997,same,0,0
-651,1998,same,1,0
-651,1999,same,1,0
-651,2000,up,0,0
+651,1998,same,0,0
+651,1999,same,0,0
+651,2000,same,0,0
 651,2001,same,0,0
 651,2002,same,0,0
 651,2003,same,0,0
@@ -5968,15 +6092,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 651,2008,same,0,0
 651,2009,same,1,0
 651,2010,same,1,0
-651,2011,up,1,0
+651,2011,up,1,1
 651,2012,up,0,1
-651,2013,same,0,1
-651,2014,down,0,1
-651,2015,down,0,0
+651,2013,down,0,1
+651,2014,down,0,0
+651,2015,same,0,0
 651,2016,same,0,0
 651,2017,same,0,0
-651,2018,same,NA,NA
+651,2018,same,0,0
 651,2019,same,NA,NA
+651,2020,same,NA,NA
 652,1968,first year of independence,0,1
 652,1969,same,0,1
 652,1970,down,0,0
@@ -6027,17 +6152,18 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 652,2015,same,0,0
 652,2016,same,0,0
 652,2017,same,0,0
-652,2018,same,NA,NA
+652,2018,same,0,0
 652,2019,same,NA,NA
+652,2020,same,NA,NA
 660,1968,first year of independence,0,0
 660,1969,same,0,0
 660,1970,same,0,0
 660,1971,same,0,0
 660,1972,same,0,0
 660,1973,same,0,0
-660,1974,same,0,1
-660,1975,same,0,1
-660,1976,down,0,0
+660,1974,same,0,0
+660,1975,same,0,0
+660,1976,same,0,0
 660,1977,same,0,0
 660,1978,same,0,0
 660,1979,same,0,0
@@ -6079,8 +6205,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 660,2015,same,0,0
 660,2016,same,0,0
 660,2017,same,0,0
-660,2018,same,NA,NA
+660,2018,same,0,0
 660,2019,same,NA,NA
+660,2020,same,NA,NA
 663,1968,first year of independence,0,0
 663,1969,same,0,0
 663,1970,same,0,0
@@ -6108,9 +6235,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 663,1992,same,0,0
 663,1993,same,0,0
 663,1994,same,0,0
-663,1995,same,0,1
-663,1996,same,0,1
-663,1997,down,0,0
+663,1995,same,0,0
+663,1996,same,0,0
+663,1997,same,0,0
 663,1998,same,0,0
 663,1999,same,0,0
 663,2000,same,0,0
@@ -6122,17 +6249,18 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 663,2006,same,0,0
 663,2007,same,0,0
 663,2008,same,0,0
-663,2009,same,1,0
-663,2010,same,1,0
-663,2011,up,0,0
+663,2009,same,0,0
+663,2010,same,0,0
+663,2011,same,0,0
 663,2012,same,0,0
 663,2013,same,0,0
-663,2014,same,1,0
-663,2015,same,1,0
-663,2016,up,0,0
+663,2014,same,0,0
+663,2015,same,0,0
+663,2016,same,0,0
 663,2017,same,0,0
-663,2018,same,NA,NA
+663,2018,same,0,0
 663,2019,same,NA,NA
+663,2020,same,NA,NA
 666,1968,first year of independence,0,0
 666,1969,same,0,0
 666,1970,same,0,0
@@ -6182,9 +6310,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 666,2014,same,0,0
 666,2015,same,0,0
 666,2016,same,0,0
-666,2017,same,1,0
-666,2018,same,NA,NA
-666,2019,up,NA,NA
+666,2017,same,0,0
+666,2018,same,0,0
+666,2019,same,NA,NA
+666,2020,same,NA,NA
 670,1968,first year of independence,0,0
 670,1969,same,0,0
 670,1970,same,0,0
@@ -6235,8 +6364,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 670,2015,same,0,0
 670,2016,same,0,0
 670,2017,same,0,0
-670,2018,same,NA,NA
+670,2018,same,0,0
 670,2019,same,NA,NA
+670,2020,same,NA,NA
 678,1968,first year of independence,0,0
 678,1969,same,0,0
 678,1970,same,0,0
@@ -6257,14 +6387,14 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 678,1985,same,0,0
 678,1986,same,0,0
 678,1987,same,0,0
-678,1988,same,0,0
+678,1988,same,1,0
 678,1989,same,1,0
-678,1990,same,1,0
+678,1990,up,1,0
 678,1991,up,0,0
 678,1992,same,0,0
-678,1993,same,1,0
-678,1994,same,1,0
-678,1995,up,0,0
+678,1993,same,0,0
+678,1994,same,0,0
+678,1995,same,0,0
 678,1996,same,0,0
 678,1997,same,0,0
 678,1998,same,0,0
@@ -6278,17 +6408,18 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 678,2006,same,0,0
 678,2007,same,0,0
 678,2008,same,0,0
-678,2009,same,0,0
-678,2010,same,0,0
-678,2011,same,1,0
-678,2012,same,1,1
-678,2013,up,0,1
+678,2009,same,1,0
+678,2010,same,1,0
+678,2011,up,1,0
+678,2012,up,0,1
+678,2013,same,0,1
 678,2014,down,0,1
 678,2015,down,0,0
 678,2016,same,0,0
 678,2017,same,1,0
-678,2018,same,NA,NA
+678,2018,same,1,1
 678,2019,up,NA,NA
+678,2020,down,NA,NA
 680,1968,first year of independence,0,0
 680,1969,same,0,0
 680,1970,same,0,0
@@ -6354,16 +6485,17 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 690,2007,same,0,0
 690,2008,same,0,0
 690,2009,same,0,0
-690,2010,same,0,1
-690,2011,same,0,1
-690,2012,down,0,0
+690,2010,same,0,0
+690,2011,same,0,0
+690,2012,same,0,0
 690,2013,same,0,0
 690,2014,same,0,0
-690,2015,same,1,0
-690,2016,same,1,1
-690,2017,up,0,1
-690,2018,down,NA,NA
+690,2015,same,0,0
+690,2016,same,0,0
+690,2017,same,0,0
+690,2018,same,0,0
 690,2019,same,NA,NA
+690,2020,same,NA,NA
 694,1971,first year of independence,0,0
 694,1972,same,0,0
 694,1973,same,0,0
@@ -6411,8 +6543,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 694,2015,same,0,0
 694,2016,same,0,0
 694,2017,same,0,0
-694,2018,same,NA,NA
+694,2018,same,0,0
 694,2019,same,NA,NA
+694,2020,same,NA,NA
 696,1971,first year of independence,0,0
 696,1972,same,0,0
 696,1973,same,0,0
@@ -6444,9 +6577,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 696,1999,same,0,0
 696,2000,same,0,0
 696,2001,same,0,0
-696,2002,same,0,1
-696,2003,same,0,1
-696,2004,down,0,0
+696,2002,same,0,0
+696,2003,same,0,0
+696,2004,same,0,0
 696,2005,same,0,0
 696,2006,same,0,0
 696,2007,same,0,0
@@ -6460,8 +6593,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 696,2015,same,0,0
 696,2016,same,0,0
 696,2017,same,0,0
-696,2018,same,NA,NA
+696,2018,same,0,0
 696,2019,same,NA,NA
+696,2020,same,NA,NA
 698,1968,first year of independence,0,0
 698,1969,same,0,0
 698,1970,same,0,0
@@ -6503,17 +6637,18 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 698,2006,same,0,0
 698,2007,same,0,0
 698,2008,same,0,0
-698,2009,same,1,0
-698,2010,same,1,0
-698,2011,up,0,0
+698,2009,same,0,0
+698,2010,same,0,0
+698,2011,same,0,0
 698,2012,same,0,0
 698,2013,same,0,0
 698,2014,same,0,0
 698,2015,same,0,0
 698,2016,same,0,0
 698,2017,same,0,0
-698,2018,same,NA,NA
+698,2018,same,0,0
 698,2019,same,NA,NA
+698,2020,same,NA,NA
 700,1968,first year of independence,0,0
 700,1969,same,0,0
 700,1970,same,0,0
@@ -6548,8 +6683,8 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 700,1999,same,0,0
 700,2000,same,1,0
 700,2001,same,1,0
-700,2002,up,0,0
-700,2003,same,0,0
+700,2002,up,1,0
+700,2003,up,0,0
 700,2004,same,0,0
 700,2005,same,0,0
 700,2006,same,0,0
@@ -6560,14 +6695,15 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 700,2011,same,0,0
 700,2012,same,0,0
 700,2013,same,0,0
-700,2014,same,0,0
-700,2015,same,1,0
-700,2016,same,1,0
+700,2014,same,0,1
+700,2015,same,1,1
+700,2016,down,1,0
 700,2017,up,0,0
-700,2018,same,NA,NA
+700,2018,same,1,0
 700,2019,same,NA,NA
-701,1991,first year of independence,0,0
-701,1992,same,0,0
+700,2020,up,NA,NA
+701,1991,first year of independence,0,1
+701,1992,down,0,0
 701,1993,same,0,0
 701,1994,same,0,0
 701,1995,same,0,0
@@ -6593,8 +6729,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 701,2015,same,0,0
 701,2016,same,0,0
 701,2017,same,0,0
-701,2018,same,NA,NA
+701,2018,same,0,0
 701,2019,same,NA,NA
+701,2020,same,NA,NA
 702,1991,first year of independence,0,1
 702,1992,down,0,1
 702,1993,down,0,0
@@ -6603,13 +6740,13 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 702,1996,same,1,0
 702,1997,same,1,0
 702,1998,up,1,0
-702,1999,up,1,0
-702,2000,same,1,0
+702,1999,same,1,0
+702,2000,up,1,0
 702,2001,up,0,0
 702,2002,same,0,0
-702,2003,same,0,1
-702,2004,same,0,1
-702,2005,down,0,0
+702,2003,same,0,0
+702,2004,same,0,0
+702,2005,same,0,0
 702,2006,same,0,0
 702,2007,same,0,0
 702,2008,same,0,0
@@ -6622,8 +6759,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 702,2015,same,0,0
 702,2016,same,0,0
 702,2017,same,0,0
-702,2018,same,NA,NA
+702,2018,same,0,0
 702,2019,same,NA,NA
+702,2020,same,NA,NA
 703,1991,first year of independence,1,0
 703,1992,up,0,1
 703,1993,same,0,1
@@ -6636,25 +6774,26 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 703,2000,down,0,0
 703,2001,same,0,0
 703,2002,same,0,0
-703,2003,same,0,0
+703,2003,same,1,0
 703,2004,same,1,0
-703,2005,same,1,0
-703,2006,up,0,0
+703,2005,up,0,0
+703,2006,same,0,0
 703,2007,same,0,0
 703,2008,same,1,0
 703,2009,same,1,0
 703,2010,up,1,0
 703,2011,up,0,1
 703,2012,same,0,1
-703,2013,down,1,0
-703,2014,same,1,0
-703,2015,up,0,0
+703,2013,down,0,0
+703,2014,same,0,0
+703,2015,same,0,0
 703,2016,same,0,0
 703,2017,same,0,1
-703,2018,same,NA,NA
+703,2018,same,0,1
 703,2019,down,NA,NA
-704,1991,first year of independence,0,1
-704,1992,down,0,0
+703,2020,same,NA,NA
+704,1991,first year of independence,0,0
+704,1992,same,0,0
 704,1993,same,0,0
 704,1994,same,0,0
 704,1995,same,0,0
@@ -6679,9 +6818,10 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 704,2014,same,0,0
 704,2015,same,1,0
 704,2016,same,1,0
-704,2017,up,0,0
-704,2018,same,NA,NA
-704,2019,same,NA,NA
+704,2017,up,1,0
+704,2018,same,1,0
+704,2019,up,NA,NA
+704,2020,same,NA,NA
 705,1991,first year of independence,0,0
 705,1992,same,0,0
 705,1993,same,0,1
@@ -6706,11 +6846,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 705,2012,same,0,0
 705,2013,same,0,0
 705,2014,same,0,0
-705,2015,same,0,1
-705,2016,same,0,1
-705,2017,down,0,0
-705,2018,same,NA,NA
+705,2015,same,0,0
+705,2016,same,0,0
+705,2017,same,0,0
+705,2018,same,0,0
 705,2019,same,NA,NA
+705,2020,same,NA,NA
 710,1968,first year of independence,0,0
 710,1969,same,0,0
 710,1970,same,0,0
@@ -6731,9 +6872,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 710,1985,same,0,0
 710,1986,same,0,0
 710,1987,same,0,0
-710,1988,same,0,1
-710,1989,same,0,1
-710,1990,down,0,0
+710,1988,same,0,0
+710,1989,same,0,0
+710,1990,same,0,0
 710,1991,same,0,0
 710,1992,same,0,0
 710,1993,same,0,0
@@ -6761,8 +6902,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 710,2015,same,0,0
 710,2016,same,0,0
 710,2017,same,0,0
-710,2018,same,NA,NA
+710,2018,same,0,0
 710,2019,same,NA,NA
+710,2020,same,NA,NA
 712,1968,first year of independence,0,0
 712,1969,same,0,0
 712,1970,same,0,0
@@ -6793,9 +6935,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 712,1995,same,0,0
 712,1996,same,0,0
 712,1997,same,0,0
-712,1998,same,0,1
-712,1999,same,0,1
-712,2000,down,0,0
+712,1998,same,0,0
+712,1999,same,0,0
+712,2000,same,0,0
 712,2001,same,0,0
 712,2002,same,0,0
 712,2003,same,0,0
@@ -6813,8 +6955,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 712,2015,same,0,0
 712,2016,same,0,0
 712,2017,same,0,0
-712,2018,same,NA,NA
+712,2018,same,0,0
 712,2019,same,NA,NA
+712,2020,same,NA,NA
 713,1968,first year of independence,0,0
 713,1969,same,0,0
 713,1970,same,0,0
@@ -6836,11 +6979,11 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 713,1986,same,1,0
 713,1987,up,1,0
 713,1988,up,1,0
-713,1989,up,0,0
-713,1990,same,0,0
-713,1991,same,1,0
-713,1992,same,1,0
-713,1993,up,0,0
+713,1989,up,1,0
+713,1990,up,0,0
+713,1991,same,0,0
+713,1992,same,0,0
+713,1993,same,0,0
 713,1994,same,0,0
 713,1995,same,0,0
 713,1996,same,0,0
@@ -6865,8 +7008,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 713,2015,same,0,0
 713,2016,same,0,0
 713,2017,same,0,0
-713,2018,same,NA,NA
+713,2018,same,0,0
 713,2019,same,NA,NA
+713,2020,same,NA,NA
 731,1968,first year of independence,0,0
 731,1969,same,0,0
 731,1970,same,0,0
@@ -6917,8 +7061,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 731,2015,same,0,0
 731,2016,same,0,0
 731,2017,same,0,0
-731,2018,same,NA,NA
+731,2018,same,0,0
 731,2019,same,NA,NA
+731,2020,same,NA,NA
 732,1968,first year of independence,0,0
 732,1969,same,0,0
 732,1970,same,0,1
@@ -6933,18 +7078,18 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 732,1979,same,1,1
 732,1980,up,0,1
 732,1981,down,0,0
-732,1982,same,0,0
-732,1983,same,0,0
-732,1984,same,0,0
+732,1982,same,1,0
+732,1983,same,1,0
+732,1984,up,0,0
 732,1985,same,1,0
 732,1986,same,1,0
 732,1987,up,1,0
 732,1988,up,0,0
 732,1989,same,0,0
 732,1990,same,0,0
-732,1991,same,0,0
-732,1992,same,0,0
-732,1993,same,0,0
+732,1991,same,1,0
+732,1992,same,1,0
+732,1993,up,0,0
 732,1994,same,0,0
 732,1995,same,0,0
 732,1996,same,0,0
@@ -6962,15 +7107,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 732,2008,down,0,0
 732,2009,same,0,0
 732,2010,same,0,0
-732,2011,same,0,1
-732,2012,same,0,1
-732,2013,down,0,0
+732,2011,same,0,0
+732,2012,same,0,0
+732,2013,same,0,0
 732,2014,same,0,0
 732,2015,same,1,0
 732,2016,same,1,0
 732,2017,up,0,0
-732,2018,same,NA,NA
+732,2018,same,0,0
 732,2019,same,NA,NA
+732,2020,same,NA,NA
 740,1968,first year of independence,0,0
 740,1969,same,0,0
 740,1970,same,0,0
@@ -7021,8 +7167,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 740,2015,same,0,0
 740,2016,same,0,0
 740,2017,same,0,0
-740,2018,same,NA,NA
+740,2018,same,0,0
 740,2019,same,NA,NA
+740,2020,same,NA,NA
 750,1968,first year of independence,0,0
 750,1969,same,0,0
 750,1970,same,0,0
@@ -7030,8 +7177,8 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 750,1972,same,0,1
 750,1973,same,0,1
 750,1974,down,0,1
-750,1975,down,1,1
-750,1976,down,1,0
+750,1975,down,1,0
+750,1976,same,1,0
 750,1977,up,1,0
 750,1978,up,0,0
 750,1979,same,0,0
@@ -7073,13 +7220,14 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 750,2015,down,0,1
 750,2016,same,0,1
 750,2017,down,0,0
-750,2018,same,NA,NA
+750,2018,same,0,0
 750,2019,same,NA,NA
+750,2020,same,NA,NA
 760,1968,first year of independence,0,0
 760,1969,same,0,0
-760,1970,same,1,0
-760,1971,same,1,0
-760,1972,up,0,0
+760,1970,same,0,0
+760,1971,same,0,0
+760,1972,same,0,0
 760,1973,same,0,0
 760,1974,same,0,0
 760,1975,same,0,0
@@ -7097,9 +7245,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 760,1987,same,0,0
 760,1988,same,0,0
 760,1989,same,0,0
-760,1990,same,1,0
-760,1991,same,1,0
-760,1992,up,0,0
+760,1990,same,0,0
+760,1991,same,0,0
+760,1992,same,0,0
 760,1993,same,0,0
 760,1994,same,0,0
 760,1995,same,0,0
@@ -7114,19 +7262,20 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 760,2004,same,1,0
 760,2005,same,1,0
 760,2006,up,1,0
-760,2007,up,1,0
+760,2007,same,1,0
 760,2008,up,0,0
 760,2009,same,0,0
 760,2010,same,0,0
 760,2011,same,0,1
 760,2012,same,0,1
 760,2013,down,0,0
-760,2014,same,0,1
-760,2015,same,0,1
-760,2016,down,0,0
+760,2014,same,0,0
+760,2015,same,0,0
+760,2016,same,0,0
 760,2017,same,0,0
-760,2018,same,NA,NA
+760,2018,same,0,0
 760,2019,same,NA,NA
+760,2020,same,NA,NA
 770,1968,first year of independence,1,0
 770,1969,same,1,1
 770,1970,up,0,1
@@ -7134,17 +7283,17 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 770,1972,same,0,0
 770,1973,same,0,0
 770,1974,same,0,0
-770,1975,same,0,1
+770,1975,same,0,0
 770,1976,same,0,1
-770,1977,down,0,1
-770,1978,down,0,1
-770,1979,down,0,0
+770,1977,same,0,1
+770,1978,down,0,0
+770,1979,same,0,0
 770,1980,same,0,0
 770,1981,same,0,0
 770,1982,same,0,0
-770,1983,same,0,0
-770,1984,same,0,0
-770,1985,same,0,0
+770,1983,same,1,0
+770,1984,same,1,0
+770,1985,up,0,0
 770,1986,same,1,0
 770,1987,same,1,0
 770,1988,up,1,0
@@ -7160,9 +7309,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 770,1998,same,1,0
 770,1999,same,1,0
 770,2000,up,0,0
-770,2001,same,1,0
-770,2002,same,1,0
-770,2003,up,0,0
+770,2001,same,0,0
+770,2002,same,0,0
+770,2003,same,0,0
 770,2004,same,0,0
 770,2005,same,0,0
 770,2006,same,0,0
@@ -7175,10 +7324,11 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 770,2013,same,0,0
 770,2014,same,0,1
 770,2015,same,0,1
-770,2016,down,0,0
-770,2017,same,0,0
-770,2018,same,NA,NA
-770,2019,same,NA,NA
+770,2016,down,0,1
+770,2017,same,0,1
+770,2018,down,0,1
+770,2019,down,NA,NA
+770,2020,same,NA,NA
 771,1971,first year of independence,1,0
 771,1972,up,0,1
 771,1973,same,0,1
@@ -7190,9 +7340,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 771,1979,same,0,0
 771,1980,same,0,1
 771,1981,same,0,1
-771,1982,down,1,0
-771,1983,same,1,0
-771,1984,up,0,0
+771,1982,down,0,0
+771,1983,same,0,0
+771,1984,same,0,0
 771,1985,same,0,0
 771,1986,same,0,0
 771,1987,same,0,0
@@ -7219,15 +7369,16 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 771,2008,same,0,0
 771,2009,same,0,0
 771,2010,same,0,0
-771,2011,same,0,0
-771,2012,same,0,0
-771,2013,same,0,0
+771,2011,same,0,1
+771,2012,same,0,1
+771,2013,down,0,0
 771,2014,same,0,0
 771,2015,same,0,0
 771,2016,same,0,0
-771,2017,same,0,0
-771,2018,same,NA,NA
-771,2019,same,NA,NA
+771,2017,same,0,1
+771,2018,same,0,1
+771,2019,down,NA,NA
+771,2020,same,NA,NA
 775,1968,first year of independence,0,0
 775,1969,same,0,0
 775,1970,same,0,0
@@ -7271,18 +7422,19 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 775,2008,same,1,0
 775,2009,same,1,0
 775,2010,up,1,0
-775,2011,same,1,0
+775,2011,up,1,0
 775,2012,up,1,0
-775,2013,up,1,0
-775,2014,up,0,0
+775,2013,up,0,0
+775,2014,same,0,0
 775,2015,same,0,0
 775,2016,same,0,0
 775,2017,same,1,0
-775,2018,same,NA,NA
+775,2018,same,1,0
 775,2019,up,NA,NA
-780,1968,first year of independence,0,0
-780,1969,same,0,0
-780,1970,same,0,0
+775,2020,same,NA,NA
+780,1968,first year of independence,0,1
+780,1969,same,0,1
+780,1970,down,0,0
 780,1971,same,0,0
 780,1972,same,0,0
 780,1973,same,0,0
@@ -7290,9 +7442,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 780,1975,same,0,0
 780,1976,same,0,0
 780,1977,same,0,0
-780,1978,same,0,0
-780,1979,same,0,0
-780,1980,same,0,0
+780,1978,same,0,1
+780,1979,same,0,1
+780,1980,down,0,0
 780,1981,same,0,0
 780,1982,same,0,0
 780,1983,same,0,0
@@ -7305,33 +7457,34 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 780,1990,same,0,0
 780,1991,same,0,0
 780,1992,same,0,0
-780,1993,same,1,0
-780,1994,same,1,0
-780,1995,up,0,0
+780,1993,same,0,0
+780,1994,same,0,0
+780,1995,same,0,0
 780,1996,same,0,0
 780,1997,same,0,0
 780,1998,same,0,0
 780,1999,same,0,0
-780,2000,same,1,0
-780,2001,same,1,0
-780,2002,up,0,0
-780,2003,same,0,0
+780,2000,same,0,0
+780,2001,same,0,0
+780,2002,same,0,0
+780,2003,same,0,1
 780,2004,same,0,1
-780,2005,same,0,1
+780,2005,down,0,1
 780,2006,down,0,0
 780,2007,same,0,0
-780,2008,same,0,0
+780,2008,same,1,0
 780,2009,same,1,0
-780,2010,same,1,0
-780,2011,up,1,0
+780,2010,up,0,0
+780,2011,same,1,0
 780,2012,same,1,0
-780,2013,up,0,0
+780,2013,up,1,0
 780,2014,same,1,0
-780,2015,same,1,1
-780,2016,up,0,1
-780,2017,down,0,1
-780,2018,same,NA,NA
+780,2015,up,0,0
+780,2016,same,0,0
+780,2017,same,0,1
+780,2018,same,0,1
 780,2019,down,NA,NA
+780,2020,same,NA,NA
 781,1968,first year of independence,0,0
 781,1969,same,0,0
 781,1970,same,0,0
@@ -7377,13 +7530,14 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 781,2010,same,0,1
 781,2011,same,0,1
 781,2012,down,0,1
-781,2013,same,0,1
-781,2014,down,0,1
+781,2013,down,0,1
+781,2014,same,0,1
 781,2015,down,0,1
 781,2016,down,0,0
 781,2017,same,1,0
-781,2018,same,NA,NA
+781,2018,same,1,0
 781,2019,up,NA,NA
+781,2020,same,NA,NA
 790,1968,first year of independence,0,0
 790,1969,same,0,0
 790,1970,same,0,0
@@ -7434,17 +7588,18 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 790,2015,same,0,0
 790,2016,same,0,0
 790,2017,same,0,1
-790,2018,same,NA,NA
+790,2018,same,0,1
 790,2019,down,NA,NA
+790,2020,same,NA,NA
 800,1968,first year of independence,0,0
 800,1969,same,0,0
 800,1970,same,0,0
 800,1971,same,0,0
 800,1972,same,1,0
 800,1973,same,1,0
-800,1974,up,0,1
-800,1975,same,0,1
-800,1976,down,0,0
+800,1974,up,0,0
+800,1975,same,0,0
+800,1976,same,0,0
 800,1977,same,0,0
 800,1978,same,1,0
 800,1979,same,1,0
@@ -7466,9 +7621,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 800,1995,same,0,0
 800,1996,same,0,0
 800,1997,same,0,0
-800,1998,same,0,1
-800,1999,same,0,1
-800,2000,down,0,0
+800,1998,same,0,0
+800,1999,same,0,0
+800,2000,same,0,0
 800,2001,same,0,0
 800,2002,same,0,0
 800,2003,same,0,0
@@ -7486,11 +7641,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 800,2015,same,0,0
 800,2016,same,1,0
 800,2017,same,1,0
-800,2018,up,NA,NA
+800,2018,up,1,0
 800,2019,up,NA,NA
-811,1968,first year of independence,1,0
-811,1969,same,1,0
-811,1970,up,0,0
+800,2020,same,NA,NA
+811,1968,first year of independence,0,0
+811,1969,same,0,0
+811,1970,same,0,0
 811,1971,same,0,0
 811,1972,same,0,0
 811,1973,same,0,1
@@ -7538,8 +7694,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 811,2015,same,0,1
 811,2016,same,0,1
 811,2017,down,0,0
-811,2018,same,NA,NA
+811,2018,same,0,0
 811,2019,same,NA,NA
+811,2020,same,NA,NA
 812,1968,first year of independence,0,0
 812,1969,same,0,0
 812,1970,same,0,0
@@ -7590,8 +7747,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 812,2015,same,0,0
 812,2016,same,0,0
 812,2017,same,0,0
-812,2018,same,NA,NA
+812,2018,same,0,0
 812,2019,same,NA,NA
+812,2020,same,NA,NA
 816,1968,first year of independence,0,0
 816,1969,same,0,0
 816,1970,same,0,0
@@ -7642,8 +7800,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 816,2015,same,0,0
 816,2016,same,0,0
 816,2017,same,0,0
-816,2018,same,NA,NA
+816,2018,same,0,0
 816,2019,same,NA,NA
+816,2020,same,NA,NA
 817,1968,first year of independence,0,0
 817,1969,same,0,0
 817,1970,same,0,0
@@ -7702,8 +7861,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 820,2015,same,0,0
 820,2016,same,1,0
 820,2017,same,1,0
-820,2018,up,NA,NA
+820,2018,up,0,1
 820,2019,same,NA,NA
+820,2020,down,NA,NA
 830,1968,first year of independence,0,0
 830,1969,same,0,0
 830,1970,same,0,0
@@ -7724,9 +7884,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 830,1985,same,0,0
 830,1986,same,0,0
 830,1987,same,0,0
-830,1988,same,1,0
-830,1989,same,1,0
-830,1990,up,0,0
+830,1988,same,0,0
+830,1989,same,0,0
+830,1990,same,0,0
 830,1991,same,0,0
 830,1992,same,0,0
 830,1993,same,0,0
@@ -7754,8 +7914,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 830,2015,same,0,0
 830,2016,same,0,0
 830,2017,same,0,0
-830,2018,same,NA,NA
+830,2018,same,0,0
 830,2019,same,NA,NA
+830,2020,same,NA,NA
 840,1968,first year of independence,0,0
 840,1969,same,0,1
 840,1970,same,0,1
@@ -7806,8 +7967,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 840,2015,same,0,1
 840,2016,down,0,0
 840,2017,same,0,0
-840,2018,same,NA,NA
+840,2018,same,0,1
 840,2019,same,NA,NA
+840,2020,down,NA,NA
 850,1968,first year of independence,0,0
 850,1969,same,0,0
 850,1970,same,0,0
@@ -7857,11 +8019,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 850,2014,same,0,0
 850,2015,same,0,0
 850,2016,same,0,1
-850,2017,same,0,1
-850,2018,down,NA,NA
-850,2019,same,NA,NA
-860,2002,first year of independence,0,1
-860,2003,down,0,0
+850,2017,same,1,1
+850,2018,down,1,0
+850,2019,up,NA,NA
+850,2020,same,NA,NA
+860,2002,first year of independence,0,0
+860,2003,same,0,0
 860,2004,same,0,0
 860,2005,same,0,0
 860,2006,same,0,0
@@ -7876,8 +8039,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 860,2015,same,0,1
 860,2016,down,0,0
 860,2017,same,0,0
-860,2018,same,NA,NA
+860,2018,same,0,0
 860,2019,same,NA,NA
+860,2020,same,NA,NA
 900,1968,first year of independence,0,0
 900,1969,same,0,0
 900,1970,same,0,0
@@ -7928,8 +8092,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 900,2015,same,0,0
 900,2016,same,0,0
 900,2017,same,0,0
-900,2018,same,NA,NA
+900,2018,same,0,0
 900,2019,same,NA,NA
+900,2020,same,NA,NA
 910,1975,first year of independence,0,0
 910,1976,same,0,0
 910,1977,same,0,0
@@ -7973,8 +8138,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 910,2015,same,0,0
 910,2016,same,0,0
 910,2017,same,0,0
-910,2018,same,NA,NA
+910,2018,same,0,0
 910,2019,same,NA,NA
+910,2020,same,NA,NA
 920,1968,first year of independence,0,0
 920,1969,same,0,0
 920,1970,same,0,0
@@ -8025,8 +8191,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 920,2015,same,0,0
 920,2016,same,0,0
 920,2017,same,0,0
-920,2018,same,NA,NA
+920,2018,same,0,0
 920,2019,same,NA,NA
+920,2020,same,NA,NA
 940,1978,first year of independence,1,0
 940,1979,up,0,0
 940,1980,same,1,0
@@ -8067,8 +8234,9 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 940,2015,same,0,0
 940,2016,same,0,0
 940,2017,same,0,0
-940,2018,same,NA,NA
+940,2018,same,0,0
 940,2019,same,NA,NA
+940,2020,same,NA,NA
 950,1970,first year of independence,0,0
 950,1971,same,0,0
 950,1972,same,0,0
@@ -8090,18 +8258,18 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 950,1988,same,0,0
 950,1989,same,0,0
 950,1990,same,0,0
-950,1991,same,1,0
-950,1992,same,1,0
-950,1993,up,0,0
+950,1991,same,0,0
+950,1992,same,0,0
+950,1993,same,0,0
 950,1994,same,0,0
 950,1995,same,1,0
 950,1996,same,1,0
 950,1997,up,0,0
 950,1998,same,0,1
 950,1999,same,0,1
-950,2000,down,1,0
-950,2001,same,1,0
-950,2002,up,0,0
+950,2000,down,0,0
+950,2001,same,0,0
+950,2002,same,0,0
 950,2003,same,0,0
 950,2004,same,0,0
 950,2005,same,0,1
@@ -8111,11 +8279,12 @@ gwcode,year,dv_v2x_freexp_altinf_change,dv_v2x_freexp_altinf_up_next2,dv_v2x_fre
 950,2009,same,0,0
 950,2010,same,0,0
 950,2011,same,0,0
-950,2012,same,0,0
+950,2012,same,1,0
 950,2013,same,1,0
-950,2014,same,1,0
+950,2014,up,1,0
 950,2015,up,0,0
 950,2016,same,0,0
-950,2017,same,1,0
-950,2018,same,NA,NA
-950,2019,up,NA,NA
+950,2017,same,0,0
+950,2018,same,0,0
+950,2019,same,NA,NA
+950,2020,same,NA,NA

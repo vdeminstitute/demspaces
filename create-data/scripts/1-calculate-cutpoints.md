@@ -56,21 +56,21 @@ dv_semi_long <- dv %>%
 dv_semi_long
 ```
 
-    ## # A tibble: 48,720 x 5
+    ## # A tibble: 49,734 x 5
     ## # Groups:   gwcode, variable [1,044]
     ##    gwcode  year variable          value diff_y2y
     ##     <dbl> <dbl> <chr>             <dbl>    <dbl>
-    ##  1      2  1968 v2x_freexp_altinf 0.858  0      
-    ##  2      2  1969 v2x_freexp_altinf 0.886  0.028  
-    ##  3      2  1970 v2x_freexp_altinf 0.89   0.004  
-    ##  4      2  1971 v2x_freexp_altinf 0.867 -0.023  
-    ##  5      2  1972 v2x_freexp_altinf 0.884  0.017  
-    ##  6      2  1973 v2x_freexp_altinf 0.908  0.024  
-    ##  7      2  1974 v2x_freexp_altinf 0.924  0.016  
-    ##  8      2  1975 v2x_freexp_altinf 0.93   0.006  
-    ##  9      2  1976 v2x_freexp_altinf 0.938  0.00800
-    ## 10      2  1977 v2x_freexp_altinf 0.936 -0.00200
-    ## # … with 48,710 more rows
+    ##  1      2  1968 v2x_freexp_altinf 0.878   0     
+    ##  2      2  1969 v2x_freexp_altinf 0.888   0.01  
+    ##  3      2  1970 v2x_freexp_altinf 0.905   0.017 
+    ##  4      2  1971 v2x_freexp_altinf 0.883  -0.022 
+    ##  5      2  1972 v2x_freexp_altinf 0.903   0.02  
+    ##  6      2  1973 v2x_freexp_altinf 0.929   0.026 
+    ##  7      2  1974 v2x_freexp_altinf 0.939   0.0100
+    ##  8      2  1975 v2x_freexp_altinf 0.942   0.003 
+    ##  9      2  1976 v2x_freexp_altinf 0.952   0.01  
+    ## 10      2  1977 v2x_freexp_altinf 0.946  -0.006 
+    ## # … with 49,724 more rows
 
 ``` r
 # make wide again
@@ -85,21 +85,21 @@ dv_with_diffs <- dv_semi_long %>%
 dv_with_diffs
 ```
 
-    ## # A tibble: 8,120 x 14
+    ## # A tibble: 8,289 x 14
     ## # Groups:   gwcode [174]
     ##    gwcode  year v2x_freexp_alti… v2x_horacc_osp v2x_pubcorr v2x_veracc_osp
     ##     <dbl> <dbl>            <dbl>          <dbl>       <dbl>          <dbl>
-    ##  1      2  1968            0.858          0.906       0.917          0.852
-    ##  2      2  1969            0.886          0.906       0.917          0.853
-    ##  3      2  1970            0.89           0.912       0.941          0.866
-    ##  4      2  1971            0.867          0.912       0.962          0.866
-    ##  5      2  1972            0.884          0.911       0.962          0.864
-    ##  6      2  1973            0.908          0.953       0.962          0.865
-    ##  7      2  1974            0.924          0.955       0.962          0.873
-    ##  8      2  1975            0.93           0.955       0.962          0.891
-    ##  9      2  1976            0.938          0.955       0.962          0.904
-    ## 10      2  1977            0.936          0.948       0.962          0.908
-    ## # … with 8,110 more rows, and 8 more variables: v2xcl_rol <dbl>,
+    ##  1      2  1968            0.878          0.907       0.95           0.852
+    ##  2      2  1969            0.888          0.911       0.95           0.851
+    ##  3      2  1970            0.905          0.918       0.959          0.865
+    ##  4      2  1971            0.883          0.919       0.946          0.867
+    ##  5      2  1972            0.903          0.92        0.946          0.866
+    ##  6      2  1973            0.929          0.957       0.946          0.866
+    ##  7      2  1974            0.939          0.959       0.946          0.871
+    ##  8      2  1975            0.942          0.96        0.946          0.89 
+    ##  9      2  1976            0.952          0.959       0.946          0.904
+    ## 10      2  1977            0.946          0.951       0.946          0.907
+    ## # … with 8,279 more rows, and 8 more variables: v2xcl_rol <dbl>,
     ## #   v2xcs_ccsi <dbl>, v2x_freexp_altinf_diff_y2y <dbl>,
     ## #   v2x_horacc_osp_diff_y2y <dbl>, v2x_pubcorr_diff_y2y <dbl>,
     ## #   v2x_veracc_osp_diff_y2y <dbl>, v2xcl_rol_diff_y2y <dbl>,
@@ -144,7 +144,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 x 4
     ##   indicator         all    up  down
     ##   <chr>           <dbl> <dbl> <dbl>
-    ## 1 v2x_veracc_osp 0.0831  0.08  0.08
+    ## 1 v2x_veracc_osp 0.0815  0.08  0.08
     ## 
     ## 
     ##  v2xcs_ccsi 
@@ -152,7 +152,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 x 4
     ##   indicator     all    up  down
     ##   <chr>       <dbl> <dbl> <dbl>
-    ## 1 v2xcs_ccsi 0.0565  0.05  0.05
+    ## 1 v2xcs_ccsi 0.0554  0.05  0.05
     ## 
     ## 
     ##  v2xcl_rol 
@@ -160,7 +160,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 x 4
     ##   indicator    all    up  down
     ##   <chr>      <dbl> <dbl> <dbl>
-    ## 1 v2xcl_rol 0.0451  0.04  0.04
+    ## 1 v2xcl_rol 0.0432  0.04  0.04
     ## 
     ## 
     ##  v2x_freexp_altinf 
@@ -168,7 +168,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 x 4
     ##   indicator            all    up  down
     ##   <chr>              <dbl> <dbl> <dbl>
-    ## 1 v2x_freexp_altinf 0.0566  0.05  0.05
+    ## 1 v2x_freexp_altinf 0.0550  0.05  0.05
     ## 
     ## 
     ##  v2x_horacc_osp 
@@ -176,7 +176,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 x 4
     ##   indicator         all    up  down
     ##   <chr>           <dbl> <dbl> <dbl>
-    ## 1 v2x_horacc_osp 0.0605  0.06  0.06
+    ## 1 v2x_horacc_osp 0.0595  0.06  0.06
     ## 
     ## 
     ##  v2x_pubcorr 
@@ -184,7 +184,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 x 4
     ##   indicator      all    up  down
     ##   <chr>        <dbl> <dbl> <dbl>
-    ## 1 v2x_pubcorr 0.0400  0.03  0.03
+    ## 1 v2x_pubcorr 0.0405  0.03  0.03
 
 ``` r
 cp <- bind_rows(cp)

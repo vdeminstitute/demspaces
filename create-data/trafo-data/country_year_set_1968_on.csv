@@ -51,6 +51,7 @@ gwcode,year,country_name,country_id,country_text_id
 2,2017,United States of America,20,USA
 2,2018,United States of America,20,USA
 2,2019,United States of America,20,USA
+2,2020,United States of America,20,USA
 20,1968,Canada,66,CAN
 20,1969,Canada,66,CAN
 20,1970,Canada,66,CAN
@@ -103,6 +104,7 @@ gwcode,year,country_name,country_id,country_text_id
 20,2017,Canada,66,CAN
 20,2018,Canada,66,CAN
 20,2019,Canada,66,CAN
+20,2020,Canada,66,CAN
 40,1968,Cuba,155,CUB
 40,1969,Cuba,155,CUB
 40,1970,Cuba,155,CUB
@@ -155,6 +157,7 @@ gwcode,year,country_name,country_id,country_text_id
 40,2017,Cuba,155,CUB
 40,2018,Cuba,155,CUB
 40,2019,Cuba,155,CUB
+40,2020,Cuba,155,CUB
 41,1968,Haiti,26,HTI
 41,1969,Haiti,26,HTI
 41,1970,Haiti,26,HTI
@@ -207,6 +210,7 @@ gwcode,year,country_name,country_id,country_text_id
 41,2017,Haiti,26,HTI
 41,2018,Haiti,26,HTI
 41,2019,Haiti,26,HTI
+41,2020,Haiti,26,HTI
 42,1968,Dominican Republic,114,DOM
 42,1969,Dominican Republic,114,DOM
 42,1970,Dominican Republic,114,DOM
@@ -259,6 +263,7 @@ gwcode,year,country_name,country_id,country_text_id
 42,2017,Dominican Republic,114,DOM
 42,2018,Dominican Republic,114,DOM
 42,2019,Dominican Republic,114,DOM
+42,2020,Dominican Republic,114,DOM
 51,1968,Jamaica,120,JAM
 51,1969,Jamaica,120,JAM
 51,1970,Jamaica,120,JAM
@@ -311,6 +316,7 @@ gwcode,year,country_name,country_id,country_text_id
 51,2017,Jamaica,120,JAM
 51,2018,Jamaica,120,JAM
 51,2019,Jamaica,120,JAM
+51,2020,Jamaica,120,JAM
 52,1968,Trinidad and Tobago,135,TTO
 52,1969,Trinidad and Tobago,135,TTO
 52,1970,Trinidad and Tobago,135,TTO
@@ -363,6 +369,7 @@ gwcode,year,country_name,country_id,country_text_id
 52,2017,Trinidad and Tobago,135,TTO
 52,2018,Trinidad and Tobago,135,TTO
 52,2019,Trinidad and Tobago,135,TTO
+52,2020,Trinidad and Tobago,135,TTO
 53,1968,Barbados,147,BRB
 53,1969,Barbados,147,BRB
 53,1970,Barbados,147,BRB
@@ -415,6 +422,7 @@ gwcode,year,country_name,country_id,country_text_id
 53,2017,Barbados,147,BRB
 53,2018,Barbados,147,BRB
 53,2019,Barbados,147,BRB
+53,2020,Barbados,147,BRB
 70,1968,Mexico,3,MEX
 70,1969,Mexico,3,MEX
 70,1970,Mexico,3,MEX
@@ -467,6 +475,7 @@ gwcode,year,country_name,country_id,country_text_id
 70,2017,Mexico,3,MEX
 70,2018,Mexico,3,MEX
 70,2019,Mexico,3,MEX
+70,2020,Mexico,3,MEX
 90,1968,Guatemala,78,GTM
 90,1969,Guatemala,78,GTM
 90,1970,Guatemala,78,GTM
@@ -519,6 +528,7 @@ gwcode,year,country_name,country_id,country_text_id
 90,2017,Guatemala,78,GTM
 90,2018,Guatemala,78,GTM
 90,2019,Guatemala,78,GTM
+90,2020,Guatemala,78,GTM
 91,1968,Honduras,27,HND
 91,1969,Honduras,27,HND
 91,1970,Honduras,27,HND
@@ -571,6 +581,7 @@ gwcode,year,country_name,country_id,country_text_id
 91,2017,Honduras,27,HND
 91,2018,Honduras,27,HND
 91,2019,Honduras,27,HND
+91,2020,Honduras,27,HND
 92,1968,El Salvador,22,SLV
 92,1969,El Salvador,22,SLV
 92,1970,El Salvador,22,SLV
@@ -623,6 +634,7 @@ gwcode,year,country_name,country_id,country_text_id
 92,2017,El Salvador,22,SLV
 92,2018,El Salvador,22,SLV
 92,2019,El Salvador,22,SLV
+92,2020,El Salvador,22,SLV
 93,1968,Nicaragua,59,NIC
 93,1969,Nicaragua,59,NIC
 93,1970,Nicaragua,59,NIC
@@ -675,6 +687,7 @@ gwcode,year,country_name,country_id,country_text_id
 93,2017,Nicaragua,59,NIC
 93,2018,Nicaragua,59,NIC
 93,2019,Nicaragua,59,NIC
+93,2020,Nicaragua,59,NIC
 94,1968,Costa Rica,73,CRI
 94,1969,Costa Rica,73,CRI
 94,1970,Costa Rica,73,CRI
@@ -727,6 +740,7 @@ gwcode,year,country_name,country_id,country_text_id
 94,2017,Costa Rica,73,CRI
 94,2018,Costa Rica,73,CRI
 94,2019,Costa Rica,73,CRI
+94,2020,Costa Rica,73,CRI
 95,1968,Panama,92,PAN
 95,1969,Panama,92,PAN
 95,1970,Panama,92,PAN
@@ -779,6 +793,7 @@ gwcode,year,country_name,country_id,country_text_id
 95,2017,Panama,92,PAN
 95,2018,Panama,92,PAN
 95,2019,Panama,92,PAN
+95,2020,Panama,92,PAN
 100,1968,Colombia,15,COL
 100,1969,Colombia,15,COL
 100,1970,Colombia,15,COL
@@ -831,6 +846,7 @@ gwcode,year,country_name,country_id,country_text_id
 100,2017,Colombia,15,COL
 100,2018,Colombia,15,COL
 100,2019,Colombia,15,COL
+100,2020,Colombia,15,COL
 101,1968,Venezuela,51,VEN
 101,1969,Venezuela,51,VEN
 101,1970,Venezuela,51,VEN
@@ -883,6 +899,7 @@ gwcode,year,country_name,country_id,country_text_id
 101,2017,Venezuela,51,VEN
 101,2018,Venezuela,51,VEN
 101,2019,Venezuela,51,VEN
+101,2020,Venezuela,51,VEN
 110,1968,Guyana,166,GUY
 110,1969,Guyana,166,GUY
 110,1970,Guyana,166,GUY
@@ -935,6 +952,7 @@ gwcode,year,country_name,country_id,country_text_id
 110,2017,Guyana,166,GUY
 110,2018,Guyana,166,GUY
 110,2019,Guyana,166,GUY
+110,2020,Guyana,166,GUY
 115,1975,Suriname,4,SUR
 115,1976,Suriname,4,SUR
 115,1977,Suriname,4,SUR
@@ -980,6 +998,7 @@ gwcode,year,country_name,country_id,country_text_id
 115,2017,Suriname,4,SUR
 115,2018,Suriname,4,SUR
 115,2019,Suriname,4,SUR
+115,2020,Suriname,4,SUR
 130,1968,Ecuador,75,ECU
 130,1969,Ecuador,75,ECU
 130,1970,Ecuador,75,ECU
@@ -1032,6 +1051,7 @@ gwcode,year,country_name,country_id,country_text_id
 130,2017,Ecuador,75,ECU
 130,2018,Ecuador,75,ECU
 130,2019,Ecuador,75,ECU
+130,2020,Ecuador,75,ECU
 135,1968,Peru,30,PER
 135,1969,Peru,30,PER
 135,1970,Peru,30,PER
@@ -1084,6 +1104,7 @@ gwcode,year,country_name,country_id,country_text_id
 135,2017,Peru,30,PER
 135,2018,Peru,30,PER
 135,2019,Peru,30,PER
+135,2020,Peru,30,PER
 140,1968,Brazil,19,BRA
 140,1969,Brazil,19,BRA
 140,1970,Brazil,19,BRA
@@ -1136,6 +1157,7 @@ gwcode,year,country_name,country_id,country_text_id
 140,2017,Brazil,19,BRA
 140,2018,Brazil,19,BRA
 140,2019,Brazil,19,BRA
+140,2020,Brazil,19,BRA
 145,1968,Bolivia,25,BOL
 145,1969,Bolivia,25,BOL
 145,1970,Bolivia,25,BOL
@@ -1188,6 +1210,7 @@ gwcode,year,country_name,country_id,country_text_id
 145,2017,Bolivia,25,BOL
 145,2018,Bolivia,25,BOL
 145,2019,Bolivia,25,BOL
+145,2020,Bolivia,25,BOL
 150,1968,Paraguay,189,PRY
 150,1969,Paraguay,189,PRY
 150,1970,Paraguay,189,PRY
@@ -1240,6 +1263,7 @@ gwcode,year,country_name,country_id,country_text_id
 150,2017,Paraguay,189,PRY
 150,2018,Paraguay,189,PRY
 150,2019,Paraguay,189,PRY
+150,2020,Paraguay,189,PRY
 155,1968,Chile,72,CHL
 155,1969,Chile,72,CHL
 155,1970,Chile,72,CHL
@@ -1292,6 +1316,7 @@ gwcode,year,country_name,country_id,country_text_id
 155,2017,Chile,72,CHL
 155,2018,Chile,72,CHL
 155,2019,Chile,72,CHL
+155,2020,Chile,72,CHL
 160,1968,Argentina,37,ARG
 160,1969,Argentina,37,ARG
 160,1970,Argentina,37,ARG
@@ -1344,6 +1369,7 @@ gwcode,year,country_name,country_id,country_text_id
 160,2017,Argentina,37,ARG
 160,2018,Argentina,37,ARG
 160,2019,Argentina,37,ARG
+160,2020,Argentina,37,ARG
 165,1968,Uruguay,102,URY
 165,1969,Uruguay,102,URY
 165,1970,Uruguay,102,URY
@@ -1396,6 +1422,7 @@ gwcode,year,country_name,country_id,country_text_id
 165,2017,Uruguay,102,URY
 165,2018,Uruguay,102,URY
 165,2019,Uruguay,102,URY
+165,2020,Uruguay,102,URY
 200,1968,United Kingdom,101,GBR
 200,1969,United Kingdom,101,GBR
 200,1970,United Kingdom,101,GBR
@@ -1448,6 +1475,7 @@ gwcode,year,country_name,country_id,country_text_id
 200,2017,United Kingdom,101,GBR
 200,2018,United Kingdom,101,GBR
 200,2019,United Kingdom,101,GBR
+200,2020,United Kingdom,101,GBR
 205,1968,Ireland,81,IRL
 205,1969,Ireland,81,IRL
 205,1970,Ireland,81,IRL
@@ -1500,6 +1528,7 @@ gwcode,year,country_name,country_id,country_text_id
 205,2017,Ireland,81,IRL
 205,2018,Ireland,81,IRL
 205,2019,Ireland,81,IRL
+205,2020,Ireland,81,IRL
 210,1968,Netherlands,91,NLD
 210,1969,Netherlands,91,NLD
 210,1970,Netherlands,91,NLD
@@ -1552,6 +1581,7 @@ gwcode,year,country_name,country_id,country_text_id
 210,2017,Netherlands,91,NLD
 210,2018,Netherlands,91,NLD
 210,2019,Netherlands,91,NLD
+210,2020,Netherlands,91,NLD
 211,1968,Belgium,148,BEL
 211,1969,Belgium,148,BEL
 211,1970,Belgium,148,BEL
@@ -1604,6 +1634,7 @@ gwcode,year,country_name,country_id,country_text_id
 211,2017,Belgium,148,BEL
 211,2018,Belgium,148,BEL
 211,2019,Belgium,148,BEL
+211,2020,Belgium,148,BEL
 212,1968,Luxembourg,174,LUX
 212,1969,Luxembourg,174,LUX
 212,1970,Luxembourg,174,LUX
@@ -1656,6 +1687,7 @@ gwcode,year,country_name,country_id,country_text_id
 212,2017,Luxembourg,174,LUX
 212,2018,Luxembourg,174,LUX
 212,2019,Luxembourg,174,LUX
+212,2020,Luxembourg,174,LUX
 220,1968,France,76,FRA
 220,1969,France,76,FRA
 220,1970,France,76,FRA
@@ -1708,6 +1740,7 @@ gwcode,year,country_name,country_id,country_text_id
 220,2017,France,76,FRA
 220,2018,France,76,FRA
 220,2019,France,76,FRA
+220,2020,France,76,FRA
 225,1968,Switzerland,6,CHE
 225,1969,Switzerland,6,CHE
 225,1970,Switzerland,6,CHE
@@ -1760,6 +1793,7 @@ gwcode,year,country_name,country_id,country_text_id
 225,2017,Switzerland,6,CHE
 225,2018,Switzerland,6,CHE
 225,2019,Switzerland,6,CHE
+225,2020,Switzerland,6,CHE
 230,1968,Spain,96,ESP
 230,1969,Spain,96,ESP
 230,1970,Spain,96,ESP
@@ -1812,6 +1846,7 @@ gwcode,year,country_name,country_id,country_text_id
 230,2017,Spain,96,ESP
 230,2018,Spain,96,ESP
 230,2019,Spain,96,ESP
+230,2020,Spain,96,ESP
 235,1968,Portugal,21,PRT
 235,1969,Portugal,21,PRT
 235,1970,Portugal,21,PRT
@@ -1864,6 +1899,7 @@ gwcode,year,country_name,country_id,country_text_id
 235,2017,Portugal,21,PRT
 235,2018,Portugal,21,PRT
 235,2019,Portugal,21,PRT
+235,2020,Portugal,21,PRT
 260,1968,Germany,77,DEU
 260,1969,Germany,77,DEU
 260,1970,Germany,77,DEU
@@ -1916,6 +1952,7 @@ gwcode,year,country_name,country_id,country_text_id
 260,2017,Germany,77,DEU
 260,2018,Germany,77,DEU
 260,2019,Germany,77,DEU
+260,2020,Germany,77,DEU
 265,1968,German Democratic Republic,137,DDR
 265,1969,German Democratic Republic,137,DDR
 265,1970,German Democratic Republic,137,DDR
@@ -1991,6 +2028,7 @@ gwcode,year,country_name,country_id,country_text_id
 290,2017,Poland,17,POL
 290,2018,Poland,17,POL
 290,2019,Poland,17,POL
+290,2020,Poland,17,POL
 305,1968,Austria,144,AUT
 305,1969,Austria,144,AUT
 305,1970,Austria,144,AUT
@@ -2043,6 +2081,7 @@ gwcode,year,country_name,country_id,country_text_id
 305,2017,Austria,144,AUT
 305,2018,Austria,144,AUT
 305,2019,Austria,144,AUT
+305,2020,Austria,144,AUT
 310,1968,Hungary,210,HUN
 310,1969,Hungary,210,HUN
 310,1970,Hungary,210,HUN
@@ -2095,6 +2134,7 @@ gwcode,year,country_name,country_id,country_text_id
 310,2017,Hungary,210,HUN
 310,2018,Hungary,210,HUN
 310,2019,Hungary,210,HUN
+310,2020,Hungary,210,HUN
 315,1968,Czech Republic,157,CZE
 315,1969,Czech Republic,157,CZE
 315,1970,Czech Republic,157,CZE
@@ -2147,6 +2187,7 @@ gwcode,year,country_name,country_id,country_text_id
 316,2017,Czech Republic,157,CZE
 316,2018,Czech Republic,157,CZE
 316,2019,Czech Republic,157,CZE
+316,2020,Czech Republic,157,CZE
 317,1993,Slovakia,201,SVK
 317,1994,Slovakia,201,SVK
 317,1995,Slovakia,201,SVK
@@ -2174,6 +2215,7 @@ gwcode,year,country_name,country_id,country_text_id
 317,2017,Slovakia,201,SVK
 317,2018,Slovakia,201,SVK
 317,2019,Slovakia,201,SVK
+317,2020,Slovakia,201,SVK
 325,1968,Italy,82,ITA
 325,1969,Italy,82,ITA
 325,1970,Italy,82,ITA
@@ -2226,6 +2268,7 @@ gwcode,year,country_name,country_id,country_text_id
 325,2017,Italy,82,ITA
 325,2018,Italy,82,ITA
 325,2019,Italy,82,ITA
+325,2020,Italy,82,ITA
 339,1968,Albania,12,ALB
 339,1969,Albania,12,ALB
 339,1970,Albania,12,ALB
@@ -2278,6 +2321,7 @@ gwcode,year,country_name,country_id,country_text_id
 339,2017,Albania,12,ALB
 339,2018,Albania,12,ALB
 339,2019,Albania,12,ALB
+339,2020,Albania,12,ALB
 340,2006,Serbia,198,SRB
 340,2007,Serbia,198,SRB
 340,2008,Serbia,198,SRB
@@ -2292,6 +2336,7 @@ gwcode,year,country_name,country_id,country_text_id
 340,2017,Serbia,198,SRB
 340,2018,Serbia,198,SRB
 340,2019,Serbia,198,SRB
+340,2020,Serbia,198,SRB
 341,2006,Montenegro,183,MNE
 341,2007,Montenegro,183,MNE
 341,2008,Montenegro,183,MNE
@@ -2306,6 +2351,7 @@ gwcode,year,country_name,country_id,country_text_id
 341,2017,Montenegro,183,MNE
 341,2018,Montenegro,183,MNE
 341,2019,Montenegro,183,MNE
+341,2020,Montenegro,183,MNE
 343,1991,North Macedonia,176,MKD
 343,1992,North Macedonia,176,MKD
 343,1993,North Macedonia,176,MKD
@@ -2335,6 +2381,7 @@ gwcode,year,country_name,country_id,country_text_id
 343,2017,North Macedonia,176,MKD
 343,2018,North Macedonia,176,MKD
 343,2019,North Macedonia,176,MKD
+343,2020,North Macedonia,176,MKD
 344,1992,Croatia,154,HRV
 344,1993,Croatia,154,HRV
 344,1994,Croatia,154,HRV
@@ -2363,6 +2410,7 @@ gwcode,year,country_name,country_id,country_text_id
 344,2017,Croatia,154,HRV
 344,2018,Croatia,154,HRV
 344,2019,Croatia,154,HRV
+344,2020,Croatia,154,HRV
 345,1968,Serbia,198,SRB
 345,1969,Serbia,198,SRB
 345,1970,Serbia,198,SRB
@@ -2429,6 +2477,7 @@ gwcode,year,country_name,country_id,country_text_id
 346,2017,Bosnia and Herzegovina,150,BIH
 346,2018,Bosnia and Herzegovina,150,BIH
 346,2019,Bosnia and Herzegovina,150,BIH
+346,2020,Bosnia and Herzegovina,150,BIH
 347,2008,Kosovo,43,XKX
 347,2009,Kosovo,43,XKX
 347,2010,Kosovo,43,XKX
@@ -2441,6 +2490,7 @@ gwcode,year,country_name,country_id,country_text_id
 347,2017,Kosovo,43,XKX
 347,2018,Kosovo,43,XKX
 347,2019,Kosovo,43,XKX
+347,2020,Kosovo,43,XKX
 349,1992,Slovenia,202,SVN
 349,1993,Slovenia,202,SVN
 349,1994,Slovenia,202,SVN
@@ -2469,6 +2519,7 @@ gwcode,year,country_name,country_id,country_text_id
 349,2017,Slovenia,202,SVN
 349,2018,Slovenia,202,SVN
 349,2019,Slovenia,202,SVN
+349,2020,Slovenia,202,SVN
 350,1968,Greece,164,GRC
 350,1969,Greece,164,GRC
 350,1970,Greece,164,GRC
@@ -2521,6 +2572,7 @@ gwcode,year,country_name,country_id,country_text_id
 350,2017,Greece,164,GRC
 350,2018,Greece,164,GRC
 350,2019,Greece,164,GRC
+350,2020,Greece,164,GRC
 352,1968,Cyprus,156,CYP
 352,1969,Cyprus,156,CYP
 352,1970,Cyprus,156,CYP
@@ -2573,6 +2625,7 @@ gwcode,year,country_name,country_id,country_text_id
 352,2017,Cyprus,156,CYP
 352,2018,Cyprus,156,CYP
 352,2019,Cyprus,156,CYP
+352,2020,Cyprus,156,CYP
 355,1968,Bulgaria,152,BGR
 355,1969,Bulgaria,152,BGR
 355,1970,Bulgaria,152,BGR
@@ -2625,6 +2678,7 @@ gwcode,year,country_name,country_id,country_text_id
 355,2017,Bulgaria,152,BGR
 355,2018,Bulgaria,152,BGR
 355,2019,Bulgaria,152,BGR
+355,2020,Bulgaria,152,BGR
 359,1991,Moldova,126,MDA
 359,1992,Moldova,126,MDA
 359,1993,Moldova,126,MDA
@@ -2654,6 +2708,7 @@ gwcode,year,country_name,country_id,country_text_id
 359,2017,Moldova,126,MDA
 359,2018,Moldova,126,MDA
 359,2019,Moldova,126,MDA
+359,2020,Moldova,126,MDA
 360,1968,Romania,190,ROU
 360,1969,Romania,190,ROU
 360,1970,Romania,190,ROU
@@ -2706,6 +2761,7 @@ gwcode,year,country_name,country_id,country_text_id
 360,2017,Romania,190,ROU
 360,2018,Romania,190,ROU
 360,2019,Romania,190,ROU
+360,2020,Romania,190,ROU
 365,1968,Russia,11,RUS
 365,1969,Russia,11,RUS
 365,1970,Russia,11,RUS
@@ -2758,6 +2814,7 @@ gwcode,year,country_name,country_id,country_text_id
 365,2017,Russia,11,RUS
 365,2018,Russia,11,RUS
 365,2019,Russia,11,RUS
+365,2020,Russia,11,RUS
 366,1991,Estonia,161,EST
 366,1992,Estonia,161,EST
 366,1993,Estonia,161,EST
@@ -2787,6 +2844,7 @@ gwcode,year,country_name,country_id,country_text_id
 366,2017,Estonia,161,EST
 366,2018,Estonia,161,EST
 366,2019,Estonia,161,EST
+366,2020,Estonia,161,EST
 367,1991,Latvia,84,LVA
 367,1992,Latvia,84,LVA
 367,1993,Latvia,84,LVA
@@ -2816,6 +2874,7 @@ gwcode,year,country_name,country_id,country_text_id
 367,2017,Latvia,84,LVA
 367,2018,Latvia,84,LVA
 367,2019,Latvia,84,LVA
+367,2020,Latvia,84,LVA
 368,1991,Lithuania,173,LTU
 368,1992,Lithuania,173,LTU
 368,1993,Lithuania,173,LTU
@@ -2845,6 +2904,7 @@ gwcode,year,country_name,country_id,country_text_id
 368,2017,Lithuania,173,LTU
 368,2018,Lithuania,173,LTU
 368,2019,Lithuania,173,LTU
+368,2020,Lithuania,173,LTU
 369,1991,Ukraine,100,UKR
 369,1992,Ukraine,100,UKR
 369,1993,Ukraine,100,UKR
@@ -2874,6 +2934,7 @@ gwcode,year,country_name,country_id,country_text_id
 369,2017,Ukraine,100,UKR
 369,2018,Ukraine,100,UKR
 369,2019,Ukraine,100,UKR
+369,2020,Ukraine,100,UKR
 370,1991,Belarus,107,BLR
 370,1992,Belarus,107,BLR
 370,1993,Belarus,107,BLR
@@ -2903,6 +2964,7 @@ gwcode,year,country_name,country_id,country_text_id
 370,2017,Belarus,107,BLR
 370,2018,Belarus,107,BLR
 370,2019,Belarus,107,BLR
+370,2020,Belarus,107,BLR
 371,1991,Armenia,105,ARM
 371,1992,Armenia,105,ARM
 371,1993,Armenia,105,ARM
@@ -2932,6 +2994,7 @@ gwcode,year,country_name,country_id,country_text_id
 371,2017,Armenia,105,ARM
 371,2018,Armenia,105,ARM
 371,2019,Armenia,105,ARM
+371,2020,Armenia,105,ARM
 372,1991,Georgia,118,GEO
 372,1992,Georgia,118,GEO
 372,1993,Georgia,118,GEO
@@ -2961,6 +3024,7 @@ gwcode,year,country_name,country_id,country_text_id
 372,2017,Georgia,118,GEO
 372,2018,Georgia,118,GEO
 372,2019,Georgia,118,GEO
+372,2020,Georgia,118,GEO
 373,1991,Azerbaijan,106,AZE
 373,1992,Azerbaijan,106,AZE
 373,1993,Azerbaijan,106,AZE
@@ -2990,6 +3054,7 @@ gwcode,year,country_name,country_id,country_text_id
 373,2017,Azerbaijan,106,AZE
 373,2018,Azerbaijan,106,AZE
 373,2019,Azerbaijan,106,AZE
+373,2020,Azerbaijan,106,AZE
 375,1968,Finland,163,FIN
 375,1969,Finland,163,FIN
 375,1970,Finland,163,FIN
@@ -3042,6 +3107,7 @@ gwcode,year,country_name,country_id,country_text_id
 375,2017,Finland,163,FIN
 375,2018,Finland,163,FIN
 375,2019,Finland,163,FIN
+375,2020,Finland,163,FIN
 380,1968,Sweden,5,SWE
 380,1969,Sweden,5,SWE
 380,1970,Sweden,5,SWE
@@ -3094,6 +3160,7 @@ gwcode,year,country_name,country_id,country_text_id
 380,2017,Sweden,5,SWE
 380,2018,Sweden,5,SWE
 380,2019,Sweden,5,SWE
+380,2020,Sweden,5,SWE
 385,1968,Norway,186,NOR
 385,1969,Norway,186,NOR
 385,1970,Norway,186,NOR
@@ -3146,6 +3213,7 @@ gwcode,year,country_name,country_id,country_text_id
 385,2017,Norway,186,NOR
 385,2018,Norway,186,NOR
 385,2019,Norway,186,NOR
+385,2020,Norway,186,NOR
 390,1968,Denmark,158,DNK
 390,1969,Denmark,158,DNK
 390,1970,Denmark,158,DNK
@@ -3198,6 +3266,7 @@ gwcode,year,country_name,country_id,country_text_id
 390,2017,Denmark,158,DNK
 390,2018,Denmark,158,DNK
 390,2019,Denmark,158,DNK
+390,2020,Denmark,158,DNK
 395,1968,Iceland,168,ISL
 395,1969,Iceland,168,ISL
 395,1970,Iceland,168,ISL
@@ -3250,6 +3319,7 @@ gwcode,year,country_name,country_id,country_text_id
 395,2017,Iceland,168,ISL
 395,2018,Iceland,168,ISL
 395,2019,Iceland,168,ISL
+395,2020,Iceland,168,ISL
 402,1975,Cape Verde,70,CPV
 402,1976,Cape Verde,70,CPV
 402,1977,Cape Verde,70,CPV
@@ -3295,6 +3365,7 @@ gwcode,year,country_name,country_id,country_text_id
 402,2017,Cape Verde,70,CPV
 402,2018,Cape Verde,70,CPV
 402,2019,Cape Verde,70,CPV
+402,2020,Cape Verde,70,CPV
 404,1974,Guinea-Bissau,119,GNB
 404,1975,Guinea-Bissau,119,GNB
 404,1976,Guinea-Bissau,119,GNB
@@ -3341,6 +3412,7 @@ gwcode,year,country_name,country_id,country_text_id
 404,2017,Guinea-Bissau,119,GNB
 404,2018,Guinea-Bissau,119,GNB
 404,2019,Guinea-Bissau,119,GNB
+404,2020,Guinea-Bissau,119,GNB
 411,1968,Equatorial Guinea,160,GNQ
 411,1969,Equatorial Guinea,160,GNQ
 411,1970,Equatorial Guinea,160,GNQ
@@ -3393,6 +3465,7 @@ gwcode,year,country_name,country_id,country_text_id
 411,2017,Equatorial Guinea,160,GNQ
 411,2018,Equatorial Guinea,160,GNQ
 411,2019,Equatorial Guinea,160,GNQ
+411,2020,Equatorial Guinea,160,GNQ
 420,1968,The Gambia,117,GMB
 420,1969,The Gambia,117,GMB
 420,1970,The Gambia,117,GMB
@@ -3445,6 +3518,7 @@ gwcode,year,country_name,country_id,country_text_id
 420,2017,The Gambia,117,GMB
 420,2018,The Gambia,117,GMB
 420,2019,The Gambia,117,GMB
+420,2020,The Gambia,117,GMB
 432,1968,Mali,28,MLI
 432,1969,Mali,28,MLI
 432,1970,Mali,28,MLI
@@ -3497,6 +3571,7 @@ gwcode,year,country_name,country_id,country_text_id
 432,2017,Mali,28,MLI
 432,2018,Mali,28,MLI
 432,2019,Mali,28,MLI
+432,2020,Mali,28,MLI
 433,1968,Senegal,31,SEN
 433,1969,Senegal,31,SEN
 433,1970,Senegal,31,SEN
@@ -3549,6 +3624,7 @@ gwcode,year,country_name,country_id,country_text_id
 433,2017,Senegal,31,SEN
 433,2018,Senegal,31,SEN
 433,2019,Senegal,31,SEN
+433,2020,Senegal,31,SEN
 434,1968,Benin,52,BEN
 434,1969,Benin,52,BEN
 434,1970,Benin,52,BEN
@@ -3601,6 +3677,7 @@ gwcode,year,country_name,country_id,country_text_id
 434,2017,Benin,52,BEN
 434,2018,Benin,52,BEN
 434,2019,Benin,52,BEN
+434,2020,Benin,52,BEN
 435,1968,Mauritania,65,MRT
 435,1969,Mauritania,65,MRT
 435,1970,Mauritania,65,MRT
@@ -3653,6 +3730,7 @@ gwcode,year,country_name,country_id,country_text_id
 435,2017,Mauritania,65,MRT
 435,2018,Mauritania,65,MRT
 435,2019,Mauritania,65,MRT
+435,2020,Mauritania,65,MRT
 436,1968,Niger,60,NER
 436,1969,Niger,60,NER
 436,1970,Niger,60,NER
@@ -3705,6 +3783,7 @@ gwcode,year,country_name,country_id,country_text_id
 436,2017,Niger,60,NER
 436,2018,Niger,60,NER
 436,2019,Niger,60,NER
+436,2020,Niger,60,NER
 437,1968,Ivory Coast,64,CIV
 437,1969,Ivory Coast,64,CIV
 437,1970,Ivory Coast,64,CIV
@@ -3757,6 +3836,7 @@ gwcode,year,country_name,country_id,country_text_id
 437,2017,Ivory Coast,64,CIV
 437,2018,Ivory Coast,64,CIV
 437,2019,Ivory Coast,64,CIV
+437,2020,Ivory Coast,64,CIV
 438,1968,Guinea,63,GIN
 438,1969,Guinea,63,GIN
 438,1970,Guinea,63,GIN
@@ -3809,6 +3889,7 @@ gwcode,year,country_name,country_id,country_text_id
 438,2017,Guinea,63,GIN
 438,2018,Guinea,63,GIN
 438,2019,Guinea,63,GIN
+438,2020,Guinea,63,GIN
 439,1968,Burkina Faso,54,BFA
 439,1969,Burkina Faso,54,BFA
 439,1970,Burkina Faso,54,BFA
@@ -3861,6 +3942,7 @@ gwcode,year,country_name,country_id,country_text_id
 439,2017,Burkina Faso,54,BFA
 439,2018,Burkina Faso,54,BFA
 439,2019,Burkina Faso,54,BFA
+439,2020,Burkina Faso,54,BFA
 450,1968,Liberia,86,LBR
 450,1969,Liberia,86,LBR
 450,1970,Liberia,86,LBR
@@ -3913,6 +3995,7 @@ gwcode,year,country_name,country_id,country_text_id
 450,2017,Liberia,86,LBR
 450,2018,Liberia,86,LBR
 450,2019,Liberia,86,LBR
+450,2020,Liberia,86,LBR
 451,1968,Sierra Leone,95,SLE
 451,1969,Sierra Leone,95,SLE
 451,1970,Sierra Leone,95,SLE
@@ -3965,6 +4048,7 @@ gwcode,year,country_name,country_id,country_text_id
 451,2017,Sierra Leone,95,SLE
 451,2018,Sierra Leone,95,SLE
 451,2019,Sierra Leone,95,SLE
+451,2020,Sierra Leone,95,SLE
 452,1968,Ghana,7,GHA
 452,1969,Ghana,7,GHA
 452,1970,Ghana,7,GHA
@@ -4017,6 +4101,7 @@ gwcode,year,country_name,country_id,country_text_id
 452,2017,Ghana,7,GHA
 452,2018,Ghana,7,GHA
 452,2019,Ghana,7,GHA
+452,2020,Ghana,7,GHA
 461,1968,Togo,134,TGO
 461,1969,Togo,134,TGO
 461,1970,Togo,134,TGO
@@ -4069,6 +4154,7 @@ gwcode,year,country_name,country_id,country_text_id
 461,2017,Togo,134,TGO
 461,2018,Togo,134,TGO
 461,2019,Togo,134,TGO
+461,2020,Togo,134,TGO
 471,1968,Cameroon,108,CMR
 471,1969,Cameroon,108,CMR
 471,1970,Cameroon,108,CMR
@@ -4121,6 +4207,7 @@ gwcode,year,country_name,country_id,country_text_id
 471,2017,Cameroon,108,CMR
 471,2018,Cameroon,108,CMR
 471,2019,Cameroon,108,CMR
+471,2020,Cameroon,108,CMR
 475,1968,Nigeria,45,NGA
 475,1969,Nigeria,45,NGA
 475,1970,Nigeria,45,NGA
@@ -4173,6 +4260,7 @@ gwcode,year,country_name,country_id,country_text_id
 475,2017,Nigeria,45,NGA
 475,2018,Nigeria,45,NGA
 475,2019,Nigeria,45,NGA
+475,2020,Nigeria,45,NGA
 481,1968,Gabon,116,GAB
 481,1969,Gabon,116,GAB
 481,1970,Gabon,116,GAB
@@ -4225,6 +4313,7 @@ gwcode,year,country_name,country_id,country_text_id
 481,2017,Gabon,116,GAB
 481,2018,Gabon,116,GAB
 481,2019,Gabon,116,GAB
+481,2020,Gabon,116,GAB
 482,1968,Central African Republic,71,CAF
 482,1969,Central African Republic,71,CAF
 482,1970,Central African Republic,71,CAF
@@ -4277,6 +4366,7 @@ gwcode,year,country_name,country_id,country_text_id
 482,2017,Central African Republic,71,CAF
 482,2018,Central African Republic,71,CAF
 482,2019,Central African Republic,71,CAF
+482,2020,Central African Republic,71,CAF
 483,1968,Chad,109,TCD
 483,1969,Chad,109,TCD
 483,1970,Chad,109,TCD
@@ -4329,6 +4419,7 @@ gwcode,year,country_name,country_id,country_text_id
 483,2017,Chad,109,TCD
 483,2018,Chad,109,TCD
 483,2019,Chad,109,TCD
+483,2020,Chad,109,TCD
 484,1968,Republic of the Congo,112,COG
 484,1969,Republic of the Congo,112,COG
 484,1970,Republic of the Congo,112,COG
@@ -4381,6 +4472,7 @@ gwcode,year,country_name,country_id,country_text_id
 484,2017,Republic of the Congo,112,COG
 484,2018,Republic of the Congo,112,COG
 484,2019,Republic of the Congo,112,COG
+484,2020,Republic of the Congo,112,COG
 490,1968,Democratic Republic of the Congo,111,COD
 490,1969,Democratic Republic of the Congo,111,COD
 490,1970,Democratic Republic of the Congo,111,COD
@@ -4433,6 +4525,7 @@ gwcode,year,country_name,country_id,country_text_id
 490,2017,Democratic Republic of the Congo,111,COD
 490,2018,Democratic Republic of the Congo,111,COD
 490,2019,Democratic Republic of the Congo,111,COD
+490,2020,Democratic Republic of the Congo,111,COD
 500,1968,Uganda,50,UGA
 500,1969,Uganda,50,UGA
 500,1970,Uganda,50,UGA
@@ -4485,6 +4578,7 @@ gwcode,year,country_name,country_id,country_text_id
 500,2017,Uganda,50,UGA
 500,2018,Uganda,50,UGA
 500,2019,Uganda,50,UGA
+500,2020,Uganda,50,UGA
 501,1968,Kenya,40,KEN
 501,1969,Kenya,40,KEN
 501,1970,Kenya,40,KEN
@@ -4537,6 +4631,7 @@ gwcode,year,country_name,country_id,country_text_id
 501,2017,Kenya,40,KEN
 501,2018,Kenya,40,KEN
 501,2019,Kenya,40,KEN
+501,2020,Kenya,40,KEN
 510,1968,Tanzania,47,TZA
 510,1969,Tanzania,47,TZA
 510,1970,Tanzania,47,TZA
@@ -4589,6 +4684,7 @@ gwcode,year,country_name,country_id,country_text_id
 510,2017,Tanzania,47,TZA
 510,2018,Tanzania,47,TZA
 510,2019,Tanzania,47,TZA
+510,2020,Tanzania,47,TZA
 516,1968,Burundi,69,BDI
 516,1969,Burundi,69,BDI
 516,1970,Burundi,69,BDI
@@ -4641,6 +4737,7 @@ gwcode,year,country_name,country_id,country_text_id
 516,2017,Burundi,69,BDI
 516,2018,Burundi,69,BDI
 516,2019,Burundi,69,BDI
+516,2020,Burundi,69,BDI
 517,1968,Rwanda,129,RWA
 517,1969,Rwanda,129,RWA
 517,1970,Rwanda,129,RWA
@@ -4693,6 +4790,7 @@ gwcode,year,country_name,country_id,country_text_id
 517,2017,Rwanda,129,RWA
 517,2018,Rwanda,129,RWA
 517,2019,Rwanda,129,RWA
+517,2020,Rwanda,129,RWA
 520,1968,Somalia,130,SOM
 520,1969,Somalia,130,SOM
 520,1970,Somalia,130,SOM
@@ -4745,6 +4843,7 @@ gwcode,year,country_name,country_id,country_text_id
 520,2017,Somalia,130,SOM
 520,2018,Somalia,130,SOM
 520,2019,Somalia,130,SOM
+520,2020,Somalia,130,SOM
 522,1977,Djibouti,113,DJI
 522,1978,Djibouti,113,DJI
 522,1979,Djibouti,113,DJI
@@ -4788,6 +4887,7 @@ gwcode,year,country_name,country_id,country_text_id
 522,2017,Djibouti,113,DJI
 522,2018,Djibouti,113,DJI
 522,2019,Djibouti,113,DJI
+522,2020,Djibouti,113,DJI
 530,1968,Ethiopia,38,ETH
 530,1969,Ethiopia,38,ETH
 530,1970,Ethiopia,38,ETH
@@ -4840,6 +4940,7 @@ gwcode,year,country_name,country_id,country_text_id
 530,2017,Ethiopia,38,ETH
 530,2018,Ethiopia,38,ETH
 530,2019,Ethiopia,38,ETH
+530,2020,Ethiopia,38,ETH
 531,1993,Eritrea,115,ERI
 531,1994,Eritrea,115,ERI
 531,1995,Eritrea,115,ERI
@@ -4867,6 +4968,7 @@ gwcode,year,country_name,country_id,country_text_id
 531,2017,Eritrea,115,ERI
 531,2018,Eritrea,115,ERI
 531,2019,Eritrea,115,ERI
+531,2020,Eritrea,115,ERI
 540,1975,Angola,104,AGO
 540,1976,Angola,104,AGO
 540,1977,Angola,104,AGO
@@ -4912,6 +5014,7 @@ gwcode,year,country_name,country_id,country_text_id
 540,2017,Angola,104,AGO
 540,2018,Angola,104,AGO
 540,2019,Angola,104,AGO
+540,2020,Angola,104,AGO
 541,1975,Mozambique,57,MOZ
 541,1976,Mozambique,57,MOZ
 541,1977,Mozambique,57,MOZ
@@ -4957,6 +5060,7 @@ gwcode,year,country_name,country_id,country_text_id
 541,2017,Mozambique,57,MOZ
 541,2018,Mozambique,57,MOZ
 541,2019,Mozambique,57,MOZ
+541,2020,Mozambique,57,MOZ
 551,1968,Zambia,61,ZMB
 551,1969,Zambia,61,ZMB
 551,1970,Zambia,61,ZMB
@@ -5009,6 +5113,7 @@ gwcode,year,country_name,country_id,country_text_id
 551,2017,Zambia,61,ZMB
 551,2018,Zambia,61,ZMB
 551,2019,Zambia,61,ZMB
+551,2020,Zambia,61,ZMB
 552,1968,Zimbabwe,62,ZWE
 552,1969,Zimbabwe,62,ZWE
 552,1970,Zimbabwe,62,ZWE
@@ -5061,6 +5166,7 @@ gwcode,year,country_name,country_id,country_text_id
 552,2017,Zimbabwe,62,ZWE
 552,2018,Zimbabwe,62,ZWE
 552,2019,Zimbabwe,62,ZWE
+552,2020,Zimbabwe,62,ZWE
 553,1968,Malawi,87,MWI
 553,1969,Malawi,87,MWI
 553,1970,Malawi,87,MWI
@@ -5113,6 +5219,7 @@ gwcode,year,country_name,country_id,country_text_id
 553,2017,Malawi,87,MWI
 553,2018,Malawi,87,MWI
 553,2019,Malawi,87,MWI
+553,2020,Malawi,87,MWI
 560,1968,South Africa,8,ZAF
 560,1969,South Africa,8,ZAF
 560,1970,South Africa,8,ZAF
@@ -5165,6 +5272,7 @@ gwcode,year,country_name,country_id,country_text_id
 560,2017,South Africa,8,ZAF
 560,2018,South Africa,8,ZAF
 560,2019,South Africa,8,ZAF
+560,2020,South Africa,8,ZAF
 565,1990,Namibia,127,NAM
 565,1991,Namibia,127,NAM
 565,1992,Namibia,127,NAM
@@ -5195,6 +5303,7 @@ gwcode,year,country_name,country_id,country_text_id
 565,2017,Namibia,127,NAM
 565,2018,Namibia,127,NAM
 565,2019,Namibia,127,NAM
+565,2020,Namibia,127,NAM
 570,1968,Lesotho,85,LSO
 570,1969,Lesotho,85,LSO
 570,1970,Lesotho,85,LSO
@@ -5247,6 +5356,7 @@ gwcode,year,country_name,country_id,country_text_id
 570,2017,Lesotho,85,LSO
 570,2018,Lesotho,85,LSO
 570,2019,Lesotho,85,LSO
+570,2020,Lesotho,85,LSO
 571,1968,Botswana,68,BWA
 571,1969,Botswana,68,BWA
 571,1970,Botswana,68,BWA
@@ -5299,6 +5409,7 @@ gwcode,year,country_name,country_id,country_text_id
 571,2017,Botswana,68,BWA
 571,2018,Botswana,68,BWA
 571,2019,Botswana,68,BWA
+571,2020,Botswana,68,BWA
 572,1968,Eswatini,132,SWZ
 572,1969,Eswatini,132,SWZ
 572,1970,Eswatini,132,SWZ
@@ -5351,6 +5462,7 @@ gwcode,year,country_name,country_id,country_text_id
 572,2017,Eswatini,132,SWZ
 572,2018,Eswatini,132,SWZ
 572,2019,Eswatini,132,SWZ
+572,2020,Eswatini,132,SWZ
 580,1968,Madagascar,125,MDG
 580,1969,Madagascar,125,MDG
 580,1970,Madagascar,125,MDG
@@ -5403,6 +5515,7 @@ gwcode,year,country_name,country_id,country_text_id
 580,2017,Madagascar,125,MDG
 580,2018,Madagascar,125,MDG
 580,2019,Madagascar,125,MDG
+580,2020,Madagascar,125,MDG
 581,1975,Comoros,153,COM
 581,1976,Comoros,153,COM
 581,1977,Comoros,153,COM
@@ -5448,6 +5561,7 @@ gwcode,year,country_name,country_id,country_text_id
 581,2017,Comoros,153,COM
 581,2018,Comoros,153,COM
 581,2019,Comoros,153,COM
+581,2020,Comoros,153,COM
 590,1968,Mauritius,180,MUS
 590,1969,Mauritius,180,MUS
 590,1970,Mauritius,180,MUS
@@ -5500,6 +5614,7 @@ gwcode,year,country_name,country_id,country_text_id
 590,2017,Mauritius,180,MUS
 590,2018,Mauritius,180,MUS
 590,2019,Mauritius,180,MUS
+590,2020,Mauritius,180,MUS
 600,1968,Morocco,90,MAR
 600,1969,Morocco,90,MAR
 600,1970,Morocco,90,MAR
@@ -5552,6 +5667,7 @@ gwcode,year,country_name,country_id,country_text_id
 600,2017,Morocco,90,MAR
 600,2018,Morocco,90,MAR
 600,2019,Morocco,90,MAR
+600,2020,Morocco,90,MAR
 615,1968,Algeria,103,DZA
 615,1969,Algeria,103,DZA
 615,1970,Algeria,103,DZA
@@ -5604,6 +5720,7 @@ gwcode,year,country_name,country_id,country_text_id
 615,2017,Algeria,103,DZA
 615,2018,Algeria,103,DZA
 615,2019,Algeria,103,DZA
+615,2020,Algeria,103,DZA
 616,1968,Tunisia,98,TUN
 616,1969,Tunisia,98,TUN
 616,1970,Tunisia,98,TUN
@@ -5656,6 +5773,7 @@ gwcode,year,country_name,country_id,country_text_id
 616,2017,Tunisia,98,TUN
 616,2018,Tunisia,98,TUN
 616,2019,Tunisia,98,TUN
+616,2020,Tunisia,98,TUN
 620,1968,Libya,124,LBY
 620,1969,Libya,124,LBY
 620,1970,Libya,124,LBY
@@ -5708,6 +5826,7 @@ gwcode,year,country_name,country_id,country_text_id
 620,2017,Libya,124,LBY
 620,2018,Libya,124,LBY
 620,2019,Libya,124,LBY
+620,2020,Libya,124,LBY
 625,1968,Sudan,33,SDN
 625,1969,Sudan,33,SDN
 625,1970,Sudan,33,SDN
@@ -5760,6 +5879,7 @@ gwcode,year,country_name,country_id,country_text_id
 625,2017,Sudan,33,SDN
 625,2018,Sudan,33,SDN
 625,2019,Sudan,33,SDN
+625,2020,Sudan,33,SDN
 626,2011,South Sudan,32,SSD
 626,2012,South Sudan,32,SSD
 626,2013,South Sudan,32,SSD
@@ -5769,6 +5889,7 @@ gwcode,year,country_name,country_id,country_text_id
 626,2017,South Sudan,32,SSD
 626,2018,South Sudan,32,SSD
 626,2019,South Sudan,32,SSD
+626,2020,South Sudan,32,SSD
 630,1968,Iran,79,IRN
 630,1969,Iran,79,IRN
 630,1970,Iran,79,IRN
@@ -5821,6 +5942,7 @@ gwcode,year,country_name,country_id,country_text_id
 630,2017,Iran,79,IRN
 630,2018,Iran,79,IRN
 630,2019,Iran,79,IRN
+630,2020,Iran,79,IRN
 640,1968,Turkey,99,TUR
 640,1969,Turkey,99,TUR
 640,1970,Turkey,99,TUR
@@ -5873,6 +5995,7 @@ gwcode,year,country_name,country_id,country_text_id
 640,2017,Turkey,99,TUR
 640,2018,Turkey,99,TUR
 640,2019,Turkey,99,TUR
+640,2020,Turkey,99,TUR
 645,1968,Iraq,80,IRQ
 645,1969,Iraq,80,IRQ
 645,1970,Iraq,80,IRQ
@@ -5925,6 +6048,7 @@ gwcode,year,country_name,country_id,country_text_id
 645,2017,Iraq,80,IRQ
 645,2018,Iraq,80,IRQ
 645,2019,Iraq,80,IRQ
+645,2020,Iraq,80,IRQ
 651,1968,Egypt,13,EGY
 651,1969,Egypt,13,EGY
 651,1970,Egypt,13,EGY
@@ -5977,6 +6101,7 @@ gwcode,year,country_name,country_id,country_text_id
 651,2017,Egypt,13,EGY
 651,2018,Egypt,13,EGY
 651,2019,Egypt,13,EGY
+651,2020,Egypt,13,EGY
 652,1968,Syria,97,SYR
 652,1969,Syria,97,SYR
 652,1970,Syria,97,SYR
@@ -6029,6 +6154,7 @@ gwcode,year,country_name,country_id,country_text_id
 652,2017,Syria,97,SYR
 652,2018,Syria,97,SYR
 652,2019,Syria,97,SYR
+652,2020,Syria,97,SYR
 660,1968,Lebanon,44,LBN
 660,1969,Lebanon,44,LBN
 660,1970,Lebanon,44,LBN
@@ -6081,6 +6207,7 @@ gwcode,year,country_name,country_id,country_text_id
 660,2017,Lebanon,44,LBN
 660,2018,Lebanon,44,LBN
 660,2019,Lebanon,44,LBN
+660,2020,Lebanon,44,LBN
 663,1968,Jordan,83,JOR
 663,1969,Jordan,83,JOR
 663,1970,Jordan,83,JOR
@@ -6133,6 +6260,7 @@ gwcode,year,country_name,country_id,country_text_id
 663,2017,Jordan,83,JOR
 663,2018,Jordan,83,JOR
 663,2019,Jordan,83,JOR
+663,2020,Jordan,83,JOR
 666,1968,Israel,169,ISR
 666,1969,Israel,169,ISR
 666,1970,Israel,169,ISR
@@ -6185,6 +6313,7 @@ gwcode,year,country_name,country_id,country_text_id
 666,2017,Israel,169,ISR
 666,2018,Israel,169,ISR
 666,2019,Israel,169,ISR
+666,2020,Israel,169,ISR
 670,1968,Saudi Arabia,197,SAU
 670,1969,Saudi Arabia,197,SAU
 670,1970,Saudi Arabia,197,SAU
@@ -6237,6 +6366,7 @@ gwcode,year,country_name,country_id,country_text_id
 670,2017,Saudi Arabia,197,SAU
 670,2018,Saudi Arabia,197,SAU
 670,2019,Saudi Arabia,197,SAU
+670,2020,Saudi Arabia,197,SAU
 678,1968,Yemen,14,YEM
 678,1969,Yemen,14,YEM
 678,1970,Yemen,14,YEM
@@ -6289,6 +6419,7 @@ gwcode,year,country_name,country_id,country_text_id
 678,2017,Yemen,14,YEM
 678,2018,Yemen,14,YEM
 678,2019,Yemen,14,YEM
+678,2020,Yemen,14,YEM
 680,1968,South Yemen,23,YMD
 680,1969,South Yemen,23,YMD
 680,1970,South Yemen,23,YMD
@@ -6364,6 +6495,7 @@ gwcode,year,country_name,country_id,country_text_id
 690,2017,Kuwait,171,KWT
 690,2018,Kuwait,171,KWT
 690,2019,Kuwait,171,KWT
+690,2020,Kuwait,171,KWT
 694,1971,Qatar,94,QAT
 694,1972,Qatar,94,QAT
 694,1973,Qatar,94,QAT
@@ -6413,6 +6545,7 @@ gwcode,year,country_name,country_id,country_text_id
 694,2017,Qatar,94,QAT
 694,2018,Qatar,94,QAT
 694,2019,Qatar,94,QAT
+694,2020,Qatar,94,QAT
 696,1971,United Arab Emirates,207,ARE
 696,1972,United Arab Emirates,207,ARE
 696,1973,United Arab Emirates,207,ARE
@@ -6462,6 +6595,7 @@ gwcode,year,country_name,country_id,country_text_id
 696,2017,United Arab Emirates,207,ARE
 696,2018,United Arab Emirates,207,ARE
 696,2019,United Arab Emirates,207,ARE
+696,2020,United Arab Emirates,207,ARE
 698,1968,Oman,187,OMN
 698,1969,Oman,187,OMN
 698,1970,Oman,187,OMN
@@ -6514,6 +6648,7 @@ gwcode,year,country_name,country_id,country_text_id
 698,2017,Oman,187,OMN
 698,2018,Oman,187,OMN
 698,2019,Oman,187,OMN
+698,2020,Oman,187,OMN
 700,1968,Afghanistan,36,AFG
 700,1969,Afghanistan,36,AFG
 700,1970,Afghanistan,36,AFG
@@ -6566,6 +6701,7 @@ gwcode,year,country_name,country_id,country_text_id
 700,2017,Afghanistan,36,AFG
 700,2018,Afghanistan,36,AFG
 700,2019,Afghanistan,36,AFG
+700,2020,Afghanistan,36,AFG
 701,1991,Turkmenistan,136,TKM
 701,1992,Turkmenistan,136,TKM
 701,1993,Turkmenistan,136,TKM
@@ -6595,6 +6731,7 @@ gwcode,year,country_name,country_id,country_text_id
 701,2017,Turkmenistan,136,TKM
 701,2018,Turkmenistan,136,TKM
 701,2019,Turkmenistan,136,TKM
+701,2020,Turkmenistan,136,TKM
 702,1991,Tajikistan,133,TJK
 702,1992,Tajikistan,133,TJK
 702,1993,Tajikistan,133,TJK
@@ -6624,6 +6761,7 @@ gwcode,year,country_name,country_id,country_text_id
 702,2017,Tajikistan,133,TJK
 702,2018,Tajikistan,133,TJK
 702,2019,Tajikistan,133,TJK
+702,2020,Tajikistan,133,TJK
 703,1991,Kyrgyzstan,122,KGZ
 703,1992,Kyrgyzstan,122,KGZ
 703,1993,Kyrgyzstan,122,KGZ
@@ -6653,6 +6791,7 @@ gwcode,year,country_name,country_id,country_text_id
 703,2017,Kyrgyzstan,122,KGZ
 703,2018,Kyrgyzstan,122,KGZ
 703,2019,Kyrgyzstan,122,KGZ
+703,2020,Kyrgyzstan,122,KGZ
 704,1991,Uzbekistan,140,UZB
 704,1992,Uzbekistan,140,UZB
 704,1993,Uzbekistan,140,UZB
@@ -6682,6 +6821,7 @@ gwcode,year,country_name,country_id,country_text_id
 704,2017,Uzbekistan,140,UZB
 704,2018,Uzbekistan,140,UZB
 704,2019,Uzbekistan,140,UZB
+704,2020,Uzbekistan,140,UZB
 705,1991,Kazakhstan,121,KAZ
 705,1992,Kazakhstan,121,KAZ
 705,1993,Kazakhstan,121,KAZ
@@ -6711,6 +6851,7 @@ gwcode,year,country_name,country_id,country_text_id
 705,2017,Kazakhstan,121,KAZ
 705,2018,Kazakhstan,121,KAZ
 705,2019,Kazakhstan,121,KAZ
+705,2020,Kazakhstan,121,KAZ
 710,1968,China,110,CHN
 710,1969,China,110,CHN
 710,1970,China,110,CHN
@@ -6763,6 +6904,7 @@ gwcode,year,country_name,country_id,country_text_id
 710,2017,China,110,CHN
 710,2018,China,110,CHN
 710,2019,China,110,CHN
+710,2020,China,110,CHN
 712,1968,Mongolia,89,MNG
 712,1969,Mongolia,89,MNG
 712,1970,Mongolia,89,MNG
@@ -6815,6 +6957,7 @@ gwcode,year,country_name,country_id,country_text_id
 712,2017,Mongolia,89,MNG
 712,2018,Mongolia,89,MNG
 712,2019,Mongolia,89,MNG
+712,2020,Mongolia,89,MNG
 713,1968,Taiwan,48,TWN
 713,1969,Taiwan,48,TWN
 713,1970,Taiwan,48,TWN
@@ -6867,6 +7010,7 @@ gwcode,year,country_name,country_id,country_text_id
 713,2017,Taiwan,48,TWN
 713,2018,Taiwan,48,TWN
 713,2019,Taiwan,48,TWN
+713,2020,Taiwan,48,TWN
 731,1968,North Korea,41,PRK
 731,1969,North Korea,41,PRK
 731,1970,North Korea,41,PRK
@@ -6919,6 +7063,7 @@ gwcode,year,country_name,country_id,country_text_id
 731,2017,North Korea,41,PRK
 731,2018,North Korea,41,PRK
 731,2019,North Korea,41,PRK
+731,2020,North Korea,41,PRK
 732,1968,South Korea,42,KOR
 732,1969,South Korea,42,KOR
 732,1970,South Korea,42,KOR
@@ -6971,6 +7116,7 @@ gwcode,year,country_name,country_id,country_text_id
 732,2017,South Korea,42,KOR
 732,2018,South Korea,42,KOR
 732,2019,South Korea,42,KOR
+732,2020,South Korea,42,KOR
 740,1968,Japan,9,JPN
 740,1969,Japan,9,JPN
 740,1970,Japan,9,JPN
@@ -7023,6 +7169,7 @@ gwcode,year,country_name,country_id,country_text_id
 740,2017,Japan,9,JPN
 740,2018,Japan,9,JPN
 740,2019,Japan,9,JPN
+740,2020,Japan,9,JPN
 750,1968,India,39,IND
 750,1969,India,39,IND
 750,1970,India,39,IND
@@ -7075,6 +7222,7 @@ gwcode,year,country_name,country_id,country_text_id
 750,2017,India,39,IND
 750,2018,India,39,IND
 750,2019,India,39,IND
+750,2020,India,39,IND
 760,1968,Bhutan,53,BTN
 760,1969,Bhutan,53,BTN
 760,1970,Bhutan,53,BTN
@@ -7127,6 +7275,7 @@ gwcode,year,country_name,country_id,country_text_id
 760,2017,Bhutan,53,BTN
 760,2018,Bhutan,53,BTN
 760,2019,Bhutan,53,BTN
+760,2020,Bhutan,53,BTN
 770,1968,Pakistan,29,PAK
 770,1969,Pakistan,29,PAK
 770,1970,Pakistan,29,PAK
@@ -7179,6 +7328,7 @@ gwcode,year,country_name,country_id,country_text_id
 770,2017,Pakistan,29,PAK
 770,2018,Pakistan,29,PAK
 770,2019,Pakistan,29,PAK
+770,2020,Pakistan,29,PAK
 771,1971,Bangladesh,24,BGD
 771,1972,Bangladesh,24,BGD
 771,1973,Bangladesh,24,BGD
@@ -7228,6 +7378,7 @@ gwcode,year,country_name,country_id,country_text_id
 771,2017,Bangladesh,24,BGD
 771,2018,Bangladesh,24,BGD
 771,2019,Bangladesh,24,BGD
+771,2020,Bangladesh,24,BGD
 775,1968,Burma/Myanmar,10,MMR
 775,1969,Burma/Myanmar,10,MMR
 775,1970,Burma/Myanmar,10,MMR
@@ -7280,6 +7431,7 @@ gwcode,year,country_name,country_id,country_text_id
 775,2017,Burma/Myanmar,10,MMR
 775,2018,Burma/Myanmar,10,MMR
 775,2019,Burma/Myanmar,10,MMR
+775,2020,Burma/Myanmar,10,MMR
 780,1968,Sri Lanka,131,LKA
 780,1969,Sri Lanka,131,LKA
 780,1970,Sri Lanka,131,LKA
@@ -7332,6 +7484,7 @@ gwcode,year,country_name,country_id,country_text_id
 780,2017,Sri Lanka,131,LKA
 780,2018,Sri Lanka,131,LKA
 780,2019,Sri Lanka,131,LKA
+780,2020,Sri Lanka,131,LKA
 781,1968,Maldives,88,MDV
 781,1969,Maldives,88,MDV
 781,1970,Maldives,88,MDV
@@ -7384,6 +7537,7 @@ gwcode,year,country_name,country_id,country_text_id
 781,2017,Maldives,88,MDV
 781,2018,Maldives,88,MDV
 781,2019,Maldives,88,MDV
+781,2020,Maldives,88,MDV
 790,1968,Nepal,58,NPL
 790,1969,Nepal,58,NPL
 790,1970,Nepal,58,NPL
@@ -7436,6 +7590,7 @@ gwcode,year,country_name,country_id,country_text_id
 790,2017,Nepal,58,NPL
 790,2018,Nepal,58,NPL
 790,2019,Nepal,58,NPL
+790,2020,Nepal,58,NPL
 800,1968,Thailand,49,THA
 800,1969,Thailand,49,THA
 800,1970,Thailand,49,THA
@@ -7488,6 +7643,7 @@ gwcode,year,country_name,country_id,country_text_id
 800,2017,Thailand,49,THA
 800,2018,Thailand,49,THA
 800,2019,Thailand,49,THA
+800,2020,Thailand,49,THA
 811,1968,Cambodia,55,KHM
 811,1969,Cambodia,55,KHM
 811,1970,Cambodia,55,KHM
@@ -7540,6 +7696,7 @@ gwcode,year,country_name,country_id,country_text_id
 811,2017,Cambodia,55,KHM
 811,2018,Cambodia,55,KHM
 811,2019,Cambodia,55,KHM
+811,2020,Cambodia,55,KHM
 812,1968,Laos,123,LAO
 812,1969,Laos,123,LAO
 812,1970,Laos,123,LAO
@@ -7592,6 +7749,7 @@ gwcode,year,country_name,country_id,country_text_id
 812,2017,Laos,123,LAO
 812,2018,Laos,123,LAO
 812,2019,Laos,123,LAO
+812,2020,Laos,123,LAO
 816,1968,Vietnam,34,VNM
 816,1969,Vietnam,34,VNM
 816,1970,Vietnam,34,VNM
@@ -7644,6 +7802,7 @@ gwcode,year,country_name,country_id,country_text_id
 816,2017,Vietnam,34,VNM
 816,2018,Vietnam,34,VNM
 816,2019,Vietnam,34,VNM
+816,2020,Vietnam,34,VNM
 817,1968,Republic of Vietnam,35,VDR
 817,1969,Republic of Vietnam,35,VDR
 817,1970,Republic of Vietnam,35,VDR
@@ -7704,6 +7863,7 @@ gwcode,year,country_name,country_id,country_text_id
 820,2017,Malaysia,177,MYS
 820,2018,Malaysia,177,MYS
 820,2019,Malaysia,177,MYS
+820,2020,Malaysia,177,MYS
 830,1968,Singapore,200,SGP
 830,1969,Singapore,200,SGP
 830,1970,Singapore,200,SGP
@@ -7756,6 +7916,7 @@ gwcode,year,country_name,country_id,country_text_id
 830,2017,Singapore,200,SGP
 830,2018,Singapore,200,SGP
 830,2019,Singapore,200,SGP
+830,2020,Singapore,200,SGP
 840,1968,Philippines,46,PHL
 840,1969,Philippines,46,PHL
 840,1970,Philippines,46,PHL
@@ -7808,6 +7969,7 @@ gwcode,year,country_name,country_id,country_text_id
 840,2017,Philippines,46,PHL
 840,2018,Philippines,46,PHL
 840,2019,Philippines,46,PHL
+840,2020,Philippines,46,PHL
 850,1968,Indonesia,56,IDN
 850,1969,Indonesia,56,IDN
 850,1970,Indonesia,56,IDN
@@ -7860,6 +8022,7 @@ gwcode,year,country_name,country_id,country_text_id
 850,2017,Indonesia,56,IDN
 850,2018,Indonesia,56,IDN
 850,2019,Indonesia,56,IDN
+850,2020,Indonesia,56,IDN
 860,2002,Timor-Leste,74,TLS
 860,2003,Timor-Leste,74,TLS
 860,2004,Timor-Leste,74,TLS
@@ -7878,6 +8041,7 @@ gwcode,year,country_name,country_id,country_text_id
 860,2017,Timor-Leste,74,TLS
 860,2018,Timor-Leste,74,TLS
 860,2019,Timor-Leste,74,TLS
+860,2020,Timor-Leste,74,TLS
 900,1968,Australia,67,AUS
 900,1969,Australia,67,AUS
 900,1970,Australia,67,AUS
@@ -7930,6 +8094,7 @@ gwcode,year,country_name,country_id,country_text_id
 900,2017,Australia,67,AUS
 900,2018,Australia,67,AUS
 900,2019,Australia,67,AUS
+900,2020,Australia,67,AUS
 910,1975,Papua New Guinea,93,PNG
 910,1976,Papua New Guinea,93,PNG
 910,1977,Papua New Guinea,93,PNG
@@ -7975,6 +8140,7 @@ gwcode,year,country_name,country_id,country_text_id
 910,2017,Papua New Guinea,93,PNG
 910,2018,Papua New Guinea,93,PNG
 910,2019,Papua New Guinea,93,PNG
+910,2020,Papua New Guinea,93,PNG
 920,1968,New Zealand,185,NZL
 920,1969,New Zealand,185,NZL
 920,1970,New Zealand,185,NZL
@@ -8027,6 +8193,7 @@ gwcode,year,country_name,country_id,country_text_id
 920,2017,New Zealand,185,NZL
 920,2018,New Zealand,185,NZL
 920,2019,New Zealand,185,NZL
+920,2020,New Zealand,185,NZL
 940,1978,Solomon Islands,203,SLB
 940,1979,Solomon Islands,203,SLB
 940,1980,Solomon Islands,203,SLB
@@ -8069,6 +8236,7 @@ gwcode,year,country_name,country_id,country_text_id
 940,2017,Solomon Islands,203,SLB
 940,2018,Solomon Islands,203,SLB
 940,2019,Solomon Islands,203,SLB
+940,2020,Solomon Islands,203,SLB
 950,1970,Fiji,162,FJI
 950,1971,Fiji,162,FJI
 950,1972,Fiji,162,FJI
@@ -8119,3 +8287,4 @@ gwcode,year,country_name,country_id,country_text_id
 950,2017,Fiji,162,FJI
 950,2018,Fiji,162,FJI
 950,2019,Fiji,162,FJI
+950,2020,Fiji,162,FJI
