@@ -1,10 +1,10 @@
 Class: tbl_df, tbl, data.frame
-Size_in_mem: 28.5 Mb
+Size_in_mem: 29 Mb
 N_countries: 174
-Years: 1970 - 2019
-N_columns: 482
-N_rows: 7849
-N_complete_rows: 7511
+Years: 1970 - 2020
+N_columns: 481
+N_rows: 8018
+N_complete_rows: 7680
 Countries: 174
 Missing:
   gwcode: 0
@@ -435,22 +435,21 @@ Missing:
   lag0_diff_year_prior_v2peedueq: 0
   lag0_diff_year_prior_v2pehealth: 0
   lag0_state_age: 0
-  lag0_log_state_age: 0
-  lag0_pop: 0
   lag0_log_pop: 0
-  lag2_infmort: 0
-  lag2_gdp_growth: 0
-  lag2_gdp_pc_growth: 0
-  lag2_log_gdp: 0
-  lag2_log_gdp_pc: 0
-  lag2_epr_groups: 0
-  lag2_epr_elf: 0
-  lag2_epr_excluded_groups_count: 0
-  lag2_epr_excluded_group_pop: 0
-  lag2_epr_inpower_groups_count: 0
-  lag2_epr_inpower_groups_pop: 0
-  lag2_epr_regaut_groups_count: 0
-  lag2_epr_regaut_group_pop: 0
+  lag1_infmort: 0
+  lag1_infmort_yearadj: 0
+  lag1_gdp_growth: 1
+  lag1_gdp_pc_growth: 1
+  lag1_log_gdp: 1
+  lag1_log_gdp_pc: 1
+  lag3_epr_groups: 0
+  lag3_epr_elf: 0
+  lag3_epr_excluded_groups_count: 0
+  lag3_epr_excluded_group_pop: 0
+  lag3_epr_inpower_groups_count: 0
+  lag3_epr_inpower_groups_pop: 0
+  lag3_epr_regaut_groups_count: 0
+  lag3_epr_regaut_group_pop: 0
   lag0_pt_attempt: 0
   lag0_pt_attempt_num: 0
   lag0_pt_coup_num: 0
@@ -469,26 +468,26 @@ Missing:
   lag0_years_since_last_pt_coup: 0
   lag0_years_since_last_pt_failed: 0
   lag0_years_since_last_pt_attempt: 0
-  lag1_internal_confl: 0
-  lag1_internal_confl_major: 0
-  lag1_internal_confl_minor: 0
-  lag1_internal_confl_part: 0
-  lag1_internal_confl_part_major: 0
-  lag1_internal_confl_part_minor: 0
-  lag1_war: 0
-  lag1_war_major: 0
-  lag1_war_minor: 0
-  lag1_any_conflict: 0
-  lag1_any_conflict_major: 0
-  lag1_any_conflict_minor: 0
-  lag1_ext_conf: 0
-  lag1_ext_conf_major: 0
-  lag1_ext_conf_minor: 0
-  lag1_ldr_age: 0
-  lag1_ldr_yr_in_power: 0
-  lag1_ldr_irr_entry: 0
-  lag1_ldr_male: 0
-  lag1_ldr_imputed: 0
+  lag2_internal_confl: 0
+  lag2_internal_confl_major: 0
+  lag2_internal_confl_minor: 0
+  lag2_internal_confl_part: 0
+  lag2_internal_confl_part_major: 0
+  lag2_internal_confl_part_minor: 0
+  lag2_war: 0
+  lag2_war_major: 0
+  lag2_war_minor: 0
+  lag2_any_conflict: 0
+  lag2_any_conflict_major: 0
+  lag2_any_conflict_minor: 0
+  lag2_ext_conf: 0
+  lag2_ext_conf_major: 0
+  lag2_ext_conf_minor: 0
+  lag2_ldr_age: 0
+  lag2_ldr_yr_in_power: 0
+  lag2_ldr_irr_entry: 0
+  lag2_ldr_male: 0
+  lag2_ldr_imputed: 0
 Col_types:
   gwcode: double
   year: double
@@ -918,22 +917,21 @@ Col_types:
   lag0_diff_year_prior_v2peedueq: double
   lag0_diff_year_prior_v2pehealth: double
   lag0_state_age: double
-  lag0_log_state_age: double
-  lag0_pop: double
   lag0_log_pop: double
-  lag2_infmort: double
-  lag2_gdp_growth: double
-  lag2_gdp_pc_growth: double
-  lag2_log_gdp: double
-  lag2_log_gdp_pc: double
-  lag2_epr_groups: double
-  lag2_epr_elf: double
-  lag2_epr_excluded_groups_count: double
-  lag2_epr_excluded_group_pop: double
-  lag2_epr_inpower_groups_count: double
-  lag2_epr_inpower_groups_pop: double
-  lag2_epr_regaut_groups_count: double
-  lag2_epr_regaut_group_pop: double
+  lag1_infmort: double
+  lag1_infmort_yearadj: double
+  lag1_gdp_growth: double
+  lag1_gdp_pc_growth: double
+  lag1_log_gdp: double
+  lag1_log_gdp_pc: double
+  lag3_epr_groups: double
+  lag3_epr_elf: double
+  lag3_epr_excluded_groups_count: double
+  lag3_epr_excluded_group_pop: double
+  lag3_epr_inpower_groups_count: double
+  lag3_epr_inpower_groups_pop: double
+  lag3_epr_regaut_groups_count: double
+  lag3_epr_regaut_group_pop: double
   lag0_pt_attempt: double
   lag0_pt_attempt_num: double
   lag0_pt_coup_num: double
@@ -952,23 +950,23 @@ Col_types:
   lag0_years_since_last_pt_coup: double
   lag0_years_since_last_pt_failed: double
   lag0_years_since_last_pt_attempt: double
-  lag1_internal_confl: double
-  lag1_internal_confl_major: double
-  lag1_internal_confl_minor: double
-  lag1_internal_confl_part: double
-  lag1_internal_confl_part_major: double
-  lag1_internal_confl_part_minor: double
-  lag1_war: double
-  lag1_war_major: double
-  lag1_war_minor: double
-  lag1_any_conflict: double
-  lag1_any_conflict_major: double
-  lag1_any_conflict_minor: double
-  lag1_ext_conf: double
-  lag1_ext_conf_major: double
-  lag1_ext_conf_minor: double
-  lag1_ldr_age: double
-  lag1_ldr_yr_in_power: double
-  lag1_ldr_irr_entry: integer
-  lag1_ldr_male: integer
-  lag1_ldr_imputed: integer
+  lag2_internal_confl: double
+  lag2_internal_confl_major: double
+  lag2_internal_confl_minor: double
+  lag2_internal_confl_part: double
+  lag2_internal_confl_part_major: double
+  lag2_internal_confl_part_minor: double
+  lag2_war: double
+  lag2_war_major: double
+  lag2_war_minor: double
+  lag2_any_conflict: double
+  lag2_any_conflict_major: double
+  lag2_any_conflict_minor: double
+  lag2_ext_conf: double
+  lag2_ext_conf_major: double
+  lag2_ext_conf_minor: double
+  lag2_ldr_age: double
+  lag2_ldr_yr_in_power: double
+  lag2_ldr_irr_entry: integer
+  lag2_ldr_male: integer
+  lag2_ldr_imputed: integer

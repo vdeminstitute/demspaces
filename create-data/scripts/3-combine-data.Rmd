@@ -23,20 +23,52 @@ END_YEAR <- 2020
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-# needs devel version of states
-if (packageVersion("states") < "0.2.2.9007") {
-  stop("Please re-install the latest dev version of states:\n  remotes::install_github(\"andybega/states\")")
-}
-
-
-library("dplyr")
-library("readr")
-library("states")
-library("tidyr")
+library(dplyr)
+library(readr)
+library(states)
+library(tidyr)
+library(stringr)
 
 # shortcut for plotting missing values when no date column is available
 plotmiss <- function(x) {
   plot_missing(x, names(x), partial = "last")
+}
+
+# function to prefix variables with "lagX_" 
+#   - possibility to exclude variables, i.e. ID vars like "year"
+#   - works if existing "lagX_" prefix is already there, incrementing X
+#
+# x: a character vector of column names
+# n: the value for X in "lagX_"
+# exclude: variables to not prefix
+prefix_lag <- function(x, n, exclude = c("gwcode", "year")) {
+  out <- x
+  excl_idx <- match(exclude, x)
+  # items we need to prefix
+  pp <- x[-excl_idx]
+  # check for existing lagX_ prefixes
+  nn <- as.integer(str_match(pp, "lag([0-9]+)_")[, 2])
+  nn[is.na(nn)] <- 0
+  nn <- nn + n
+  # make sure we start with names without prefix
+  no_prefix <- str_remove(pp, "^lag[0-9]+_")
+  
+  # add prefix and drop into new output
+  new <- paste0("lag", nn, "_", no_prefix)
+  out[-excl_idx] <- new
+  out
+} 
+prefix_lag(c("year", "x", "lag2_y", "gwcode"), 1)
+
+# summarize cases missing data
+# output will have gwcode, year range
+summarize_missing <- function(df) {
+  df %>%
+    filter(!complete.cases(.)) %>%
+    group_by(gwcode) %>%
+    summarize(years = paste0(range(year), collapse = " - "),
+              n = n(),
+              .groups = "drop")
 }
 ```
 
@@ -156,8 +188,7 @@ cy <- left_join(cy, vdem_dat, by = c("gwcode", "year")) %>%
 
 ```{r}
 age_dat <- read_csv("../input/gwstate-age.csv") %>%
-  filter(year <= END_YEAR) %>%
-  mutate(log_state_age = log(state_age))  # UPDATE: take this out
+  filter(year <= END_YEAR) 
 age_lag <- END_YEAR - max(age_dat$year)
 age_dat <- age_dat %>%
   mutate(year = year + age_lag) %>%
@@ -181,8 +212,7 @@ cy <- left_join(cy, age_dat, by = c("gwcode", "year")) %>%
   mutate(lag0_state_age = case_when(
     is.na(lag0_state_age) ~ tail(lag(lag0_state_age, 1), 1) + 1L,
     TRUE ~ lag0_state_age
-  ),
-  lag0_log_state_age = log(lag0_state_age)) %>%
+  )) %>%
   ungroup()
 ```
 
@@ -191,11 +221,10 @@ cy <- left_join(cy, age_dat, by = c("gwcode", "year")) %>%
 ```{r}
 pop_dat <- read_csv("../input/population.csv") %>%
   filter(year <= END_YEAR) %>%
-  mutate(log_pop = log(pop))
+  mutate(log_pop = log(pop),
+         pop = NULL)
 pop_lag <- END_YEAR - max(pop_dat$year)
-pop_dat <- pop_dat %>%
-  mutate(year = year + pop_lag) %>%
-  setNames(c(names(.)[1:2], paste0("lag", pop_lag, "_", names(pop_dat)[-c(1:2)])))
+colnames(pop_dat) <- prefix_lag(colnames(pop_dat), pop_lag)
 
 pop_lag
 str(pop_dat)
@@ -209,7 +238,8 @@ Check missing cases.
 
 ```{r}
 cy_temp <- left_join(cy, pop_dat, by = c("gwcode", "year"))
-tbl <- filter(cy_temp, is.na(lag0_pop)) %>% select(gwcode, year, lag0_pop)
+tbl <- filter(cy_temp, is.na(lag0_log_pop)) %>% 
+  select(gwcode, year, lag0_log_pop)
 tbl
 ```
 
@@ -232,12 +262,11 @@ plotmiss(pop_dat)
 ### Infant mortality
 
 ```{r infmort-setup}
-infmort <- read_csv("../input/wdi-infmort-v2.csv") %>%
-  filter(year <= END_YEAR) 
+infmort <- read_csv("../input/wdi-infmort.csv") %>%
+  filter(year <= END_YEAR) %>%
+  select(gwcode, year, lag1_infmort, lag1_infmort_yearadj)
 infmort_lag <- END_YEAR - max(infmort$year)
-infmort <- infmort %>%
-  mutate(year = year + infmort_lag) %>%
-  setNames(c(names(.)[1:2], paste0("lag", infmort_lag, "_", names(infmort)[-c(1:2)])))
+colnames(infmort) <- prefix_lag(colnames(infmort), infmort_lag)
 
 infmort_lag
 str(infmort)
@@ -247,8 +276,9 @@ Check missing cases.
 
 ```{r infmort-missing}
 cy_temp <- left_join(cy, infmort, by = c("gwcode", "year"))
-tbl <- filter(cy_temp, is.na(lag2_infmort)) %>% select(gwcode, year, lag2_infmort)
-tbl
+cy_temp %>%
+  select(gwcode, year, contains("infmort")) %>%
+  summarize_missing()
 ```
 
 ```{r infmort-missplot}
@@ -265,8 +295,7 @@ cy <- left_join(cy, infmort, by = c("gwcode", "year")) %>%
 ### GDP
 
 ```{r}
-gdp_dat <- read_csv("../input/gdp_1950_2017.csv") %>%
-  select(-date) %>%
+gdp_dat <- read_csv("../input/gdp.csv") %>%
   filter(year <= END_YEAR) %>%
   dplyr::rename(gdp = NY.GDP.MKTP.KD,
                 gdp_growth = NY.GDP.MKTP.KD.ZG,
@@ -277,14 +306,10 @@ gdp_dat <- read_csv("../input/gdp_1950_2017.csv") %>%
          log_gdp_pc = log(gdp_pc),
          gdp_pc = NULL)
 gdp_lag <- END_YEAR - max(gdp_dat$year)
-gdp_dat <- gdp_dat %>%
-  mutate(year = year + gdp_lag) %>%
-  setNames(c(names(.)[1:2], paste0("lag", gdp_lag, "_", names(gdp_dat)[-c(1:2)])))
-
+colnames(gdp_dat) <- prefix_lag(colnames(gdp_dat), gdp_lag)
 
 gdp_lag
 str(gdp_dat)
-
 ```
 
 ```{r gdp-missplot}
@@ -394,8 +419,9 @@ cy_temp <- left_join(cy, acd_dat, by = c("gwcode", "year")) %>%
   tidyr::fill(contains("_internal_confl"), contains("_war"), 
               contains("_any_conflict"), contains("_ext_conf"),
               .direction = "up")
-tbl <- filter(cy_temp, is.na(lag1_internal_confl)) %>% select(gwcode, year)
-tbl
+cy_temp %>%
+  select(gwcode, year, contains("internal_confl")) %>%
+  summarize_missing()
 ```
 
 All good.
@@ -430,8 +456,9 @@ Check missing cases.
 
 ```{r arch-missing}
 cy_temp <- left_join(cy, arch, by = c("gwcode", "year"))
-tbl <- filter(cy_temp, is.na(lag1_ldr_age)) %>% select(gwcode, year, lag1_ldr_age)
-tbl
+cy_temp %>%
+  select(gwcode, year) %>%
+  summarize_missing()
 ```
 
 All are first year of independence.
@@ -563,14 +590,13 @@ if (nrow(incomplete_cases) > 0) {
   incomplete_cases <- incomplete_cases %>%
     group_by(gwcode) %>%
     arrange(year) %>%
-    mutate(date = as.Date(paste0(year, "-01-01")),
-           yr_id = id_date_sequence(date, "year")) %>%
+    mutate(yr_id = id_date_sequence(year)) %>%
     group_by(gwcode, yr_id, missing_values_in) %>%
     summarize(year = format_years(year)) %>%
     # clean up
     ungroup() %>%
     select(gwcode, year, missing_values_in) %>%
-    arrange(years, gwcode)
+    arrange(year, gwcode)
 }
 
   
