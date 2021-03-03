@@ -1,9 +1,10 @@
 Class: tbl_df, tbl, data.frame
 Size_in_mem: 28.5 Mb
+N_countries: 174
+Years: 1970 - 2019
 N_columns: 482
 N_rows: 7849
 N_complete_rows: 7511
-Years: 1970 - 2019
 Countries: 174
 Missing:
   gwcode: 0

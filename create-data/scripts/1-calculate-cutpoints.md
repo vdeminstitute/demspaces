@@ -6,7 +6,7 @@ in a file called “1-dv\_notes.Rmd”, written by Rick. That file also
 created a memo/report. I split the cutpoint calculation part out because
 there was a circular dependency with “2-create-dv-data.Rmd”, and
 adjusted the code accordingly to remove this problem. See issue \#26 on
-GitHub to see the commit that created this file.*
+GitHub (andybega) to see the commit that created this file.*
 
 ``` r
 dv <- read_csv("../trafo-data/dv_data_1968_on.csv") %>%
@@ -15,7 +15,8 @@ dv <- read_csv("../trafo-data/dv_data_1968_on.csv") %>%
   arrange(gwcode, year)
 ```
 
-    ## Parsed with column specification:
+    ## 
+    ## ── Column specification ────────────────────────────────────────────────────────
     ## cols(
     ##   gwcode = col_double(),
     ##   year = col_double(),

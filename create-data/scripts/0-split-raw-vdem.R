@@ -4,7 +4,7 @@
 #   Andreas Beger
 #   2020-03-23
 #
-#   Adapated from `VDem_data_build.r`, which Rick Morgan originally wrote.
+#   Adapted from `VDem_data_build.r`, which Rick Morgan originally wrote.
 #
 #   Output:
 #
@@ -44,9 +44,11 @@ naCountFun <- function(dat, exclude_year){
 
 # The end year of observed data. Usually should be the year prior to the
 # current year.
-END_YEAR   <- 2019L
+# UPDATE:
+END_YEAR   <- 2019L #2020L
 START_YEAR <- 1968L
 
+# UPDATE: v[X]
 vdem_raw <- readRDS("input/V-Dem-CY-Full+Others-v10.rds")
 
 ## Remove countries that have a lot of missingness in the VDem data... and make adjustments to merge with GW country-year set
@@ -62,7 +64,9 @@ vdem_complete <- vdem_raw %>%
                             gwcode == 345 & year >= 2006 ~ 340,
                             TRUE ~ gwcode)) %>%
   select(gwcode, everything())
-dim(vdem_complete) ## 8430 4109
+dim(vdem_complete)
+## 2020 update (v10): 8430 4109
+## 2021 update (v11):
 
 vdem_country_year0 <- vdem_complete %>%
   select(c(country_name, country_text_id, country_id, gwcode, year, v2x_pubcorr))
@@ -107,9 +111,10 @@ vdem_dvs <- vdem_complete %>%
 dvs <- left_join(country_year_set, vdem_dvs)
 naCountFun(dvs, END_YEAR)  # no NAs
 
+# TODO: don't write directly outside of this directory
 write_csv(dvs, "../dashboard/Data/dv_data_1968_on.csv")
 
-dvs <- dvs %>% 
+dvs <- dvs %>%
   select(-e_regionpol_6C)
 
 write_csv(dvs, "trafo-data/dv_data_1968_on.csv")
@@ -235,6 +240,8 @@ dim(vDem_GW_data) ## 8120  371
 # summary(vDem_GW_data)
 
 # naCountFun(vDem_GW_data, END_YEAR + 1)
-naCountFun(vDem_GW_data, END_YEAR)
+nas <- naCountFun(vDem_GW_data, END_YEAR)
+table(nas)
+nas[nas > 0]
 
 write_csv(vDem_GW_data, "trafo-data/vdem_data_1968_on.csv")

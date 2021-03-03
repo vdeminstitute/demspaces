@@ -17,7 +17,7 @@ Several of the data sources below are imputed in some fashion after merging. E.g
 
 
 ```{r}
-END_YEAR <- 2019
+END_YEAR <- 2019 # 2020
 ```
 
 ```{r setup, include=FALSE}
@@ -157,7 +157,7 @@ cy <- left_join(cy, vdem_dat, by = c("gwcode", "year")) %>%
 ```{r}
 age_dat <- read_csv("../input/gwstate-age.csv") %>%
   filter(year <= END_YEAR) %>%
-  mutate(log_state_age = log(state_age))
+  mutate(log_state_age = log(state_age))  # UPDATE: take this out
 age_lag <- END_YEAR - max(age_dat$year)
 age_dat <- age_dat %>%
   mutate(year = year + age_lag) %>%
@@ -505,6 +505,28 @@ vars <- data.frame(Variables = names(cy))
 write_csv(vars, "../output-data/variables-in-dataset.csv")
 ```
 
+General summary stats
+
+```{r}
+library(yaml)
+data_signature <- function(df) {
+  out <- list()
+  out$Class <- paste(class(df), collapse = ", ")
+  out$Size_in_mem <- format(utils::object.size(df), "Mb")
+  out$N_countries <- length(unique(df$gwcode))
+  out$Years <- paste0(range(df$year, na.rm = TRUE), collapse = " - ")
+  out$N_columns <- ncol(df)
+  out$N_rows <- nrow(df)
+  out$N_complete_rows <- sum(stats::complete.cases(df))
+  out$Countries <- length(unique(df$gwcode))
+  out$Missing <- lapply(df, function(x) sum(is.na(x)))
+  out$Col_types <- lapply(df, function(x) typeof(x))
+  out
+}
+sig <- data_signature(cy)
+write_yaml(sig, "../output-data/states-signature.yml")
+```
+
 
 ### Record missing cases
 
@@ -567,6 +589,7 @@ sapply(cy, function(x) sum(is.na(x))) %>%
   knitr::kable()
 ```
 
+## Done, save
 
 ```{r}
 write_rds(cy, "../output-data/states.rds")

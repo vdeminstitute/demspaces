@@ -27,13 +27,13 @@ The script also writes CSV files for the target outcome variables, so that chang
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-library("dplyr")
-library("readr")
-library("states")
-library("tidyr")
-library("zoo")
-library("demspaces")
-library("skimr")
+library(dplyr)
+library(readr)
+library(states)
+library(tidyr)
+library(zoo)
+library(demspacesR)
+library(skimr)
 
 # shortcut for plotting missing values when no date column is available
 plotmiss <- function(x) {
