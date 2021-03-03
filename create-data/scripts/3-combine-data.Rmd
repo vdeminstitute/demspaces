@@ -224,6 +224,7 @@ pop_dat <- read_csv("../input/population.csv") %>%
   mutate(log_pop = log(pop),
          pop = NULL)
 pop_lag <- END_YEAR - max(pop_dat$year)
+pop_dat$year <- pop_dat$year + pop_lag
 colnames(pop_dat) <- prefix_lag(colnames(pop_dat), pop_lag)
 
 pop_lag
@@ -266,6 +267,7 @@ infmort <- read_csv("../input/wdi-infmort.csv") %>%
   filter(year <= END_YEAR) %>%
   select(gwcode, year, lag1_infmort, lag1_infmort_yearadj)
 infmort_lag <- END_YEAR - max(infmort$year)
+infmort$year <- infmort$year + infmort_lag
 colnames(infmort) <- prefix_lag(colnames(infmort), infmort_lag)
 
 infmort_lag
@@ -306,6 +308,7 @@ gdp_dat <- read_csv("../input/gdp.csv") %>%
          log_gdp_pc = log(gdp_pc),
          gdp_pc = NULL)
 gdp_lag <- END_YEAR - max(gdp_dat$year)
+gdp_dat$year <- gdp_dat$year + gdp_lag
 colnames(gdp_dat) <- prefix_lag(colnames(gdp_dat), gdp_lag)
 
 gdp_lag

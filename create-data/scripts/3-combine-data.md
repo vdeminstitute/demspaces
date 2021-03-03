@@ -425,6 +425,7 @@ pop_dat <- read_csv("../input/population.csv") %>%
 
 ``` r
 pop_lag <- END_YEAR - max(pop_dat$year)
+pop_dat$year <- pop_dat$year + pop_lag
 colnames(pop_dat) <- prefix_lag(colnames(pop_dat), pop_lag)
 
 pop_lag
@@ -503,6 +504,7 @@ infmort <- read_csv("../input/wdi-infmort.csv") %>%
 
 ``` r
 infmort_lag <- END_YEAR - max(infmort$year)
+infmort$year <- infmort$year + infmort_lag
 colnames(infmort) <- prefix_lag(colnames(infmort), infmort_lag)
 
 infmort_lag
@@ -576,6 +578,7 @@ gdp_dat <- read_csv("../input/gdp.csv") %>%
 
 ``` r
 gdp_lag <- END_YEAR - max(gdp_dat$year)
+gdp_dat$year <- gdp_dat$year + gdp_lag
 colnames(gdp_dat) <- prefix_lag(colnames(gdp_dat), gdp_lag)
 
 gdp_lag
@@ -589,7 +592,7 @@ str(gdp_dat)
 
     ## spec_tbl_df [11,203 × 6] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
     ##  $ gwcode            : num [1:11203] 2 20 40 41 42 70 90 91 92 93 ...
-    ##  $ year              : num [1:11203] 1950 1950 1950 1950 1950 1950 1950 1950 1950 1950 ...
+    ##  $ year              : num [1:11203] 1951 1951 1951 1951 1951 ...
     ##  $ lag1_gdp_growth   : num [1:11203] 3.861 3.943 0.898 2.594 0 ...
     ##  $ lag1_gdp_pc_growth: num [1:11203] 0 -0.0249 0.2154 2.2589 0 ...
     ##  $ lag1_log_gdp      : num [1:11203] 28.4 26 23.4 22.2 21.5 ...
@@ -1233,11 +1236,8 @@ if (nrow(incomplete_cases) > 0) {
     select(gwcode, year, missing_values_in) %>%
     arrange(year, gwcode)
 }
-```
 
-    ## `summarise()` has grouped output by 'gwcode', 'yr_id'. You can override using the `.groups` argument.
-
-``` r
+  
 write_csv(incomplete_cases, "../output-data/incomplete.cases.csv")
 ```
 
@@ -1266,10 +1266,6 @@ sapply(cy, function(x) sum(is.na(x))) %>%
 | dv\_v2x\_horacc\_osp\_down\_next2    |     338 |
 | dv\_v2x\_pubcorr\_up\_next2          |     338 |
 | dv\_v2x\_pubcorr\_down\_next2        |     338 |
-| lag1\_gdp\_growth                    |       1 |
-| lag1\_gdp\_pc\_growth                |       1 |
-| lag1\_log\_gdp                       |       1 |
-| lag1\_log\_gdp\_pc                   |       1 |
 
 ## Done, save
 
