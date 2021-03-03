@@ -1,0 +1,8 @@
+Class: tbl_df, tbl, data.frame
+Size_in_mem: 0.3 Mb
+N_countries: 177
+Years: 1960 - 2020
+N_columns: 5
+Columns: gwcode, year, lag1_infmort, lag1_infmort_yearadj, lag1_infmort_imputed
+N_rows: 9481
+N_complete_rows: 9481

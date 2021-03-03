@@ -22,8 +22,11 @@ Infant mortality data for all countries, 1960 on.
 library(ggplot2)
 
 df <- read.csv("output/wdi-infmort.csv")
-
 str(df)
+head(df)
+
+stats <- yaml::read_yaml("output/wdi-infmort-signature.yml")
+stats
 
 ggplot(df, aes(x = year, y = lag1_infmort, group = gwcode)) +
   geom_line(alpha = 0.5) +

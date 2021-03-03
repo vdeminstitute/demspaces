@@ -1,7 +1,7 @@
 WDI Infant mortality
 ================
 
-*Last updated on: 2021-03-02*
+*Last updated on: 2021-03-03*
 
 Infant mortality data for all countries, 1960 on.
 
@@ -27,16 +27,56 @@ Infant mortality data for all countries, 1960 on.
 library(ggplot2)
 
 df <- read.csv("output/wdi-infmort.csv")
-
 str(df)
 ```
 
-    ## 'data.frame':    9376 obs. of  5 variables:
+    ## 'data.frame':    9481 obs. of  5 variables:
     ##  $ gwcode              : int  2 2 2 2 2 2 2 2 2 2 ...
     ##  $ year                : int  1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 ...
     ##  $ lag1_infmort        : num  25.9 25.9 25.4 24.9 24.4 23.8 23.3 22.7 22 21.3 ...
-    ##  $ lag1_infmort_yearadj: num  -1.23 -1.25 -1.26 -1.25 -1.24 ...
+    ##  $ lag1_infmort_yearadj: num  -1.2 -1.22 -1.23 -1.23 -1.22 ...
     ##  $ lag1_infmort_imputed: logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
+
+``` r
+head(df)
+```
+
+    ##   gwcode year lag1_infmort lag1_infmort_yearadj lag1_infmort_imputed
+    ## 1      2 1960         25.9            -1.201637                FALSE
+    ## 2      2 1961         25.9            -1.220289                FALSE
+    ## 3      2 1962         25.4            -1.233041                FALSE
+    ## 4      2 1963         24.9            -1.229858                FALSE
+    ## 5      2 1964         24.4            -1.217808                FALSE
+    ## 6      2 1965         23.8            -1.214555                FALSE
+
+``` r
+stats <- yaml::read_yaml("output/wdi-infmort-signature.yml")
+stats
+```
+
+    ## $Class
+    ## [1] "tbl_df, tbl, data.frame"
+    ## 
+    ## $Size_in_mem
+    ## [1] "0.3 Mb"
+    ## 
+    ## $N_countries
+    ## [1] 177
+    ## 
+    ## $Years
+    ## [1] "1960 - 2020"
+    ## 
+    ## $N_columns
+    ## [1] 5
+    ## 
+    ## $Columns
+    ## [1] "gwcode, year, lag1_infmort, lag1_infmort_yearadj, lag1_infmort_imputed"
+    ## 
+    ## $N_rows
+    ## [1] 9481
+    ## 
+    ## $N_complete_rows
+    ## [1] 9481
 
 ``` r
 ggplot(df, aes(x = year, y = lag1_infmort, group = gwcode)) +

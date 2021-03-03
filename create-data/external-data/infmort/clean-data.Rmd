@@ -24,6 +24,7 @@ library(tidyverse)
 library(states)
 library(lubridate)
 library(stringr)
+library(yaml)
 
 wdi_to_gw <- function(x, iso2c = "iso2c", country = "country", year = "year") {
   
@@ -185,6 +186,7 @@ knitr::kable(nogwcode)
 # Take those out
 wdi <- wdi %>%
   dplyr::filter(!is.na(gwcode))
+wdi$iso2c <- NULL
 ```
 
 ### Lag data
@@ -227,8 +229,120 @@ missing_year %>%
 
 # This should not be the case since we lagged the data
 stopifnot(nrow(missing_year)==0)
+```
 
-# Are any countries completely missing?
+This should not be the case, i.e. an empty table. 
+
+### Add custom series for several historical entities like GDR
+
+For the V-Dem forecasts, when creating the intial version in 2019, we (Andy Beger and Rick Morgan) went through and found infant mortality data by hand for a couple of missing countries. Drop these in now.
+
+#### GDR 1970-1990 
+
+Data from https://datorium.gesis.org/xmlui/handle/10.7802/1447. 
+
+```{r custom-gdr}
+# library(readstata13)
+# x <- read.dta13("C:/Users/rickm/Dropbox/Closing Space/Data/infmort/gdrinfmor.dta")
+# write_csv(x, "C:/Users/rickm/Dropbox/Closing Space/Data/infmort/GDR-infmort.csv")
+
+gdr <- read_csv("input/GDR-infmort.csv",
+                col_types = cols(
+                  .default = col_double(),
+                  county = col_character(),
+                  canton = col_character()
+                ))
+# the morinfr_tot is total GDR-wide infant mortality; doesn't vary by year 
+# accross rows
+gdr <- gdr %>%
+  select(year, morinfr_tot) %>%
+  filter(!duplicated(year)) %>%
+  mutate(gwcode = 265) %>%
+  rename(infmort_new = morinfr_tot)
+# drop in values
+wdi <- left_join(wdi, gdr, by = c("gwcode", "year")) %>%
+  mutate(infmort = ifelse(is.na(infmort), infmort_new, infmort)) %>%
+  select(-infmort_new)
+```
+
+#### Taiwan 
+
+Data from the Ministry of Health and Welfare at https://www.mohw.gov.tw/. Specifically downloaded from https://www.mohw.gov.tw/cp-3961-42866-2.html and https://www.mohw.gov.tw/dl-36335-c57437dc-058a-44cc-b6aa-16c3af6bb18d.html.
+
+```{r custom-taiwan}
+# library(readxl)
+# taiwan_86 <- read_xls("C:/Users/rickm/Dropbox/Closing Space/Data/infmort/Taiwan-MHW-InfantMortalityRate_1986-2017.xls", sheet = 18, skip = 3) %>% 
+#   select(c(1, 10)) %>% 
+#   rename(year = `...1`, infmort_new = `Death Rate\n(0/00)...10`)
+# 
+# taiwan_62 <- read_xls("C:/Users/rickm/Dropbox/Closing Space/Data/infmort/Taiwan-MHW-InfantMortalityRate_1962-2001.xls", sheet = 1, skip = 8) %>% 
+#   select(c(3, 13)) %>% 
+#   rename(year = `...3`, infmort_new = `Death Rate...13`) %>%
+#   mutate(year = as.numeric(year)) %>% 
+#   filter(!is.na(year) & between(year, 1970, 1985)) 
+# 
+# taiwan <- rbind(taiwan_62, taiwan_86) %>% 
+#   mutate(gwcode = 713)
+
+taiwan <- read_csv("input/Taiwan_infmort.csv",
+                   col_types = cols(
+                     year = col_double(),
+                     infmort_new = col_double(),
+                     gwcode = col_double()
+                   )) %>%
+  filter(!is.na(year))
+# UPDATE: instead of updating a spreadsheet, I just manually dropped in recent 
+# value by going to the MOH website and looking at the latest Cause of Deaths 
+# report
+taiwan <- taiwan %>%
+  add_row(gwcode = 713, year = 2018, infmort_new = 4.16) %>%
+  add_row(gwcode = 713, year = 2019, infmort_new = 3.83) %>%
+  # Don't have 2020 values yet, but let's just say it's same as 2019
+  add_row(gwcode = 713, year = 2020, infmort_new = 3.83)
+
+# drop in values
+wdi <- left_join(wdi, taiwan, by = c("gwcode", "year")) %>%
+  mutate(infmort = ifelse(is.na(infmort), infmort_new, infmort)) %>%
+  select(-infmort_new)
+```
+
+#### Kosovo 2008-2017
+
+https://ec.europa.eu/eurostat/databrowser/view/tps00027/default/table?lang=en
+
+```{r custom-kosovo}
+# kosovo <- read_xlsx("Kosovo_infmort_data_EC.xlsx", sheet = 3, skip = 8) %>% 
+#   filter(TIME == "Kosovo (under United Nations Security Council Resolution 1244/99)") %>% 
+#   select(-contains("...")) %>% 
+#   rename(year = "TIME") %>%
+#   mutate(`2013` = as.numeric(NA), 
+#          `2014` = as.numeric(NA)) %>% 
+#   gather(key = "year", value = "infmort_new") %>% 
+#   mutate(country_name = "Kosovo", 
+#          gwcode = 347, 
+#          infmort_new = as.numeric(infmort_new)) %>% 
+#   mutate(infmort_new = case_when(year == 2013 ~ 10.83333, TRUE ~ infmort_new), # There are 2 NAs -- 2013, 2014. I'm going to spread the difference between 2012 and 2015 ((9.7 - 11.4) / 3) + 11.4
+#           infmort_new = case_when(year == 2014 ~ 10.26666, TRUE ~ infmort_new)) ## ((9.7 - 11.4) / 3) + 10.83333 
+# write_csv(kosovo, "C:/Users/rickm/Dropbox/Closing Space/Data/infmort/kosovo_infmort.csv")
+
+kosovo <- read_csv("input/kosovo_infmort.csv",
+                   col_types = cols(
+  year = col_double(),
+  infmort_new = col_double(),
+  country_name = col_character(),
+  gwcode = col_double()
+))
+# drop in values
+wdi <- left_join(wdi, kosovo, by = c("gwcode", "year")) %>%
+  mutate(infmort = ifelse(is.na(infmort), infmort_new, infmort)) %>%
+  select(-infmort_new)
+```
+
+
+### Drop countries completely missing
+
+```{r}
+# Are any countries completely missing? 
 missing_country <- wdi %>%
   group_by(gwcode) %>%
   summarize(n = n(), 
@@ -247,7 +361,7 @@ wdi <- wdi %>%
 
 ### Carry-back impute lag-induced missing data
 
-Because we lagged the data, countries will have missing values in 1960 or their first year of independence, if it was after 1960. Use the 1960 or independence year value to impute, i.e. carry back impute thoses cases.
+Because we lagged the data, countries will have missing values in 1960 or their first year of independence, if it was after 1960. Use the 1960 or independence year value to impute, i.e. carry back impute those cases.
 
 ```{r}
 # Countries that gained indy in 1960 or later
@@ -306,6 +420,7 @@ missing <- wdi %>%
   arrange(desc(Frac_miss), gwcode)
 
 missing %>% 
+  arrange(gwcode) %>%
   knitr::kable(digits = 2)
 
 # add an indicator if series is incomplete 
@@ -431,6 +546,7 @@ wdi <- wdi %>%
 ```
 
 Now all the countries we have not dropped should have full series / no missing values. 
+
 ```{r check-no-missing-left}
 tbl <- wdi %>%
   group_by(gwcode) %>%
@@ -461,7 +577,23 @@ wdi <- wdi %>%
   select(gwcode, year, infmort, infmort_yearadj, infmort_imputed) %>%
   # UPDATE: make sure it's clear these are lagged (if they are)
   rename(lag1_infmort = infmort, lag1_infmort_yearadj = infmort_yearadj,
-         lag1_infmort_imputed = infmort_imputed)
+         lag1_infmort_imputed = infmort_imputed) 
+
+# Keep a summary of the data so changes in the future are easier to track on 
+# git
+df <- wdi
+stats <- list(
+  Class           = paste0(class(wdi), collapse = ", "),
+  Size_in_mem     = format(utils::object.size(wdi), "Mb"),
+  N_countries     = length(unique(df$gwcode)),
+  Years           = paste0(range(df$year, na.rm = TRUE), collapse = " - "),
+  N_columns       = ncol(df),
+  Columns         = paste0(colnames(df), collapse = ", "),
+  N_rows          = nrow(df),
+  N_complete_rows = sum(stats::complete.cases(df))
+)
+yaml::write_yaml(stats, "output/wdi-infmort-signature.yml")
+
 write_csv(wdi, file = "output/wdi-infmort.csv")
 ```
 
