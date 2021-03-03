@@ -27,5 +27,11 @@ If there is no prefix or the previs is `lagX` they can be used as model inputs. 
 
   - `lagX...`
 
+## Versioning
 
+(2021-03-03 AB) Prior to the 2021 update, there was no versioning per se. I introduced it now. The work in 2019 and 2020 was done by Rick Morgan and Andy Beger (me). I did the 2021 update myself. 
+
+- v1: the original 2019 version that was created during the initial project development
+- v2: spring 2020 update
+- v3: spring 2021 update
 

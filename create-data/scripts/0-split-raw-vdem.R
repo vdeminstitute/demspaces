@@ -28,11 +28,6 @@ library(states)
 library(tidyr)
 library(here)
 
-# needs devel version of states
-if (packageVersion("states") < "0.2.2.9007") {
-  stop("Please re-install the latest dev version of states:\n  remotes::install_github(\"andybega/states\")")
-}
-
 setwd(here::here("create-data"))
 
 naCountFun <- function(dat, exclude_year){
@@ -45,11 +40,11 @@ naCountFun <- function(dat, exclude_year){
 # The end year of observed data. Usually should be the year prior to the
 # current year.
 # UPDATE:
-END_YEAR   <- 2019L #2020L
+END_YEAR   <- 2020L
 START_YEAR <- 1968L
 
 # UPDATE: v[X]
-vdem_raw <- readRDS("input/V-Dem-CY-Full+Others-v10.rds")
+vdem_raw <- readRDS("input/V-Dem-CY-Full+Others-v11.rds")
 
 ## Remove countries that have a lot of missingness in the VDem data... and make adjustments to merge with GW country-year set
 vdem_complete <- vdem_raw %>%
