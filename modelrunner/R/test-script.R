@@ -37,7 +37,8 @@ lgr$info("If there are any errors, see output/tests for artifacts")
 lgr$info("Starting tests")
 
 lgr$info("Loading data")
-states <- readRDS("input/states.rds")
+fn <- dir("input")
+states <- readRDS(fn)
 
 yy <- "v2x_veracc_osp"
 tt <- 2005
@@ -45,7 +46,8 @@ tt <- 2005
 states_t <- states %>%
   filter(year >= 1995) %>%
   filter(year <= tt) %>%
-  select(gwcode:lag0_v2x_polyarchy, lag0_log_state_age, lag0_log_pop, lag2_log_gdp_pc)
+  select(gwcode:lag0_v2x_polyarchy, contains("state_age"), contains("log_pop"),
+         contains("log_gdp_pc"))
 
 train_data <- states_t %>%
   ungroup() %>%
