@@ -118,7 +118,7 @@ for (var_i in dv_vars) {
                                                  "_change", "_up", "_up_next2", 
                                                  "_down", "_down_next2"))))
   
-  dv_to_join <- select(dv_i, gwcode, year, !!var_i, ends_with("diff_y2y"), 
+  dv_to_join <- select(dv_i, gwcode, year, !!var_i, 
                        ends_with("change"), ends_with("next2"), 
                        ends_with("up"), ends_with("down")) %>%
     # sub in the actual variable name, not the placeholders
@@ -149,23 +149,6 @@ Combine into one large DV set.
 dv_data <- Reduce(left_join, x = dv_piece)
 ```
 
-Add moving averages and other history-type variables of DVs. 
-
-```{r}
-ma5 <- function(x) {
-  rollapply(x, width = 5, FUN = mean, fill = 0, align = "right", partial = TRUE)
-}
-
-ma10 <- function(x) {
-  rollapply(x, width = 10, FUN = mean, fill = 0, align = "right", partial = TRUE)
-}
-
-dv_data = dv_data %>%
-  group_by(gwcode) %>%
-  arrange(year) %>%
-  mutate_at(vars(ends_with("up"), ends_with("down")), list(ma5 = ma5, ma10 = ma10)) %>%
-  ungroup()
-```
 
 Add squared transformations for space indicators. Changes seem to be more common at middle values and less common in high and low (partly because beyond some range a change is impossible). 
 

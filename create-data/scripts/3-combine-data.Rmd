@@ -18,6 +18,7 @@ Several of the data sources below are imputed in some fashion after merging. E.g
 
 ```{r}
 END_YEAR <- 2020
+VERSION  <- "v11b"
 ```
 
 ```{r setup, include=FALSE}
@@ -327,40 +328,13 @@ cy <- left_join(cy, gdp_dat, by = c("gwcode", "year")) %>%
   tidyr::fill(contains("_gdp"), .direction = "up")
 ```
 
-### EPR
-
-```{r}
-epr_dat <- read_csv("../input/epr-yearly.csv") %>%
-  select(-date) %>%
-  filter(year <= END_YEAR)
-epr_lag <- END_YEAR - max(epr_dat$year)
-epr_dat <- epr_dat %>%
-  mutate(year = year + epr_lag) %>%
-  setNames(c(names(.)[1:2], paste0("lag", epr_lag, "_", names(epr_dat)[-c(1:2)])))
-
-
-epr_lag
-str(epr_dat)
-
-```
-
-```{r epr-missplot}
-plotmiss(epr_dat)
-```
-
-Missing some first years due to lagging; fill them with first observed value. 
-
-```{r}
-cy <- left_join(cy, epr_dat, by = c("gwcode", "year")) %>%
-  arrange(gwcode, year) %>%
-  tidyr::fill(contains("_epr_"), .direction = "up")
-```
 
 ### P&T Coups
 
 ```{r}
 coup_dat <- read_csv("../input/ptcoups.csv") %>%
-  filter(year <= END_YEAR)
+  filter(year <= END_YEAR) %>%
+  select(gwcode, year, years_since_last_pt_attempt)
 coup_lag <- END_YEAR - max(coup_dat$year)
 coup_dat <- coup_dat %>%
   mutate(year = year + coup_lag) %>%
@@ -378,7 +352,7 @@ Missing some first years due to lagging; fill them with first observed value.
 
 ```{r}
 cy_temp <- left_join(cy, coup_dat, by = c("gwcode", "year")) 
-tbl <- filter(cy_temp, is.na(lag0_pt_coup)) %>% select(gwcode, year)
+tbl <- filter(cy_temp, is.na(lag0_years_since_last_pt_attempt)) %>% select(gwcode, year)
 tbl
 ```
 
@@ -390,96 +364,7 @@ if (nrow(tbl) > 0) {
 }
 
 cy <- left_join(cy, coup_dat, by = c("gwcode", "year")) %>%
-  arrange(gwcode, year) %>%
-  tidyr::fill(contains("_pt_coup"), contains("_pt_failed_coup"), .direction = "down")
-```
-
-### ACD
-
-```{r}
-acd_dat <- read_csv("../input/acd.csv") %>%
-  filter(year <= END_YEAR) %>%
-  select(gwcode, year, everything())
-acd_lag <- END_YEAR - max(acd_dat$year)
-acd_dat <- acd_dat %>%
-  mutate(year = year + acd_lag) %>%
-  setNames(c(names(.)[1:2], paste0("lag", acd_lag, "_", names(.)[-c(1:2)])))
-
-acd_lag
-str(acd_dat)
-```
-
-
-```{r acd-missplot}
-plotmiss(acd_dat)
-```
-
-Fill in initial years and check there are no missing values left after that. 
-
-```{r}
-cy_temp <- left_join(cy, acd_dat, by = c("gwcode", "year")) %>%
-  arrange(gwcode, year) %>%
-  tidyr::fill(contains("_internal_confl"), contains("_war"), 
-              contains("_any_conflict"), contains("_ext_conf"),
-              .direction = "up")
-cy_temp %>%
-  select(gwcode, year, contains("internal_confl")) %>%
-  summarize_missing()
-```
-
-All good.
-
-```{r}
-if (nrow(tbl) > 0) {
-  stop("Something has changed")
-}
-
-cy <- left_join(cy, acd_dat, by = c("gwcode", "year")) %>%
-  arrange(gwcode, year) %>%
-  tidyr::fill(contains("_internal_confl"), contains("_war"), 
-              contains("_any_conflict"), contains("_ext_conf"),
-              .direction = "up")
-```
-
-### Archigos leader info
-
-```{r arch-setup}
-arch <- read_rds("../input/archigos_cy.rds") %>%
-  filter(year <= END_YEAR) 
-arch_lag <- END_YEAR - max(arch$year)
-arch <- arch %>%
-  mutate(year = year + arch_lag) %>%
-  setNames(c(names(.)[1:2], paste0("lag", arch_lag, "_", names(arch)[-c(1:2)])))
-
-arch_lag
-str(arch)
-```
-
-Check missing cases.
-
-```{r arch-missing}
-cy_temp <- left_join(cy, arch, by = c("gwcode", "year"))
-cy_temp %>%
-  select(gwcode, year) %>%
-  summarize_missing()
-```
-
-All are first year of independence.
-
-```{r arch-missplot}
-arch %>% 
-  filter(year > 1968) %>%
-  plotmiss(.)
-```
-
-Carry-forward impute any cases that are missing the most recent year. First year of independence os also missing for several countries. Carry-back impute. Do this after joining to master list because "arch" is plain missing those country-year rows. 
-
-```{r arch-join}
-cy <- left_join(cy, arch, by = c("gwcode", "year")) %>%
-  arrange(gwcode, year) %>%
-  tidyr::fill(contains("_ldr"), .direction = "down") %>%
-  # carry-back impute missing in first year of independence
-  tidyr::fill(contains("_ldr"), .direction = "up") 
+  arrange(gwcode, year) 
 ```
 
 ## Summarize and write final output
@@ -554,6 +439,12 @@ data_signature <- function(df) {
   out
 }
 sig <- data_signature(cy)
+
+# Write both versioned and clean file name so that:
+# - easy to see changes on git with clean file name
+# - concise historical record with versioned file name
+write_yaml(sig, sprintf("../output-data/states-%s-signature.yml",
+                        VERSION))
 write_yaml(sig, "../output-data/states-signature.yml")
 ```
 
@@ -602,8 +493,7 @@ if (nrow(incomplete_cases) > 0) {
     arrange(year, gwcode)
 }
 
-  
-write_csv(incomplete_cases, "../output-data/incomplete.cases.csv")
+write_csv(incomplete_cases, "../output-data/incomplete-cases.csv")
 ```
 
 
@@ -621,6 +511,8 @@ sapply(cy, function(x) sum(is.na(x))) %>%
 ## Done, save
 
 ```{r}
-write_rds(cy, "../output-data/states.rds")
+fn <- sprintf("../output-data/states-%s.rds", VERSION)
+cat("Saving data as %s", basename(fn))
+write_rds(cy, fn)
 ```
 

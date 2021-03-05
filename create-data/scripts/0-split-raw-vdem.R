@@ -208,19 +208,8 @@ vdem_clean_data <- vdem_ivs %>%
   select(country_name, country_text_id, gwcode, country_id, year, is_jud, is_leg, is_elec, is_election_year, everything())
 dim(vdem_clean_data) ## 8430  190
 
-vdem_clean_data_diff <- vdem_clean_data %>%
-  group_by(country_id) %>%
-  arrange(year) %>%
-  mutate_at(vars(-c(country_name, country_text_id, gwcode, country_id, year, is_jud, is_leg, is_elec, is_election_year)), ~c(NA, diff(.))) %>%
-  ungroup() %>%
-  arrange(country_id, year) %>%
-  select(country_name, country_text_id, gwcode, country_id, year, is_jud, is_leg, is_elec, is_election_year, everything())
 
-names(vdem_clean_data_diff)[-c(1:9)] <- paste0("diff_year_prior_", names(vdem_clean_data)[-c(1:9)])
-# naCountFun(vdem_clean_data_diff, END_YEAR)
-
-vdem_data <- vdem_clean_data %>%
-  left_join(vdem_clean_data_diff)
+vdem_data <- vdem_clean_data
 dim(vdem_data) ## 8430  371
 # naCountFun(vdem_data, END_YEAR)
 

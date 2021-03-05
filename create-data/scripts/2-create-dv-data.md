@@ -128,7 +128,7 @@ for (var_i in dv_vars) {
                                                  "_change", "_up", "_up_next2", 
                                                  "_down", "_down_next2"))))
   
-  dv_to_join <- select(dv_i, gwcode, year, !!var_i, ends_with("diff_y2y"), 
+  dv_to_join <- select(dv_i, gwcode, year, !!var_i, 
                        ends_with("change"), ends_with("next2"), 
                        ends_with("up"), ends_with("down")) %>%
     # sub in the actual variable name, not the placeholders
@@ -166,24 +166,6 @@ dv_data <- Reduce(left_join, x = dv_piece)
     ## Joining, by = c("gwcode", "year")
     ## Joining, by = c("gwcode", "year")
 
-Add moving averages and other history-type variables of DVs.
-
-``` r
-ma5 <- function(x) {
-  rollapply(x, width = 5, FUN = mean, fill = 0, align = "right", partial = TRUE)
-}
-
-ma10 <- function(x) {
-  rollapply(x, width = 10, FUN = mean, fill = 0, align = "right", partial = TRUE)
-}
-
-dv_data = dv_data %>%
-  group_by(gwcode) %>%
-  arrange(year) %>%
-  mutate_at(vars(ends_with("up"), ends_with("down")), list(ma5 = ma5, ma10 = ma10)) %>%
-  ungroup()
-```
-
 Add squared transformations for space indicators. Changes seem to be
 more common at middle values and less common in high and low (partly
 because beyond some range a change is impossible).
@@ -219,23 +201,21 @@ dv_data %>%
   filter(year > 2010)
 ```
 
-    ## # A tibble: 10 x 12
-    ##    gwcode  year v2x_veracc_osp v2x_veracc_osp_… dv_v2x_veracc_o…
-    ##     <dbl> <dbl>          <dbl>            <dbl> <chr>           
-    ##  1    310  2011          0.919          -0.005  same            
-    ##  2    310  2012          0.918          -0.001  same            
-    ##  3    310  2013          0.913          -0.005  same            
-    ##  4    310  2014          0.832          -0.081  down            
-    ##  5    310  2015          0.833           0.001  same            
-    ##  6    310  2016          0.833           0      same            
-    ##  7    310  2017          0.824          -0.009  same            
-    ##  8    310  2018          0.76           -0.0640 same            
-    ##  9    310  2019          0.76            0      same            
-    ## 10    310  2020          0.764           0.004  same            
-    ## # … with 7 more variables: dv_v2x_veracc_osp_up_next2 <int>,
-    ## #   dv_v2x_veracc_osp_down_next2 <int>, v2x_veracc_osp_up_ma5 <dbl>,
-    ## #   v2x_veracc_osp_down_ma5 <dbl>, v2x_veracc_osp_up_ma10 <dbl>,
-    ## #   v2x_veracc_osp_down_ma10 <dbl>, v2x_veracc_osp_squared <dbl>
+    ## # A tibble: 10 x 7
+    ##    gwcode  year v2x_veracc_osp dv_v2x_veracc_o… dv_v2x_veracc_o…
+    ##     <dbl> <dbl>          <dbl> <chr>                       <int>
+    ##  1    310  2011          0.919 same                            0
+    ##  2    310  2012          0.918 same                            0
+    ##  3    310  2013          0.913 same                            0
+    ##  4    310  2014          0.832 down                            0
+    ##  5    310  2015          0.833 same                            0
+    ##  6    310  2016          0.833 same                            0
+    ##  7    310  2017          0.824 same                            0
+    ##  8    310  2018          0.76  same                            0
+    ##  9    310  2019          0.76  same                           NA
+    ## 10    310  2020          0.764 same                           NA
+    ## # … with 2 more variables: dv_v2x_veracc_osp_down_next2 <int>,
+    ## #   v2x_veracc_osp_squared <dbl>
 
 ``` r
 skim(dv_data)
@@ -245,11 +225,11 @@ skim(dv_data)
 | :----------------------------------------------- | :------- |
 | Name                                             | dv\_data |
 | Number of rows                                   | 8289     |
-| Number of columns                                | 62       |
+| Number of columns                                | 32       |
 | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_   |          |
 | Column type frequency:                           |          |
 | character                                        | 6        |
-| numeric                                          | 56       |
+| numeric                                          | 26       |
 | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |          |
 | Group variables                                  | None     |
 
@@ -273,53 +253,23 @@ Data summary
 | gwcode                               |          0 |           1.00 |  462.59 | 240.31 |    2.00 |  305.00 |  461.00 |  663.00 |  950.00 | ▅▆▇▇▃ |
 | year                                 |          0 |           1.00 | 1995.12 |  15.15 | 1968.00 | 1982.00 | 1996.00 | 2008.00 | 2020.00 | ▆▆▇▇▇ |
 | v2x\_veracc\_osp                     |          0 |           1.00 |    0.63 |   0.27 |    0.06 |    0.41 |    0.70 |    0.89 |    0.96 | ▃▂▃▃▇ |
-| v2x\_veracc\_osp\_diff\_y2y          |          0 |           1.00 |    0.00 |   0.08 |  \-0.76 |    0.00 |    0.00 |    0.00 |    0.80 | ▁▁▇▁▁ |
 | dv\_v2x\_veracc\_osp\_up\_next2      |        338 |           0.96 |    0.06 |   0.24 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | dv\_v2x\_veracc\_osp\_down\_next2    |        338 |           0.96 |    0.04 |   0.20 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | v2xcs\_ccsi                          |          0 |           1.00 |    0.57 |   0.32 |    0.01 |    0.28 |    0.65 |    0.89 |    0.98 | ▃▃▂▃▇ |
-| v2xcs\_ccsi\_diff\_y2y               |          0 |           1.00 |    0.00 |   0.06 |  \-0.58 |    0.00 |    0.00 |    0.00 |    0.78 | ▁▁▇▁▁ |
 | dv\_v2xcs\_ccsi\_up\_next2           |        338 |           0.96 |    0.10 |   0.30 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | dv\_v2xcs\_ccsi\_down\_next2         |        338 |           0.96 |    0.06 |   0.24 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | v2xcl\_rol                           |          0 |           1.00 |    0.60 |   0.30 |    0.00 |    0.36 |    0.65 |    0.89 |    0.99 | ▃▃▃▅▇ |
-| v2xcl\_rol\_diff\_y2y                |          0 |           1.00 |    0.00 |   0.04 |  \-0.56 |    0.00 |    0.00 |    0.00 |    0.72 | ▁▁▇▁▁ |
 | dv\_v2xcl\_rol\_up\_next2            |        338 |           0.96 |    0.08 |   0.27 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | dv\_v2xcl\_rol\_down\_next2          |        338 |           0.96 |    0.05 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | v2x\_freexp\_altinf                  |          0 |           1.00 |    0.56 |   0.34 |    0.01 |    0.21 |    0.67 |    0.88 |    0.99 | ▆▂▂▅▇ |
-| v2x\_freexp\_altinf\_diff\_y2y       |          0 |           1.00 |    0.00 |   0.05 |  \-0.61 |    0.00 |    0.00 |    0.00 |    0.87 | ▁▁▇▁▁ |
 | dv\_v2x\_freexp\_altinf\_up\_next2   |        338 |           0.96 |    0.08 |   0.27 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | dv\_v2x\_freexp\_altinf\_down\_next2 |        338 |           0.96 |    0.05 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | v2x\_horacc\_osp                     |          0 |           1.00 |    0.55 |   0.31 |    0.01 |    0.25 |    0.58 |    0.85 |    0.99 | ▅▅▃▅▇ |
-| v2x\_horacc\_osp\_diff\_y2y          |          0 |           1.00 |    0.00 |   0.06 |  \-0.72 |    0.00 |    0.00 |    0.00 |    0.84 | ▁▁▇▁▁ |
 | dv\_v2x\_horacc\_osp\_up\_next2      |        338 |           0.96 |    0.08 |   0.28 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | dv\_v2x\_horacc\_osp\_down\_next2    |        338 |           0.96 |    0.06 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | v2x\_pubcorr                         |          0 |           1.00 |    0.53 |   0.30 |    0.01 |    0.26 |    0.52 |    0.82 |    1.00 | ▆▇▅▅▇ |
-| v2x\_pubcorr\_diff\_y2y              |          0 |           1.00 |    0.00 |   0.04 |  \-0.61 |    0.00 |    0.00 |    0.00 |    0.74 | ▁▁▇▁▁ |
 | dv\_v2x\_pubcorr\_up\_next2          |        338 |           0.96 |    0.08 |   0.28 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | dv\_v2x\_pubcorr\_down\_next2        |        338 |           0.96 |    0.10 |   0.30 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| v2x\_veracc\_osp\_up\_ma5            |          0 |           1.00 |    0.03 |   0.08 |    0.00 |    0.00 |    0.00 |    0.00 |    0.60 | ▇▁▁▁▁ |
-| v2xcs\_ccsi\_up\_ma5                 |          0 |           1.00 |    0.05 |   0.12 |    0.00 |    0.00 |    0.00 |    0.00 |    0.80 | ▇▁▁▁▁ |
-| v2xcl\_rol\_up\_ma5                  |          0 |           1.00 |    0.04 |   0.11 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| v2x\_freexp\_altinf\_up\_ma5         |          0 |           1.00 |    0.05 |   0.12 |    0.00 |    0.00 |    0.00 |    0.00 |    0.80 | ▇▁▁▁▁ |
-| v2x\_horacc\_osp\_up\_ma5            |          0 |           1.00 |    0.04 |   0.11 |    0.00 |    0.00 |    0.00 |    0.00 |    0.80 | ▇▁▁▁▁ |
-| v2x\_pubcorr\_up\_ma5                |          0 |           1.00 |    0.04 |   0.10 |    0.00 |    0.00 |    0.00 |    0.00 |    0.60 | ▇▁▁▁▁ |
-| v2x\_veracc\_osp\_down\_ma5          |          0 |           1.00 |    0.02 |   0.07 |    0.00 |    0.00 |    0.00 |    0.00 |    0.67 | ▇▁▁▁▁ |
-| v2xcs\_ccsi\_down\_ma5               |          0 |           1.00 |    0.03 |   0.10 |    0.00 |    0.00 |    0.00 |    0.00 |    0.80 | ▇▁▁▁▁ |
-| v2xcl\_rol\_down\_ma5                |          0 |           1.00 |    0.03 |   0.09 |    0.00 |    0.00 |    0.00 |    0.00 |    0.80 | ▇▁▁▁▁ |
-| v2x\_freexp\_altinf\_down\_ma5       |          0 |           1.00 |    0.03 |   0.09 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| v2x\_horacc\_osp\_down\_ma5          |          0 |           1.00 |    0.03 |   0.09 |    0.00 |    0.00 |    0.00 |    0.00 |    0.80 | ▇▁▁▁▁ |
-| v2x\_pubcorr\_down\_ma5              |          0 |           1.00 |    0.05 |   0.11 |    0.00 |    0.00 |    0.00 |    0.00 |    0.80 | ▇▂▁▁▁ |
-| v2x\_veracc\_osp\_up\_ma10           |          0 |           1.00 |    0.03 |   0.06 |    0.00 |    0.00 |    0.00 |    0.00 |    0.50 | ▇▁▁▁▁ |
-| v2xcs\_ccsi\_up\_ma10                |          0 |           1.00 |    0.05 |   0.09 |    0.00 |    0.00 |    0.00 |    0.10 |    0.50 | ▇▁▁▁▁ |
-| v2xcl\_rol\_up\_ma10                 |          0 |           1.00 |    0.04 |   0.08 |    0.00 |    0.00 |    0.00 |    0.10 |    0.67 | ▇▁▁▁▁ |
-| v2x\_freexp\_altinf\_up\_ma10        |          0 |           1.00 |    0.05 |   0.09 |    0.00 |    0.00 |    0.00 |    0.10 |    0.57 | ▇▁▁▁▁ |
-| v2x\_horacc\_osp\_up\_ma10           |          0 |           1.00 |    0.04 |   0.08 |    0.00 |    0.00 |    0.00 |    0.10 |    0.67 | ▇▁▁▁▁ |
-| v2x\_pubcorr\_up\_ma10               |          0 |           1.00 |    0.03 |   0.07 |    0.00 |    0.00 |    0.00 |    0.00 |    0.50 | ▇▁▁▁▁ |
-| v2x\_veracc\_osp\_down\_ma10         |          0 |           1.00 |    0.02 |   0.06 |    0.00 |    0.00 |    0.00 |    0.00 |    0.67 | ▇▁▁▁▁ |
-| v2xcs\_ccsi\_down\_ma10              |          0 |           1.00 |    0.03 |   0.08 |    0.00 |    0.00 |    0.00 |    0.00 |    0.67 | ▇▁▁▁▁ |
-| v2xcl\_rol\_down\_ma10               |          0 |           1.00 |    0.03 |   0.07 |    0.00 |    0.00 |    0.00 |    0.00 |    0.75 | ▇▁▁▁▁ |
-| v2x\_freexp\_altinf\_down\_ma10      |          0 |           1.00 |    0.03 |   0.07 |    0.00 |    0.00 |    0.00 |    0.00 |    0.67 | ▇▁▁▁▁ |
-| v2x\_horacc\_osp\_down\_ma10         |          0 |           1.00 |    0.03 |   0.07 |    0.00 |    0.00 |    0.00 |    0.00 |    0.75 | ▇▁▁▁▁ |
-| v2x\_pubcorr\_down\_ma10             |          0 |           1.00 |    0.05 |   0.09 |    0.00 |    0.00 |    0.00 |    0.10 |    0.80 | ▇▁▁▁▁ |
 | v2x\_veracc\_osp\_squared            |          0 |           1.00 |    0.47 |   0.31 |    0.00 |    0.17 |    0.50 |    0.79 |    0.93 | ▇▅▃▅▇ |
 | v2xcs\_ccsi\_squared                 |          0 |           1.00 |    0.43 |   0.35 |    0.00 |    0.08 |    0.42 |    0.79 |    0.96 | ▇▂▂▃▆ |
 | v2xcl\_rol\_squared                  |          0 |           1.00 |    0.45 |   0.34 |    0.00 |    0.13 |    0.42 |    0.79 |    0.99 | ▇▃▃▃▆ |
