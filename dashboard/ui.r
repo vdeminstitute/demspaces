@@ -4,7 +4,7 @@ navbarPage("The Democratic Space Barometer",
                wellPanel(class = "panel panel-default",
                          fluidRow(
                            column(12,
-                                  tags$span(h3("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2020-2021)."), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
+                                  tags$span(h3("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2021-2022)."), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
 
                                             ## Adds hoverover popup text for each space
                                             h3(tags$em(tags$b(a(id = "AssText", style = "text-decoration: none;", " Associational, "),
@@ -37,12 +37,12 @@ navbarPage("The Democratic Space Barometer",
                                                                         content = "Measured using the <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information Index</b>, which ranges from 0 to 1 and captures media censorship, harassment of journalists, media bias, media self-censorship, whether the media is critical and pluralistic, as well as the freedom of discussion and academic and cultural expression.",
                                                                         options = list(container = "body")))))))),
       fluidRow(
-        column(12, h2(tags$span(style = "font-size: 75%; font-weight:bold;", "2020-2021 Forecasts"))
+        column(12, h2(tags$span(style = "font-size: 75%; font-weight:bold;", "2021-2022 Forecasts"))
         )),
 
       fluidRow(column(12,
                tags$span(#style = "font-size: 80%;",
-                 h3("Use the options below to compare the 2020-2021 estimates for opening and closing events for specific spaces in different regions and countries.")))
+                 h3("Use the options below to compare the 2021-2022 estimates for opening and closing events for specific spaces in different regions and countries.")))
         )),
 
       fluidRow(
@@ -200,7 +200,7 @@ navbarPage("The Democratic Space Barometer",
                  wellPanel(class = "panel panel-default",
                            fluidRow(
                              column(12,
-                                    tags$span(h3("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2020-2021)."), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
+                                    tags$span(h3("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2021-2022)."), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
 
                                               ## Adds hoverover popup text for each space
                                               h3(tags$em(tags$b(a(id = "AssText2", style = "text-decoration: none;", " Associational, "),

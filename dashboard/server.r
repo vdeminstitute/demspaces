@@ -424,7 +424,7 @@ function(input, output, session) {
         
     })
     output$downloadData <- downloadHandler(
-      filename = "DemSpaceForecasts-2020-2021.csv",
+      filename = "DemSpaceForecasts-2021-2022.csv",
       content = function(file) {
         write.csv(download_data(), file, row.names = FALSE)
       }
