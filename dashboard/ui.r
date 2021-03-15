@@ -242,7 +242,7 @@ navbarPage("The Democratic Space Barometer",
                                                            content = "<b>Year-to-year changes in <br>select V-Dem index</b><br> Associational: <b>+/- 0.05</b><br> Economic: <b>+/- 0.03</b><br>Electoral: <b>+/- 0.08</b><br>Governing: <b>+/- 0.06</b><br>Individual: <b>+/- 0.04</b><br>Informational: <b>+/- 0.05</b><br><br>The V-Dem indices we use to measure each space are on a continuous scale from 0 (autocratic) to 1 (democratic).",
                                                            options = list(container = "body"))),
 
-                                              h3("We use a set of", tags$b(" 12 random forest classification models")," and a country-year dataset with global coverage (169 countries) from 1970 to 2019 to derive our risk estimates. Please see our working paper for more information on our measurement and modeling strategies."))
+                                              h3("We use a set of", tags$b(" 12 random forest classification models")," and a country-year dataset with global coverage (169 countries) from 1970 to 2020 to derive our risk estimates. Please see our working paper for more information on our measurement and modeling strategies."))
                              ))
                  )),
 

@@ -15,21 +15,21 @@ library(here)
 # lapply(packs, library, character.only = TRUE)
 
 ## Load and transform some data
-GW_shp_file_new <- readRDS("Data/map_dat.rds")
+GW_shp_file_new <- readRDS("data/map_dat.rds")
 GW_shp_file_data <- data.frame(GW_shp_file_new@data, stringsAsFactors = FALSE) %>%
   na.omit(.)
 #GW_shp_file_data <- GW_shp_file_new@data
 
 
-country_characteristic_dat <- readRDS("Data/country_characteristic_dat.rds")
+country_characteristic_dat <- readRDS("data/country_characteristic_dat.rds")
 countryNamesText <- c("", sort(unique(as.character(country_characteristic_dat$country_name))))
 
-rank_data_down <- readRDS("Data/rank_data_down.rds")
-rank_data_up <- readRDS("Data/rank_data_up.rds")
-prob1_dat <- readRDS("Data/prob1_dat.rds")
+rank_data_down <- readRDS("data/rank_data_down.rds")
+rank_data_up <- readRDS("data/rank_data_up.rds")
+prob1_dat <- readRDS("data/prob1_dat.rds")
 
 table_dat <- prob1_dat %>%
-  select(-c(thres, index_name, popUp_text_up, popUp_text_down, colors, change_2019, down_rank, up_rank)) %>%
+  select(-c(thres, index_name, popUp_text_up, popUp_text_down, colors, change, down_rank, up_rank)) %>%
   pivot_wider(names_from = direction, values_from = value) %>%
   group_by(outcome) %>%
   mutate(
@@ -213,9 +213,9 @@ riskPlotFun <- function(dat){
   }
 
 timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
-  blank_dat <- data.frame(year = c(2010:2019), Value = NA)
+  blank_dat <- data.frame(year = c(2011:2020), Value = NA)
   country_name <- unique(dat$country_name)
-  plot_title <- paste0("V-Dem index scores for ", country_name, ", 2010-2019")
+  plot_title <- paste0("V-Dem index scores for ", country_name, ", 2011-2020")
 
   PlotHC <- blank_dat%>%
     hchart(type = "line", hcaes(x = year, y = Value), name = "blank")%>%
@@ -367,8 +367,8 @@ blankRiskPlotFun <- function(){
 }
 
 blankTimeSeriesFun <- function(){
-  blank_dat <- data.frame(year = c(2010:2019), Value = NA)
-  plot_title <- "V-Dem index scores for [select country], 2010-2019"
+  blank_dat <- data.frame(year = c(2011:2020), Value = NA)
+  plot_title <- "V-Dem index scores for [select country], 2011-2020"
 
   blank_dat%>%
     hchart(type = "line", hcaes(x = year, y = Value), name = "blank")%>%

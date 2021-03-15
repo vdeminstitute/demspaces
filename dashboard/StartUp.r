@@ -12,6 +12,4 @@ getwd()
 # ## CHECK WOKING DIRECTORY!
 setwd(here::here("dashboard"))
 
-profvis({
 runApp()
-})
