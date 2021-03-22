@@ -1,18 +1,13 @@
 
 
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 library(leaflet)
 library(shiny)
 library(highcharter)
 library(shinyWidgets)
 library(shinyBS)
 library(here)
-
-# setwd(here::here("dashboard/"))
-
-# packs <- c("tidyverse", "rio", "leaflet", "shiny", "highcharter", "shinyWidgets", "shinyBS")
-# # install.packages(packs, dependencies = TRUE)
-# lapply(packs, library, character.only = TRUE)
 
 ## Load and transform some data
 GW_shp_file_new <- readRDS("data/map_dat.rds")
@@ -215,7 +210,7 @@ riskPlotFun <- function(dat){
 timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
   blank_dat <- data.frame(year = c(2011:2020), Value = NA)
   country_name <- unique(dat$country_name)
-  plot_title <- paste0("V-Dem index scores for ", country_name, ", 2011-2020")
+  plot_title <- paste0("V-Dem index scores for ", country_name)
 
   PlotHC <- blank_dat%>%
     hchart(type = "line", hcaes(x = year, y = Value), name = "blank")%>%
@@ -368,7 +363,7 @@ blankRiskPlotFun <- function(){
 
 blankTimeSeriesFun <- function(){
   blank_dat <- data.frame(year = c(2011:2020), Value = NA)
-  plot_title <- "V-Dem index scores for [select country], 2011-2020"
+  plot_title <- "V-Dem index scores for [select country]"
 
   blank_dat%>%
     hchart(type = "line", hcaes(x = year, y = Value), name = "blank")%>%
