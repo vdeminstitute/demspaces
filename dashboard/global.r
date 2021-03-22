@@ -8,6 +8,7 @@ library(highcharter)
 library(shinyWidgets)
 library(shinyBS)
 library(here)
+library(sf)
 
 ## Load and transform some data
 map_data <- readRDS("data/map_dat.rds")
@@ -25,38 +26,38 @@ rank_data_up <- readRDS("data/rank_data_up.rds")
 prob1_dat <- readRDS("data/prob1_dat.rds")
 
 table_dat <- prob1_dat %>%
-  select(-c(thres, index_name, popUp_text_up, popUp_text_down, colors, change, down_rank, up_rank)) %>%
+  select(-c(thres, index_name, colors, change, down_rank, up_rank)) %>%
   pivot_wider(names_from = direction, values_from = value) %>%
   group_by(outcome) %>%
   mutate(
-         ORank = rank(Opening, ties.method = "max"),
-         ORank = max(ORank) - ORank + 1,
-         OCat = ntile(Opening, 5),
-         OCat = factor(OCat, labels = c("Lowest", "Low", "Medium", "High", "Highest")),
-         CRank = rank(Closing, ties.method = "max"),
-         CRank = max(CRank) - CRank + 1,
-         CCat = ntile(Closing, 5),
-         CCat = factor(CCat, labels = c("Lowest", "Low", "Medium", "High", "Highest"))) %>%
+    ORank = rank(Opening, ties.method = "max"),
+    ORank = max(ORank) - ORank + 1,
+    OCat = ntile(Opening, 5),
+    OCat = factor(OCat, labels = c("Lowest", "Low", "Medium", "High", "Highest")),
+    CRank = rank(Closing, ties.method = "max"),
+    CRank = max(CRank) - CRank + 1,
+    CCat = ntile(Closing, 5),
+    CCat = factor(CCat, labels = c("Lowest", "Low", "Medium", "High", "Highest"))) %>%
   dplyr::rename(Country = country_name,
-         Space = names) %>%
+                Space = names) %>%
   ungroup() %>%
   select(Country, Space, Opening, ORank, OCat, Closing, CRank, CCat, outcome, region) %>%
   mutate(Region = case_when(region == 1 ~ "E. Europe and Central Asia",
-                                 region == 2 ~ "Latin America and the Caribbean",
-                                 region == 3 ~ "Middle East and N. Africa",
-                                 region == 4 ~ "Sub-Saharan Africa",
-                                 region == 5 ~ "W. Europe and N. America*",
-                                 region == 6 ~ "Asia and Pacific"),
+                            region == 2 ~ "Latin America and the Caribbean",
+                            region == 3 ~ "Middle East and N. Africa",
+                            region == 4 ~ "Sub-Saharan Africa",
+                            region == 5 ~ "W. Europe and N. America*",
+                            region == 6 ~ "Asia and Pacific"),
          key_word = paste("Global", Space, Region, Country, sep = ",")) %>%
   dplyr::rename(`Opening Rank` = ORank,
-         `Opening Cat` = OCat,
-         `Closing Rank` = CRank,
-         `Closing Cat` = CCat) %>%
+                `Opening Cat` = OCat,
+                `Closing Rank` = CRank,
+                `Closing Cat` = CCat) %>%
   arrange(Country)
 
- data_table_format <- htmltools::withTags(table(
-    class = 'display',
-    thead(
+data_table_format <- htmltools::withTags(table(
+  class = 'display',
+  thead(
     tr(
       th(colspan = 2, style = 'text-align: center; border: 0; color:#A51E36; font-size: 150%;', '2021-2022 Forecasts'),
       th(colspan = 3, style = 'text-align: center; color:#002649;', 'Opening'),
@@ -72,8 +73,8 @@ table_dat <- prob1_dat %>%
       th(style = 'text-align: center; color:#002649;', 'Ranking'),
       th(style = 'text-align: center; color:#002649;', 'Category')
     )
-    )
-  ))
+  )
+))
 
 ## Set colors
 ts_colors <- RColorBrewer::brewer.pal(7, "Set1")
@@ -90,19 +91,19 @@ topNriskFun <- function(dat, region, space, direction){
   canvasClickFunction <- JS("function(event) {Shiny.onInputChange('canvasClicked', [this.name, event.point.category, Math.random()]);}")
 
   region_text <- case_when(region == 0 ~ "Global",
-    region == 1 ~ "E. Europe and Central Asia",
-    region == 2 ~ "Latin America and the Caribbean",
-    region == 3 ~ "Middle East and N. Africa",
-    region == 4 ~ "Sub-Saharan Africa",
-    region == 5 ~ "W. Europe and N. America*",
-    region == 6 ~ "Asia and Pacific")
+                           region == 1 ~ "E. Europe and Central Asia",
+                           region == 2 ~ "Latin America and the Caribbean",
+                           region == 3 ~ "Middle East and N. Africa",
+                           region == 4 ~ "Sub-Saharan Africa",
+                           region == 5 ~ "W. Europe and N. America*",
+                           region == 6 ~ "Asia and Pacific")
 
   space_text <- case_when(space == "v2xcs_ccsi" ~ "Associational",
-    space == "v2x_pubcorr" ~ "Economic",
-    space == "v2x_veracc_osp" ~ "Electoral",
-    space == "v2x_horacc_osp" ~ "Governing",
-    space == "v2xcl_rol" ~ "Individual",
-    space == "v2x_freexp_altinf" ~ "Informational")
+                          space == "v2x_pubcorr" ~ "Economic",
+                          space == "v2x_veracc_osp" ~ "Electoral",
+                          space == "v2x_horacc_osp" ~ "Governing",
+                          space == "v2xcl_rol" ~ "Individual",
+                          space == "v2x_freexp_altinf" ~ "Informational")
 
   direction_text <- case_when(direction == "up" ~ "Opening Event",
                               direction == "down" ~ "Closing Event")
@@ -116,14 +117,14 @@ topNriskFun <- function(dat, region, space, direction){
       arrange(up_rank, desc(direction)) %>%
       mutate(direction = factor(direction, levels = c("Opening", "Neither", "Closing")))
     names_ <- c("Opening", "Stable", "Closing")
-    }
-    else{
-      dat <- dat %>%
-        filter(country_name %in% dat$country_name[seq(1,60,3)]) %>%
-        arrange(down_rank, direction) %>%
+  }
+  else{
+    dat <- dat %>%
+      filter(country_name %in% dat$country_name[seq(1,60,3)]) %>%
+      arrange(down_rank, direction) %>%
       mutate(direction = factor(direction, levels = c("Closing", "Neither", "Opening")))
-      names_ <- c("Closing", "Stable", "Opening")
-    }
+    names_ <- c("Closing", "Stable", "Opening")
+  }
 
   dat %>%
     hchart(type = "bar", hcaes(x = country_name,
@@ -134,34 +135,34 @@ topNriskFun <- function(dat, region, space, direction){
     hc_plotOptions(bar = list(grouping = "true")) %>%
     #hc_tooltip(formatter = JS("function(){return false;}"))%>%
     hc_xAxis(title = "",
-           labels = list(style = list(color = "#002649",
-                            fontSize = "9pt",
-                            fontWeight = "bold")))%>%
+             labels = list(style = list(color = "#002649",
+                                        fontSize = "9pt",
+                                        fontWeight = "bold")))%>%
     hc_title(text = plot_title,
-             align = "left",
-             style = list(color = "#002649",
-               fontSize = "9pt",
-               fontWeight = "bold")) %>%
-    hc_subtitle(text = plot_subtitle,
              align = "left",
              style = list(color = "#002649",
                           fontSize = "9pt",
                           fontWeight = "bold")) %>%
+    hc_subtitle(text = plot_subtitle,
+                align = "left",
+                style = list(color = "#002649",
+                             fontSize = "9pt",
+                             fontWeight = "bold")) %>%
     hc_yAxis(min = 0, max = 100,
-           title = list(text = "Estimated Probabilities (%)",
-                         style = list(color = "#002649",
-                            fontSize = "9pt",
-                            fontWeight = "bold")),
-           labels = list(style = list(color = "#002649",
-                            fontSize = "9pt",
-                            fontWeight = "bold")),
-           opposite = TRUE)%>%
+             title = list(text = "Estimated Probabilities (%)",
+                          style = list(color = "#002649",
+                                       fontSize = "9pt",
+                                       fontWeight = "bold")),
+             labels = list(style = list(color = "#002649",
+                                        fontSize = "9pt",
+                                        fontWeight = "bold")),
+             opposite = TRUE)%>%
     hc_tooltip(pointFormat = '{point.series.name}  {point.y:.0f}%') %>%
     hc_plotOptions(series = list(events = list(click = canvasClickFunction))) %>%
     hc_legend(enabled = F) %>%
     hc_exporting(enabled = TRUE,
                  buttons = list(contextButton =
-                            list(menuItems = c("downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "downloadCSV"))))
+                                  list(menuItems = c("downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "downloadCSV"))))
 }
 
 
@@ -186,7 +187,7 @@ riskPlotFun <- function(dat){
              labels = list(style = list(color = "#002649",
                                         fontSize = "9pt",
                                         fontWeight = "bold")),
-            categories = c("Associational", "Economic", "Electoral", "Governing", "Individual", "Informational"))%>%
+             categories = c("Associational", "Economic", "Electoral", "Governing", "Individual", "Informational"))%>%
     hc_yAxis(min = 0, max = 100, title = list(text = "Estimated probabilities (%)",
                                               style = list(color = "#002649",
                                                            fontSize = "9pt",
@@ -206,7 +207,7 @@ riskPlotFun <- function(dat){
     hc_exporting(enabled = TRUE,
                  buttons = list(contextButton =
                                   list(menuItems = c("downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "downloadCSV"))))
-  }
+}
 
 timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
   blank_dat <- data.frame(year = c(2011:2020), Value = NA)
@@ -215,7 +216,7 @@ timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
 
   PlotHC <- blank_dat%>%
     hchart(type = "line", hcaes(x = year, y = Value), name = "blank")%>%
-          hc_yAxis(min = 0, max = 1,
+    hc_yAxis(min = 0, max = 1,
              title = list(text = "",
                           style = list(color = "#002649",
                                        fontSize = "9pt",
@@ -224,7 +225,7 @@ timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
                style = list(color = "#002649",
                             fontSize = "9pt",
                             fontWeight = "bold")))%>%
-          hc_xAxis(data = blank_dat$year, tickInterval = 1,
+    hc_xAxis(data = blank_dat$year, tickInterval = 1,
              title = list(text = "",
                           style = list(color = "#002649",
                                        fontSize = "9pt",
@@ -232,30 +233,30 @@ timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
              labels = list(style = list(color = "#002649",
                                         fontSize = "9pt",
                                         fontWeight = "bold"), rotation = "-45"))%>%
-      hc_plotOptions(series = list(marker = list( enabled = FALSE, radius = 1.2, symbol = "circle"), states = list(hover = list (enabled = TRUE, radius = 3))))%>%
-      hc_tooltip(shared = TRUE, crosshairs = TRUE) %>%
+    hc_plotOptions(series = list(marker = list( enabled = FALSE, radius = 1.2, symbol = "circle"), states = list(hover = list (enabled = TRUE, radius = 3))))%>%
+    hc_tooltip(shared = TRUE, crosshairs = TRUE) %>%
     hc_title(text = plot_title,
              margin = 20, align = "center",
              style = list(color = "#002649",
                           fontSize = "9pt",
                           fontWeight = "bold")) #%>%
-    # hc_exporting(enabled = TRUE,
-    #              buttons = list(contextButton =
-    #                               list(menuItems = c("downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "downloadCSV"))))
+  # hc_exporting(enabled = TRUE,
+  #              buttons = list(contextButton =
+  #                               list(menuItems = c("downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "downloadCSV"))))
 
   if("v2xcs_ccsi" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2xcs_ccsi),
-          name = "<b>Asociational Space </b><br> <span style='font-size: 85%'> Core Civil Society Index", color = v2xcs_ccsi_color, id = "p2")
-      if(CIs){
+                    name = "<b>Asociational Space </b><br> <span style='font-size: 85%'> Core Civil Society Index", color = v2xcs_ccsi_color, id = "p2")
+    if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2xcs_ccsi_codelow, high = v2xcs_ccsi_codehigh),
-          name = "Asociational CI", fillOpacity = 0.15, lineWidth = 0, color = v2xcs_ccsi_color, linkedTo = "p2")
-      }
+                      name = "Asociational CI", fillOpacity = 0.15, lineWidth = 0, color = v2xcs_ccsi_color, linkedTo = "p2")
+    }
   }
   if(!("v2xcs_ccsi" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("<b>Asociational Space </b><br> <span style='font-size: 85%'> Core Civil Society Index", "Asociational CIs"))
+      hc_rm_series(name = c("<b>Asociational Space </b><br> <span style='font-size: 85%'> Core Civil Society Index", "Asociational CIs"))
   }
 
   if("v2x_pubcorr" %in% to_plot){
@@ -306,31 +307,31 @@ timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
   if("v2xcl_rol" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2xcl_rol),
-          name = "<b>Individual Space </b><br> <span style='font-size: 85%'> Equality Before the Law &amp; Ind Liberty Index", color = v2xcl_rol_color, id = "p6")
-      if(CIs){
+                    name = "<b>Individual Space </b><br> <span style='font-size: 85%'> Equality Before the Law &amp; Ind Liberty Index", color = v2xcl_rol_color, id = "p6")
+    if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2xcl_rol_codelow, high = v2xcl_rol_codehigh),
-          name = "Individual CI", fillOpacity = 0.15, lineWidth = 0, color = v2xcl_rol_color, linkedTo = "p6")
-      }
+                      name = "Individual CI", fillOpacity = 0.15, lineWidth = 0, color = v2xcl_rol_color, linkedTo = "p6")
+    }
   }
   if(!("v2xcl_rol" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("<b>Individual Space </b><br> <span style='font-size: 85%'> Equality Before the Law &amp; Ind Liberty Index", "Individual CIs"))
+      hc_rm_series(name = c("<b>Individual Space </b><br> <span style='font-size: 85%'> Equality Before the Law &amp; Ind Liberty Index", "Individual CIs"))
   }
 
   if("v2x_freexp_altinf" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_freexp_altinf),
-          name = "<b>Informatonal Space </b><br> <span style='font-size: 85%'> Freedom of Expression &amp; Alt Info Index", color = v2x_freexp_altinf_color, id = "p4")
-      if(CIs){
+                    name = "<b>Informatonal Space </b><br> <span style='font-size: 85%'> Freedom of Expression &amp; Alt Info Index", color = v2x_freexp_altinf_color, id = "p4")
+    if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_freexp_altinf_codelow, high = v2x_freexp_altinf_codehigh),
-          name = "Informatonal CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_freexp_altinf_color, linkedTo = "p4")
-      }
+                      name = "Informatonal CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_freexp_altinf_color, linkedTo = "p4")
+    }
   }
   if(!("v2x_freexp_altinf" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("<b>Informatonal Space </b><br> <span style='font-size: 85%'> Freedom of Expression &amp; Alt Info Index", "Informatonal CIs"))
+      hc_rm_series(name = c("<b>Informatonal Space </b><br> <span style='font-size: 85%'> Freedom of Expression &amp; Alt Info Index", "Informatonal CIs"))
   }
   PlotHC
 }

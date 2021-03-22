@@ -188,6 +188,8 @@ sig <- list(
 write_yaml(sig, here::here("dashboard/data-raw/country_characteristic_dat_signature.yml"))
 
 
+
+
 prob1_dat <- all_forecast_data %>%
   dplyr::select(-for_years, -year, -gwcode, -level) %>%
   pivot_longer(cols = c(p_up, p_down, p_same), names_to = "direction") %>%
@@ -206,6 +208,10 @@ prob1_dat %<>%
 
 prob1_dat$names <- factor(prob1_dat$names, levels = c("Associational", "Economic", "Electoral", "Governing", "Individual", "Informational"), ordered = T)
 prob1_dat$outcome <- factor(prob1_dat$outcome, levels = c( "v2xcs_ccsi", "v2x_pubcorr", "v2x_veracc_osp", "v2x_horacc_osp", "v2xcl_rol", "v2x_freexp_altinf"), ordered = T)
+
+# These are not actually needed
+prob1_dat$popUp_text_down <- NULL
+prob1_dat$popUp_text_up <- NULL
 
 write_rds(prob1_dat, "data/prob1_dat.rds")
 
