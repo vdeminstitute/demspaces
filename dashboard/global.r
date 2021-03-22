@@ -11,7 +11,11 @@ library(here)
 
 ## Load and transform some data
 map_data <- readRDS("data/map_dat.rds")
-map_color_data <- st_set_geometry(map_data, NULL)
+map_color_data <- map_data %>%
+  select(country_name, starts_with("map_color")) %>%
+  st_set_geometry(NULL)
+map_data <- map_data %>%
+  select(country_name, center_lon, center_lat, starts_with("popUp_text"))
 
 country_characteristic_dat <- readRDS("data/country_characteristic_dat.rds")
 countryNamesText <- c("", sort(unique(as.character(country_characteristic_dat$country_name))))

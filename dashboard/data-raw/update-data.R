@@ -143,8 +143,8 @@ map_data$center_lon <- centroids[, 1]
 map_data$center_lat <- centroids[, 2]
 
 forecast_colors <- all_forecast_data %>%
-  dplyr::select(gwcode, country_name, year, outcome, map_color_up, map_color_down, p_up, p_down, p_same, popUp_text_up, popUp_text_down, level, change) %>%
-  pivot_wider(names_from = outcome, values_from = c(map_color_down, map_color_up, level, change, p_up, p_down, p_same, popUp_text_up, popUp_text_down))
+  dplyr::select(gwcode, country_name, year, outcome, map_color_up, map_color_down, popUp_text_up, popUp_text_down) %>%
+  pivot_wider(names_from = outcome, values_from = c(map_color_down, map_color_up, popUp_text_up, popUp_text_down))
 
 map_data <- map_data %>%
   left_join(forecast_colors)
