@@ -5,48 +5,48 @@ input[type="number"] {
 input[type=checkbox] {
                     transform: scale(0.8);
            }
-           
-.leaflet-container { 
-  background-color: #F5F5F6; 
+
+.leaflet-container {
+  background-color: #F5F5F6;
 }
 
 .panel {
   padding: 2px;
-  border: none; 
-  background-color: #ffffff; 
+  border: none;
+  background-color: #ffffff;
   max-width: 750px;
   margin: auto;
   }
-  
+
 .outer {
   top: 40px;
-  left: 0; 
+  left: 0;
   right: 0;
   bottom: 0;
 }
-body, label, input, button, select { 
+body, label, input, button, select {
   font-family: 'Helvetica Neue', Helvetica;
   font-weight: 200;
 }
-h1, h2 { 
-  font-weight: 400; 
+h1, h2 {
+  font-weight: 400;
   /*color: #861B58;*/
   /*color: #002649;*/
   color: #A51E36;
   }
-h4, h3 { 
-  font-size: 125%; 
+h4, h3 {
+  font-size: 125%;
   color: #002649;
   }
-h5 { 
+h5 {
   color: #002649;
   }
 .popover {
   color: #002649;
   }
-a{ 
-   text-decoration: none; 
-        } 
+a{
+   text-decoration: none;
+        }
 
 #mapPanel {
   right: auto;
@@ -67,3 +67,28 @@ a{
   left: 10px;
   font-size: 12px;
 }
+
+/* Navbar styling */
+.navbar {
+  background-color: white;
+  color: #A51E36;
+  font-weight:bold;
+}
+.navbar-default .navbar-brand:hover {
+  color:  #A51E36;
+}
+.navbar-default .navbar-brand {
+  color: #A51E36;
+  font-weight:bold;
+}
+.navbar-default .navbar-nav >  li > a {
+  background-color: white;
+  color: #A51E36;
+  font-weight:bold;
+}
+.navbar-default .navbar-nav > li > .active > a {
+  background-color: #A51E36;
+  color: white ;
+  font-weight:bold;
+}
+

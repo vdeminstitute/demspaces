@@ -304,12 +304,5 @@ navbarPage(
                          hr()
                   )
                 )))),
-  tags$style(type = 'text/css',
-             '.navbar { background-color: white; color: #A51E36; font-weight:bold;}',
-             '.navbar-default .navbar-brand:hover {color:  #A51E36;}',
-             '.navbar-default .navbar-brand{color: #A51E36; font-weight:bold;}',
-             '.navbar-default .navbar-nav >  li > a {background-color: white; color: #A51E36; font-weight:bold;}',
-             '.navbar-default .navbar-nav > li > .active > a {background-color: #A51E36; color: white ; font-weight:bold;}'
-
-  )
+  theme = "styles.css"
 )
