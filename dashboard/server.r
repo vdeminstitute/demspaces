@@ -420,7 +420,7 @@ function(input, output, session) {
       region_pattern <- paste(input$region2, collapse = "|")
       suppressWarnings(dat <- table_dat %>%
         filter(grepl(space_pattern, key_word)) %>%
-        filter(grepl(region_pattern, keyword)) %>%
+        filter(grepl(region_pattern, key_word)) %>%
         select(-c(outcome, region, Region, key_word)) %>%
         arrange(Country, Space))
 
