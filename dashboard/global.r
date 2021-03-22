@@ -1,4 +1,6 @@
-
+#
+#   Originally written by Rick Morgan and Laura Maxwell
+#
 
 library(dplyr)
 library(tidyr)
@@ -10,50 +12,22 @@ library(shinyBS)
 library(here)
 library(sf)
 
-## Load and transform some data
+
+# Load data ---------------------------------------------------------------
+
 map_data <- readRDS("data/map_dat.rds")
-map_color_data <- map_data %>%
-  select(country_name, starts_with("map_color")) %>%
-  st_set_geometry(NULL)
-map_data <- map_data %>%
-  select(country_name, center_lon, center_lat, starts_with("popUp_text"))
+map_color_data <- readRDS("data/map_color_data.rds")
 
 country_characteristic_dat <- readRDS("data/country_characteristic_dat.rds")
 countryNamesText <- c("", sort(unique(as.character(country_characteristic_dat$country_name))))
 
-rank_data_down <- readRDS("data/rank_data_down.rds")
-rank_data_up <- readRDS("data/rank_data_up.rds")
 prob1_dat <- readRDS("data/prob1_dat.rds")
+table_dat <- readRDS("data/table_dat.rds")
 
-table_dat <- prob1_dat %>%
-  select(-c(thres, index_name, colors, change, down_rank, up_rank)) %>%
-  pivot_wider(names_from = direction, values_from = value) %>%
-  group_by(outcome) %>%
-  mutate(
-    ORank = rank(Opening, ties.method = "max"),
-    ORank = max(ORank) - ORank + 1,
-    OCat = ntile(Opening, 5),
-    OCat = factor(OCat, labels = c("Lowest", "Low", "Medium", "High", "Highest")),
-    CRank = rank(Closing, ties.method = "max"),
-    CRank = max(CRank) - CRank + 1,
-    CCat = ntile(Closing, 5),
-    CCat = factor(CCat, labels = c("Lowest", "Low", "Medium", "High", "Highest"))) %>%
-  dplyr::rename(Country = country_name,
-                Space = names) %>%
-  ungroup() %>%
-  select(Country, Space, Opening, ORank, OCat, Closing, CRank, CCat, outcome, region) %>%
-  mutate(Region = case_when(region == 1 ~ "E. Europe and Central Asia",
-                            region == 2 ~ "Latin America and the Caribbean",
-                            region == 3 ~ "Middle East and N. Africa",
-                            region == 4 ~ "Sub-Saharan Africa",
-                            region == 5 ~ "W. Europe and N. America*",
-                            region == 6 ~ "Asia and Pacific"),
-         key_word = paste("Global", Space, Region, Country, sep = ",")) %>%
-  dplyr::rename(`Opening Rank` = ORank,
-                `Opening Cat` = OCat,
-                `Closing Rank` = CRank,
-                `Closing Cat` = CCat) %>%
-  arrange(Country)
+
+# Year range for V-Dem indicator plot at bottom right
+YEAR_RANGE <- sort(unique(country_characteristic_dat$year))
+
 
 data_table_format <- htmltools::withTags(table(
   class = 'display',
@@ -85,6 +59,12 @@ v2x_veracc_osp_color <- ts_colors[3] #"#4572A7"
 v2x_horacc_osp_color <- ts_colors[4]#"#3D96AE"
 v2xcl_rol_color <- ts_colors[5] #"#80699B"
 v2x_freexp_altinf_color <- ts_colors[7] #"#89A54E"
+
+
+# Top N risk plot function ------------------------------------------------
+#
+#   This is the plot next to the map
+#
 
 #use rank data
 topNriskFun <- function(dat, region, space, direction){
@@ -166,6 +146,11 @@ topNriskFun <- function(dat, region, space, direction){
 }
 
 
+# Plot risk for a single country ------------------------------------------
+#
+#   Bottom left plot
+#
+
 #use prob1_dat
 riskPlotFun <- function(dat){
 
@@ -209,8 +194,40 @@ riskPlotFun <- function(dat){
                                   list(menuItems = c("downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "downloadCSV"))))
 }
 
+blankRiskPlotFun <- function(){
+  blank_dat <- data.frame(outcomes = c("Associational", "Economic", "Electoral", "Governing", "Individual", "Informational"), prob_1 = 0)
+  plot_title <- "Estimates by space for [select country], 2021-2022"
+  blank_dat%>%
+    hchart(type = "bar", hcaes(x = outcomes, y = prob_1), name = "Estimated probabilities (%)", pointPadding = -0.1)%>%
+    hc_xAxis(title = list(text = "", style = list(color = "#002649",
+                                                  fontSize = "9pt",
+                                                  fontWeight = "bold")),
+             labels = list(style = list(color = "#002649",
+                                        fontSize = "9pt",
+                                        fontWeight = "bold")),
+             categories = list("Associational", "Economic", "Electoral", "Governing", "Individual", "Informational"))%>%
+    hc_yAxis(min = 0, max = 100, title = list(text = "Estimated probabilities (%)",
+                                              style = list(color = "#002649",
+                                                           fontSize = "9pt",
+                                                           fontWeight = "bold")),
+             labels = list(style = list(color = "#002649",
+                                        fontSize = "9pt",
+                                        fontWeight = "bold"))) %>%
+    hc_title(text = plot_title,
+             align = "left",
+             style = list(color = "#002649",
+                          fontSize = "9pt",
+                          fontWeight = "bold"))
+}
+
+
+# Plot historic space data for a country ----------------------------------
+#
+#   Bottom right plot
+#
+
 timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
-  blank_dat <- data.frame(year = c(2011:2020), Value = NA)
+  blank_dat <- data.frame(year = YEAR_RANGE, Value = NA)
   country_name <- unique(dat$country_name)
   plot_title <- paste0("V-Dem index scores for ", country_name)
 
@@ -337,34 +354,9 @@ timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
 }
 
 
-blankRiskPlotFun <- function(){
-  blank_dat <- data.frame(outcomes = c("Associational", "Economic", "Electoral", "Governing", "Individual", "Informational"), prob_1 = 0)
-  plot_title <- "Estimates by space for [select country], 2021-2022"
-  blank_dat%>%
-    hchart(type = "bar", hcaes(x = outcomes, y = prob_1), name = "Estimated probabilities (%)", pointPadding = -0.1)%>%
-    hc_xAxis(title = list(text = "", style = list(color = "#002649",
-                                                  fontSize = "9pt",
-                                                  fontWeight = "bold")),
-             labels = list(style = list(color = "#002649",
-                                        fontSize = "9pt",
-                                        fontWeight = "bold")),
-             categories = list("Associational", "Economic", "Electoral", "Governing", "Individual", "Informational"))%>%
-    hc_yAxis(min = 0, max = 100, title = list(text = "Estimated probabilities (%)",
-                                              style = list(color = "#002649",
-                                                           fontSize = "9pt",
-                                                           fontWeight = "bold")),
-             labels = list(style = list(color = "#002649",
-                                        fontSize = "9pt",
-                                        fontWeight = "bold"))) %>%
-    hc_title(text = plot_title,
-             align = "left",
-             style = list(color = "#002649",
-                          fontSize = "9pt",
-                          fontWeight = "bold"))
-}
 
 blankTimeSeriesFun <- function(){
-  blank_dat <- data.frame(year = c(2011:2020), Value = NA)
+  blank_dat <- data.frame(year = YEAR_RANGE, Value = NA)
   plot_title <- "V-Dem index scores for [select country]"
 
   blank_dat%>%

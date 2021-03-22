@@ -11,11 +11,13 @@
 #     - dv_data_1968_on.csv: from create-data/scripts/0-split-raw-vdem.R
 #
 #   Output:
-#     - map_dat.rds
-#     - country_characteristic_dat.RDS
-#     - prob1_dat.rds
-#     - rank_data_up.rds
-#     - rank_data_down.rds
+#     - map_dat.rds: map data, including popup text
+#     - map_color_dat.rds: color values for the polygons in map_dat. This is
+#         separate for leaflet and because lookup is quicker without a geometry
+#         column.
+#     - country_characteristic_dat.rds: DS indicator values for historic data
+#     - prob1_dat.rds: forecast data for the barcharts
+#     - table_dat.rds: data for the "Table" tab
 #
 
 library(tidyverse)
@@ -156,6 +158,15 @@ for (cc in cnames) {
   map_data[[cc]] <- ifelse(is.na(map_data[[cc]]), "#D0D0D1", map_data[[cc]])
 }
 
+# In the app, the colors are actually assigned separately from the map data.
+# Split those out and write to a separate object.
+map_color_data <- map_data %>%
+  select(country_name, starts_with("map_color")) %>%
+  st_set_geometry(NULL)
+map_data <- map_data %>%
+  select(country_name, center_lon, center_lat, starts_with("popUp_text"))
+
+write_rds(map_color_data, "data/map_color_data.rds", compress = "none")
 write_rds(map_data, "data/map_dat.rds", compress = "none")
 
 # Keep a readable sample of the data so we can easily spot differences on git
@@ -164,14 +175,14 @@ test <- map_data[1:5, ] %>% st_set_geometry(NULL)
 write_csv(test, here::here("dashboard/data-raw/map_dat_sample.csv"))
 
 
-# Other; not cleaned up yet -----------------------------------------------
 
+# Historic V-Dem indicator data -------------------------------------------
 
 
 country_characteristic_dat <- dvs %>%
   dplyr::select(gwcode, year, country_name,
                 v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2x_freexp_altinf, v2x_horacc_osp, v2x_pubcorr) %>%
-  filter(year >= 2011)
+  filter(year >= (max(dvs$year) - 9))
 
 write_rds(country_characteristic_dat, "data/country_characteristic_dat.RDS")
 
@@ -188,6 +199,8 @@ sig <- list(
 write_yaml(sig, here::here("dashboard/data-raw/country_characteristic_dat_signature.yml"))
 
 
+
+# Forecast data for barcharts ---------------------------------------------
 
 
 prob1_dat <- all_forecast_data %>%
@@ -215,18 +228,45 @@ prob1_dat$popUp_text_up <- NULL
 
 write_rds(prob1_dat, "data/prob1_dat.rds")
 
-rank_data_up <- all_forecast_data %>%
+
+# Data for "Table" tab ----------------------------------------------------
+
+table_dat <- prob1_dat %>%
+  select(-c(thres, index_name, colors, change, down_rank, up_rank)) %>%
+  pivot_wider(names_from = direction, values_from = value) %>%
   dplyr::group_by(outcome) %>%
-  arrange(desc(p_up)) %>%
-  dplyr::mutate(rank = row_number(), color_prob = map_color_up, risk = p_up) %>%
-  filter(rank <= 20)
+  dplyr::mutate(
+    ORank = base::rank(Opening, ties.method = "max"),
+    ORank = max(ORank) - ORank + 1,
+    OCat = ntile(Opening, 5),
+    OCat = factor(OCat, labels = c("Lowest", "Low", "Medium", "High", "Highest")),
+    CRank = base::rank(Closing, ties.method = "max"),
+    CRank = max(CRank) - CRank + 1,
+    CCat = ntile(Closing, 5),
+    CCat = factor(CCat, labels = c("Lowest", "Low", "Medium", "High", "Highest"))) %>%
+  dplyr::rename(Country = country_name,
+                Space = names) %>%
+  ungroup() %>%
+  select(Country, Space, Opening, ORank, OCat, Closing, CRank, CCat, outcome, region) %>%
+  mutate(Region = case_when(region == 1 ~ "E. Europe and Central Asia",
+                            region == 2 ~ "Latin America and the Caribbean",
+                            region == 3 ~ "Middle East and N. Africa",
+                            region == 4 ~ "Sub-Saharan Africa",
+                            region == 5 ~ "W. Europe and N. America*",
+                            region == 6 ~ "Asia and Pacific"),
+         key_word = paste("Global", Space, Region, Country, sep = ",")) %>%
+  dplyr::rename(`Opening Rank` = ORank,
+                `Opening Cat` = OCat,
+                `Closing Rank` = CRank,
+                `Closing Cat` = CCat) %>%
+  arrange(Country)
 
-write_rds(rank_data_up, "data/rank_data_up.rds")
+stopifnot(
+  # Sometimes there is a bug when plyr is loaded, producing global ranks
+  # not by outcome; this will show as values like rank=600.
+  max(table_dat$`Closing Rank`) < 200,
+  max(table_dat$`Opening Rank`) < 200
+)
 
-rank_data_down <- all_forecast_data %>%
-  dplyr::group_by(outcome) %>%
-  arrange(desc(p_down)) %>%
-  dplyr::mutate(rank = row_number(), color_prob = map_color_down, risk = p_down) %>%
-  filter(rank <= 20)
+write_rds(table_dat, here::here("dashboard/data/table_dat.rds"), compress = "none")
 
-write_rds(rank_data_down, "data/rank_data_down.rds")
