@@ -1,5 +1,7 @@
-2021 Update (v3)
+2021 Update (v11)
 ================
+
+### Add external data scripts
 
 ### Trim states data
 
@@ -24,11 +26,11 @@ For the 2021 update, I (AB) added an explicit versioning for key files that matc
 The first version of the forecasts in 2019 was created with V-Dem version 9 data, 2020 with version 10, etc. 
 
 
-2020 Update (v2)
+2020 Update (v10)
 ================
 
 - Data range from 1970 to 2019.
 - Added Archigos state leader data as a data source, with 5 variables.
 
-2019 initial version (v1)
+2019 initial version (v9)
 =========================

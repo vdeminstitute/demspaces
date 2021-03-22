@@ -2,7 +2,8 @@
 #   This script cleans/processes various data sets from create-data/ and
 #   modelrunner/.
 #
-#   Laura Maxwell & Rick Morgan
+#   Originally Laura Maxwell & Rick Morgan
+#   2021 changes/updates by Andreas Beger
 #
 #   Input:
 #     - fcasts-rf-2020.csv: forecasts created in March 2020;
@@ -121,45 +122,45 @@ all_forecast_data$popUp_text_down <- paste('<h3><b>', all_forecast_data$country_
                                             paste('<b><span style="color:#002649"> ',all_forecast_data$names,' Level in 2020: ', all_forecast_data$level, '</b></span><br>', sep = ''),
                                             paste('<b><span style="color:#002649"> ',all_forecast_data$names,' Change 2019-2020: ', all_forecast_data$change, '</b></span>', sep = ''),sep = '')
 
-##join this to the map shp file
-GW_shp_file <- cshapes::cshp(date = as.Date("2013/01/01"), useGW = TRUE)
-GW_shp_file@data$gwcode <- GW_shp_file@data$GWCODE
-GW_shp_file@data <- GW_shp_file@data %>%
-  select(-GWCODE)
 
-country_centers <- SpatialPointsDataFrame(gCentroid(GW_shp_file, byid = TRUE),
-                                          GW_shp_file@data, match.ID = FALSE)
+# Map data ----------------------------------------------------------------
 
-GW_shp_file@data <- GW_shp_file@data %>%
-  mutate(center_lon = country_centers@coords[, 1],
-         center_lat = country_centers@coords[, 2])
+raw_map_data <- cshapes::cshp(date = as.Date("2013/01/01"), useGW = TRUE)
+raw_map_data <- rmapshaper::ms_simplify(raw_map_data, keep = 0.2)
+
+# Convert to an sf object
+map_data <- st_as_sf(raw_map_data)
+map_data <- map_data %>%
+  st_transform("+proj=longlat +datum=WGS84")
+map_data <- map_data %>%
+  select(GWCODE) %>%
+  dplyr::rename(gwcode = GWCODE)
+
+# Add centroid lat/long
+centroids <- map_data %>% st_centroid() %>% st_coordinates()
+map_data$center_lon <- centroids[, 1]
+map_data$center_lat <- centroids[, 2]
 
 forecast_colors <- all_forecast_data %>%
   dplyr::select(gwcode, country_name, year, outcome, map_color_up, map_color_down, p_up, p_down, p_same, popUp_text_up, popUp_text_down, level, change) %>%
   pivot_wider(names_from = outcome, values_from = c(map_color_down, map_color_up, level, change, p_up, p_down, p_same, popUp_text_up, popUp_text_down))
 
-GW_shp_file@data <- GW_shp_file@data %>%
+map_data <- map_data %>%
   left_join(forecast_colors)
 
-ids <- NULL
-for(i in 1:195){
-  id <- GW_shp_file@polygons[[i]]@ID
-  ids <- c(ids, id)
-  }
-row.names(GW_shp_file@data) <- ids
+write_rds(map_data, "data/map_dat.rds", compress = "none")
 
-GW_shp_file_new2 <- rmapshaper::ms_simplify(GW_shp_file, keep = 0.2)
-# object.size(GW_shp_file)
-# object.size(GW_shp_file_new2)
 
-write_rds(GW_shp_file_new2, "data/map_dat.rds")
+# Other; not cleaned up yet -----------------------------------------------
+
+
 
 country_characteristic_dat <- dvs %>%
   dplyr::select(gwcode, year, country_name,
                 v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2x_freexp_altinf, v2x_horacc_osp, v2x_pubcorr) %>%
   filter(year >= 2011)
 
-write_rds(country_characteristic_dat, "country_characteristic_dat.RDS")
+write_rds(country_characteristic_dat, "data/country_characteristic_dat.RDS")
 
 prob1_dat <- all_forecast_data %>%
   dplyr::select(-for_years, -year, -gwcode, -level) %>%

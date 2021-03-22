@@ -60,9 +60,9 @@ function(input, output, session) {
   ## Builds initial map, links to barchart
   output$map1 <- renderLeaflet({
     cols <- c("#FDEFE6", "#FAD0B4", "#F8B183", "#F59252", "#F37321", "#D0D0D1")
-    color_data <- GW_shp_file_new@data$map_color_up_v2xcs_ccsi
+    color_data <- map_color_data[["map_color_up_v2xcs_ccsi"]]
     color_data <- ifelse(is.na(color_data), "#D0D0D1", color_data)
-    leaflet(GW_shp_file_new, options = list(preferCanvas = TRUE, minZoom = 1, maxZoom = 4, zoomControl = FALSE)) %>%
+    leaflet(map_data, options = list(preferCanvas = TRUE, minZoom = 1, maxZoom = 4, zoomControl = FALSE)) %>%
       htmlwidgets::onRender("function(el, x) {
         L.control.zoom({ position: 'topright' }).addTo(this)
     }") %>%
@@ -93,9 +93,9 @@ function(input, output, session) {
     cols <- c("#FDEFE6", "#FAD0B4", "#F8B183", "#F59252", "#F37321", "#D0D0D1")
     show <- "Fill_down"
     hide <- "Fill_up"}
-    color_data <- GW_shp_file_new@data[, color_var]
+    color_data <- map_color_data[[color_var]]
     color_data <- ifelse(is.na(color_data), "#D0D0D1", color_data)
-    leafletProxy("map1", data = GW_shp_file_new, session) %>%
+    leafletProxy("map1", data = map_data, session) %>%
       removeShape(layerId = "color_data") %>%
       removeControl("legend") %>%
       addPolygons(weight = 0.5, smoothFactor = 0.5, color = "#444444",
@@ -124,9 +124,9 @@ function(input, output, session) {
     cols <- c("#FDEFE6", "#FAD0B4", "#F8B183", "#F59252", "#F37321", "#D0D0D1")
     show <- "Fill_down"
     hide <- "Fill_up"}
-    color_data <- GW_shp_file_new@data[, color_var]
+    color_data <- map_color_data[[color_var]]
     color_data <- ifelse(is.na(color_data), "#D0D0D1", color_data)
-    leafletProxy("map1", data = GW_shp_file_new, session) %>%
+    leafletProxy("map1", data = map_data, session) %>%
       removeShape(layerId = "color_data") %>%
       removeControl("legend") %>%
       addPolygons(weight = 0.5, smoothFactor = 0.5, color = "#444444",
@@ -231,7 +231,7 @@ function(input, output, session) {
     observeEvent(c(input$countrySelect), {
     country_name <- input$countrySelect
 
-    dat0 <- GW_shp_file_data[GW_shp_file_data$country_name == country_name, ]
+    dat0 <- map_data[map_data$country_name == country_name & !is.na(map_data$country_name), ]
     center_lon <- dat0%>%
           pull(center_lon)%>%
           as.matrix(.)

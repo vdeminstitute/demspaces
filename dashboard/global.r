@@ -10,11 +10,8 @@ library(shinyBS)
 library(here)
 
 ## Load and transform some data
-GW_shp_file_new <- readRDS("data/map_dat.rds")
-GW_shp_file_data <- data.frame(GW_shp_file_new@data, stringsAsFactors = FALSE) %>%
-  na.omit(.)
-#GW_shp_file_data <- GW_shp_file_new@data
-
+map_data <- readRDS("data/map_dat.rds")
+map_color_data <- st_set_geometry(map_data, NULL)
 
 country_characteristic_dat <- readRDS("data/country_characteristic_dat.rds")
 countryNamesText <- c("", sort(unique(as.character(country_characteristic_dat$country_name))))
