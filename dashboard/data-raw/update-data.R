@@ -26,6 +26,7 @@ library(rgeos)
 library(rgdal)
 library(cshapes)
 library(here)
+library(yaml)
 
 setwd(here::here("dashboard"))
 
@@ -150,6 +151,10 @@ map_data <- map_data %>%
 
 write_rds(map_data, "data/map_dat.rds", compress = "none")
 
+# Keep a readable sample of the data so we can easily spot differences on git
+test <- map_data[1:5, ] %>% st_set_geometry(NULL)
+write_csv(test, here::here("dashboard/data-raw/map_dat_sample.csv"))
+
 
 # Other; not cleaned up yet -----------------------------------------------
 
@@ -161,6 +166,18 @@ country_characteristic_dat <- dvs %>%
   filter(year >= 2011)
 
 write_rds(country_characteristic_dat, "data/country_characteristic_dat.RDS")
+
+# Keep a signature of key stats for git diff
+dat <- country_characteristic_dat
+sig <- list(
+  N_rows = nrow(dat),
+  N_cols = ncol(dat),
+  N_missing = nrow(dat) - sum(complete.cases(dat)),
+  Countries = length(unique(dat$country_name)),
+  Years = paste0(range(dat$year), collapse = "-")
+)
+write_yaml(sig, here::here("dashboard/data-raw/country_characteristic_dat_signature.yml"))
+
 
 prob1_dat <- all_forecast_data %>%
   dplyr::select(-for_years, -year, -gwcode, -level) %>%
