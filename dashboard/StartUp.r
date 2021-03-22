@@ -7,7 +7,6 @@ library(leaflet)
 library(highcharter)
 library(shinyWidgets)
 library(shinyBS)
-library(stringr)
 
 getwd()
 # ## CHECK WOKING DIRECTORY!

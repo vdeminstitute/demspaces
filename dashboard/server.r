@@ -390,11 +390,13 @@ function(input, output, session) {
 
     table_data <- eventReactive(input$update, ignoreNULL = FALSE, { #, ignoreInit = TRUE
 
+
       space_pattern <- paste(input$space2, collapse = "|")
       region_pattern <- paste(input$region2, collapse = "|")
+
       suppressWarnings(dat <- table_dat %>%
-        filter(str_detect(key_word, space_pattern)) %>%
-        filter(str_detect(key_word, region_pattern)) %>%
+        filter(grepl(space_pattern, key_word)) %>%
+        filter(grepl(region_pattern, key_word)) %>%
         select(-c(outcome, region, Region, key_word)) %>%
         arrange(Country, Space) %>%
         DT::datatable(container = data_table_format, rownames = FALSE,
@@ -417,8 +419,8 @@ function(input, output, session) {
       space_pattern <- paste(input$space2, collapse = "|")
       region_pattern <- paste(input$region2, collapse = "|")
       suppressWarnings(dat <- table_dat %>%
-        filter(str_detect(key_word, space_pattern)) %>%
-        filter(str_detect(key_word, region_pattern)) %>%
+        filter(grepl(space_pattern, key_word)) %>%
+        filter(grepl(region_pattern, keyword)) %>%
         select(-c(outcome, region, Region, key_word)) %>%
         arrange(Country, Space))
 
