@@ -314,7 +314,7 @@ function(input, output, session) {
     })
 
     observeEvent(c(input$canvasClicked1), {
-     click_name <- input$canvasClicked1[3]
+     click_name <- input$canvasClicked1[2]
 
         space_var_name4 <- switch(click_name,
                                   Associational = "v2xcs_ccsi",
