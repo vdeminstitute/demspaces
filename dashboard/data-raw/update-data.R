@@ -149,9 +149,17 @@ forecast_colors <- all_forecast_data %>%
 map_data <- map_data %>%
   left_join(forecast_colors)
 
+# Some countries that are not covered by the forecasts will have missing map
+# color and other values. Set the map color for missing to gray.
+cnames <- colnames(map_data)[grepl("^map_", colnames(map_data))]
+for (cc in cnames) {
+  map_data[[cc]] <- ifelse(is.na(map_data[[cc]]), "#D0D0D1", map_data[[cc]])
+}
+
 write_rds(map_data, "data/map_dat.rds", compress = "none")
 
 # Keep a readable sample of the data so we can easily spot differences on git
+# The .rds version will always show as changed on git.
 test <- map_data[1:5, ] %>% st_set_geometry(NULL)
 write_csv(test, here::here("dashboard/data-raw/map_dat_sample.csv"))
 
@@ -168,6 +176,7 @@ country_characteristic_dat <- dvs %>%
 write_rds(country_characteristic_dat, "data/country_characteristic_dat.RDS")
 
 # Keep a signature of key stats for git diff
+# The .rds version will always show as changed on git.
 dat <- country_characteristic_dat
 sig <- list(
   N_rows = nrow(dat),
