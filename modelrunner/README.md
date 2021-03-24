@@ -7,6 +7,12 @@ Run the random forest models to generate forecasts for all 6 spaces and, for eac
 
 ## Usage
 
+Without Docker:
+
+Source or run `R/rf.R` in whatever way is convenient. It should work without any path adjustments, as long as all required packages are installed. 
+
+_AB, 2021 update: I did not check whether the Docker container still works. I just ran everything as RStudio jobs, and that worked fine._
+
 With Docker:
 
 The Docker container serves as an app that when run will execute model training and write the final forecasts and any other output to the remote or local output folder. E.g. here are some options for running the app:
@@ -53,7 +59,7 @@ To install locally:
 
 - clone or download this GitHub repo
 - install Docker if it is not already installed and start it
-- in a terminal, navigate to the `closing-spaces/modelrunner` folder
+- in a terminal, navigate to the `demspaces/modelrunner` folder
 - build the container image with `docker build -t modelrunner ./`
 
 The app is now ready to run. Instructions are in the next section below. 

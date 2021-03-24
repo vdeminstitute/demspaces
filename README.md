@@ -1,62 +1,38 @@
 Democratic Spaces Barometer
-================
+===========================
 
-The Demoractic Spaces Barometer forecasts significant changes, both
-democratizing and autocratizing, for six facets of democratic governance
-for all major countries in the world 2 years ahead. The current
-forecasts cover 2020-2021 and can be explored with the dashboard at
-<https://www.v-dem.net/en/analysis/DemSpace/>.
+The Demoractic Spaces Barometer forecasts significant changes, both democratizing and autocratizing, for six facets of democratic governance for all major countries in the world 2 years ahead. The forecasts can be explored with the dashboard at https://www.v-dem.net/en/analysis/DemSpace/.
 
-This repo contains the code and data needed to reproduce the forecasts
-and dashboard. It is organized into three self-contained folders:
+This repo contains the code and data needed to reproduce the forecasts and dashboard. It is organized into three self-contained folders:
 
-  - `create-data/`: combine V-Dem and other data sources into the
-    historical data that is used to code the dependent variables and
-    estimate the forecast models
-  - `modelrunner/`: contains the random forest forecast models and will
-    generate both the test and live forecasts
-  - `dashboard/`: the R Shiny dashboard at the V-Dem website
+- `create-data/`: combine V-Dem and other data sources into the historical data that is used to code the dependent variables and estimate the forecast models
+- `modelrunner/`: contains the random forest forecast models and will generate both the test and live forecasts
+- `dashboard/`: the R Shiny dashboard at the V-Dem website
 
-The folders are self-contained in the sense that each has a copy of the
-inputs it needs to run, and will not reach into other folders to pull
-code or data. For example, `modelrunner` saves the forecasts to
-`output/fcasts-rf.csv`, and `dashboard` contains a copy of these
-forecasts in `Data/fcasts-rf-2020.csv`. *(This also means that if there
-are any changes in relevant data, they need to be manually copied
-over.)*
+The folders are self-contained in the sense that each has a copy of the inputs it needs to run, and will not reach into other folders to pull code or data. For example, `modelrunner` saves the forecasts to `output/fcasts-rf.csv`, and `dashboard` contains a copy of these forecasts in `Data/fcasts-rf-2020.csv`. *(This also means that if there are any changes in relevant data, they need to be manually copied over.)*
 
-The `forecasts/` folder contains a record of the forecasts we made in
-2019 and updated forecasts from March 2020, when V-Dem version 10 was
-released.
+The `forecasts/` folder contains a record of the forecasts we since the first version with V-Dem v9 in 2019. 
 
 ## Setup
 
-The R packages needed to run all code in this repo are listed in
-`required-packages.txt`. Two packages need special treatment:
+The R packages needed to run all code in this repo are listed in `required-packages.txt`. Two packages need special treatment:
 
-  - **demspacesR** is not on CRAN. This package contains some custom
-    model wrappers to make it easier to work with the 12 outcome
-    variables we are modeling. It can be installed with:
-    
-    ``` r
-    remotes::install_github("vdeminstitute/demspacesR")
-    ```
-
-  - **states** needs to be at least version 0.2.2.9007, which by the
-    time you are reading this may be met by the version on CRAN. If not,
-    you can also install the development version from GitHub:
-    
-    ``` r
-    # Check the package version
-    packageVersion("states")
-    if (packageVersion("states") < "0.2.2.9007") {
-      remotes::install_github("andybega/states")
-    }
-    ```
+- **demspacesR** is not on CRAN. This package contains some custom model wrappers to make it easier to work with the 12 outcome variables we are modeling. It can be installed with:
+  ```r
+  remotes::install_github("vdeminstitute/demspacesR")
+  ```
+- **states** needs to be at least version 0.2.2.9007, which by the time you are reading this may be met by the version on CRAN. If not, you can also install the development version from GitHub:
+  ```r
+  # Check the package version
+  packageVersion("states")
+  if (packageVersion("states") < "0.2.2.9007") {
+    remotes::install_github("andybega/states")
+  }
+  ```
 
 To check for and install the remaining packages, try:
 
-``` r
+```r
 packs <- readLines("required-packages.txt")
 need  <- packs[!packs %in% rownames(installed.packages())]
 need
@@ -65,38 +41,25 @@ install.packages(need)
 
 ## Reproducing the forecasts
 
-1.  In `create-data/`, run the data munging scripts in the `scripts/`
-    folder to recreate the final data, `output-data/states.rds`. See
-    `create-data/README.md` for more details.
-2.  In `modelrunner/`, run `R/rf.R` to run the forecast models and
-    create the test and live forecasts. See `modelrunner/README.md` for
-    more details.
-3.  Update the forecast data in `dashboard`.
+1. In `create-data/`, run the data munging scripts in the `scripts/` folder to recreate the final data, `output-data/states.rds`. See `create-data/README.md` for more details.
+2. In `modelrunner/`, run `R/rf.R` to run the forecast models and create the test and live forecasts. See `modelrunner/README.md` for more details.
+3. Update the forecast data in `dashboard`.
 
 ## Updates
 
-*Note: the v9 to v10 update process was before some file changes and
-cleaning, so probably future updates will require adjusting and updating
-the steps below.*
+The `create-data`, `modelrunner`, and `dashboard` folders contain the core components of the project. They are designed to be self-contained, and outputs from one that serve as inputs in others have to be manually copied over. See the respective README's for more details. I also tried to mark all places that require manual updates with "UPDATE:". 
 
-To update the forecasts:
+The general process is to:
 
-1.  Update the input data sources in `create-data/input` as needed.
-2.  Re-run each data munging script in `create-data/scripts`. This will
-    probably require some changes here and there, e.g. if sets of
-    missing values have changed, and thus should be done interactively
-    (i.e. don’t source the scripts and assume everything is ok).
-3.  Copy the updated `states.rds` data to `modelrunner/input/`.
-4.  Adjust the end year in `modelrunner/R/rf.R` line 56 and re-run.
-5.  Copy `modelrunner/output/fcasts-rf.csv` to `dashboard/data/`.
+1. Update the merged data using `create-data`, including the external data sources that feed into the final merged data. Copy the updated `states.rds` data to `modelrunner/input/`. 
+2. Run the forecast model using `modelrunner/R/rf.R`. Copy `modelrunner/output/fcasts-rf.csv` to `dashboard/data/`.
+3. Update the dashboard by rebuilding the data and manually updating the text in the UI where needed. 
 
 ## Citation
 
-Andreas Beger, Richard K. Morgan, and Laura Maxwell, 2020, “The
-Democratic Spaces Barometer: global forecasts of autocratization and
-democratization”, <https://www.v-dem.net/en/analysis/DemSpace/>
+Andreas Beger, Richard K. Morgan, and Laura Maxwell, 2020, “The Democratic Spaces Barometer: global forecasts of autocratization and democratization”, <https://www.v-dem.net/en/analysis/DemSpace/>
 
-``` bibtex
+```bibtex
 @misc{beger2020democratic,
   auhor = {Beger, Andreas and Morgan, Richard K. and Maxwell, Laura},
   title = {The Democratic Spaces Barometer: Global Forecasts of Autocratization and Democratization},
@@ -107,117 +70,26 @@ democratization”, <https://www.v-dem.net/en/analysis/DemSpace/>
 
 ## Contributing
 
-We welcome any error and bug reports dealing with mistakes in the
-existing code and data. Please open an issue or email Andreas Beger at
-[adbeger@gmail.com](mailto:adbeger+demspaces@gmail.com).
+We welcome any error and bug reports dealing with mistakes in the existing code and data. Please open an issue here on GitHub. 
 
-This repo is not under active development and mainly serves for the sake
-of transparency and to allow reproduction of the forecasts and
-dashboard. There is no plan for continuing development aside from,
-potentially, annual forecast updates in the future. It is thus unlikely
-that more substantive feedback, like suggestions about additional
-features/predictors or alternative models, would be incorporated unless
-you do most of the legwork and can clearly demonstrate improved
-performance. This is not meant as discouragement, we simply don’t have
-the resources to put more time in this and want to prevent
-disappointment.
+This repo is not under active development and mainly serves for the sake of transparency and to allow reproduction of the forecasts and dashboard. There is no plan for continuing development aside from, potentially, annual forecast updates in the future. It is thus unlikely that more substantive feedback, like suggestions about additional features/predictors or alternative models, would be incorporated unless you do most of the legwork and can clearly demonstrate improved performance. This is not meant as discouragement, we simply don't have the resources to put more time in this and want to prevent disappointment. 
 
 ## Acknowledgement
 
-The Democratic Space Barometer is the product of a collaboration between
-Andreas Beger ([Predictive
-Heuristics](https://www.predictiveheuristics.com)), Richard K. Morgan
-([V-Dem](https://www.v-dem.net/en/)), and Laura Maxwell
-([V-Dem](https://www.v-dem.net/en/)).
+The Democratic Space Barometer is the product of a collaboration between Andreas Beger ([Predictive Heuristics](https://www.predictiveheuristics.com)), Richard K. Morgan ([V-Dem](https://www.v-dem.net/en/)), and Laura Maxwell ([V-Dem](https://www.v-dem.net/en/)).
 
-The six conceptual dimensions we focus on come from the International
-Republican Institute’s Closing Space Barometer, which includes an
-analytical framework for assessing the processes that facilitate a
-substantial reduction (closing events) within these six spaces. This
-framework was developed based on a series of workshops conducted with
-Democracy, Human Rights, and Governance (DRG) donors and implementing
-partners in 2016 and represent the conceptual features of democratic
-space which are most amenable to DRG assistance programs.
+The six conceptual dimensions we focus on come from the International Republican Institute’s Closing Space Barometer, which includes an analytical framework for assessing the processes that facilitate a substantial reduction (closing events) within these six spaces. This framework was developed based on a series of workshops conducted with Democracy, Human Rights, and Governance (DRG) donors and implementing partners in 2016 and represent the conceptual features of democratic space which are most amenable to DRG assistance programs.
 
-We adapted these conceptual spaces, expanded the scope to include
-substantial improvements (opening events), and developed an
-operationalization method to identify opening and closing events within
-each space. This dashboard, and the forecast that drive it, is the
-output of these efforts.
-
-## System info
-
-``` r
-sessionInfo()
-```
-
-    ## R version 4.0.3 (2020-10-10)
-    ## Platform: x86_64-apple-darwin17.0 (64-bit)
-    ## Running under: macOS Big Sur 10.16
-    ## 
-    ## Matrix products: default
-    ## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
-    ## LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
-    ## 
-    ## locale:
-    ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
-    ## 
-    ## attached base packages:
-    ## [1] stats     graphics  grDevices utils     datasets  methods   base     
-    ## 
-    ## loaded via a namespace (and not attached):
-    ##  [1] compiler_4.0.3  magrittr_2.0.1  tools_4.0.3     htmltools_0.5.0
-    ##  [5] yaml_2.2.1      stringi_1.5.3   rmarkdown_2.5   knitr_1.30     
-    ##  [9] stringr_1.4.0   xfun_0.19       digest_0.6.27   rlang_0.4.8    
-    ## [13] evaluate_0.14
-
-``` r
-packs <- readLines("required-packages.txt")
-installed <- as.data.frame(installed.packages(), stringsAsFactors = FALSE)
-packs <- installed[installed$Package %in% packs, c("Package", "Version")]
-rownames(packs) <- NULL
-packs
-```
-
-    ##         Package Version
-    ## 1      doFuture  0.10.0
-    ## 2         dplyr   1.0.2
-    ## 3        future  1.20.1
-    ## 4        glmnet   4.0-2
-    ## 5          here   1.0.0
-    ## 6   highcharter   0.8.2
-    ## 7      jsonlite   1.7.1
-    ## 8       leaflet   2.0.3
-    ## 9           lgr   0.4.1
-    ## 10     magrittr   2.0.1
-    ## 11       ranger  0.12.1
-    ## 12        readr   1.4.0
-    ## 13        rgdal  1.5-18
-    ## 14        rgeos   0.5-5
-    ## 15           sf   0.9-6
-    ## 16        shiny   1.5.0
-    ## 17      shinyBS    0.61
-    ## 18 shinyWidgets   0.5.4
-    ## 19        skimr   2.1.2
-    ## 20       states   0.3.0
-    ## 21      stringr   1.4.0
-    ## 22       tibble   3.0.4
-    ## 23        tidyr   1.1.2
-    ## 24    tidyverse   1.3.0
-    ## 25          zoo   1.8-8
+We adapted these conceptual spaces, expanded the scope to include substantial improvements (opening events), and developed an operationalization method to identify opening and closing events within each space. This dashboard, and the forecast that drive it, is the output of these efforts.
 
 ## Dev notes
 
-The original Democratic Spaces project development and code, which
-covers the 2019 and 2020 forecasts (V-Dem v9 and v10), was in these 3
-repos:
+The original Democratic Spaces project development and code, which covers the 2019 and 2020 forecasts (V-Dem v9 and v10), was in these 3 repos:
 
-  - [`andybega/closing-spaces`](https://github.com/andybega/closing-spaces)
-    (private): development repo with all the ugly bits
-  - [`andybega/democratic-spaces`](https://github.com/andybega/democratic-spaces):
-    a cleaned-up subset of the development repo for reproducibility
-  - [`andybega/demspaces`](https://github.com/andybega/demspaces):
-    companion R package with helper functions
+- [`andybega/closing-spaces`](https://github.com/andybega/closing-spaces) (private): development repo with all the ugly bits
+- [`andybega/democratic-spaces`](https://github.com/andybega/democratic-spaces): a cleaned-up subset of the development repo for reproducibility
+- [`andybega/demspaces`](https://github.com/andybega/demspaces): companion R package with helper functions
 
-For the 2021 V-Dem v11 update I copied over the existing code in the
-last two repos to the corresponding V-Dem owned repos.
+For the 2021 V-Dem v11 update I copied over the existing code in the last two repos to the corresponding V-Dem owned repos. 
+
+
