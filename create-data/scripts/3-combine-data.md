@@ -42,7 +42,9 @@ output of all chunks below for new changes in missing case sets\!
 
 ``` r
 END_YEAR <- 2020
-VERSION  <- "v11c"
+# UPDATE: this should be the V-Dem data version, but for development I've also
+# use sub-versions like 'v11a', ...
+VERSION  <- "v11"
 ```
 
 ## Pieces
@@ -998,7 +1000,7 @@ fn <- sprintf("../output/states-%s.rds", VERSION)
 cat("Saving data as %s", basename(fn))
 ```
 
-    ## Saving data as %s states-v11c.rds
+    ## Saving data as %s states-v11.rds
 
 ``` r
 write_rds(cy, fn)

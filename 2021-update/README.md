@@ -1,7 +1,8 @@
 2021 Update Notes
 ================
 
-5 March 2021, Andreas Beger
+Andreas Beger  
+2021-03-26
 
 *tl;dr: For the 2021 update, I eliminated a bunch of external data
 sources and other variables. Instead of 481 columns, the new merged data

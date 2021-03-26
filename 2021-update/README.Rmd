@@ -7,7 +7,8 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-5 March 2021, Andreas Beger
+Andreas Beger  
+2021-03-26
 
 _tl;dr: For the 2021 update, I eliminated a bunch of external data sources and other variables. Instead of 481 columns, the new merged data has 225. This did not decrease forecast performance, in fact accuracy increased a bit._
 
@@ -33,9 +34,9 @@ suppressPackageStartupMessages({
 })
 
 # Load merge data so we can get the observed outcomes
-states_v10  <- readRDS(here("archive/states-v10.rds"))
-states_v11a <- readRDS(here("archive/states-v11a.rds"))
-states_v11b <- readRDS(here("archive/states-v11b.rds"))
+states_v10  <- readRDS(here::here("archive/states-v10.rds"))
+states_v11a <- readRDS("data/states-v11a.rds")
+states_v11b <- readRDS("data/states-v11b.rds")
 
 # Note that the truth version between V-Dem version are NOT the same
 ex_v10 <- states_v10 %>%
@@ -52,8 +53,8 @@ cor(cbind(ex_v10, ex_v11a, ex_v11b))
 
 # Load forecasts
 fcasts_v10  <- read_csv(here("archive/fcasts-rf-v10.csv"), col_types = cols())
-fcasts_v11a <- read_csv(here("archive/fcasts-rf-v11a.csv"), col_types = cols())
-fcasts_v11b <- read_csv(here("archive/fcasts-rf-v11b.csv"), col_types = cols())
+fcasts_v11a <- read_csv("data/fcasts-rf-v11a.csv", col_types = cols())
+fcasts_v11b <- read_csv("data/fcasts-rf-v11b.csv", col_types = cols())
 
 # Subset all forecasts to last common year (2018) and calculate accuracy,
 # using both the v10 and v11 truth (they are not the same)

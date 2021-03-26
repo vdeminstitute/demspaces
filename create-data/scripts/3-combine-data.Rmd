@@ -18,7 +18,9 @@ Several of the data sources below are imputed in some fashion after merging. E.g
 
 ```{r}
 END_YEAR <- 2020
-VERSION  <- "v11c"
+# UPDATE: this should be the V-Dem data version, but for development I've also
+# use sub-versions like 'v11a', ...
+VERSION  <- "v11"
 ```
 
 ```{r setup, include=FALSE}
