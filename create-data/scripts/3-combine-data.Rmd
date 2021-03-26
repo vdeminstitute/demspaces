@@ -18,7 +18,7 @@ Several of the data sources below are imputed in some fashion after merging. E.g
 
 ```{r}
 END_YEAR <- 2020
-VERSION  <- "v11b"
+VERSION  <- "v11c"
 ```
 
 ```{r setup, include=FALSE}

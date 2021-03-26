@@ -16,7 +16,7 @@ dv <- read_csv("../trafo-data/dv_data_1968_on.csv") %>%
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   gwcode = col_double(),
     ##   year = col_double(),
@@ -89,16 +89,16 @@ dv_with_diffs
     ## # Groups:   gwcode [174]
     ##    gwcode  year v2x_freexp_alti… v2x_horacc_osp v2x_pubcorr v2x_veracc_osp
     ##     <dbl> <dbl>            <dbl>          <dbl>       <dbl>          <dbl>
-    ##  1      2  1968            0.878          0.907       0.95           0.852
-    ##  2      2  1969            0.888          0.911       0.95           0.851
-    ##  3      2  1970            0.905          0.918       0.959          0.865
-    ##  4      2  1971            0.883          0.919       0.946          0.867
-    ##  5      2  1972            0.903          0.92        0.946          0.866
+    ##  1      2  1968            0.878          0.907       0.95           0.851
+    ##  2      2  1969            0.888          0.91        0.95           0.852
+    ##  3      2  1970            0.905          0.915       0.959          0.867
+    ##  4      2  1971            0.883          0.917       0.946          0.866
+    ##  5      2  1972            0.903          0.918       0.946          0.865
     ##  6      2  1973            0.929          0.957       0.946          0.866
-    ##  7      2  1974            0.939          0.959       0.946          0.871
-    ##  8      2  1975            0.942          0.96        0.946          0.89 
-    ##  9      2  1976            0.952          0.959       0.946          0.904
-    ## 10      2  1977            0.946          0.951       0.946          0.907
+    ##  7      2  1974            0.939          0.959       0.946          0.873
+    ##  8      2  1975            0.942          0.958       0.946          0.888
+    ##  9      2  1976            0.952          0.958       0.946          0.904
+    ## 10      2  1977            0.946          0.952       0.946          0.907
     ## # … with 8,279 more rows, and 8 more variables: v2xcl_rol <dbl>,
     ## #   v2xcs_ccsi <dbl>, v2x_freexp_altinf_diff_y2y <dbl>,
     ## #   v2x_horacc_osp_diff_y2y <dbl>, v2x_pubcorr_diff_y2y <dbl>,
@@ -144,7 +144,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 x 4
     ##   indicator         all    up  down
     ##   <chr>           <dbl> <dbl> <dbl>
-    ## 1 v2x_veracc_osp 0.0815  0.08  0.08
+    ## 1 v2x_veracc_osp 0.0816  0.08  0.08
     ## 
     ## 
     ##  v2xcs_ccsi 
@@ -176,7 +176,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 x 4
     ##   indicator         all    up  down
     ##   <chr>           <dbl> <dbl> <dbl>
-    ## 1 v2x_horacc_osp 0.0595  0.06  0.06
+    ## 1 v2x_horacc_osp 0.0599  0.06  0.06
     ## 
     ## 
     ##  v2x_pubcorr 

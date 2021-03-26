@@ -33,7 +33,7 @@ dv <- read_csv("../trafo-data/dv_data_1968_on.csv") %>%
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   gwcode = col_double(),
     ##   year = col_double(),
@@ -59,7 +59,7 @@ cutpoints <- read_csv("../output-data/cutpoints.csv")
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   indicator = col_character(),
     ##   all = col_double(),
@@ -208,11 +208,11 @@ dv_data %>%
     ##  2    310  2012          0.918 same                            0
     ##  3    310  2013          0.913 same                            0
     ##  4    310  2014          0.832 down                            0
-    ##  5    310  2015          0.833 same                            0
-    ##  6    310  2016          0.833 same                            0
+    ##  5    310  2015          0.832 same                            0
+    ##  6    310  2016          0.83  same                            0
     ##  7    310  2017          0.824 same                            0
-    ##  8    310  2018          0.76  same                            0
-    ##  9    310  2019          0.76  same                           NA
+    ##  8    310  2018          0.759 same                            0
+    ##  9    310  2019          0.761 same                           NA
     ## 10    310  2020          0.764 same                           NA
     ## # … with 2 more variables: dv_v2x_veracc_osp_down_next2 <int>,
     ## #   v2x_veracc_osp_squared <dbl>
@@ -266,7 +266,7 @@ Data summary
 | dv\_v2x\_freexp\_altinf\_down\_next2 |        338 |           0.96 |    0.05 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | v2x\_horacc\_osp                     |          0 |           1.00 |    0.55 |   0.31 |    0.01 |    0.25 |    0.58 |    0.85 |    0.99 | ▅▅▃▅▇ |
 | dv\_v2x\_horacc\_osp\_up\_next2      |        338 |           0.96 |    0.08 |   0.28 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| dv\_v2x\_horacc\_osp\_down\_next2    |        338 |           0.96 |    0.06 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| dv\_v2x\_horacc\_osp\_down\_next2    |        338 |           0.96 |    0.05 |   0.22 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | v2x\_pubcorr                         |          0 |           1.00 |    0.53 |   0.30 |    0.01 |    0.26 |    0.52 |    0.82 |    1.00 | ▆▇▅▅▇ |
 | dv\_v2x\_pubcorr\_up\_next2          |        338 |           0.96 |    0.08 |   0.28 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
 | dv\_v2x\_pubcorr\_down\_next2        |        338 |           0.96 |    0.10 |   0.30 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |

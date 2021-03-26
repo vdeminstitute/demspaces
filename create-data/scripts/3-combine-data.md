@@ -42,7 +42,7 @@ output of all chunks below for new changes in missing case sets\!
 
 ``` r
 END_YEAR <- 2020
-VERSION  <- "v11b"
+VERSION  <- "v11c"
 ```
 
 ## Pieces
@@ -55,7 +55,7 @@ cy <- read_csv("../trafo-data/country_year_set_1968_on.csv") %>%
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   gwcode = col_double(),
     ##   year = col_double(),
@@ -130,7 +130,7 @@ dv <- read_csv("../trafo-data/dv_data_1968_on.csv") %>%
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   gwcode = col_double(),
     ##   year = col_double(),
@@ -190,7 +190,7 @@ vdem_dat <- read_csv("../trafo-data/vdem_data_1968_on.csv") %>%
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   .default = col_double(),
     ##   country_name = col_character(),
@@ -352,7 +352,7 @@ age_dat <- read_csv("../input/gwstate-age.csv") %>%
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   gwcode = col_double(),
     ##   year = col_double(),
@@ -414,7 +414,7 @@ pop_dat <- read_csv("../input/population.csv") %>%
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   gwcode = col_double(),
     ##   year = col_double(),
@@ -491,7 +491,7 @@ infmort <- read_csv("../input/wdi-infmort.csv") %>%
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   gwcode = col_double(),
     ##   year = col_double(),
@@ -531,7 +531,7 @@ cy_temp %>%
 
     ## # A tibble: 3 x 3
     ##   gwcode years           n
-    ## *  <dbl> <chr>       <int>
+    ##    <dbl> <chr>       <int>
     ## 1    315 1970 - 1992    23
     ## 2    680 1970 - 1989    20
     ## 3    817 1970 - 1974     5
@@ -564,7 +564,7 @@ gdp_dat <- read_csv("../input/gdp.csv") %>%
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   gwcode = col_double(),
     ##   year = col_double(),
@@ -629,7 +629,7 @@ coup_dat <- read_csv("../input/ptcoups.csv") %>%
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────
     ## cols(
     ##   .default = col_double()
     ## )
@@ -693,7 +693,7 @@ str(cy)
     ## tibble [8,018 × 225] (S3: tbl_df/tbl/data.frame)
     ##  $ gwcode                          : num [1:8018] 2 2 2 2 2 2 2 2 2 2 ...
     ##  $ year                            : num [1:8018] 1970 1971 1972 1973 1974 ...
-    ##  $ v2x_veracc_osp                  : num [1:8018] 0.865 0.867 0.866 0.866 0.871 0.89 0.904 0.907 0.907 0.908 ...
+    ##  $ v2x_veracc_osp                  : num [1:8018] 0.867 0.866 0.865 0.866 0.873 0.888 0.904 0.907 0.907 0.908 ...
     ##  $ dv_v2x_veracc_osp_change        : chr [1:8018] "same" "same" "same" "same" ...
     ##  $ dv_v2x_veracc_osp_up_next2      : int [1:8018] 0 0 0 0 0 0 0 0 0 0 ...
     ##  $ dv_v2x_veracc_osp_down_next2    : int [1:8018] 0 0 0 0 0 0 0 0 0 0 ...
@@ -709,7 +709,7 @@ str(cy)
     ##  $ dv_v2x_freexp_altinf_change     : chr [1:8018] "same" "same" "same" "same" ...
     ##  $ dv_v2x_freexp_altinf_up_next2   : int [1:8018] 0 0 0 0 0 0 0 0 0 0 ...
     ##  $ dv_v2x_freexp_altinf_down_next2 : int [1:8018] 0 0 0 0 0 0 0 0 0 0 ...
-    ##  $ v2x_horacc_osp                  : num [1:8018] 0.918 0.919 0.92 0.957 0.959 0.96 0.959 0.951 0.951 0.953 ...
+    ##  $ v2x_horacc_osp                  : num [1:8018] 0.915 0.917 0.918 0.957 0.959 0.958 0.958 0.952 0.951 0.953 ...
     ##  $ dv_v2x_horacc_osp_change        : chr [1:8018] "same" "same" "same" "same" ...
     ##  $ dv_v2x_horacc_osp_up_next2      : int [1:8018] 0 0 0 0 0 0 0 0 0 0 ...
     ##  $ dv_v2x_horacc_osp_down_next2    : int [1:8018] 0 0 0 0 0 0 0 0 0 0 ...
@@ -717,11 +717,11 @@ str(cy)
     ##  $ dv_v2x_pubcorr_change           : chr [1:8018] "same" "same" "same" "same" ...
     ##  $ dv_v2x_pubcorr_up_next2         : int [1:8018] 0 0 0 0 0 0 0 0 0 0 ...
     ##  $ dv_v2x_pubcorr_down_next2       : int [1:8018] 0 0 0 0 0 0 0 0 0 0 ...
-    ##  $ v2x_veracc_osp_squared          : num [1:8018] 0.748 0.752 0.75 0.75 0.759 ...
+    ##  $ v2x_veracc_osp_squared          : num [1:8018] 0.752 0.75 0.748 0.75 0.762 ...
     ##  $ v2xcs_ccsi_squared              : num [1:8018] 0.85 0.85 0.85 0.85 0.85 ...
     ##  $ v2xcl_rol_squared               : num [1:8018] 0.856 0.872 0.874 0.88 0.885 ...
     ##  $ v2x_freexp_altinf_squared       : num [1:8018] 0.819 0.78 0.815 0.863 0.882 ...
-    ##  $ v2x_horacc_osp_squared          : num [1:8018] 0.843 0.845 0.846 0.916 0.92 ...
+    ##  $ v2x_horacc_osp_squared          : num [1:8018] 0.837 0.841 0.843 0.916 0.92 ...
     ##  $ v2x_pubcorr_squared             : num [1:8018] 0.92 0.895 0.895 0.895 0.895 ...
     ##  $ lag0_is_leg                     : num [1:8018] 1 1 1 1 1 1 1 1 1 1 ...
     ##  $ lag0_is_elec                    : num [1:8018] 1 1 1 1 1 1 1 1 1 1 ...
@@ -740,7 +740,7 @@ str(cy)
     ##  $ lag0_v2xeg_eqprotec             : num [1:8018] 0.837 0.837 0.837 0.837 0.837 0.837 0.837 0.85 0.85 0.85 ...
     ##  $ lag0_v2xeg_eqaccess             : num [1:8018] 0.76 0.76 0.76 0.756 0.756 0.76 0.76 0.76 0.76 0.76 ...
     ##  $ lag0_v2xeg_eqdr                 : num [1:8018] 0.669 0.656 0.656 0.663 0.663 0.663 0.672 0.672 0.672 0.672 ...
-    ##  $ lag0_v2x_diagacc                : num [1:8018] 1.47 1.43 1.48 1.53 1.58 ...
+    ##  $ lag0_v2x_diagacc                : num [1:8018] 1.47 1.43 1.48 1.54 1.58 ...
     ##  $ lag0_v2xex_elecleg              : num [1:8018] 1 1 1 1 1 1 1 1 1 1 ...
     ##  $ lag0_v2x_civlib                 : num [1:8018] 0.903 0.901 0.908 0.915 0.918 0.923 0.927 0.931 0.93 0.934 ...
     ##  $ lag0_v2x_clphy                  : num [1:8018] 0.907 0.907 0.918 0.918 0.918 0.918 0.918 0.918 0.918 0.918 ...
@@ -998,7 +998,7 @@ fn <- sprintf("../output-data/states-%s.rds", VERSION)
 cat("Saving data as %s", basename(fn))
 ```
 
-    ## Saving data as %s states-v11b.rds
+    ## Saving data as %s states-v11c.rds
 
 ``` r
 write_rds(cy, fn)

@@ -182,9 +182,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 41,1989,same,1,0
 41,1990,up,1,1
 41,1991,up,0,1
-41,1992,down,0,0
+41,1992,down,1,0
 41,1993,same,1,0
-41,1994,same,1,0
+41,1994,up,1,0
 41,1995,up,0,0
 41,1996,same,0,0
 41,1997,same,0,1
@@ -252,9 +252,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 42,2006,same,0,0
 42,2007,same,0,0
 42,2008,same,0,0
-42,2009,same,0,1
-42,2010,same,0,1
-42,2011,down,0,0
+42,2009,same,0,0
+42,2010,same,0,0
+42,2011,same,0,0
 42,2012,same,0,0
 42,2013,same,0,0
 42,2014,same,0,0
@@ -472,9 +472,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 70,2014,same,0,0
 70,2015,same,0,0
 70,2016,same,0,0
-70,2017,same,0,1
-70,2018,same,0,1
-70,2019,down,NA,NA
+70,2017,same,0,0
+70,2018,same,0,0
+70,2019,same,NA,NA
 70,2020,same,NA,NA
 90,1968,first year of independence,0,0
 90,1969,same,0,0
@@ -488,9 +488,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 90,1977,same,0,1
 90,1978,down,0,0
 90,1979,same,0,0
-90,1980,same,1,0
-90,1981,same,1,0
-90,1982,up,0,0
+90,1980,same,0,0
+90,1981,same,0,0
+90,1982,same,0,0
 90,1983,same,0,0
 90,1984,same,1,0
 90,1985,same,1,0
@@ -532,9 +532,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 91,1968,first year of independence,0,0
 91,1969,same,1,0
 91,1970,same,1,0
-91,1971,up,0,1
-91,1972,same,0,1
-91,1973,down,0,0
+91,1971,up,0,0
+91,1972,same,0,0
+91,1973,same,0,0
 91,1974,same,0,0
 91,1975,same,0,0
 91,1976,same,0,0
@@ -958,8 +958,8 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 115,1977,same,0,0
 115,1978,same,0,1
 115,1979,same,0,1
-115,1980,down,0,1
-115,1981,down,0,0
+115,1980,down,0,0
+115,1981,same,0,0
 115,1982,same,0,0
 115,1983,same,0,0
 115,1984,same,0,0
@@ -996,13 +996,13 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 115,2015,same,0,0
 115,2016,same,0,0
 115,2017,same,0,0
-115,2018,same,1,0
+115,2018,same,0,0
 115,2019,same,NA,NA
-115,2020,up,NA,NA
+115,2020,same,NA,NA
 130,1968,first year of independence,0,1
 130,1969,same,0,1
 130,1970,down,0,1
-130,1971,down,0,1
+130,1971,same,0,1
 130,1972,down,0,0
 130,1973,same,0,0
 130,1974,same,0,0
@@ -1122,8 +1122,8 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 140,1982,same,1,0
 140,1983,up,1,0
 140,1984,same,1,0
-140,1985,up,0,0
-140,1986,same,1,0
+140,1985,up,1,0
+140,1986,up,1,0
 140,1987,same,1,0
 140,1988,up,1,0
 140,1989,same,1,0
@@ -1840,9 +1840,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 230,2011,same,0,0
 230,2012,same,0,0
 230,2013,same,0,0
-230,2014,same,1,0
-230,2015,same,1,0
-230,2016,up,0,0
+230,2014,same,0,0
+230,2015,same,0,0
+230,2016,same,0,0
 230,2017,same,0,0
 230,2018,same,0,1
 230,2019,same,NA,NA
@@ -1854,7 +1854,7 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 235,1972,same,1,0
 235,1973,same,1,0
 235,1974,up,1,0
-235,1975,same,1,0
+235,1975,up,1,0
 235,1976,up,0,0
 235,1977,same,0,0
 235,1978,same,0,0
@@ -2333,18 +2333,18 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 340,2014,down,0,0
 340,2015,same,0,0
 340,2016,same,0,0
-340,2017,same,0,1
+340,2017,same,0,0
 340,2018,same,0,1
-340,2019,down,NA,NA
+340,2019,same,NA,NA
 340,2020,down,NA,NA
 341,2006,first year of independence,1,0
 341,2007,up,0,0
 341,2008,same,0,0
 341,2009,same,0,0
 341,2010,same,0,0
-341,2011,same,0,1
-341,2012,same,0,1
-341,2013,down,0,0
+341,2011,same,0,0
+341,2012,same,0,0
+341,2013,same,0,0
 341,2014,same,0,0
 341,2015,same,0,0
 341,2016,same,0,0
@@ -2372,9 +2372,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 343,2008,same,0,0
 343,2009,same,0,0
 343,2010,same,0,0
-343,2011,same,0,0
-343,2012,same,0,0
-343,2013,same,0,0
+343,2011,same,0,1
+343,2012,same,0,1
+343,2013,down,0,0
 343,2014,same,0,0
 343,2015,same,1,0
 343,2016,same,1,0
@@ -2471,9 +2471,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 346,2011,same,0,0
 346,2012,same,0,0
 346,2013,same,0,0
-346,2014,same,0,0
-346,2015,same,0,0
-346,2016,same,0,0
+346,2014,same,0,1
+346,2015,same,0,1
+346,2016,down,0,0
 346,2017,same,0,0
 346,2018,same,0,0
 346,2019,same,NA,NA
@@ -2681,9 +2681,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 355,2020,same,NA,NA
 359,1991,first year of independence,1,0
 359,1992,up,0,0
-359,1993,same,0,0
-359,1994,same,0,0
-359,1995,same,0,0
+359,1993,same,0,1
+359,1994,same,0,1
+359,1995,down,0,0
 359,1996,same,1,0
 359,1997,same,1,0
 359,1998,up,1,0
@@ -2695,9 +2695,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 359,2004,same,0,0
 359,2005,same,0,0
 359,2006,same,0,0
-359,2007,same,1,0
+359,2007,same,0,0
 359,2008,same,1,0
-359,2009,up,1,0
+359,2009,same,1,0
 359,2010,up,0,0
 359,2011,same,0,0
 359,2012,same,0,0
@@ -2908,21 +2908,21 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 369,1991,first year of independence,1,0
 369,1992,up,1,0
 369,1993,up,0,1
-369,1994,same,0,1
-369,1995,down,0,1
-369,1996,same,0,1
+369,1994,same,1,1
+369,1995,down,1,1
+369,1996,up,0,1
 369,1997,down,0,0
 369,1998,same,0,0
 369,1999,same,0,0
 369,2000,same,0,0
-369,2001,same,1,0
+369,2001,same,0,0
 369,2002,same,1,0
-369,2003,up,1,0
+369,2003,same,1,0
 369,2004,up,0,0
 369,2005,same,0,0
-369,2006,same,0,1
-369,2007,same,0,1
-369,2008,down,0,1
+369,2006,same,0,0
+369,2007,same,0,0
+369,2008,same,0,1
 369,2009,same,0,1
 369,2010,down,0,0
 369,2011,same,0,0
@@ -3383,15 +3383,15 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 404,1988,same,0,0
 404,1989,same,0,0
 404,1990,same,0,0
-404,1991,same,1,0
+404,1991,same,0,0
 404,1992,same,1,0
-404,1993,up,1,0
+404,1993,same,1,0
 404,1994,up,1,0
 404,1995,up,0,0
 404,1996,same,0,0
-404,1997,same,0,1
-404,1998,same,0,1
-404,1999,down,0,0
+404,1997,same,0,0
+404,1998,same,0,0
+404,1999,same,0,0
 404,2000,same,0,0
 404,2001,same,0,1
 404,2002,same,1,1
@@ -3825,9 +3825,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 437,2006,same,0,0
 437,2007,same,0,0
 437,2008,same,0,0
-437,2009,same,0,0
-437,2010,same,0,0
-437,2011,same,0,0
+437,2009,same,1,0
+437,2010,same,1,0
+437,2011,up,0,0
 437,2012,same,0,0
 437,2013,same,0,0
 437,2014,same,0,0
@@ -3933,9 +3933,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 439,2008,same,0,0
 439,2009,same,0,0
 439,2010,same,0,0
-439,2011,same,1,0
+439,2011,same,0,0
 439,2012,same,1,0
-439,2013,up,1,0
+439,2013,same,1,0
 439,2014,up,0,0
 439,2015,same,0,0
 439,2016,same,0,0
@@ -4023,10 +4023,10 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 451,1992,up,0,1
 451,1993,down,0,0
 451,1994,same,1,0
-451,1995,same,1,0
-451,1996,up,0,0
-451,1997,same,0,0
-451,1998,same,0,0
+451,1995,same,1,1
+451,1996,up,1,1
+451,1997,down,1,0
+451,1998,up,0,0
 451,1999,same,0,0
 451,2000,same,1,0
 451,2001,same,1,0
@@ -4152,9 +4152,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 461,2015,same,0,0
 461,2016,same,0,0
 461,2017,same,0,0
-461,2018,same,0,0
+461,2018,same,1,0
 461,2019,same,NA,NA
-461,2020,same,NA,NA
+461,2020,up,NA,NA
 471,1968,first year of independence,0,0
 471,1969,same,0,0
 471,1970,same,0,0
@@ -4223,8 +4223,8 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 475,1980,same,0,0
 475,1981,same,0,1
 475,1982,same,0,1
-475,1983,down,0,1
-475,1984,down,0,0
+475,1983,down,0,0
+475,1984,same,0,0
 475,1985,same,0,0
 475,1986,same,0,0
 475,1987,same,0,0
@@ -4702,10 +4702,10 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 516,1982,up,0,0
 516,1983,same,0,0
 516,1984,same,0,0
-516,1985,same,0,0
+516,1985,same,0,1
 516,1986,same,0,1
-516,1987,same,0,1
-516,1988,down,0,0
+516,1987,down,0,0
+516,1988,same,0,0
 516,1989,same,0,0
 516,1990,same,1,0
 516,1991,same,1,0
@@ -4750,9 +4750,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 517,1977,same,0,0
 517,1978,same,0,0
 517,1979,same,1,0
-517,1980,same,1,0
-517,1981,up,0,0
-517,1982,same,0,0
+517,1980,same,1,1
+517,1981,up,0,1
+517,1982,down,0,0
 517,1983,same,0,0
 517,1984,same,0,0
 517,1985,same,0,0
@@ -5015,9 +5015,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 540,2018,same,1,0
 540,2019,up,NA,NA
 540,2020,same,NA,NA
-541,1975,first year of independence,0,1
-541,1976,same,0,1
-541,1977,down,0,0
+541,1975,first year of independence,0,0
+541,1976,same,0,0
+541,1977,same,0,0
 541,1978,same,0,0
 541,1979,same,0,0
 541,1980,same,0,0
@@ -5058,9 +5058,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 541,2015,same,0,0
 541,2016,same,0,0
 541,2017,same,0,0
-541,2018,same,0,1
+541,2018,same,0,0
 541,2019,same,NA,NA
-541,2020,down,NA,NA
+541,2020,same,NA,NA
 551,1968,first year of independence,0,0
 551,1969,same,0,0
 551,1970,same,0,0
@@ -5538,10 +5538,10 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 581,1994,same,0,1
 581,1995,same,1,1
 581,1996,down,1,0
-581,1997,up,0,0
+581,1997,up,0,1
 581,1998,same,0,1
-581,1999,same,0,1
-581,2000,down,1,1
+581,1999,down,0,1
+581,2000,same,1,1
 581,2001,down,1,1
 581,2002,up,1,1
 581,2003,down,1,0
@@ -5637,8 +5637,8 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 600,1987,same,0,0
 600,1988,same,1,0
 600,1989,same,1,0
-600,1990,up,0,1
-600,1991,same,0,1
+600,1990,up,1,1
+600,1991,up,0,1
 600,1992,down,0,0
 600,1993,same,0,0
 600,1994,same,1,0
@@ -5822,9 +5822,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 620,2013,same,0,0
 620,2014,same,0,0
 620,2015,same,0,0
-620,2016,same,0,1
-620,2017,same,0,1
-620,2018,down,0,0
+620,2016,same,0,0
+620,2017,same,0,0
+620,2018,same,0,0
 620,2019,same,NA,NA
 620,2020,same,NA,NA
 625,1968,first year of independence,0,1
@@ -5899,9 +5899,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 630,1974,same,0,0
 630,1975,same,0,0
 630,1976,same,0,0
-630,1977,same,0,0
-630,1978,same,1,0
-630,1979,same,1,0
+630,1977,same,0,1
+630,1978,same,1,1
+630,1979,down,1,0
 630,1980,up,0,0
 630,1981,same,0,0
 630,1982,same,0,0
@@ -5939,9 +5939,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 630,2014,same,0,0
 630,2015,same,0,0
 630,2016,same,0,0
-630,2017,same,0,1
-630,2018,same,0,1
-630,2019,down,NA,NA
+630,2017,same,0,0
+630,2018,same,0,0
+630,2019,same,NA,NA
 630,2020,same,NA,NA
 640,1968,first year of independence,0,0
 640,1969,same,0,1
@@ -5953,9 +5953,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 640,1975,same,0,0
 640,1976,same,0,0
 640,1977,same,0,0
-640,1978,same,1,0
-640,1979,same,1,1
-640,1980,up,1,1
+640,1978,same,0,0
+640,1979,same,0,1
+640,1980,same,1,1
 640,1981,down,1,0
 640,1982,up,1,0
 640,1983,same,1,0
@@ -6102,9 +6102,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 651,2018,same,0,0
 651,2019,same,NA,NA
 651,2020,same,NA,NA
-652,1968,first year of independence,0,1
-652,1969,same,0,1
-652,1970,down,0,0
+652,1968,first year of independence,0,0
+652,1969,same,0,0
+652,1970,same,0,0
 652,1971,same,0,0
 652,1972,same,0,0
 652,1973,same,0,0
@@ -6208,9 +6208,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 660,2018,same,0,0
 660,2019,same,NA,NA
 660,2020,same,NA,NA
-663,1968,first year of independence,0,1
-663,1969,same,0,1
-663,1970,down,0,0
+663,1968,first year of independence,0,0
+663,1969,same,0,0
+663,1970,same,0,0
 663,1971,same,0,0
 663,1972,same,0,0
 663,1973,same,0,1
@@ -6459,9 +6459,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 690,1981,up,0,0
 690,1982,same,0,0
 690,1983,same,0,0
-690,1984,same,0,0
+690,1984,same,0,1
 690,1985,same,0,1
-690,1986,same,0,1
+690,1986,down,0,1
 690,1987,down,0,0
 690,1988,same,0,0
 690,1989,same,0,0
@@ -6652,9 +6652,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 700,1968,first year of independence,0,0
 700,1969,same,0,0
 700,1970,same,0,0
-700,1971,same,1,0
-700,1972,same,1,1
-700,1973,up,0,1
+700,1971,same,0,0
+700,1972,same,0,1
+700,1973,same,0,1
 700,1974,down,0,0
 700,1975,same,0,0
 700,1976,same,0,1
@@ -6764,9 +6764,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 702,2020,same,NA,NA
 703,1991,first year of independence,0,0
 703,1992,same,0,0
-703,1993,same,0,1
-703,1994,same,0,1
-703,1995,down,0,0
+703,1993,same,0,0
+703,1994,same,0,0
+703,1995,same,0,0
 703,1996,same,0,0
 703,1997,same,0,0
 703,1998,same,0,0
@@ -6981,9 +6981,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 713,1988,up,1,0
 713,1989,same,1,0
 713,1990,up,1,0
-713,1991,up,0,0
-713,1992,same,0,0
-713,1993,same,0,0
+713,1991,up,1,0
+713,1992,same,1,0
+713,1993,up,0,0
 713,1994,same,0,0
 713,1995,same,0,0
 713,1996,same,0,0
@@ -7296,9 +7296,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 770,1985,up,0,0
 770,1986,same,0,0
 770,1987,same,0,0
-770,1988,same,0,1
-770,1989,same,0,1
-770,1990,down,0,0
+770,1988,same,0,0
+770,1989,same,0,0
+770,1990,same,0,0
 770,1991,same,0,0
 770,1992,same,0,0
 770,1993,same,0,0
@@ -7331,9 +7331,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 770,2020,same,NA,NA
 771,1971,first year of independence,0,1
 771,1972,down,0,1
-771,1973,down,1,0
-771,1974,same,1,0
-771,1975,up,0,0
+771,1973,down,0,0
+771,1974,same,0,0
+771,1975,same,0,0
 771,1976,same,0,0
 771,1977,same,0,1
 771,1978,same,0,1
@@ -7346,9 +7346,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 771,1985,same,0,0
 771,1986,same,0,0
 771,1987,same,0,0
-771,1988,same,0,0
-771,1989,same,0,0
-771,1990,same,0,0
+771,1988,same,1,0
+771,1989,same,1,0
+771,1990,up,0,0
 771,1991,same,0,0
 771,1992,same,0,0
 771,1993,same,0,0
@@ -7397,10 +7397,10 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 775,1983,same,0,0
 775,1984,same,0,0
 775,1985,same,0,0
-775,1986,same,1,0
-775,1987,same,1,1
-775,1988,up,0,1
-775,1989,down,0,0
+775,1986,same,0,0
+775,1987,same,0,0
+775,1988,same,0,0
+775,1989,same,0,0
 775,1990,same,0,0
 775,1991,same,0,0
 775,1992,same,0,0
@@ -7533,9 +7533,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 781,2013,down,0,1
 781,2014,same,0,1
 781,2015,down,0,0
-781,2016,same,1,0
+781,2016,same,0,0
 781,2017,same,1,0
-781,2018,up,1,0
+781,2018,same,1,0
 781,2019,up,NA,NA
 781,2020,same,NA,NA
 790,1968,first year of independence,0,0
@@ -7624,9 +7624,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 800,1998,up,0,0
 800,1999,same,0,0
 800,2000,same,0,0
-800,2001,same,0,1
-800,2002,same,0,1
-800,2003,down,0,0
+800,2001,same,0,0
+800,2002,same,0,0
+800,2003,same,0,0
 800,2004,same,0,1
 800,2005,same,1,1
 800,2006,down,1,0
@@ -7921,8 +7921,8 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 840,1969,same,0,1
 840,1970,same,0,1
 840,1971,down,0,1
-840,1972,down,0,1
-840,1973,down,0,0
+840,1972,down,0,0
+840,1973,same,0,0
 840,1974,same,0,0
 840,1975,same,0,0
 840,1976,same,0,1
@@ -8219,9 +8219,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 940,2000,down,1,0
 940,2001,up,0,0
 940,2002,same,0,0
-940,2003,same,0,0
-940,2004,same,0,0
-940,2005,same,0,0
+940,2003,same,0,1
+940,2004,same,0,1
+940,2005,down,0,0
 940,2006,same,0,0
 940,2007,same,0,0
 940,2008,same,0,0
@@ -8271,9 +8271,9 @@ gwcode,year,dv_v2x_horacc_osp_change,dv_v2x_horacc_osp_up_next2,dv_v2x_horacc_os
 950,2001,up,0,1
 950,2002,down,0,0
 950,2003,same,0,0
-950,2004,same,0,0
-950,2005,same,0,0
-950,2006,same,0,0
+950,2004,same,0,1
+950,2005,same,0,1
+950,2006,down,0,0
 950,2007,same,0,0
 950,2008,same,0,1
 950,2009,same,0,1

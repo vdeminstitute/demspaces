@@ -6,9 +6,8 @@
 #   2021 changes/updates by Andreas Beger
 #
 #   Input:
-#     - fcasts-rf-2020.csv: forecasts created in March 2020;
-#       from modelrunnner/output/fcasts-rf.csv (file has just been renamed)
-#     - dv_data_1968_on.csv: from create-data/scripts/0-split-raw-vdem.R
+#     - fcasts-rf.csv: forecasts, copied over from modelrunner/output
+#     - dv_data_1968_on.csv: from create-data/output-data
 #
 #   Output:
 #     - map_dat.rds: map data, including popup text
@@ -19,26 +18,34 @@
 #     - prob1_dat.rds: forecast data for the barcharts
 #     - table_dat.rds: data for the "Table" tab
 #
+#   There are also two tracker files in data-raw; those are for spotting
+#   changes on git more easily.
+#
 
-library(tidyverse)
-library(magrittr)
-library(sf)
-library(rmapshaper)
-library(rgeos)
-library(rgdal)
-library(cshapes)
-library(here)
-library(yaml)
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(magrittr)
+  library(sf)
+  library(rmapshaper)
+  library(rgeos)
+  library(rgdal)
+  library(cshapes)
+  library(here)
+  library(yaml)
+})
 
 setwd(here::here("dashboard"))
 
-iri_dat <- read.csv("data-raw/fcasts-rf-v11b.csv", stringsAsFactors = F)
+iri_dat <- read.csv("data-raw/fcasts-rf.csv", stringsAsFactors = F)
 current_forecast <- iri_dat %>%
   filter(from_year == max(from_year))
 outcomes <- unique(iri_dat$outcome)
 
 dvs <- read_csv("data-raw/dv_data_1968_on.csv") %>%
   filter(year >= 2000)
+
+regions <- read_csv("data-raw/region-mapping.csv", col_types = cols())
+dvs <- left_join(dvs, regions, by = "gwcode")
 
 current_dvs <- dvs %>%
   dplyr::select(gwcode, year, country_name, country_id, country_text_id, e_regionpol_6C,

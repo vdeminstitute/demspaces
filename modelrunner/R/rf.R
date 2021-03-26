@@ -1,12 +1,13 @@
 #
 #   Run random forest model
 #
-#   Because these models take longer to run (about 2.75 hours for a single year
-#   and outcome on one thread), this script is set up to chunk by outcome-year
+#   Because these models take longer to run, this script is set up to chunk by outcome-year
 #   and then later re-combine the outcome-year chunks into one superset of
 #   forecasts similar in structure to the other model runners.
 #
 #   **To start a fresh re-run, delete the year chunks in rf-chunks**
+#
+#   The 2021 update took 7 hours to run.
 #
 
 # Config settings
@@ -63,8 +64,9 @@ lgr$info("Running with %s workers", N_WORKERS)
 plan(multisession, workers = N_WORKERS)
 
 # Parse states data version so we can name the output forecasts correctly
-fn <- dir("input/")
+fn <- tail(dir("input/", full.names = TRUE), 1)
 VERSION <- regmatches(fn, regexpr("v[0-9]+[a-z]+", fn))
+lgr$info("Using data version %s", VERSION)
 
 # Load data
 states <- readRDS(fn)
@@ -146,11 +148,21 @@ model_grid <- foreach(i = 1:nrow(model_grid),
 chunk_files <- dir(chunk_dir, full.names = TRUE)
 chunks      <- lapply(chunk_files, readr::read_csv, col_types = cols())
 fcasts_y    <- do.call(rbind, chunks)
-write_csv(fcasts_y, sprintf("output/fcasts-rf-%s.csv", VERSION))
 
 # Score forecasts
 score <- score_ds_fcast(fcasts_y, states)
-write_csv(score, sprintf("output/fcasts-rf-%s-score-summary.csv", VERSION))
+
+# Write both versioned and un-versioned (for git diff) forecast and score
+# files
+write_csv(fcasts_y, "output/fcasts-rf.csv")
+write_csv(score,    "output/fcasts-rf-score-summary.csv")
+write_csv(fcasts_y, sprintf("output/fcasts-rf-%s.csv", VERSION))
+write_csv(score,    sprintf("output/fcasts-rf-%s-score-summary.csv", VERSION))
+
+# Clean up chunks so that future runs will work correctly
+unlink(chunk_dir, recursive = TRUE)
+unlink(model_dir, recursive = TRUE)
+unlink("output/rf-model-grid.csv")
 
 # Log finish
 score <- tidyr::unite(score, Measure, Measure, Direction)

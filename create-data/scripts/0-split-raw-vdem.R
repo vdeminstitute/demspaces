@@ -96,25 +96,47 @@ dim(country_year_set) ## 8120    5
 
 write_csv(country_year_set, "trafo-data/country_year_set_1968_on.csv")
 
-## Separate df for dvs...
+
+# Country to region mapping -----------------------------------------------
+#
+#   The dashboard needs a mapping from country codes to regions; write that
+#   out now
+#
+
+# Check that gwcode uniquely maps to regions
+xx <- vdem_complete %>%
+  select(gwcode, e_regionpol_6C) %>%
+  count(gwcode, e_regionpol_6C)
+stopifnot(
+  "Regions don't map uniquely to gwcode, need to add year" =
+    nrow(xx)==length(unique(xx$gwcode))
+)
+
+region_mapping <- xx[, c("gwcode", "e_regionpol_6C")]
+write_csv(region_mapping, "output-data/region-mapping.csv")
+
+
+# DVs ---------------------------------------------------------------------
+#
+#   Get the 6 indicators for our DV outcomes
+#
 
 vdem_dvs <- vdem_complete %>%
   select(c(country_name, country_text_id, country_id, gwcode, year,
-           v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2x_freexp_altinf, v2x_horacc_osp, v2x_pubcorr, e_regionpol_6C)) %>%
+           v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2x_freexp_altinf,
+           v2x_horacc_osp, v2x_pubcorr)) %>%
   mutate(v2x_pubcorr = 1 - v2x_pubcorr)
 
 dvs <- left_join(country_year_set, vdem_dvs)
 naCountFun(dvs, END_YEAR)  # no NAs
 
-# TODO: don't write directly outside of this directory
-write_csv(dvs, "../dashboard/Data/dv_data_1968_on.csv")
-
-dvs <- dvs %>%
-  select(-e_regionpol_6C)
-
 write_csv(dvs, "trafo-data/dv_data_1968_on.csv")
 
-### Getting the V-Dem data in order...
+
+# V-Dem predictor data ----------------------------------------------------
+#
+#   Predictor (IV) data from V-Dem
+#
 
 vdem_ivs <- vdem_complete %>%
     select(country_name, country_text_id, gwcode, country_id, year, v2x_polyarchy, v2x_liberal, v2xdl_delib, v2x_jucon,
