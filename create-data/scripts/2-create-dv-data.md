@@ -9,24 +9,24 @@ well as the direction (“up”, “down”) in which they go.
 
 Inputs:
 
-  - `trafo-data/dv_data_1968_on.csv`
-  - `output-data/cutpoints.csv`
+  - `output/dv_data_1968_on.csv`
+  - `output/cutpoints.csv`
 
 Outputs:
 
 The main output is:
 
-  - `trafo-data/dv-data.rds`
+  - `output/dv-data.rds`
 
 The script also writes CSV files for the target outcome variables, so
 that changes are easier to identify on git.
 
-  - `output-data/dv-lists/[vdem indicator].csv`
+  - `output/dv-lists/[vdem indicator].csv`
 
 <!-- end list -->
 
 ``` r
-dv <- read_csv("../trafo-data/dv_data_1968_on.csv") %>%
+dv <- read_csv("../output/dv_data_1968_on.csv") %>%
   select(-country_name, -country_id, -country_text_id) %>%
   filter(complete.cases(.)) %>%
   arrange(gwcode, year)
@@ -55,7 +55,7 @@ range(dv$year)
     ## [1] 1968 2020
 
 ``` r
-cutpoints <- read_csv("../output-data/cutpoints.csv")
+cutpoints <- read_csv("../output/cutpoints.csv")
 ```
 
     ## 
@@ -150,7 +150,7 @@ for (i in seq_along(dv_piece)) {
   dv_to_join <- dv_to_join %>% select(-ends_with("_up"), -ends_with("_down"),
                                       -starts_with("v2"))
   fn <- paste0(var_i, ".csv")
-  write_csv(dv_to_join, file.path("../output-data/dv-lists", fn))
+  write_csv(dv_to_join, file.path("../output/dv-lists", fn))
 }
 ```
 
@@ -189,7 +189,7 @@ range(dv_data$year)
     ## [1] 1968 2020
 
 ``` r
-write_rds(dv_data, "../trafo-data/dv-data.rds")
+write_rds(dv_data, "../output/dv-data.rds")
 ```
 
 Check the values for one outcome/country to make sure they make sense:

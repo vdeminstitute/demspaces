@@ -7,7 +7,7 @@
 #
 #   Input:
 #     - fcasts-rf.csv: forecasts, copied over from modelrunner/output
-#     - dv_data_1968_on.csv: from create-data/output-data
+#     - dv_data_1968_on.csv: from create-data/output
 #
 #   Output:
 #     - map_dat.rds: map data, including popup text

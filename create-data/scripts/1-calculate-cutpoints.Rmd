@@ -19,7 +19,7 @@ if (packageVersion("states") < "0.2.2.9007") {
 ```
 
 ```{r}
-dv <- read_csv("../trafo-data/dv_data_1968_on.csv") %>%
+dv <- read_csv("../output/dv_data_1968_on.csv") %>%
   select(-country_name, -country_id, -country_text_id) %>%
   filter(complete.cases(.)) %>%
   arrange(gwcode, year)
@@ -85,6 +85,6 @@ for (dv_name in dv_vars) {
 
 
 cp <- bind_rows(cp)
-write_csv(cp, "../output-data/cutpoints.csv")
+write_csv(cp, "../output/cutpoints.csv")
 ```
 

@@ -9,7 +9,7 @@ adjusted the code accordingly to remove this problem. See issue \#26 on
 GitHub (andybega) to see the commit that created this file.*
 
 ``` r
-dv <- read_csv("../trafo-data/dv_data_1968_on.csv") %>%
+dv <- read_csv("../output/dv_data_1968_on.csv") %>%
   select(-country_name, -country_id, -country_text_id) %>%
   filter(complete.cases(.)) %>%
   arrange(gwcode, year)
@@ -188,5 +188,5 @@ for (dv_name in dv_vars) {
 
 ``` r
 cp <- bind_rows(cp)
-write_csv(cp, "../output-data/cutpoints.csv")
+write_csv(cp, "../output/cutpoints.csv")
 ```

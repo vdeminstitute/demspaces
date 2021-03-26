@@ -8,9 +8,9 @@
 #
 #   Output:
 #
-#     - trafo-data/dv_data_1968_on.csv
-#     - trafo-data/vdem_data_1968_on.csv
-#     - trafo-data/country_year_set_1968_on.csv
+#     - output/dv_data_1968_on.csv
+#     - output/vdem_data_1968_on.csv
+#     - output/country_year_set_1968_on.csv
 #     - dashboard/Data/dv_data_1968-2019.csv
 #
 #   NOTE FOR UPDATES:
@@ -94,7 +94,7 @@ country_year_set <- left_join(GW_template, vdem_country_year) %>%
 naCountFun(country_year_set, END_YEAR)
 dim(country_year_set) ## 8120    5
 
-write_csv(country_year_set, "trafo-data/country_year_set_1968_on.csv")
+write_csv(country_year_set, "output/country_year_set_1968_on.csv")
 
 
 # Country to region mapping -----------------------------------------------
@@ -113,7 +113,7 @@ stopifnot(
 )
 
 region_mapping <- xx[, c("gwcode", "e_regionpol_6C")]
-write_csv(region_mapping, "output-data/region-mapping.csv")
+write_csv(region_mapping, "output/region-mapping.csv")
 
 
 # DVs ---------------------------------------------------------------------
@@ -130,7 +130,7 @@ vdem_dvs <- vdem_complete %>%
 dvs <- left_join(country_year_set, vdem_dvs)
 naCountFun(dvs, END_YEAR)  # no NAs
 
-write_csv(dvs, "trafo-data/dv_data_1968_on.csv")
+write_csv(dvs, "output/dv_data_1968_on.csv")
 
 
 # V-Dem predictor data ----------------------------------------------------
@@ -250,4 +250,4 @@ nas <- naCountFun(vDem_GW_data, END_YEAR)
 table(nas)
 nas[nas > 0]
 
-write_csv(vDem_GW_data, "trafo-data/vdem_data_1968_on.csv")
+write_csv(vDem_GW_data, "output/vdem_data_1968_on.csv")

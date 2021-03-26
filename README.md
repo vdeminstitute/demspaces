@@ -41,19 +41,13 @@ install.packages(need)
 
 ## Reproducing the forecasts
 
-1. In `create-data/`, run the data munging scripts in the `scripts/` folder to recreate the final data, `output-data/states.rds`. See `create-data/README.md` for more details.
+1. In `create-data/`, run the data munging scripts in the `scripts/` folder to recreate the final data, `output/states.rds`. See `create-data/README.md` for more details.
 2. In `modelrunner/`, run `R/rf.R` to run the forecast models and create the test and live forecasts. See `modelrunner/README.md` for more details.
 3. Update the forecast data in `dashboard`.
 
 ## Updates
 
-The `create-data`, `modelrunner`, and `dashboard` folders contain the core components of the project. They are designed to be self-contained, and outputs from one that serve as inputs in others have to be manually copied over. See the respective README's for more details. I also tried to mark all places that require manual updates with "UPDATE:". 
-
-The general process is to:
-
-1. Update the merged data using `create-data`, including the external data sources that feed into the final merged data. Copy the updated `states.rds` data to `modelrunner/input/`. 
-2. Run the forecast model using `modelrunner/R/rf.R`. Copy `modelrunner/output/fcasts-rf.csv` to `dashboard/data/`.
-3. Update the dashboard by rebuilding the data and manually updating the text in the UI where needed. 
+See [UPDATING.md](UPDATING.md) for notes.
 
 ## Citation
 

@@ -7,7 +7,7 @@
 
 dv_BaseDatFun <- function(dv_name){
 
-  dat <- read_csv(paste0("output-data/dv-lists/", list.files(path = "output-data/dv-lists", pattern = dv_name))) %>%
+  dat <- read_csv(paste0("output/dv-lists/", list.files(path = "output/dv-lists", pattern = dv_name))) %>%
     select(-c(contains("next2"), contains("change"))) %>%
     mutate_at(vars(-c(gwcode, year, contains("y2y"))), lag) %>%
     rename(var_lag = dv_name,
@@ -111,7 +111,7 @@ dv_cutpointFun <- function(dat){
 
 dv_DatFun <- function(dv_name, up_cutpoint, down_cutpoint){
 
-  dat <- read_csv(paste0("output-data/dv-lists/", list.files(path = "output-data/dv-lists", pattern = dv_name))) %>%
+  dat <- read_csv(paste0("output/dv-lists/", list.files(path = "output/dv-lists", pattern = dv_name))) %>%
     select(-c(contains("next2"), contains("change"))) %>%
     rename(var_y2y = paste0(dv_name, "_diff_y2y"),
            var = dv_name) %>%

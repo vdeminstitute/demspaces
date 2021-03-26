@@ -21,11 +21,11 @@ dash-data: data-raw/update-data.R data-raw/dv_data_1968_on.csv \
 		Rscript data-raw/update-data.R
 
 # Update data-raw inputs from other folders if neccessary
-data-raw/dv_data_1968_on.csv: ../create-data/trafo-data/dv_data_1968_on.csv
-		cp ../create-data/trafo-data/dv_data_1968_on.csv data-raw/
+data-raw/dv_data_1968_on.csv: ../create-data/output/dv_data_1968_on.csv
+		cp ../create-data/output/dv_data_1968_on.csv data-raw/
 
-data-raw/region-mapping.csv: ../create-data/output-data/region-mapping.csv
-		cp ../create-data/output-data/region-mapping.csv data-raw
+data-raw/region-mapping.csv: ../create-data/output/region-mapping.csv
+		cp ../create-data/output/region-mapping.csv data-raw
 
 data-raw/fcasts-rf.csv: ../modelrunner/output/fcasts-rf.csv
 		cp ../modelrunner/output/fcasts-rf.csv data-raw/

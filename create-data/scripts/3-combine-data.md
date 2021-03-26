@@ -50,7 +50,7 @@ VERSION  <- "v11c"
 ### Master statelist
 
 ``` r
-cy <- read_csv("../trafo-data/country_year_set_1968_on.csv") %>%
+cy <- read_csv("../output/country_year_set_1968_on.csv") %>%
   filter(year > 1969, year <= END_YEAR)
 ```
 
@@ -123,7 +123,7 @@ plotmiss(cy)
 These are the indicators from which the outcome variables are derived.
 
 ``` r
-dv <- read_csv("../trafo-data/dv_data_1968_on.csv") %>%
+dv <- read_csv("../output/dv_data_1968_on.csv") %>%
   select(-country_name, -country_id, -country_text_id) %>%
   filter(complete.cases(.)) %>%
   arrange(gwcode, year)
@@ -152,7 +152,7 @@ range(dv$year)
     ## [1] 1968 2020
 
 ``` r
-dv_data <- read_rds("../trafo-data/dv-data.rds")
+dv_data <- read_rds("../output/dv-data.rds")
 cy <- left_join(cy, dv_data, by = c("gwcode", "year"))
 ```
 
@@ -183,7 +183,7 @@ outcomes yet.
 ### V-Dem IVs
 
 ``` r
-vdem_dat <- read_csv("../trafo-data/vdem_data_1968_on.csv") %>%
+vdem_dat <- read_csv("../output/vdem_data_1968_on.csv") %>%
   select(-country_name, -country_id, -country_text_id) %>%
   filter(complete.cases(.)) %>%
   arrange(gwcode, year)
@@ -820,7 +820,7 @@ coverage <- cy %>%
   sort() 
 
 # write to file so changes are easier to see
-write_csv(data.frame(country = coverage), "../output-data/country-coverage.csv")
+write_csv(data.frame(country = coverage), "../output/country-coverage.csv")
 
 coverage %>%
   paste0(collapse = "; ") %>%
@@ -879,7 +879,7 @@ Keep track of variables as well (for git).
 vars <- data.frame(Variables = names(cy))
 
 # write to file so changes are easier to see
-write_csv(vars, "../output-data/variables-in-dataset.csv")
+write_csv(vars, "../output/variables-in-dataset.csv")
 ```
 
 General summary stats
@@ -905,9 +905,9 @@ sig <- data_signature(cy)
 # Write both versioned and clean file name so that:
 # - easy to see changes on git with clean file name
 # - concise historical record with versioned file name
-write_yaml(sig, sprintf("../output-data/states-%s-signature.yml",
+write_yaml(sig, sprintf("../output/states-%s-signature.yml",
                         VERSION))
-write_yaml(sig, "../output-data/states-signature.yml")
+write_yaml(sig, "../output/states-signature.yml")
 ```
 
 ### Record missing cases
@@ -962,7 +962,7 @@ if (nrow(incomplete_cases) > 0) {
     arrange(year, gwcode)
 }
 
-write_csv(incomplete_cases, "../output-data/incomplete-cases.csv")
+write_csv(incomplete_cases, "../output/incomplete-cases.csv")
 ```
 
 ### Missing values by column
@@ -994,7 +994,7 @@ sapply(cy, function(x) sum(is.na(x))) %>%
 ## Done, save
 
 ``` r
-fn <- sprintf("../output-data/states-%s.rds", VERSION)
+fn <- sprintf("../output/states-%s.rds", VERSION)
 cat("Saving data as %s", basename(fn))
 ```
 
