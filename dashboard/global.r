@@ -68,7 +68,7 @@ v2x_freexp_altinf_color <- ts_colors[7] #"#89A54E"
 
 #use rank data
 topNriskFun <- function(dat, region, space, direction){
-  canvasClickFunction <- JS("function(event) {Shiny.onInputChange('canvasClicked', [this.name, event.point.category, Math.random()]);}")
+  canvasClickFunction <- JS("function(event) {Shiny.onInputChange('canvasClicked', [this.name, event.point.category]);}")
 
   region_text <- case_when(region == 0 ~ "Global",
                            region == 1 ~ "E. Europe and Central Asia",
@@ -154,7 +154,7 @@ topNriskFun <- function(dat, region, space, direction){
 #use prob1_dat
 riskPlotFun <- function(dat){
 
-  canvasClickFunction1 <- JS("function(event) {Shiny.onInputChange('canvasClicked1', [this.name, event.point.category, Math.random()]);}")
+  canvasClickFunction1 <- JS("function(event) {Shiny.onInputChange('canvasClicked1', [this.name, event.point.category]);}")
   country_name <- unique(dat$country_name)
   plot_title <- paste0("Estimates by space for ", country_name, ", 2021-2022")
 
