@@ -2,10 +2,10 @@
 # dashboard once the initial update has been done and only minor changes are
 # being made
 
-demspaces-dashboard.tar.gz: global.R server.R ui.R dash-data
+demspaces-dashboard.tar.gz: global.r server.r ui.r dash-data
 	tar --exclude='data-raw' --exclude='.DS_Store' --exclude='Makefile' \
 	--exclude='demspaces-dashboard.tar.gz' --exclude='README.md' \
-	--exclude='setup.R' \
+	--exclude='setup.r' \
 	-zcvf demspaces-dashboard.tar.gz .
 
 # data-raw/update-data.R writes multiple outputs. I want to track all outputs,
