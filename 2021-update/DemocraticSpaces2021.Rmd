@@ -1,6 +1,6 @@
 ---
 title: "Democratic Spaces Dashboard: 2021 Update and Accuracy Assessments"
-author: "Andreas Beger^*"
+author: "Andreas Beger^[This report was produced during the spring 2021 update of the Democratic Spaces dashboard and forecasts, on behalf of V-Dem for IRI.]"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -12,17 +12,29 @@ fontsize: 11pt
 bibliography: refs.bib
 header-includes:
   - \usepackage{longtable}
+  - \usepackage{rotating}
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 ```
 
-This report was produced during the spring 2021 update of the Democratic Spaces dashboard and forecasts, on behalf of V-Dem for IRI. 
+
+
+# Summary
+
+The 2021 forecast updates are the third round of democratic spaces forecasts, made using V-Dem version 9, 10, and 11 data, respectively, and covering 2019-2020, 2020-2021, and 2021-2020. The first set of forecasts can now be fully assessed, and the second set of forecasts partially, with observed data for one of the two-year forecast period.
+
+The accuracy results show that the forecasts are informative and more accurate, by a significant margin, than a naive base-rate forecast. However, the available results for the live forecasts are not as good as those for the much more extensive test forecasts, where we go back in time to 2005 and replicate the live forecasting process for each year until we reach the end of fully observed outcomes, two years ago. The decline in expected versus actual accuracy is likely driven by two factors:
+
+1. The Covid-19 pandemic, which has been used by some governments as cover to enact anti-democratic policies that exceed the needs of pandemic response and instead empower and consolidate executive power, for example recent restrictions on media freedom in Viktor Orban's Hungary.^[https://ipi.media/hungary-seeks-power-to-jail-journalists-for-false-covid-19-coverage/]  
+2. Changes between V-Dem data versions, in part due to continual improvements in the quality of the data, but also inherent variation in the Bayesian models used to create the data. This results in changes in the sets of opening and closing events for the democratic spaces between the data version used to create a forecast and the subsequent data versions used to score it.  
+
+The impact of Covid-19 is difficult to directly incorporate into the models as this is the first pandemic in recent history, however, one can try to assess the forecasts in combination with other information on the Covid-19 impact so far, like V-Dem's pandemic backsliding project [@luhrmann:rooney:2020; @edgell:etal:2020]. The changes in the V-Dem data between versions as a result of continuing improvements are mostly inherent in the nature of the project. However, further examination also reveals that in the vast majority of cases, the disagreement between data versions is about the magnitude, not the direction of change. It might be possible to ameliorate the impact of the changes between data versions by changing the way the forecast models work. 
 
 # Introduction
 
-The Democratic Spaces forecasting project measures six democratic spaces using indicators selected from the Varieties of Democracy (V-Dem) project. For each of the six spaces, we are interested in significant  improvement (up) or deterioration (down) from one year to another. "Significant changes" are operationalized as ...
+The Democratic Spaces forecasting project measures six aspects of democratic governance--"democratic spaces", using indicators selected from the Varieties of Democracy (V-Dem) project. The spaces, the corresponding V-Dem indicator, and short descriptions are listed in \autoref{tab:spaces}. For each of the six spaces, we are interested in significant  opening (improvement) or closing (deterioration) movements compared to last year. "Significant changes" are operationalized as year-to-year changes that exceed a certain threshold that is specific to each space and based on the range of past fluctuations [for details, see the original project report, @beger:morgan:maxwell:2020] that are normal. There are thus a total of 12 outcomes to forecast: 6 spaces and for each space whether a shift in the opening or closing direction occurred. 
 
 ```{r}
 library(demspacesR)
@@ -30,17 +42,12 @@ library(kableExtra)
 data("spaces")
 
 knitr::kable(spaces, booktabs = TRUE, caption = "Democratic spaces and corresponding V-Dem indicators",
-             label = "spaces") %>%
+             label = "spaces", linesep = "") %>%
   kable_styling() %>%
   column_spec(3, width = "25em")
 ```
 
-
-There are thus 12 outcomes that we are trying to model in total: 6 spaces and for each space whether a shift in the up or down direction occurred. 
-
-While the outcomes are yearly in nature, the forecasts themselves cover 2-years ahead. We aggregate the yearly democratic space changes data to a 2-year target for the forecasting model using logical "or" relationships. Thus for example the target that the electoral space "up" model is trying to predict indicates whether an "up" movement occurred in the electoral space of a country in at least 1 year during the 2-year window, but it could also have happened twice in succession. Logically this also means that a country could experience both an "up" _and_ "down" shift in the same 2-year window, which would warrant high values in both the "up" and "down" forecasts, but this doesn't happen very often. Geographically, the forecasts cover 169 countries.
-
-
+While the outcomes are yearly in nature, the forecasts themselves cover a period of two years ahead. We aggregate the yearly democratic space changes data to a 2-year target for the forecasting model using logical "or" relationships. Thus for example the target that the electoral space opening model is trying to predict indicates whether an opening movement occurred in the electoral space of a country in at least 1 year during the 2-year window, but it could also have happened twice in succession. Logically this also means that a country could experience both an opening _and_ closing shifts in the same 2-year window, which would warrant high values in both the opening and closing forecasts, but this doesn't happen very often. Geographically, the forecasts cover 169 countries.
 
 The project was initially developed in 2019 and the first set of forecasts were made in late 2019 with the V-Dem version 9 data, covering the 2-year window from 2019 to 2020. The forecasts have since been updated twice, in the spring of 2020 and now in the spring of 2021. There are thus now in total three sets of forecasts, indexed by the V-Dem data version they were based on:
 
@@ -50,53 +57,69 @@ The project was initially developed in 2019 and the first set of forecasts were 
 
 V-Dem version 11 now has data through to 2020, so we can fully score the first forecasts, and partially score the v10 forecasts.
 
-The rest of this note will show the (partial) scoring of the first two forecasts, discuss how improvements in the V-Dem data over time impact forecast accuracy, and then finally review the latest set of forecasts for 2021--2022. 
-
-Outline: 
-
-- v9 forecasts we can assess
-- show fit values
-- one issue is ground shifting
-- show case overlap between v9 and v11
-- show decrease in nominal test accuracy due to ground shifting
-- v10 forecasts we can partially assess
-- show case overlap between v9, v10, v11
-- show test forecast loss due to ground shifting in v10
-- v11 forecasts
-- nominal test accuracy
-- how much is that likely to decrease?
+The rest of this note will show the (partial) scoring of the first two forecasts, discuss how Covid-19 and changes in the V-Dem data between versions likely impacted it, and then briefly go over the new 2021-2022 forecasts. 
 
 # Scoring past forecasts
 
 ## Scoring the v9 2019-2020 forecasts
 
-The first set of forecasts were done in late 2019 using V-Dem version 9 and for  years 2019--2020. \autoref{tab:v9-acc} shows their accuracy when scored using the V-Dem v11 data. There are in total 12 different outcomes we forecast: downwards (worse) and upwards (better) movements (i.e. 2 directions) for each of the 6 spaces. The forecasts cover 169 countries and the first column ("Cases") shows the number of corresponding events recorded in the new V-Dem data. The last column, "Pos_rate", show the rate, i.e. the number of cases divided by 169 countries. The first metric we look at, "In top20", simply counts how many of the highest 20 forecasts for each outcome had an actual event. Ideally this would be 20, or the number of cases if it is lower than that, out of 20. In practice, more like 1 in 4 of the top 20 highest forecasts had an actual event, if we average across all outcomes. 
+The first set of forecasts were done in late 2019 using V-Dem version 9 and for years 2019--2020. \autoref{tab:v9-acc} shows their accuracy when scored using the V-Dem v11 data. There are in total 12 different outcomes we forecast: closing (worse) and opening (better) movements (i.e. 2 directions) for each of the 6 spaces. The forecasts cover 169 countries and the first column ("Cases") shows the number of corresponding events recorded in the new V-Dem data. The last column, "Pos_rate", show the rate, i.e. the number of cases divided by 169 countries. The first metric we look at, "In top20", simply counts how many of the highest 20 forecasts for each outcome had an actual event. Ideally this would be 20, or the number of cases if it is lower than that, out of 20. In practice, more like 1 in 4 of the top 20 highest forecasts had an actual event, if we average across all outcomes. 
 
 \input{output/v9-acc.tex}
 
 The next two measures are the areas under the receiver operating characteristic (ROC) and precision-recall curves---AUC-ROC and AUC-PR. Both of these are based on the forecasts' ability to correctly rank countries so that countries that experience an event are ranked higher than those that do not. Where they differ is that the AUC-ROC measures the trade-off between true positive (predicted and actual event) and true negative rates (predicted and actual non-event), while the AUC-PR measures the trade-off between the true positive rate (also called recall) and the precision of the forecasts (how many positive predictions actually had an event). Both are among the standard measures for this kind of prediction problem, but unlike other measures like Brier scores or average log loss, they have natural reference values that make them easier to interpret. Both theoretically can range from 0 to 1. However a naive forecast that, for example, randomly guesses positive and negative predictions using the base rate, will on average have an AUC-ROC score of 0.5 and an AUC-PR score equal to the base rate (shown in the last column). To be useful, a forecast should exceed these reference values. This is the case for both measures and all 12 outcomes, and thus we can conclude that the forecasts are informative; they add a signal over the naive base rate. 
 
+\autoref{fig:v9-sepplot} shows another way to visually evalute the forecasts, using separation plots [@greenhill:etal:2011]. Imagine we listed all forecasts in a table, in order of highest to lowest probability, and then colored each row that had an actual case. That's essentially what these plots are. Each plot has 169 bars--for the 169 countries--and is colored based on whether a closing (orange) or opening (blue) event occurred or not (gray). The black line shows the original forecast probabilities. In a good forecast, most or all of the colored lines would be clustered in a solid block at the top. Gray bars that are high up indicate false positive forecasts, i.e. a high forecast but no event. The limitations of the forecasts are quite easy to see: while the positives generally tend to cluster somewhat towards the top, only a few forecasts don not also have at least a few positives cases at the bottom ranks. 
+
+\begin{figure}
+\centering
+\caption{Separation plots for the v9 forecasts covering 2019-2020\label{fig:v9-sepplot}}
+\includegraphics[width=.95\textwidth]{output/v9-sepplot.png}
+\end{figure}
+
+Finally, here is a list of all positives for the 12 outcomes:
+
+```{r v9-case-text, child="output/v10-case-text.md"}
+```
+
+
+
 ## Partial scoring of the v10 2020-2021 forecasts
 
-The forecasts made in the spring of 2020 using V-Dem version 10 data covered 2020-2021. We have data for 2020 in V-Dem version 11 and can thus partially score the forecasts using observed positive outcomes in the first year of the forecast time period. 
+The forecasts made in the spring of 2020 using V-Dem version 10 data covered 2020-2021. We have data for 2020 in V-Dem version 11 and can thus partially score the forecasts using observed positive outcomes in the first year of the forecast time period. \autoref{tab:v10-acc} shows the resulting accuracy metrics, and again corresponding separation plots in \autoref{fig:v10-sepplot} and lists of the positive cases are below. The values are overall on track to match the v9 accuracy results above. AUC-PR is lower, but this is to be expected since we only have about half the number of positives; note that the AUC-PR values still on average are roughly twice the positive rate in the data, as was the case with the v9 forecast accuracy in \autoref{tab:v9-acc}.
 
 \input{output/v10-acc.tex}
 
+\begin{figure}
+\centering
+\caption{Separation plots for the v10 forecasts covering 2020-2021, 2020 outcomes only\label{fig:v10-sepplot}}
+\includegraphics[width=.95\textwidth]{output/v10-sepplot.png}
+\end{figure}
 
-## Expected test forecast accuracy versus actual accuracy
+And again, here are all positive cases, due to opening or closing events in 2020:
 
-That said, the absolute values for both measures are not particularly good, even if we keep in mind that these scores are only for a single set of forecasts and there is some natural year to year variation in accuracy. The AUC-ROC scores range from 0.62 to 0.82 with an average of 0.7. For AUC-PR the range is 0.03 to 0.42 with an average of 0.25; for comparison, the average positive rate is 0.14. Similar forecasting applications with other forms of political instability typically achieve AUC-ROC values in the 0.8 to 0.9 range, and similar AUC-PR scores as here but with much lower base rates, on the order of a handful per hundred, not a dozen per hundred like here. 
+```{r v10-case-text, child="output/v10-case-text.md"}
+```
 
-Furthermore, the test forecasts we produce as part of these forecasts specifically in order to get a sense of the likely accuracy of the live forecasts had much higher accuracy. Namely, the test forecasts are where we pretend to go back in time to 2005, make a 2-year forecast, then move a year up and do it again, etc., and then at the end use our knowledge of the actual historical outcomes to score them. For v9, this gave us 12 distinct 2-years-ahead forecasts from 2005 to 2016, and for which we already knew the actual outcomes, because they were in the v9 V-Dem data. The average AUC-ROC and AUC-PR scores from those were around 0.83 and 0.35, which is noticeably higher than the accuracy of the live forecasts. 
+## Discussion
 
-It turns out that the accuracy of the forecasts is negatively affected by changes in the underlying V-Dem data itself between different versions of the data.  
+Although the accuracy metrics for both forecast rounds indicate that the forecasts are informative, the absolute values are not particularly good. For the v9 forecasts, the AUC-ROC scores range from 0.62 to 0.82 with an average of 0.7. For AUC-PR the range is 0.03 to 0.42 with an average of 0.25; for comparison, the average positive rate is 0.14. Similar forecasting applications with other forms of political instability typically achieve AUC-ROC values in the 0.8 to 0.9 range, and similar AUC-PR scores as here but with much lower base rates, on the order of a handful per hundred, not a dozen per hundred like here. 
+
+What is particularly interesting is that the test forecasts have much higher accuracy values. We make these specifically to get a sense of what accuracy we can expect. Namely, the test forecasts are where we pretend to go back in time to 2005, make a 2-year forecast, then move a year up and do it again, etc., and then at the end use our knowledge of the actual historical outcomes to score them. For v9, this gave us 12 distinct 2-years-ahead forecasts from 2005 to 2016, and for which we already knew the actual outcomes, because they were in the v9 V-Dem data. These are shown in \autoref{tab:v9-test-acc}, which has the same format as the other score tables but the values here are average performance over the 12 test forecast years we have, not a single live forecast set.^[Specifically, we calculate accuracy for each of the 12 sets of test forecasts, then average the accuracy scores. As opposed to pooling all 12 years of test forecasts into one set that we score.] The average AUC-ROC and AUC-PR scores from those were around 0.83 and 0.40, which is noticeably higher than the accuracy of the live forecasts (0.71 and 0.73; 0.25 and 0.15, respectively). 
+
+\input{output/v9-test-acc.tex}
+
+Investigating this discrepancy, it seems that two factors are at work:
+
+First, Covid-19-related government policies. Looking through the lists of cases above, and specially cases where the forecast did poorly, a couple of relatively wealthy and stable European countries stand out. For example, Slovenia experienced closing events for several spaces, but was not missed by both the v9 and v10 forecasts. In the v9 forecasts for closing events, it was ranked 150, 157, and 137 for associational, individual, and informational, despite experiencing closing events for those spaces. Similarly in the v10 forecasts--109, 142, and 91, respectively. Spain also shows up as one of the particularly poor forecasts. 
+
+V-Dem has documented government responses to Covid-19, and identified instances in where such restrictions have been used to unduly empower the executive, in what they term "pandemic backsliding" [see @luhrmann:rooney:2020; @edgell:etal:2020]. It seems very likely that this dynamic is responsible for at least some of the closing events during the period covered by the forecasts. Both Spain and Slovenia were coded as "medium risk" in a related risk assessment for pandemic backsliding.^[https://www.v-dem.net/media/filer_public/52/eb/52eb913a-b1ad-4e55-9b4b-3710ff70d1bf/pb_23.pdf], and many more countries, mostly outside of Europe, were identified as high risk. Since the pandemic is a one-off event without prior instances to mine for patterns, it is however hard to directly incorporate them into the forecast data and models. The two forecasts above were in any case made before and during the very early stages of the pandemic. 
+
+Second, due to improvements in the V-Dem data over time. The V-Dem data changes between data versions in ways that have a large impact on the cases we are trying to forecast. To be clear, these changes to a large extent are due to continual improvements in the quality of the V-Dem data as more country expert survey responses are accumulated. But what this means for the forecasts is that, essentially, the forecasts have to be made with data that is fuzzier, less clear, or less accurate than the future version of the V-Dem data with which it is scored. This as a result reduces the accuracy of the forecasts. 
 
 # Changes in V-Dem data over time and impact on forecast accuracy
 
-
-# Changes in events between different V-Dem version
-
-The V-Dem data are continually improving, which leads to changes in the data between different versions of the data, even for past, historical values. To understand why these shifts occur it helps to review how the V-Dem data are created [the methodology for the current V-Dem version 11.1 on which this summary is based is outlined in @coppedge:etal:2021]. Ultimately, the top-level indices that measure different aspects of democracy like liberal or electoral democracy, rule of law, vertical and horizontal accountability, etc. are built up from survey questionnaires in which country experts rate some aspect of a country's political situation in a given year. There are to date hundreds of thousands of such survey responses to more than 470 questions for different countries in different years, submitted by more than 3,000 country experts. These raw survey responses--usually at least 5 per question for a given country and year--are then passed through Bayesian measurement models and Bayesian factor analysis in order to extract underlying latent "signals". These latent signals are what the top-level indices are. That is, unlike older coding projects like Polity, the top-level indices are not straightforward mathematical transformations based on specific values that are coded by only one person or where inter-coder disagreement is resolved "behind the scenes" to still produce a single value. Rather, all the indices that we use to measure the democratic spaces are _estimates_ that are _uncertain_, i.e. explicitly include measurement error. 
+To understand why changes in V-Dem data between different versions occur it helps to review how the V-Dem data are created [the methodology for the current V-Dem version 11.1 on which this summary is based is outlined in @coppedge:etal:2021]. Ultimately, the top-level indices that measure different aspects of democracy like liberal or electoral democracy, rule of law, vertical and horizontal accountability, etc. are built up from survey questionnaires in which country experts rate some aspect of a country's political situation in a given year. There are to date hundreds of thousands of such survey responses to more than 470 questions for different countries in different years, submitted by more than 3,000 country experts. These raw survey responses--usually at least 5 per question for a given country and year--are then passed through Bayesian measurement models and Bayesian factor analysis in order to extract underlying latent "signals". These latent signals are what the top-level indices are. That is, unlike older coding projects like Polity, the top-level indices are not straightforward mathematical transformations based on specific values that are coded by only one person or where inter-coder disagreement is resolved "behind the scenes" to still produce a single value. Rather, all the indices that we use to measure the democratic spaces are _estimates_ that are _uncertain_, i.e. explicitly include measurement error. 
 
 To update the data for a new year, V-Dem polls the country experts in order to obtain question responses for the last year, but potentially also for previous years. The _entire_ set of indicators and top-level indices that are derived from the raw survey responses--not just for the new year but for all years--are then re-created by running the relevant models and factor analyses. There are several aspects of this process that can lead to changes in historical values, compared to previous versions of the V-Dem data:
 
@@ -107,22 +130,41 @@ To update the data for a new year, V-Dem polls the country experts in order to o
 
 Aside from the inherent sampling variation, these sources of change are not arbitrary or random. They represent improvements in V-Dem's _measures_ of different aspects of democratic governance. Events that led a country expert to answer a question with a specific value in one year maybe be interpreted in a different way in light of subsequent events, or maybe previously unknown information has now publicly become available; there may now be additional survey responses to cover a given country in a given year than had been available last year, etc. In essence, the picture that version 9 of V-Dem portrayed of democratic governance in the world is not as clear as the picture now provided by version 11, which in turn is not as clear and accurate as that given by the next version of V-Dem, etc. 
 
-threshold based outcomes, small perturbations matter
+To summarize, the way the V-Dem data are generated impacts the forecast outcomes in two ways:
 
-show a table comparing positives in one year against another
+1. **Data improvements**: Each data update does not just add new year to the data, but also adds survey responses or changes values in existing repsonses/values for past country-years that are used to improve the quality of _all_ the data. Thus some of the opening or closing changes identified with one data version may turn out to have been incorrect once more accurate country expert opinions have been incorporated into the final data.
+2. **MCMC sampling variation / Bayesian uncertainty**: There is inherent sampling variation in the Bayesian measurement and factor analysis models that are used to create the V-Dem measures, which means that a re-generation of the data, even with identical inputs and models, will produce slightly different outputs. Although these changes are small and not important in a substantive sense, we use thresholds to code opening and closing movements, as a result of which even small perturbations can put a case above or below a threshold. 
 
+## How much does this impact the "ground truth" with any given data version?
 
+Instances of opening or closing events are overall the exception rather than the norm, in other words most of the data consists of "no large change". As a result, the agreement in the overall data between V-Dem data versions is high, above 96\% when we compare v9 to v10 or 11, and v10 to v11. However, it's the positive cases of shifts that are more important, and there the agreement rates are lower. 
 
-## How much does accuracy decrease due to shifting ground truth?
+\autoref{tab:v9-v11-comp} shows how cases that were positive in either the v9 or the v11 data show up in the other data version, respectively. The v9 data had about 1,700 closing events in total, and 68% of those are coded the same way when we use the v11 data. Conversely, with the v11 data there are and additional 276 (292 + 14) closing events that are not in the v9 data, i.e. from the perspective of the v11 data, 80% of the closing events are in the other data version. The overall agreement rate for positive cases--the number of cases on the diagonal, where both v9 and v11 agree on the change--is 63%. That is a quite dramatic _disagreement_ rate. \autoref{tab:versions-comp} shows the overall agreement rates when we compare the v9 to v10 and v10 to v11 data as well. The rates are similar. 
 
-So, to summarize the discussion so far, although we specifically had (and have) test forecasts as a means of getting a sense of how accurate the live forecasts are, now that we have enough updated V-Dem data to score the first set of forecasts made in 2019, we can see that the refinements to the V-Dem data, as they are updated each year, represent an additional limitation on our ability to accurately forecast changes in the democratic spaces. Essentially we have to develop our models and thus the forecasts with data that from the perspective of two years from now, will be outdated and not as accurate as the more recent data versions. 
+\input{output/table-v9-v11.tex}
 
-How to overcome this issue by adjusting the models that produce the forecasts is a challenging questions without an immediate, straightforward answer. What we can try to do however is to quantify how much changes in the underlying V-Dem data impact our initial sense of accuracy derived from the test forecasts. We looked at one set of forecasts that we made using the version 9 of the V-Dem data, where we had an expectation of their accuracy that were based on test forecasts that were also made with the v9 data, and then we were able to generate an acutal score for the single year of live forecasts using the v11 V-Dem data. We can do the same thing with the v9 test forecasts themselves however, i.e. score them as well using the v11 data. That gives us more than one year of accuracy metrics, and thus a better sense of how much the expected and actual accuracy (with updated data) compare to each other. And even though we do not yet have enough data to score the 2020 _live_ forecasts made with V-Dem v10 data, we can score the v10 _test_ forecasts. That gives us not only even more years, but now we can also see how the changes from v9 to v10 compare to the changes from v10 to v11 V-Dem data. 
+\input{output/table-versions-comp.tex}
 
+Fortunately, it seems that most of the dropoff in agreement is from one year to another, and that the data version two years from now (v11) is not as dramatically different from the current data (v9) as the first update (v10) had been. In other words, the agreement rate seems to stabilize quite quickly around a core of cases that are indisputably significant opening or closing events. 
 
+Furthermore, in almost all cases of disagreement, the difference is between an opening or closing event and "no change"; only rarely is there complete disagreement like an "opening event" in one data version and a "closing event" in the other. This only happens 21 times in the roughly 4,700 cases shown in \autoref{tab:v9-v11-comp}, for data spanning almost 5 decades. 
 
+The underlying reason is that even if two V-Dem data versions have slightly different values for an indicator value, they usually are not _that_ different. In terms of the year-to-year changes we use to identify opening or closing changes, even when a change is not large enough for us to code an opening or closing event, more often than not the direction of change is the same anyways. \autoref{fig:diffs-v9-v11} plots the raw year-to-year changes in the indicator variables that we use to code opening and closing events. Each point is the change in a V-Dem indicator for a country compared to the previous year. On the _x_-axis we use the v9 data to calculate it, on the _y_-axis the v11 data. They are highly correlated, as one can see. The gray shaded areas (crosses) in each plot show the thresholds above or below which we would code a change as an opening or closing event. For example, looking at the "Governing" plot, cases to the _right_ of the vertical shaded area are opening events in the v9 data; cases _above_ the horizontal shaded line are opening events in the v11 data. Thus cases in the top right quadrant are opening events in both the v9 and v11 data. Similarly for closing events. Cases that fall within a shaded area are coded as "no event" in the corresponding data version. Note that the shaded center square where the horizontal and vertical shaded areas overlap woudl be cases coded as "no event" in both data versions. They are empty because we have left out all of those cases in the plots. 
+
+Cases/points in which the data versions disagree on the event coding are colored in red. The worst possibility are cases falling into the top-left or bottom-right quadrants. Here the data versions completely disagree on what happened: one tells us opening, the other closing, like point "1: Gambia 1995" in the "Governing" plot. As we mentioned earlier these are rare. Instead, the most likely disagreement is that one version codes an opening or closing event, but for the other we have "no event", i.e. a point that falls into the gray area. But there is still a meaningful distinction for these cases, namely whether the direction of change was still the same or different. Point 2, the DRC in 1992, is coded as a closing event in the v9 data and "no event" in v11. Furthermore, while the year-to-year change in v9 is negative, in v11 it's slightly positive. Thus there is fundamental disagreement on the direction of change between data versions. One other other hand, point 3, Pakistan in 2002, shows a case where both data versions agree that it was a negative (closing) change, but differ in the magnitude of change. Most cases of disagreement are like point 3, i.e. agreement on the direction of change but in only one is the threshold for our coding crossed. Specifically, at least 80% of cases or more are like that except for the economic space, where it's 57%. 
+
+\begin{sidewaysfigure}
+\centering
+\caption{Comparison of year-to-year changes in each space in the v9 and v11 data versions\label{fig:diffs-v9-v11}}
+\includegraphics[width=.95\textwidth]{output/diffs-v9-v11.png}
+\end{sidewaysfigure}
+
+What this shows is that most of the time when there is disagreement over whether an opening or closing event occurred in different data versions, the underlying movement in the democratic space was still the same--just a little bit less or more of it, but in the same direction. So although these kinds of difference between data versions are in a technical sense mis-predictions, substantively they are generally still somewhat correct. 
 
 # Forecasts for 2021-2022
+
+Figures \ref{fig:electoral} through \ref{fig:economic} show the 30 highest closing and opening forecasts for each space. The full set of forecasts can be explored at the dashboard at https://www.v-dem.net/en/analysis/DemSpace/ as well. Given the problem in using the test forecasts as a measure of expected accuracy, it is not included in this note. However, it does match the test forecast accuracy from the previous forecast rounds, and actually slightly improved as a result of streamlining the dataset of predictors during the course of the 2021 update.^[The goal of the data streamlining was to make future updates easier and quicker. The number of predictors was cut in half, from more than 400 to slightly more than 200. This was done on the basis of random forecast variable importance score. More details are available at https://github.com/vdeminstitute/demspaces/blob/main/2021-update/variable-importance.md.]
+
 
 \begin{figure}
 \centering
@@ -160,22 +202,21 @@ How to overcome this issue by adjusting the models that produce the forecasts is
 \includegraphics[width=.95\textwidth]{output/topN-economic.png}
 \end{figure}
 
+There are three general points about the forecasts to note: 
 
-## Expected accuracy
+Some countries have high forecasts for both the possibility of opening and closing events. The overall correlation in the forecasts for opening and closing events is around 0.56. This is related to a country's past history of opening or closing events, and specifically how variable the corresponding indicators have been. For example, Thailand has high forecasts in the associational space (\autoref{fig:associational}) for both opening and closing events: in the last 10 years it has also experienced 3 opening and 4 closing events (using the v11 data). 
 
-Nominal test accuracy
+\input{output/table-v11-stats.tex}
 
-How much is that likely to decrease?
+Some spaces are more stable than other. The forecasts thus are correspondingly also more or less dramatic in response. This accounts in part for the differences in the highest probabilities forecasted in the different spaces, i.e. while the highest closing forecast in the electoral space is at a probability of around 0.3, some forecasts in the other spaces exceed 0.7. \autoref{tab:v11-stats} shows the total number of events for each space, as well as the rate of events per 1,000 cases, for the spaces. The associational and economic spaces have notably more fluctuation, while the electoral space is much more stable. These patterns roughly are reflected also in the spread of forecast probabilities across the different spaces in the figures above. 
 
-Show nominal test accuracy. 
-
-Show test accuracy decreases from v9 with v10 data, v10 with v11 data
-
-
+Thirdly, it is very likely that Covid-19 plays some role in movement within the democratic spaces, and closing movements specifically, as discussed above. Given the nature of pandemic response policies, the associational, individual, and informational spaces should be those most impacted by the pandemic; the electoral and governing spaces depend more on structural factors that should not change that fast, while the economic space, regarding the absence of public corruption, maybe is impacted somewhere between those two groups. It is difficult to directly incorporate any effects of the pandemic into the existing forecasting process, as we are just learning what those impacts are. But it probably is useful to analytically assess the democratic spaces forecasts in combination with the pandemic response violations of democratic standards index V-Dem is collecting.\footnote{Dashboard available at https://www.v-dem.net/en/analysis/PanDem/.} For example, the two highest forecasts for a closing event in the associational space are Ecuador and India, with similar forecast probabilities. However, Ecuador has so far had only minor pandemic response violations while India has had major violations. Thus we should probably weigh the closing forecast for India higher and discount the one for Ecuador. 
 
 # Conclusion
 
-One final note: model raw indices not discretized outcomes. Maybe that helps get around the shifting data problem. 
+The picture emerging so far is that the democratic spaces forecasts are an informative additions over the kind of naive base rate forecasts that might anchor a judgment otherwise. At the same time, the accuracy results so far are notably lower than those we had expected based on more extensive test forecasts conducted along with each forecast set. One reason for the discrepancy probably is the impact that Covid-19 has had both on autocratization, and breaking historical patterns in general. This is idiosyncratic and difficult to incorporate into the forecasting process until some time has passed for a clearer picture of the pandemic's impact to crystallize. 
+
+The other challenge arises due to the continuing improvements in the V-Dem as more survey data are gathered, the data measurement process becomes more accurate etc., which practically for this forecasting process means that the outcome data used to steer the forecasting models suffer from inaccuracies in respect to the subsequent data version that two years down the road is used to assess the the forecasts. There are two potential avenues one could explore for ameliorating this feature. First, it is not clear to which extent data version differences are due to MCMC sampling variation (Bayesian uncertainty) rather than changes in the set of survey responses. The former source of variation could in principle be reduced at the cost of computational time, although the question of whether is a significant contributing factor should be answered first. The second possibility is to directly model changes in the V-Dem indicators that we use to measure the spaces. This could be either internally at the model level, while still retaining discrete "opening/closing/no event" outcomes, or it could be more fundamentally by focusing on raw changes as the outcome of interest. It's likely that there would be substantively important tradeoffs and limitations with such an approach as well.
 
 # References
 

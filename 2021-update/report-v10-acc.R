@@ -121,13 +121,15 @@ acc %>%
   kbl(booktabs = TRUE, format = "latex", digits = c(0, 0, 0, 2, 2, 2),
       label = "v10-acc", caption = table_caption) %>%
   kable_styling() %>%
-  pack_rows("Downards movement", 1, 6) %>%
-  pack_rows("Upwards movement", 7, 12) %>%
+  pack_rows("Closing movement", 1, 6) %>%
+  pack_rows("Opening movement", 7, 12) %>%
   pack_rows("Average", 13, 13) %>%
-  writeLines("output/v10-acc.tex")
+  writeLines(here::here("2021-update/output/v10-acc.tex"))
 
 
 
+
+# Separation plots --------------------------------------------------------
 
 long <- fcasts %>%
   select(outcome, gwcode, p_up, p_down, truth_up, truth_down) %>%
@@ -138,15 +140,20 @@ long <- fcasts %>%
   filter(name==direction) %>%
   select(-name)
 
-
+data("spaces")
+spaces$Description <- NULL
+long <- left_join(long, spaces, by = c("outcome" = "Indicator"))
 
 long$country <- states::country_names(long$gwcode, shorten = TRUE)
 long$country[long$truth!="1"] <- NA
 long <- long %>%
   group_by(outcome, direction) %>%
   arrange(outcome, direction, p) %>%
-  mutate(position = 1:n()) %>%
+  # shuffle tied cases randomly
+  mutate(position = rank(p, ties.method = "random")) %>%
   ungroup()
+
+# Regular separation plots
 
 col <- c(rgb(red = 254, green = 232, blue = 200, max = 255),
          rgb(red = 227, green = 74, blue = 51, max = 255))
@@ -162,11 +169,63 @@ ggplot(long, aes(x = position)) +
                  panel.background = ggplot2::element_blank(),
                  panel.grid = ggplot2::element_blank())
 
-# v9 forecasts i can assess
-# use the test forecasts to get an idea of drop due to ground shifting
+# Table-like separation plots
 
+# color match to blue/orange for up/down movements
+col <- c("gray95",
+         "#0082BA",
+         "#F37321")
+long$truth <- ifelse(long$truth==1 & long$direction == "down", 2, long$truth)
+long$direction <- ifelse(long$direction=="up", "Opening", "Closing")
 
-# Look at year to year decreases for all predictions, maybe the high risk
-# forecasts still had relatively high movements
+ggplot(long, aes(x = position)) +
+  facet_grid(direction ~ Space) +
+  geom_bar(stat = "identity", aes(fill = factor(truth), y = 1), width = 1) +
+  coord_flip() +
+  geom_step(aes(y = p)) +
+  scale_fill_manual(guide = FALSE, values = col) +
+  ggplot2::scale_y_continuous(NULL, breaks = NULL, expand = c(0, 0)) +
+  ggplot2::scale_x_continuous(NULL, breaks = NULL, expand = c(0, 0)) +
+  ggplot2::theme(legend.position = "none",
+                 panel.background = ggplot2::element_blank(),
+                 panel.grid = ggplot2::element_blank()) +
+  theme_minimal() +
+  theme(panel.background = element_rect(color = "black"),
+        panel.spacing = unit(1, "lines"),
+        plot.margin = unit(rep(0.8, 4), "cm"))
 
+ggsave(here::here("2021-update/output/v10-sepplot.png"),
+       height = 6, width = 9)
 
+# List all positives ------------------------------------------------------
+
+df <- long %>%
+  # add rank
+  group_by(outcome, direction) %>%
+  arrange(desc(p)) %>%
+  mutate(rank = 1:n()) %>%
+  ungroup() %>%
+  #
+  filter(truth > 0) %>%
+  group_by(direction, Space) %>%
+  arrange(desc(p), country) %>%
+  summarize(
+    cases = n(),
+    text = paste0(country, ", ", rank, ", ", round(p, 2), collapse = "; ")
+  )
+
+# construct tex/md text that i can paste into the report
+str <- ""
+for (d in c("Closing", "Opening")) {
+  total <- sum(df$cases[df$direction==d])
+  line <- sprintf("### %s\n\n", d)
+  str <- c(str, line)
+  for (s in sort(unique(df$Space))) {
+    text <- df$text[df$direction==d & df$Space==s]
+    line <- sprintf("**%s**: %s\n\n", s, text)
+    str <- c(str, line)
+  }
+}
+
+str <- paste0(str, collapse = "")
+writeLines(str, here::here("2021-update/output/v10-case-text.md"))

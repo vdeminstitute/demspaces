@@ -1,5 +1,5 @@
 #
-#   Tables of the current forecasts for the report
+#   Tables and plots of the current forecasts for the report
 #
 
 fcast_file <- "archive/fcasts-rf-v11.csv"
@@ -148,4 +148,15 @@ for (i in 1:nrow(spaces)) {
   ggsave(filename = here::here(fn), height = 7, width = 7*1.5)
 
 }
+
+
+
+# Correlation between opening/closing fcasts ------------------------------
+
+cor(fcasts$p_down, fcasts$p_up)
+
+gg <- fcasts$outcome
+ss <- split(fcasts, gg)
+ss <- lapply(ss, function(x) cor(x$p_down, x$p_up))
+unlist(ss)
 
