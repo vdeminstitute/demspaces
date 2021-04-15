@@ -39,6 +39,8 @@ The first version of the forecasts in 2019 was created with V-Dem version 9 data
 - Various minor changes in the dashboard, like removing explicit references to a specific forecast time interval like "2021-2022", as those have to be manually updated. 
 - Removing dependencies and streamlining data for the dashboard: the tarball size has decreased from 1.3MB in the v10 version to 0.7MB, i.e. almost half. 
 - Started marking places that need attention during updates with "UPDATE:", so that they can be more easily found with a global search. 
+- Fix a bug in the dashboard that prevented clicking on a bar in the bottom left plot to add/remove the corresponding index from the linechart on the right (#5). 
+- Fix a phantom nav item in the dashboard navigation bar by moving the nav bar style tags to the dashboard CSS file (#2).
 
 2020 Update (v10)
 ================
