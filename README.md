@@ -3,6 +3,36 @@ Democratic Spaces Barometer
 
 The Demoractic Spaces Barometer forecasts significant changes, both democratizing and autocratizing, for six facets of democratic governance for all major countries in the world 2 years ahead. The forecasts can be explored with the dashboard at https://www.v-dem.net/en/analysis/DemSpace/.
 
+Documentation
+-------------
+
+The [`docs`](docs/) folder contains several project reports:
+
+1. [Democratic Spaces Barometer Technical Report, 2020](docs/IRI_DArch_Final_Report_2020-03-30.pdf)
+2. [Spring 2021 Forecast Update Memo](docs/DemocraticSpaces2021.pdf)
+3. [FAQ for the 2021 Forecast Update](docs/DemSpaces2021-Questions.pdf)
+
+Citation
+--------
+
+If you refer to this project in academic work, we would appreciate it if you could cite:
+
+Andreas Beger, Richard K. Morgan, and Laura Maxwell, 2020, “The Democratic Spaces Barometer: global forecasts of autocratization and democratization”, <https://www.v-dem.net/en/analysis/DemSpace/>
+
+In Bibtex:
+
+```bibtex
+@misc{beger2020democratic,
+  auhor = {Beger, Andreas and Morgan, Richard K. and Maxwell, Laura},
+  title = {The Democratic Spaces Barometer: Global Forecasts of Autocratization and Democratization},
+  year  = {2020},
+  url   = {https://www.v-dem.net/en/analysis/DemSpace/},
+}
+```
+
+Code overview
+-------------
+
 This repo contains the code and data needed to reproduce the forecasts and dashboard. It is organized into three self-contained folders:
 
 - `create-data/`: combine V-Dem and other data sources into the historical data that is used to code the dependent variables and estimate the forecast models
@@ -48,19 +78,6 @@ install.packages(need)
 ## Updates
 
 See [UPDATING.md](UPDATING.md) for notes.
-
-## Citation
-
-Andreas Beger, Richard K. Morgan, and Laura Maxwell, 2020, “The Democratic Spaces Barometer: global forecasts of autocratization and democratization”, <https://www.v-dem.net/en/analysis/DemSpace/>
-
-```bibtex
-@misc{beger2020democratic,
-  auhor = {Beger, Andreas and Morgan, Richard K. and Maxwell, Laura},
-  title = {The Democratic Spaces Barometer: Global Forecasts of Autocratization and Democratization},
-  year  = {2020},
-  url   = {https://www.v-dem.net/en/analysis/DemSpace/},
-}
-```
 
 ## Contributing
 
