@@ -40,11 +40,13 @@ naCountFun <- function(dat, exclude_year){
 # The end year of observed data. Usually should be the year prior to the
 # current year.
 # UPDATE:
-END_YEAR   <- 2020L
+END_YEAR   <- 2021L
 START_YEAR <- 1968L
 
 # UPDATE: v[X]
-vdem_raw <- readRDS("input/V-Dem-CY-Full+Others-v11.rds")
+# temp: the v12.0 data I have doesn't have country names and cow codes, which
+# I need below. Take this out when I have the v12 proper data
+vdem_raw <- readRDS("input/V-Dem-CY-Full+Others-v12.rds")
 
 ## Remove countries that have a lot of missingness in the VDem data... and make adjustments to merge with GW country-year set
 vdem_complete <- vdem_raw %>%
@@ -60,8 +62,9 @@ vdem_complete <- vdem_raw %>%
                             TRUE ~ gwcode)) %>%
   select(gwcode, everything())
 dim(vdem_complete)
-## 2020 update (v10): 8430 4109
-## 2021 update (v11):
+# 2020 update (v10): 8430, 4109
+# 2021 update (v11): 8602, 4177
+# 2022 update (v12): 8774, 4171
 
 vdem_country_year0 <- vdem_complete %>%
   select(c(country_name, country_text_id, country_id, gwcode, year, v2x_pubcorr))
@@ -74,7 +77,9 @@ vdem_country_year <- vdem_country_year0 %>%
   complete(country_name, country_id, country_text_id, year = min(year):END_YEAR) %>%
   # fill(country_name) %>%
   ungroup()
-dim(vdem_country_year) ## 8753  6
+dim(vdem_country_year)
+# v??: 8753, 6
+# v12: 8927, 6
 
 ## GW_template is a balanced gwcode yearly data frame from 1968 to 2019. Need to drop microstates.
 data(gwstates)
@@ -83,7 +88,9 @@ keep <- gwstates$gwcode[gwstates$microstate == FALSE]
 
 GW_template <- state_panel(START_YEAR, END_YEAR, partial = "any", useGW = TRUE) %>%
   filter(gwcode %in% keep)
-dim(GW_template) ## 8344 2
+dim(GW_template)
+# 8344 2
+# v12: 8692, 2
 
 country_year_set <- left_join(GW_template, vdem_country_year) %>%
   filter(!is.na(country_id)) %>%
@@ -242,7 +249,9 @@ vDem_GW_data <- country_year_set %>%
   fill(2:length(.), .direction = "up") %>% # fills-in the NAs in the lagged vars for states created between 1970 and 2019...
   ungroup() %>%
   arrange(country_id, year)
-dim(vDem_GW_data) ## 8120  371
+dim(vDem_GW_data)
+# v??: 8120, 371
+# v12: 8458, 190
 # summary(vDem_GW_data)
 
 # naCountFun(vDem_GW_data, END_YEAR + 1)

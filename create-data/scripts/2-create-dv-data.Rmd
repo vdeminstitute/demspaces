@@ -168,6 +168,19 @@ dv_data <- dv_data %>%
 range(dv_data$year)
 
 write_rds(dv_data, "../output/dv-data.rds")
+
+# Record some stats on the DV data so that during updates it is easier to
+# quickly tell whether the new data make sense
+dv_data %>%
+  ungroup() %>%
+  select(ends_with("_change")) %>%
+  tidyr::pivot_longer(everything(), names_to = "space") %>%
+  count(space, value) %>%
+  mutate(value = factor(value, levels = c("first year of independence", "same",
+                                          "up", "down"))) %>%
+  arrange(value) %>%
+  tidyr::pivot_wider(names_from = "value", values_from = "n") %>%
+  write_csv("../output/dv-summary.csv")
 ```
 
 Check the values for one outcome/country to make sure they make sense:

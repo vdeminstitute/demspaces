@@ -34,4 +34,5 @@ If there is no prefix or the previs is `lagX` they can be used as model inputs. 
 - v9: the original 2019 version that was created during the initial project development
 - v10: spring 2020 update
 - v11: spring 2021 update
+- v12: spring 2022 update
 

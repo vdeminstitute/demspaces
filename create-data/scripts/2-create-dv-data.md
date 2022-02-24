@@ -4,26 +4,24 @@ Create DV data
 This script applies the cutpoints to the raw DV indicators to create the
 actual targets that we will use for the models, i.e. indicators for an
 up or down movement over the 2 years following the year in a
-row/observation. These targets are denoted with a "\_next2" suffix, as
+row/observation. These targets are denoted with a “\_next2” suffix, as
 well as the direction (“up”, “down”) in which they go.
 
 Inputs:
 
-  - `output/dv_data_1968_on.csv`
-  - `output/cutpoints.csv`
+-   `output/dv_data_1968_on.csv`
+-   `output/cutpoints.csv`
 
 Outputs:
 
 The main output is:
 
-  - `output/dv-data.rds`
+-   `output/dv-data.rds`
 
 The script also writes CSV files for the target outcome variables, so
 that changes are easier to identify on git.
 
-  - `output/dv-lists/[vdem indicator].csv`
-
-<!-- end list -->
+-   `output/dv-lists/[vdem indicator].csv`
 
 ``` r
 dv <- read_csv("../output/dv_data_1968_on.csv") %>%
@@ -32,40 +30,37 @@ dv <- read_csv("../output/dv_data_1968_on.csv") %>%
   arrange(gwcode, year)
 ```
 
+    ## Rows: 8458 Columns: 11
+
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## chr (2): country_name, country_text_id
+    ## dbl (9): gwcode, year, country_id, v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2...
+
     ## 
-    ## ── Column specification ───────────────────────────────────────────────────────────────────
-    ## cols(
-    ##   gwcode = col_double(),
-    ##   year = col_double(),
-    ##   country_name = col_character(),
-    ##   country_id = col_double(),
-    ##   country_text_id = col_character(),
-    ##   v2x_veracc_osp = col_double(),
-    ##   v2xcs_ccsi = col_double(),
-    ##   v2xcl_rol = col_double(),
-    ##   v2x_freexp_altinf = col_double(),
-    ##   v2x_horacc_osp = col_double(),
-    ##   v2x_pubcorr = col_double()
-    ## )
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 ``` r
 range(dv$year)
 ```
 
-    ## [1] 1968 2020
+    ## [1] 1968 2021
 
 ``` r
 cutpoints <- read_csv("../output/cutpoints.csv")
 ```
 
+    ## Rows: 6 Columns: 4
+
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## chr (1): indicator
+    ## dbl (3): all, up, down
+
     ## 
-    ## ── Column specification ───────────────────────────────────────────────────────────────────
-    ## cols(
-    ##   indicator = col_character(),
-    ##   all = col_double(),
-    ##   up = col_double(),
-    ##   down = col_double()
-    ## )
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 ``` r
 cp <- cutpoints[["up"]]
@@ -186,10 +181,23 @@ dv_data <- dv_data %>%
 range(dv_data$year)
 ```
 
-    ## [1] 1968 2020
+    ## [1] 1968 2021
 
 ``` r
 write_rds(dv_data, "../output/dv-data.rds")
+
+# Record some stats on the DV data so that during updates it is easier to
+# quickly tell whether the new data make sense
+dv_data %>%
+  ungroup() %>%
+  select(ends_with("_change")) %>%
+  tidyr::pivot_longer(everything(), names_to = "space") %>%
+  count(space, value) %>%
+  mutate(value = factor(value, levels = c("first year of independence", "same",
+                                          "up", "down"))) %>%
+  arrange(value) %>%
+  tidyr::pivot_wider(names_from = "value", values_from = "n") %>%
+  write_csv("../output/dv-summary.csv")
 ```
 
 Check the values for one outcome/country to make sure they make sense:
@@ -201,19 +209,20 @@ dv_data %>%
   filter(year > 2010)
 ```
 
-    ## # A tibble: 10 x 7
-    ##    gwcode  year v2x_veracc_osp dv_v2x_veracc_o… dv_v2x_veracc_o…
-    ##     <dbl> <dbl>          <dbl> <chr>                       <int>
-    ##  1    310  2011          0.919 same                            0
-    ##  2    310  2012          0.918 same                            0
-    ##  3    310  2013          0.913 same                            0
-    ##  4    310  2014          0.832 down                            0
-    ##  5    310  2015          0.832 same                            0
-    ##  6    310  2016          0.83  same                            0
-    ##  7    310  2017          0.824 same                            0
-    ##  8    310  2018          0.759 same                            0
-    ##  9    310  2019          0.761 same                           NA
-    ## 10    310  2020          0.764 same                           NA
+    ## # A tibble: 11 × 7
+    ##    gwcode  year v2x_veracc_osp dv_v2x_veracc_osp_change dv_v2x_veracc_osp_up_ne…
+    ##     <dbl> <dbl>          <dbl> <chr>                                       <int>
+    ##  1    310  2011          0.919 same                                            0
+    ##  2    310  2012          0.918 same                                            0
+    ##  3    310  2013          0.913 same                                            0
+    ##  4    310  2014          0.829 down                                            0
+    ##  5    310  2015          0.829 same                                            0
+    ##  6    310  2016          0.828 same                                            0
+    ##  7    310  2017          0.82  same                                            0
+    ##  8    310  2018          0.755 same                                            0
+    ##  9    310  2019          0.754 same                                            0
+    ## 10    310  2020          0.76  same                                           NA
+    ## 11    310  2021          0.752 same                                           NA
     ## # … with 2 more variables: dv_v2x_veracc_osp_down_next2 <int>,
     ## #   v2x_veracc_osp_squared <dbl>
 
@@ -221,58 +230,58 @@ dv_data %>%
 skim(dv_data)
 ```
 
-|                                                  |          |
-| :----------------------------------------------- | :------- |
-| Name                                             | dv\_data |
-| Number of rows                                   | 8289     |
-| Number of columns                                | 32       |
-| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_   |          |
-| Column type frequency:                           |          |
-| character                                        | 6        |
-| numeric                                          | 26       |
-| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |          |
-| Group variables                                  | None     |
+|                                                  |         |
+|:-------------------------------------------------|:--------|
+| Name                                             | dv_data |
+| Number of rows                                   | 8458    |
+| Number of columns                                | 32      |
+| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_   |         |
+| Column type frequency:                           |         |
+| character                                        | 6       |
+| numeric                                          | 26      |
+| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |         |
+| Group variables                                  | None    |
 
 Data summary
 
 **Variable type: character**
 
-| skim\_variable                  | n\_missing | complete\_rate | min | max | empty | n\_unique | whitespace |
-| :------------------------------ | ---------: | -------------: | --: | --: | ----: | --------: | ---------: |
-| dv\_v2x\_veracc\_osp\_change    |          0 |              1 |   2 |  26 |     0 |         4 |          0 |
-| dv\_v2xcs\_ccsi\_change         |          0 |              1 |   2 |  26 |     0 |         4 |          0 |
-| dv\_v2xcl\_rol\_change          |          0 |              1 |   2 |  26 |     0 |         4 |          0 |
-| dv\_v2x\_freexp\_altinf\_change |          0 |              1 |   2 |  26 |     0 |         4 |          0 |
-| dv\_v2x\_horacc\_osp\_change    |          0 |              1 |   2 |  26 |     0 |         4 |          0 |
-| dv\_v2x\_pubcorr\_change        |          0 |              1 |   2 |  26 |     0 |         4 |          0 |
+| skim_variable               | n_missing | complete_rate | min | max | empty | n_unique | whitespace |
+|:----------------------------|----------:|--------------:|----:|----:|------:|---------:|-----------:|
+| dv_v2x_veracc_osp_change    |         0 |             1 |   2 |  26 |     0 |        4 |          0 |
+| dv_v2xcs_ccsi_change        |         0 |             1 |   2 |  26 |     0 |        4 |          0 |
+| dv_v2xcl_rol_change         |         0 |             1 |   2 |  26 |     0 |        4 |          0 |
+| dv_v2x_freexp_altinf_change |         0 |             1 |   2 |  26 |     0 |        4 |          0 |
+| dv_v2x_horacc_osp_change    |         0 |             1 |   2 |  26 |     0 |        4 |          0 |
+| dv_v2x_pubcorr_change       |         0 |             1 |   2 |  26 |     0 |        4 |          0 |
 
 **Variable type: numeric**
 
-| skim\_variable                       | n\_missing | complete\_rate |    mean |     sd |      p0 |     p25 |     p50 |     p75 |    p100 | hist  |
-| :----------------------------------- | ---------: | -------------: | ------: | -----: | ------: | ------: | ------: | ------: | ------: | :---- |
-| gwcode                               |          0 |           1.00 |  462.59 | 240.31 |    2.00 |  305.00 |  461.00 |  663.00 |  950.00 | ▅▆▇▇▃ |
-| year                                 |          0 |           1.00 | 1995.12 |  15.15 | 1968.00 | 1982.00 | 1996.00 | 2008.00 | 2020.00 | ▆▆▇▇▇ |
-| v2x\_veracc\_osp                     |          0 |           1.00 |    0.63 |   0.27 |    0.06 |    0.41 |    0.70 |    0.89 |    0.96 | ▃▂▃▃▇ |
-| dv\_v2x\_veracc\_osp\_up\_next2      |        338 |           0.96 |    0.06 |   0.24 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| dv\_v2x\_veracc\_osp\_down\_next2    |        338 |           0.96 |    0.04 |   0.20 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| v2xcs\_ccsi                          |          0 |           1.00 |    0.57 |   0.32 |    0.01 |    0.28 |    0.65 |    0.89 |    0.98 | ▃▃▂▃▇ |
-| dv\_v2xcs\_ccsi\_up\_next2           |        338 |           0.96 |    0.10 |   0.30 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| dv\_v2xcs\_ccsi\_down\_next2         |        338 |           0.96 |    0.06 |   0.24 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| v2xcl\_rol                           |          0 |           1.00 |    0.60 |   0.30 |    0.00 |    0.36 |    0.65 |    0.89 |    0.99 | ▃▃▃▅▇ |
-| dv\_v2xcl\_rol\_up\_next2            |        338 |           0.96 |    0.08 |   0.27 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| dv\_v2xcl\_rol\_down\_next2          |        338 |           0.96 |    0.05 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| v2x\_freexp\_altinf                  |          0 |           1.00 |    0.56 |   0.34 |    0.01 |    0.21 |    0.67 |    0.88 |    0.99 | ▆▂▂▅▇ |
-| dv\_v2x\_freexp\_altinf\_up\_next2   |        338 |           0.96 |    0.08 |   0.27 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| dv\_v2x\_freexp\_altinf\_down\_next2 |        338 |           0.96 |    0.05 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| v2x\_horacc\_osp                     |          0 |           1.00 |    0.55 |   0.31 |    0.01 |    0.25 |    0.58 |    0.85 |    0.99 | ▅▅▃▅▇ |
-| dv\_v2x\_horacc\_osp\_up\_next2      |        338 |           0.96 |    0.08 |   0.28 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| dv\_v2x\_horacc\_osp\_down\_next2    |        338 |           0.96 |    0.05 |   0.22 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| v2x\_pubcorr                         |          0 |           1.00 |    0.53 |   0.30 |    0.01 |    0.26 |    0.52 |    0.82 |    1.00 | ▆▇▅▅▇ |
-| dv\_v2x\_pubcorr\_up\_next2          |        338 |           0.96 |    0.08 |   0.28 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| dv\_v2x\_pubcorr\_down\_next2        |        338 |           0.96 |    0.10 |   0.30 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
-| v2x\_veracc\_osp\_squared            |          0 |           1.00 |    0.47 |   0.31 |    0.00 |    0.17 |    0.50 |    0.79 |    0.93 | ▇▅▃▅▇ |
-| v2xcs\_ccsi\_squared                 |          0 |           1.00 |    0.43 |   0.35 |    0.00 |    0.08 |    0.42 |    0.79 |    0.96 | ▇▂▂▃▆ |
-| v2xcl\_rol\_squared                  |          0 |           1.00 |    0.45 |   0.34 |    0.00 |    0.13 |    0.42 |    0.79 |    0.99 | ▇▃▃▃▆ |
-| v2x\_freexp\_altinf\_squared         |          0 |           1.00 |    0.43 |   0.35 |    0.00 |    0.04 |    0.44 |    0.77 |    0.98 | ▇▂▃▃▅ |
-| v2x\_horacc\_osp\_squared            |          0 |           1.00 |    0.40 |   0.34 |    0.00 |    0.06 |    0.34 |    0.73 |    0.98 | ▇▂▂▃▃ |
-| v2x\_pubcorr\_squared                |          0 |           1.00 |    0.37 |   0.33 |    0.00 |    0.07 |    0.27 |    0.67 |    1.00 | ▇▃▂▂▃ |
+| skim_variable                   | n_missing | complete_rate |    mean |     sd |      p0 |     p25 |     p50 |     p75 |    p100 | hist  |
+|:--------------------------------|----------:|--------------:|--------:|-------:|--------:|--------:|--------:|--------:|--------:|:------|
+| gwcode                          |         0 |          1.00 |  462.62 | 240.23 |    2.00 |  305.00 |  461.00 |  663.00 |  950.00 | ▅▆▇▇▃ |
+| year                            |         0 |          1.00 | 1995.64 |  15.43 | 1968.00 | 1982.00 | 1996.00 | 2009.00 | 2021.00 | ▆▇▇▇▇ |
+| v2x_veracc_osp                  |         0 |          1.00 |    0.63 |   0.27 |    0.06 |    0.41 |    0.70 |    0.89 |    0.96 | ▃▂▃▃▇ |
+| dv_v2x_veracc_osp_up_next2      |       338 |          0.96 |    0.06 |   0.24 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| dv_v2x_veracc_osp_down_next2    |       338 |          0.96 |    0.04 |   0.20 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| v2xcs_ccsi                      |         0 |          1.00 |    0.57 |   0.32 |    0.01 |    0.27 |    0.65 |    0.89 |    0.98 | ▅▃▂▃▇ |
+| dv_v2xcs_ccsi_up_next2          |       338 |          0.96 |    0.10 |   0.30 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| dv_v2xcs_ccsi_down_next2        |       338 |          0.96 |    0.07 |   0.25 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| v2xcl_rol                       |         0 |          1.00 |    0.60 |   0.30 |    0.00 |    0.35 |    0.65 |    0.88 |    0.99 | ▃▃▃▅▇ |
+| dv_v2xcl_rol_up_next2           |       338 |          0.96 |    0.08 |   0.27 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| dv_v2xcl_rol_down_next2         |       338 |          0.96 |    0.05 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| v2x_freexp_altinf               |         0 |          1.00 |    0.56 |   0.33 |    0.01 |    0.22 |    0.66 |    0.87 |    0.99 | ▆▃▂▅▇ |
+| dv_v2x_freexp_altinf_up_next2   |       338 |          0.96 |    0.08 |   0.27 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| dv_v2x_freexp_altinf_down_next2 |       338 |          0.96 |    0.05 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| v2x_horacc_osp                  |         0 |          1.00 |    0.55 |   0.31 |    0.02 |    0.25 |    0.58 |    0.85 |    0.99 | ▅▅▃▅▇ |
+| dv_v2x_horacc_osp_up_next2      |       338 |          0.96 |    0.08 |   0.27 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| dv_v2x_horacc_osp_down_next2    |       338 |          0.96 |    0.05 |   0.22 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| v2x_pubcorr                     |         0 |          1.00 |    0.53 |   0.30 |    0.01 |    0.26 |    0.51 |    0.82 |    1.00 | ▆▇▅▅▇ |
+| dv_v2x_pubcorr_up_next2         |       338 |          0.96 |    0.09 |   0.28 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| dv_v2x_pubcorr_down_next2       |       338 |          0.96 |    0.10 |   0.30 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| v2x_veracc_osp_squared          |         0 |          1.00 |    0.47 |   0.31 |    0.00 |    0.17 |    0.49 |    0.78 |    0.93 | ▇▅▃▅▇ |
+| v2xcs_ccsi_squared              |         0 |          1.00 |    0.43 |   0.34 |    0.00 |    0.07 |    0.42 |    0.79 |    0.96 | ▇▂▂▃▆ |
+| v2xcl_rol_squared               |         0 |          1.00 |    0.45 |   0.34 |    0.00 |    0.12 |    0.42 |    0.78 |    0.99 | ▇▃▃▃▆ |
+| v2x_freexp_altinf_squared       |         0 |          1.00 |    0.43 |   0.35 |    0.00 |    0.05 |    0.44 |    0.76 |    0.98 | ▇▂▃▃▅ |
+| v2x_horacc_osp_squared          |         0 |          1.00 |    0.40 |   0.34 |    0.00 |    0.06 |    0.34 |    0.73 |    0.98 | ▇▂▂▃▅ |
+| v2x_pubcorr_squared             |         0 |          1.00 |    0.37 |   0.33 |    0.00 |    0.07 |    0.26 |    0.67 |    1.00 | ▇▃▂▂▃ |
