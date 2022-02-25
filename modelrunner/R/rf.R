@@ -19,7 +19,7 @@ N_WORKERS <- future::availableCores() - 1L
 OVERWRITE = FALSE
 # Years from which to walk-forward 2-years-ahead forecasts;
 # UPDATE: last year should probably be the end year in the data
-YEARS <- 2005:2020
+YEARS <- 2005:2021
 
 # TODO: i don't think this works correctly with parallel workers; and in any
 # case maybe not a good idea
@@ -64,8 +64,9 @@ lgr$info("Running with %s workers", N_WORKERS)
 plan(multisession, workers = N_WORKERS)
 
 # Parse states data version so we can name the output forecasts correctly
-fn <- tail(dir("input/", full.names = TRUE), 1)
-VERSION <- regmatches(fn, regexpr("v[0-9]+[a-z]+", fn))
+fn <- tail(dir("input", full.names = TRUE), 1)
+VERSION <- regmatches(fn, regexpr("v[0-9]+[a-z]?", fn))
+if (VERSION %in% c("", character(0))) stop("Could not parse VERSION")
 lgr$info("Using data version %s", VERSION)
 
 # Load data
