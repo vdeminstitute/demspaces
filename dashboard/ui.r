@@ -13,7 +13,7 @@ navbarPage(
           12,
           tags$span(
             # UPDATE: two-year window
-            h3("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2021-2022)."), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
+            h3("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2022-2023)."), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
 
             ## Adds hoverover popup text for each space
             h3(tags$em(tags$b(a(id = "AssText", style = "text-decoration: none;", " Associational, "),
@@ -47,7 +47,7 @@ navbarPage(
                                         options = list(container = "body")))))))),
       fluidRow(
         # UPDATE: 20xx-20xx forecasts
-        column(12, h2(tags$span(style = "font-size: 75%; font-weight:bold;", "2021-2022 Forecasts"))
+        column(12, h2(tags$span(style = "font-size: 75%; font-weight:bold;", "2022-2023 Forecasts"))
         )),
 
       fluidRow(
@@ -222,7 +222,7 @@ navbarPage(
           fluidRow(
             column(
               12,
-              h3("The Democratic Space Barometer is the product of a collaboration between Andreas Beger (Predictive Heuristics), Laura Maxwell (V-Dem), and Rick Morgan (V-Dem). A public repository of the code we use to generate our forecasts and develop this dashboard can be found ", a(href= "https://github.com/andybega/democratic-spaces", " here.", target="_blank"), br(),  br(), "The six conceptual dimensions we focus on come from the International Republican Institute's Closing Space Barometer, which includes an analytical framework for assessing the processes that facilitate a substantial reduction (closing events) within these six spaces. This framework was developed based on a series of workshops conducted with Democracy, Human Rights, and Governance (DRG) donors and implementing partners in 2016 and represent the conceptual features of democratic space which are most amenable to DRG assistance programs.", br(),  br(), "We adapted these conceptual spaces, expanded the scope to include substantial improvements (opening events), and developed an operationalization method to identify opening and closing events within each space. This dashboard, and the forecast that drive it, is the output of these efforts.")))),
+              h3("The Democratic Space Barometer is the product of a collaboration between Andreas Beger (Basil Analytics), Laura Maxwell (V-Dem), and Rick Morgan (V-Dem). A public repository of the code we use to generate our forecasts and develop this dashboard can be found ", a(href= "https://github.com/vdeminstitute/demspaces", " here.", target="_blank"), br(),  br(), "The six conceptual dimensions we focus on come from the International Republican Institute's Closing Space Barometer, which includes an analytical framework for assessing the processes that facilitate a substantial reduction (closing events) within these six spaces. This framework was developed based on a series of workshops conducted with Democracy, Human Rights, and Governance (DRG) donors and implementing partners in 2016 and represent the conceptual features of democratic space which are most amenable to DRG assistance programs.", br(),  br(), "We adapted these conceptual spaces, expanded the scope to include substantial improvements (opening events), and developed an operationalization method to identify opening and closing events within each space. This dashboard, and the forecast that drive it, is the output of these efforts.")))),
 
         wellPanel(
           class = "panel panel-default",
@@ -231,7 +231,7 @@ navbarPage(
               12,
               tags$span(
                 # UPDATE: two-year window
-                h3("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2021-2022)."), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
+                h3("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2022-2023)."), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
 
                 ## Adds hoverover popup text for each space
                 h3(tags$em(tags$b(a(id = "AssText2", style = "text-decoration: none;", " Associational, "),

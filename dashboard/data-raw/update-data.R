@@ -32,9 +32,15 @@ suppressPackageStartupMessages({
   library(cshapes)
   library(here)
   library(yaml)
+  library(jsonlite)
 })
 
 setwd(here::here("dashboard"))
+
+# Copy over DV data
+file.copy("data-raw/dv_data_1968_on.csv", "data/dv_data_1968_on.csv",
+          overwrite = TRUE)
+
 
 iri_dat <- read.csv("data-raw/fcasts-rf.csv", stringsAsFactors = F)
 current_forecast <- iri_dat %>%
@@ -102,35 +108,37 @@ all_forecast_data$map_color_down <- ifelse(all_forecast_data$p_down < 0.05, colo
                                                          ifelse(all_forecast_data$p_down < 0.35, colors_down[4],
                                                                 ifelse(!is.na(all_forecast_data$p_down), colors_down[5], colors_down[6])))))
 
-all_forecast_data$popUp_text_up <- paste('<h3><b>', all_forecast_data$country_name,'</b></h3>',
-                                         '<h5><span style="color:#002649">Event probabilities for the <b>', all_forecast_data$names, ' Space</b> <span style="font-size: 80%">(', all_forecast_data$thres, ' change in <b>', all_forecast_data$index_name, '</b>)</span></span></h5>',
-                                         paste('<b><span style="color:#0082BA">Opening Event: ',floor(all_forecast_data$p_up * 100), '%</b></span><br>', sep = ''),
-                                         paste('<b><span style="color:#777778">Stable: ',floor(all_forecast_data$p_same * 100), '%</b></span><br>', sep = ''),
-                                         paste('<b><span style="color:#F37321">Closing Event: ',floor(all_forecast_data$p_down * 100), '%</b></span><br><br>', sep = ''),
-                                         paste('<b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking: ', all_forecast_data$up_rank, '</b></span><br>', sep = ''),
-                                         paste('<b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking: ', all_forecast_data$down_rank, '</b></span><br>', sep = ''),
-                                         paste('<b><span style="color:#002649"> ',all_forecast_data$names,' Level in 2020: ', all_forecast_data$level, '</b></span><br>', sep = ''),
-                                         paste('<b><span style="color:#002649"> ',all_forecast_data$names,' Change 2018-2020: ', all_forecast_data$change, '</b></span>', sep = ''),sep = '')
+#
+#   Create html/text that will be shown on the map country popups
+#   _____________________
 
-all_forecast_data$popUp_text_down <- paste('<h3><b>', all_forecast_data$country_name,'</b></h3>',
-                                           '<h5><span style="color:#002649">Event probabilities for the <b>', all_forecast_data$names, ' Space</b> <span style="font-size: 80%">(', all_forecast_data$thres, ' change in the <b>', all_forecast_data$index_name, '</b>)</span></h5>',
-                                           paste('<b><span style="color:#F37321">Closing Event: ',floor(all_forecast_data$p_down * 100), '%</b></span><br>', sep = ''),
-                                           paste('<b><span style="color:#777778">Stable: ',floor(all_forecast_data$p_same * 100), '%</b></span><br>', sep = ''),
-                                           paste('<b><span style="color:#0082BA">Opening Event: ',floor(all_forecast_data$p_up * 100), '%</b></span><br><br>', sep = ''),
-                                           paste('<b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking: ', all_forecast_data$down_rank, '</b></span><br>', sep = ''),
-                                           paste('<b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking: ', all_forecast_data$up_rank, '</b></span><br>', sep = ''),
-                                           paste('<b><span style="color:#002649"> ',all_forecast_data$names,' Level in 2020: ', all_forecast_data$level, '</b></span><br>', sep = ''),
-                                           paste('<b><span style="color:#002649"> ',all_forecast_data$names,' Change 2019-2020: ', all_forecast_data$change, '</b></span>', sep = ''),sep = '')
+yy <- unique(all_forecast_data$year)
+level_year <- sprintf(" Level in %s: ", yy)
+change_years <- sprintf(" Change %s-%s: ", yy-1, yy)
 
-all_forecast_data$popUp_text_down <- paste('<h3><b>', all_forecast_data$country_name,'</b></h3>',
-                                            '<h5><span style="color:#002649">Event probabilities for the <b>', all_forecast_data$names, ' Space</b> <span style="font-size: 80%">(', all_forecast_data$thres, ' change in the <b>', all_forecast_data$index_name, '</b>)</span></h5>',
-                                            paste('<b><span style="color:#F37321">Closing Event: ',floor(all_forecast_data$p_down * 100), '%</b></span><br>', sep = ''),
-                                            paste('<b><span style="color:#777778">Stable: ',floor(all_forecast_data$p_same * 100), '%</b></span><br>', sep = ''),
-                                            paste('<b><span style="color:#0082BA">Opening Event: ',floor(all_forecast_data$p_up * 100), '%</b></span><br><br>', sep = ''),
-                                            paste('<b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking: ', all_forecast_data$down_rank, '</b></span><br>', sep = ''),
-                                            paste('<b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking: ', all_forecast_data$up_rank, '</b></span><br>', sep = ''),
-                                            paste('<b><span style="color:#002649"> ',all_forecast_data$names,' Level in 2020: ', all_forecast_data$level, '</b></span><br>', sep = ''),
-                                            paste('<b><span style="color:#002649"> ',all_forecast_data$names,' Change 2019-2020: ', all_forecast_data$change, '</b></span>', sep = ''),sep = '')
+all_forecast_data$popUp_text_up <- paste(
+  '<h3><b>', all_forecast_data$country_name,'</b></h3>',
+  '<h5><span style="color:#002649">Event probabilities for the <b>', all_forecast_data$names, ' Space</b> <span style="font-size: 80%">(', all_forecast_data$thres, ' change in <b>', all_forecast_data$index_name, '</b>)</span></span></h5>',
+  paste('<b><span style="color:#0082BA">Opening Event: ',floor(all_forecast_data$p_up * 100), '%</b></span><br>', sep = ''),
+  paste('<b><span style="color:#777778">Stable: ',floor(all_forecast_data$p_same * 100), '%</b></span><br>', sep = ''),
+  paste('<b><span style="color:#F37321">Closing Event: ',floor(all_forecast_data$p_down * 100), '%</b></span><br><br>', sep = ''),
+  paste('<b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking: ', all_forecast_data$up_rank, '</b></span><br>', sep = ''),
+  paste('<b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking: ', all_forecast_data$down_rank, '</b></span><br>', sep = ''),
+  paste0('<b><span style="color:#002649"> ',all_forecast_data$names, level_year, all_forecast_data$level, '</b></span><br>'),
+  paste0('<b><span style="color:#002649"> ',all_forecast_data$names, change_years, all_forecast_data$change, '</b></span>'),
+  sep = "")
+
+all_forecast_data$popUp_text_down <- paste(
+  '<h3><b>', all_forecast_data$country_name,'</b></h3>',
+  '<h5><span style="color:#002649">Event probabilities for the <b>', all_forecast_data$names, ' Space</b> <span style="font-size: 80%">(', all_forecast_data$thres, ' change in the <b>', all_forecast_data$index_name, '</b>)</span></h5>',
+  paste('<b><span style="color:#F37321">Closing Event: ',floor(all_forecast_data$p_down * 100), '%</b></span><br>', sep = ''),
+  paste('<b><span style="color:#777778">Stable: ',floor(all_forecast_data$p_same * 100), '%</b></span><br>', sep = ''),
+  paste('<b><span style="color:#0082BA">Opening Event: ',floor(all_forecast_data$p_up * 100), '%</b></span><br><br>', sep = ''),
+  paste('<b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking: ', all_forecast_data$down_rank, '</b></span><br>', sep = ''),
+  paste('<b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking: ', all_forecast_data$up_rank, '</b></span><br>', sep = ''),
+  paste0('<b><span style="color:#002649"> ',all_forecast_data$names, level_year, all_forecast_data$level, '</b></span><br>'),
+  paste0('<b><span style="color:#002649"> ',all_forecast_data$names, change_years, all_forecast_data$change, '</b></span>'),
+  sep = '')
 
 
 # Map data ----------------------------------------------------------------
@@ -142,11 +150,11 @@ raw_map_data <- rmapshaper::ms_simplify(raw_map_data, keep = 0.2)
 map_data <- st_as_sf(raw_map_data)
 map_data <- map_data %>%
   st_transform("+proj=longlat +datum=WGS84")
-map_data <- map_data %>%
-  select(GWCODE) %>%
-  dplyr::rename(gwcode = GWCODE)
+map_data <- map_data %>% select(gwcode)
 
 # Add centroid lat/long
+# TEMP fix for #10
+sf::sf_use_s2(FALSE)
 centroids <- map_data %>% st_centroid() %>% st_coordinates()
 map_data$center_lon <- centroids[, 1]
 map_data$center_lat <- centroids[, 2]
@@ -179,7 +187,8 @@ write_rds(map_data, "data/map_dat.rds", compress = "none")
 # Keep a readable sample of the data so we can easily spot differences on git
 # The .rds version will always show as changed on git.
 test <- map_data[1:5, ] %>% st_set_geometry(NULL)
-write_csv(test, here::here("dashboard/data-raw/map_dat_sample.csv"))
+write_yaml(test, here::here("dashboard/data-raw/map_dat_sample.yaml"),
+           column.major = FALSE)
 
 
 

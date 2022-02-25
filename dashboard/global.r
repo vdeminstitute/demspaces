@@ -33,7 +33,7 @@ data_table_format <- htmltools::withTags(table(
   class = 'display',
   thead(
     tr(
-      th(colspan = 2, style = 'text-align: center; border: 0; color:#A51E36; font-size: 150%;', '2021-2022 Forecasts'),
+      th(colspan = 2, style = 'text-align: center; border: 0; color:#A51E36; font-size: 150%;', '2022-2023 Forecasts'),
       th(colspan = 3, style = 'text-align: center; color:#002649;', 'Opening'),
       th(colspan = 3, style = 'text-align: center; color:#002649;', 'Closing')
     ),
@@ -89,7 +89,7 @@ topNriskFun <- function(dat, region, space, direction){
                               direction == "down" ~ "Closing Event")
 
   plot_title <- paste0("Top 20 ", direction_text, " Estimates for the ", space_text, " Space")
-  plot_subtitle <- paste0(region_text, ", 2021-2022")
+  plot_subtitle <- paste0(region_text, ", 2022-2023")
 
   if(direction == "up"){
     dat <- dat %>%
@@ -156,7 +156,7 @@ riskPlotFun <- function(dat){
 
   canvasClickFunction1 <- JS("function(event) {Shiny.onInputChange('canvasClicked1', [this.name, event.point.category]);}")
   country_name <- unique(dat$country_name)
-  plot_title <- paste0("Estimates by space for ", country_name, ", 2021-2022")
+  plot_title <- paste0("Estimates by space for ", country_name, ", 2022-2023")
 
   Plot1 <- dat %>%
     arrange(names) %>%
@@ -196,7 +196,7 @@ riskPlotFun <- function(dat){
 
 blankRiskPlotFun <- function(){
   blank_dat <- data.frame(outcomes = c("Associational", "Economic", "Electoral", "Governing", "Individual", "Informational"), prob_1 = 0)
-  plot_title <- "Estimates by space for [select country], 2021-2022"
+  plot_title <- "Estimates by space for [select country], 2022-2023"
   blank_dat%>%
     hchart(type = "bar", hcaes(x = outcomes, y = prob_1), name = "Estimated probabilities (%)", pointPadding = -0.1)%>%
     hc_xAxis(title = list(text = "", style = list(color = "#002649",

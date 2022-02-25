@@ -263,7 +263,7 @@ function(input, output, session) {
     #plotCIs <- input$plotCIs
     if(country_name != ""){
       dat_new <- country_characteristic_dat[country_characteristic_dat$country_name == country_name, ]
-      output$TimeSeriesPlot <-  renderHighchart({timeSeriesPlotFun(dat_new %>% filter(year >= 2011, year <= 2020), clickedSelected)})
+      output$TimeSeriesPlot <-  renderHighchart({timeSeriesPlotFun(dat_new %>% filter(year >= 2011), clickedSelected)})
     }
   })
 
@@ -423,7 +423,7 @@ function(input, output, session) {
 
     })
     output$downloadData <- downloadHandler(
-      filename = "DemSpaceForecasts-2021-2022.csv",
+      filename = "DemSpaceForecasts-2022-2023.csv",
       content = function(file) {
         write.csv(download_data(), file, row.names = FALSE)
       }
