@@ -1,0 +1,511 @@
+- country_name: Guyana
+  center_lon: -58.9760575
+  center_lat: 4.7953755
+  popUp_text_up_v2x_pubcorr: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
+    change in <b>V-Dem&apos;s Public Corruption Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 25%</b></span><br><b><span style="color:#777778">Stable:
+    60%</b></span><br><b><span style="color:#F37321">Closing Event: 19%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    60</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 75</b></span><br><b><span style="color:#002649"> Economic Level in 2020:
+    0.457</b></span><br><b><span style="color:#002649"> Economic Change 2018-2020:
+    0</b></span>'
+  popUp_text_up_v2x_freexp_altinf: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information
+    Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 2%</b></span><br><b><span
+    style="color:#777778">Stable: 87%</b></span><br><b><span style="color:#F37321">Closing
+    Event: 10%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
+    style="color:#002649">Risk Ranking: 115</b></span><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 68</b></span><br><b><span
+    style="color:#002649"> Informational Level in 2020: 0.83</b></span><br><b><span
+    style="color:#002649"> Informational Change 2018-2020: -0.001</b></span>'
+  popUp_text_up_v2x_veracc_osp: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
+    change in <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 7%</b></span><br><b><span style="color:#777778">Stable:
+    89%</b></span><br><b><span style="color:#F37321">Closing Event: 3%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    39</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 74</b></span><br><b><span style="color:#002649"> Electoral Level in 2020:
+    0.765</b></span><br><b><span style="color:#002649"> Electoral Change 2018-2020:
+    -0.071</b></span>'
+  popUp_text_up_v2xcs_ccsi: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in <b>V-Dem&apos;s Core Civil Society Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 2%</b></span><br><b><span style="color:#777778">Stable:
+    73%</b></span><br><b><span style="color:#F37321">Closing Event: 24%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    131</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 35</b></span><br><b><span style="color:#002649"> Associational Level
+    in 2020: 0.878</b></span><br><b><span style="color:#002649"> Associational Change
+    2018-2020: 0</b></span>'
+  popUp_text_up_v2x_horacc_osp: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 14%</b></span><br><b><span style="color:#777778">Stable:
+    83%</b></span><br><b><span style="color:#F37321">Closing Event: 2%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    71</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 135</b></span><br><b><span style="color:#002649"> Governing Level in
+    2020: 0.596</b></span><br><b><span style="color:#002649"> Governing Change 2018-2020:
+    +0.013</b></span>'
+  popUp_text_up_v2xcl_rol: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
+    change in <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 2%</b></span><br><b><span style="color:#777778">Stable:
+    85%</b></span><br><b><span style="color:#F37321">Closing Event: 12%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    126</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 71</b></span><br><b><span style="color:#002649"> Individual Level in
+    2020: 0.85</b></span><br><b><span style="color:#002649"> Individual Change 2018-2020:
+    +0.019</b></span>'
+  popUp_text_down_v2x_pubcorr: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
+    change in the <b>V-Dem&apos;s Public Corruption Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 19%</b></span><br><b><span style="color:#777778">Stable:
+    60%</b></span><br><b><span style="color:#0082BA">Opening Event: 25%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    75</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 60</b></span><br><b><span style="color:#002649"> Economic Level in 2020:
+    0.457</b></span><br><b><span style="color:#002649"> Economic Change 2019-2020:
+    0</b></span>'
+  popUp_text_down_v2x_freexp_altinf: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in the <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of
+    Information Index</b>)</span></h5><b><span style="color:#F37321">Closing Event:
+    10%</b></span><br><b><span style="color:#777778">Stable: 87%</b></span><br><b><span
+    style="color:#0082BA">Opening Event: 2%</b></span><br><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 68</b></span><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    115</b></span><br><b><span style="color:#002649"> Informational Level in 2020:
+    0.83</b></span><br><b><span style="color:#002649"> Informational Change 2019-2020:
+    -0.001</b></span>'
+  popUp_text_down_v2x_veracc_osp: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
+    change in the <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 3%</b></span><br><b><span style="color:#777778">Stable:
+    89%</b></span><br><b><span style="color:#0082BA">Opening Event: 7%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    74</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 39</b></span><br><b><span style="color:#002649"> Electoral Level in 2020:
+    0.765</b></span><br><b><span style="color:#002649"> Electoral Change 2019-2020:
+    -0.071</b></span>'
+  popUp_text_down_v2xcs_ccsi: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in the <b>V-Dem&apos;s Core Civil Society Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 24%</b></span><br><b><span style="color:#777778">Stable:
+    73%</b></span><br><b><span style="color:#0082BA">Opening Event: 2%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    35</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 131</b></span><br><b><span style="color:#002649"> Associational Level
+    in 2020: 0.878</b></span><br><b><span style="color:#002649"> Associational Change
+    2019-2020: 0</b></span>'
+  popUp_text_down_v2x_horacc_osp: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in the <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 2%</b></span><br><b><span style="color:#777778">Stable:
+    83%</b></span><br><b><span style="color:#0082BA">Opening Event: 14%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    135</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 71</b></span><br><b><span style="color:#002649"> Governing Level in 2020:
+    0.596</b></span><br><b><span style="color:#002649"> Governing Change 2019-2020:
+    +0.013</b></span>'
+  popUp_text_down_v2xcl_rol: '<h3><b>Guyana</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
+    change in the <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 12%</b></span><br><b><span style="color:#777778">Stable:
+    85%</b></span><br><b><span style="color:#0082BA">Opening Event: 2%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    71</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 126</b></span><br><b><span style="color:#002649"> Individual Level in
+    2020: 0.85</b></span><br><b><span style="color:#002649"> Individual Change 2019-2020:
+    +0.019</b></span>'
+- country_name: Suriname
+  center_lon: -55.9119939
+  center_lat: 4.1286414
+  popUp_text_up_v2x_pubcorr: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
+    change in <b>V-Dem&apos;s Public Corruption Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 7%</b></span><br><b><span style="color:#777778">Stable:
+    70%</b></span><br><b><span style="color:#F37321">Closing Event: 23%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    129</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 55</b></span><br><b><span style="color:#002649"> Economic Level in 2020:
+    0.567</b></span><br><b><span style="color:#002649"> Economic Change 2018-2020:
+    0</b></span>'
+  popUp_text_up_v2x_freexp_altinf: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information
+    Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><b><span
+    style="color:#777778">Stable: 97%</b></span><br><b><span style="color:#F37321">Closing
+    Event: 2%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
+    style="color:#002649">Risk Ranking: 145</b></span><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 134</b></span><br><b><span
+    style="color:#002649"> Informational Level in 2020: 0.859</b></span><br><b><span
+    style="color:#002649"> Informational Change 2018-2020: -0.017</b></span>'
+  popUp_text_up_v2x_veracc_osp: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
+    change in <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 0%</b></span><br><b><span style="color:#777778">Stable:
+    99%</b></span><br><b><span style="color:#F37321">Closing Event: 0%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    138</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 131</b></span><br><b><span style="color:#002649"> Electoral Level in
+    2020: 0.874</b></span><br><b><span style="color:#002649"> Electoral Change 2018-2020:
+    -0.011</b></span>'
+  popUp_text_up_v2xcs_ccsi: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in <b>V-Dem&apos;s Core Civil Society Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 1%</b></span><br><b><span style="color:#777778">Stable:
+    94%</b></span><br><b><span style="color:#F37321">Closing Event: 4%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    156</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 119</b></span><br><b><span style="color:#002649"> Associational Level
+    in 2020: 0.938</b></span><br><b><span style="color:#002649"> Associational Change
+    2018-2020: 0</b></span>'
+  popUp_text_up_v2x_horacc_osp: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 0%</b></span><br><b><span style="color:#777778">Stable:
+    96%</b></span><br><b><span style="color:#F37321">Closing Event: 2%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    145</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 134</b></span><br><b><span style="color:#002649"> Governing Level in
+    2020: 0.84</b></span><br><b><span style="color:#002649"> Governing Change 2018-2020:
+    +0.058</b></span>'
+  popUp_text_up_v2xcl_rol: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
+    change in <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 5%</b></span><br><b><span style="color:#777778">Stable:
+    62%</b></span><br><b><span style="color:#F37321">Closing Event: 34%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    113</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 24</b></span><br><b><span style="color:#002649"> Individual Level in
+    2020: 0.788</b></span><br><b><span style="color:#002649"> Individual Change 2018-2020:
+    -0.005</b></span>'
+  popUp_text_down_v2x_pubcorr: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
+    change in the <b>V-Dem&apos;s Public Corruption Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 23%</b></span><br><b><span style="color:#777778">Stable:
+    70%</b></span><br><b><span style="color:#0082BA">Opening Event: 7%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    55</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 129</b></span><br><b><span style="color:#002649"> Economic Level in 2020:
+    0.567</b></span><br><b><span style="color:#002649"> Economic Change 2019-2020:
+    0</b></span>'
+  popUp_text_down_v2x_freexp_altinf: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in the <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of
+    Information Index</b>)</span></h5><b><span style="color:#F37321">Closing Event:
+    2%</b></span><br><b><span style="color:#777778">Stable: 97%</b></span><br><b><span
+    style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 134</b></span><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    145</b></span><br><b><span style="color:#002649"> Informational Level in 2020:
+    0.859</b></span><br><b><span style="color:#002649"> Informational Change 2019-2020:
+    -0.017</b></span>'
+  popUp_text_down_v2x_veracc_osp: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
+    change in the <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 0%</b></span><br><b><span style="color:#777778">Stable:
+    99%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    131</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 138</b></span><br><b><span style="color:#002649"> Electoral Level in
+    2020: 0.874</b></span><br><b><span style="color:#002649"> Electoral Change 2019-2020:
+    -0.011</b></span>'
+  popUp_text_down_v2xcs_ccsi: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in the <b>V-Dem&apos;s Core Civil Society Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 4%</b></span><br><b><span style="color:#777778">Stable:
+    94%</b></span><br><b><span style="color:#0082BA">Opening Event: 1%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    119</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 156</b></span><br><b><span style="color:#002649"> Associational Level
+    in 2020: 0.938</b></span><br><b><span style="color:#002649"> Associational Change
+    2019-2020: 0</b></span>'
+  popUp_text_down_v2x_horacc_osp: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in the <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 2%</b></span><br><b><span style="color:#777778">Stable:
+    96%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    134</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 145</b></span><br><b><span style="color:#002649"> Governing Level in
+    2020: 0.84</b></span><br><b><span style="color:#002649"> Governing Change 2019-2020:
+    +0.058</b></span>'
+  popUp_text_down_v2xcl_rol: '<h3><b>Suriname</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
+    change in the <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 34%</b></span><br><b><span style="color:#777778">Stable:
+    62%</b></span><br><b><span style="color:#0082BA">Opening Event: 5%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    24</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 113</b></span><br><b><span style="color:#002649"> Individual Level in
+    2020: 0.788</b></span><br><b><span style="color:#002649"> Individual Change 2019-2020:
+    -0.005</b></span>'
+- country_name: Trinidad and Tobago
+  center_lon: -61.244835
+  center_lat: 10.473046
+  popUp_text_up_v2x_pubcorr: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
+    change in <b>V-Dem&apos;s Public Corruption Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 2%</b></span><br><b><span style="color:#777778">Stable:
+    87%</b></span><br><b><span style="color:#F37321">Closing Event: 10%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    144</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 106</b></span><br><b><span style="color:#002649"> Economic Level in 2020:
+    0.867</b></span><br><b><span style="color:#002649"> Economic Change 2018-2020:
+    0</b></span>'
+  popUp_text_up_v2x_freexp_altinf: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information
+    Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><b><span
+    style="color:#777778">Stable: 99%</b></span><br><b><span style="color:#F37321">Closing
+    Event: 0%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
+    style="color:#002649">Risk Ranking: 165</b></span><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 162</b></span><br><b><span
+    style="color:#002649"> Informational Level in 2020: 0.872</b></span><br><b><span
+    style="color:#002649"> Informational Change 2018-2020: +0.006</b></span>'
+  popUp_text_up_v2x_veracc_osp: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
+    change in <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 0%</b></span><br><b><span style="color:#777778">Stable:
+    100%</b></span><br><b><span style="color:#F37321">Closing Event: 0%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    162</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 162</b></span><br><b><span style="color:#002649"> Electoral Level in
+    2020: 0.885</b></span><br><b><span style="color:#002649"> Electoral Change 2018-2020:
+    -0.002</b></span>'
+  popUp_text_up_v2xcs_ccsi: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in <b>V-Dem&apos;s Core Civil Society Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 0%</b></span><br><b><span style="color:#777778">Stable:
+    97%</b></span><br><b><span style="color:#F37321">Closing Event: 2%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    167</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 148</b></span><br><b><span style="color:#002649"> Associational Level
+    in 2020: 0.898</b></span><br><b><span style="color:#002649"> Associational Change
+    2018-2020: -0.005</b></span>'
+  popUp_text_up_v2x_horacc_osp: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 0%</b></span><br><b><span style="color:#777778">Stable:
+    99%</b></span><br><b><span style="color:#F37321">Closing Event: 0%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    152</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 165</b></span><br><b><span style="color:#002649"> Governing Level in
+    2020: 0.905</b></span><br><b><span style="color:#002649"> Governing Change 2018-2020:
+    +0.001</b></span>'
+  popUp_text_up_v2xcl_rol: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
+    change in <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 0%</b></span><br><b><span style="color:#777778">Stable:
+    99%</b></span><br><b><span style="color:#F37321">Closing Event: 0%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    152</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 159</b></span><br><b><span style="color:#002649"> Individual Level in
+    2020: 0.882</b></span><br><b><span style="color:#002649"> Individual Change 2018-2020:
+    -0.017</b></span>'
+  popUp_text_down_v2x_pubcorr: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
+    change in the <b>V-Dem&apos;s Public Corruption Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 10%</b></span><br><b><span style="color:#777778">Stable:
+    87%</b></span><br><b><span style="color:#0082BA">Opening Event: 2%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    106</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 144</b></span><br><b><span style="color:#002649"> Economic Level in 2020:
+    0.867</b></span><br><b><span style="color:#002649"> Economic Change 2019-2020:
+    0</b></span>'
+  popUp_text_down_v2x_freexp_altinf: '<h3><b>Trinidad and Tobago</b></h3><h5><span
+    style="color:#002649">Event probabilities for the <b>Informational Space</b> <span
+    style="font-size: 80%">(+/-0.05 change in the <b>V-Dem&apos;s Freedom of Expression
+    and Alternative Sources of Information Index</b>)</span></h5><b><span style="color:#F37321">Closing
+    Event: 0%</b></span><br><b><span style="color:#777778">Stable: 99%</b></span><br><b><span
+    style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 162</b></span><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    165</b></span><br><b><span style="color:#002649"> Informational Level in 2020:
+    0.872</b></span><br><b><span style="color:#002649"> Informational Change 2019-2020:
+    +0.006</b></span>'
+  popUp_text_down_v2x_veracc_osp: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
+    change in the <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 0%</b></span><br><b><span style="color:#777778">Stable:
+    100%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    162</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 162</b></span><br><b><span style="color:#002649"> Electoral Level in
+    2020: 0.885</b></span><br><b><span style="color:#002649"> Electoral Change 2019-2020:
+    -0.002</b></span>'
+  popUp_text_down_v2xcs_ccsi: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in the <b>V-Dem&apos;s Core Civil Society Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 2%</b></span><br><b><span style="color:#777778">Stable:
+    97%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    148</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 167</b></span><br><b><span style="color:#002649"> Associational Level
+    in 2020: 0.898</b></span><br><b><span style="color:#002649"> Associational Change
+    2019-2020: -0.005</b></span>'
+  popUp_text_down_v2x_horacc_osp: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in the <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 0%</b></span><br><b><span style="color:#777778">Stable:
+    99%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    165</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 152</b></span><br><b><span style="color:#002649"> Governing Level in
+    2020: 0.905</b></span><br><b><span style="color:#002649"> Governing Change 2019-2020:
+    +0.001</b></span>'
+  popUp_text_down_v2xcl_rol: '<h3><b>Trinidad and Tobago</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
+    change in the <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 0%</b></span><br><b><span style="color:#777778">Stable:
+    99%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    159</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 152</b></span><br><b><span style="color:#002649"> Individual Level in
+    2020: 0.882</b></span><br><b><span style="color:#002649"> Individual Change 2019-2020:
+    -0.017</b></span>'
+- country_name: Venezuela
+  center_lon: -66.1735541
+  center_lat: 7.1208278
+  popUp_text_up_v2x_pubcorr: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
+    change in <b>V-Dem&apos;s Public Corruption Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 29%</b></span><br><b><span style="color:#777778">Stable:
+    68%</b></span><br><b><span style="color:#F37321">Closing Event: 1%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    48</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 158</b></span><br><b><span style="color:#002649"> Economic Level in 2020:
+    0.014</b></span><br><b><span style="color:#002649"> Economic Change 2018-2020:
+    -0.009</b></span>'
+  popUp_text_up_v2x_freexp_altinf: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information
+    Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 30%</b></span><br><b><span
+    style="color:#777778">Stable: 48%</b></span><br><b><span style="color:#F37321">Closing
+    Event: 31%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
+    style="color:#002649">Risk Ranking: 21</b></span><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 23</b></span><br><b><span
+    style="color:#002649"> Informational Level in 2020: 0.286</b></span><br><b><span
+    style="color:#002649"> Informational Change 2018-2020: +0.025</b></span>'
+  popUp_text_up_v2x_veracc_osp: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
+    change in <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 27%</b></span><br><b><span style="color:#777778">Stable:
+    55%</b></span><br><b><span style="color:#F37321">Closing Event: 23%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    8</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 6</b></span><br><b><span style="color:#002649"> Electoral Level in 2020:
+    0.392</b></span><br><b><span style="color:#002649"> Electoral Change 2018-2020:
+    -0.013</b></span>'
+  popUp_text_up_v2xcs_ccsi: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in <b>V-Dem&apos;s Core Civil Society Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 31%</b></span><br><b><span style="color:#777778">Stable:
+    57%</b></span><br><b><span style="color:#F37321">Closing Event: 16%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    15</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 63</b></span><br><b><span style="color:#002649"> Associational Level
+    in 2020: 0.294</b></span><br><b><span style="color:#002649"> Associational Change
+    2018-2020: -0.022</b></span>'
+  popUp_text_up_v2x_horacc_osp: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 40%</b></span><br><b><span style="color:#777778">Stable:
+    38%</b></span><br><b><span style="color:#F37321">Closing Event: 35%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    7</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 11</b></span><br><b><span style="color:#002649"> Governing Level in 2020:
+    0.19</b></span><br><b><span style="color:#002649"> Governing Change 2018-2020:
+    -0.081</b></span>'
+  popUp_text_up_v2xcl_rol: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
+    change in <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 36%</b></span><br><b><span style="color:#777778">Stable:
+    38%</b></span><br><b><span style="color:#F37321">Closing Event: 38%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    10</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 14</b></span><br><b><span style="color:#002649"> Individual Level in
+    2020: 0.229</b></span><br><b><span style="color:#002649"> Individual Change 2018-2020:
+    +0.01</b></span>'
+  popUp_text_down_v2x_pubcorr: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
+    change in the <b>V-Dem&apos;s Public Corruption Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 1%</b></span><br><b><span style="color:#777778">Stable:
+    68%</b></span><br><b><span style="color:#0082BA">Opening Event: 29%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    158</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 48</b></span><br><b><span style="color:#002649"> Economic Level in 2020:
+    0.014</b></span><br><b><span style="color:#002649"> Economic Change 2019-2020:
+    -0.009</b></span>'
+  popUp_text_down_v2x_freexp_altinf: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in the <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of
+    Information Index</b>)</span></h5><b><span style="color:#F37321">Closing Event:
+    31%</b></span><br><b><span style="color:#777778">Stable: 48%</b></span><br><b><span
+    style="color:#0082BA">Opening Event: 30%</b></span><br><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 23</b></span><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    21</b></span><br><b><span style="color:#002649"> Informational Level in 2020:
+    0.286</b></span><br><b><span style="color:#002649"> Informational Change 2019-2020:
+    +0.025</b></span>'
+  popUp_text_down_v2x_veracc_osp: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
+    change in the <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 23%</b></span><br><b><span style="color:#777778">Stable:
+    55%</b></span><br><b><span style="color:#0082BA">Opening Event: 27%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    6</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 8</b></span><br><b><span style="color:#002649"> Electoral Level in 2020:
+    0.392</b></span><br><b><span style="color:#002649"> Electoral Change 2019-2020:
+    -0.013</b></span>'
+  popUp_text_down_v2xcs_ccsi: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in the <b>V-Dem&apos;s Core Civil Society Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 16%</b></span><br><b><span style="color:#777778">Stable:
+    57%</b></span><br><b><span style="color:#0082BA">Opening Event: 31%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    63</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 15</b></span><br><b><span style="color:#002649"> Associational Level
+    in 2020: 0.294</b></span><br><b><span style="color:#002649"> Associational Change
+    2019-2020: -0.022</b></span>'
+  popUp_text_down_v2x_horacc_osp: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in the <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 35%</b></span><br><b><span style="color:#777778">Stable:
+    38%</b></span><br><b><span style="color:#0082BA">Opening Event: 40%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    11</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 7</b></span><br><b><span style="color:#002649"> Governing Level in 2020:
+    0.19</b></span><br><b><span style="color:#002649"> Governing Change 2019-2020:
+    -0.081</b></span>'
+  popUp_text_down_v2xcl_rol: '<h3><b>Venezuela</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
+    change in the <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 38%</b></span><br><b><span style="color:#777778">Stable:
+    38%</b></span><br><b><span style="color:#0082BA">Opening Event: 36%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    14</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 10</b></span><br><b><span style="color:#002649"> Individual Level in
+    2020: 0.229</b></span><br><b><span style="color:#002649"> Individual Change 2019-2020:
+    +0.01</b></span>'
+- country_name: .na.character
+  center_lon: -172.1559602
+  center_lat: -13.7629065
+  popUp_text_up_v2x_pubcorr: .na.character
+  popUp_text_up_v2x_freexp_altinf: .na.character
+  popUp_text_up_v2x_veracc_osp: .na.character
+  popUp_text_up_v2xcs_ccsi: .na.character
+  popUp_text_up_v2x_horacc_osp: .na.character
+  popUp_text_up_v2xcl_rol: .na.character
+  popUp_text_down_v2x_pubcorr: .na.character
+  popUp_text_down_v2x_freexp_altinf: .na.character
+  popUp_text_down_v2x_veracc_osp: .na.character
+  popUp_text_down_v2xcs_ccsi: .na.character
+  popUp_text_down_v2x_horacc_osp: .na.character
+  popUp_text_down_v2xcl_rol: .na.character
