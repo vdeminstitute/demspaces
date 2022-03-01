@@ -5,7 +5,7 @@
 demspaces-dashboard.tar.gz: global.r server.r ui.r dash-data
 	tar --exclude='data-raw' --exclude='.DS_Store' --exclude='Makefile' \
 	--exclude='demspaces-dashboard.tar.gz' --exclude='README.md' \
-	--exclude='setup.r' \
+	--exclude='setup.r' --exclude='startup.r' \
 	-zcvf demspaces-dashboard.tar.gz .
 
 # data-raw/update-data.R writes multiple outputs. I want to track all outputs,

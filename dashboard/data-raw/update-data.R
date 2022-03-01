@@ -200,7 +200,7 @@ country_characteristic_dat <- dvs %>%
                 v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2x_freexp_altinf, v2x_horacc_osp, v2x_pubcorr) %>%
   filter(year >= (max(dvs$year) - 9))
 
-write_rds(country_characteristic_dat, "data/country_characteristic_dat.RDS")
+write_rds(country_characteristic_dat, "data/country_characteristic_dat.rds")
 
 # Keep a signature of key stats for git diff
 # The .rds version will always show as changed on git.
