@@ -13,20 +13,22 @@ library(here)
 library(sf)
 
 
+
+
 # Load data ---------------------------------------------------------------
 
 map_data <- readRDS("data/map_dat.rds")
 map_color_data <- readRDS("data/map_color_data.rds")
 
-country_characteristic_dat <- readRDS("data/country_characteristic_dat.rds")
-countryNamesText <- c("", sort(unique(as.character(country_characteristic_dat$country_name))))
+time_series_dat <- readRDS("data/time_series_dat.rds")
+countryNamesText <- c("", sort(unique(as.character(time_series_dat$country_name))))
 
 prob1_dat <- readRDS("data/prob1_dat.rds")
 table_dat <- readRDS("data/table_dat.rds")
 
 
 # Year range for V-Dem indicator plot at bottom right
-YEAR_RANGE <- sort(unique(country_characteristic_dat$year))
+YEAR_RANGE <- sort(unique(time_series_dat$year))
 
 
 data_table_format <- htmltools::withTags(table(
@@ -50,15 +52,24 @@ data_table_format <- htmltools::withTags(table(
   )
 ))
 
+
 ## Set colors
-ts_colors <- RColorBrewer::brewer.pal(7, "Set1")
+ts_colors <- as.list(RColorBrewer::brewer.pal(7, "Set1")[-6])
+names(ts_colors) <- c("v2xcs_ccsi", "v2x_pubcorr", "v2x_veracc_osp",
+                      "v2x_horacc_osp", "v2xcl_rol", "v2x_freexp_altinf")
 plotsFontSize <- "13px"
-v2xcs_ccsi_color <- ts_colors[1]  #"#AA4643"
-v2x_pubcorr_color <- ts_colors[2] #"#BC449E"
-v2x_veracc_osp_color <- ts_colors[3] #"#4572A7"
-v2x_horacc_osp_color <- ts_colors[4]#"#3D96AE"
-v2xcl_rol_color <- ts_colors[5] #"#80699B"
-v2x_freexp_altinf_color <- ts_colors[7] #"#89A54E"
+
+
+# demspacesR::spaces %>% select(Space, Indicator) %>% dput()
+spaces <- structure(list(
+    Space = c("Electoral", "Associational", "Individual", "Informational",
+              "Governing", "Economic"),
+    Indicator = c("v2x_veracc_osp", "v2xcs_ccsi", "v2xcl_rol",
+                  "v2x_freexp_altinf", "v2x_horacc_osp", "v2x_pubcorr")),
+  row.names = c(NA, -6L),
+  class = c("tbl_df", "tbl", "data.frame"))
+
+
 
 
 # Top N risk plot function ------------------------------------------------
@@ -226,12 +237,12 @@ blankRiskPlotFun <- function(){
 #   Bottom right plot
 #
 
-timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
+timeSeriesPlotFun <- function(dat, to_plot, CIs = FALSE) {
   blank_dat <- data.frame(year = YEAR_RANGE, Value = NA)
   country_name <- unique(dat$country_name)
   plot_title <- paste0("V-Dem index scores for ", country_name)
 
-  PlotHC <- blank_dat%>%
+  PlotHC <- blank_dat %>%
     hchart(type = "line", hcaes(x = year, y = Value), name = "blank")%>%
     hc_yAxis(min = 0, max = 1,
              title = list(text = "",
@@ -252,104 +263,50 @@ timeSeriesPlotFun <- function(dat, to_plot, CIs = F){
                                         fontWeight = "bold"), rotation = "-45"))%>%
     hc_plotOptions(series = list(marker = list( enabled = FALSE, radius = 1.2, symbol = "circle"), states = list(hover = list (enabled = TRUE, radius = 3))))%>%
     hc_tooltip(shared = TRUE, crosshairs = TRUE) %>%
-    hc_title(text = plot_title,
-             margin = 20, align = "center",
-             style = list(color = "#002649",
-                          fontSize = "9pt",
-                          fontWeight = "bold")) #%>%
+    hc_title(
+      text = plot_title, margin = 20, align = "center",
+      style = list(color = "#002649", fontSize = "9pt", fontWeight = "bold")
+    ) #%>%
   # hc_exporting(enabled = TRUE,
   #              buttons = list(contextButton =
   #                               list(menuItems = c("downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "downloadCSV"))))
 
-  if("v2xcs_ccsi" %in% to_plot){
-    PlotHC <- PlotHC%>%
-      hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2xcs_ccsi),
-                    name = "<b>Asociational Space </b><br> <span style='font-size: 85%'> Core Civil Society Index", color = v2xcs_ccsi_color, id = "p2")
-    if(CIs){
+  ind_label <- list(
+    v2x_veracc_osp = "Vertical Accountability Index",
+    v2xcs_ccsi = "Core Civil Society Index",
+    v2xcl_rol = "Equality Before the Law &amp; Ind Liberty Index",
+    v2x_freexp_altinf = "Freedom of Expression &amp; Alt Info Index",
+    v2x_horacc_osp = "Horizontal Accountability Index",
+    v2x_pubcorr = "Public Corruption Index"
+  )
+
+  if (length(to_plot) > 0) {
+    for (vv in to_plot) {
+      id <- paste0("p", match(vv, spaces$Indicator))
+      space_name <- spaces$Space[match(vv, spaces$Indicator)]
+      series_name <- paste0("<b>", space_name, " Space </b><br> <span style='font-size: 85%'> ", ind_label[[vv]])
+      # Space series
+
       PlotHC <- PlotHC%>%
-        hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2xcs_ccsi_codelow, high = v2xcs_ccsi_codehigh),
-                      name = "Asociational CI", fillOpacity = 0.15, lineWidth = 0, color = v2xcs_ccsi_color, linkedTo = "p2")
+        hc_add_series(data = dat, type = "line", hcaes(x = year, y = !!vv),
+                      name = series_name, color = ts_colors[[vv]], id = id)
+      # Check if there were any past observed changes
+      # up_col   <- paste0(vv, "_up")
+      # down_col <- paste0(vv, "_down")
+      # PlotHC <- PlotHC %>%
+      #   hc_add_series(data = dat,
+      #                 type = "line", hcaes(x = year, y = !!up_col),
+      #                 color = "green", name = "", id = "Up")
+
+      if(CIs){
+        stop("AB 2022-03-02: I haven't fixed this yet after refactoring the plot code to use a loop")
+        PlotHC <- PlotHC %>%
+          hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2xcs_ccsi_codelow, high = v2xcs_ccsi_codehigh),
+                        name = "Asociational CI", fillOpacity = 0.15, lineWidth = 0, color = ts_colors[[vv]], linkedTo = id)
+      }
     }
-  }
-  if(!("v2xcs_ccsi" %in% to_plot)){
-    PlotHC <- PlotHC%>%
-      hc_rm_series(name = c("<b>Asociational Space </b><br> <span style='font-size: 85%'> Core Civil Society Index", "Asociational CIs"))
   }
 
-  if("v2x_pubcorr" %in% to_plot){
-    PlotHC <- PlotHC%>%
-      hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_pubcorr),
-                    name = "<b>Economic Space </b><br> <span style='font-size: 85%'> Public Corruption Index", color = v2x_pubcorr_color, id = "p7")
-    if(CIs){
-      PlotHC <- PlotHC%>%
-        hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_pubcorr_codelow, high = v2x_pubcorr_codehigh),
-                      name = "Economic CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_pubcorr_color, linkedTo = "p7")
-    }
-  }
-  if(!("v2x_pubcorr" %in% to_plot)){
-    PlotHC <- PlotHC%>%
-      hc_rm_series(name = c("<b>Economic Space </b><br> <span style='font-size: 85%'> Public Corruption Index", "Economic CIs"))
-  }
-
-  if("v2x_veracc_osp" %in% to_plot){
-    PlotHC <- PlotHC%>%
-      hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_veracc_osp),
-                    name = "<b>Electoral Space </b><br> <span style='font-size: 85%'> Vertical Accountability Index", color = v2x_veracc_osp_color, id = "p8")
-    if(CIs){
-      PlotHC <- PlotHC%>%
-        hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_veracc_osp_codelow, high = v2x_veracc_osp_codehigh),
-                      name = "Electoral CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_veracc_osp_color, linkedTo = "p8")
-    }
-  }
-  if(!("v2x_veracc_osp" %in% to_plot)){
-    PlotHC <- PlotHC%>%
-      hc_rm_series(name = c("<b>Electoral Space </b><br> <span style='font-size: 85%'> Vertical Accountability Index", "Electoral CIs"))
-  }
-
-  if("v2x_horacc_osp" %in% to_plot){
-    PlotHC <- PlotHC%>%
-      hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_horacc_osp),
-                    name = "<b>Governing Space </b><br> <span style='font-size: 85%'> Horizontal Accountability Index", color = v2x_horacc_osp_color, id = "p9")
-    if(CIs){
-      PlotHC <- PlotHC%>%
-        hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_horacc_osp_codelow, high = v2x_horacc_osp_codehigh),
-                      name = "Governing CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_horacc_osp_color, linkedTo = "p9")
-    }
-  }
-  if(!("v2x_horacc_osp" %in% to_plot)){
-    PlotHC <- PlotHC%>%
-      hc_rm_series(name = c("<b>Governing Space </b><br> <span style='font-size: 85%'> Horizontal Accountability Index", "Governing CIs"))
-  }
-
-  if("v2xcl_rol" %in% to_plot){
-    PlotHC <- PlotHC%>%
-      hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2xcl_rol),
-                    name = "<b>Individual Space </b><br> <span style='font-size: 85%'> Equality Before the Law &amp; Ind Liberty Index", color = v2xcl_rol_color, id = "p6")
-    if(CIs){
-      PlotHC <- PlotHC%>%
-        hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2xcl_rol_codelow, high = v2xcl_rol_codehigh),
-                      name = "Individual CI", fillOpacity = 0.15, lineWidth = 0, color = v2xcl_rol_color, linkedTo = "p6")
-    }
-  }
-  if(!("v2xcl_rol" %in% to_plot)){
-    PlotHC <- PlotHC%>%
-      hc_rm_series(name = c("<b>Individual Space </b><br> <span style='font-size: 85%'> Equality Before the Law &amp; Ind Liberty Index", "Individual CIs"))
-  }
-
-  if("v2x_freexp_altinf" %in% to_plot){
-    PlotHC <- PlotHC%>%
-      hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_freexp_altinf),
-                    name = "<b>Informatonal Space </b><br> <span style='font-size: 85%'> Freedom of Expression &amp; Alt Info Index", color = v2x_freexp_altinf_color, id = "p4")
-    if(CIs){
-      PlotHC <- PlotHC%>%
-        hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_freexp_altinf_codelow, high = v2x_freexp_altinf_codehigh),
-                      name = "Informatonal CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_freexp_altinf_color, linkedTo = "p4")
-    }
-  }
-  if(!("v2x_freexp_altinf" %in% to_plot)){
-    PlotHC <- PlotHC%>%
-      hc_rm_series(name = c("<b>Informatonal Space </b><br> <span style='font-size: 85%'> Freedom of Expression &amp; Alt Info Index", "Informatonal CIs"))
-  }
   PlotHC
 }
 
