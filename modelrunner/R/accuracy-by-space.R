@@ -23,6 +23,6 @@ tbl <- stats %>%
   pivot_wider(names_from = "Measure", values_from = "Value")
 
 tbl %>%
-  knitr::kable(digits = 3) %>%
+  knitr::kable(digits = 2) %>%
   writeLines(here::here("modelrunner/output/accuracy-by-space.md"))
 

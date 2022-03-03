@@ -12,14 +12,17 @@
 
 # Config settings
 #
+# Years from which to walk-forward 2-years-ahead forecasts;
+# UPDATE: last year should probably be the end year in the data
+YEARS <- 2005:2021
 # How many parallel workers to use?
 N_WORKERS <- future::availableCores() - 1L
 # Redo existing chunks? (FALSE means progress for an interrupted run will be
 # used, not re-done)
 OVERWRITE = FALSE
-# Years from which to walk-forward 2-years-ahead forecasts;
-# UPDATE: last year should probably be the end year in the data
-YEARS <- 2005:2021
+# Remove artifacts after run or leave in place? (This interacts with
+# OVERWRITE)
+CLEANUP = FALSE
 
 # TODO: i don't think this works correctly with parallel workers; and in any
 # case maybe not a good idea
@@ -91,14 +94,16 @@ model_grid <- model_grid[, c("id", "outcome", "year", "chunk", "outfile", "model
 mg <- model_grid[, c("id", "outcome", "year")]
 write_csv(mg, "output/rf-model-grid.csv")
 
-if (!OVERWRITE) {
-  done   <- dir(chunk_dir, full.names = TRUE)
-  model_grid <- model_grid[!model_grid$outfile %in% done, ]
-}
-
 # Record total model N for progress messages
 n_models <- nrow(mg)
 lgr$info("%s total models", n_models)
+
+if (!OVERWRITE) {
+  done   <- dir(chunk_dir, full.names = TRUE)
+  model_grid <- model_grid[!model_grid$outfile %in% done, ]
+
+  lgr$info("Found and re-using %s models; %s left to run", length(done), nrow(model_grid))
+}
 
 model_grid <- foreach(i = 1:nrow(model_grid),
                       .combine = bind_rows,
@@ -126,7 +131,7 @@ model_grid <- foreach(i = 1:nrow(model_grid),
     filter(year == max(year))
 
   mdl      <- ds_rf(outcome_i, train_data, num.threads = 1,
-                    num.trees = 900, min.node.size = 1)
+                    num.trees = 900, min.node.size = 1, mtry = 15)
   fcasts_i <- predict(mdl, new_data = test_data)
 
   runtime <- round((proc.time() - t0)["elapsed"])
@@ -161,9 +166,11 @@ write_csv(fcasts_y, sprintf("output/fcasts-rf-%s.csv", VERSION))
 write_csv(score,    sprintf("output/fcasts-rf-%s-score-summary.csv", VERSION))
 
 # Clean up chunks so that future runs will work correctly
-unlink(chunk_dir, recursive = TRUE)
-unlink(model_dir, recursive = TRUE)
-unlink("output/rf-model-grid.csv")
+if (CLEANUP) {
+  unlink(chunk_dir, recursive = TRUE)
+  unlink(model_dir, recursive = TRUE)
+  unlink("output/rf-model-grid.csv")
+}
 
 # Log finish
 score <- tidyr::unite(score, Measure, Measure, Direction)
