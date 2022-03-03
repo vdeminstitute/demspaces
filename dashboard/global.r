@@ -54,9 +54,9 @@ data_table_format <- htmltools::withTags(table(
 
 
 ## Set colors
-ts_colors <- as.list(RColorBrewer::brewer.pal(7, "Set1")[-6])
-names(ts_colors) <- c("v2xcs_ccsi", "v2x_pubcorr", "v2x_veracc_osp",
-                      "v2x_horacc_osp", "v2xcl_rol", "v2x_freexp_altinf")
+space_colors <- as.list(RColorBrewer::brewer.pal(7, "Set1")[-6])
+names(space_colors) <- c("v2xcs_ccsi", "v2x_pubcorr", "v2x_veracc_osp",
+                         "v2x_horacc_osp", "v2xcl_rol", "v2x_freexp_altinf")
 plotsFontSize <- "13px"
 
 
@@ -237,7 +237,9 @@ blankRiskPlotFun <- function(){
 #   Bottom right plot
 #
 
-timeSeriesPlotFun <- function(dat, to_plot, CIs = FALSE) {
+#' @param changes Highlight past opening/closing events?
+#'
+timeSeriesPlotFun <- function(dat, to_plot, CIs = FALSE, changes = FALSE) {
   blank_dat <- data.frame(year = YEAR_RANGE, Value = NA)
   country_name <- unique(dat$country_name)
   plot_title <- paste0("V-Dem index scores for ", country_name)
@@ -282,27 +284,37 @@ timeSeriesPlotFun <- function(dat, to_plot, CIs = FALSE) {
 
   if (length(to_plot) > 0) {
     for (vv in to_plot) {
+
       id <- paste0("p", match(vv, spaces$Indicator))
       space_name <- spaces$Space[match(vv, spaces$Indicator)]
       series_name <- paste0("<b>", space_name, " Space </b><br> <span style='font-size: 85%'> ", ind_label[[vv]])
-      # Space series
 
+      # Space series
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "line", hcaes(x = year, y = !!vv),
-                      name = series_name, color = ts_colors[[vv]], id = id)
+                      name = series_name, color = space_colors[[vv]], id = id)
+
       # Check if there were any past observed changes
-      # up_col   <- paste0(vv, "_up")
-      # down_col <- paste0(vv, "_down")
-      # PlotHC <- PlotHC %>%
-      #   hc_add_series(data = dat,
-      #                 type = "line", hcaes(x = year, y = !!up_col),
-      #                 color = "green", name = "", id = "Up")
+      if (changes) {
+        up_col   <- paste0(vv, "_up")
+        down_col <- paste0(vv, "_down")
+        PlotHC <- PlotHC %>%
+          hc_add_series(data = dat, type = "line", hcaes(x = year, y = !!up_col),
+                        color = space_colors[[vv]], name = "", linkedTo = id,
+                        lineWidth = 8, showInLegend = FALSE,  enableMouseTracking = FALSE,
+                        opacity = 0.4)
+        PlotHC <- PlotHC %>%
+          hc_add_series(data = dat, type = "line", hcaes(x = year, y = !!down_col),
+                        color = space_colors[[vv]], name = "", linkedTo = id,
+                        lineWidth = 8, showInLegend = FALSE,  enableMouseTracking = FALSE,
+                        opacity = 0.3)
+      }
 
       if(CIs){
         stop("AB 2022-03-02: I haven't fixed this yet after refactoring the plot code to use a loop")
         PlotHC <- PlotHC %>%
           hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2xcs_ccsi_codelow, high = v2xcs_ccsi_codehigh),
-                        name = "Asociational CI", fillOpacity = 0.15, lineWidth = 0, color = ts_colors[[vv]], linkedTo = id)
+                        name = "Asociational CI", fillOpacity = 0.15, lineWidth = 0, color = space_colors[[vv]], linkedTo = id)
       }
     }
   }

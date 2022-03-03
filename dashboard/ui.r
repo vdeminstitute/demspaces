@@ -59,8 +59,15 @@ navbarPage(
         )
       )),
 
+    # Global view (top half of dashboard with map) ----
+
     fluidRow(
-      column(3,
+      column(12, style = "background-color:#F5F5F5;",
+             h2(tags$span("Global View")))
+    ),
+
+    fluidRow(
+      column(2,
              radioButtons("direction", h4("Type"),
                           choiceNames = list(tags$span(style = "font-size: 100%; font-weight:bold; color: #F37321; ", "Closing Event"),
                                              tags$span(style = "font-size: 100%; font-weight:bold; color: #0082BA; ", "Opening Event")),
@@ -124,10 +131,11 @@ navbarPage(
       )
     ),
 
-    hr(),
-
+    # Country view (bottom half of dashboard) ----
 
     fluidRow(
+      column(12, style = "background-color:#F5F5F5;",
+             h2(tags$span("Country View"))),
       column(12,
              h3(tags$span(#style = "font-size:85%",
                "Select a country below or from the map above for case-specific information."))),
@@ -135,8 +143,6 @@ navbarPage(
              selectInput("countrySelect", choices = countryNamesText,
                          label = "", selectize = TRUE))
     ),
-
-    # Bottom half of dashboard ----
 
     fluidRow(
       column(5, id = "hcbarplotID1",
@@ -146,12 +152,12 @@ navbarPage(
              highchartOutput("TimeSeriesPlot", height = "520px"), #br(),
              checkboxGroupInput("checkGroup", label = h4(""), inline = T,
                                 choiceNames = list(
-                                  tags$span("Associational", style = paste("color:", v2xcs_ccsi_color, "; font-weight: bold; font-size:80%;", sep = "")),
-                                  tags$span("Economic", style = paste("color:", v2x_pubcorr_color, "; font-weight: bold; font-size:80%;", sep = "")),
-                                  tags$span("Electoral", style = paste("color:", v2x_veracc_osp_color, "; font-weight: bold; font-size:80%;", sep = "")),
-                                  tags$span("Governing", style = paste("color:", v2x_horacc_osp_color, "; font-weight: bold; font-size:80%;", sep = "")),
-                                  tags$span("Individual", style = paste("color:", v2xcl_rol_color, "; font-weight: bold; font-size:80%;", sep = "")),
-                                  tags$span("Informational", style = paste("color:", v2x_freexp_altinf_color, "; font-weight: bold; font-size:80%;", sep = ""))),
+                                  tags$span("Associational", style = paste("color:", space_colors[["v2xcs_ccsi"]], "; font-weight: bold; font-size:80%;", sep = "")),
+                                  tags$span("Economic", style = paste("color:", space_colors[["v2x_pubcorr"]], "; font-weight: bold; font-size:80%;", sep = "")),
+                                  tags$span("Electoral", style = paste("color:", space_colors[["v2x_veracc_osp"]], "; font-weight: bold; font-size:80%;", sep = "")),
+                                  tags$span("Governing", style = paste("color:", space_colors[["v2x_horacc_osp"]], "; font-weight: bold; font-size:80%;", sep = "")),
+                                  tags$span("Individual", style = paste("color:", space_colors[["v2xcl_rol"]], "; font-weight: bold; font-size:80%;", sep = "")),
+                                  tags$span("Informational", style = paste("color:", space_colors[["v2x_freexp_altinf"]], "; font-weight: bold; font-size:80%;", sep = ""))),
                                 choiceValues = c(
                                   "v2xcs_ccsi",
                                   "v2x_pubcorr",
@@ -159,6 +165,8 @@ navbarPage(
                                   "v2x_horacc_osp",
                                   "v2xcl_rol",
                                   "v2x_freexp_altinf")),
+             # Highlight past opening/closing changes in the time series?
+             checkboxInput("tsPlotShowChanges", label = "Highlight past opening/closing events"),
              h4(tags$span(style = "font-size: 75%;", "The time-series chart shows a country's scores for the V-Dem indices we use to capture each space.")))
     )),
 

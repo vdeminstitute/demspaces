@@ -176,12 +176,12 @@ function(input, output, session) {
   observeEvent(c(input$space), {
     updateCheckboxGroupInput(session, "checkGroup", inline = T,
                              choiceNames = list(
-                               tags$span("Associational", style = paste("color:", v2xcs_ccsi_color, "; font-weight: bold; font-size: 80%;", sep = "")),
-                               tags$span("Economic", style = paste("color:", v2x_pubcorr_color, "; font-weight: bold; font-size: 80%;", sep = "")),
-                               tags$span("Electoral", style = paste("color:", v2x_veracc_osp_color, "; font-weight: bold; font-size: 80%;", sep = "")),
-                               tags$span("Governing", style = paste("color:", v2x_horacc_osp_color, "; font-weight: bold; font-size: 80%;", sep = "")),
-                               tags$span("Individual", style = paste("color:", v2xcl_rol_color, "; font-weight: bold; font-size: 80%;", sep = "")),
-                               tags$span("Informational", style = paste("color:", v2x_freexp_altinf_color, "; font-weight: bold; font-size: 80%;", sep = ""))),
+                               tags$span("Associational", style = paste("color:", space_colors[["v2xcs_ccsi"]], "; font-weight: bold; font-size: 80%;", sep = "")),
+                               tags$span("Economic", style = paste("color:", space_colors[["v2x_pubcorr"]], "; font-weight: bold; font-size: 80%;", sep = "")),
+                               tags$span("Electoral", style = paste("color:", space_colors[["v2x_veracc_osp"]], "; font-weight: bold; font-size: 80%;", sep = "")),
+                               tags$span("Governing", style = paste("color:", space_colors[["v2x_horacc_osp"]], "; font-weight: bold; font-size: 80%;", sep = "")),
+                               tags$span("Individual", style = paste("color:", space_colors[["v2xcl_rol"]], "; font-weight: bold; font-size: 80%;", sep = "")),
+                               tags$span("Informational", style = paste("color:", space_colors[["v2x_freexp_altinf"]], "; font-weight: bold; font-size: 80%;", sep = ""))),
                              choiceValues = c(
                                "v2xcs_ccsi",
                                "v2x_pubcorr",
@@ -257,13 +257,13 @@ function(input, output, session) {
       output$TimeSeriesPlot <-  renderHighchart({blankTimeSeriesFun()})
     }
   })
-  observeEvent(c(input$countrySelect, input$checkGroup), {
+  observeEvent(c(input$countrySelect, input$checkGroup, input$tsPlotShowChanges), {
     country_name <- input$countrySelect
     clickedSelected <- input$checkGroup
     #plotCIs <- input$plotCIs
     if(country_name != ""){
-      dat_new <- country_characteristic_dat[country_characteristic_dat$country_name == country_name, ]
-      output$TimeSeriesPlot <-  renderHighchart({timeSeriesPlotFun(dat_new %>% filter(year >= 2011), clickedSelected)})
+      dat_new <- time_series_dat[time_series_dat$country_name == country_name, ]
+      output$TimeSeriesPlot <-  renderHighchart({timeSeriesPlotFun(dat_new %>% filter(year >= 2011), clickedSelected, changes = input$tsPlotShowChanges)})
     }
   })
 
@@ -329,12 +329,12 @@ function(input, output, session) {
 
     updateCheckboxGroupInput(session, "checkGroup", inline = T,
                              choiceNames = list(
-                               tags$span("Associational", style = paste("color:", v2xcs_ccsi_color, "; font-weight: bold; font-size: 80%;", sep = "")),
-                               tags$span("Economic", style = paste("color:", v2x_pubcorr_color, "; font-weight: bold; font-size: 80%;", sep = "")),
-                               tags$span("Electoral", style = paste("color:", v2x_veracc_osp_color, "; font-weight: bold; font-size: 80%;", sep = "")),
-                               tags$span("Governing", style = paste("color:", v2x_horacc_osp_color, "; font-weight: bold; font-size: 80%;", sep = "")),
-                               tags$span("Individual", style = paste("color:", v2xcl_rol_color, "; font-weight: bold; font-size: 80%;", sep = "")),
-                               tags$span("Informational", style = paste("color:", v2x_freexp_altinf_color, "; font-weight: bold; font-size: 80%;", sep = ""))),
+                               tags$span("Associational", style = paste("color:", space_colors[["v2xcs_ccsi"]], "; font-weight: bold; font-size: 80%;", sep = "")),
+                               tags$span("Economic", style = paste("color:", space_colors[["v2x_pubcorr"]], "; font-weight: bold; font-size: 80%;", sep = "")),
+                               tags$span("Electoral", style = paste("color:", space_colors[["v2x_veracc_osp"]], "; font-weight: bold; font-size: 80%;", sep = "")),
+                               tags$span("Governing", style = paste("color:", space_colors[["v2x_horacc_osp"]], "; font-weight: bold; font-size: 80%;", sep = "")),
+                               tags$span("Individual", style = paste("color:", space_colors[["v2xcl_rol"]], "; font-weight: bold; font-size: 80%;", sep = "")),
+                               tags$span("Informational", style = paste("color:", space_colors[["v2x_freexp_altinf"]], "; font-weight: bold; font-size: 80%;", sep = ""))),
                              choiceValues = c(
                                "v2xcs_ccsi",
                                "v2x_pubcorr",

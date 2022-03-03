@@ -6,15 +6,16 @@
 #   2021 changes/updates by Andreas Beger
 #
 #   Input:
-#     - fcasts-rf.csv: forecasts, copied over from modelrunner/output
-#     - dv_data_1968_on.csv: from create-data/output
+#     - fcasts-rf.csv: forecasts
+#     - dv_data_1968_on.csv
+#     - dv-data.rds
 #
 #   Output:
 #     - map_dat.rds: map data, including popup text
 #     - map_color_dat.rds: color values for the polygons in map_dat. This is
 #         separate for leaflet and because lookup is quicker without a geometry
 #         column.
-#     - country_characteristic_dat.rds: DS indicator values for historic data
+#     - time_series_dat.rds: DS indicator values for historic data
 #     - prob1_dat.rds: forecast data for the barcharts
 #     - table_dat.rds: data for the "Table" tab
 #
@@ -37,21 +38,21 @@ suppressPackageStartupMessages({
 
 setwd(here::here("dashboard"))
 
-# Copy over DV data
-file.copy("data-raw/dv_data_1968_on.csv", "data/dv_data_1968_on.csv",
-          overwrite = TRUE)
 
-
-iri_dat <- read.csv("data-raw/fcasts-rf.csv", stringsAsFactors = F)
+iri_dat <- read.csv("data-raw/input/fcasts-rf.csv", stringsAsFactors = F)
 current_forecast <- iri_dat %>%
   filter(from_year == max(from_year))
 outcomes <- unique(iri_dat$outcome)
 
-dvs <- read_csv("data-raw/dv_data_1968_on.csv") %>%
+dvs <- read_csv("data-raw/input/dv_data_1968_on.csv") %>%
   filter(year >= 2000)
 
-regions <- read_csv("data-raw/region-mapping.csv", col_types = cols())
+regions <- read_csv("data-raw/input/region-mapping.csv", col_types = cols())
 dvs <- left_join(dvs, regions, by = "gwcode")
+
+# Data on up/down changes
+updown <- readRDS("data-raw/input/dv-data.rds") %>%
+  select(gwcode, year, ends_with("change"))
 
 current_dvs <- dvs %>%
   dplyr::select(gwcode, year, country_name, country_id, country_text_id, e_regionpol_6C,
@@ -187,24 +188,70 @@ write_rds(map_data, "data/map_dat.rds", compress = "none")
 # Keep a readable sample of the data so we can easily spot differences on git
 # The .rds version will always show as changed on git.
 test <- map_data[1:5, ] %>% st_set_geometry(NULL)
-write_yaml(test, here::here("dashboard/data-raw/map_dat_sample.yaml"),
+write_yaml(test, here::here("dashboard/data-raw/trackers/map_dat_sample.yaml"),
            column.major = FALSE)
 
 
 
 # Historic V-Dem indicator data -------------------------------------------
+#
+#   This is for the bottom right time series plot
+#
 
+# To mark up/down changes in the time series, I need to extract a version of
+# the data that has the same year coverage, but which only has y values for
+# the year of a change and the preceding year.
+#
+# country,  year,   outcome,  outcome_up,   outcome_down
+#     ...,  2010,       0.9,
+#
 
-country_characteristic_dat <- dvs %>%
+changes <- updown %>%
+  filter(year >= min(dvs$year)) %>%
+  tidyr::pivot_longer(ends_with("change"), names_to = "space", values_to = "direction") %>%
+  filter(!direction %in% c("same", "first year of independence"))
+# This now has the year of any up/down changes; i need the preceding year too,
+# which we can easily get via rbind
+temp <- changes
+temp$year <- temp$year - 1
+changes <- bind_rows(changes, temp) %>%
+  arrange(gwcode, year, space)
+# extract just the indicator name from the current "space" column
+changes$space <- gsub("dv_", "", changes$space)
+changes$space <- gsub("_change", "", changes$space)
+
+# to get y-values, we need a long version of dvs we can merge into this
+dvs_long <- dvs %>%
+  select(gwcode, year, starts_with("v2x")) %>%
+  pivot_longer(-c(gwcode, year), names_to = "space")
+changes <- left_join(changes, dvs_long, by = c("gwcode", "year", "space"))
+
+# now we need to turn this into a wide version that we can drop into
+# time_series_dat down the road
+changes <- tidyr::unite(changes, "change", c(space, direction))
+changes <- changes %>% group_by(gwcode, year, change, value) %>%
+  summarize(.groups = "drop")
+# This has duplicates, since if there were two up or down changes in
+# successive years, like 2016 and 2017, we'll have now added 2015 and 2016
+# data, giving us a duplicate 2016. Need to remove these before widening
+changes <- changes %>%
+  arrange(change) %>%
+  pivot_wider(names_from = "change", values_from = value) %>%
+  arrange(gwcode, year)
+
+time_series_dat <- dvs %>%
   dplyr::select(gwcode, year, country_name,
                 v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2x_freexp_altinf, v2x_horacc_osp, v2x_pubcorr) %>%
   filter(year >= (max(dvs$year) - 9))
 
-write_rds(country_characteristic_dat, "data/country_characteristic_dat.rds")
+time_series_dat <- left_join(time_series_dat, changes,
+                                        by = c("gwcode", "year"))
+
+write_rds(time_series_dat, "data/time_series_dat.rds")
 
 # Keep a signature of key stats for git diff
 # The .rds version will always show as changed on git.
-dat <- country_characteristic_dat
+dat <- time_series_dat
 sig <- list(
   N_rows = nrow(dat),
   N_cols = ncol(dat),
@@ -212,7 +259,8 @@ sig <- list(
   Countries = length(unique(dat$country_name)),
   Years = paste0(range(dat$year), collapse = "-")
 )
-write_yaml(sig, here::here("dashboard/data-raw/country_characteristic_dat_signature.yml"))
+write_yaml(sig, here::here("dashboard/data-raw/trackers/time_series_dat_signature.yml"))
+
 
 
 
