@@ -172,6 +172,30 @@ dv_data = dv_data %>%
   mutate_at(vars(one_of(spaces$Indicator)), list(squared = ~`^`(., 2)))
 ```
 
+Add markers for when up/down changes are impossible given the current
+indicator value and cutpoints (see
+[#15](https://github.com/vdeminstitute/demspaces/issues/15)).
+
+``` r
+data("spaces")
+
+for (ind in spaces$Indicator) {
+  for (dir in c("up", "down")) {
+    marker <- paste0("no_", dir, "_", ind)
+    cp <- cutpoints[cutpoints$indicator==ind, ][[dir]]
+    if (dir=="up") {
+      dv_data[[marker]] <- as.integer((dv_data[[ind]]) > (1 - cp))
+    } else {
+      dv_data[[marker]] <- as.integer((dv_data[[ind]]) < cp)
+    }
+    # for debug/check, print these crosstabs
+    # almost all column 1's should be in the 0 row, see #15
+    #cat(paste0(ind, " ", dir), "\n")
+    #print(table(dv_data[[marker]], dv_data[[paste0("dv_", ind, "_", dir, "_next2")]]))
+  }
+}
+```
+
 Take out the plain up and down dv versions.
 
 ``` r
@@ -209,7 +233,7 @@ dv_data %>%
   filter(year > 2010)
 ```
 
-    ## # A tibble: 11 × 7
+    ## # A tibble: 11 × 9
     ##    gwcode  year v2x_veracc_osp dv_v2x_veracc_osp_change dv_v2x_veracc_osp_up_ne…
     ##     <dbl> <dbl>          <dbl> <chr>                                       <int>
     ##  1    310  2011          0.919 same                                            0
@@ -223,8 +247,9 @@ dv_data %>%
     ##  9    310  2019          0.754 same                                            0
     ## 10    310  2020          0.76  same                                           NA
     ## 11    310  2021          0.752 same                                           NA
-    ## # … with 2 more variables: dv_v2x_veracc_osp_down_next2 <int>,
-    ## #   v2x_veracc_osp_squared <dbl>
+    ## # … with 4 more variables: dv_v2x_veracc_osp_down_next2 <int>,
+    ## #   v2x_veracc_osp_squared <dbl>, no_up_v2x_veracc_osp <int>,
+    ## #   no_down_v2x_veracc_osp <int>
 
 ``` r
 skim(dv_data)
@@ -234,11 +259,11 @@ skim(dv_data)
 |:-------------------------------------------------|:--------|
 | Name                                             | dv_data |
 | Number of rows                                   | 8458    |
-| Number of columns                                | 32      |
+| Number of columns                                | 44      |
 | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_   |         |
 | Column type frequency:                           |         |
 | character                                        | 6       |
-| numeric                                          | 26      |
+| numeric                                          | 38      |
 | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |         |
 | Group variables                                  | None    |
 
@@ -285,3 +310,15 @@ Data summary
 | v2x_freexp_altinf_squared       |         0 |          1.00 |    0.43 |   0.35 |    0.00 |    0.05 |    0.44 |    0.76 |    0.98 | ▇▂▃▃▅ |
 | v2x_horacc_osp_squared          |         0 |          1.00 |    0.40 |   0.34 |    0.00 |    0.06 |    0.34 |    0.73 |    0.98 | ▇▂▂▃▅ |
 | v2x_pubcorr_squared             |         0 |          1.00 |    0.37 |   0.33 |    0.00 |    0.07 |    0.26 |    0.67 |    1.00 | ▇▃▂▂▃ |
+| no_up_v2x_veracc_osp            |         0 |          1.00 |    0.14 |   0.35 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_down_v2x_veracc_osp          |         0 |          1.00 |    0.03 |   0.16 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_up_v2xcs_ccsi                |         0 |          1.00 |    0.06 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_down_v2xcs_ccsi              |         0 |          1.00 |    0.05 |   0.23 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_up_v2xcl_rol                 |         0 |          1.00 |    0.14 |   0.34 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_down_v2xcl_rol               |         0 |          1.00 |    0.02 |   0.13 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_up_v2x_freexp_altinf         |         0 |          1.00 |    0.11 |   0.32 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_down_v2x_freexp_altinf       |         0 |          1.00 |    0.07 |   0.26 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_up_v2x_horacc_osp            |         0 |          1.00 |    0.10 |   0.30 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_down_v2x_horacc_osp          |         0 |          1.00 |    0.03 |   0.17 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_up_v2x_pubcorr               |         0 |          1.00 |    0.10 |   0.30 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
+| no_down_v2x_pubcorr             |         0 |          1.00 |    0.00 |   0.05 |    0.00 |    0.00 |    0.00 |    0.00 |    1.00 | ▇▁▁▁▁ |
