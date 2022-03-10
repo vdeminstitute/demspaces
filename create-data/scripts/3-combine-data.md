@@ -170,7 +170,7 @@ columns:
 plotmiss(cy)
 ```
 
-![](3-combine-data_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](3-combine-data_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 The missing are because the “next2” variables are missing for the last 2
 years of available data since we don’t have the 2 years of future
@@ -491,15 +491,15 @@ plotmiss(pop_dat)
 ``` r
 infmort <- read_csv("../input/wdi-infmort.csv") %>%
   filter(year <= END_YEAR) %>%
-  select(gwcode, year, lag1_infmort, lag1_infmort_yearadj)
+  select(gwcode, year, infmort, infmort_yearadj)
 ```
 
-    ## Rows: 9656 Columns: 5
+    ## Rows: 9481 Columns: 5
 
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
-    ## dbl (4): gwcode, year, lag1_infmort, lag1_infmort_yearadj
-    ## lgl (1): lag1_infmort_imputed
+    ## dbl (4): gwcode, year, infmort, infmort_yearadj
+    ## lgl (1): infmort_imputed
 
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
@@ -513,17 +513,17 @@ colnames(infmort) <- prefix_lag(colnames(infmort), infmort_lag)
 infmort_lag
 ```
 
-    ## [1] 0
+    ## [1] 1
 
 ``` r
 str(infmort)
 ```
 
-    ## tibble [9,656 × 4] (S3: tbl_df/tbl/data.frame)
-    ##  $ gwcode              : num [1:9656] 2 2 2 2 2 2 2 2 2 2 ...
-    ##  $ year                : num [1:9656] 1960 1961 1962 1963 1964 ...
-    ##  $ lag1_infmort        : num [1:9656] 25.9 25.9 25.4 24.9 24.4 23.8 23.3 22.7 22 21.3 ...
-    ##  $ lag1_infmort_yearadj: num [1:9656] -1.21 -1.23 -1.24 -1.23 -1.22 ...
+    ## tibble [9,481 × 4] (S3: tbl_df/tbl/data.frame)
+    ##  $ gwcode              : num [1:9481] 2 2 2 2 2 2 2 2 2 2 ...
+    ##  $ year                : num [1:9481] 1961 1962 1963 1964 1965 ...
+    ##  $ lag1_infmort        : num [1:9481] 25.9 25.4 24.9 24.4 23.8 23.3 22.7 22 21.3 20.6 ...
+    ##  $ lag1_infmort_yearadj: num [1:9481] -1.21 -1.21 -1.23 -1.22 -1.21 ...
 
 Check missing cases.
 
@@ -534,12 +534,20 @@ cy_temp %>%
   summarize_missing()
 ```
 
-    ## # A tibble: 3 × 3
-    ##   gwcode years           n
-    ##    <dbl> <chr>       <int>
-    ## 1    315 1970 - 1992    23
-    ## 2    680 1970 - 1989    20
-    ## 3    817 1970 - 1974     5
+    ## # A tibble: 43 × 3
+    ##    gwcode years           n
+    ##     <dbl> <chr>       <int>
+    ##  1    115 1975 - 1975     1
+    ##  2    315 1970 - 1992    23
+    ##  3    316 1993 - 1993     1
+    ##  4    317 1993 - 1993     1
+    ##  5    340 2006 - 2006     1
+    ##  6    341 2006 - 2006     1
+    ##  7    343 1991 - 1991     1
+    ##  8    344 1992 - 1992     1
+    ##  9    346 1992 - 1992     1
+    ## 10    347 2008 - 2008     1
+    ## # … with 33 more rows
 
 ``` r
 plotmiss(infmort)

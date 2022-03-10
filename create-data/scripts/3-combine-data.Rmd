@@ -80,7 +80,7 @@ summarize_missing <- function(df) {
 
 ### Master statelist
 
-```{r}
+```{r blank-panel}
 cy <- read_csv("../output/country_year_set_1968_on.csv") %>%
   filter(year > 1969, year <= END_YEAR)
 cy_names <- cy
@@ -268,7 +268,7 @@ plotmiss(pop_dat)
 ```{r infmort-setup}
 infmort <- read_csv("../input/wdi-infmort.csv") %>%
   filter(year <= END_YEAR) %>%
-  select(gwcode, year, lag1_infmort, lag1_infmort_yearadj)
+  select(gwcode, year, infmort, infmort_yearadj)
 infmort_lag <- END_YEAR - max(infmort$year)
 infmort$year <- infmort$year + infmort_lag
 colnames(infmort) <- prefix_lag(colnames(infmort), infmort_lag)

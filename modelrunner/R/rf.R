@@ -131,7 +131,7 @@ model_grid <- foreach(i = 1:nrow(model_grid),
     filter(year == max(year))
 
   mdl      <- ds_rf(outcome_i, train_data, num.threads = 1,
-                    num.trees = 900, min.node.size = 1, mtry = 15)
+                    num.trees = 1000, min.node.size = 1, mtry = 15)
   fcasts_i <- predict(mdl, new_data = test_data)
 
   runtime <- round((proc.time() - t0)["elapsed"])
