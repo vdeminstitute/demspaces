@@ -209,6 +209,12 @@ lag0_v2pepwrgen
 lag0_v2pepwrort
 lag0_v2peedueq
 lag0_v2pehealth
+lag0_v2x_veracc_osp_sd10
+lag0_v2xcs_ccsi_sd10
+lag0_v2xcl_rol_sd10
+lag0_v2x_freexp_altinf_sd10
+lag0_v2x_horacc_osp_sd10
+lag0_v2x_pubcorr_sd10
 lag0_state_age
 lag0_log_pop
 lag1_infmort

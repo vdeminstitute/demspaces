@@ -1,8 +1,8 @@
 Class: tbl_df, tbl, data.frame
-Size_in_mem: 13.3 Mb
+Size_in_mem: 13.7 Mb
 N_countries: 174
 Years: 1970 - 2021
-N_columns: 219
+N_columns: 225
 N_rows: 8187
 N_complete_rows: 7849
 Countries: 174
@@ -217,6 +217,12 @@ Missing:
   lag0_v2pepwrort: 0
   lag0_v2peedueq: 0
   lag0_v2pehealth: 0
+  lag0_v2x_veracc_osp_sd10: 0
+  lag0_v2xcs_ccsi_sd10: 0
+  lag0_v2xcl_rol_sd10: 0
+  lag0_v2x_freexp_altinf_sd10: 0
+  lag0_v2x_horacc_osp_sd10: 0
+  lag0_v2x_pubcorr_sd10: 0
   lag0_state_age: 0
   lag0_log_pop: 0
   lag1_infmort: 0
@@ -437,6 +443,12 @@ Col_types:
   lag0_v2pepwrort: double
   lag0_v2peedueq: double
   lag0_v2pehealth: double
+  lag0_v2x_veracc_osp_sd10: double
+  lag0_v2xcs_ccsi_sd10: double
+  lag0_v2xcl_rol_sd10: double
+  lag0_v2x_freexp_altinf_sd10: double
+  lag0_v2x_horacc_osp_sd10: double
+  lag0_v2x_pubcorr_sd10: double
   lag0_state_age: double
   lag0_log_pop: double
   lag1_infmort: double

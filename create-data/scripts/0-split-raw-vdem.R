@@ -49,7 +49,7 @@ vdem_raw <- readRDS("input/V-Dem-CY-Full+Others-v12.rds")
 ## Remove countries that have a lot of missingness in the VDem data... and make adjustments to merge with GW country-year set
 vdem_complete <- vdem_raw %>%
   mutate(country_name = ifelse(country_id == 196, "Sao Tome and Principe", country_name)) %>%
-  filter(year >= START_YEAR &
+  filter(year >= START_YEAR - 20 &
            country_name != "Palestine/West Bank" & country_name != "Hong Kong" & country_name != "Bahrain" & country_name != "Malta" &
            country_name != "Zanzibar" & country_name != "Somaliland" & country_name != "Palestine/Gaza") %>%
   filter(!(country_name == "Timor-Leste" & year < 2002)) %>%
@@ -70,6 +70,7 @@ summary(vdem_country_year0)
 # no_gwcode <- vdem_country_year0[is.na(vdem_country_year0$gwcode), c("country_name", "country_id", "year")]
 
 vdem_country_year <- vdem_country_year0 %>%
+  filter(year >= START_YEAR) %>%
   filter(!is.na(gwcode)) %>%
   group_by(gwcode) %>%
   complete(country_name, country_id, country_text_id, year = min(year):END_YEAR) %>%
@@ -110,6 +111,7 @@ write_csv(country_year_set, "output/country_year_set_1968_on.csv")
 
 # Check that gwcode uniquely maps to regions
 xx <- vdem_complete %>%
+  filter(year >= START_YEAR) %>%
   select(gwcode, e_regionpol_6C) %>%
   count(gwcode, e_regionpol_6C)
 stopifnot(
@@ -127,6 +129,7 @@ write_csv(region_mapping, "output/region-mapping.csv")
 #
 
 vdem_dvs <- vdem_complete %>%
+  filter(year >= START_YEAR) %>%
   select(c(country_name, country_text_id, country_id, gwcode, year,
            v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2x_freexp_altinf,
            v2x_horacc_osp, v2x_pubcorr)) %>%
@@ -138,12 +141,14 @@ naCountFun(dvs, END_YEAR)  # no NAs
 write_csv(dvs, "output/dv_data_1968_on.csv")
 
 
+
 # V-Dem predictor data ----------------------------------------------------
 #
 #   Predictor (IV) data from V-Dem
 #
 
 vdem_ivs <- vdem_complete %>%
+  filter(year >= START_YEAR) %>%
     select(country_name, country_text_id, gwcode, country_id, year, v2x_polyarchy, v2x_liberal, v2xdl_delib, v2x_jucon,
            v2x_frassoc_thick, v2xel_frefair, v2x_elecoff, v2xlg_legcon, v2x_partip, v2x_cspart, v2x_egal, v2xeg_eqprotec,
            v2xeg_eqaccess, v2xeg_eqdr, v2x_diagacc, v2xex_elecleg, v2x_civlib, v2x_clphy, v2x_clpol, v2x_clpriv, v2x_corr,
@@ -235,6 +240,39 @@ vdem_clean_data <- vdem_ivs %>%
   select(country_name, country_text_id, gwcode, country_id, year, is_jud, is_leg, is_elec, is_election_year, everything())
 dim(vdem_clean_data) ## 8430  190
 
+
+# START add sdX vars
+#
+# 2022-03: write a version of this that goes back further, for historical
+# DV transforms
+keep <- gwstates$gwcode[gwstates$microstate == FALSE]
+GW_template_longer <- state_panel(START_YEAR - 20, END_YEAR, partial = "any", useGW = TRUE) %>%
+  filter(gwcode %in% keep)
+country_year_set_longer <- GW_template_longer
+
+vdem_dvs_longer <- vdem_complete %>%
+  select(c(country_name, country_text_id, country_id, gwcode, year,
+           v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2x_freexp_altinf,
+           v2x_horacc_osp, v2x_pubcorr)) %>%
+  mutate(v2x_pubcorr = 1 - v2x_pubcorr)
+
+dvs_longer <- left_join(country_year_set_longer, vdem_dvs_longer)
+naCountFun(dvs_longer, END_YEAR)  # no NAs
+
+saveRDS(vdem_dvs_longer, "output/dv_data_1958_on.rds")
+
+data("spaces")
+vdem_dv_hist <- vdem_dvs_longer %>%
+  group_by(gwcode) %>%
+  mutate(across(all_of(spaces$Indicator), ~rollapplyr(.x, FUN = sd, width = 10, fill = NA, partial = TRUE),
+                .names = "{.col}_sd10"))
+vdem_dv_hist <- vdem_dv_hist %>%
+  filter(year >= START_YEAR) %>%
+  select(gwcode, year, matches("_sd[0-9]+"))
+
+vdem_clean_data <- left_join(vdem_clean_data, vdem_dv_hist, by = c("gwcode", "year"))
+
+# END adding sdX vars
 
 vdem_data <- vdem_clean_data
 dim(vdem_data) ## 8430  371

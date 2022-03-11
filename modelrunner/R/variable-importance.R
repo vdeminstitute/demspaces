@@ -12,11 +12,20 @@ library("lgr")
 library("readr")
 library("future")
 library("doFuture")
+library(doRNG)
 library("jsonlite")
 library("demspacesR")
 library("ranger")
 library("here")
 library("tidyr")
+
+oldwd <- getwd()
+if (basename(getwd())!="modelrunner") {
+  setwd(here::here("modelrunner"))
+}
+
+# Read data; do this early so we can log data year coverage
+states <- readRDS("input/states-v12.rds")
 
 # Setup directories, in case they don't exist
 dir.create("output", showWarnings = FALSE)
@@ -48,7 +57,7 @@ plan(multisession, workers = N_WORKERS)
 # Tune grid
 hp_grid <- tibble(
   num.trees = 1000,
-  mtry      = 12,
+  mtry      = 15,
   min.node.size = 1,
 )
 
@@ -74,7 +83,6 @@ write_rds(model_grid, "output/varimp/model-grid.rds")
 #
 
 year_i <- 2011
-states <- readRDS("input/states.rds")
 
 train_data <- states %>%
   filter(year < year_i) %>%
@@ -90,7 +98,7 @@ train_x <- train_data %>%
 model_grid <- foreach(
   i = seq_len(nrow(model_grid)),
   .combine = bind_rows,
-  .export = c("train_data", "train_x", "model_grid")) %dopar% {
+  .export = c("train_data", "train_x", "model_grid")) %dorng% {
     t1 <- proc.time()
 
     pars <- model_grid[i, ]
@@ -139,4 +147,7 @@ if (length(warn) > 1) {
   lgr$warn("There were R warnings, printing below:")
   for (x in warn_strings) lgr$warn(x)
 }
+
+setwd(oldwd)
+
 

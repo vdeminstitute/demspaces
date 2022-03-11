@@ -37,6 +37,7 @@ library(lgr)
 library(readr)
 library(future)
 library(doFuture)
+library(doRNG)
 library(jsonlite)
 library(demspacesR)
 library(ranger)
@@ -107,7 +108,7 @@ if (!OVERWRITE) {
 
 model_grid <- foreach(i = 1:nrow(model_grid),
                       .combine = bind_rows,
-                      .export = c("model_grid", "n_models")) %dopar% {
+                      .export = c("model_grid", "n_models")) %dorng% {
 
   t0 <- proc.time()
 
