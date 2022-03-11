@@ -12,6 +12,16 @@ Andreas Beger
 
 _tl;dr: For the 2021 update, I eliminated a bunch of external data sources and other variables. Instead of 481 columns, the new merged data has 225. This did not decrease forecast performance, in fact accuracy increased a bit._
 
+Other files you can read here are:
+
+- [variable-importance.md](variable-importance.md): details on how I decided which variables and external data sources to take out.
+- [project-summary.pdf](project-summary.pdf): my (Andreas Beger's) summary of the work I did for the 2021 update. This is a good summary of all changes to the DemSpaces and PART forecasts. 
+- [DemocraticSpaces2021.pdf](DemocraticSpaces2021.pdf): a report assessing the accuracy of the DemSpaces forecasts to date, including an evaluation of the impact that changes in the V-Dem data between different versions have.
+- [DemSpaces2021-Questions.pdf](DemSpaces2021-Questions.pdf): addresses several questions about the 2021 forecasts.
+
+
+## Slightly more details on the variable elimination
+
 I made a very substantial change for the 2021 forecast update, namely removing a large number of data sources and variables that go into the models as predictors. The reasons were that (1) I wanted to streamline the update process, (2) some of the data sources (EPR, Archigos) have not been update, and (3) and prior suspicion that some of the variables in the data were not really that helpful for accuracy. 
 
 To do this I looked at the variable importance using last year's model. More details and the results of that analysis are documented in [variable-importance.md](variable-importance.md). Based on those results, I, for example, removed the EPR, Archigos, and ACD data sources completely. 
@@ -34,7 +44,7 @@ suppressPackageStartupMessages({
 })
 
 # Load merge data so we can get the observed outcomes
-states_v10  <- readRDS(here::here("archive/states-v10.rds"))
+states_v10  <- readRDS(here::here("archive/data/states-v10.rds"))
 states_v11a <- readRDS("data/states-v11a.rds")
 states_v11b <- readRDS("data/states-v11b.rds")
 
@@ -88,6 +98,10 @@ acc <- bind_rows(
     mutate(fcasts = "v11b", truth = "v11")
 )
 
+# Take out "Pos-rate"
+acc <- acc %>%
+  filter(Measure != "Pos-rate")
+
 # Average over direction
 acc <- acc %>%
   group_by(fcasts, truth, Measure) %>%
@@ -109,7 +123,7 @@ acc %>%
   pivot_wider(names_from = "Measure", values_from = "Value") %>% 
   arrange(truth, fcasts) %>%
   select(truth, fcasts, `Log-loss`, `ROC-AUC`, `PR-AUC`) %>%
-  setNames(c("Forecasts", "V-Dem", "Log-loss", "AUC-ROC", "AUC-PR")) %>%
+  setNames(c("V-Dem", "Forecasts", "Log-loss", "AUC-ROC", "AUC-PR")) %>%
   knitr::kable(digits = 3)
 
 acc %>%

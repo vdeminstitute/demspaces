@@ -9,6 +9,22 @@ sources and other variables. Instead of 481 columns, the new merged data
 has 225. This did not decrease forecast performance, in fact accuracy
 increased a bit.*
 
+Other files you can read here are:
+
+-   [variable-importance.md](variable-importance.md): details on how I
+    decided which variables and external data sources to take out.
+-   [project-summary.pdf](project-summary.pdf): my (Andreas Beger’s)
+    summary of the work I did for the 2021 update. This is a good
+    summary of all changes to the DemSpaces and PART forecasts.
+-   [DemocraticSpaces2021.pdf](DemocraticSpaces2021.pdf): a report
+    assessing the accuracy of the DemSpaces forecasts to date, including
+    an evaluation of the impact that changes in the V-Dem data between
+    different versions have.
+-   [DemSpaces2021-Questions.pdf](DemSpaces2021-Questions.pdf):
+    addresses several questions about the 2021 forecasts.
+
+## Slightly more details on the variable elimination
+
 I made a very substantial change for the 2021 forecast update, namely
 removing a large number of data sources and variables that go into the
 models as predictors. The reasons were that (1) I wanted to streamline
@@ -23,7 +39,7 @@ results, I, for example, removed the EPR, Archigos, and ACD data sources
 completely.
 
 The initial data update for 2021 did not include those changes: I
-updated the V-Dem, P\&T Coups, GDP, population, and infant mortality
+updated the V-Dem, P&T Coups, GDP, population, and infant mortality
 data, and merged them with last year’s EPR, etc. data. The resulting
 dataset, with the suffix “v11a”, had the same number of columns as the
 2020 “v10” dataset.
@@ -44,14 +60,14 @@ acc %>%
   pivot_wider(names_from = "Measure", values_from = "Value") %>% 
   arrange(truth, fcasts) %>%
   select(truth, fcasts, `Log-loss`, `ROC-AUC`, `PR-AUC`) %>%
-  setNames(c("Forecasts", "V-Dem", "Log-loss", "AUC-ROC", "AUC-PR")) %>%
+  setNames(c("V-Dem", "Forecasts", "Log-loss", "AUC-ROC", "AUC-PR")) %>%
   knitr::kable(digits = 3)
 ```
 
-| Forecasts | V-Dem | Log-loss | AUC-ROC | AUC-PR |
-| :-------- | :---- | -------: | ------: | -----: |
-| v11       | v11a  |    0.201 |   0.847 |  0.364 |
-| v11       | v11b  |    0.193 |   0.861 |  0.448 |
+| V-Dem | Forecasts | Log-loss | AUC-ROC | AUC-PR |
+|:------|:----------|---------:|--------:|-------:|
+| v11   | v11a      |    0.201 |   0.847 |  0.364 |
+| v11   | v11b      |    0.193 |   0.861 |  0.448 |
 
 ``` r
 acc %>%
