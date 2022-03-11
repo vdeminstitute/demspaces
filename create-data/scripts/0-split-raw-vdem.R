@@ -44,8 +44,6 @@ END_YEAR   <- 2021L
 START_YEAR <- 1968L
 
 # UPDATE: v[X]
-# temp: the v12.0 data I have doesn't have country names and cow codes, which
-# I need below. Take this out when I have the v12 proper data
 vdem_raw <- readRDS("input/V-Dem-CY-Full+Others-v12.rds")
 
 ## Remove countries that have a lot of missingness in the VDem data... and make adjustments to merge with GW country-year set

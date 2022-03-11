@@ -1,8 +1,8 @@
 Class: tbl_df, tbl, data.frame
-Size_in_mem: 14.1 Mb
+Size_in_mem: 13.3 Mb
 N_countries: 174
 Years: 1970 - 2021
-N_columns: 237
+N_columns: 219
 N_rows: 8187
 N_complete_rows: 7849
 Countries: 174
@@ -33,24 +33,6 @@ Missing:
   dv_v2x_pubcorr_change: 0
   dv_v2x_pubcorr_up_next2: 338
   dv_v2x_pubcorr_down_next2: 338
-  v2x_veracc_osp_squared: 0
-  v2xcs_ccsi_squared: 0
-  v2xcl_rol_squared: 0
-  v2x_freexp_altinf_squared: 0
-  v2x_horacc_osp_squared: 0
-  v2x_pubcorr_squared: 0
-  no_up_v2x_veracc_osp: 0
-  no_down_v2x_veracc_osp: 0
-  no_up_v2xcs_ccsi: 0
-  no_down_v2xcs_ccsi: 0
-  no_up_v2xcl_rol: 0
-  no_down_v2xcl_rol: 0
-  no_up_v2x_freexp_altinf: 0
-  no_down_v2x_freexp_altinf: 0
-  no_up_v2x_horacc_osp: 0
-  no_down_v2x_horacc_osp: 0
-  no_up_v2x_pubcorr: 0
-  no_down_v2x_pubcorr: 0
   lag0_is_leg: 0
   lag0_is_elec: 0
   lag0_is_election_year: 0
@@ -271,24 +253,6 @@ Col_types:
   dv_v2x_pubcorr_change: character
   dv_v2x_pubcorr_up_next2: integer
   dv_v2x_pubcorr_down_next2: integer
-  v2x_veracc_osp_squared: double
-  v2xcs_ccsi_squared: double
-  v2xcl_rol_squared: double
-  v2x_freexp_altinf_squared: double
-  v2x_horacc_osp_squared: double
-  v2x_pubcorr_squared: double
-  no_up_v2x_veracc_osp: integer
-  no_down_v2x_veracc_osp: integer
-  no_up_v2xcs_ccsi: integer
-  no_down_v2xcs_ccsi: integer
-  no_up_v2xcl_rol: integer
-  no_down_v2xcl_rol: integer
-  no_up_v2x_freexp_altinf: integer
-  no_down_v2x_freexp_altinf: integer
-  no_up_v2x_horacc_osp: integer
-  no_down_v2x_horacc_osp: integer
-  no_up_v2x_pubcorr: integer
-  no_down_v2x_pubcorr: integer
   lag0_is_leg: double
   lag0_is_elec: double
   lag0_is_election_year: double

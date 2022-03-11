@@ -152,7 +152,7 @@ dv_data <- Reduce(left_join, x = dv_piece)
 
 Add squared transformations for space indicators. Changes seem to be more common at middle values and less common in high and low (partly because beyond some range a change is impossible). 
 
-```{r}
+```{r squared, eval=FALSE}
 data("spaces")
 stopifnot(all(spaces$Indicator %in% names(dv_data)))
 dv_data = dv_data %>%
@@ -161,7 +161,7 @@ dv_data = dv_data %>%
 
 Add markers for when up/down changes are impossible given the current indicator value and cutpoints (see [#15](https://github.com/vdeminstitute/demspaces/issues/15)). 
 
-```{r no-change-possible-markers}
+```{r no-change-possible-markers, eval=FALSE}
 data("spaces")
 
 for (ind in spaces$Indicator) {
