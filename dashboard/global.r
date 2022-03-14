@@ -296,15 +296,19 @@ timeSeriesPlotFun <- function(dat, to_plot, CIs = FALSE, changes = FALSE) {
 
       # Check if there were any past observed changes
       if (changes) {
-        up_col   <- paste0(vv, "_up")
-        down_col <- paste0(vv, "_down")
+        up_col   <- paste0("y_", vv, "_up")
+        up_grp   <- paste0("group_", vv, "_up")
+        down_col <- paste0("y_", vv, "_down")
+        down_grp <- paste0("group_", vv, "_down")
         PlotHC <- PlotHC %>%
-          hc_add_series(data = dat, type = "line", hcaes(x = year, y = !!up_col),
+          hc_add_series(data = dat, type = "line",
+                        hcaes(x = year, y = !!up_col, group = !!up_grp),
                         color = space_colors[[vv]], name = "", linkedTo = id,
                         lineWidth = 8, showInLegend = FALSE,  enableMouseTracking = FALSE,
                         opacity = 0.4)
         PlotHC <- PlotHC %>%
-          hc_add_series(data = dat, type = "line", hcaes(x = year, y = !!down_col),
+          hc_add_series(data = dat, type = "line",
+                        hcaes(x = year, y = !!down_col, group = !!down_grp),
                         color = space_colors[[vv]], name = "", linkedTo = id,
                         lineWidth = 8, showInLegend = FALSE,  enableMouseTracking = FALSE,
                         opacity = 0.3)
