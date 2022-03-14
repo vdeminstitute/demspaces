@@ -3,6 +3,7 @@
 
 - Moved external data scripts to a new repo, `ds-external-data`. This is because PART and DS both require some but no the same external data, so it is just easier to pool them in one repo where updating can be done. 
 - Removed "_squared" terms for the space indicator variables. Although these showed up highly in the 2021 variable importance investigation, there is no reason the a random forest model would need squared terms, and so I suspect they were getting picked just as surrogates for the untransformed indicator variables. 
+- Fix for impossible forecasts (#15); this fix is actually implemented in demspacesR news. (#15)
 
 2021 Update (v11)
 ================

@@ -19,7 +19,7 @@ YEARS <- 2005:2021
 N_WORKERS <- future::availableCores() - 1L
 # Redo existing chunks? (FALSE means progress for an interrupted run will be
 # used, not re-done)
-OVERWRITE = FALSE
+OVERWRITE = TRUE
 # Remove artifacts after run or leave in place? (This interacts with
 # OVERWRITE)
 CLEANUP = FALSE
@@ -56,8 +56,13 @@ dir.create(chunk_dir, showWarnings = FALSE)
 dir.create(model_dir, showWarnings = FALSE)
 
 # Setup log file
-timestamp <- Sys.Date()
-log_file  <- sprintf("output/log/rf-%s.txt", timestamp)
+if (!OVERWRITE) {
+  # reuse latest log file
+  log_file <- tail(dir("output/log", full.names = TRUE), 1)
+} else {
+  timestamp <- paste0(Sys.Date(), "_", format(Sys.time(), "%H%M"))
+  log_file  <- sprintf("output/log/rf_%s.txt", timestamp)
+}
 lgr$add_appender(AppenderFile$new(log_file))
 
 lgr$info("Running random forest model")
@@ -75,6 +80,11 @@ lgr$info("Using data version %s", VERSION)
 
 # Load data
 states <- readRDS(fn)
+
+# Load cutpoints for predict.ds_rf (#15)
+cp <- read.csv("input/cutpoints.csv")
+cutpoints <- cp$up
+names(cutpoints) <- cp$indicator
 
 # Iterate over outcomes
 outcomes <- c("v2x_veracc_osp", "v2xcs_ccsi", "v2xcl_rol", "v2x_freexp_altinf",
@@ -108,7 +118,7 @@ if (!OVERWRITE) {
 
 model_grid <- foreach(i = 1:nrow(model_grid),
                       .combine = bind_rows,
-                      .export = c("model_grid", "n_models")) %dorng% {
+                      .export = c("model_grid", "n_models", "cutpoints")) %dorng% {
 
   t0 <- proc.time()
 
@@ -133,7 +143,7 @@ model_grid <- foreach(i = 1:nrow(model_grid),
 
   mdl      <- ds_rf(outcome_i, train_data, num.threads = 1,
                     num.trees = 1000, min.node.size = 1, mtry = 15)
-  fcasts_i <- predict(mdl, new_data = test_data)
+  fcasts_i <- predict(mdl, new_data = test_data, cutpoint = cutpoints[[outcome_i]])
 
   runtime <- round((proc.time() - t0)["elapsed"])
   model_grid$time[i] <- runtime
