@@ -8,7 +8,7 @@ t0 <- proc.time()
 #
 TUNE_N <- 5
 # How many parallel workers to use?
-N_WORKERS <- 7 # parallely::availableCores() - 1L
+N_WORKERS <- 7 # availableCores() - 1L
 # How many times to re-run each set of hyperparameters?
 REP_N  <- 5
 # What is the data file name?
@@ -49,6 +49,7 @@ if (basename(getwd())!="modelrunner") {
 # Setup log file
 timestamp <- as.character(Sys.time())
 timestamp <- gsub(" ", "_", timestamp)
+timestamp <- gsub(":", "", timestamp)
 log_file  <- sprintf("%s/rf-tune_%s.txt", OUTDIR, timestamp)
 lgr$add_appender(AppenderFile$new(log_file))
 
@@ -93,7 +94,7 @@ tune_grid <- tibble(
 )
 
 # for script debugging
-tune_grid <- tibble(row = 1:5, num.trees = 1000, mtry = 26:30, min.node.size = 1, cost = list(NULL), time= NA_real_)
+tune_grid <- tibble(row = 1:30, num.trees = 500, mtry = 1:30, min.node.size = 1, cost = list(NULL), time= NA_real_)
 
 for (i in 1:nrow(tune_grid)) {
   lgr$info("Par set %s: num.trees=%s, mtry=%s, min.node.size=%s", i,
