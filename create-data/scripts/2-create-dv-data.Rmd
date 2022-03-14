@@ -161,7 +161,7 @@ dv_data = dv_data %>%
 
 Add markers for when up/down changes are impossible given the current indicator value and cutpoints (see [#15](https://github.com/vdeminstitute/demspaces/issues/15)). 
 
-```{r no-change-possible-markers}
+```{r no-change-possible-markers, eval=FALSE}
 data("spaces")
 
 for (ind in spaces$Indicator) {

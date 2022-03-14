@@ -216,7 +216,7 @@ if (length(warn) > 1) {
 # Combine all tuning chunks so far into one file
 tune_chunks <- dir(OUTDIR, pattern = "rf-tune-results_", full.names = TRUE)
 tune <- lapply(tune_chunks, readRDS)
-names(tune) <- tune_chunks
+names(tune) <- basename(tune_chunks)
 tune <- dplyr::bind_rows(tune, .id = "source_file")
 saveRDS(tune, file.path(OUTDIR, "all-results.rds"))
 
