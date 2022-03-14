@@ -257,6 +257,7 @@ function(input, output, session) {
       output$TimeSeriesPlot <-  renderHighchart({blankTimeSeriesFun()})
     }
   })
+
   observeEvent(c(input$countrySelect, input$checkGroup, input$tsPlotShowChanges), {
     country_name <- input$countrySelect
     clickedSelected <- input$checkGroup
@@ -267,7 +268,20 @@ function(input, output, session) {
     }
   })
 
-  #update all the text based on space input
+  # "Select all" button for time series plot on bottom right (#13) ----
+  # By default, this button should select all time series; however, if all are
+  # already selected, un-select all.
+  observeEvent(input$tsSelectAll, {
+    checked <- input$checkGroup
+    if (length(checked)==6) {
+      new_selection <- character(0)
+    } else {
+      new_selection <- spaces$Indicator
+    }
+    updateCheckboxGroupInput(inputId = "checkGroup", selected = new_selection)
+  })
+
+  # update all the text based on space input
   observeEvent(c(input$space), {
     space_var_name4 <- input$space
     SpaceDescript_name2 <- switch(space_var_name4,

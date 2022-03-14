@@ -150,21 +150,20 @@ navbarPage(
              h4(tags$span(style = "font-size: 75%;", "The bar chart shows the estimated risk across all spaces for a country. Click on a bar to view that variable's time trend."))),
       column(7, id = "hcbarplotID2",
              highchartOutput("TimeSeriesPlot", height = "520px"), #br(),
-             checkboxGroupInput("checkGroup", label = h4(""), inline = T,
-                                choiceNames = list(
-                                  tags$span("Associational", style = paste("color:", space_colors[["v2xcs_ccsi"]], "; font-weight: bold; font-size:80%;", sep = "")),
-                                  tags$span("Economic", style = paste("color:", space_colors[["v2x_pubcorr"]], "; font-weight: bold; font-size:80%;", sep = "")),
-                                  tags$span("Electoral", style = paste("color:", space_colors[["v2x_veracc_osp"]], "; font-weight: bold; font-size:80%;", sep = "")),
-                                  tags$span("Governing", style = paste("color:", space_colors[["v2x_horacc_osp"]], "; font-weight: bold; font-size:80%;", sep = "")),
-                                  tags$span("Individual", style = paste("color:", space_colors[["v2xcl_rol"]], "; font-weight: bold; font-size:80%;", sep = "")),
-                                  tags$span("Informational", style = paste("color:", space_colors[["v2x_freexp_altinf"]], "; font-weight: bold; font-size:80%;", sep = ""))),
-                                choiceValues = c(
-                                  "v2xcs_ccsi",
-                                  "v2x_pubcorr",
-                                  "v2x_veracc_osp",
-                                  "v2x_horacc_osp",
-                                  "v2xcl_rol",
-                                  "v2x_freexp_altinf")),
+             checkboxGroupInput(
+               "checkGroup", label = h4(""), inline = T,
+               choiceNames = list(
+                 tags$span("Associational", style = paste("color:", space_colors[["v2xcs_ccsi"]], "; font-weight: bold; font-size:80%;", sep = "")),
+                 tags$span("Economic", style = paste("color:", space_colors[["v2x_pubcorr"]], "; font-weight: bold; font-size:80%;", sep = "")),
+                 tags$span("Electoral", style = paste("color:", space_colors[["v2x_veracc_osp"]], "; font-weight: bold; font-size:80%;", sep = "")),
+                 tags$span("Governing", style = paste("color:", space_colors[["v2x_horacc_osp"]], "; font-weight: bold; font-size:80%;", sep = "")),
+                 tags$span("Individual", style = paste("color:", space_colors[["v2xcl_rol"]], "; font-weight: bold; font-size:80%;", sep = "")),
+                 tags$span("Informational", style = paste("color:", space_colors[["v2x_freexp_altinf"]], "; font-weight: bold; font-size:80%;", sep = ""))),
+               choiceValues = c("v2xcs_ccsi", "v2x_pubcorr", "v2x_veracc_osp",
+                                "v2x_horacc_osp", "v2xcl_rol", "v2x_freexp_altinf")
+             ),
+             # Toggle to select/deselect all (#13)
+             actionButton("tsSelectAll", label = "Select all"),
              # Highlight past opening/closing changes in the time series?
              checkboxInput("tsPlotShowChanges", label = "Highlight past opening/closing events"),
              h4(tags$span(style = "font-size: 75%;", "The time-series chart shows a country's scores for the V-Dem indices we use to capture each space.")))
