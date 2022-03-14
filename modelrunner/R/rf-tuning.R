@@ -14,6 +14,18 @@ REP_N  <- 5
 # What is the data file name?
 DATA_FILE <- "states-v12.rds"
 
+if (Sys.info()['nodename']=="mbp-2019.local") {
+  OUTDIR <- "~/Dropbox/Work/vdem/demspaces/tuning"
+} else if (Sys.info()['nodename']=="MSI") {
+  OUTDIR <- "D:/Dropbox/Work/vdem/demspaces/tuning"
+} else {
+  stop("need outdir")
+}
+
+# Setup directories, in case they don't exist
+dir.create(OUTDIR, showWarnings = FALSE, recursive = TRUE)
+dir.create("output/tuning", showWarnings = FALSE, recursive = TRUE)
+
 suppressPackageStartupMessages({
   library(dplyr)
   library(tidyr)
@@ -37,7 +49,7 @@ if (basename(getwd())!="modelrunner") {
 # Setup log file
 timestamp <- as.character(Sys.time())
 timestamp <- gsub(" ", "_", timestamp)
-log_file  <- sprintf("output/tuning/rf-tune_%s.txt", timestamp)
+log_file  <- sprintf("%s/rf-tune_%s.txt", OUTDIR, timestamp)
 lgr$add_appender(AppenderFile$new(log_file))
 
 outfile <- sprintf("rf-tune-results_%s.rds", timestamp)
@@ -49,9 +61,6 @@ lgr$info("Running with %s workers", N_WORKERS)
 plan(multisession(workers = 7))
 
 lgr$info("Running %s experiment(s) with %s rep(s) each: %s total model_grid rows", TUNE_N, REP_N, 12*TUNE_N)
-
-# Setup directories, in case they don't exist
-dir.create("output/tuning", showWarnings = FALSE, recursive = TRUE)
 
 
 # Construct model grid ----------------------------------------------------
@@ -204,10 +213,10 @@ if (length(warn) > 1) {
 }
 
 # Combine all tuning chunks so far into one file
-tune_chunks <- dir("output/tuning", pattern = "rf-tune-results_", full.names = TRUE)
+tune_chunks <- dir(OUTDIR, pattern = "rf-tune-results_", full.names = TRUE)
 tune <- lapply(tune_chunks, readRDS)
 names(tune) <- tune_chunks
 tune <- dplyr::bind_rows(tune, .id = "source_file")
-saveRDS(tune, "output/tuning/all-results.rds")
+saveRDS(tune, file.path(OUTDIR, "all-results.rds"))
 
 setwd(oldwd)
