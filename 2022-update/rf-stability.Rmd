@@ -1,0 +1,151 @@
+---
+title: "Experiments on the randomness of random forest forecasts"
+output: github_document
+---
+
+Author: Andreas Beger  
+Written: 15 March 2022  
+Last compiled: `r format(Sys.Date(), "%d %B %Y")`
+
+The random forest models used to create the democratic spaces forecasts are, as their name suggests, not deterministic models. Running the same model with the same input will lead to slightly different predictions each time it is run. 
+
+How much does this random element influence the forecasts for specific countries?
+
+I know from experience--re-running the same models multiple times during the yearly updates--that the aggregate accuracy when summarizing over all countries and years is relatively stable and only changes a decimal point here and there due to randomness. However, the country-level forecasts likely are less stable, and more influenced by the random element. 
+
+The main way to control this without adversely influencing accuracy is to increase the number of trees in the model. However, this comes at the cost of increased model training time. 
+
+This note looks into two things:
+
+1. How much variance is there in the country forecasts for a given level of trees?
+2. How does variance respond to increasing the number of trees?
+
+To answer these questions, I ran a series of experiments for one outcome, the Associational space ("v2xcs_ccsi" indicator). In these experiments I ran the forecast model at several "number of trees" settings: 500, 1000, 2000, and 10000, and for each "number of trees" setting, re-ran the model 30 times. Thus each country in the end has 30 forecasts for a given "number of trees" setting, giving some sense of the random variability of forecasts. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+suppressPackageStartupMessages({
+  library(here)
+  library(ranger)
+  library(demspacesR)
+  library(dplyr)
+  library(tidyr)
+  library(readr)
+  library(ggplot2)
+})
+```
+
+
+```{r costly-simulations}
+if (!file.exists("data/rf-stability.rds")) {
+  
+  REPS <- 30
+  NUM_TREES <- c(500, 1000, 2000, 5000, 10000)
+  outcome_i <- "v2xcs_ccsi"
+  
+  cp <- read.csv(here::here("modelrunner/input/cutpoints.csv"))
+  cutpoints <- cp$up
+  names(cutpoints) <- cp$indicator
+  
+  states <- readRDS(here::here("modelrunner/input/states-v12.rds"))
+  
+  train_data <- states %>%
+    ungroup() %>%
+    filter(year < max(year))
+  test_data  <- states %>%
+    ungroup() %>%
+    filter(year == max(year))
+  
+  samples <- list()
+  for (nt in NUM_TREES) {
+    cat(as.character(nt), "\n")
+    nt_samples <- list()
+    for (i in 1:REPS) {
+      cat(".")
+      # avoid warnings about missing outcome data
+      suppressWarnings({
+        mdl <- ds_rf(outcome_i, train_data, num.threads = 7, mtry = 20, 
+                     min.node.size = 1, num.trees = nt, verbose = FALSE)
+      })
+      fcasts <- predict(mdl, new_data = test_data, cutpoint = cutpoints[[outcome_i]])
+      fcasts <- fcasts[, c("outcome", "gwcode", "p_up", "p_down")]
+      fcasts$rep <- i
+      nt_samples[[i]] <- fcasts
+    }
+    cat("\n")
+    nt_samples <- dplyr::bind_rows(nt_samples)
+    nt_samples$num.trees <- nt
+    
+    samples[[as.character(nt)]] <- nt_samples
+  }
+  samples <- dplyr::bind_rows(samples)
+  
+  saveRDS(samples, "data/rf-stability.rds")
+}
+```
+
+
+
+```{r}
+samples <- readRDS("data/rf-stability.rds")
+```
+
+Here is a representative case illustrating the impact of growing larger RF models, the forecasts for Bolivia closing event:
+
+```{r}
+samples |>
+  filter(gwcode==145) |>
+  ggplot(aes(x = factor(num.trees), y = p_down)) +
+  geom_violin() +
+  geom_jitter(width = 0.05, height = 0, alpha = 0.5) +
+  theme_light()
+```
+
+As the number of trees in the model increases, the variance of the forecasts decreases. 
+
+Here is a look across all countries, showing the distribution of the country-level forecast standard deviations:
+
+```{r}
+by_country <- samples |>
+  pivot_longer(c(p_down, p_up)) |>
+  group_by(outcome, num.trees, name, gwcode) |>
+  summarize(mean = mean(value),
+            sd = sd(value),
+            .groups = "drop")
+
+ggplot(by_country, aes(x = sd)) +
+  geom_density() +
+  facet_wrap(~num.trees) +
+  theme_light()
+```
+
+The table below shows the average country-level standard deviation. The "spread" column should be roughly representative of the range covered by the risk forecasts for a country, like in that Bolivia plot above.
+
+```{r}
+by_country |>
+  group_by(num.trees) |>
+  summarize(mean_sd = mean(sd),
+            spread = 3*mean_sd) |>
+  knitr::kable(digits = 4)
+```
+
+The decreases in random variability pretty much follows a inverse square root progression:
+
+```{r}
+by_country |>
+  group_by(num.trees) |>
+  summarize(mean_sd = mean(sd),
+            spread = 3*mean_sd) |>
+  (\(x) plot(x$num.trees, x$mean_sd, xlab = "num.trees", ylab = "mean SD", 
+             ylim = c(0, 0.015), xlim = c(0, 10000), xaxt='n'))()
+axis(side = 1, at = c(0, 500, 1000, 2000, 5000, 10000))
+x <- c(1:100*100)
+lines(x, 1/sqrt(x)*.3, lty = 2)
+```
+
+The more trees, the more stable the forecasts, but with diminishing returns. On the other hand, more trees also mean more time to train a model. From the tuning experiments, with mtry=20 and min.node.size=1, it takes roughly 1 minute per 1000 trees to train a single model that forecasts the up and down risk for one outcome. 
+
+In previous years I used 1,000 trees in the models. Using a slighly larger number seems reasonable.
