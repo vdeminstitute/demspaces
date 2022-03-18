@@ -1,0 +1,74 @@
+---
+title: "Variable importances for space indicator moving SD"
+output: github_document
+---
+
+11 March 2022
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I did some mild meddling with the predictors as part of the update, cocumented in [issue #18](https://github.com/vdeminstitute/demspaces/issues/18). As part of that, I tried out 5, 10, and 20 year moving standard deviations for the 6 space indicators. The basic idea was that countries where the indicator has been unstable will continue to be unstable, increasing the risk of either opening or closing moves. 
+
+Like in the 2021 update, I used a combination of variable importance and changes in prediction accuracy to guide decisions. 
+
+And the decision, namely, was to add 10 year moving averages, based on the results below. Technically the performance for all three versions was similar, but 10 years was a convenient compromise. The accuracy seems to generally improve a slight bit as well [scroll the relevant commit](https://github.com/vdeminstitute/demspaces/commit/395d7c02b36b9523a7427ed9f10e9bf8ab49d44b). 
+
+The variable importance data comes from `modelrunner/R/variable-importance.R`, run with 1,000 trees, mtry = 15, and min.node.size = 1; permutation variable importance. I manually copied the output file to this folder. 
+
+```{r}
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(stringr)
+  library(tidyr)
+  library(here)
+  library(ggplot2)
+})
+
+vi <- readRDS(here::here("2022-update/data/varimp2022-hist-sd.rds"))
+vi$num.trees <- vi$mtry <- vi$min.node.size <- vi$time <- NULL
+vi$var_imp <- lapply(vi$var_imp, tibble::enframe, name = "variable")
+vi <- vi %>% tidyr::unnest(var_imp)
+vi$value <- vi$value*1e3
+
+vi %>%
+  mutate(group = case_when(
+    str_detect(variable, "sd20") ~ "sd20",
+    str_detect(variable, "sd10") ~ "sd10",
+    str_detect(variable, "sd5") ~ "sd5",
+    TRUE ~ "other"
+  )) %>%
+  ggplot(aes(x = interaction(outcome, direction), 
+             y = value)) + 
+  geom_jitter(width = 0.2, alpha = 0.2, aes(color = group)) +
+  scale_color_manual(values = c("other" = "gray50", "sd20" = "red", "sd10" = "blue", "sd5" = "green")) +
+  coord_flip() +
+  scale_y_continuous(limits = range(vi$value)) +
+  theme_minimal() +
+  theme(
+    panel.background = element_rect(color = "black", fill = NA, size = 0.5)
+  )
+
+vi %>%
+  mutate(group = case_when(
+    str_detect(variable, "sd20") ~ "sd20",
+    str_detect(variable, "sd10") ~ "sd10",
+    str_detect(variable, "sd5") ~ "sd5",
+    TRUE ~ "other"
+  )) %>%
+  group_by(group) %>%
+  summarize(mean = mean(value),
+            median = median(value),
+            max = max(value),
+            n_over_4.3 = sum(value > 4.3))
+
+vi %>%
+  group_by(variable) %>%
+  summarize(mean = mean(value),
+            max = max(value),
+            n_over_1.3 = sum(value >= 4.3)) %>%
+  arrange(desc(mean)) %>%
+  knitr::kable("markdown", digits = 1)
+```
+
