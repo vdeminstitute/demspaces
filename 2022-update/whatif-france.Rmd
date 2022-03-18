@@ -1,0 +1,290 @@
+---
+title: "Case investigation: France associational space closing event risk"
+output: github_document
+---
+
+Author: Andreas Beger  
+Date: 16 March 2022  
+Last compiled: `r format(Sys.Date(), "%d %B %Y")`
+
+One of the cases that stands out in the new forecasts is a high risk of a closing event in the Associational space for France. This note digs a bit deeper in the forecasts in this space for France. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r data-and-model}
+suppressPackageStartupMessages({
+  library(here)
+  library(ranger)
+  library(demspacesR)
+  library(dplyr)
+  library(tidyr)
+  library(readr)
+  library(ggplot2)
+})
+
+# Actual "production" forecasts
+fcasts <- read_csv(here::here("archive/fcasts-rf-v12.csv"),
+                   show_col_types = FALSE)
+
+# Reproduce the forecast model
+outcome_i <- "v2xcs_ccsi"
+
+cp <- read.csv(here::here("modelrunner/input/cutpoints.csv"))
+cutpoints <- cp$up
+names(cutpoints) <- cp$indicator
+
+states <- readRDS(here::here("modelrunner/input/states-v12.rds"))
+
+train_data <- states %>%
+  ungroup() %>%
+  filter(year < max(year))
+test_data  <- states %>%
+  ungroup() %>%
+  filter(year == max(year))
+
+# Cache the model since it takes a bit to train
+if (!file.exists("data/france-model.rds")) {
+  # using higher number of num.trees to reduce the random element / variance
+  mdl <- suppressWarnings(
+    ds_rf(outcome_i, train_data, num.threads = 7,
+          num.trees = 10000, mtry = 20, min.node.size = 1, verbose = FALSE)
+  )
+  saveRDS(mdl, "data/france-model.rds")
+} else {
+  mdl <- readRDS("data/france-model.rds")
+}
+```
+
+For context, here is the current sequence of forecasts for France from 2011 on:
+
+_Table 1: Test and live forecasts produced as part of the regular **demspaces** pipeline. Each row is created from a different model._
+
+```{r}
+fcasts |>
+  filter(gwcode==220, outcome=="v2xcs_ccsi", from_year > 2010) |>
+  select(from_year, for_years, p_up, p_same, p_down) |>
+  knitr::kable(digits = 2)
+```
+
+These are forecasts created with the current, v12, version of the data. They are created by estimating a model with data up to "from_year" - 1, and then using the state of things in "from_year" to create the forecast. The last row are the numbers that are in the updated (2022) dashboard. The risk for a closing event ("p_down") is high, at 0.59. Why? -- that's the point of this note. 
+
+Before diggin in, a preliminary simplification. Given the way the forecasts above are created, there are two things that could explain the change in the high 2021 forecast compared to a lower forecast in an earlier year: (1) changes in the values of predictors, or (2) changes in the estimated model--since the model used to create the "from_year" = 2018 forecasts is not the same as that used for the "from_year" = 2021 forecasts. To simplify this, I'm going to focus on the forecasts that come only from the final model used for the "from_year" = 2021 forecasts. 
+
+The sequences of forecasts from that model looks like this:
+
+_Table 2: (Retrospective) forecasts from the current forecast model. This is the same model that produces the "from_year" = 2021 forecasts in Table 1._
+
+```{r recreated-forecasts, cache=TRUE}
+fra2021 <- test_data %>%
+  filter(gwcode==220) %>%
+  select(-starts_with("dv_"))
+fra2016on <- train_data %>%
+  filter(gwcode==220, year > 2015) %>%
+  select(-starts_with("dv_")) |>
+  bind_rows(fra2021)
+
+fcasts_recreated <- predict(mdl, new_data = fra2016on, cutpoint = cutpoints[[outcome_i]])
+fcasts_recreated <- fcasts_recreated |>
+  left_join(fra2016on[, c("gwcode", "year", "v2xcs_ccsi")], 
+            by = c("gwcode" = "gwcode", "from_year" = "year"))
+
+fcasts_recreated |>
+  select(from_year, v2xcs_ccsi, for_years, p_up, p_same, p_down) |>
+  knitr::kable(digits = 2)
+```
+
+They are different from the first table above. Actually the model for this table has identical inputs to the two models used to create the "from_year" 2020 and 2021 rows in Table 1, but even those rows are slighly different. This is due to small random fluctuations inherent in random forest models, see the [RF Stability](https://github.com/vdeminstitute/demspaces/blob/main/2022-update/rf-stability.md) note for more details. This explains the small differences for the last two rows. 
+
+The forecasts in the other rows differ more substantially between the two tables. In the recreated forecasts, the down risk actually starts increasing from 2017 to 2018 already. This is because the models used to create the respective forecasts in the two tables start diverging from this point and prior. 
+
+_Side track: specifically, this is because of the down change from 2019 to 2020. In the forecasts in the first table above, the model used to create the "from_year" = 2018 forecasts would have used data through to, including, 2017. At that point the outcome variable looking would have looked ahead to 2018-2019. Thus that model didn't know yet about the 2019 to 2020 drop. On the other hand, the model I'm using in this note would have been able to take advantage of completely observed outcomes up to 2021, thus including the drop. And, both the "from_year" = 2018 and 2019 forecasts are higher because both of the 2-year ahead windows for those two rows covered the 2019 to 2020 drop._
+
+The rest of the note uses the model that created the forecasts in the dashboard, and whose (retrospective) forecasts are shown in the second table above. 
+
+## Historical "what if?": France 2017 vs France 2018
+
+Since the critical year for the forecast risk increase seems to have been the initial increase in 2018, one way we can try to explain the still high 2021 forecast is by comparing France in 2018 to France in 2017, when the risk was low. The same model was used to calculate both forecasts, so the only difference are the predictor values that were used to calculate the risks. 
+
+As a simple way to examine the impact of changes in the predictors on the risk forecast, I took the 2017 predictor values for France, flipped _one_ predictor value _at a time_ to it's 2018 value, and recorded the change in the risk forecast. For example, instead of the "v2xcs_ccsi" value for 2017 of 0.939, I substituted the 2018 value of 0.898, kept all other predictor values at their 2017 values, and then calculated a hypothetical alternative prediction. And so on for all other predictors. 
+
+Here are the 10 predictors associated with the largest change in risk:
+
+```{r whatif-flip, cache=TRUE}
+
+fra2017 <- train_data %>%
+  filter(gwcode==220, year==2017) %>%
+  select(-starts_with("dv_"))
+fra2018 <- train_data %>%
+  filter(gwcode==220, year==2018) %>%
+  select(-starts_with("dv_"))
+
+# What if we individually flip 2017 predictor values with the 2018 values?
+pred_cols <- setdiff(colnames(fra2017), c("gwcode", "year"))
+flip <- tibble(var = pred_cols, p_down_flip = NA_real_)
+flip <- flip |>
+  left_join(fra2017 |>
+              pivot_longer(everything(), names_to = "var", values_to = "value2017"),
+            by = "var") |>
+  left_join(fra2018 |>
+              pivot_longer(everything(), names_to = "var", values_to = "value2018"),
+            by = "var")
+for (col in pred_cols) {
+  df <- fra2017
+  df[[col]] <- fra2018[[col]]
+  flip$p_down_flip[flip$var==col] <- predict(mdl$down_mdl, new_data = df)[["p_1"]]
+}
+flip$p_down_2017 <- predict(mdl$down_mdl, new_data = fra2017)[["p_1"]]
+flip$p_down_change <- flip$p_down_flip - flip$p_down_2017
+
+flip |>
+  arrange(desc(p_down_change)) |>
+  head(10) |>
+  select(var, value2017, value2018, p_down_2017, p_down_flip, p_down_change) |>
+  setNames(c("Predictor", "2017 Value", "2018 Value", "2017 Risk", "'What if' Risk", "Risk Change")) |>
+  knitr::kable(digits = 2)
+```
+
+Collectively, these 10 predictors account for 2/3rds of the overall change (increase) in risk that comes out of this hypothetical "what if" experiment. 
+
+One word of caution: random forests are not linear model, so this kind of experimentation should be taken with a grain of salt. Not only is any given _x_, _y_ relationship likely not linear, but one cannot even assume that marginal risk calculations like this are appropriate since random forests are also capable of producing complex interactive relationships.^[E.g. decision trees and random forests can represent XOR relationships, which are both non-linear and interactive.]   
+
+These univariate changes are thus not an exhaustive look at why the risk changes. That said, the sum of univariate changes above is `r round(sum(flip$p_down_change), 2)`, which is close to the total risk change from 2017 to 2018, namely 0.77 - 0.09 = 0.68. This is somewhat reassuring. 
+
+Moving on, some of the predictor changes match what one might expect. For example, the "lag0_v2xcs_ccsi_sd10" predictor is a 10-year moving standard deviation of the Associational space indicator. The idea here was simply that in countries where an indicator has fluctuated more in the recent past, it is more likely to still fluctuate in the future as well. The value has incrased for 2018, and the risk goes up a bit. Similarly, "v2csreprss", civil society organization repression, has moved towards the less democratic end of the scale for 2018, and it makes sense that closing risk would as a result increase (this is coded so that values towards 0 indicate more repression).
+
+Other changes in that table make less sense though. The "lag0_years_since_last_pt_attempt" predictor is the number of years since the last coup attempt in a country, or alternatively years since independence or 1950 for countries that have not had a coup attempt since 1950. France is in the group of countries which have not, and thus has a maximal value of 68 in 2017. These are stable countries, yet increasing the value to 69 leads the model to increase the risk. How does that make sense? 
+
+### Focus on "year since last coup attempt"
+
+Why does increasing the time since last coup attempt increase the risk? To presage what I'll try to demonstrate below, the answer seems to be that the model is using it as a proxy to identify countries that historically have been stable (no coup attempts), but which since around 2010 have experienced a pronounced increase in Associational closing events. 
+
+How this works comes down to how the variable is coded for countries without any coup attempt in recent history. The coup data reach back to 1950, and there are several dozen countries, including France, with no coup attempts at all since that time. In those cases, the variable counts the number of years since 1950 (or independence for some states that came after). Very high values on this variable essentially identify Western democracies as well as a smaller number of other countries. I suspect that this variable, and the other with counter-intuitive impacts in the table above, become proxies in the model for otherwise stable wealthy democracies that are similar to countries like Poland and Hungary that have recently experienced backsliding, or which have decreases in some measures due to Covid-19 related measures. 
+
+To start, here is the evolution of the calculated risk for France 2017, keeping all predictors at their actual values except for "years since last coup attempt", which varies following the _x_-axis. 
+
+```{r years-since-coup-path, cache=TRUE}
+df <- fra2017
+p_down <- numeric(72)
+for (x in 1:72) {
+  df$lag0_years_since_last_pt_attempt <- x
+  p_down[x] <- predict(mdl$down_mdl, df, cutpoints[[outcome_i]])[["p_1"]]
+}
+path_years_since_coup <- tibble(lag0_years_since_last_pt_attempt = 1:72, p_down = p_down)
+```
+
+```{r}
+ypt <- which(path_years_since_coup[[1]]==fra2017$lag0_years_since_last_pt_attempt)
+ypt <- path_years_since_coup[[2]][ypt]
+ggplot(path_years_since_coup, aes(x = lag0_years_since_last_pt_attempt, y = p_down)) +
+  geom_line() +
+  geom_point() + 
+  theme_light() +
+  scale_y_continuous(limits = c(0, 1)) +
+  labs(title = "France 2017, closing risk for 2018-2019") +
+  annotate("point", x = fra2017$lag0_years_since_last_pt_attempt, y = ypt, 
+           color = "red", size = 3, alpha = 0.5)
+```
+
+The red dot marks the actual 2017 value, 68. The variable has no impact on the risk until it reaches 69 or more, when the risk increases. One would have thought that the closing risk is higher following a coup attempt, when the value for this variable is towards 0 (the coup attempt year), and decreasing over time. Instead it is the opposite. 
+
+Lest one think this is peculiar to the risk calculations for France 2017, here are the paths for the other 2017 countries (aka individual conditional expectation (ICE) plot):
+
+```{r ice-years-since-coup-data-2017, cache=TRUE}
+df <- train_data |> filter(year==2017)
+x <- 0:72
+p_down <- tidyr::crossing(df[, c("gwcode", "year")], lag0_years_since_last_pt_attempt = x)
+p_down$p_down <- NA_real_
+for (xi in x) {
+  df$lag0_years_since_last_pt_attempt <- xi
+  pred <- predict(mdl$down_mdl, df, cutpoints[[outcome_i]])[["p_1"]]
+  p_down[p_down$lag0_years_since_last_pt_attempt==xi, ][["p_down"]] <- pred
+}
+ice_data <- p_down
+```
+
+```{r}
+ggplot(ice_data, aes(x = lag0_years_since_last_pt_attempt, y = p_down,
+                     group = gwcode)) +
+  geom_line(alpha = 0.5, color = "gray80") +
+  geom_line(data = ice_data |> filter(gwcode==220)) +
+  theme_light()
+```
+
+In many, but not all, countries, the calculated risk increases at higher values of the years since coup attempt counter. Note also that for many countries, although not France 2017, there is already a smaller increase in risk when going from 61 to 62 years. 
+
+The pattern is the same if we look at the 2021 data slice:
+
+```{r ice-years-since-coup-data-2021, cache=TRUE}
+df <- test_data
+x <- 0:72
+p_down <- tidyr::crossing(df[, c("gwcode", "year")], lag0_years_since_last_pt_attempt = x)
+p_down$p_down <- NA_real_
+for (xi in x) {
+  df$lag0_years_since_last_pt_attempt <- xi
+  pred <- predict(mdl$down_mdl, df, cutpoints[[outcome_i]])[["p_1"]]
+  p_down[p_down$lag0_years_since_last_pt_attempt==xi, ][["p_down"]] <- pred
+}
+ice_data <- p_down
+```
+
+
+```{r}
+pts <- right_join(ice_data, test_data[, c("gwcode", "year", "lag0_years_since_last_pt_attempt")],
+                  by = c("gwcode", "year", "lag0_years_since_last_pt_attempt"))
+ggplot(ice_data, aes(x = lag0_years_since_last_pt_attempt, y = p_down,
+                     group = gwcode)) +
+  geom_point(data = pts, alpha = 0.5, color = "gray80") + 
+  geom_point(data = pts |> filter(gwcode==220), alpha = 0.5, color = "red", size = 3) +
+  geom_line(alpha = 0.5, color = "gray80") +
+  geom_line(data = ice_data |> filter(gwcode==220)) +
+  theme_light()
+```
+
+
+I've marked the actual 2021 values in this plot as well. Note how there is an unusualy number of countries all the way on the right. These are countries with no coup attempt since 1950. In fact, the distribution of this variable is quite lopsided:
+
+```{r}
+x <- train_data |> filter(year==2017) |> pull(lag0_years_since_last_pt_attempt)
+hist(x, breaks = 68, main = "", xlab = "Years since last coup attempt (or independence or 1950)")
+```
+
+There are 39 countries with no coup attempt since 1950, and a smaller number of other countries with no coup attempts that gained indepence after 1950.  
+
+```{r, results='asis'}
+test_data |>
+  filter(lag0_years_since_last_pt_attempt==72) |>
+  pull(gwcode) |>
+  states::country_names(shorten = TRUE) |>
+  paste0(collapse = ", ") |>
+  cat()
+```
+
+Because only these countries will be definition have the maximal value of "years since last coup attempt", tracking the high end of this variable essentially just becomes a way to identify this set of countries. Why does the model think they should have a higher risk?
+
+Here is the rate at which these countries have experienced Associational closing events:
+
+```{r}
+oldtimers <- test_data |>
+  filter(lag0_years_since_last_pt_attempt==72) |>
+  pull(gwcode)
+
+train_data |>
+  filter(gwcode %in% oldtimers, !is.na(dv_v2xcs_ccsi_down_next2)) |>
+  group_by(year) |>
+  summarize(closing_rate = mean(dv_v2xcs_ccsi_down_next2, na.rm = TRUE)) |>
+  ggplot(aes(x = year, y = closing_rate )) +
+  geom_point() +
+  geom_smooth(method = "loess", formula = 'y ~ x', span = 0.5, se = FALSE) +
+  theme_light() +
+  labs(title = "Associational closing event rate for 39 countries without a coup attempt\nsince 1950")
+```
+
+It has increased dramatically since around 2010. If we look at the second previous plot above, the right-most _x_-coordinates are 72 for the year 2021. Working backwards, the value of 60 thus corresponds to the year 2009. The first increase in the ICE curves in the plot, just after 60, thus matches the steep increase in closing event rates for the "no coup attempt" countries after around 2010. 
+
+## Cross-sectional "what if": why does France 2021 have a higher forecast than other countries in 2021?
+
+
+
+******
