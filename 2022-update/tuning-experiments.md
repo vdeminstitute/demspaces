@@ -3,7 +3,7 @@ RF tuning experiments
 
 Author: Andreas Beger  
 Date: 17 March 2022  
-Last compiled: 17 March 2022
+Last compiled: 18 March 2022
 
 The random forest forecasting models have a number of hyperparameters
 that have to be set outside of the usual model training process.
@@ -25,7 +25,8 @@ both on my Mac laptop and the Windows machine. The script is setup to
 save experimental runs to timestamped files, and combine any files
 matching that pattern into a joint tune results file. I used Dropbox as
 an intermediary to hold the results, and in the end copied the final
-results file to the `2022-update/data/` folder.*
+results file to the `2022-update/data/` folder. The file on Dropbox is
+at `~/Dropbox/Work/vdem/demspaces/tuning/all-results.rds`.*
 
 Here is the tuning experiments data:
 
@@ -35,7 +36,7 @@ suppressPackageStartupMessages({
   library(ggplot2)
 })
 
-tr <- readRDS("~/Dropbox/Work/vdem/demspaces/tuning/all-results.rds")
+tr <- readRDS(here::here("2022-update/data/tuning-results.rds"))
 
 head(tr)
 ```
@@ -55,7 +56,7 @@ head(tr)
 glimpse(tr)
 ```
 
-    ## Rows: 2,220
+    ## Rows: 2,520
     ## Columns: 11
     ## $ source_file   <chr> "rf-tune-results_2022-03-12_104503.rds", "rf-tune-result…
     ## $ outcome       <chr> "v2xcl_rol", "v2x_pubcorr", "v2x_veracc_osp", "v2xcs_ccs…
@@ -150,7 +151,8 @@ even 500 is sufficient with the correct settings for “min.node.size” and
 “mtry”. However, with a higher number of trees, the random element in
 the forecasts for specific cases due to the inherent randomness of
 random forest stabilizes, so I use a higher value. See the [RF
-stability](rf-stability.md) note.
+stability](https://github.com/vdeminstitute/demspaces/blob/main/2022-update/rf-stability.md)
+note.
 
 Lastly, “mtry” is more complicated.
 
@@ -272,21 +274,21 @@ summary(mdl)
     ## lm(formula = log(time) ~ log(num.trees) * log(mtry), data = tr)
     ## 
     ## Residuals:
-    ##      Min       1Q   Median       3Q      Max 
-    ## -0.84817 -0.15603  0.02033  0.15317  0.56336 
+    ##     Min      1Q  Median      3Q     Max 
+    ## -0.8574 -0.1510  0.0171  0.1568  0.6097 
     ## 
     ## Coefficients:
     ##                           Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)              -5.540492   0.100002 -55.404   <2e-16 ***
-    ## log(num.trees)            0.969440   0.012699  76.339   <2e-16 ***
-    ## log(mtry)                 0.755271   0.037340  20.227   <2e-16 ***
-    ## log(num.trees):log(mtry)  0.002886   0.004696   0.615    0.539    
+    ## (Intercept)              -5.771154   0.094470 -61.090   <2e-16 ***
+    ## log(num.trees)            0.994996   0.012114  82.138   <2e-16 ***
+    ## log(mtry)                 0.873347   0.033932  25.738   <2e-16 ***
+    ## log(num.trees):log(mtry) -0.010200   0.004348  -2.346   0.0191 *  
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.2183 on 2216 degrees of freedom
-    ## Multiple R-squared:  0.9719, Adjusted R-squared:  0.9718 
-    ## F-statistic: 2.551e+04 on 3 and 2216 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.2145 on 2516 degrees of freedom
+    ## Multiple R-squared:  0.9695, Adjusted R-squared:  0.9694 
+    ## F-statistic: 2.662e+04 on 3 and 2516 DF,  p-value: < 2.2e-16
 
 Basically “mtry” and “num.trees” are the main things impacting model
 training time, and both have similarly-sized impacts on training time.

@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The random forest forecasting models have a number of hyperparameters that have to be set outside of the usual model training process. Pre-2022 **demspaces** used fixed values for the number of trees and minimum node size hyperparameters, while picking a outcome specific mtry value from a set of 13 options using the random forest out-of-bag error estimate. This setup was based on tuning experiments run during the initial project development in 2019-2020, which showed that the optimum mtry value varied over outcomes. Although avoiding more computationally expensive cross-validation and tuning over multiple hyperparameters, with 6 spaces * 2 direction = 12 outcomes, this still led to a multi-hour training time to run the forecast pipeline. Given the changes in the data during the 2021 update last year, this year I ran another tuning experiment to determine whether fixed mtry values could be used instead. 
 
-_Note to future me: I ran `modelrunner/R/rf-tuning.R` multiple times, both on my Mac laptop and the Windows machine. The script is setup to save experimental runs to timestamped files, and combine any files matching that pattern into a joint tune results file. I used Dropbox as an intermediary to hold the results, and in the end copied the final results file to the `2022-update/data/` folder._
+_Note to future me: I ran `modelrunner/R/rf-tuning.R` multiple times, both on my Mac laptop and the Windows machine. The script is setup to save experimental runs to timestamped files, and combine any files matching that pattern into a joint tune results file. I used Dropbox as an intermediary to hold the results, and in the end copied the final results file to the `2022-update/data/` folder. The file on Dropbox is at `~/Dropbox/Work/vdem/demspaces/tuning/all-results.rds`._
 
 Here is the tuning experiments data:
 
@@ -23,7 +23,7 @@ suppressPackageStartupMessages({
   library(ggplot2)
 })
 
-tr <- readRDS("~/Dropbox/Work/vdem/demspaces/tuning/all-results.rds")
+tr <- readRDS(here::here("2022-update/data/tuning-results.rds"))
 
 head(tr)
 
