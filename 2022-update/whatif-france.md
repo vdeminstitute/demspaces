@@ -3,11 +3,31 @@ Case investigation: France associational space closing event risk
 
 Author: Andreas Beger  
 Date: 16 March 2022  
-Last compiled: 18 March 2022
+Last compiled: 25 March 2022
 
 One of the cases that stands out in the new forecasts is a high risk of
 a closing event in the Associational space for France. This note digs a
 bit deeper in the forecasts in this space for France.
+
+Here is a summary of the results:
+
+-   There is no smoking gun, i.e. no single factor for why the risk
+    forecast is so high. Instead a combination of factors is at work,
+    and this note untangles only a segment of that.
+-   France has had decreases in the Associational space since 2015,
+    including a closing event in 2020. The other major western European
+    democracies–the UK, Spain, Germany, and Italy–have not seen similar
+    changes.
+-   It is part of a group of previously stable countries that since 2010
+    have experienced a marked increase in Associational closing events
+    (countries existing since 1950, and with no coup attempts; this
+    includes 21 of 38 OECD members).
+-   Part of the reason the risk is higher compared to other major
+    western European countries is because France has stronger civil
+    society anti-systemic movements (compared to those other countries;
+    globally it is average in this regard).
+
+## Background
 
 For context, here is the current sequence of forecasts for France from
 2011 on:
@@ -56,10 +76,10 @@ Table 1.*
 |----------:|-----------:|:------------|-----:|-------:|-------:|
 |      2016 |       0.94 | 2017 - 2018 | 0.00 |   1.00 |   0.00 |
 |      2017 |       0.94 | 2018 - 2019 | 0.00 |   0.91 |   0.09 |
-|      2018 |       0.90 | 2019 - 2020 | 0.01 |   0.23 |   0.77 |
-|      2019 |       0.91 | 2020 - 2021 | 0.01 |   0.17 |   0.83 |
-|      2020 |       0.84 | 2021 - 2022 | 0.21 |   0.26 |   0.68 |
-|      2021 |       0.84 | 2022 - 2023 | 0.22 |   0.32 |   0.59 |
+|      2018 |       0.90 | 2019 - 2020 | 0.01 |   0.24 |   0.76 |
+|      2019 |       0.91 | 2020 - 2021 | 0.01 |   0.16 |   0.83 |
+|      2020 |       0.84 | 2021 - 2022 | 0.22 |   0.25 |   0.68 |
+|      2021 |       0.84 | 2022 - 2023 | 0.23 |   0.31 |   0.60 |
 
 They are different from the first table above. Actually the model for
 this table has identical inputs to the two models used to create the
@@ -113,15 +133,15 @@ Here are the 10 predictors associated with the largest change in risk:
 | Predictor                        | 2017 Value | 2018 Value | 2017 Risk | ‘What if’ Risk | Risk Change |
 |:---------------------------------|-----------:|-----------:|----------:|---------------:|------------:|
 | lag0_v2csantimv                  |      -1.07 |      -0.31 |      0.09 |           0.19 |        0.10 |
-| lag0_v2xcs_ccsi_sd10             |       0.00 |       0.01 |      0.09 |           0.18 |        0.08 |
+| lag0_v2xcs_ccsi_sd10             |       0.00 |       0.01 |      0.09 |           0.17 |        0.08 |
 | lag0_v2pepwrort                  |       2.35 |       2.74 |      0.09 |           0.16 |        0.07 |
 | lag0_state_age                   |     202.00 |     203.00 |      0.09 |           0.13 |        0.04 |
-| lag0_years_since_last_pt_attempt |      68.00 |      69.00 |      0.09 |           0.12 |        0.03 |
-| lag0_v2x_gencs                   |       0.92 |       0.93 |      0.09 |           0.12 |        0.02 |
+| lag0_years_since_last_pt_attempt |      68.00 |      69.00 |      0.09 |           0.12 |        0.04 |
+| lag0_v2x_gencs                   |       0.92 |       0.93 |      0.09 |           0.11 |        0.02 |
 | lag0_v2csreprss                  |       2.99 |       1.76 |      0.09 |           0.11 |        0.02 |
 | lag0_v2merange                   |       1.78 |       1.38 |      0.09 |           0.10 |        0.01 |
-| lag0_v2lgqstexp                  |       1.69 |       1.03 |      0.09 |           0.10 |        0.01 |
 | lag0_v2cscnsult                  |       1.93 |       1.43 |      0.09 |           0.10 |        0.01 |
+| v2xcs_ccsi                       |       0.94 |       0.90 |      0.09 |           0.10 |        0.01 |
 
 Collectively, these 10 predictors account for 2/3rds of the overall
 change (increase) in risk that comes out of this hypothetical “what if”
@@ -135,7 +155,7 @@ random forests are also capable of producing complex interactive
 relationships.[1]
 
 These univariate changes are thus not an exhaustive look at why the risk
-changes. That said, the sum of univariate changes above is 0.62, which
+changes. That said, the sum of univariate changes above is 0.61, which
 is close to the total risk change from 2017 to 2018, namely 0.77 - 0.09
 = 0.68. This is somewhat reassuring.
 
@@ -245,7 +265,166 @@ after 60, thus matches the steep increase in closing event rates for the
 
 ## Cross-sectional “what if”: why does France 2021 have a higher forecast than other countries in 2021?
 
+Another way to explain the France forecast is by contrasting it with
+other countries in 2021, and find out why it has a higher risk than most
+other countries.
+
+### Single factor changes
+
+Similar to what I did above, the first way I looked into this was
+through hypotheticals where, for each predictor at a time, I
+recalculated France’s risk forecast when a predictor value took on the
+value of another country in 2021, while keeping all other predictors at
+France 2021’s values. For example, France has a fairly high
+value–0.041–for the standard deviation of the last 10 years of the core
+civil society index (“lag0_v2xcs_ccsi_sd10”).[2] What would the risk
+calculation be if it had Germany or France’s value for that predictor?
+
+There are a total of 169 countries covered by the forecasts in 2021, and
+207 predictors. For each predictor, we thus end up with 168 alternative
+risk predictions for France 2021. The plot below show, for example, the
+alternative risk values when varying over other countries’
+“lag0_v2xcs_ccsi_sd10”:
+
+![](whatif-france_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+In this case, with some alternative values the risk ends up being
+reduced down to close to 0.5.
+
+The random forecast forecast models work with more than 200 potential
+predictors, and so the impact of any single predictor on the risk
+calculation for France is relatively limited, not exceeding that in the
+plot above. The plot below summarizes the minimum alternative risk for
+all predictors:
+
+![](whatif-france_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+
+There are a couple of other predictors that with alternative values
+reduce the France 2021 risk towards 0.5. The three with the most
+individual impact are:
+
+| name                             |    min |    max |
+|:---------------------------------|-------:|-------:|
+| lag0_v2xcs_ccsi_sd10             | 0.5054 | 0.6052 |
+| lag0_v2csantimv                  | 0.5074 | 0.6022 |
+| lag0_years_since_last_pt_attempt | 0.5172 | 0.6018 |
+
+In plain terms, these variables are:
+
+-   “lag0_v2xcs_ccsi_sd10”: form above, standard deviation of past 10
+    year’s core civil society index values
+-   “lag0_v2csantimv”: strength of anti-system civil society movements,
+    “Among civil society organizations, are there anti-system opposition
+    movements?”
+-   “lag0_years_since_last_pt_attempt”: years since the last coup
+    attempt (successful and unsuccessful); alternatively the number of
+    years since 1950 or independence for countries without any coup
+    attempts in that time frame
+
+Zooming in on these three factors, here are the France hypothethical
+calculations (red dots) plotted alongside the actual countries’
+forecasts (gray dots), and France’s 2021 forecast (black dot; each gray
+dot has a corresponding red dot with the same *x*-coordinate):
+
+![](whatif-france_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+The plots illustrate the progression of risk values for France under
+different values for the predictors. In essence they sketch out a single
+line–for France–from the individual conditional expectation (ICE) plots
+above. The plots show two things:
+
+1.  The change in risk value for France based on any single indicator is
+    somewhat limited, not exceeding roughly 0.1 probability decrease.
+2.  The fact that other countries with the similar predictor values do
+    in fact span a broad range of risk hints at the fact that the risk
+    calculations cannot be reduced down to a single factor.
+
+The latter point is not necessarily that surprising, as it could as well
+apply to a simple linear model. However, unlike in linear models, in
+random forests the impact of altering several predictors at the same
+time is not necessarily the sum of singe-factor marginal effects.
+
+For a more complicated hypothethical scenario, let’s take these 3
+factors, which individually have the largest possible marginal impacts
+on France’s risk calculation, and see what happens when we alter their
+values jointly. As it turns out, France has somewhat outlying values for
+two of the indicators when compared to the other major countries in
+western Europe–the UK, Spain, Germany, and Italy:
+
+| Country | lag0_v2xcs_ccsi_sd10 | lag0_v2csantimv | lag0_years_since_last_pt_attempt |
+|:--------|---------------------:|----------------:|---------------------------------:|
+| France  |                0.041 |           0.096 |                               72 |
+| Italy   |                0.017 |          -1.263 |                               72 |
+| Spain   |                0.016 |          -0.416 |                               40 |
+| UK      |                0.007 |          -0.924 |                               72 |
+| Germany |                0.003 |          -0.702 |                               72 |
+
+If we use the average of the values for the UK, Spain, Germany, and
+Italy (lag0_v2csantimv = -.83, lag0_v2xcs_ccsi_sd10 = 0.01), and
+counting the fall of the Fourth Republic in 1958 as a coup attempt
+(lag0_years_since_last_pt_attempt = 63), the risk falls from \~0.59 to
+0.39. That’s a drop by one-third. Although not enough of a drop to pull
+France out of the 20 highest forecasts for Associational closing risk,
+it falls down in rank to about the 15th highest.
+
+Note also that the total change of around 0.2 is lower than the sum of
+the three marginal changes from the plot above, each being around 0.1.
+
+### Two-factor changes
+
+It gets computationally expensive, fast, when trying to assess the joint
+impact of *n* predictors the way I have done above. The number of
+possible combinations increases dramatically over *n*. With 207
+predictors, the single factor simulations from above (*n=1*) only had
+207 possible predictor choices. With *n=2* there are already 21,321
+combinations (207 choose 2), but that’s just about doable.
+
+Here is a similar histogram as before of the minimum risk reduction
+associated with each set of two predictors:
+
+![](whatif-france_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
+A couple of combinations get the risk down to below 0.45; here are the
+10 highest two-factor reductions:
+
+|   risk | country      | predictors                            |
+|-------:|:-------------|:--------------------------------------|
+| 0.4166 | North Korea  | lag0_v2csantimv, lag0_v2xcs_ccsi_sd10 |
+| 0.4168 | Luxembourg   | lag0_v2csantimv, lag0_v2xcs_ccsi_sd10 |
+| 0.4168 | Norway       | lag0_v2csantimv, lag0_v2xcs_ccsi_sd10 |
+| 0.4168 | New Zealand  | lag0_v2csantimv, lag0_v2xcs_ccsi_sd10 |
+| 0.4170 | Jamaica      | lag0_v2csantimv, lag0_v2xcs_ccsi_sd10 |
+| 0.4170 | Switzerland  | lag0_v2csantimv, lag0_v2xcs_ccsi_sd10 |
+| 0.4170 | Estonia      | lag0_v2csantimv, lag0_v2xcs_ccsi_sd10 |
+| 0.4170 | Denmark      | lag0_v2csantimv, lag0_v2xcs_ccsi_sd10 |
+| 0.4170 | Cape Verde   | lag0_v2csantimv, lag0_v2xcs_ccsi_sd10 |
+| 0.4180 | Turkmenistan | lag0_v2csantimv, lag0_v2xcs_ccsi_sd10 |
+
+All of them come from the same combination of predictors, which we
+already saw above. So the two-factor impacts seem to point in the same
+direction as the previous single-factor experiments. One can dig
+further, but this is enough.
+
+## Summary
+
+The relatively high forecast for associational closing for France is in
+parts due to the following factors:
+
+-   It experienced a closing event in 2020, and other less severe
+    decreases since 2015
+-   It is part of a group of previously stable countries (no coup
+    attempts) that have in recent years seen a steep increases in
+    closing events for the associational space
+-   Compared to the other major western European countries, France has
+    stronger anti-system civil society movements (although globally it
+    is still average on that indicator, not high)
+
 ------------------------------------------------------------------------
 
 [1] E.g. decision trees and random forests can represent XOR
 relationships, which are both non-linear and interactive.
+
+[2] If you are concerned about the “lag0” part in the predictor name,
+the outcomes are lead, i.e. looking ahead at the next two years in
+respsect to a row’s year. Hence predictors are generally not lagged,
+except for data sources like WDI that do not have values for 2021 yet.

@@ -9,6 +9,13 @@ Last compiled: `r format(Sys.Date(), "%d %B %Y")`
 
 One of the cases that stands out in the new forecasts is a high risk of a closing event in the Associational space for France. This note digs a bit deeper in the forecasts in this space for France. 
 
+Here is a summary of the results:
+
+- There is no smoking gun, i.e. no single factor for why the risk forecast is so high. Instead a combination of factors is at work, and this note untangles only a segment of that.
+- France has had decreases in the Associational space since 2015, including a closing event in 2020. The other major western European democracies--the UK, Spain, Germany, and Italy--have not seen similar changes.
+- It is part of a group of previously stable countries that since 2010 have experienced a marked increase in Associational closing events (countries existing since 1950, and with no coup attempts; this includes 21 of 38 OECD members). 
+- Part of the reason the risk is higher compared to other major western European countries is because France has stronger civil society anti-systemic movements (compared to those other countries; globally it is average in this regard).
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
@@ -49,13 +56,16 @@ if (!file.exists("data/france-model.rds")) {
   # using higher number of num.trees to reduce the random element / variance
   mdl <- suppressWarnings(
     ds_rf(outcome_i, train_data, num.threads = 7,
-          num.trees = 10000, mtry = 20, min.node.size = 1, verbose = FALSE)
+          num.trees = 5000, mtry = 20, min.node.size = 1, verbose = FALSE)
   )
   saveRDS(mdl, "data/france-model.rds")
 } else {
   mdl <- readRDS("data/france-model.rds")
 }
 ```
+
+Background
+----------
 
 For context, here is the current sequence of forecasts for France from 2011 on:
 
@@ -76,7 +86,7 @@ The sequences of forecasts from that model looks like this:
 
 _Table 2: (Retrospective) forecasts from the current forecast model. This is the same model that produces the "from_year" = 2021 forecasts in Table 1._
 
-```{r recreated-forecasts, cache=TRUE}
+```{r recreated-forecasts}
 fra2021 <- test_data %>%
   filter(gwcode==220) %>%
   select(-starts_with("dv_"))
@@ -85,10 +95,15 @@ fra2016on <- train_data %>%
   select(-starts_with("dv_")) |>
   bind_rows(fra2021)
 
-fcasts_recreated <- predict(mdl, new_data = fra2016on, cutpoint = cutpoints[[outcome_i]])
-fcasts_recreated <- fcasts_recreated |>
-  left_join(fra2016on[, c("gwcode", "year", "v2xcs_ccsi")], 
-            by = c("gwcode" = "gwcode", "from_year" = "year"))
+if (!file.exists("data/recreated-forecasts.rds")) {
+  fcasts_recreated <- predict(mdl, new_data = fra2016on, cutpoint = cutpoints[[outcome_i]])
+  fcasts_recreated <- fcasts_recreated |>
+    left_join(fra2016on[, c("gwcode", "year", "v2xcs_ccsi")], 
+              by = c("gwcode" = "gwcode", "from_year" = "year"))
+  saveRDS(fcasts_recreated, "data/recreated-forecasts.rds")
+} else {
+  fcasts_recreated <- readRDS("data/recreated-forecasts.rds")
+}
 
 fcasts_recreated |>
   select(from_year, v2xcs_ccsi, for_years, p_up, p_same, p_down) |>
@@ -103,7 +118,8 @@ _Side track: specifically, this is because of the down change from 2019 to 2020.
 
 The rest of the note uses the model that created the forecasts in the dashboard, and whose (retrospective) forecasts are shown in the second table above. 
 
-## Historical "what if?": France 2017 vs France 2018
+Historical "what if?": France 2017 vs France 2018
+--------------------
 
 Since the critical year for the forecast risk increase seems to have been the initial increase in 2018, one way we can try to explain the still high 2021 forecast is by comparing France in 2018 to France in 2017, when the risk was low. The same model was used to calculate both forecasts, so the only difference are the predictor values that were used to calculate the risks. 
 
@@ -111,7 +127,7 @@ As a simple way to examine the impact of changes in the predictors on the risk f
 
 Here are the 10 predictors associated with the largest change in risk:
 
-```{r whatif-flip, cache=TRUE}
+```{r whatif-flip}
 
 fra2017 <- train_data %>%
   filter(gwcode==220, year==2017) %>%
@@ -120,23 +136,29 @@ fra2018 <- train_data %>%
   filter(gwcode==220, year==2018) %>%
   select(-starts_with("dv_"))
 
-# What if we individually flip 2017 predictor values with the 2018 values?
-pred_cols <- setdiff(colnames(fra2017), c("gwcode", "year"))
-flip <- tibble(var = pred_cols, p_down_flip = NA_real_)
-flip <- flip |>
-  left_join(fra2017 |>
-              pivot_longer(everything(), names_to = "var", values_to = "value2017"),
-            by = "var") |>
-  left_join(fra2018 |>
-              pivot_longer(everything(), names_to = "var", values_to = "value2018"),
-            by = "var")
-for (col in pred_cols) {
-  df <- fra2017
-  df[[col]] <- fra2018[[col]]
-  flip$p_down_flip[flip$var==col] <- predict(mdl$down_mdl, new_data = df)[["p_1"]]
+if (!file.exists("data/whatif-flip.rds")) {
+  # What if we individually flip 2017 predictor values with the 2018 values?
+  pred_cols <- setdiff(colnames(fra2017), c("gwcode", "year"))
+  flip <- tibble(var = pred_cols, p_down_flip = NA_real_)
+  flip <- flip |>
+    left_join(fra2017 |>
+                pivot_longer(everything(), names_to = "var", values_to = "value2017"),
+              by = "var") |>
+    left_join(fra2018 |>
+                pivot_longer(everything(), names_to = "var", values_to = "value2018"),
+              by = "var")
+  for (col in pred_cols) {
+    df <- fra2017
+    df[[col]] <- fra2018[[col]]
+    flip$p_down_flip[flip$var==col] <- predict(mdl$down_mdl, new_data = df)[["p_1"]]
+  }
+  flip$p_down_2017 <- predict(mdl$down_mdl, new_data = fra2017)[["p_1"]]
+  flip$p_down_change <- flip$p_down_flip - flip$p_down_2017
+  
+  saveRDS(flip, "data/whatif-flip.rds")
+} else {
+  flip <- readRDS("data/whatif-flip.rds")
 }
-flip$p_down_2017 <- predict(mdl$down_mdl, new_data = fra2017)[["p_1"]]
-flip$p_down_change <- flip$p_down_flip - flip$p_down_2017
 
 flip |>
   arrange(desc(p_down_change)) |>
@@ -164,14 +186,20 @@ How this works comes down to how the variable is coded for countries without any
 
 To start, here is the evolution of the calculated risk for France 2017, keeping all predictors at their actual values except for "years since last coup attempt", which varies following the _x_-axis. 
 
-```{r years-since-coup-path, cache=TRUE}
-df <- fra2017
-p_down <- numeric(72)
-for (x in 1:72) {
-  df$lag0_years_since_last_pt_attempt <- x
-  p_down[x] <- predict(mdl$down_mdl, df, cutpoints[[outcome_i]])[["p_1"]]
+```{r years-since-coup-path}
+if (!file.exists("data/years-since-coup-path.rds")) {
+  df <- fra2017
+  p_down <- numeric(72)
+  for (x in 1:72) {
+    df$lag0_years_since_last_pt_attempt <- x
+    p_down[x] <- predict(mdl$down_mdl, df, cutpoints[[outcome_i]])[["p_1"]]
+  }
+  path_years_since_coup <- tibble(lag0_years_since_last_pt_attempt = 1:72, p_down = p_down)
+  
+  saveRDS(path_years_since_coup, "data/years-since-coup-path.rds")
+} else {
+  path_years_since_coup <- readRDS("data/years-since-coup-path.rds")
 }
-path_years_since_coup <- tibble(lag0_years_since_last_pt_attempt = 1:72, p_down = p_down)
 ```
 
 ```{r}
@@ -191,17 +219,23 @@ The red dot marks the actual 2017 value, 68. The variable has no impact on the r
 
 Lest one think this is peculiar to the risk calculations for France 2017, here are the paths for the other 2017 countries (aka individual conditional expectation (ICE) plot):
 
-```{r ice-years-since-coup-data-2017, cache=TRUE}
-df <- train_data |> filter(year==2017)
-x <- 0:72
-p_down <- tidyr::crossing(df[, c("gwcode", "year")], lag0_years_since_last_pt_attempt = x)
-p_down$p_down <- NA_real_
-for (xi in x) {
-  df$lag0_years_since_last_pt_attempt <- xi
-  pred <- predict(mdl$down_mdl, df, cutpoints[[outcome_i]])[["p_1"]]
-  p_down[p_down$lag0_years_since_last_pt_attempt==xi, ][["p_down"]] <- pred
+```{r ice-years-since-coup-data-2017}
+if (!file.exists("data/ice-years-since-coup-data-2017.rds")) {
+  df <- train_data |> filter(year==2017)
+  x <- 0:72
+  p_down <- tidyr::crossing(df[, c("gwcode", "year")], lag0_years_since_last_pt_attempt = x)
+  p_down$p_down <- NA_real_
+  for (xi in x) {
+    df$lag0_years_since_last_pt_attempt <- xi
+    pred <- predict(mdl$down_mdl, df, cutpoints[[outcome_i]])[["p_1"]]
+    p_down[p_down$lag0_years_since_last_pt_attempt==xi, ][["p_down"]] <- pred
+  }
+  ice_data <- p_down
+  
+  saveRDS(ice_data, "data/ice-years-since-coup-data-2017.rds")
+} else {
+  ice_data <- readRDS("data/ice-years-since-coup-data-2017.rds")
 }
-ice_data <- p_down
 ```
 
 ```{r}
@@ -216,17 +250,23 @@ In many, but not all, countries, the calculated risk increases at higher values 
 
 The pattern is the same if we look at the 2021 data slice:
 
-```{r ice-years-since-coup-data-2021, cache=TRUE}
-df <- test_data
-x <- 0:72
-p_down <- tidyr::crossing(df[, c("gwcode", "year")], lag0_years_since_last_pt_attempt = x)
-p_down$p_down <- NA_real_
-for (xi in x) {
-  df$lag0_years_since_last_pt_attempt <- xi
-  pred <- predict(mdl$down_mdl, df, cutpoints[[outcome_i]])[["p_1"]]
-  p_down[p_down$lag0_years_since_last_pt_attempt==xi, ][["p_down"]] <- pred
+```{r ice-years-since-coup-data-2021}
+if (!file.exists("data/ice-years-since-coup-data-2021.rds")) {
+  df <- test_data
+  x <- 0:72
+  p_down <- tidyr::crossing(df[, c("gwcode", "year")], lag0_years_since_last_pt_attempt = x)
+  p_down$p_down <- NA_real_
+  for (xi in x) {
+    df$lag0_years_since_last_pt_attempt <- xi
+    pred <- predict(mdl$down_mdl, df, cutpoints[[outcome_i]])[["p_1"]]
+    p_down[p_down$lag0_years_since_last_pt_attempt==xi, ][["p_down"]] <- pred
+  }
+  ice_data <- p_down
+  
+  saveRDS(ice_data, "data/ice-years-since-coup-data-2021.rds")
+} else {
+  ice_data <- readRDS("data/ice-years-since-coup-data-2021.rds")
 }
-ice_data <- p_down
 ```
 
 
@@ -283,8 +323,279 @@ train_data |>
 
 It has increased dramatically since around 2010. If we look at the second previous plot above, the right-most _x_-coordinates are 72 for the year 2021. Working backwards, the value of 60 thus corresponds to the year 2009. The first increase in the ICE curves in the plot, just after 60, thus matches the steep increase in closing event rates for the "no coup attempt" countries after around 2010. 
 
-## Cross-sectional "what if": why does France 2021 have a higher forecast than other countries in 2021?
+Cross-sectional "what if": why does France 2021 have a higher forecast than other countries in 2021?
+--------------------
 
+Another way to explain the France forecast is by contrasting it with other countries in 2021, and find out why it has a higher risk than most other countries.
+
+### Single factor changes
+
+Similar to what I did above, the first way I looked into this was through hypotheticals where, for each predictor at a time, I recalculated France's risk forecast when a predictor value took on the value of another country in 2021, while keeping all other predictors at France 2021's values. For example, France has a fairly high value--0.041--for the standard deviation of the last 10 years of the core civil society index ("lag0_v2xcs_ccsi_sd10").^[If you are concerned about the "lag0" part in the predictor name, the outcomes are lead, i.e. looking ahead at the next two years in respsect to a row's year. Hence predictors are generally not lagged, except for data sources like WDI that do not have values for 2021 yet.] What would the risk calculation be if it had Germany or France's value for that predictor?
+
+
+```{r}
+fra2021 <- test_data %>%
+  filter(gwcode==220) %>%
+  select(-starts_with("dv_"))
+
+predictors <- mdl$down_mdl$model$forest$independent.variable.names
+```
+
+
+```{r xcross1}
+if (!file.exists("data/whatif-xcross1.rds")) {
+  # This data frame will hold the results. Each cell will hold the down prediction
+  # for France if France had had that row's value on that column's variable, 
+  # holding all other predictors at France's actual value.
+  out <- test_data
+  out <- out[, colnames(out) %in% c("gwcode", "year", predictors)]
+  out[, predictors] <- NA_real_
+  
+  for (var in predictors) {
+    df <- fra2021
+    df[[var]] <- NULL
+    add <- test_data[, var]
+    df <- bind_cols(df, add)
+    
+    out[[var]] <- predict(mdl$down_mdl, new_data = df, cutpoints[["v2xcs_ccsi"]])[["p_1"]]
+  }
+  xcross1 <- out
+  saveRDS(xcross1, "data/whatif-xcross1.rds")
+} else {
+  xcross1 <- readRDS("data/whatif-xcross1.rds")
+}
+```
+
+There are a total of 169 countries covered by the forecasts in 2021, and 207 predictors. For each predictor, we thus end up with 168 alternative risk predictions for France 2021. The plot below show, for example, the alternative risk values when varying over other countries' "lag0_v2xcs_ccsi_sd10":
+
+
+```{r}
+ggplot(xcross1, aes(x = lag0_v2xcs_ccsi_sd10, group = gwcode==220)) +
+  geom_dotplot(binwidth = 0.001, aes(fill = gwcode==220, alpha = gwcode==220,
+                                     color = gwcode==220),
+               stackgroups = TRUE, binpositions = "all", dotsize = 1.23) +
+  scale_alpha_manual(guide = "none", values = c(0.4, 1)) +
+  scale_fill_manual("Scenario: ", values = c("red", "black"),
+                     labels = c("Hypothetical", "Actual France 2021")) +
+  scale_color_manual("Scenario: ", values = c("red", "black"),
+                     labels = c("Hypothetical", "Actual France 2021")) +
+  theme_light() +
+  theme(legend.position = "top") +
+  scale_x_continuous(limits = c(0.5, 0.61)) +
+  scale_y_continuous("", breaks = c(seq(0, 1.007, length.out = 11)), labels = c(seq(0, 50, by = 5)))
+```
+
+In this case, with some alternative values the risk ends up being reduced down to close to 0.5.
+
+The random forecast forecast models work with more than 200 potential predictors, and so the impact of any single predictor on the risk calculation for France is relatively limited, not exceeding that in the plot above. The plot below summarizes the minimum alternative risk for all predictors: 
+
+```{r}
+xcross1 %>% 
+  select(3:ncol(xcross1)) %>% 
+  pivot_longer(everything()) %>% 
+  group_by(name) %>% summarize(min = min(value), max = max(value)) %>%
+  arrange(min) -> foo
+
+foo %>%
+  ggplot(aes(x = min)) +
+  geom_histogram(binwidth = 0.005, fill = "gray50", color = "gray20") +
+  theme_light()
+```
+
+There are a couple of other predictors that with alternative values reduce the France 2021 risk towards 0.5. The three with the most individual impact are:
+
+```{r}
+foo %>%
+  arrange(min) %>%
+  head(3) %>%
+  knitr::kable()
+```
+
+In plain terms, these variables are:
+
+- "lag0_v2xcs_ccsi_sd10": form above, standard deviation of past 10 year's core civil society index values
+- "lag0_v2csantimv": strength of anti-system civil society movements, "Among civil society organizations, are there anti-system opposition movements?"
+- "lag0_years_since_last_pt_attempt": years since the last coup attempt (successful and unsuccessful); alternatively the number of years since 1950 or independence for countries without any coup attempts in that time frame
+
+Zooming in on these three factors, here are the France hypothethical calculations (red dots) plotted  alongside the actual countries' forecasts (gray dots), and France's 2021 forecast (black dot; each gray dot has a corresponding red dot with the same _x_-coordinate):
+
+```{r}
+predictors <- mdl$down_mdl$model$forest$independent.variable.names
+
+joint <- left_join(
+  xcross1 |> pivot_longer(-c(gwcode, year), names_to = "variable", values_to = "risk"),
+  test_data |> select(c(gwcode, !!predictors)) |> pivot_longer(-gwcode, names_to = "variable", values_to = "value"),
+  by = c("gwcode", "variable")
+)
+
+obs <- test_data[, c("gwcode", predictors)]
+obs$risk <- predict(mdl$down_mdl, test_data)[["p_1"]]
+obs <- obs |> pivot_longer(-c(gwcode, risk), names_to = "variable", values_to = "value")
+
+obs$group <- "real"
+joint$group <- "whatif-france"
+joint <- bind_rows(joint, obs)
+
+vars <- c("lag0_v2xcs_ccsi_sd10", "lag0_v2csantimv", 
+          "lag0_years_since_last_pt_attempt")
+
+joint %>% 
+  filter(variable %in% !!vars) %>%
+  count(group, variable, risk, value) %>%
+  ggplot(aes(x = value, y = risk, group = group)) +
+  geom_point(aes(color = group, alpha = group)) +
+  scale_alpha_manual(guide = "none", values = c(0.5, 0.15)) +
+  scale_color_manual("Country: ", values = c("gray50", "red"),
+                     labels = c("Actual 2021 countries", "France hypothetical")) + 
+  geom_point(data = joint %>% 
+               filter(gwcode==220) %>%
+               filter(variable %in% !!vars),
+             color = "black", size = 2
+  ) +
+  facet_wrap(~variable, scales = "free_x") +
+  theme_light() +
+  theme(legend.position = "top") +
+  geom_text(data = tibble(variable = "lag0_v2csantimv", value = 0.2, risk = 0.62,
+                          label = "France 2021", group = "Actual 2021 countries"), 
+            aes(label = label), hjust = 0)
+```
+
+The plots illustrate the progression of risk values for France under different values for the predictors. In essence they sketch out a single line--for France--from the individual conditional expectation (ICE) plots above. The plots show two things:
+
+1. The change in risk value for France based on any single indicator is somewhat limited, not exceeding roughly 0.1 probability decrease. 
+2. The fact that other countries with the similar predictor values do in fact span a broad range of risk hints at the fact that the risk calculations cannot be reduced down to a single factor. 
+
+The latter point is not necessarily that surprising, as it could as well apply to a simple linear model. However, unlike in linear models, in random forests the impact of altering several predictors at the same time is not necessarily the sum of singe-factor marginal effects.
+
+For a more complicated hypothethical scenario, let's take these 3 factors, which individually have the largest possible marginal impacts on France's risk calculation, and see what happens when we alter their values jointly. As it turns out, France has somewhat outlying values for two of the indicators when compared to the other major countries in western Europe--the UK, Spain, Germany, and Italy:
+
+```{r}
+test_data %>%
+  select(gwcode, !!vars) %>%
+  filter(gwcode %in% c(200, 220, 230, 260, 325)) %>%
+  mutate(Country = states::country_names(gwcode, shorten = TRUE)) %>%
+  select(Country, !!vars) %>%
+  arrange(desc(lag0_v2xcs_ccsi_sd10)) %>%
+  knitr::kable(digits = 3) 
+
+mns <- test_data %>%
+  select(gwcode, !!vars) %>%
+  filter(gwcode %in% c(200, 230, 260, 325)) %>%
+  summarize(across(-gwcode, list(mean)))
+
+df <- fra2021
+df$lag0_v2csantimv <- -.83
+df$lag0_v2xcs_ccsi_sd10 <- 0.01
+df$lag0_years_since_last_pt_attempt <- 63
+p_new <- predict(mdl$down_mdl, df)[["p_1"]]
+
+
+
+```
+
+If we use the average of the values for the UK, Spain, Germany, and Italy (lag0_v2csantimv = -.83, lag0_v2xcs_ccsi_sd10 = 0.01), and counting the fall of the Fourth Republic in 1958 as a coup attempt (lag0_years_since_last_pt_attempt = 63), the risk falls from ~0.59 to 0.39. That's a drop by one-third. Although not enough of a drop to pull France out of the 20 highest forecasts for Associational closing risk, it falls down in rank to about the 15th highest.
+
+Note also that the total change of around 0.2 is lower than the sum of the three marginal changes from the plot above, each being around 0.1. 
+
+### Two-factor changes
+
+It gets computationally expensive, fast, when trying to assess the joint impact of _n_ predictors the way I have done above. The number of possible combinations increases dramatically over _n_. With 207 predictors, the single factor simulations from above (_n=1_) only had 207 possible predictor choices. With _n=2_ there are already 21,321 combinations (207 choose 2), but that's just about doable. 
+
+```{r xcross-2}
+if (!file.exists("data/whatif-xcross2.rds")) {
+  old_out2 <- readRDS("data/whatif-xcross2.rds")
+
+  # 2-way combinations
+  choices <- combn(predictors, m = 2)
+  colnames(choices) <- paste0("set_", as.character(1:ncol(choices)))
+  
+  # temp
+  choices <- choices[, !colnames(choices) %in% colnames(old_out2)]
+  print(ncol(choices))
+  
+  out2 <- tibble(test_data[, c("gwcode")])
+  out2[, 2:(ncol(choices)+1)] <- numeric(nrow(out2))
+  colnames(out2) <- c("gwcode", colnames(choices))
+  
+  df <- fra2021[rep(1, nrow(test_data)), ]
+  
+  for (i in 1:ncol(choices)) {
+    if (i %% 50 == 0) cat(i, "\n")
+    set <- choices[, i]
+    col <- paste0(colnames(choices)[i])
+    
+    df_i <- df
+    df_i[[set[1]]] <- test_data[[set[1]]]
+    df_i[[set[2]]] <- test_data[[set[2]]]
+    
+    out2[[col]] <- predict(mdl$down_mdl, new_data = df_i, cutpoints[["v2xcs_ccsi"]])[["p_1"]]
+    
+  }
+  
+  out2 <- bind_cols(out2, old_out2[, -1])
+  out2 <- out2[, unique(sort(c("gwcode", colnames(out2))))]
+  
+  saveRDS(out2, "data/whatif-xcross2.rds")
+  
+  out2 %>% select(2:ncol(out2)) %>% pivot_longer(everything()) %>% group_by(name) %>% summarize(min = min(value), max = max(value)) %>% arrange(min) -> foo
+  
+  out2 %>%
+    pivot_longer(-gwcode) %>%
+    filter(value < 0.5)
+} else {
+  out2 <- readRDS("data/whatif-xcross2.rds")
+}
+
+
+```
+
+
+Here is a similar histogram as before of the minimum risk reduction associated with each set of two predictors:
+
+```{r}
+out2 %>% 
+  select(2:ncol(out2)) %>% 
+  pivot_longer(everything()) %>% 
+  group_by(name) %>% 
+  summarize(min = min(value), max = max(value)) %>%
+  arrange(min) -> foo
+
+foo %>%
+  ggplot(aes(x = min)) +
+  geom_histogram(binwidth = 0.005, fill = "gray50", color = "gray20") +
+  theme_light()
+```
+
+A couple of combinations get the risk down to below 0.45; here are the 10 highest two-factor reductions:
+
+```{r}
+choices <- combn(predictors, m = 2)
+colnames(choices) <- paste0("set_", as.character(1:ncol(choices)))
+choices <- as_tibble(choices) |>
+  pivot_longer(everything(), names_to = "set", values_to = "predictor") |>
+  group_by(set) |>
+  summarize(predictors = paste0(predictor, collapse = ", "))
+
+out2 %>% 
+  pivot_longer(2:ncol(out2), names_to = "set", values_to = "risk") %>% 
+  arrange(risk) %>%
+  head(10) %>%
+  mutate(country = states::country_names(gwcode, shorten = TRUE)) %>%
+  left_join(choices, by = "set") %>%
+  select(risk, country, predictors) %>%
+  knitr::kable()
+```
+
+All of them come from the same combination of predictors, which we already saw above. So the two-factor impacts seem to point in the same direction as the previous single-factor experiments. One can dig further, but this is enough. 
+
+Summary
+-------
+
+The relatively high forecast for associational closing for France is in parts due to the following factors:
+
+- It experienced a closing event in 2020, and other less severe decreases since 2015
+- It is part of a group of previously stable countries (no coup attempts) that have in recent years seen a steep increases in closing events for the associational space
+- Compared to the other major western European countries, France has stronger anti-system civil society movements (although globally it is still average on that indicator, not high)
 
 
 ******
