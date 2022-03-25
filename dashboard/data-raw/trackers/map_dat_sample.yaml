@@ -4,123 +4,123 @@
   popUp_text_up_v2x_veracc_osp: '<h3><b>United States of America</b></h3><h5><span
     style="color:#002649">Event probabilities for the <b>Electoral Space</b> <span
     style="font-size: 80%">(+/-0.08 change in <b>V-Dem&apos;s Vertical Accountability
-    Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 4%</b></span><br><b><span
-    style="color:#777778">Stable: 94%</b></span><br><b><span style="color:#F37321">Closing
+    Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 5%</b></span><br><b><span
+    style="color:#777778">Stable: 93%</b></span><br><b><span style="color:#F37321">Closing
     Event: 1%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
-    style="color:#002649">Risk Ranking: 78</b></span><br><b><span style="color:#F37321">
-    Closing </span><span style="color:#002649">Risk Ranking: 126</b></span><br><b><span
+    style="color:#002649">Risk Ranking: 60</b></span><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 134</b></span><br><b><span
     style="color:#002649"> Electoral Level in 2021: 0.894</b></span><br><b><span style="color:#002649">
     Electoral Change 2020-2021: +0.002</b></span>'
   popUp_text_up_v2x_pubcorr: '<h3><b>United States of America</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
     change in <b>V-Dem&apos;s Public Corruption Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 7%</b></span><br><b><span style="color:#777778">Stable:
-    73%</b></span><br><b><span style="color:#F37321">Closing Event: 20%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 10%</b></span><br><b><span style="color:#777778">Stable:
+    69%</b></span><br><b><span style="color:#F37321">Closing Event: 22%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    134</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 77</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
+    120</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 69</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
     0.915</b></span><br><b><span style="color:#002649"> Economic Change 2020-2021:
     0</b></span>'
   popUp_text_up_v2xcs_ccsi: '<h3><b>United States of America</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
     change in <b>V-Dem&apos;s Core Civil Society Index</b>)</span></span></h5><b><span
     style="color:#0082BA">Opening Event: 0%</b></span><br><b><span style="color:#777778">Stable:
-    83%</b></span><br><b><span style="color:#F37321">Closing Event: 16%</b></span><br><br><b><span
+    79%</b></span><br><b><span style="color:#F37321">Closing Event: 20%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
     159</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 66</b></span><br><b><span style="color:#002649"> Associational Level
+    Ranking: 55</b></span><br><b><span style="color:#002649"> Associational Level
     in 2021: 0.96</b></span><br><b><span style="color:#002649"> Associational Change
     2020-2021: +0.006</b></span>'
-  popUp_text_up_v2x_freexp_altinf: '<h3><b>United States of America</b></h3><h5><span
-    style="color:#002649">Event probabilities for the <b>Informational Space</b> <span
-    style="font-size: 80%">(+/-0.05 change in <b>V-Dem&apos;s Freedom of Expression
-    and Alternative Sources of Information Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening
-    Event: 2%</b></span><br><b><span style="color:#777778">Stable: 84%</b></span><br><b><span
-    style="color:#F37321">Closing Event: 12%</b></span><br><br><b><span style="color:#0082BA">
-    Opening </span><span style="color:#002649">Risk Ranking: 123</b></span><br><b><span
-    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    68</b></span><br><b><span style="color:#002649"> Informational Level in 2021:
-    0.924</b></span><br><b><span style="color:#002649"> Informational Change 2020-2021:
-    +0.023</b></span>'
   popUp_text_up_v2x_horacc_osp: '<h3><b>United States of America</b></h3><h5><span
     style="color:#002649">Event probabilities for the <b>Governing Space</b> <span
     style="font-size: 80%">(+/-0.06 change in <b>V-Dem&apos;s Horizontal Accountability
     Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 3%</b></span><br><b><span
-    style="color:#777778">Stable: 85%</b></span><br><b><span style="color:#F37321">Closing
-    Event: 11%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
-    style="color:#002649">Risk Ranking: 125</b></span><br><b><span style="color:#F37321">
-    Closing </span><span style="color:#002649">Risk Ranking: 66</b></span><br><b><span
+    style="color:#777778">Stable: 83%</b></span><br><b><span style="color:#F37321">Closing
+    Event: 14%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
+    style="color:#002649">Risk Ranking: 124</b></span><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 55</b></span><br><b><span
     style="color:#002649"> Governing Level in 2021: 0.901</b></span><br><b><span style="color:#002649">
     Governing Change 2020-2021: -0.003</b></span>'
+  popUp_text_up_v2x_freexp_altinf: '<h3><b>United States of America</b></h3><h5><span
+    style="color:#002649">Event probabilities for the <b>Informational Space</b> <span
+    style="font-size: 80%">(+/-0.05 change in <b>V-Dem&apos;s Freedom of Expression
+    and Alternative Sources of Information Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening
+    Event: 2%</b></span><br><b><span style="color:#777778">Stable: 81%</b></span><br><b><span
+    style="color:#F37321">Closing Event: 16%</b></span><br><br><b><span style="color:#0082BA">
+    Opening </span><span style="color:#002649">Risk Ranking: 125</b></span><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    57</b></span><br><b><span style="color:#002649"> Informational Level in 2021:
+    0.924</b></span><br><b><span style="color:#002649"> Informational Change 2020-2021:
+    +0.023</b></span>'
   popUp_text_up_v2xcl_rol: '<h3><b>United States of America</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
     change in <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></span></h5><b><span
     style="color:#0082BA">Opening Event: 2%</b></span><br><b><span style="color:#777778">Stable:
-    82%</b></span><br><b><span style="color:#F37321">Closing Event: 15%</b></span><br><br><b><span
+    82%</b></span><br><b><span style="color:#F37321">Closing Event: 16%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    132</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 58</b></span><br><b><span style="color:#002649"> Individual Level in
+    135</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 55</b></span><br><b><span style="color:#002649"> Individual Level in
     2021: 0.935</b></span><br><b><span style="color:#002649"> Individual Change 2020-2021:
     +0.021</b></span>'
   popUp_text_down_v2x_veracc_osp: '<h3><b>United States of America</b></h3><h5><span
     style="color:#002649">Event probabilities for the <b>Electoral Space</b> <span
     style="font-size: 80%">(+/-0.08 change in the <b>V-Dem&apos;s Vertical Accountability
     Index</b>)</span></h5><b><span style="color:#F37321">Closing Event: 1%</b></span><br><b><span
-    style="color:#777778">Stable: 94%</b></span><br><b><span style="color:#0082BA">Opening
-    Event: 4%</b></span><br><br><b><span style="color:#F37321"> Closing </span><span
-    style="color:#002649">Risk Ranking: 126</b></span><br><b><span style="color:#0082BA">
-    Opening </span><span style="color:#002649">Risk Ranking: 78</b></span><br><b><span
+    style="color:#777778">Stable: 93%</b></span><br><b><span style="color:#0082BA">Opening
+    Event: 5%</b></span><br><br><b><span style="color:#F37321"> Closing </span><span
+    style="color:#002649">Risk Ranking: 134</b></span><br><b><span style="color:#0082BA">
+    Opening </span><span style="color:#002649">Risk Ranking: 60</b></span><br><b><span
     style="color:#002649"> Electoral Level in 2021: 0.894</b></span><br><b><span style="color:#002649">
     Electoral Change 2020-2021: +0.002</b></span>'
   popUp_text_down_v2x_pubcorr: '<h3><b>United States of America</b></h3><h5><span
     style="color:#002649">Event probabilities for the <b>Economic Space</b> <span
     style="font-size: 80%">(+/-0.03 change in the <b>V-Dem&apos;s Public Corruption
-    Index</b>)</span></h5><b><span style="color:#F37321">Closing Event: 20%</b></span><br><b><span
-    style="color:#777778">Stable: 73%</b></span><br><b><span style="color:#0082BA">Opening
-    Event: 7%</b></span><br><br><b><span style="color:#F37321"> Closing </span><span
-    style="color:#002649">Risk Ranking: 77</b></span><br><b><span style="color:#0082BA">
-    Opening </span><span style="color:#002649">Risk Ranking: 134</b></span><br><b><span
+    Index</b>)</span></h5><b><span style="color:#F37321">Closing Event: 22%</b></span><br><b><span
+    style="color:#777778">Stable: 69%</b></span><br><b><span style="color:#0082BA">Opening
+    Event: 10%</b></span><br><br><b><span style="color:#F37321"> Closing </span><span
+    style="color:#002649">Risk Ranking: 69</b></span><br><b><span style="color:#0082BA">
+    Opening </span><span style="color:#002649">Risk Ranking: 120</b></span><br><b><span
     style="color:#002649"> Economic Level in 2021: 0.915</b></span><br><b><span style="color:#002649">
     Economic Change 2020-2021: 0</b></span>'
   popUp_text_down_v2xcs_ccsi: '<h3><b>United States of America</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
     change in the <b>V-Dem&apos;s Core Civil Society Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 16%</b></span><br><b><span style="color:#777778">Stable:
-    83%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
+    style="color:#F37321">Closing Event: 20%</b></span><br><b><span style="color:#777778">Stable:
+    79%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    66</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    55</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
     Ranking: 159</b></span><br><b><span style="color:#002649"> Associational Level
     in 2021: 0.96</b></span><br><b><span style="color:#002649"> Associational Change
     2020-2021: +0.006</b></span>'
+  popUp_text_down_v2x_horacc_osp: '<h3><b>United States of America</b></h3><h5><span
+    style="color:#002649">Event probabilities for the <b>Governing Space</b> <span
+    style="font-size: 80%">(+/-0.06 change in the <b>V-Dem&apos;s Horizontal Accountability
+    Index</b>)</span></h5><b><span style="color:#F37321">Closing Event: 14%</b></span><br><b><span
+    style="color:#777778">Stable: 83%</b></span><br><b><span style="color:#0082BA">Opening
+    Event: 3%</b></span><br><br><b><span style="color:#F37321"> Closing </span><span
+    style="color:#002649">Risk Ranking: 55</b></span><br><b><span style="color:#0082BA">
+    Opening </span><span style="color:#002649">Risk Ranking: 124</b></span><br><b><span
+    style="color:#002649"> Governing Level in 2021: 0.901</b></span><br><b><span style="color:#002649">
+    Governing Change 2020-2021: -0.003</b></span>'
   popUp_text_down_v2x_freexp_altinf: '<h3><b>United States of America</b></h3><h5><span
     style="color:#002649">Event probabilities for the <b>Informational Space</b> <span
     style="font-size: 80%">(+/-0.05 change in the <b>V-Dem&apos;s Freedom of Expression
     and Alternative Sources of Information Index</b>)</span></h5><b><span style="color:#F37321">Closing
-    Event: 12%</b></span><br><b><span style="color:#777778">Stable: 84%</b></span><br><b><span
+    Event: 16%</b></span><br><b><span style="color:#777778">Stable: 81%</b></span><br><b><span
     style="color:#0082BA">Opening Event: 2%</b></span><br><br><b><span style="color:#F37321">
-    Closing </span><span style="color:#002649">Risk Ranking: 68</b></span><br><b><span
+    Closing </span><span style="color:#002649">Risk Ranking: 57</b></span><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    123</b></span><br><b><span style="color:#002649"> Informational Level in 2021:
+    125</b></span><br><b><span style="color:#002649"> Informational Level in 2021:
     0.924</b></span><br><b><span style="color:#002649"> Informational Change 2020-2021:
     +0.023</b></span>'
-  popUp_text_down_v2x_horacc_osp: '<h3><b>United States of America</b></h3><h5><span
-    style="color:#002649">Event probabilities for the <b>Governing Space</b> <span
-    style="font-size: 80%">(+/-0.06 change in the <b>V-Dem&apos;s Horizontal Accountability
-    Index</b>)</span></h5><b><span style="color:#F37321">Closing Event: 11%</b></span><br><b><span
-    style="color:#777778">Stable: 85%</b></span><br><b><span style="color:#0082BA">Opening
-    Event: 3%</b></span><br><br><b><span style="color:#F37321"> Closing </span><span
-    style="color:#002649">Risk Ranking: 66</b></span><br><b><span style="color:#0082BA">
-    Opening </span><span style="color:#002649">Risk Ranking: 125</b></span><br><b><span
-    style="color:#002649"> Governing Level in 2021: 0.901</b></span><br><b><span style="color:#002649">
-    Governing Change 2020-2021: -0.003</b></span>'
   popUp_text_down_v2xcl_rol: '<h3><b>United States of America</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
     change in the <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 15%</b></span><br><b><span style="color:#777778">Stable:
+    style="color:#F37321">Closing Event: 16%</b></span><br><b><span style="color:#777778">Stable:
     82%</b></span><br><b><span style="color:#0082BA">Opening Event: 2%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    58</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 132</b></span><br><b><span style="color:#002649"> Individual Level in
+    55</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 135</b></span><br><b><span style="color:#002649"> Individual Level in
     2021: 0.935</b></span><br><b><span style="color:#002649"> Individual Change 2020-2021:
     +0.021</b></span>'
 - country_name: Canada
@@ -132,58 +132,58 @@
     style="color:#0082BA">Opening Event: 0%</b></span><br><b><span style="color:#777778">Stable:
     98%</b></span><br><b><span style="color:#F37321">Closing Event: 1%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    145</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 114</b></span><br><b><span style="color:#002649"> Electoral Level in
+    148</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 132</b></span><br><b><span style="color:#002649"> Electoral Level in
     2021: 0.93</b></span><br><b><span style="color:#002649"> Electoral Change 2020-2021:
     -0.002</b></span>'
   popUp_text_up_v2x_pubcorr: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
     change in <b>V-Dem&apos;s Public Corruption Index</b>)</span></span></h5><b><span
     style="color:#0082BA">Opening Event: 0%</b></span><br><b><span style="color:#777778">Stable:
-    95%</b></span><br><b><span style="color:#F37321">Closing Event: 4%</b></span><br><br><b><span
+    94%</b></span><br><b><span style="color:#F37321">Closing Event: 5%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    157</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 146</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
+    156</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 141</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
     0.989</b></span><br><b><span style="color:#002649"> Economic Change 2020-2021:
     0</b></span>'
   popUp_text_up_v2xcs_ccsi: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
     change in <b>V-Dem&apos;s Core Civil Society Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 12%</b></span><br><b><span style="color:#777778">Stable:
-    82%</b></span><br><b><span style="color:#F37321">Closing Event: 6%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 14%</b></span><br><b><span style="color:#777778">Stable:
+    78%</b></span><br><b><span style="color:#F37321">Closing Event: 8%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    92</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 124</b></span><br><b><span style="color:#002649"> Associational Level
+    80</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 106</b></span><br><b><span style="color:#002649"> Associational Level
     in 2021: 0.931</b></span><br><b><span style="color:#002649"> Associational Change
     2020-2021: 0</b></span>'
+  popUp_text_up_v2x_horacc_osp: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></span></h5><b><span
+    style="color:#0082BA">Opening Event: 5%</b></span><br><b><span style="color:#777778">Stable:
+    89%</b></span><br><b><span style="color:#F37321">Closing Event: 5%</b></span><br><br><b><span
+    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
+    113</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 105</b></span><br><b><span style="color:#002649"> Governing Level in
+    2021: 0.862</b></span><br><b><span style="color:#002649"> Governing Change 2020-2021:
+    +0.031</b></span>'
   popUp_text_up_v2x_freexp_altinf: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
     change in <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information
     Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 2%</b></span><br><b><span
-    style="color:#777778">Stable: 94%</b></span><br><b><span style="color:#F37321">Closing
-    Event: 3%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
-    style="color:#002649">Risk Ranking: 135</b></span><br><b><span style="color:#F37321">
-    Closing </span><span style="color:#002649">Risk Ranking: 132</b></span><br><b><span
+    style="color:#777778">Stable: 92%</b></span><br><b><span style="color:#F37321">Closing
+    Event: 5%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
+    style="color:#002649">Risk Ranking: 132</b></span><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 125</b></span><br><b><span
     style="color:#002649"> Informational Level in 2021: 0.941</b></span><br><b><span
     style="color:#002649"> Informational Change 2020-2021: -0.005</b></span>'
-  popUp_text_up_v2x_horacc_osp: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
-    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
-    change in <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 4%</b></span><br><b><span style="color:#777778">Stable:
-    90%</b></span><br><b><span style="color:#F37321">Closing Event: 4%</b></span><br><br><b><span
-    style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    114</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 109</b></span><br><b><span style="color:#002649"> Governing Level in
-    2021: 0.862</b></span><br><b><span style="color:#002649"> Governing Change 2020-2021:
-    +0.031</b></span>'
   popUp_text_up_v2xcl_rol: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
     change in <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></span></h5><b><span
     style="color:#0082BA">Opening Event: 0%</b></span><br><b><span style="color:#777778">Stable:
-    98%</b></span><br><b><span style="color:#F37321">Closing Event: 1%</b></span><br><br><b><span
+    97%</b></span><br><b><span style="color:#F37321">Closing Event: 2%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    157</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 148</b></span><br><b><span style="color:#002649"> Individual Level in
+    154</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 140</b></span><br><b><span style="color:#002649"> Individual Level in
     2021: 0.966</b></span><br><b><span style="color:#002649"> Individual Change 2020-2021:
     +0.005</b></span>'
   popUp_text_down_v2x_veracc_osp: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
@@ -192,59 +192,59 @@
     style="color:#F37321">Closing Event: 1%</b></span><br><b><span style="color:#777778">Stable:
     98%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    114</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 145</b></span><br><b><span style="color:#002649"> Electoral Level in
+    132</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 148</b></span><br><b><span style="color:#002649"> Electoral Level in
     2021: 0.93</b></span><br><b><span style="color:#002649"> Electoral Change 2020-2021:
     -0.002</b></span>'
   popUp_text_down_v2x_pubcorr: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
     change in the <b>V-Dem&apos;s Public Corruption Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 4%</b></span><br><b><span style="color:#777778">Stable:
-    95%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
+    style="color:#F37321">Closing Event: 5%</b></span><br><b><span style="color:#777778">Stable:
+    94%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    146</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 157</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
+    141</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 156</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
     0.989</b></span><br><b><span style="color:#002649"> Economic Change 2020-2021:
     0</b></span>'
   popUp_text_down_v2xcs_ccsi: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
     change in the <b>V-Dem&apos;s Core Civil Society Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 6%</b></span><br><b><span style="color:#777778">Stable:
-    82%</b></span><br><b><span style="color:#0082BA">Opening Event: 12%</b></span><br><br><b><span
+    style="color:#F37321">Closing Event: 8%</b></span><br><b><span style="color:#777778">Stable:
+    78%</b></span><br><b><span style="color:#0082BA">Opening Event: 14%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    124</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 92</b></span><br><b><span style="color:#002649"> Associational Level
+    106</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 80</b></span><br><b><span style="color:#002649"> Associational Level
     in 2021: 0.931</b></span><br><b><span style="color:#002649"> Associational Change
     2020-2021: 0</b></span>'
+  popUp_text_down_v2x_horacc_osp: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in the <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 5%</b></span><br><b><span style="color:#777778">Stable:
+    89%</b></span><br><b><span style="color:#0082BA">Opening Event: 5%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    105</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 113</b></span><br><b><span style="color:#002649"> Governing Level in
+    2021: 0.862</b></span><br><b><span style="color:#002649"> Governing Change 2020-2021:
+    +0.031</b></span>'
   popUp_text_down_v2x_freexp_altinf: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
     change in the <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of
     Information Index</b>)</span></h5><b><span style="color:#F37321">Closing Event:
-    3%</b></span><br><b><span style="color:#777778">Stable: 94%</b></span><br><b><span
+    5%</b></span><br><b><span style="color:#777778">Stable: 92%</b></span><br><b><span
     style="color:#0082BA">Opening Event: 2%</b></span><br><br><b><span style="color:#F37321">
-    Closing </span><span style="color:#002649">Risk Ranking: 132</b></span><br><b><span
+    Closing </span><span style="color:#002649">Risk Ranking: 125</b></span><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    135</b></span><br><b><span style="color:#002649"> Informational Level in 2021:
+    132</b></span><br><b><span style="color:#002649"> Informational Level in 2021:
     0.941</b></span><br><b><span style="color:#002649"> Informational Change 2020-2021:
     -0.005</b></span>'
-  popUp_text_down_v2x_horacc_osp: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
-    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
-    change in the <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 4%</b></span><br><b><span style="color:#777778">Stable:
-    90%</b></span><br><b><span style="color:#0082BA">Opening Event: 4%</b></span><br><br><b><span
-    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    109</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 114</b></span><br><b><span style="color:#002649"> Governing Level in
-    2021: 0.862</b></span><br><b><span style="color:#002649"> Governing Change 2020-2021:
-    +0.031</b></span>'
   popUp_text_down_v2xcl_rol: '<h3><b>Canada</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
     change in the <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 1%</b></span><br><b><span style="color:#777778">Stable:
-    98%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
+    style="color:#F37321">Closing Event: 2%</b></span><br><b><span style="color:#777778">Stable:
+    97%</b></span><br><b><span style="color:#0082BA">Opening Event: 0%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    148</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 157</b></span><br><b><span style="color:#002649"> Individual Level in
+    140</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 154</b></span><br><b><span style="color:#002649"> Individual Level in
     2021: 0.966</b></span><br><b><span style="color:#002649"> Individual Change 2020-2021:
     +0.005</b></span>'
 - country_name: .na.character
@@ -253,14 +253,14 @@
   popUp_text_up_v2x_veracc_osp: .na.character
   popUp_text_up_v2x_pubcorr: .na.character
   popUp_text_up_v2xcs_ccsi: .na.character
-  popUp_text_up_v2x_freexp_altinf: .na.character
   popUp_text_up_v2x_horacc_osp: .na.character
+  popUp_text_up_v2x_freexp_altinf: .na.character
   popUp_text_up_v2xcl_rol: .na.character
   popUp_text_down_v2x_veracc_osp: .na.character
   popUp_text_down_v2x_pubcorr: .na.character
   popUp_text_down_v2xcs_ccsi: .na.character
-  popUp_text_down_v2x_freexp_altinf: .na.character
   popUp_text_down_v2x_horacc_osp: .na.character
+  popUp_text_down_v2x_freexp_altinf: .na.character
   popUp_text_down_v2xcl_rol: .na.character
 - country_name: Cuba
   center_lon: -79.018298
@@ -268,80 +268,80 @@
   popUp_text_up_v2x_veracc_osp: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
     change in <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 5%</b></span><br><b><span style="color:#777778">Stable:
-    92%</b></span><br><b><span style="color:#F37321">Closing Event: 1%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 4%</b></span><br><b><span style="color:#777778">Stable:
+    93%</b></span><br><b><span style="color:#F37321">Closing Event: 2%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    58</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 117</b></span><br><b><span style="color:#002649"> Electoral Level in
+    71</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 106</b></span><br><b><span style="color:#002649"> Electoral Level in
     2021: 0.406</b></span><br><b><span style="color:#002649"> Electoral Change 2020-2021:
     +0.001</b></span>'
   popUp_text_up_v2x_pubcorr: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
     change in <b>V-Dem&apos;s Public Corruption Index</b>)</span></span></h5><b><span
     style="color:#0082BA">Opening Event: 6%</b></span><br><b><span style="color:#777778">Stable:
-    79%</b></span><br><b><span style="color:#F37321">Closing Event: 14%</b></span><br><br><b><span
+    82%</b></span><br><b><span style="color:#F37321">Closing Event: 12%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
     138</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 97</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
+    Ranking: 114</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
     0.184</b></span><br><b><span style="color:#002649"> Economic Change 2020-2021:
     0</b></span>'
   popUp_text_up_v2xcs_ccsi: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
     change in <b>V-Dem&apos;s Core Civil Society Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 11%</b></span><br><b><span style="color:#777778">Stable:
-    88%</b></span><br><b><span style="color:#F37321">Closing Event: 0%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 10%</b></span><br><b><span style="color:#777778">Stable:
+    89%</b></span><br><b><span style="color:#F37321">Closing Event: 0%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    93</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    94</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
     Ranking: 165</b></span><br><b><span style="color:#002649"> Associational Level
     in 2021: 0.034</b></span><br><b><span style="color:#002649"> Associational Change
     2020-2021: -0.012</b></span>'
-  popUp_text_up_v2x_freexp_altinf: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
-    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
-    change in <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information
-    Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 9%</b></span><br><b><span
-    style="color:#777778">Stable: 87%</b></span><br><b><span style="color:#F37321">Closing
-    Event: 3%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
-    style="color:#002649">Risk Ranking: 84</b></span><br><b><span style="color:#F37321">
-    Closing </span><span style="color:#002649">Risk Ranking: 137</b></span><br><b><span
-    style="color:#002649"> Informational Level in 2021: 0.086</b></span><br><b><span
-    style="color:#002649"> Informational Change 2020-2021: +0.002</b></span>'
   popUp_text_up_v2x_horacc_osp: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
     change in <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 21%</b></span><br><b><span style="color:#777778">Stable:
-    75%</b></span><br><b><span style="color:#F37321">Closing Event: 4%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 19%</b></span><br><b><span style="color:#777778">Stable:
+    77%</b></span><br><b><span style="color:#F37321">Closing Event: 3%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    45</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 114</b></span><br><b><span style="color:#002649"> Governing Level in
+    49</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 119</b></span><br><b><span style="color:#002649"> Governing Level in
     2021: 0.269</b></span><br><b><span style="color:#002649"> Governing Change 2020-2021:
     +0.001</b></span>'
+  popUp_text_up_v2x_freexp_altinf: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information
+    Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 10%</b></span><br><b><span
+    style="color:#777778">Stable: 86%</b></span><br><b><span style="color:#F37321">Closing
+    Event: 3%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
+    style="color:#002649">Risk Ranking: 82</b></span><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 133</b></span><br><b><span
+    style="color:#002649"> Informational Level in 2021: 0.086</b></span><br><b><span
+    style="color:#002649"> Informational Change 2020-2021: +0.002</b></span>'
   popUp_text_up_v2xcl_rol: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
     change in <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 21%</b></span><br><b><span style="color:#777778">Stable:
-    59%</b></span><br><b><span style="color:#F37321">Closing Event: 25%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 18%</b></span><br><b><span style="color:#777778">Stable:
+    59%</b></span><br><b><span style="color:#F37321">Closing Event: 26%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    39</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 28</b></span><br><b><span style="color:#002649"> Individual Level in
+    48</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 25</b></span><br><b><span style="color:#002649"> Individual Level in
     2021: 0.26</b></span><br><b><span style="color:#002649"> Individual Change 2020-2021:
     -0.08</b></span>'
   popUp_text_down_v2x_veracc_osp: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
     change in the <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 1%</b></span><br><b><span style="color:#777778">Stable:
-    92%</b></span><br><b><span style="color:#0082BA">Opening Event: 5%</b></span><br><br><b><span
+    style="color:#F37321">Closing Event: 2%</b></span><br><b><span style="color:#777778">Stable:
+    93%</b></span><br><b><span style="color:#0082BA">Opening Event: 4%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    117</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 58</b></span><br><b><span style="color:#002649"> Electoral Level in 2021:
+    106</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 71</b></span><br><b><span style="color:#002649"> Electoral Level in 2021:
     0.406</b></span><br><b><span style="color:#002649"> Electoral Change 2020-2021:
     +0.001</b></span>'
   popUp_text_down_v2x_pubcorr: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
     change in the <b>V-Dem&apos;s Public Corruption Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 14%</b></span><br><b><span style="color:#777778">Stable:
-    79%</b></span><br><b><span style="color:#0082BA">Opening Event: 6%</b></span><br><br><b><span
+    style="color:#F37321">Closing Event: 12%</b></span><br><b><span style="color:#777778">Stable:
+    82%</b></span><br><b><span style="color:#0082BA">Opening Event: 6%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    97</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    114</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
     Ranking: 138</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
     0.184</b></span><br><b><span style="color:#002649"> Economic Change 2020-2021:
     0</b></span>'
@@ -349,41 +349,41 @@
     probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
     change in the <b>V-Dem&apos;s Core Civil Society Index</b>)</span></h5><b><span
     style="color:#F37321">Closing Event: 0%</b></span><br><b><span style="color:#777778">Stable:
-    88%</b></span><br><b><span style="color:#0082BA">Opening Event: 11%</b></span><br><br><b><span
+    89%</b></span><br><b><span style="color:#0082BA">Opening Event: 10%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
     165</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 93</b></span><br><b><span style="color:#002649"> Associational Level
+    Ranking: 94</b></span><br><b><span style="color:#002649"> Associational Level
     in 2021: 0.034</b></span><br><b><span style="color:#002649"> Associational Change
     2020-2021: -0.012</b></span>'
+  popUp_text_down_v2x_horacc_osp: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in the <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 3%</b></span><br><b><span style="color:#777778">Stable:
+    77%</b></span><br><b><span style="color:#0082BA">Opening Event: 19%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    119</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 49</b></span><br><b><span style="color:#002649"> Governing Level in 2021:
+    0.269</b></span><br><b><span style="color:#002649"> Governing Change 2020-2021:
+    +0.001</b></span>'
   popUp_text_down_v2x_freexp_altinf: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
     change in the <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of
     Information Index</b>)</span></h5><b><span style="color:#F37321">Closing Event:
-    3%</b></span><br><b><span style="color:#777778">Stable: 87%</b></span><br><b><span
-    style="color:#0082BA">Opening Event: 9%</b></span><br><br><b><span style="color:#F37321">
-    Closing </span><span style="color:#002649">Risk Ranking: 137</b></span><br><b><span
+    3%</b></span><br><b><span style="color:#777778">Stable: 86%</b></span><br><b><span
+    style="color:#0082BA">Opening Event: 10%</b></span><br><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 133</b></span><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    84</b></span><br><b><span style="color:#002649"> Informational Level in 2021:
+    82</b></span><br><b><span style="color:#002649"> Informational Level in 2021:
     0.086</b></span><br><b><span style="color:#002649"> Informational Change 2020-2021:
     +0.002</b></span>'
-  popUp_text_down_v2x_horacc_osp: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
-    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
-    change in the <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 4%</b></span><br><b><span style="color:#777778">Stable:
-    75%</b></span><br><b><span style="color:#0082BA">Opening Event: 21%</b></span><br><br><b><span
-    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    114</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 45</b></span><br><b><span style="color:#002649"> Governing Level in 2021:
-    0.269</b></span><br><b><span style="color:#002649"> Governing Change 2020-2021:
-    +0.001</b></span>'
   popUp_text_down_v2xcl_rol: '<h3><b>Cuba</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
     change in the <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 25%</b></span><br><b><span style="color:#777778">Stable:
-    59%</b></span><br><b><span style="color:#0082BA">Opening Event: 21%</b></span><br><br><b><span
+    style="color:#F37321">Closing Event: 26%</b></span><br><b><span style="color:#777778">Stable:
+    59%</b></span><br><b><span style="color:#0082BA">Opening Event: 18%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    28</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 39</b></span><br><b><span style="color:#002649"> Individual Level in
+    25</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 48</b></span><br><b><span style="color:#002649"> Individual Level in
     2021: 0.26</b></span><br><b><span style="color:#002649"> Individual Change 2020-2021:
     -0.08</b></span>'
 - country_name: Haiti
@@ -392,121 +392,121 @@
   popUp_text_up_v2x_veracc_osp: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
     change in <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 16%</b></span><br><b><span style="color:#777778">Stable:
-    62%</b></span><br><b><span style="color:#F37321">Closing Event: 25%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 13%</b></span><br><b><span style="color:#777778">Stable:
+    64%</b></span><br><b><span style="color:#F37321">Closing Event: 25%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    17</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    24</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
     Ranking: 8</b></span><br><b><span style="color:#002649"> Electoral Level in 2021:
     0.604</b></span><br><b><span style="color:#002649"> Electoral Change 2020-2021:
     -0.008</b></span>'
   popUp_text_up_v2x_pubcorr: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
     change in <b>V-Dem&apos;s Public Corruption Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 50%</b></span><br><b><span style="color:#777778">Stable:
-    37%</b></span><br><b><span style="color:#F37321">Closing Event: 22%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 49%</b></span><br><b><span style="color:#777778">Stable:
+    38%</b></span><br><b><span style="color:#F37321">Closing Event: 22%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    4</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 66</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
+    5</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 68</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
     0.336</b></span><br><b><span style="color:#002649"> Economic Change 2020-2021:
     0</b></span>'
   popUp_text_up_v2xcs_ccsi: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
     change in <b>V-Dem&apos;s Core Civil Society Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 24%</b></span><br><b><span style="color:#777778">Stable:
-    63%</b></span><br><b><span style="color:#F37321">Closing Event: 15%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 27%</b></span><br><b><span style="color:#777778">Stable:
+    61%</b></span><br><b><span style="color:#F37321">Closing Event: 14%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    41</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 72</b></span><br><b><span style="color:#002649"> Associational Level
+    32</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 76</b></span><br><b><span style="color:#002649"> Associational Level
     in 2021: 0.709</b></span><br><b><span style="color:#002649"> Associational Change
     2020-2021: +0.01</b></span>'
-  popUp_text_up_v2x_freexp_altinf: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
-    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
-    change in <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information
-    Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 20%</b></span><br><b><span
-    style="color:#777778">Stable: 51%</b></span><br><b><span style="color:#F37321">Closing
-    Event: 35%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
-    style="color:#002649">Risk Ranking: 33</b></span><br><b><span style="color:#F37321">
-    Closing </span><span style="color:#002649">Risk Ranking: 15</b></span><br><b><span
-    style="color:#002649"> Informational Level in 2021: 0.709</b></span><br><b><span
-    style="color:#002649"> Informational Change 2020-2021: -0.024</b></span>'
   popUp_text_up_v2x_horacc_osp: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
     change in <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 23%</b></span><br><b><span style="color:#777778">Stable:
-    55%</b></span><br><b><span style="color:#F37321">Closing Event: 28%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 22%</b></span><br><b><span style="color:#777778">Stable:
+    56%</b></span><br><b><span style="color:#F37321">Closing Event: 27%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    39</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 19</b></span><br><b><span style="color:#002649"> Governing Level in 2021:
+    41</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 17</b></span><br><b><span style="color:#002649"> Governing Level in 2021:
     0.669</b></span><br><b><span style="color:#002649"> Governing Change 2020-2021:
     -0.039</b></span>'
+  popUp_text_up_v2x_freexp_altinf: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
+    change in <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information
+    Index</b>)</span></span></h5><b><span style="color:#0082BA">Opening Event: 19%</b></span><br><b><span
+    style="color:#777778">Stable: 51%</b></span><br><b><span style="color:#F37321">Closing
+    Event: 35%</b></span><br><br><b><span style="color:#0082BA"> Opening </span><span
+    style="color:#002649">Risk Ranking: 38</b></span><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 19</b></span><br><b><span
+    style="color:#002649"> Informational Level in 2021: 0.709</b></span><br><b><span
+    style="color:#002649"> Informational Change 2020-2021: -0.024</b></span>'
   popUp_text_up_v2xcl_rol: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
     change in <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></span></h5><b><span
-    style="color:#0082BA">Opening Event: 19%</b></span><br><b><span style="color:#777778">Stable:
-    54%</b></span><br><b><span style="color:#F37321">Closing Event: 32%</b></span><br><br><b><span
+    style="color:#0082BA">Opening Event: 23%</b></span><br><b><span style="color:#777778">Stable:
+    52%</b></span><br><b><span style="color:#F37321">Closing Event: 32%</b></span><br><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    43</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
-    Ranking: 18</b></span><br><b><span style="color:#002649"> Individual Level in
+    34</b></span><br><b><span style="color:#F37321"> Closing </span><span style="color:#002649">Risk
+    Ranking: 19</b></span><br><b><span style="color:#002649"> Individual Level in
     2021: 0.426</b></span><br><b><span style="color:#002649"> Individual Change 2020-2021:
     -0.022</b></span>'
   popUp_text_down_v2x_veracc_osp: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Electoral Space</b> <span style="font-size: 80%">(+/-0.08
     change in the <b>V-Dem&apos;s Vertical Accountability Index</b>)</span></h5><b><span
     style="color:#F37321">Closing Event: 25%</b></span><br><b><span style="color:#777778">Stable:
-    62%</b></span><br><b><span style="color:#0082BA">Opening Event: 16%</b></span><br><br><b><span
+    64%</b></span><br><b><span style="color:#0082BA">Opening Event: 13%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
     8</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 17</b></span><br><b><span style="color:#002649"> Electoral Level in 2021:
+    Ranking: 24</b></span><br><b><span style="color:#002649"> Electoral Level in 2021:
     0.604</b></span><br><b><span style="color:#002649"> Electoral Change 2020-2021:
     -0.008</b></span>'
   popUp_text_down_v2x_pubcorr: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Economic Space</b> <span style="font-size: 80%">(+/-0.03
     change in the <b>V-Dem&apos;s Public Corruption Index</b>)</span></h5><b><span
     style="color:#F37321">Closing Event: 22%</b></span><br><b><span style="color:#777778">Stable:
-    37%</b></span><br><b><span style="color:#0082BA">Opening Event: 50%</b></span><br><br><b><span
+    38%</b></span><br><b><span style="color:#0082BA">Opening Event: 49%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    66</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 4</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
+    68</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 5</b></span><br><b><span style="color:#002649"> Economic Level in 2021:
     0.336</b></span><br><b><span style="color:#002649"> Economic Change 2020-2021:
     0</b></span>'
   popUp_text_down_v2xcs_ccsi: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Associational Space</b> <span style="font-size: 80%">(+/-0.05
     change in the <b>V-Dem&apos;s Core Civil Society Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 15%</b></span><br><b><span style="color:#777778">Stable:
-    63%</b></span><br><b><span style="color:#0082BA">Opening Event: 24%</b></span><br><br><b><span
+    style="color:#F37321">Closing Event: 14%</b></span><br><b><span style="color:#777778">Stable:
+    61%</b></span><br><b><span style="color:#0082BA">Opening Event: 27%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    72</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 41</b></span><br><b><span style="color:#002649"> Associational Level
+    76</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 32</b></span><br><b><span style="color:#002649"> Associational Level
     in 2021: 0.709</b></span><br><b><span style="color:#002649"> Associational Change
     2020-2021: +0.01</b></span>'
+  popUp_text_down_v2x_horacc_osp: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
+    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
+    change in the <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></h5><b><span
+    style="color:#F37321">Closing Event: 27%</b></span><br><b><span style="color:#777778">Stable:
+    56%</b></span><br><b><span style="color:#0082BA">Opening Event: 22%</b></span><br><br><b><span
+    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
+    17</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 41</b></span><br><b><span style="color:#002649"> Governing Level in 2021:
+    0.669</b></span><br><b><span style="color:#002649"> Governing Change 2020-2021:
+    -0.039</b></span>'
   popUp_text_down_v2x_freexp_altinf: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Informational Space</b> <span style="font-size: 80%">(+/-0.05
     change in the <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of
     Information Index</b>)</span></h5><b><span style="color:#F37321">Closing Event:
     35%</b></span><br><b><span style="color:#777778">Stable: 51%</b></span><br><b><span
-    style="color:#0082BA">Opening Event: 20%</b></span><br><br><b><span style="color:#F37321">
-    Closing </span><span style="color:#002649">Risk Ranking: 15</b></span><br><b><span
+    style="color:#0082BA">Opening Event: 19%</b></span><br><br><b><span style="color:#F37321">
+    Closing </span><span style="color:#002649">Risk Ranking: 19</b></span><br><b><span
     style="color:#0082BA"> Opening </span><span style="color:#002649">Risk Ranking:
-    33</b></span><br><b><span style="color:#002649"> Informational Level in 2021:
+    38</b></span><br><b><span style="color:#002649"> Informational Level in 2021:
     0.709</b></span><br><b><span style="color:#002649"> Informational Change 2020-2021:
     -0.024</b></span>'
-  popUp_text_down_v2x_horacc_osp: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
-    probabilities for the <b>Governing Space</b> <span style="font-size: 80%">(+/-0.06
-    change in the <b>V-Dem&apos;s Horizontal Accountability Index</b>)</span></h5><b><span
-    style="color:#F37321">Closing Event: 28%</b></span><br><b><span style="color:#777778">Stable:
-    55%</b></span><br><b><span style="color:#0082BA">Opening Event: 23%</b></span><br><br><b><span
-    style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    19</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 39</b></span><br><b><span style="color:#002649"> Governing Level in 2021:
-    0.669</b></span><br><b><span style="color:#002649"> Governing Change 2020-2021:
-    -0.039</b></span>'
   popUp_text_down_v2xcl_rol: '<h3><b>Haiti</b></h3><h5><span style="color:#002649">Event
     probabilities for the <b>Individual Space</b> <span style="font-size: 80%">(+/-0.04
     change in the <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>)</span></h5><b><span
     style="color:#F37321">Closing Event: 32%</b></span><br><b><span style="color:#777778">Stable:
-    54%</b></span><br><b><span style="color:#0082BA">Opening Event: 19%</b></span><br><br><b><span
+    52%</b></span><br><b><span style="color:#0082BA">Opening Event: 23%</b></span><br><br><b><span
     style="color:#F37321"> Closing </span><span style="color:#002649">Risk Ranking:
-    18</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
-    Ranking: 43</b></span><br><b><span style="color:#002649"> Individual Level in
+    19</b></span><br><b><span style="color:#0082BA"> Opening </span><span style="color:#002649">Risk
+    Ranking: 34</b></span><br><b><span style="color:#002649"> Individual Level in
     2021: 0.426</b></span><br><b><span style="color:#002649"> Individual Change 2020-2021:
     -0.022</b></span>'

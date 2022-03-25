@@ -33,12 +33,6 @@ Missing:
   dv_v2x_pubcorr_change: 0
   dv_v2x_pubcorr_up_next2: 338
   dv_v2x_pubcorr_down_next2: 338
-  v2x_veracc_osp_squared: 0
-  v2xcs_ccsi_squared: 0
-  v2xcl_rol_squared: 0
-  v2x_freexp_altinf_squared: 0
-  v2x_horacc_osp_squared: 0
-  v2x_pubcorr_squared: 0
   lag0_is_leg: 0
   lag0_is_elec: 0
   lag0_is_election_year: 0
@@ -223,6 +217,12 @@ Missing:
   lag0_v2pepwrort: 0
   lag0_v2peedueq: 0
   lag0_v2pehealth: 0
+  lag0_v2x_veracc_osp_sd10: 0
+  lag0_v2xcs_ccsi_sd10: 0
+  lag0_v2xcl_rol_sd10: 0
+  lag0_v2x_freexp_altinf_sd10: 0
+  lag0_v2x_horacc_osp_sd10: 0
+  lag0_v2x_pubcorr_sd10: 0
   lag0_state_age: 0
   lag0_log_pop: 0
   lag1_infmort: 0
@@ -259,12 +259,6 @@ Col_types:
   dv_v2x_pubcorr_change: character
   dv_v2x_pubcorr_up_next2: integer
   dv_v2x_pubcorr_down_next2: integer
-  v2x_veracc_osp_squared: double
-  v2xcs_ccsi_squared: double
-  v2xcl_rol_squared: double
-  v2x_freexp_altinf_squared: double
-  v2x_horacc_osp_squared: double
-  v2x_pubcorr_squared: double
   lag0_is_leg: double
   lag0_is_elec: double
   lag0_is_election_year: double
@@ -449,6 +443,12 @@ Col_types:
   lag0_v2pepwrort: double
   lag0_v2peedueq: double
   lag0_v2pehealth: double
+  lag0_v2x_veracc_osp_sd10: double
+  lag0_v2xcs_ccsi_sd10: double
+  lag0_v2xcl_rol_sd10: double
+  lag0_v2x_freexp_altinf_sd10: double
+  lag0_v2x_horacc_osp_sd10: double
+  lag0_v2x_pubcorr_sd10: double
   lag0_state_age: double
   lag0_log_pop: double
   lag1_infmort: double

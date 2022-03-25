@@ -4,11 +4,13 @@
 - Moved external data scripts to a new repo, `ds-external-data`. This is because PART and DS both require some but no the same external data, so it is just easier to pool them in one repo where updating can be done. 
 - Removed "_squared" terms for the space indicator variables. Although these showed up highly in the 2021 variable importance investigation, there is no reason the a random forest model would need squared terms, and so I suspect they were getting picked just as surrogates for the untransformed indicator variables. 
 - Fix for impossible forecasts. These are situations where a country's indicator value is in the region between the possible range of values (0 - 1) and the relevant outcome cutpoints. For example, Tunisia had a high Governing opening forecast initially, even though it's Governing value was so high already that given the relevant cutpoint, no opening event was possible at all. Technically it could drop and then experience an opening in the 2nd year of the forecast, but this only happens once in the entire data. To fix this, the cutpoints are used to reset such forecasts to 0. The fix is actually implemented in demspacesR, in the `predict.ds_rf` function. (#15)
+- Added _sd variables
+- Changed the models to use a larger number of trees to stabilize the forecasts, and upped the mtry value slightly for accuracy. Fixed HP all around now, decreasing pipeline run time. 
 
 ### Dashboard changes
 
 - Added the ability to highlight past opening and closing evens in the V-Dem indicator time series plot on the bottom right. (#12; and fixed a subsequent related bug, #17)
-- Added a button for the V-Dem space indicator time series plot on the bottom right to select/de-select all 6 spaces. It's annoying to otherwise have to click each of the 6 checkboxes individually. (#13)
+- Added a button for the V-Dem space indicator time series plot on the bottom right to select/de-select all 6 spaces. It's annoying to otherwise have to click each of the 6 checkboxes individually. (#13)0
 
 2021 Update (v11)
 ================
