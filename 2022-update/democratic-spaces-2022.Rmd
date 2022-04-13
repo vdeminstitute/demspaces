@@ -1,0 +1,137 @@
+---
+title: "Democratic Spaces 2022"
+subtitle: "V-Dem version changes and updated accuracy assessment"
+author: "Andreas Beger, Basil Analytics"
+date: "`r Sys.Date()`"
+output: 
+  tint::tintHtml:
+    self_contained: true
+---
+
+```{r setup, include=FALSE}
+library(tint)
+# invalidate cache when the package version changes
+knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tint'),
+                      echo = FALSE)
+options(htmltools.dir.version = FALSE)
+
+suppressPackageStartupMessages({
+  library(tibble)
+  library(flextable)
+  library(readr)
+})
+```
+
+
+There are now four sets of forecasts, corresponding to the four V-Dem data versions since version 9 in 2019:
+
+```{r}
+tbl <- tribble(
+  ~Version, ~"Last year", ~"Forecasts", ~"Can be scored",
+  "v9", "2018", "2019 \U2013 2020", "X",
+  "v10", "2019", "2020 \U2013 2021", "X",
+  "v11", "2020", "2021 \U2013 2022", "partial",
+  "v12", "2021", "2022 \U2013 2023", ""
+)
+flextable(tbl) |>
+  theme_vanilla() |>
+  autofit()
+```
+
+The first two sets of forecasts can be fully assessed as enough new data has accumulated to measure outcomes for their two-year forecast periods. We can partially score last year's forecasts with 2021 outcomes.
+
+# Shifting ground
+
+Forecast accuracy is influenced by changes in the democratic space indicator variables between V-Dem versions. In practice this has the effect of decreasing forecast accuracy.
+
+Changes in the outcomes between V-Dem data versions are decreasing. 
+
+The table below shows year to year (first 3 rows), and year to year + 2 (this is how the forecasts are assessed) agreement rates for opening and closing outcome cases. This is for 1970 to 2018, when the v9 data ended. 
+
+```{r}
+# 1970 - 2018, positive cases in either version
+tbl <- read_csv("report-data/tbl-agreement.csv", show_col_types = FALSE)
+flextable(tbl) |>
+  theme_vanilla() |>
+  colformat_double(j = 2, digits = 2) |>
+  autofit()
+```
+
+The first three rows are year-to-year changes. The "ag_rate" column shows agreement rates for cases that are a positive in either dataset version, i.e. the number of joint opening and closing events that both dataset versions coded as opening or closing.
+
+For the first two years of DemSpaces, it was around 0.65. The outcomes with this year's v12 data however match 0.88 with the v11 data, much higher. That should mean that the accuracy of the current forecasts will be higher than it has been for the v9 and v10 forecasts. 
+
+Here is what all cases look like between v11 and v12:
+
+```{r}
+# 2009 - 2020
+tbl <- read_csv("report-data/tbl-v11-v12.csv", show_col_types = FALSE)
+flextable(tbl) |>
+  add_header_row(values = c("", "v12"), colwidths = c(1, 3)) |>
+  theme_vanilla() |>
+  autofit()
+```
+
+Since the forecasts are two years ahead, it takes two V-Dem data updates to fully observe the outcomes. Thus v9 forecasts are scored with v11 data, not v10 data. The second two rows in the table show the agreement rates for opening and closing cases with a two year version difference. It has also been increasing, although there still is a lot of shifting ground that the forecasts have to measure against. 
+
+Generally, the higher this agreement is, the higher the accuracy of the forecasts will be. The test forecasts have for example AUC-ROC values greater than 0.8, so with more agreement the actual performance should converage to some value like that. 
+
+The good news is that the agreement rate has been becoming higher. 
+
+# Accuracy
+
+Accuracy of the v9 (2019 - 2020) forecasts, scored with v11 data. This is the same as I had in the report from the 2021 update last year. 
+
+```{r}
+tbl <- read_csv("report-data/acc-v9.csv", show_col_types = FALSE)
+tbl$direction[is.na(tbl$direction)] <- "Average"
+tbl$Space[tbl$direction=="Average"] <- "Average"
+tbl |>
+  setNames(c("Space", "Direction", "Cases", "High Risk", "AUC-ROC", "AUC-PR", "Pos. Rate")) |>
+  as_grouped_data("Direction") |>
+  flextable() |>
+  theme_vanilla() |>
+  colformat_double(j = 5:7, digits = 2) |>
+  colformat_double(i = 1:14, j = 3:4, digits = 0) |>
+  colformat_double(i = 1:16, j = 3:4, digits = 1) |>
+  style(i = 16, j  = 2, pr_t = fp_text_default(bold = TRUE)) |>
+  autofit()
+```
+
+Accuracy of the v10 (2020 - 2021) forecasts, scored with v12 data. 
+
+```{r}
+tbl <- read_csv("report-data/acc-v10.csv", show_col_types = FALSE)
+tbl$direction[is.na(tbl$direction)] <- "Average"
+tbl$Space[tbl$direction=="Average"] <- "Average"
+tbl |>
+  setNames(c("Space", "Direction", "Cases", "High Risk", "AUC-ROC", "AUC-PR", "Pos. Rate")) |>
+  as_grouped_data("Direction") |>
+  flextable() |>
+  theme_vanilla() |>
+  colformat_double(j = 5:7, digits = 2) |>
+  colformat_double(i = 1:14, j = 3:4, digits = 0) |>
+  colformat_double(i = 1:16, j = 3:4, digits = 1) |>
+  style(i = 16, j  = 2, pr_t = fp_text_default(bold = TRUE)) |>
+  autofit()
+```
+
+**Partial** accuracy of the v11 (2021 - 2022) forecasts from last year, with outcomes for 2021 but missing for 2022. These numbers will go up when data for this year becomes available. 
+
+```{r}
+
+tbl <- read_csv("report-data/acc-v11.csv", show_col_types = FALSE)
+tbl$direction[is.na(tbl$direction)] <- "Average"
+tbl$Space[tbl$direction=="Average"] <- "Average"
+tbl |>
+  setNames(c("Space", "Direction", "Cases", "High Risk", "AUC-ROC", "AUC-PR", "Pos. Rate")) |>
+  as_grouped_data("Direction") |>
+  flextable() |>
+  theme_vanilla() |>
+  colformat_double(j = 5:7, digits = 2) |>
+  colformat_double(i = 1:14, j = 3:4, digits = 0) |>
+  colformat_double(i = 1:16, j = 3:4, digits = 1) |>
+  style(i = 16, j  = 2, pr_t = fp_text_default(bold = TRUE)) |>
+  autofit()
+```
+
