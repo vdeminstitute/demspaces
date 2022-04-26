@@ -1,14 +1,20 @@
-^app\.R$
 ^demspaces\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README.md$
 ^NEWS.md$
+^data-raw$
+
+# needed for shinyapps.io
+^app.R$
+^rsconnect$
+
+# deploy tools
+^tools$
 
 # the files below are non-standard and may change as I "package-ify" this repo
 ^2021-update$
 ^2022-update$
-^app.R$
 ^archive$
 ^create-data$
 ^dashboard$
@@ -21,4 +27,3 @@
 ^UPDATING.md$
 
 
-^data-raw$
