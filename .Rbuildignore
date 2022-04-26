@@ -1,1 +1,24 @@
 ^app\.R$
+^demspaces\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^README.md$
+^NEWS.md$
+
+# the files below are non-standard and may change as I "package-ify" this repo
+^2021-update$
+^2022-update$
+^app.R$
+^archive$
+^create-data$
+^dashboard$
+^docs$
+^modelrunner$
+^outcome-v2$
+
+^CHANGELOG.md$
+^required-packages.txt$
+^UPDATING.md$
+
+
+^data-raw$

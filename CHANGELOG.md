@@ -1,5 +1,5 @@
-2022 Update (v12)
-=================
+demspaces 12 (2022 Update)
+==========================
 
 - Moved external data scripts to a new repo, `ds-external-data`. This is because PART and DS both require some but no the same external data, so it is just easier to pool them in one repo where updating can be done. 
 - Removed "_squared" terms for the space indicator variables. Although these showed up highly in the 2021 variable importance investigation, there is no reason the a random forest model would need squared terms, and so I suspect they were getting picked just as surrogates for the untransformed indicator variables. 
@@ -12,8 +12,8 @@
 - Added the ability to highlight past opening and closing evens in the V-Dem indicator time series plot on the bottom right. (#12; and fixed a subsequent related bug, #17)
 - Added a button for the V-Dem space indicator time series plot on the bottom right to select/de-select all 6 spaces. It's annoying to otherwise have to click each of the 6 checkboxes individually. (#13)0
 
-2021 Update (v11)
-================
+demspaces 11 (2021 Update)
+==========================
 
 Aside from producing updated forecasts, I tried to streamline the updating process in several ways. The most important change was to reduce the number of external data sources that feed into the merge data, and the number of columns in the data overall. This also helps reduce forecast model runtime. 
 
@@ -56,13 +56,13 @@ The first version of the forecasts in 2019 was created with V-Dem version 9 data
 - Fix a bug in the dashboard that prevented clicking on a bar in the bottom left plot to add/remove the corresponding index from the linechart on the right (#5). 
 - Fix a phantom nav item in the dashboard navigation bar by moving the nav bar style tags to the dashboard CSS file (#2).
 
-2020 Update (v10)
-================
+demspaces 10 (2020 Update)
+==========================
 
 - Data range from 1970 to 2019.
 - Added Archigos state leader data as a data source, with 5 variables.
 
-2019 initial version (v9)
-=========================
+demspaces 9 (2019 Initial Version)
+==================================
 
 Original forecasts produced during development of this project in the fall of 2019. 
