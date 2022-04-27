@@ -10,7 +10,13 @@ demspaces 12 (2022 Update)
 ### Dashboard changes
 
 - Added the ability to highlight past opening and closing evens in the V-Dem indicator time series plot on the bottom right. (#12; and fixed a subsequent related bug, #17)
-- Added a button for the V-Dem space indicator time series plot on the bottom right to select/de-select all 6 spaces. It's annoying to otherwise have to click each of the 6 checkboxes individually. (#13)0
+- Added a button for the V-Dem space indicator time series plot on the bottom right to select/de-select all 6 spaces. It's annoying to otherwise have to click each of the 6 checkboxes individually. (#13)
+
+### 'demspaces' R package
+
+- Added facility for global config settings. The purpose was to make it easier to control which version of data and related files is used, and specifically to make it easier to test out the new modified outcome (ERT-Lite).
+
+
 
 demspaces 11 (2021 Update)
 ==========================
