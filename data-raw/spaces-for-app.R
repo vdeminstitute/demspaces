@@ -22,7 +22,8 @@ library(demspacesR)
 oldwd <- getwd()
 setwd(here::here())
 
-source(here::here("outcome-v2/episode-coder.R"))
+# needed for changes_one_country()
+devtools::load_all()
 
 updown <- readRDS("create-data/output/dv-data.rds") %>%
   select(gwcode, year, ends_with("change"))
