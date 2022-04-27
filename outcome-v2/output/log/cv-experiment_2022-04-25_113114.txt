@@ -1,0 +1,246 @@
+INFO  [2022-04-25 11:31:14.983] Running CV experiments for ERT-lite outcome
+INFO  [2022-04-25 11:31:15.011] Settings: 10-fold CV with 1 repetitions
+INFO  [2022-04-25 11:31:15.019] R package 'demspacesR' version 0.4.2
+INFO  [2022-04-25 11:31:15.024] Running with 6 workers
+INFO  [2022-04-25 11:31:16.225] 120 total models
+INFO  [2022-04-25 11:31:16.829] Start model 80
+INFO  [2022-04-25 11:31:17.083] Start model 13
+INFO  [2022-04-25 11:31:17.330] Start model 5
+INFO  [2022-04-25 11:31:17.551] Start model 56
+INFO  [2022-04-25 11:31:17.776] Start model 107
+INFO  [2022-04-25 11:31:17.999] Start model 120
+INFO  [2022-04-25 11:33:35.053] Finished model 13; time: 138s; progress: 1/120 (1%)
+INFO  [2022-04-25 11:33:35.094] Start model 91
+INFO  [2022-04-25 11:33:47.489] Finished model 56; time: 150s; progress: 2/120 (2%)
+INFO  [2022-04-25 11:33:47.527] Start model 94
+INFO  [2022-04-25 11:33:52.603] Finished model 5; time: 155s; progress: 3/120 (2%)
+INFO  [2022-04-25 11:33:52.637] Start model 1
+INFO  [2022-04-25 11:34:06.327] Finished model 107; time: 169s; progress: 4/120 (3%)
+INFO  [2022-04-25 11:34:06.362] Start model 57
+INFO  [2022-04-25 11:34:12.920] Finished model 120; time: 175s; progress: 5/120 (4%)
+INFO  [2022-04-25 11:34:12.957] Start model 63
+INFO  [2022-04-25 11:34:16.597] Finished model 80; time: 180s; progress: 6/120 (5%)
+INFO  [2022-04-25 11:34:16.635] Start model 19
+INFO  [2022-04-25 11:35:54.611] Finished model 91; time: 140s; progress: 7/120 (6%)
+INFO  [2022-04-25 11:35:54.615] Start model 110
+INFO  [2022-04-25 11:36:04.901] Finished model 1; time: 132s; progress: 8/120 (7%)
+INFO  [2022-04-25 11:36:04.904] Start model 45
+INFO  [2022-04-25 11:36:22.636] Finished model 57; time: 136s; progress: 9/120 (8%)
+INFO  [2022-04-25 11:36:22.639] Start model 109
+INFO  [2022-04-25 11:36:23.318] Finished model 19; time: 127s; progress: 10/120 (8%)
+INFO  [2022-04-25 11:36:23.320] Start model 16
+INFO  [2022-04-25 11:36:32.413] Finished model 94; time: 165s; progress: 11/120 (9%)
+INFO  [2022-04-25 11:36:32.416] Start model 31
+INFO  [2022-04-25 11:37:00.768] Finished model 63; time: 168s; progress: 12/120 (10%)
+INFO  [2022-04-25 11:37:00.771] Start model 4
+INFO  [2022-04-25 11:38:44.292] Finished model 45; time: 159s; progress: 13/120 (11%)
+INFO  [2022-04-25 11:38:44.296] Start model 81
+INFO  [2022-04-25 11:38:46.433] Finished model 109; time: 144s; progress: 14/120 (12%)
+INFO  [2022-04-25 11:38:46.438] Start model 22
+INFO  [2022-04-25 11:38:48.531] Finished model 110; time: 174s; progress: 15/120 (12%)
+INFO  [2022-04-25 11:38:48.533] Start model 119
+INFO  [2022-04-25 11:38:48.896] Finished model 31; time: 136s; progress: 16/120 (13%)
+INFO  [2022-04-25 11:38:48.900] Start model 108
+INFO  [2022-04-25 11:38:59.932] Finished model 16; time: 157s; progress: 17/120 (14%)
+INFO  [2022-04-25 11:38:59.935] Start model 90
+INFO  [2022-04-25 11:39:47.623] Finished model 4; time: 167s; progress: 18/120 (15%)
+INFO  [2022-04-25 11:39:47.629] Start model 34
+INFO  [2022-04-25 11:41:24.264] Finished model 119; time: 156s; progress: 19/120 (16%)
+INFO  [2022-04-25 11:41:24.271] Start model 43
+INFO  [2022-04-25 11:41:29.818] Finished model 22; time: 163s; progress: 20/120 (17%)
+INFO  [2022-04-25 11:41:29.821] Start model 98
+INFO  [2022-04-25 11:41:48.212] Finished model 81; time: 184s; progress: 21/120 (18%)
+INFO  [2022-04-25 11:41:48.215] Start model 83
+INFO  [2022-04-25 11:42:05.924] Finished model 108; time: 197s; progress: 22/120 (18%)
+INFO  [2022-04-25 11:42:05.926] Start model 86
+INFO  [2022-04-25 11:42:15.811] Finished model 90; time: 196s; progress: 23/120 (19%)
+INFO  [2022-04-25 11:42:15.813] Start model 6
+INFO  [2022-04-25 11:42:20.017] Finished model 34; time: 152s; progress: 24/120 (20%)
+INFO  [2022-04-25 11:42:20.019] Start model 33
+INFO  [2022-04-25 11:43:48.076] Finished model 43; time: 144s; progress: 25/120 (21%)
+INFO  [2022-04-25 11:43:48.079] Start model 102
+INFO  [2022-04-25 11:44:46.121] Finished model 98; time: 196s; progress: 26/120 (22%)
+INFO  [2022-04-25 11:44:46.124] Start model 97
+INFO  [2022-04-25 11:44:53.855] Finished model 83; time: 186s; progress: 27/120 (22%)
+INFO  [2022-04-25 11:44:53.865] Start model 24
+INFO  [2022-04-25 11:45:16.929] Finished model 33; time: 177s; progress: 28/120 (23%)
+INFO  [2022-04-25 11:45:16.936] Start model 21
+INFO  [2022-04-25 11:45:17.703] Finished model 86; time: 192s; progress: 29/120 (24%)
+INFO  [2022-04-25 11:45:17.713] Start model 7
+INFO  [2022-04-25 11:45:51.526] Finished model 6; time: 216s; progress: 30/120 (25%)
+INFO  [2022-04-25 11:45:51.531] Start model 51
+INFO  [2022-04-25 11:47:10.849] Finished model 102; time: 203s; progress: 31/120 (26%)
+INFO  [2022-04-25 11:47:10.851] Start model 114
+INFO  [2022-04-25 11:47:15.030] Finished model 97; time: 149s; progress: 32/120 (27%)
+INFO  [2022-04-25 11:47:15.033] Start model 55
+INFO  [2022-04-25 11:47:36.621] Finished model 7; time: 139s; progress: 33/120 (28%)
+INFO  [2022-04-25 11:47:36.624] Start model 70
+INFO  [2022-04-25 11:47:59.694] Finished model 21; time: 163s; progress: 34/120 (28%)
+INFO  [2022-04-25 11:47:59.697] Start model 23
+INFO  [2022-04-25 11:48:08.956] Finished model 24; time: 195s; progress: 35/120 (29%)
+INFO  [2022-04-25 11:48:08.959] Start model 89
+INFO  [2022-04-25 11:48:30.443] Finished model 51; time: 159s; progress: 36/120 (30%)
+INFO  [2022-04-25 11:48:30.446] Start model 28
+INFO  [2022-04-25 11:49:22.419] Finished model 55; time: 127s; progress: 37/120 (31%)
+INFO  [2022-04-25 11:49:22.421] Start model 113
+INFO  [2022-04-25 11:50:18.477] Finished model 114; time: 188s; progress: 38/120 (32%)
+INFO  [2022-04-25 11:50:18.479] Start model 18
+INFO  [2022-04-25 11:50:32.940] Finished model 70; time: 176s; progress: 39/120 (32%)
+INFO  [2022-04-25 11:50:32.942] Start model 59
+INFO  [2022-04-25 11:50:37.822] Finished model 23; time: 158s; progress: 40/120 (33%)
+INFO  [2022-04-25 11:50:37.825] Start model 44
+INFO  [2022-04-25 11:50:55.036] Finished model 89; time: 166s; progress: 41/120 (34%)
+INFO  [2022-04-25 11:50:55.044] Start model 14
+INFO  [2022-04-25 11:51:04.794] Finished model 28; time: 154s; progress: 42/120 (35%)
+INFO  [2022-04-25 11:51:04.797] Start model 2
+INFO  [2022-04-25 11:52:09.744] Finished model 113; time: 167s; progress: 43/120 (36%)
+INFO  [2022-04-25 11:52:09.747] Start model 117
+INFO  [2022-04-25 11:52:44.848] Finished model 59; time: 132s; progress: 44/120 (37%)
+INFO  [2022-04-25 11:52:44.851] Start model 92
+INFO  [2022-04-25 11:53:16.410] Finished model 44; time: 159s; progress: 45/120 (38%)
+INFO  [2022-04-25 11:53:16.412] Start model 36
+INFO  [2022-04-25 11:53:24.700] Finished model 18; time: 186s; progress: 46/120 (38%)
+INFO  [2022-04-25 11:53:24.703] Start model 85
+INFO  [2022-04-25 11:53:35.894] Finished model 14; time: 161s; progress: 47/120 (39%)
+INFO  [2022-04-25 11:53:35.897] Start model 27
+INFO  [2022-04-25 11:53:44.395] Finished model 2; time: 160s; progress: 48/120 (40%)
+INFO  [2022-04-25 11:53:44.397] Start model 82
+INFO  [2022-04-25 11:54:30.315] Finished model 117; time: 141s; progress: 49/120 (41%)
+INFO  [2022-04-25 11:54:30.318] Start model 48
+INFO  [2022-04-25 11:55:30.228] Finished model 92; time: 165s; progress: 50/120 (42%)
+INFO  [2022-04-25 11:55:30.231] Start model 67
+INFO  [2022-04-25 11:55:33.917] Finished model 85; time: 129s; progress: 51/120 (42%)
+INFO  [2022-04-25 11:55:33.920] Start model 68
+INFO  [2022-04-25 11:56:02.682] Finished model 27; time: 147s; progress: 52/120 (43%)
+INFO  [2022-04-25 11:56:02.689] Start model 64
+INFO  [2022-04-25 11:56:12.437] Finished model 36; time: 176s; progress: 53/120 (44%)
+INFO  [2022-04-25 11:56:12.440] Start model 62
+INFO  [2022-04-25 11:56:25.491] Finished model 82; time: 161s; progress: 54/120 (45%)
+INFO  [2022-04-25 11:56:25.494] Start model 17
+INFO  [2022-04-25 11:57:24.262] Finished model 48; time: 174s; progress: 55/120 (46%)
+INFO  [2022-04-25 11:57:24.265] Start model 25
+INFO  [2022-04-25 11:57:42.040] Finished model 67; time: 132s; progress: 56/120 (47%)
+INFO  [2022-04-25 11:57:42.043] Start model 38
+INFO  [2022-04-25 11:58:21.523] Finished model 68; time: 168s; progress: 57/120 (48%)
+INFO  [2022-04-25 11:58:21.529] Start model 116
+INFO  [2022-04-25 11:58:45.186] Finished model 64; time: 162s; progress: 58/120 (48%)
+INFO  [2022-04-25 11:58:45.188] Start model 46
+INFO  [2022-04-25 11:58:53.836] Finished model 17; time: 148s; progress: 59/120 (49%)
+INFO  [2022-04-25 11:58:53.839] Start model 8
+INFO  [2022-04-25 11:59:02.029] Finished model 62; time: 170s; progress: 60/120 (50%)
+INFO  [2022-04-25 11:59:02.031] Start model 72
+INFO  [2022-04-25 11:59:26.222] Finished model 25; time: 122s; progress: 61/120 (51%)
+INFO  [2022-04-25 11:59:26.226] Start model 77
+INFO  [2022-04-25 12:00:19.027] Finished model 38; time: 157s; progress: 62/120 (52%)
+INFO  [2022-04-25 12:00:19.029] Start model 118
+INFO  [2022-04-25 12:00:48.161] Finished model 116; time: 147s; progress: 63/120 (52%)
+INFO  [2022-04-25 12:00:48.163] Start model 115
+INFO  [2022-04-25 12:01:03.695] Finished model 46; time: 139s; progress: 64/120 (53%)
+INFO  [2022-04-25 12:01:03.698] Start model 10
+INFO  [2022-04-25 12:01:28.631] Finished model 8; time: 155s; progress: 65/120 (54%)
+INFO  [2022-04-25 12:01:28.633] Start model 49
+INFO  [2022-04-25 12:01:58.209] Finished model 72; time: 176s; progress: 66/120 (55%)
+INFO  [2022-04-25 12:01:58.211] Start model 39
+INFO  [2022-04-25 12:02:02.364] Finished model 77; time: 156s; progress: 67/120 (56%)
+INFO  [2022-04-25 12:02:02.367] Start model 50
+INFO  [2022-04-25 12:02:43.425] Finished model 118; time: 144s; progress: 68/120 (57%)
+INFO  [2022-04-25 12:02:43.430] Start model 74
+INFO  [2022-04-25 12:02:54.410] Finished model 115; time: 126s; progress: 69/120 (57%)
+INFO  [2022-04-25 12:02:54.414] Start model 69
+INFO  [2022-04-25 12:03:33.008] Finished model 10; time: 149s; progress: 70/120 (58%)
+INFO  [2022-04-25 12:03:33.012] Start model 88
+INFO  [2022-04-25 12:03:39.038] Finished model 49; time: 130s; progress: 71/120 (59%)
+INFO  [2022-04-25 12:03:39.040] Start model 40
+INFO  [2022-04-25 12:04:36.239] Finished model 39; time: 158s; progress: 72/120 (60%)
+INFO  [2022-04-25 12:04:36.245] Start model 79
+INFO  [2022-04-25 12:04:47.323] Finished model 50; time: 165s; progress: 73/120 (61%)
+INFO  [2022-04-25 12:04:47.330] Start model 29
+INFO  [2022-04-25 12:05:43.929] Finished model 74; time: 180s; progress: 74/120 (62%)
+INFO  [2022-04-25 12:05:43.931] Start model 9
+INFO  [2022-04-25 12:05:46.171] Finished model 69; time: 172s; progress: 75/120 (62%)
+INFO  [2022-04-25 12:05:46.174] Start model 73
+INFO  [2022-04-25 12:06:09.184] Finished model 40; time: 150s; progress: 76/120 (63%)
+INFO  [2022-04-25 12:06:09.188] Start model 26
+INFO  [2022-04-25 12:06:16.327] Finished model 88; time: 163s; progress: 77/120 (64%)
+INFO  [2022-04-25 12:06:16.330] Start model 93
+INFO  [2022-04-25 12:07:00.624] Finished model 79; time: 144s; progress: 78/120 (65%)
+INFO  [2022-04-25 12:07:00.627] Start model 58
+INFO  [2022-04-25 12:07:15.828] Finished model 29; time: 148s; progress: 79/120 (66%)
+INFO  [2022-04-25 12:07:15.830] Start model 104
+INFO  [2022-04-25 12:08:12.674] Finished model 73; time: 146s; progress: 80/120 (67%)
+INFO  [2022-04-25 12:08:12.677] Start model 95
+INFO  [2022-04-25 12:08:24.734] Finished model 9; time: 161s; progress: 81/120 (68%)
+INFO  [2022-04-25 12:08:24.736] Start model 3
+INFO  [2022-04-25 12:08:52.294] Finished model 26; time: 163s; progress: 82/120 (68%)
+INFO  [2022-04-25 12:08:52.297] Start model 84
+INFO  [2022-04-25 12:09:07.466] Finished model 93; time: 171s; progress: 83/120 (69%)
+INFO  [2022-04-25 12:09:07.472] Start model 54
+INFO  [2022-04-25 12:09:15.866] Finished model 58; time: 135s; progress: 84/120 (70%)
+INFO  [2022-04-25 12:09:15.868] Start model 106
+INFO  [2022-04-25 12:10:03.712] Finished model 104; time: 168s; progress: 85/120 (71%)
+INFO  [2022-04-25 12:10:03.715] Start model 78
+INFO  [2022-04-25 12:10:55.394] Finished model 95; time: 163s; progress: 86/120 (72%)
+INFO  [2022-04-25 12:10:55.397] Start model 41
+INFO  [2022-04-25 12:11:00.251] Finished model 3; time: 156s; progress: 87/120 (72%)
+INFO  [2022-04-25 12:11:00.254] Start model 112
+INFO  [2022-04-25 12:12:01.462] Finished model 106; time: 166s; progress: 88/120 (73%)
+INFO  [2022-04-25 12:12:01.465] Start model 30
+INFO  [2022-04-25 12:12:02.741] Finished model 84; time: 190s; progress: 89/120 (74%)
+INFO  [2022-04-25 12:12:02.744] Start model 100
+INFO  [2022-04-25 12:12:08.362] Finished model 54; time: 181s; progress: 90/120 (75%)
+INFO  [2022-04-25 12:12:08.365] Start model 103
+INFO  [2022-04-25 12:13:21.915] Finished model 78; time: 198s; progress: 91/120 (76%)
+INFO  [2022-04-25 12:13:21.918] Start model 60
+INFO  [2022-04-25 12:13:29.365] Finished model 41; time: 154s; progress: 92/120 (77%)
+INFO  [2022-04-25 12:13:29.368] Start model 96
+INFO  [2022-04-25 12:13:47.465] Finished model 112; time: 167s; progress: 93/120 (78%)
+INFO  [2022-04-25 12:13:47.468] Start model 75
+INFO  [2022-04-25 12:14:29.262] Finished model 103; time: 141s; progress: 94/120 (78%)
+INFO  [2022-04-25 12:14:29.267] Start model 15
+INFO  [2022-04-25 12:14:49.428] Finished model 100; time: 167s; progress: 95/120 (79%)
+INFO  [2022-04-25 12:14:49.434] Start model 111
+INFO  [2022-04-25 12:15:03.647] Finished model 30; time: 182s; progress: 96/120 (80%)
+INFO  [2022-04-25 12:15:03.651] Start model 42
+INFO  [2022-04-25 12:16:08.659] Finished model 60; time: 167s; progress: 97/120 (81%)
+INFO  [2022-04-25 12:16:08.664] Start model 11
+INFO  [2022-04-25 12:16:40.919] Finished model 96; time: 192s; progress: 98/120 (82%)
+INFO  [2022-04-25 12:16:40.922] Start model 105
+INFO  [2022-04-25 12:16:42.266] Finished model 75; time: 175s; progress: 99/120 (82%)
+INFO  [2022-04-25 12:16:42.269] Start model 47
+INFO  [2022-04-25 12:17:19.945] Finished model 15; time: 171s; progress: 100/120 (83%)
+INFO  [2022-04-25 12:17:19.949] Start model 71
+INFO  [2022-04-25 12:17:47.566] Finished model 111; time: 178s; progress: 101/120 (84%)
+INFO  [2022-04-25 12:17:47.570] Start model 99
+INFO  [2022-04-25 12:18:21.525] Finished model 42; time: 198s; progress: 102/120 (85%)
+INFO  [2022-04-25 12:18:21.527] Start model 37
+INFO  [2022-04-25 12:18:51.784] Finished model 11; time: 163s; progress: 103/120 (86%)
+INFO  [2022-04-25 12:18:51.790] Start model 61
+INFO  [2022-04-25 12:19:21.838] Finished model 47; time: 160s; progress: 104/120 (87%)
+INFO  [2022-04-25 12:19:21.841] Start model 35
+INFO  [2022-04-25 12:19:39.178] Finished model 105; time: 178s; progress: 105/120 (88%)
+INFO  [2022-04-25 12:19:39.186] Start model 65
+INFO  [2022-04-25 12:20:10.211] Finished model 71; time: 170s; progress: 106/120 (88%)
+INFO  [2022-04-25 12:20:10.213] Start model 53
+INFO  [2022-04-25 12:20:33.200] Finished model 37; time: 132s; progress: 107/120 (89%)
+INFO  [2022-04-25 12:20:33.203] Start model 32
+INFO  [2022-04-25 12:20:36.964] Finished model 99; time: 169s; progress: 108/120 (90%)
+INFO  [2022-04-25 12:20:36.967] Start model 12
+INFO  [2022-04-25 12:21:11.836] Finished model 61; time: 140s; progress: 109/120 (91%)
+INFO  [2022-04-25 12:21:11.838] Start model 76
+INFO  [2022-04-25 12:21:49.705] Finished model 35; time: 148s; progress: 110/120 (92%)
+INFO  [2022-04-25 12:21:49.708] Start model 87
+INFO  [2022-04-25 12:22:25.517] Finished model 65; time: 166s; progress: 111/120 (92%)
+INFO  [2022-04-25 12:22:25.520] Start model 20
+INFO  [2022-04-25 12:22:37.808] Finished model 53; time: 148s; progress: 112/120 (93%)
+INFO  [2022-04-25 12:22:37.811] Start model 66
+INFO  [2022-04-25 12:23:16.836] Finished model 32; time: 164s; progress: 113/120 (94%)
+INFO  [2022-04-25 12:23:16.839] Start model 52
+INFO  [2022-04-25 12:23:42.502] Finished model 12; time: 186s; progress: 114/120 (95%)
+INFO  [2022-04-25 12:23:42.505] Start model 101
+INFO  [2022-04-25 12:24:01.928] Finished model 76; time: 170s; progress: 115/120 (96%)
+INFO  [2022-04-25 12:24:29.152] Finished model 87; time: 159s; progress: 116/120 (97%)
+INFO  [2022-04-25 12:24:55.704] Finished model 20; time: 150s; progress: 117/120 (98%)
+INFO  [2022-04-25 12:25:19.240] Finished model 52; time: 122s; progress: 118/120 (98%)
+INFO  [2022-04-25 12:25:23.036] Finished model 66; time: 165s; progress: 119/120 (99%)
+INFO  [2022-04-25 12:25:48.200] Finished model 101; time: 126s; progress: 120/120 (100%)
+INFO  [2022-04-25 12:25:48.488] Total script run time: 3275s
