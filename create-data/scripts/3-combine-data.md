@@ -44,8 +44,28 @@ output of all chunks below for new changes in missing case sets!
 END_YEAR <- 2021
 # UPDATE: this should be the V-Dem data version, but for development I've also
 # use sub-versions like 'v11a', ...
-VERSION  <- "v12"
+
+# use global options config (config.yml)
+devtools::load_all()
 ```
+
+    ## ℹ Loading demspaces
+
+    ## Registered S3 method overwritten by 'quantmod':
+    ##   method            from
+    ##   as.zoo.data.frame zoo
+
+    ## ---- demspaces
+    ## Using version: ''
+    ## ----
+
+``` r
+set_options(here::here("config.yml"))
+VERSION  <- getOption("demspaces.version")
+print(VERSION)
+```
+
+    ## [1] "v12-mod"
 
 ## Pieces
 
@@ -57,12 +77,10 @@ cy <- read_csv("../output/country_year_set_1968_on.csv") %>%
 ```
 
     ## Rows: 8458 Columns: 5
-
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
     ## chr (2): country_name, country_text_id
     ## dbl (3): gwcode, year, country_id
-
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -133,12 +151,10 @@ dv <- read_csv("../output/dv_data_1968_on.csv") %>%
 ```
 
     ## Rows: 8458 Columns: 11
-
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
     ## chr (2): country_name, country_text_id
     ## dbl (9): gwcode, year, country_id, v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2...
-
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -186,12 +202,10 @@ vdem_dat <- read_csv("../output/vdem_data_1968_on.csv") %>%
 ```
 
     ## Rows: 8458 Columns: 196
-
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
     ## chr   (2): country_name, country_text_id
     ## dbl (194): gwcode, year, country_id, is_jud, is_leg, is_elec, is_election_ye...
-
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -350,11 +364,9 @@ age_dat <- read_csv("../input/gwstate-age.csv") %>%
 ```
 
     ## Rows: 20061 Columns: 3
-
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
     ## dbl (3): gwcode, year, state_age
-
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -374,17 +386,10 @@ age_lag
 str(age_dat)
 ```
 
-    ## spec_tbl_df [20,061 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+    ## tibble [20,061 × 3] (S3: tbl_df/tbl/data.frame)
     ##  $ gwcode        : num [1:20061] 2 2 2 2 2 2 2 2 2 2 ...
     ##  $ year          : num [1:20061] 1816 1817 1818 1819 1820 ...
     ##  $ lag0_state_age: num [1:20061] 1 2 3 4 5 6 7 8 9 10 ...
-    ##  - attr(*, "spec")=
-    ##   .. cols(
-    ##   ..   gwcode = col_double(),
-    ##   ..   year = col_double(),
-    ##   ..   state_age = col_double()
-    ##   .. )
-    ##  - attr(*, "problems")=<externalptr>
 
 ``` r
 plotmiss(age_dat)
@@ -415,11 +420,9 @@ pop_dat <- read_csv("../input/population.csv") %>%
 ```
 
     ## Rows: 20061 Columns: 3
-
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
     ## dbl (3): gwcode, year, pop
-
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -438,17 +441,10 @@ pop_lag
 str(pop_dat)
 ```
 
-    ## spec_tbl_df [20,061 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+    ## tibble [20,061 × 3] (S3: tbl_df/tbl/data.frame)
     ##  $ gwcode      : num [1:20061] 2 2 2 2 2 2 2 2 2 2 ...
     ##  $ year        : num [1:20061] 1816 1817 1818 1819 1820 ...
     ##  $ lag0_log_pop: num [1:20061] 9.07 9.09 9.12 9.15 9.17 ...
-    ##  - attr(*, "spec")=
-    ##   .. cols(
-    ##   ..   gwcode = col_double(),
-    ##   ..   year = col_double(),
-    ##   ..   pop = col_double()
-    ##   .. )
-    ##  - attr(*, "problems")=<externalptr>
 
 ``` r
 plotmiss(pop_dat)
@@ -495,12 +491,10 @@ infmort <- read_csv("../input/wdi-infmort.csv") %>%
 ```
 
     ## Rows: 9481 Columns: 5
-
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
     ## dbl (4): gwcode, year, infmort, infmort_yearadj
     ## lgl (1): infmort_imputed
-
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -577,11 +571,9 @@ gdp_dat <- read_csv("../input/gdp.csv") %>%
 ```
 
     ## Rows: 11400 Columns: 6
-
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
     ## dbl (6): gwcode, year, NY.GDP.MKTP.KD, NY.GDP.MKTP.KD.ZG, NY.GDP.PCAP.KD, NY...
-
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -600,23 +592,13 @@ gdp_lag
 str(gdp_dat)
 ```
 
-    ## spec_tbl_df [11,400 × 6] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+    ## tibble [11,400 × 6] (S3: tbl_df/tbl/data.frame)
     ##  $ gwcode            : num [1:11400] 2 20 40 41 42 70 90 91 92 93 ...
     ##  $ year              : num [1:11400] 1951 1951 1951 1951 1951 ...
     ##  $ lag1_gdp_growth   : num [1:11400] 3.942 5.669 0.933 3.071 0 ...
     ##  $ lag1_gdp_pc_growth: num [1:11400] 2.451 3.261 0.241 2.116 0 ...
     ##  $ lag1_log_gdp      : num [1:11400] 28.5 25.7 23.5 22.3 21.5 ...
     ##  $ lag1_log_gdp_pc   : num [1:11400] 9.61 9.28 7.94 7.36 6.81 ...
-    ##  - attr(*, "spec")=
-    ##   .. cols(
-    ##   ..   gwcode = col_double(),
-    ##   ..   year = col_double(),
-    ##   ..   NY.GDP.MKTP.KD = col_double(),
-    ##   ..   NY.GDP.MKTP.KD.ZG = col_double(),
-    ##   ..   NY.GDP.PCAP.KD = col_double(),
-    ##   ..   NY.GDP.PCAP.KD.ZG = col_double()
-    ##   .. )
-    ##  - attr(*, "problems")=<externalptr>
 
 ``` r
 plotmiss(gdp_dat)
@@ -642,11 +624,9 @@ coup_dat <- read_csv("../input/ptcoups.csv") %>%
 ```
 
     ## Rows: 11793 Columns: 20
-
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
     ## dbl (20): gwcode, year, pt_attempt, pt_attempt_num, pt_coup_num, pt_coup, pt...
-
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -718,12 +698,12 @@ str(cy)
     ##  $ dv_v2xcs_ccsi_up_next2          : int [1:8187] 0 0 0 0 0 0 0 0 0 0 ...
     ##  $ dv_v2xcs_ccsi_down_next2        : int [1:8187] 0 0 0 0 0 0 0 0 0 0 ...
     ##  $ v2xcl_rol                       : num [1:8187] 0.919 0.929 0.934 0.934 0.935 0.941 0.946 0.947 0.946 0.95 ...
-    ##  $ dv_v2xcl_rol_change             : chr [1:8187] "same" "same" "same" "same" ...
+    ##  $ dv_v2xcl_rol_change             : chr [1:8187] "up" "same" "same" "same" ...
     ##  $ dv_v2xcl_rol_up_next2           : int [1:8187] 0 0 0 0 0 0 0 0 0 0 ...
     ##  $ dv_v2xcl_rol_down_next2         : int [1:8187] 0 0 0 0 0 0 0 0 0 0 ...
     ##  $ v2x_freexp_altinf               : num [1:8187] 0.902 0.878 0.902 0.928 0.936 0.937 0.951 0.944 0.953 0.953 ...
-    ##  $ dv_v2x_freexp_altinf_change     : chr [1:8187] "same" "same" "same" "same" ...
-    ##  $ dv_v2x_freexp_altinf_up_next2   : int [1:8187] 0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ dv_v2x_freexp_altinf_change     : chr [1:8187] "same" "same" "up" "up" ...
+    ##  $ dv_v2x_freexp_altinf_up_next2   : int [1:8187] 1 1 1 0 0 0 0 0 0 0 ...
     ##  $ dv_v2x_freexp_altinf_down_next2 : int [1:8187] 0 0 0 0 0 0 0 0 0 0 ...
     ##  $ v2x_horacc_osp                  : num [1:8187] 0.918 0.918 0.919 0.959 0.96 0.96 0.96 0.954 0.953 0.954 ...
     ##  $ dv_v2x_horacc_osp_change        : chr [1:8187] "same" "same" "same" "same" ...
@@ -955,9 +935,10 @@ incomplete_cases <- cy %>%
   summarize(missing_values_in = paste0(var, collapse = ", ")) 
 ```
 
-    ## `summarise()` has grouped output by 'gwcode', 'year'. You can override using the `.groups` argument.
-
-    ## `summarise()` has grouped output by 'gwcode'. You can override using the `.groups` argument.
+    ## `summarise()` has grouped output by 'gwcode', 'year'. You can override using
+    ## the `.groups` argument.
+    ## `summarise()` has grouped output by 'gwcode'. You can override using the
+    ## `.groups` argument.
 
 ``` r
 # if there are no missing cases, stop; otherwise 
@@ -1012,7 +993,7 @@ fn <- sprintf("../output/states-%s.rds", VERSION)
 cat("Saving data as %s", basename(fn))
 ```
 
-    ## Saving data as %s states-v12.rds
+    ## Saving data as %s states-v12-mod.rds
 
 ``` r
 write_rds(cy, fn)

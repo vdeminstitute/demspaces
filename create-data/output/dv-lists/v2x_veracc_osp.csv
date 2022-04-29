@@ -1,6 +1,6 @@
 gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_osp_down_next2
 2,1968,first year of independence,0,0
-2,1969,same,0,0
+2,1969,first year of independence,0,0
 2,1970,same,0,0
 2,1971,same,0,0
 2,1972,same,0,0
@@ -54,7 +54,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 2,2020,same,NA,NA
 2,2021,same,NA,NA
 20,1968,first year of independence,0,0
-20,1969,same,0,0
+20,1969,first year of independence,0,0
 20,1970,same,0,0
 20,1971,same,0,0
 20,1972,same,0,0
@@ -108,7 +108,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 20,2020,same,NA,NA
 20,2021,same,NA,NA
 40,1968,first year of independence,0,0
-40,1969,same,0,0
+40,1969,first year of independence,0,0
 40,1970,same,0,0
 40,1971,same,0,0
 40,1972,same,0,0
@@ -162,7 +162,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 40,2020,same,NA,NA
 40,2021,same,NA,NA
 41,1968,first year of independence,0,0
-41,1969,same,0,0
+41,1969,first year of independence,0,0
 41,1970,same,0,0
 41,1971,same,0,0
 41,1972,same,0,0
@@ -179,12 +179,12 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 41,1983,same,0,0
 41,1984,same,1,0
 41,1985,same,1,0
-41,1986,up,1,0
+41,1986,up,1,1
 41,1987,up,0,1
-41,1988,same,1,1
+41,1988,down,1,1
 41,1989,down,1,0
-41,1990,up,0,1
-41,1991,same,0,1
+41,1990,up,1,1
+41,1991,up,0,1
 41,1992,down,0,0
 41,1993,same,1,0
 41,1994,same,1,0
@@ -216,7 +216,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 41,2020,same,NA,NA
 41,2021,same,NA,NA
 42,1968,first year of independence,0,0
-42,1969,same,0,0
+42,1969,first year of independence,0,0
 42,1970,same,0,0
 42,1971,same,0,0
 42,1972,same,0,0
@@ -243,8 +243,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 42,1993,same,0,0
 42,1994,same,1,0
 42,1995,same,1,0
-42,1996,up,0,0
-42,1997,same,0,0
+42,1996,up,1,0
+42,1997,up,0,0
 42,1998,same,0,0
 42,1999,same,0,0
 42,2000,same,0,0
@@ -270,7 +270,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 42,2020,same,NA,NA
 42,2021,same,NA,NA
 51,1968,first year of independence,0,0
-51,1969,same,0,0
+51,1969,first year of independence,0,0
 51,1970,same,0,0
 51,1971,same,0,0
 51,1972,same,0,0
@@ -324,7 +324,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 51,2020,same,NA,NA
 51,2021,same,NA,NA
 52,1968,first year of independence,0,0
-52,1969,same,0,0
+52,1969,first year of independence,0,0
 52,1970,same,0,0
 52,1971,same,0,0
 52,1972,same,0,0
@@ -378,7 +378,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 52,2020,same,NA,NA
 52,2021,same,NA,NA
 53,1968,first year of independence,0,0
-53,1969,same,0,0
+53,1969,first year of independence,0,0
 53,1970,same,0,0
 53,1971,same,0,0
 53,1972,same,0,0
@@ -432,7 +432,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 53,2020,same,NA,NA
 53,2021,same,NA,NA
 70,1968,first year of independence,0,0
-70,1969,same,0,0
+70,1969,first year of independence,0,0
 70,1970,same,0,0
 70,1971,same,0,0
 70,1972,same,0,0
@@ -457,9 +457,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 70,1991,same,0,0
 70,1992,same,0,0
 70,1993,same,0,0
-70,1994,same,0,0
+70,1994,same,1,0
 70,1995,same,1,0
-70,1996,same,1,0
+70,1996,up,1,0
 70,1997,up,0,0
 70,1998,same,0,0
 70,1999,same,0,0
@@ -486,7 +486,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 70,2020,same,NA,NA
 70,2021,same,NA,NA
 90,1968,first year of independence,0,0
-90,1969,same,0,0
+90,1969,first year of independence,0,0
 90,1970,same,0,0
 90,1971,same,0,0
 90,1972,same,0,0
@@ -540,7 +540,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 90,2020,same,NA,NA
 90,2021,same,NA,NA
 91,1968,first year of independence,0,0
-91,1969,same,1,0
+91,1969,first year of independence,1,0
 91,1970,same,1,0
 91,1971,up,0,1
 91,1972,same,0,1
@@ -551,8 +551,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 91,1977,same,0,0
 91,1978,same,1,0
 91,1979,same,1,0
-91,1980,up,0,0
-91,1981,same,0,0
+91,1980,up,1,0
+91,1981,up,0,0
 91,1982,same,0,0
 91,1983,same,0,0
 91,1984,same,0,0
@@ -594,7 +594,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 91,2020,same,NA,NA
 91,2021,up,NA,NA
 92,1968,first year of independence,0,0
-92,1969,same,0,0
+92,1969,first year of independence,0,0
 92,1970,same,0,0
 92,1971,same,0,0
 92,1972,same,0,0
@@ -609,16 +609,16 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 92,1981,same,1,1
 92,1982,up,1,1
 92,1983,down,1,0
-92,1984,up,0,0
-92,1985,same,0,0
+92,1984,up,1,0
+92,1985,up,0,0
 92,1986,same,0,0
 92,1987,same,0,0
 92,1988,same,0,0
 92,1989,same,0,0
 92,1990,same,0,0
-92,1991,same,0,0
+92,1991,same,1,0
 92,1992,same,1,0
-92,1993,same,1,0
+92,1993,up,1,0
 92,1994,up,0,0
 92,1995,same,0,0
 92,1996,same,0,0
@@ -648,10 +648,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 92,2020,same,NA,NA
 92,2021,down,NA,NA
 93,1968,first year of independence,0,0
-93,1969,same,0,0
-93,1970,same,0,0
+93,1969,first year of independence,0,0
+93,1970,same,0,1
 93,1971,same,0,1
-93,1972,same,1,1
+93,1972,down,1,1
 93,1973,down,1,0
 93,1974,up,0,0
 93,1975,same,0,0
@@ -660,15 +660,15 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 93,1978,same,0,1
 93,1979,down,0,0
 93,1980,same,0,0
-93,1981,same,0,0
+93,1981,same,1,0
 93,1982,same,1,0
-93,1983,same,1,0
+93,1983,up,1,0
 93,1984,up,0,0
 93,1985,same,0,0
 93,1986,same,0,0
-93,1987,same,0,0
+93,1987,same,1,0
 93,1988,same,1,0
-93,1989,same,1,0
+93,1989,up,1,0
 93,1990,up,0,0
 93,1991,same,0,0
 93,1992,same,0,0
@@ -687,10 +687,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 93,2005,same,0,0
 93,2006,same,0,0
 93,2007,same,0,0
-93,2008,same,0,0
-93,2009,same,0,0
-93,2010,same,0,0
-93,2011,same,0,0
+93,2008,same,0,1
+93,2009,same,0,1
+93,2010,down,0,1
+93,2011,down,0,0
 93,2012,same,0,0
 93,2013,same,0,0
 93,2014,same,0,0
@@ -702,7 +702,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 93,2020,same,NA,NA
 93,2021,same,NA,NA
 94,1968,first year of independence,0,0
-94,1969,same,0,0
+94,1969,first year of independence,0,0
 94,1970,same,0,0
 94,1971,same,0,0
 94,1972,same,0,0
@@ -755,8 +755,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 94,2019,same,0,0
 94,2020,same,NA,NA
 94,2021,same,NA,NA
-95,1968,first year of independence,0,1
-95,1969,down,0,0
+95,1968,first year of independence,0,0
+95,1969,first year of independence,0,0
 95,1970,same,1,0
 95,1971,same,1,0
 95,1972,up,0,0
@@ -774,9 +774,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 95,1984,same,0,0
 95,1985,same,0,0
 95,1986,same,0,0
-95,1987,same,0,0
+95,1987,same,1,0
 95,1988,same,1,0
-95,1989,same,1,0
+95,1989,up,1,0
 95,1990,up,1,0
 95,1991,up,0,0
 95,1992,same,0,0
@@ -810,7 +810,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 95,2020,same,NA,NA
 95,2021,same,NA,NA
 100,1968,first year of independence,0,0
-100,1969,same,0,0
+100,1969,first year of independence,0,0
 100,1970,same,0,0
 100,1971,same,0,0
 100,1972,same,1,0
@@ -864,7 +864,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 100,2020,same,NA,NA
 100,2021,same,NA,NA
 101,1968,first year of independence,0,0
-101,1969,same,0,0
+101,1969,first year of independence,0,0
 101,1970,same,0,0
 101,1971,same,0,0
 101,1972,same,0,0
@@ -909,16 +909,16 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 101,2011,same,0,0
 101,2012,same,0,0
 101,2013,same,0,0
-101,2014,same,0,0
+101,2014,same,0,1
 101,2015,same,0,1
-101,2016,same,0,1
-101,2017,down,0,0
-101,2018,same,0,0
+101,2016,down,0,1
+101,2017,down,0,1
+101,2018,down,0,0
 101,2019,same,0,0
 101,2020,same,NA,NA
 101,2021,same,NA,NA
 110,1968,first year of independence,0,0
-110,1969,same,0,0
+110,1969,first year of independence,0,0
 110,1970,same,0,0
 110,1971,same,0,0
 110,1972,same,0,0
@@ -941,8 +941,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 110,1989,same,0,0
 110,1990,same,1,0
 110,1991,same,1,0
-110,1992,up,0,0
-110,1993,same,0,0
+110,1992,up,1,0
+110,1993,up,0,0
 110,1994,same,0,0
 110,1995,same,0,0
 110,1996,same,0,0
@@ -972,19 +972,19 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 110,2020,same,NA,NA
 110,2021,same,NA,NA
 115,1975,first year of independence,0,0
-115,1976,same,0,0
+115,1976,first year of independence,0,0
 115,1977,same,0,0
-115,1978,same,0,0
+115,1978,same,0,1
 115,1979,same,0,1
-115,1980,same,0,1
+115,1980,down,0,1
 115,1981,down,0,0
 115,1982,same,0,0
 115,1983,same,0,0
 115,1984,same,0,0
 115,1985,same,1,0
 115,1986,same,1,0
-115,1987,up,0,0
-115,1988,same,0,0
+115,1987,up,1,0
+115,1988,up,0,0
 115,1989,same,0,0
 115,1990,same,0,0
 115,1991,same,0,0
@@ -1019,18 +1019,18 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 115,2020,same,NA,NA
 115,2021,same,NA,NA
 130,1968,first year of independence,0,0
-130,1969,same,0,1
+130,1969,first year of independence,0,1
 130,1970,same,0,1
-130,1971,down,0,0
-130,1972,same,0,0
-130,1973,same,0,0
+130,1971,down,0,1
+130,1972,down,0,1
+130,1973,down,0,0
 130,1974,same,0,0
 130,1975,same,0,0
 130,1976,same,1,0
 130,1977,same,1,0
-130,1978,up,0,0
-130,1979,same,0,0
-130,1980,same,0,0
+130,1978,up,1,0
+130,1979,up,1,0
+130,1980,up,0,0
 130,1981,same,0,0
 130,1982,same,0,0
 130,1983,same,0,0
@@ -1072,8 +1072,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 130,2019,same,0,0
 130,2020,same,NA,NA
 130,2021,same,NA,NA
-135,1968,first year of independence,0,1
-135,1969,down,0,0
+135,1968,first year of independence,0,0
+135,1969,first year of independence,0,0
 135,1970,same,0,0
 135,1971,same,0,0
 135,1972,same,0,0
@@ -1127,7 +1127,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 135,2020,same,NA,NA
 135,2021,same,NA,NA
 140,1968,first year of independence,0,0
-140,1969,same,0,0
+140,1969,first year of independence,0,0
 140,1970,same,0,0
 140,1971,same,0,0
 140,1972,same,0,0
@@ -1141,14 +1141,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 140,1980,same,1,0
 140,1981,same,1,0
 140,1982,up,0,0
-140,1983,same,0,0
+140,1983,same,1,0
 140,1984,same,1,0
-140,1985,same,1,0
-140,1986,up,0,0
-140,1987,same,1,0
-140,1988,same,1,0
-140,1989,up,0,0
-140,1990,same,0,0
+140,1985,up,1,0
+140,1986,up,1,0
+140,1987,up,1,0
+140,1988,up,1,0
+140,1989,up,1,0
+140,1990,up,0,0
 140,1991,same,0,0
 140,1992,same,0,0
 140,1993,same,0,0
@@ -1181,7 +1181,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 140,2020,same,NA,NA
 140,2021,same,NA,NA
 145,1968,first year of independence,0,1
-145,1969,same,0,1
+145,1969,first year of independence,0,1
 145,1970,down,0,0
 145,1971,same,0,0
 145,1972,same,0,0
@@ -1190,9 +1190,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 145,1975,same,0,0
 145,1976,same,1,0
 145,1977,same,1,0
-145,1978,up,0,0
-145,1979,same,0,1
-145,1980,same,0,1
+145,1978,up,1,0
+145,1979,up,1,1
+145,1980,up,0,1
 145,1981,down,0,0
 145,1982,same,0,0
 145,1983,same,1,0
@@ -1228,14 +1228,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 145,2013,same,0,0
 145,2014,same,0,0
 145,2015,same,0,0
-145,2016,same,0,0
+145,2016,same,0,1
 145,2017,same,0,1
-145,2018,same,0,1
+145,2018,down,0,1
 145,2019,down,0,0
 145,2020,same,NA,NA
 145,2021,same,NA,NA
 150,1968,first year of independence,0,0
-150,1969,same,0,0
+150,1969,first year of independence,0,0
 150,1970,same,0,0
 150,1971,same,0,0
 150,1972,same,0,0
@@ -1256,7 +1256,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 150,1987,same,1,0
 150,1988,same,1,0
 150,1989,up,1,0
-150,1990,same,1,0
+150,1990,up,1,0
 150,1991,up,0,0
 150,1992,same,0,0
 150,1993,same,0,0
@@ -1289,11 +1289,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 150,2020,same,NA,NA
 150,2021,same,NA,NA
 155,1968,first year of independence,0,0
-155,1969,same,0,0
+155,1969,first year of independence,0,0
 155,1970,same,0,0
-155,1971,same,0,0
+155,1971,same,0,1
 155,1972,same,0,1
-155,1973,same,0,1
+155,1973,down,0,1
 155,1974,down,0,0
 155,1975,same,0,0
 155,1976,same,0,0
@@ -1305,12 +1305,12 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 155,1982,same,0,0
 155,1983,same,0,0
 155,1984,same,0,0
-155,1985,same,0,0
-155,1986,same,0,0
-155,1987,same,1,0
-155,1988,same,1,0
-155,1989,up,0,0
-155,1990,same,0,0
+155,1985,same,1,0
+155,1986,same,1,0
+155,1987,up,1,0
+155,1988,up,1,0
+155,1989,up,1,0
+155,1990,up,0,0
 155,1991,same,0,0
 155,1992,same,0,0
 155,1993,same,0,0
@@ -1343,22 +1343,22 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 155,2020,same,NA,NA
 155,2021,same,NA,NA
 160,1968,first year of independence,0,0
-160,1969,same,0,0
+160,1969,first year of independence,0,0
 160,1970,same,0,0
 160,1971,same,1,0
 160,1972,same,1,0
-160,1973,up,0,0
-160,1974,same,0,0
+160,1973,up,1,0
+160,1974,up,0,1
 160,1975,same,0,1
-160,1976,same,0,1
+160,1976,down,0,1
 160,1977,down,0,0
 160,1978,same,0,0
 160,1979,same,0,0
 160,1980,same,0,0
 160,1981,same,1,0
 160,1982,same,1,0
-160,1983,up,0,0
-160,1984,same,0,0
+160,1983,up,1,0
+160,1984,up,0,0
 160,1985,same,0,0
 160,1986,same,0,0
 160,1987,same,0,0
@@ -1397,12 +1397,12 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 160,2020,same,NA,NA
 160,2021,same,NA,NA
 165,1968,first year of independence,0,0
-165,1969,same,0,1
+165,1969,first year of independence,0,1
 165,1970,same,0,1
 165,1971,down,0,1
 165,1972,same,0,1
-165,1973,down,0,0
-165,1974,same,0,0
+165,1973,down,0,1
+165,1974,down,0,0
 165,1975,same,0,0
 165,1976,same,0,0
 165,1977,same,0,0
@@ -1412,8 +1412,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 165,1981,same,0,0
 165,1982,same,1,0
 165,1983,same,1,0
-165,1984,up,0,0
-165,1985,same,0,0
+165,1984,up,1,0
+165,1985,up,0,0
 165,1986,same,0,0
 165,1987,same,0,0
 165,1988,same,0,0
@@ -1451,7 +1451,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 165,2020,same,NA,NA
 165,2021,same,NA,NA
 200,1968,first year of independence,0,0
-200,1969,same,0,0
+200,1969,first year of independence,0,0
 200,1970,same,0,0
 200,1971,same,0,0
 200,1972,same,0,0
@@ -1505,7 +1505,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 200,2020,same,NA,NA
 200,2021,same,NA,NA
 205,1968,first year of independence,0,0
-205,1969,same,0,0
+205,1969,first year of independence,0,0
 205,1970,same,0,0
 205,1971,same,0,0
 205,1972,same,0,0
@@ -1559,7 +1559,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 205,2020,same,NA,NA
 205,2021,same,NA,NA
 210,1968,first year of independence,0,0
-210,1969,same,0,0
+210,1969,first year of independence,0,0
 210,1970,same,0,0
 210,1971,same,0,0
 210,1972,same,0,0
@@ -1613,7 +1613,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 210,2020,same,NA,NA
 210,2021,same,NA,NA
 211,1968,first year of independence,0,0
-211,1969,same,0,0
+211,1969,first year of independence,0,0
 211,1970,same,0,0
 211,1971,same,0,0
 211,1972,same,0,0
@@ -1667,7 +1667,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 211,2020,same,NA,NA
 211,2021,same,NA,NA
 212,1968,first year of independence,0,0
-212,1969,same,0,0
+212,1969,first year of independence,0,0
 212,1970,same,0,0
 212,1971,same,0,0
 212,1972,same,0,0
@@ -1721,7 +1721,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 212,2020,same,NA,NA
 212,2021,same,NA,NA
 220,1968,first year of independence,0,0
-220,1969,same,0,0
+220,1969,first year of independence,0,0
 220,1970,same,0,0
 220,1971,same,0,0
 220,1972,same,0,0
@@ -1775,7 +1775,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 220,2020,same,NA,NA
 220,2021,same,NA,NA
 225,1968,first year of independence,0,0
-225,1969,same,0,0
+225,1969,first year of independence,0,0
 225,1970,same,0,0
 225,1971,same,0,0
 225,1972,same,0,0
@@ -1829,7 +1829,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 225,2020,same,NA,NA
 225,2021,same,NA,NA
 230,1968,first year of independence,0,0
-230,1969,same,0,0
+230,1969,first year of independence,0,0
 230,1970,same,0,0
 230,1971,same,0,0
 230,1972,same,0,0
@@ -1837,8 +1837,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 230,1974,same,0,0
 230,1975,same,1,0
 230,1976,same,1,0
-230,1977,up,0,0
-230,1978,same,0,0
+230,1977,up,1,0
+230,1978,up,0,0
 230,1979,same,0,0
 230,1980,same,0,0
 230,1981,same,0,0
@@ -1882,15 +1882,15 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 230,2019,same,0,0
 230,2020,same,NA,NA
 230,2021,same,NA,NA
-235,1968,first year of independence,1,0
-235,1969,up,0,0
+235,1968,first year of independence,0,0
+235,1969,first year of independence,0,0
 235,1970,same,0,0
 235,1971,same,1,0
 235,1972,same,1,0
 235,1973,up,1,0
-235,1974,same,1,0
-235,1975,up,0,0
-235,1976,same,0,0
+235,1974,up,1,0
+235,1975,up,1,0
+235,1976,up,0,0
 235,1977,same,0,0
 235,1978,same,0,0
 235,1979,same,0,0
@@ -1937,7 +1937,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 235,2020,same,NA,NA
 235,2021,same,NA,NA
 260,1968,first year of independence,0,0
-260,1969,same,0,0
+260,1969,first year of independence,0,0
 260,1970,same,0,0
 260,1971,same,0,0
 260,1972,same,0,0
@@ -1991,7 +1991,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 260,2020,same,NA,NA
 260,2021,same,NA,NA
 265,1968,first year of independence,0,0
-265,1969,same,0,0
+265,1969,first year of independence,0,0
 265,1970,same,0,0
 265,1971,same,0,0
 265,1972,same,0,0
@@ -2014,7 +2014,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 265,1989,same,0,0
 265,1990,up,0,0
 290,1968,first year of independence,0,0
-290,1969,same,0,0
+290,1969,first year of independence,0,0
 290,1970,same,0,0
 290,1971,same,0,0
 290,1972,same,0,0
@@ -2035,9 +2035,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 290,1987,same,1,0
 290,1988,same,1,0
 290,1989,up,1,0
-290,1990,same,1,0
-290,1991,up,0,0
-290,1992,same,0,0
+290,1990,up,1,0
+290,1991,up,1,0
+290,1992,up,0,0
 290,1993,same,0,0
 290,1994,same,0,0
 290,1995,same,0,0
@@ -2062,13 +2062,13 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 290,2014,same,0,0
 290,2015,same,0,0
 290,2016,same,0,0
-290,2017,same,0,0
-290,2018,same,0,0
-290,2019,same,0,0
-290,2020,same,NA,NA
+290,2017,same,0,1
+290,2018,same,0,1
+290,2019,down,0,1
+290,2020,down,NA,NA
 290,2021,same,NA,NA
 305,1968,first year of independence,0,0
-305,1969,same,0,0
+305,1969,first year of independence,0,0
 305,1970,same,0,0
 305,1971,same,0,0
 305,1972,same,0,0
@@ -2122,7 +2122,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 305,2020,same,NA,NA
 305,2021,same,NA,NA
 310,1968,first year of independence,0,0
-310,1969,same,0,0
+310,1969,first year of independence,0,0
 310,1970,same,0,0
 310,1971,same,0,0
 310,1972,same,0,0
@@ -2140,9 +2140,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 310,1984,same,0,0
 310,1985,same,0,0
 310,1986,same,0,0
-310,1987,same,0,0
+310,1987,same,1,0
 310,1988,same,1,0
-310,1989,same,1,0
+310,1989,up,1,0
 310,1990,up,0,0
 310,1991,same,0,0
 310,1992,same,0,0
@@ -2176,7 +2176,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 310,2020,same,NA,NA
 310,2021,same,NA,NA
 315,1968,first year of independence,0,0
-315,1969,same,0,0
+315,1969,first year of independence,0,0
 315,1970,same,0,0
 315,1971,same,0,0
 315,1972,same,0,0
@@ -2194,14 +2194,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 315,1984,same,0,0
 315,1985,same,0,0
 315,1986,same,0,0
-315,1987,same,0,0
+315,1987,same,1,0
 315,1988,same,1,0
-315,1989,same,1,0
+315,1989,up,1,0
 315,1990,up,0,0
 315,1991,same,0,0
 315,1992,same,0,0
 316,1993,first year of independence,0,0
-316,1994,same,0,0
+316,1994,first year of independence,0,0
 316,1995,same,0,0
 316,1996,same,0,0
 316,1997,same,0,0
@@ -2230,7 +2230,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 316,2020,same,NA,NA
 316,2021,same,NA,NA
 317,1993,first year of independence,0,0
-317,1994,same,0,0
+317,1994,first year of independence,0,0
 317,1995,same,0,0
 317,1996,same,0,0
 317,1997,same,0,0
@@ -2259,7 +2259,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 317,2020,same,NA,NA
 317,2021,same,NA,NA
 325,1968,first year of independence,0,0
-325,1969,same,0,0
+325,1969,first year of independence,0,0
 325,1970,same,0,0
 325,1971,same,0,0
 325,1972,same,0,0
@@ -2313,7 +2313,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 325,2020,same,NA,NA
 325,2021,same,NA,NA
 339,1968,first year of independence,0,0
-339,1969,same,0,0
+339,1969,first year of independence,0,0
 339,1970,same,0,0
 339,1971,same,0,0
 339,1972,same,0,0
@@ -2332,19 +2332,19 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 339,1985,same,0,0
 339,1986,same,0,0
 339,1987,same,0,0
-339,1988,same,0,0
+339,1988,same,1,0
 339,1989,same,1,0
-339,1990,same,1,0
-339,1991,up,0,0
-339,1992,same,0,0
+339,1990,up,1,0
+339,1991,up,1,0
+339,1992,up,0,0
 339,1993,same,0,0
 339,1994,same,0,1
 339,1995,same,0,1
 339,1996,down,0,0
 339,1997,same,0,0
-339,1998,same,0,0
+339,1998,same,1,0
 339,1999,same,1,0
-339,2000,same,1,0
+339,2000,up,1,0
 339,2001,up,0,0
 339,2002,same,0,0
 339,2003,same,0,0
@@ -2367,7 +2367,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 339,2020,same,NA,NA
 339,2021,same,NA,NA
 340,2006,first year of independence,0,0
-340,2007,same,0,0
+340,2007,first year of independence,0,0
 340,2008,same,0,0
 340,2009,same,0,0
 340,2010,same,0,0
@@ -2383,7 +2383,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 340,2020,same,NA,NA
 340,2021,same,NA,NA
 341,2006,first year of independence,0,0
-341,2007,same,0,0
+341,2007,first year of independence,0,0
 341,2008,same,0,0
 341,2009,same,0,0
 341,2010,same,0,0
@@ -2399,10 +2399,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 341,2020,same,NA,NA
 341,2021,same,NA,NA
 343,1991,first year of independence,0,0
-343,1992,same,1,0
+343,1992,first year of independence,1,0
 343,1993,same,1,0
-343,1994,up,0,0
-343,1995,same,0,0
+343,1994,up,1,0
+343,1995,up,0,0
 343,1996,same,1,0
 343,1997,same,1,0
 343,1998,up,0,0
@@ -2430,7 +2430,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 343,2020,same,NA,NA
 343,2021,same,NA,NA
 344,1992,first year of independence,0,0
-344,1993,same,0,0
+344,1993,first year of independence,0,0
 344,1994,same,0,0
 344,1995,same,0,0
 344,1996,same,0,0
@@ -2460,7 +2460,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 344,2020,same,NA,NA
 344,2021,same,NA,NA
 345,1968,first year of independence,0,0
-345,1969,same,0,0
+345,1969,first year of independence,0,0
 345,1970,same,0,0
 345,1971,same,0,0
 345,1972,same,0,0
@@ -2491,14 +2491,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 345,1997,same,0,0
 345,1998,same,1,0
 345,1999,same,1,0
-345,2000,up,0,0
-345,2001,same,0,0
+345,2000,up,1,0
+345,2001,up,0,0
 345,2002,same,0,0
 345,2003,same,0,0
 345,2004,same,0,0
 345,2005,same,0,0
 346,1992,first year of independence,0,0
-346,1993,same,0,0
+346,1993,first year of independence,0,0
 346,1994,same,1,0
 346,1995,same,1,0
 346,1996,up,0,0
@@ -2528,7 +2528,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 346,2020,same,NA,NA
 346,2021,same,NA,NA
 347,2008,first year of independence,0,0
-347,2009,same,0,0
+347,2009,first year of independence,0,0
 347,2010,same,0,0
 347,2011,same,0,0
 347,2012,same,1,0
@@ -2542,7 +2542,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 347,2020,same,NA,NA
 347,2021,same,NA,NA
 349,1992,first year of independence,0,0
-349,1993,same,0,0
+349,1993,first year of independence,0,0
 349,1994,same,0,0
 349,1995,same,0,0
 349,1996,same,0,0
@@ -2572,13 +2572,13 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 349,2020,same,NA,NA
 349,2021,same,NA,NA
 350,1968,first year of independence,0,0
-350,1969,same,0,0
+350,1969,first year of independence,0,0
 350,1970,same,0,0
 350,1971,same,0,0
 350,1972,same,1,0
 350,1973,same,1,0
-350,1974,up,0,0
-350,1975,same,0,0
+350,1974,up,1,0
+350,1975,up,0,0
 350,1976,same,0,0
 350,1977,same,0,0
 350,1978,same,0,0
@@ -2626,7 +2626,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 350,2020,same,NA,NA
 350,2021,same,NA,NA
 352,1968,first year of independence,0,0
-352,1969,same,0,0
+352,1969,first year of independence,0,0
 352,1970,same,0,0
 352,1971,same,0,0
 352,1972,same,0,0
@@ -2680,7 +2680,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 352,2020,same,NA,NA
 352,2021,same,NA,NA
 355,1968,first year of independence,0,0
-355,1969,same,0,0
+355,1969,first year of independence,0,0
 355,1970,same,0,0
 355,1971,same,0,0
 355,1972,same,0,0
@@ -2701,9 +2701,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 355,1987,same,0,0
 355,1988,same,1,0
 355,1989,same,1,0
-355,1990,up,0,0
-355,1991,same,0,0
-355,1992,same,0,0
+355,1990,up,1,0
+355,1991,up,1,0
+355,1992,up,0,0
 355,1993,same,0,0
 355,1994,same,0,0
 355,1995,same,0,0
@@ -2734,7 +2734,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 355,2020,same,NA,NA
 355,2021,same,NA,NA
 359,1991,first year of independence,0,0
-359,1992,same,1,0
+359,1992,first year of independence,1,0
 359,1993,same,1,0
 359,1994,up,0,0
 359,1995,same,0,0
@@ -2765,7 +2765,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 359,2020,same,NA,NA
 359,2021,same,NA,NA
 360,1968,first year of independence,0,0
-360,1969,same,0,0
+360,1969,first year of independence,0,0
 360,1970,same,0,0
 360,1971,same,0,0
 360,1972,same,0,0
@@ -2819,7 +2819,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 360,2020,same,NA,NA
 360,2021,same,NA,NA
 365,1968,first year of independence,0,0
-365,1969,same,0,0
+365,1969,first year of independence,0,0
 365,1970,same,0,0
 365,1971,same,0,0
 365,1972,same,0,0
@@ -2840,8 +2840,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 365,1987,same,1,0
 365,1988,same,1,0
 365,1989,up,1,0
-365,1990,up,0,0
-365,1991,same,0,0
+365,1990,up,1,0
+365,1991,up,0,0
 365,1992,same,0,0
 365,1993,same,0,0
 365,1994,same,0,0
@@ -2873,7 +2873,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 365,2020,same,NA,NA
 365,2021,same,NA,NA
 366,1991,first year of independence,0,0
-366,1992,same,0,0
+366,1992,first year of independence,0,0
 366,1993,same,0,0
 366,1994,same,0,0
 366,1995,same,0,0
@@ -2904,9 +2904,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 366,2020,same,NA,NA
 366,2021,same,NA,NA
 367,1991,first year of independence,1,0
-367,1992,same,1,0
-367,1993,up,0,0
-367,1994,same,0,0
+367,1992,first year of independence,1,0
+367,1993,up,1,0
+367,1994,up,0,0
 367,1995,same,0,0
 367,1996,same,0,0
 367,1997,same,0,0
@@ -2935,7 +2935,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 367,2020,same,NA,NA
 367,2021,same,NA,NA
 368,1991,first year of independence,0,0
-368,1992,same,0,0
+368,1992,first year of independence,0,0
 368,1993,same,0,0
 368,1994,same,0,0
 368,1995,same,0,0
@@ -2966,20 +2966,20 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 368,2020,same,NA,NA
 368,2021,same,NA,NA
 369,1991,first year of independence,0,0
-369,1992,same,0,0
+369,1992,first year of independence,0,0
 369,1993,same,0,0
 369,1994,same,0,0
 369,1995,same,0,0
-369,1996,same,0,0
-369,1997,same,0,0
-369,1998,same,0,0
-369,1999,same,0,0
+369,1996,same,0,1
+369,1997,same,0,1
+369,1998,down,0,1
+369,1999,down,0,0
 369,2000,same,0,0
 369,2001,same,0,0
 369,2002,same,0,1
-369,2003,same,0,1
+369,2003,same,1,1
 369,2004,down,1,0
-369,2005,same,1,0
+369,2005,up,1,0
 369,2006,up,0,0
 369,2007,same,0,0
 369,2008,same,0,0
@@ -2997,7 +2997,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 369,2020,same,NA,NA
 369,2021,same,NA,NA
 370,1991,first year of independence,0,0
-370,1992,same,0,0
+370,1992,first year of independence,0,0
 370,1993,same,0,0
 370,1994,same,0,0
 370,1995,same,0,0
@@ -3028,11 +3028,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 370,2020,same,NA,NA
 370,2021,same,NA,NA
 371,1991,first year of independence,0,0
-371,1992,same,0,0
+371,1992,first year of independence,0,0
 371,1993,same,0,1
 371,1994,same,0,1
-371,1995,down,0,0
-371,1996,same,0,0
+371,1995,down,0,1
+371,1996,down,0,0
 371,1997,same,0,0
 371,1998,same,0,0
 371,1999,same,0,0
@@ -3051,15 +3051,15 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 371,2012,same,0,0
 371,2013,same,0,0
 371,2014,same,0,0
-371,2015,same,0,0
+371,2015,same,1,0
 371,2016,same,1,0
-371,2017,same,1,0
+371,2017,up,1,0
 371,2018,up,0,0
 371,2019,same,1,0
 371,2020,same,NA,NA
 371,2021,up,NA,NA
 372,1991,first year of independence,0,0
-372,1992,same,0,0
+372,1992,first year of independence,0,0
 372,1993,same,0,0
 372,1994,same,0,0
 372,1995,same,0,0
@@ -3068,9 +3068,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 372,1998,same,0,0
 372,1999,same,0,0
 372,2000,same,0,0
-372,2001,same,0,0
+372,2001,same,1,0
 372,2002,same,1,0
-372,2003,same,1,0
+372,2003,up,1,0
 372,2004,up,0,0
 372,2005,same,0,0
 372,2006,same,0,0
@@ -3090,9 +3090,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 372,2020,same,NA,NA
 372,2021,same,NA,NA
 373,1991,first year of independence,1,0
-373,1992,up,0,0
-373,1993,same,0,1
-373,1994,same,0,1
+373,1992,first year of independence,1,1
+373,1993,up,0,1
+373,1994,down,0,1
 373,1995,down,0,0
 373,1996,same,0,0
 373,1997,same,0,0
@@ -3121,7 +3121,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 373,2020,same,NA,NA
 373,2021,same,NA,NA
 375,1968,first year of independence,0,0
-375,1969,same,0,0
+375,1969,first year of independence,0,0
 375,1970,same,0,0
 375,1971,same,0,0
 375,1972,same,0,0
@@ -3175,7 +3175,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 375,2020,same,NA,NA
 375,2021,same,NA,NA
 380,1968,first year of independence,0,0
-380,1969,same,0,0
+380,1969,first year of independence,0,0
 380,1970,same,0,0
 380,1971,same,0,0
 380,1972,same,0,0
@@ -3229,7 +3229,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 380,2020,same,NA,NA
 380,2021,same,NA,NA
 385,1968,first year of independence,0,0
-385,1969,same,0,0
+385,1969,first year of independence,0,0
 385,1970,same,0,0
 385,1971,same,0,0
 385,1972,same,0,0
@@ -3283,7 +3283,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 385,2020,same,NA,NA
 385,2021,same,NA,NA
 390,1968,first year of independence,0,0
-390,1969,same,0,0
+390,1969,first year of independence,0,0
 390,1970,same,0,0
 390,1971,same,0,0
 390,1972,same,0,0
@@ -3337,7 +3337,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 390,2020,same,NA,NA
 390,2021,same,NA,NA
 395,1968,first year of independence,0,0
-395,1969,same,0,0
+395,1969,first year of independence,0,0
 395,1970,same,0,0
 395,1971,same,0,0
 395,1972,same,0,0
@@ -3390,8 +3390,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 395,2019,same,0,0
 395,2020,same,NA,NA
 395,2021,same,NA,NA
-402,1975,first year of independence,0,1
-402,1976,down,0,0
+402,1975,first year of independence,0,0
+402,1976,first year of independence,0,0
 402,1977,same,0,0
 402,1978,same,1,0
 402,1979,same,1,0
@@ -3403,9 +3403,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 402,1985,same,0,0
 402,1986,same,0,0
 402,1987,same,0,0
-402,1988,same,0,0
+402,1988,same,1,0
 402,1989,same,1,0
-402,1990,same,1,0
+402,1990,up,1,0
 402,1991,up,0,0
 402,1992,same,0,0
 402,1993,same,0,0
@@ -3438,7 +3438,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 402,2020,same,NA,NA
 402,2021,same,NA,NA
 404,1974,first year of independence,0,0
-404,1975,same,0,0
+404,1975,first year of independence,0,0
 404,1976,same,0,0
 404,1977,same,0,0
 404,1978,same,0,0
@@ -3457,13 +3457,13 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 404,1991,same,0,0
 404,1992,same,1,0
 404,1993,same,1,0
-404,1994,up,0,0
-404,1995,same,0,0
+404,1994,up,1,0
+404,1995,up,0,0
 404,1996,same,0,0
-404,1997,same,0,0
-404,1998,same,0,0
-404,1999,same,0,0
-404,2000,same,0,0
+404,1997,same,1,0
+404,1998,same,1,0
+404,1999,up,1,0
+404,2000,up,0,0
 404,2001,same,0,0
 404,2002,same,0,0
 404,2003,same,0,0
@@ -3473,9 +3473,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 404,2007,same,0,0
 404,2008,same,0,0
 404,2009,same,0,0
-404,2010,same,0,0
+404,2010,same,0,1
 404,2011,same,0,1
-404,2012,same,1,1
+404,2012,down,1,1
 404,2013,down,1,0
 404,2014,up,0,0
 404,2015,same,0,0
@@ -3485,8 +3485,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 404,2019,same,0,0
 404,2020,same,NA,NA
 404,2021,same,NA,NA
-411,1968,first year of independence,0,1
-411,1969,down,0,0
+411,1968,first year of independence,0,0
+411,1969,first year of independence,0,0
 411,1970,same,0,1
 411,1971,same,0,1
 411,1972,down,0,0
@@ -3540,7 +3540,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 411,2020,same,NA,NA
 411,2021,same,NA,NA
 420,1968,first year of independence,0,0
-420,1969,same,0,0
+420,1969,first year of independence,0,0
 420,1970,same,0,0
 420,1971,same,0,0
 420,1972,same,0,0
@@ -3563,9 +3563,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 420,1989,same,0,0
 420,1990,same,0,0
 420,1991,same,0,0
-420,1992,same,0,0
+420,1992,same,0,1
 420,1993,same,0,1
-420,1994,same,1,1
+420,1994,down,1,1
 420,1995,down,1,0
 420,1996,up,1,0
 420,1997,up,0,0
@@ -3585,16 +3585,16 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 420,2011,same,0,0
 420,2012,same,0,0
 420,2013,same,0,0
-420,2014,same,0,0
+420,2014,same,1,0
 420,2015,same,1,0
-420,2016,same,1,0
-420,2017,up,0,0
-420,2018,same,0,0
+420,2016,up,1,0
+420,2017,up,1,0
+420,2018,up,0,0
 420,2019,same,1,0
 420,2020,same,NA,NA
 420,2021,up,NA,NA
-432,1968,first year of independence,0,1
-432,1969,down,0,0
+432,1968,first year of independence,0,0
+432,1969,first year of independence,0,0
 432,1970,same,0,0
 432,1971,same,0,0
 432,1972,same,0,0
@@ -3614,9 +3614,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 432,1986,same,0,0
 432,1987,same,0,0
 432,1988,same,0,0
-432,1989,same,0,0
+432,1989,same,1,0
 432,1990,same,1,0
-432,1991,same,1,0
+432,1991,up,1,0
 432,1992,up,0,0
 432,1993,same,0,0
 432,1994,same,0,0
@@ -3648,7 +3648,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 432,2020,same,NA,NA
 432,2021,down,NA,NA
 433,1968,first year of independence,0,0
-433,1969,same,0,0
+433,1969,first year of independence,0,0
 433,1970,same,0,0
 433,1971,same,0,0
 433,1972,same,0,0
@@ -3669,9 +3669,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 433,1987,same,0,0
 433,1988,same,0,0
 433,1989,same,0,0
-433,1990,same,0,0
+433,1990,same,1,0
 433,1991,same,1,0
-433,1992,same,1,0
+433,1992,up,1,0
 433,1993,up,0,0
 433,1994,same,0,0
 433,1995,same,0,0
@@ -3701,13 +3701,13 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 433,2019,same,0,0
 433,2020,same,NA,NA
 433,2021,same,NA,NA
-434,1968,first year of independence,0,0
-434,1969,same,0,1
-434,1970,same,0,1
-434,1971,down,0,0
-434,1972,same,0,0
-434,1973,same,0,0
-434,1974,same,0,0
+434,1968,first year of independence,0,1
+434,1969,first year of independence,0,1
+434,1970,down,0,1
+434,1971,down,0,1
+434,1972,down,0,1
+434,1973,down,0,1
+434,1974,down,0,0
 434,1975,same,0,0
 434,1976,same,0,0
 434,1977,same,1,0
@@ -3721,11 +3721,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 434,1985,same,0,0
 434,1986,same,0,0
 434,1987,same,0,0
-434,1988,same,0,0
+434,1988,same,1,0
 434,1989,same,1,0
-434,1990,same,1,0
-434,1991,up,0,0
-434,1992,same,0,0
+434,1990,up,1,0
+434,1991,up,1,0
+434,1992,up,0,0
 434,1993,same,0,0
 434,1994,same,0,0
 434,1995,same,0,0
@@ -3749,14 +3749,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 434,2013,same,0,0
 434,2014,same,0,0
 434,2015,same,0,0
-434,2016,same,0,0
+434,2016,same,0,1
 434,2017,same,0,1
-434,2018,same,0,1
+434,2018,down,0,1
 434,2019,down,0,0
 434,2020,same,NA,NA
 434,2021,same,NA,NA
 435,1968,first year of independence,0,0
-435,1969,same,0,0
+435,1969,first year of independence,0,0
 435,1970,same,0,0
 435,1971,same,0,0
 435,1972,same,0,0
@@ -3776,9 +3776,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 435,1986,same,0,0
 435,1987,same,0,0
 435,1988,same,0,0
-435,1989,same,0,0
+435,1989,same,1,0
 435,1990,same,1,0
-435,1991,same,1,0
+435,1991,up,1,0
 435,1992,up,0,0
 435,1993,same,0,0
 435,1994,same,0,0
@@ -3810,12 +3810,12 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 435,2020,same,NA,NA
 435,2021,same,NA,NA
 436,1968,first year of independence,0,0
-436,1969,same,0,0
+436,1969,first year of independence,0,0
 436,1970,same,0,0
 436,1971,same,0,0
-436,1972,same,0,0
+436,1972,same,0,1
 436,1973,same,0,1
-436,1974,same,0,1
+436,1974,down,0,1
 436,1975,down,0,0
 436,1976,same,0,0
 436,1977,same,0,0
@@ -3830,13 +3830,13 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 436,1986,same,0,0
 436,1987,same,1,0
 436,1988,same,1,0
-436,1989,up,0,0
-436,1990,same,0,0
+436,1989,up,1,0
+436,1990,up,0,0
 436,1991,same,1,0
 436,1992,same,1,0
-436,1993,up,0,0
+436,1993,up,0,1
 436,1994,same,0,1
-436,1995,same,0,1
+436,1995,down,0,1
 436,1996,down,0,0
 436,1997,same,0,0
 436,1998,same,0,0
@@ -3848,9 +3848,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 436,2004,same,0,0
 436,2005,same,0,0
 436,2006,same,0,0
-436,2007,same,0,0
+436,2007,same,0,1
 436,2008,same,0,1
-436,2009,same,1,1
+436,2009,down,1,1
 436,2010,down,1,0
 436,2011,up,0,0
 436,2012,same,0,0
@@ -3864,7 +3864,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 436,2020,same,NA,NA
 436,2021,same,NA,NA
 437,1968,first year of independence,0,0
-437,1969,same,0,0
+437,1969,first year of independence,0,0
 437,1970,same,0,0
 437,1971,same,0,0
 437,1972,same,0,0
@@ -3888,10 +3888,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 437,1990,up,0,0
 437,1991,same,0,0
 437,1992,same,0,0
-437,1993,same,0,0
-437,1994,same,0,0
-437,1995,same,0,0
-437,1996,same,0,0
+437,1993,same,1,0
+437,1994,same,1,0
+437,1995,up,1,0
+437,1996,up,0,0
 437,1997,same,0,0
 437,1998,same,0,0
 437,1999,same,0,0
@@ -3918,7 +3918,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 437,2020,down,NA,NA
 437,2021,same,NA,NA
 438,1968,first year of independence,0,0
-438,1969,same,0,0
+438,1969,first year of independence,0,0
 438,1970,same,0,0
 438,1971,same,0,0
 438,1972,same,0,0
@@ -3939,11 +3939,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 438,1987,same,0,0
 438,1988,same,0,0
 438,1989,same,0,0
-438,1990,same,0,0
+438,1990,same,1,0
 438,1991,same,1,0
-438,1992,same,1,0
-438,1993,up,0,0
-438,1994,same,0,0
+438,1992,up,1,0
+438,1993,up,1,0
+438,1994,up,0,0
 438,1995,same,0,0
 438,1996,same,0,0
 438,1997,same,0,0
@@ -3967,12 +3967,12 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 438,2015,same,0,0
 438,2016,same,0,0
 438,2017,same,0,0
-438,2018,same,0,0
+438,2018,same,0,1
 438,2019,same,0,1
-438,2020,same,NA,NA
+438,2020,down,NA,NA
 438,2021,down,NA,NA
 439,1968,first year of independence,1,0
-439,1969,same,1,1
+439,1969,first year of independence,1,1
 439,1970,up,0,1
 439,1971,down,0,0
 439,1972,same,0,0
@@ -3981,9 +3981,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 439,1975,same,0,0
 439,1976,same,1,0
 439,1977,same,1,0
-439,1978,up,0,0
+439,1978,up,0,1
 439,1979,same,0,1
-439,1980,same,0,1
+439,1980,down,0,1
 439,1981,down,0,0
 439,1982,same,0,0
 439,1983,same,0,0
@@ -3994,8 +3994,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 439,1988,same,0,0
 439,1989,same,1,0
 439,1990,same,1,0
-439,1991,up,0,0
-439,1992,same,0,0
+439,1991,up,1,0
+439,1992,up,0,0
 439,1993,same,0,0
 439,1994,same,0,0
 439,1995,same,0,0
@@ -4026,7 +4026,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 439,2020,same,NA,NA
 439,2021,same,NA,NA
 450,1968,first year of independence,0,0
-450,1969,same,0,0
+450,1969,first year of independence,0,0
 450,1970,same,0,0
 450,1971,same,0,0
 450,1972,same,0,0
@@ -4035,20 +4035,20 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 450,1975,same,0,0
 450,1976,same,0,0
 450,1977,same,0,0
-450,1978,same,0,0
+450,1978,same,0,1
 450,1979,same,0,1
-450,1980,same,0,1
+450,1980,down,0,1
 450,1981,down,0,0
-450,1982,same,0,0
+450,1982,same,1,0
 450,1983,same,1,0
-450,1984,same,1,0
-450,1985,up,0,0
-450,1986,same,0,0
-450,1987,same,0,0
+450,1984,up,1,0
+450,1985,up,1,0
+450,1986,up,0,0
+450,1987,same,0,1
 450,1988,same,0,1
-450,1989,same,0,1
-450,1990,down,0,0
-450,1991,same,0,0
+450,1989,down,0,1
+450,1990,down,0,1
+450,1991,down,0,0
 450,1992,same,0,0
 450,1993,same,0,0
 450,1994,same,0,0
@@ -4058,12 +4058,12 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 450,1998,same,0,0
 450,1999,same,0,0
 450,2000,same,0,0
-450,2001,same,0,0
+450,2001,same,0,1
 450,2002,same,0,1
-450,2003,same,1,1
+450,2003,down,1,1
 450,2004,down,1,0
-450,2005,up,0,0
-450,2006,same,0,0
+450,2005,up,1,0
+450,2006,up,0,0
 450,2007,same,0,0
 450,2008,same,0,0
 450,2009,same,0,0
@@ -4080,7 +4080,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 450,2020,same,NA,NA
 450,2021,same,NA,NA
 451,1968,first year of independence,0,0
-451,1969,same,0,0
+451,1969,first year of independence,0,0
 451,1970,same,0,0
 451,1971,same,1,0
 451,1972,same,1,0
@@ -4088,8 +4088,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 451,1974,same,0,0
 451,1975,same,0,1
 451,1976,same,0,1
-451,1977,down,0,0
-451,1978,same,0,0
+451,1977,down,0,1
+451,1978,down,0,0
 451,1979,same,0,0
 451,1980,same,0,0
 451,1981,same,0,0
@@ -4104,9 +4104,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 451,1990,same,0,0
 451,1991,same,0,1
 451,1992,same,0,1
-451,1993,down,0,0
+451,1993,down,1,0
 451,1994,same,1,0
-451,1995,same,1,0
+451,1995,up,1,0
 451,1996,up,0,1
 451,1997,same,0,1
 451,1998,down,0,0
@@ -4133,17 +4133,17 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 451,2019,same,0,0
 451,2020,same,NA,NA
 451,2021,same,NA,NA
-452,1968,first year of independence,1,0
-452,1969,up,0,0
-452,1970,same,0,0
+452,1968,first year of independence,0,0
+452,1969,first year of independence,0,0
+452,1970,same,0,1
 452,1971,same,0,1
-452,1972,same,0,1
+452,1972,down,0,1
 452,1973,down,0,0
 452,1974,same,0,0
 452,1975,same,0,0
-452,1976,same,0,0
+452,1976,same,1,0
 452,1977,same,1,0
-452,1978,same,1,0
+452,1978,up,1,0
 452,1979,up,0,1
 452,1980,same,0,1
 452,1981,down,0,1
@@ -4159,10 +4159,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 452,1991,same,1,0
 452,1992,up,0,0
 452,1993,same,0,0
-452,1994,same,0,0
-452,1995,same,0,0
-452,1996,same,0,0
-452,1997,same,0,0
+452,1994,same,1,0
+452,1995,same,1,0
+452,1996,up,1,0
+452,1997,up,0,0
 452,1998,same,0,0
 452,1999,same,0,0
 452,2000,same,0,0
@@ -4188,7 +4188,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 452,2020,same,NA,NA
 452,2021,same,NA,NA
 461,1968,first year of independence,0,0
-461,1969,same,0,0
+461,1969,first year of independence,0,0
 461,1970,same,0,0
 461,1971,same,0,0
 461,1972,same,0,0
@@ -4209,11 +4209,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 461,1987,same,0,0
 461,1988,same,0,0
 461,1989,same,0,0
-461,1990,same,0,0
+461,1990,same,1,0
 461,1991,same,1,0
-461,1992,same,1,0
-461,1993,up,0,0
-461,1994,same,0,0
+461,1992,up,1,0
+461,1993,up,1,0
+461,1994,up,0,0
 461,1995,same,0,0
 461,1996,same,0,1
 461,1997,same,0,1
@@ -4242,7 +4242,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 461,2020,same,NA,NA
 461,2021,same,NA,NA
 471,1968,first year of independence,0,0
-471,1969,same,0,0
+471,1969,first year of independence,0,0
 471,1970,same,0,0
 471,1971,same,0,0
 471,1972,same,0,0
@@ -4288,15 +4288,15 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 471,2012,same,0,0
 471,2013,same,0,0
 471,2014,same,0,0
-471,2015,same,0,0
+471,2015,same,0,1
 471,2016,same,0,1
-471,2017,same,0,1
+471,2017,down,0,1
 471,2018,down,0,0
 471,2019,same,0,0
 471,2020,same,NA,NA
 471,2021,same,NA,NA
 475,1968,first year of independence,0,0
-475,1969,same,0,0
+475,1969,first year of independence,0,0
 475,1970,same,0,0
 475,1971,same,0,0
 475,1972,same,0,0
@@ -4319,12 +4319,12 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 475,1989,same,0,0
 475,1990,same,1,0
 475,1991,same,1,0
-475,1992,up,0,1
-475,1993,same,0,1
+475,1992,up,1,1
+475,1993,up,0,1
 475,1994,down,0,0
-475,1995,same,0,0
+475,1995,same,1,0
 475,1996,same,1,0
-475,1997,same,1,0
+475,1997,up,1,0
 475,1998,up,1,0
 475,1999,up,0,0
 475,2000,same,0,0
@@ -4335,9 +4335,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 475,2005,same,0,0
 475,2006,same,0,0
 475,2007,same,0,0
-475,2008,same,0,0
+475,2008,same,1,0
 475,2009,same,1,0
-475,2010,same,1,0
+475,2010,up,1,0
 475,2011,up,0,0
 475,2012,same,0,0
 475,2013,same,0,0
@@ -4350,7 +4350,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 475,2020,same,NA,NA
 475,2021,same,NA,NA
 481,1968,first year of independence,0,0
-481,1969,same,0,0
+481,1969,first year of independence,0,0
 481,1970,same,0,0
 481,1971,same,0,0
 481,1972,same,0,0
@@ -4371,8 +4371,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 481,1987,same,0,0
 481,1988,same,1,0
 481,1989,same,1,0
-481,1990,up,0,0
-481,1991,same,0,0
+481,1990,up,1,0
+481,1991,up,0,0
 481,1992,same,0,0
 481,1993,same,0,0
 481,1994,same,0,0
@@ -4404,7 +4404,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 481,2020,same,NA,NA
 481,2021,same,NA,NA
 482,1968,first year of independence,0,0
-482,1969,same,0,0
+482,1969,first year of independence,0,0
 482,1970,same,0,0
 482,1971,same,0,0
 482,1972,same,0,0
@@ -4413,22 +4413,22 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 482,1975,same,0,0
 482,1976,same,0,0
 482,1977,same,0,0
-482,1978,same,0,0
+482,1978,same,1,0
 482,1979,same,1,0
-482,1980,same,1,1
+482,1980,up,1,1
 482,1981,up,0,1
 482,1982,down,0,0
 482,1983,same,0,0
 482,1984,same,1,0
 482,1985,same,1,0
-482,1986,up,0,0
-482,1987,same,0,0
+482,1986,up,1,0
+482,1987,up,0,0
 482,1988,same,0,0
 482,1989,same,0,0
 482,1990,same,1,0
 482,1991,same,1,0
-482,1992,up,0,0
-482,1993,same,0,0
+482,1992,up,1,0
+482,1993,up,0,0
 482,1994,same,0,0
 482,1995,same,0,0
 482,1996,same,0,0
@@ -4456,15 +4456,15 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 482,2018,same,0,1
 482,2019,same,0,1
 482,2020,down,NA,NA
-482,2021,same,NA,NA
+482,2021,down,NA,NA
 483,1968,first year of independence,0,0
-483,1969,same,0,0
+483,1969,first year of independence,0,0
 483,1970,same,0,0
 483,1971,same,0,0
 483,1972,same,0,0
-483,1973,same,0,0
+483,1973,same,0,1
 483,1974,same,0,1
-483,1975,same,0,1
+483,1975,down,0,1
 483,1976,down,0,0
 483,1977,same,0,0
 483,1978,same,0,0
@@ -4485,8 +4485,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 483,1993,same,0,0
 483,1994,same,1,0
 483,1995,same,1,0
-483,1996,up,0,0
-483,1997,same,0,0
+483,1996,up,1,0
+483,1997,up,0,0
 483,1998,same,0,0
 483,1999,same,0,0
 483,2000,same,0,0
@@ -4512,7 +4512,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 483,2020,same,NA,NA
 483,2021,down,NA,NA
 484,1968,first year of independence,0,0
-484,1969,same,0,0
+484,1969,first year of independence,0,0
 484,1970,same,0,0
 484,1971,same,1,0
 484,1972,same,1,0
@@ -4531,10 +4531,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 484,1985,same,0,0
 484,1986,same,0,0
 484,1987,same,0,0
-484,1988,same,0,0
-484,1989,same,0,0
-484,1990,same,1,0
-484,1991,same,1,0
+484,1988,same,1,0
+484,1989,same,1,0
+484,1990,up,1,0
+484,1991,up,1,0
 484,1992,up,0,0
 484,1993,same,0,0
 484,1994,same,0,0
@@ -4566,7 +4566,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 484,2020,same,NA,NA
 484,2021,same,NA,NA
 490,1968,first year of independence,0,1
-490,1969,same,0,1
+490,1969,first year of independence,0,1
 490,1970,down,0,0
 490,1971,same,0,0
 490,1972,same,0,0
@@ -4605,10 +4605,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 490,2005,same,1,0
 490,2006,up,0,0
 490,2007,same,0,0
-490,2008,same,0,0
-490,2009,same,0,0
-490,2010,same,0,0
-490,2011,same,0,0
+490,2008,same,0,1
+490,2009,same,0,1
+490,2010,down,0,1
+490,2011,down,0,0
 490,2012,same,0,0
 490,2013,same,0,0
 490,2014,same,0,0
@@ -4620,28 +4620,28 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 490,2020,same,NA,NA
 490,2021,same,NA,NA
 500,1968,first year of independence,0,0
-500,1969,same,0,0
+500,1969,first year of independence,0,1
 500,1970,same,0,1
-500,1971,same,0,1
+500,1971,down,0,1
 500,1972,down,0,0
 500,1973,same,0,0
 500,1974,same,0,0
 500,1975,same,0,0
 500,1976,same,0,0
-500,1977,same,0,0
+500,1977,same,1,0
 500,1978,same,1,0
-500,1979,same,1,0
-500,1980,up,0,0
-500,1981,same,0,0
+500,1979,up,1,0
+500,1980,up,1,0
+500,1981,up,0,0
 500,1982,same,0,0
-500,1983,same,0,0
+500,1983,same,0,1
 500,1984,same,0,1
-500,1985,same,0,1
-500,1986,down,0,0
-500,1987,same,1,0
+500,1985,down,0,1
+500,1986,down,0,1
+500,1987,down,1,0
 500,1988,same,1,0
-500,1989,up,0,0
-500,1990,same,0,0
+500,1989,up,1,0
+500,1990,up,0,0
 500,1991,same,0,0
 500,1992,same,0,0
 500,1993,same,0,0
@@ -4674,7 +4674,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 500,2020,same,NA,NA
 500,2021,same,NA,NA
 501,1968,first year of independence,0,0
-501,1969,same,0,0
+501,1969,first year of independence,0,0
 501,1970,same,0,0
 501,1971,same,0,0
 501,1972,same,0,0
@@ -4705,10 +4705,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 501,1997,same,0,0
 501,1998,same,0,0
 501,1999,same,0,0
-501,2000,same,0,0
-501,2001,same,0,0
-501,2002,same,0,0
-501,2003,same,0,0
+501,2000,same,1,0
+501,2001,same,1,0
+501,2002,up,1,0
+501,2003,up,0,0
 501,2004,same,0,0
 501,2005,same,0,1
 501,2006,same,0,1
@@ -4728,7 +4728,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 501,2020,same,NA,NA
 501,2021,same,NA,NA
 510,1968,first year of independence,0,0
-510,1969,same,0,0
+510,1969,first year of independence,0,0
 510,1970,same,0,0
 510,1971,same,0,0
 510,1972,same,0,0
@@ -4782,7 +4782,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 510,2020,same,NA,NA
 510,2021,same,NA,NA
 516,1968,first year of independence,0,0
-516,1969,same,0,0
+516,1969,first year of independence,0,0
 516,1970,same,0,0
 516,1971,same,0,0
 516,1972,same,0,0
@@ -4823,11 +4823,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 516,2007,same,0,0
 516,2008,same,0,1
 516,2009,same,0,1
-516,2010,down,0,0
-516,2011,same,0,0
-516,2012,same,0,0
+516,2010,down,0,1
+516,2011,down,0,0
+516,2012,same,0,1
 516,2013,same,0,1
-516,2014,same,0,1
+516,2014,down,0,1
 516,2015,down,0,0
 516,2016,same,0,0
 516,2017,same,0,0
@@ -4836,11 +4836,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 516,2020,same,NA,NA
 516,2021,same,NA,NA
 517,1968,first year of independence,0,0
-517,1969,same,0,0
+517,1969,first year of independence,0,0
 517,1970,same,0,0
-517,1971,same,0,0
+517,1971,same,0,1
 517,1972,same,0,1
-517,1973,same,0,1
+517,1973,down,0,1
 517,1974,down,0,0
 517,1975,same,0,0
 517,1976,same,1,0
@@ -4860,9 +4860,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 517,1990,same,0,0
 517,1991,same,0,1
 517,1992,same,0,1
-517,1993,down,0,0
-517,1994,same,0,0
-517,1995,same,0,0
+517,1993,down,0,1
+517,1994,down,0,1
+517,1995,down,0,0
 517,1996,same,0,0
 517,1997,same,0,0
 517,1998,same,0,0
@@ -4870,8 +4870,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 517,2000,same,0,0
 517,2001,same,1,0
 517,2002,same,1,0
-517,2003,up,0,0
-517,2004,same,0,0
+517,2003,up,1,0
+517,2004,up,0,0
 517,2005,same,0,0
 517,2006,same,0,0
 517,2007,same,0,0
@@ -4890,7 +4890,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 517,2020,same,NA,NA
 517,2021,same,NA,NA
 520,1968,first year of independence,0,1
-520,1969,down,0,1
+520,1969,first year of independence,0,1
 520,1970,down,0,0
 520,1971,same,0,0
 520,1972,same,0,0
@@ -4944,7 +4944,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 520,2020,same,NA,NA
 520,2021,same,NA,NA
 522,1977,first year of independence,0,0
-522,1978,same,0,0
+522,1978,first year of independence,0,0
 522,1979,same,0,0
 522,1980,same,0,0
 522,1981,same,0,0
@@ -4989,14 +4989,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 522,2020,same,NA,NA
 522,2021,same,NA,NA
 530,1968,first year of independence,0,0
-530,1969,same,0,0
+530,1969,first year of independence,0,0
 530,1970,same,0,0
 530,1971,same,0,0
 530,1972,same,0,0
 530,1973,same,0,1
 530,1974,same,0,1
-530,1975,down,0,0
-530,1976,same,0,0
+530,1975,down,0,1
+530,1976,down,0,0
 530,1977,same,0,0
 530,1978,same,0,0
 530,1979,same,0,0
@@ -5043,7 +5043,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 530,2020,same,NA,NA
 530,2021,up,NA,NA
 531,1993,first year of independence,0,0
-531,1994,same,0,0
+531,1994,first year of independence,0,0
 531,1995,same,0,0
 531,1996,same,0,0
 531,1997,same,0,0
@@ -5072,7 +5072,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 531,2020,same,NA,NA
 531,2021,same,NA,NA
 540,1975,first year of independence,0,0
-540,1976,same,0,0
+540,1976,first year of independence,0,0
 540,1977,same,0,0
 540,1978,same,0,0
 540,1979,same,0,0
@@ -5085,9 +5085,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 540,1986,same,0,0
 540,1987,same,0,0
 540,1988,same,0,0
-540,1989,same,0,0
+540,1989,same,1,0
 540,1990,same,1,0
-540,1991,same,1,1
+540,1991,up,1,1
 540,1992,up,0,1
 540,1993,down,0,0
 540,1994,same,0,0
@@ -5119,7 +5119,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 540,2020,same,NA,NA
 540,2021,same,NA,NA
 541,1975,first year of independence,0,0
-541,1976,same,0,0
+541,1976,first year of independence,0,0
 541,1977,same,0,0
 541,1978,same,0,0
 541,1979,same,0,0
@@ -5133,10 +5133,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 541,1987,same,0,0
 541,1988,same,1,0
 541,1989,same,1,0
-541,1990,up,0,0
-541,1991,same,0,0
+541,1990,up,1,0
+541,1991,up,1,0
 541,1992,same,1,0
-541,1993,same,1,0
+541,1993,up,1,0
 541,1994,up,0,0
 541,1995,same,0,0
 541,1996,same,0,0
@@ -5166,7 +5166,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 541,2020,same,NA,NA
 541,2021,same,NA,NA
 551,1968,first year of independence,0,0
-551,1969,same,0,0
+551,1969,first year of independence,0,0
 551,1970,same,0,0
 551,1971,same,0,0
 551,1972,same,0,0
@@ -5185,11 +5185,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 551,1985,same,0,0
 551,1986,same,0,0
 551,1987,same,0,0
-551,1988,same,0,0
+551,1988,same,1,0
 551,1989,same,1,0
-551,1990,same,1,0
-551,1991,up,0,0
-551,1992,same,0,0
+551,1990,up,1,0
+551,1991,up,1,0
+551,1992,up,0,0
 551,1993,same,0,0
 551,1994,same,0,0
 551,1995,same,0,0
@@ -5210,25 +5210,25 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 551,2010,same,0,0
 551,2011,same,0,0
 551,2012,same,0,0
-551,2013,same,0,0
-551,2014,same,0,0
-551,2015,same,0,0
-551,2016,same,0,0
-551,2017,same,0,0
+551,2013,same,0,1
+551,2014,same,0,1
+551,2015,down,0,1
+551,2016,down,0,1
+551,2017,down,0,0
 551,2018,same,0,0
 551,2019,same,1,0
 551,2020,same,NA,NA
 551,2021,up,NA,NA
 552,1968,first year of independence,0,0
-552,1969,same,0,0
+552,1969,first year of independence,0,0
 552,1970,same,0,0
 552,1971,same,0,0
 552,1972,same,0,0
 552,1973,same,0,0
 552,1974,same,0,0
-552,1975,same,0,0
+552,1975,same,0,1
 552,1976,same,0,1
-552,1977,same,1,1
+552,1977,down,1,1
 552,1978,down,1,1
 552,1979,up,0,1
 552,1980,down,0,0
@@ -5274,7 +5274,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 552,2020,same,NA,NA
 552,2021,same,NA,NA
 553,1968,first year of independence,0,0
-553,1969,same,0,0
+553,1969,first year of independence,0,0
 553,1970,same,0,0
 553,1971,same,0,0
 553,1972,same,0,0
@@ -5298,8 +5298,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 553,1990,same,1,0
 553,1991,same,1,0
 553,1992,up,1,0
-553,1993,up,0,0
-553,1994,same,0,0
+553,1993,up,1,0
+553,1994,up,0,0
 553,1995,same,0,0
 553,1996,same,0,0
 553,1997,same,0,0
@@ -5321,14 +5321,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 553,2013,same,0,0
 553,2014,same,0,0
 553,2015,same,0,0
-553,2016,same,0,0
-553,2017,same,0,0
-553,2018,same,1,0
-553,2019,same,1,0
+553,2016,same,0,1
+553,2017,same,0,1
+553,2018,down,1,1
+553,2019,down,1,0
 553,2020,up,NA,NA
 553,2021,same,NA,NA
 560,1968,first year of independence,0,0
-560,1969,same,0,0
+560,1969,first year of independence,0,0
 560,1970,same,0,0
 560,1971,same,0,0
 560,1972,same,0,0
@@ -5350,9 +5350,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 560,1988,same,0,0
 560,1989,same,0,0
 560,1990,same,0,0
-560,1991,same,0,0
+560,1991,same,1,0
 560,1992,same,1,0
-560,1993,same,1,0
+560,1993,up,1,0
 560,1994,up,0,0
 560,1995,same,0,0
 560,1996,same,0,0
@@ -5382,7 +5382,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 560,2020,same,NA,NA
 560,2021,same,NA,NA
 565,1990,first year of independence,0,0
-565,1991,same,0,0
+565,1991,first year of independence,0,0
 565,1992,same,0,0
 565,1993,same,0,0
 565,1994,same,0,0
@@ -5413,8 +5413,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 565,2019,same,0,0
 565,2020,same,NA,NA
 565,2021,same,NA,NA
-570,1968,first year of independence,1,1
-570,1969,down,1,1
+570,1968,first year of independence,1,0
+570,1969,first year of independence,1,1
 570,1970,up,0,1
 570,1971,down,0,0
 570,1972,same,0,0
@@ -5468,7 +5468,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 570,2020,same,NA,NA
 570,2021,same,NA,NA
 571,1968,first year of independence,0,0
-571,1969,same,0,0
+571,1969,first year of independence,0,0
 571,1970,same,0,0
 571,1971,same,0,0
 571,1972,same,0,0
@@ -5522,11 +5522,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 571,2020,same,NA,NA
 571,2021,same,NA,NA
 572,1968,first year of independence,0,0
-572,1969,same,0,0
+572,1969,first year of independence,0,0
 572,1970,same,0,0
-572,1971,same,0,0
+572,1971,same,0,1
 572,1972,same,0,1
-572,1973,same,0,1
+572,1973,down,0,1
 572,1974,down,0,0
 572,1975,same,0,0
 572,1976,same,1,0
@@ -5576,7 +5576,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 572,2020,same,NA,NA
 572,2021,same,NA,NA
 580,1968,first year of independence,0,0
-580,1969,same,0,0
+580,1969,first year of independence,0,0
 580,1970,same,0,1
 580,1971,same,0,1
 580,1972,down,0,1
@@ -5596,9 +5596,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 580,1986,same,0,0
 580,1987,same,0,0
 580,1988,same,0,0
-580,1989,same,0,0
+580,1989,same,1,0
 580,1990,same,1,0
-580,1991,same,1,0
+580,1991,up,1,0
 580,1992,up,0,0
 580,1993,same,0,0
 580,1994,same,0,0
@@ -5614,9 +5614,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 580,2004,same,0,0
 580,2005,same,0,0
 580,2006,same,0,0
-580,2007,same,0,0
+580,2007,same,0,1
 580,2008,same,0,1
-580,2009,same,0,1
+580,2009,down,0,1
 580,2010,down,0,0
 580,2011,same,1,0
 580,2012,same,1,0
@@ -5629,8 +5629,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 580,2019,same,0,0
 580,2020,same,NA,NA
 580,2021,same,NA,NA
-581,1975,first year of independence,0,1
-581,1976,down,1,0
+581,1975,first year of independence,0,0
+581,1976,first year of independence,1,0
 581,1977,same,1,0
 581,1978,up,0,0
 581,1979,same,0,0
@@ -5651,13 +5651,13 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 581,1994,same,0,0
 581,1995,same,0,0
 581,1996,same,0,0
-581,1997,same,0,0
+581,1997,same,0,1
 581,1998,same,0,1
-581,1999,same,0,1
+581,1999,down,0,1
 581,2000,down,1,0
 581,2001,same,1,0
-581,2002,up,0,0
-581,2003,same,0,0
+581,2002,up,1,0
+581,2003,up,0,0
 581,2004,same,0,0
 581,2005,same,0,0
 581,2006,same,0,0
@@ -5670,14 +5670,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 581,2013,same,0,0
 581,2014,same,0,0
 581,2015,same,0,0
-581,2016,same,0,0
+581,2016,same,0,1
 581,2017,same,0,1
-581,2018,same,0,1
+581,2018,down,0,1
 581,2019,down,0,0
 581,2020,same,NA,NA
 581,2021,same,NA,NA
 590,1968,first year of independence,0,0
-590,1969,same,0,0
+590,1969,first year of independence,0,0
 590,1970,same,0,0
 590,1971,same,0,0
 590,1972,same,0,0
@@ -5731,7 +5731,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 590,2020,same,NA,NA
 590,2021,same,NA,NA
 600,1968,first year of independence,1,0
-600,1969,same,1,0
+600,1969,first year of independence,1,0
 600,1970,up,0,0
 600,1971,same,0,0
 600,1972,same,0,1
@@ -5785,7 +5785,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 600,2020,same,NA,NA
 600,2021,same,NA,NA
 615,1968,first year of independence,0,0
-615,1969,same,0,0
+615,1969,first year of independence,0,0
 615,1970,same,0,0
 615,1971,same,0,0
 615,1972,same,0,0
@@ -5804,9 +5804,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 615,1985,same,0,0
 615,1986,same,0,0
 615,1987,same,0,0
-615,1988,same,0,0
+615,1988,same,1,0
 615,1989,same,1,0
-615,1990,same,1,0
+615,1990,up,1,0
 615,1991,up,0,1
 615,1992,same,0,1
 615,1993,down,1,0
@@ -5839,7 +5839,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 615,2020,same,NA,NA
 615,2021,same,NA,NA
 616,1968,first year of independence,0,0
-616,1969,same,0,0
+616,1969,first year of independence,0,0
 616,1970,same,0,0
 616,1971,same,0,0
 616,1972,same,0,0
@@ -5854,9 +5854,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 616,1981,same,0,0
 616,1982,same,0,0
 616,1983,same,0,0
-616,1984,same,0,0
+616,1984,same,0,1
 616,1985,same,0,1
-616,1986,same,0,1
+616,1986,down,0,1
 616,1987,down,1,0
 616,1988,same,1,0
 616,1989,up,0,0
@@ -5881,8 +5881,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 616,2008,same,0,0
 616,2009,same,1,0
 616,2010,same,1,0
-616,2011,up,0,0
-616,2012,same,0,0
+616,2011,up,1,0
+616,2012,up,0,0
 616,2013,same,0,0
 616,2014,same,0,0
 616,2015,same,0,0
@@ -5893,8 +5893,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 616,2020,same,NA,NA
 616,2021,down,NA,NA
 620,1968,first year of independence,0,1
-620,1969,down,0,0
-620,1970,same,0,0
+620,1969,first year of independence,0,1
+620,1970,down,0,0
 620,1971,same,0,0
 620,1972,same,0,0
 620,1973,same,0,0
@@ -5935,9 +5935,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 620,2008,same,0,0
 620,2009,same,1,0
 620,2010,same,1,0
-620,2011,up,1,0
+620,2011,up,1,1
 620,2012,up,0,1
-620,2013,same,0,1
+620,2013,down,0,1
 620,2014,down,0,0
 620,2015,same,0,0
 620,2016,same,0,0
@@ -5946,11 +5946,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 620,2019,same,0,0
 620,2020,same,NA,NA
 620,2021,same,NA,NA
-625,1968,first year of independence,0,1
-625,1969,down,1,0
+625,1968,first year of independence,0,0
+625,1969,first year of independence,1,0
 625,1970,same,1,0
-625,1971,up,0,0
-625,1972,same,0,0
+625,1971,up,1,0
+625,1972,up,0,0
 625,1973,same,0,0
 625,1974,same,0,0
 625,1975,same,0,0
@@ -5965,9 +5965,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 625,1984,same,1,0
 625,1985,same,1,0
 625,1986,up,0,0
-625,1987,same,0,0
+625,1987,same,0,1
 625,1988,same,0,1
-625,1989,same,0,1
+625,1989,down,0,1
 625,1990,down,0,0
 625,1991,same,0,0
 625,1992,same,0,0
@@ -6001,7 +6001,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 625,2020,same,NA,NA
 625,2021,same,NA,NA
 626,2011,first year of independence,0,0
-626,2012,same,0,0
+626,2012,first year of independence,0,0
 626,2013,same,0,0
 626,2014,same,0,0
 626,2015,same,0,0
@@ -6012,7 +6012,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 626,2020,same,NA,NA
 626,2021,same,NA,NA
 630,1968,first year of independence,0,0
-630,1969,same,0,0
+630,1969,first year of independence,0,0
 630,1970,same,0,0
 630,1971,same,0,0
 630,1972,same,0,0
@@ -6037,10 +6037,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 630,1991,same,0,0
 630,1992,same,0,0
 630,1993,same,0,0
-630,1994,same,0,0
-630,1995,same,0,0
-630,1996,same,0,0
-630,1997,same,0,0
+630,1994,same,1,0
+630,1995,same,1,0
+630,1996,up,1,0
+630,1997,up,0,0
 630,1998,same,0,0
 630,1999,same,0,0
 630,2000,same,0,0
@@ -6053,10 +6053,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 630,2007,same,0,0
 630,2008,same,0,0
 630,2009,same,0,0
-630,2010,same,0,0
-630,2011,same,0,0
-630,2012,same,0,0
-630,2013,same,0,0
+630,2010,same,1,0
+630,2011,same,1,0
+630,2012,up,1,0
+630,2013,up,0,0
 630,2014,same,0,0
 630,2015,same,0,0
 630,2016,same,0,0
@@ -6064,9 +6064,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 630,2018,same,0,1
 630,2019,same,0,1
 630,2020,down,NA,NA
-630,2021,same,NA,NA
+630,2021,down,NA,NA
 640,1968,first year of independence,0,0
-640,1969,same,0,0
+640,1969,first year of independence,0,0
 640,1970,same,0,0
 640,1971,same,0,0
 640,1972,same,0,0
@@ -6075,9 +6075,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 640,1975,same,0,0
 640,1976,same,0,0
 640,1977,same,0,0
-640,1978,same,0,0
+640,1978,same,0,1
 640,1979,same,0,1
-640,1980,same,0,1
+640,1980,down,0,1
 640,1981,down,1,0
 640,1982,same,1,0
 640,1983,up,0,0
@@ -6111,8 +6111,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 640,2011,same,0,0
 640,2012,same,0,1
 640,2013,same,0,1
-640,2014,down,0,0
-640,2015,same,0,0
+640,2014,down,0,1
+640,2015,down,0,0
 640,2016,same,0,0
 640,2017,same,0,0
 640,2018,same,0,0
@@ -6120,7 +6120,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 640,2020,same,NA,NA
 640,2021,same,NA,NA
 645,1968,first year of independence,0,0
-645,1969,same,0,0
+645,1969,first year of independence,0,0
 645,1970,same,0,0
 645,1971,same,0,0
 645,1972,same,0,0
@@ -6174,7 +6174,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 645,2020,same,NA,NA
 645,2021,same,NA,NA
 651,1968,first year of independence,0,0
-651,1969,same,0,0
+651,1969,first year of independence,0,0
 651,1970,same,0,0
 651,1971,same,0,0
 651,1972,same,0,0
@@ -6182,12 +6182,12 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 651,1974,same,0,0
 651,1975,same,0,0
 651,1976,same,0,0
-651,1977,same,0,0
+651,1977,same,0,1
 651,1978,same,0,1
-651,1979,same,1,1
+651,1979,down,1,1
 651,1980,down,1,0
-651,1981,up,0,0
-651,1982,same,0,0
+651,1981,up,1,0
+651,1982,up,0,0
 651,1983,same,0,0
 651,1984,same,0,0
 651,1985,same,0,0
@@ -6216,11 +6216,11 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 651,2008,same,0,0
 651,2009,same,1,0
 651,2010,same,1,0
-651,2011,up,1,0
+651,2011,up,1,1
 651,2012,up,0,1
-651,2013,same,0,1
-651,2014,down,0,0
-651,2015,same,0,0
+651,2013,down,0,1
+651,2014,down,0,1
+651,2015,down,0,0
 651,2016,same,0,1
 651,2017,same,0,1
 651,2018,down,0,0
@@ -6228,10 +6228,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 651,2020,same,NA,NA
 651,2021,same,NA,NA
 652,1968,first year of independence,0,0
-652,1969,same,1,0
+652,1969,first year of independence,1,0
 652,1970,same,1,0
-652,1971,up,0,0
-652,1972,same,0,0
+652,1971,up,1,0
+652,1972,up,0,0
 652,1973,same,0,0
 652,1974,same,0,0
 652,1975,same,0,0
@@ -6282,7 +6282,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 652,2020,same,NA,NA
 652,2021,same,NA,NA
 660,1968,first year of independence,0,0
-660,1969,same,0,0
+660,1969,first year of independence,0,0
 660,1970,same,0,0
 660,1971,same,0,0
 660,1972,same,0,0
@@ -6336,7 +6336,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 660,2020,same,NA,NA
 660,2021,same,NA,NA
 663,1968,first year of independence,0,0
-663,1969,same,0,0
+663,1969,first year of independence,0,0
 663,1970,same,0,0
 663,1971,same,0,0
 663,1972,same,0,0
@@ -6390,7 +6390,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 663,2020,same,NA,NA
 663,2021,same,NA,NA
 666,1968,first year of independence,0,0
-666,1969,same,0,0
+666,1969,first year of independence,0,0
 666,1970,same,0,0
 666,1971,same,0,0
 666,1972,same,0,0
@@ -6444,7 +6444,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 666,2020,same,NA,NA
 666,2021,same,NA,NA
 670,1968,first year of independence,0,0
-670,1969,same,0,0
+670,1969,first year of independence,0,0
 670,1970,same,0,0
 670,1971,same,0,0
 670,1972,same,0,0
@@ -6498,7 +6498,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 670,2020,same,NA,NA
 670,2021,same,NA,NA
 678,1968,first year of independence,0,0
-678,1969,same,1,0
+678,1969,first year of independence,1,0
 678,1970,same,1,0
 678,1971,up,0,0
 678,1972,same,0,0
@@ -6519,8 +6519,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 678,1987,same,1,0
 678,1988,up,1,0
 678,1989,same,1,0
-678,1990,up,0,0
-678,1991,same,1,0
+678,1990,up,1,0
+678,1991,up,1,0
 678,1992,same,1,0
 678,1993,up,0,0
 678,1994,same,0,0
@@ -6542,9 +6542,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 678,2010,same,0,0
 678,2011,same,0,0
 678,2012,same,0,0
-678,2013,same,0,0
+678,2013,same,0,1
 678,2014,same,0,1
-678,2015,same,0,1
+678,2015,down,0,1
 678,2016,down,0,0
 678,2017,same,0,0
 678,2018,same,0,0
@@ -6552,7 +6552,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 678,2020,same,NA,NA
 678,2021,same,NA,NA
 680,1968,first year of independence,0,0
-680,1969,same,0,0
+680,1969,first year of independence,0,0
 680,1970,same,0,0
 680,1971,same,0,0
 680,1972,same,0,0
@@ -6574,10 +6574,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 680,1988,same,0,0
 680,1989,same,0,0
 680,1990,same,0,0
-690,1968,first year of independence,0,0
-690,1969,same,0,0
-690,1970,same,0,0
-690,1971,same,0,0
+690,1968,first year of independence,1,0
+690,1969,first year of independence,1,0
+690,1970,up,1,0
+690,1971,up,0,0
 690,1972,same,0,0
 690,1973,same,0,0
 690,1974,same,0,1
@@ -6589,9 +6589,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 690,1980,same,1,0
 690,1981,up,0,0
 690,1982,same,0,0
-690,1983,same,0,0
+690,1983,same,0,1
 690,1984,same,0,1
-690,1985,same,0,1
+690,1985,down,0,1
 690,1986,down,0,0
 690,1987,same,0,0
 690,1988,same,1,0
@@ -6629,7 +6629,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 690,2020,same,NA,NA
 690,2021,same,NA,NA
 694,1971,first year of independence,0,0
-694,1972,same,0,0
+694,1972,first year of independence,0,0
 694,1973,same,0,0
 694,1974,same,0,0
 694,1975,same,0,0
@@ -6680,7 +6680,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 694,2020,same,NA,NA
 694,2021,up,NA,NA
 696,1971,first year of independence,0,0
-696,1972,same,0,0
+696,1972,first year of independence,0,0
 696,1973,same,0,0
 696,1974,same,0,0
 696,1975,same,0,0
@@ -6731,7 +6731,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 696,2020,same,NA,NA
 696,2021,same,NA,NA
 698,1968,first year of independence,0,0
-698,1969,same,0,0
+698,1969,first year of independence,0,0
 698,1970,same,0,0
 698,1971,same,0,0
 698,1972,same,0,0
@@ -6785,7 +6785,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 698,2020,same,NA,NA
 698,2021,same,NA,NA
 700,1968,first year of independence,0,0
-700,1969,same,0,0
+700,1969,first year of independence,0,0
 700,1970,same,0,0
 700,1971,same,0,0
 700,1972,same,0,1
@@ -6815,9 +6815,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 700,1996,same,0,0
 700,1997,same,0,0
 700,1998,same,0,0
-700,1999,same,0,0
+700,1999,same,1,0
 700,2000,same,1,0
-700,2001,same,1,0
+700,2001,up,1,0
 700,2002,up,1,0
 700,2003,same,1,0
 700,2004,up,0,0
@@ -6838,8 +6838,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 700,2019,same,0,1
 700,2020,same,NA,NA
 700,2021,down,NA,NA
-701,1991,first year of independence,0,1
-701,1992,down,0,0
+701,1991,first year of independence,0,0
+701,1992,first year of independence,0,0
 701,1993,same,0,0
 701,1994,same,0,0
 701,1995,same,0,0
@@ -6869,9 +6869,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 701,2019,same,0,0
 701,2020,same,NA,NA
 701,2021,same,NA,NA
-702,1991,first year of independence,0,0
-702,1992,same,0,1
-702,1993,same,0,1
+702,1991,first year of independence,0,1
+702,1992,first year of independence,0,1
+702,1993,down,0,1
 702,1994,down,0,0
 702,1995,same,0,0
 702,1996,same,0,0
@@ -6901,7 +6901,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 702,2020,same,NA,NA
 702,2021,same,NA,NA
 703,1991,first year of independence,0,0
-703,1992,same,0,0
+703,1992,first year of independence,0,0
 703,1993,same,0,0
 703,1994,same,0,0
 703,1995,same,0,0
@@ -6917,9 +6917,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 703,2005,same,0,0
 703,2006,same,0,0
 703,2007,same,0,0
-703,2008,same,0,0
+703,2008,same,1,0
 703,2009,same,1,0
-703,2010,same,1,0
+703,2010,up,1,0
 703,2011,up,0,0
 703,2012,same,0,0
 703,2013,same,0,0
@@ -6932,7 +6932,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 703,2020,same,NA,NA
 703,2021,same,NA,NA
 704,1991,first year of independence,0,0
-704,1992,same,0,1
+704,1992,first year of independence,0,1
 704,1993,same,0,1
 704,1994,down,0,0
 704,1995,same,0,0
@@ -6963,7 +6963,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 704,2020,same,NA,NA
 704,2021,same,NA,NA
 705,1991,first year of independence,0,0
-705,1992,same,0,0
+705,1992,first year of independence,0,0
 705,1993,same,0,0
 705,1994,same,0,0
 705,1995,same,0,0
@@ -6994,7 +6994,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 705,2020,same,NA,NA
 705,2021,same,NA,NA
 710,1968,first year of independence,0,0
-710,1969,same,0,0
+710,1969,first year of independence,0,0
 710,1970,same,0,0
 710,1971,same,0,0
 710,1972,same,0,0
@@ -7048,7 +7048,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 710,2020,same,NA,NA
 710,2021,same,NA,NA
 712,1968,first year of independence,0,0
-712,1969,same,0,0
+712,1969,first year of independence,0,0
 712,1970,same,0,0
 712,1971,same,0,0
 712,1972,same,0,0
@@ -7070,9 +7070,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 712,1988,same,1,0
 712,1989,same,1,0
 712,1990,up,1,0
-712,1991,same,1,0
-712,1992,up,0,0
-712,1993,same,0,0
+712,1991,up,1,0
+712,1992,up,1,0
+712,1993,up,0,0
 712,1994,same,0,0
 712,1995,same,0,0
 712,1996,same,0,0
@@ -7101,8 +7101,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 712,2019,same,0,0
 712,2020,same,NA,NA
 712,2021,same,NA,NA
-713,1968,first year of independence,1,0
-713,1969,up,0,0
+713,1968,first year of independence,0,0
+713,1969,first year of independence,0,0
 713,1970,same,0,0
 713,1971,same,0,0
 713,1972,same,0,0
@@ -7126,10 +7126,10 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 713,1990,same,0,0
 713,1991,same,0,0
 713,1992,same,0,0
-713,1993,same,0,0
-713,1994,same,0,0
-713,1995,same,0,0
-713,1996,same,0,0
+713,1993,same,1,0
+713,1994,same,1,0
+713,1995,up,1,0
+713,1996,up,0,0
 713,1997,same,0,0
 713,1998,same,0,0
 713,1999,same,0,0
@@ -7156,7 +7156,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 713,2020,same,NA,NA
 713,2021,same,NA,NA
 731,1968,first year of independence,0,0
-731,1969,same,0,0
+731,1969,first year of independence,0,0
 731,1970,same,0,0
 731,1971,same,0,0
 731,1972,same,0,0
@@ -7210,7 +7210,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 731,2020,same,NA,NA
 731,2021,same,NA,NA
 732,1968,first year of independence,0,0
-732,1969,same,0,0
+732,1969,first year of independence,0,0
 732,1970,same,0,0
 732,1971,same,0,0
 732,1972,same,0,0
@@ -7228,8 +7228,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 732,1984,same,1,0
 732,1985,up,1,0
 732,1986,same,1,0
-732,1987,up,0,0
-732,1988,same,0,0
+732,1987,up,1,0
+732,1988,up,0,0
 732,1989,same,0,0
 732,1990,same,0,0
 732,1991,same,0,0
@@ -7264,7 +7264,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 732,2020,same,NA,NA
 732,2021,same,NA,NA
 740,1968,first year of independence,0,0
-740,1969,same,0,0
+740,1969,first year of independence,0,0
 740,1970,same,0,0
 740,1971,same,0,0
 740,1972,same,0,0
@@ -7318,7 +7318,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 740,2020,same,NA,NA
 740,2021,same,NA,NA
 750,1968,first year of independence,0,0
-750,1969,same,0,0
+750,1969,first year of independence,0,0
 750,1970,same,0,0
 750,1971,same,0,0
 750,1972,same,0,0
@@ -7372,7 +7372,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 750,2020,same,NA,NA
 750,2021,same,NA,NA
 760,1968,first year of independence,0,0
-760,1969,same,0,0
+760,1969,first year of independence,0,0
 760,1970,same,0,0
 760,1971,same,0,0
 760,1972,same,0,0
@@ -7426,14 +7426,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 760,2020,same,NA,NA
 760,2021,same,NA,NA
 770,1968,first year of independence,1,0
-770,1969,same,1,1
+770,1969,first year of independence,1,1
 770,1970,up,0,1
 770,1971,down,0,0
 770,1972,same,0,0
 770,1973,same,0,0
-770,1974,same,0,0
+770,1974,same,1,0
 770,1975,same,1,0
-770,1976,same,1,1
+770,1976,up,1,1
 770,1977,up,0,1
 770,1978,down,0,0
 770,1979,same,0,0
@@ -7445,8 +7445,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 770,1985,up,0,0
 770,1986,same,1,0
 770,1987,same,1,0
-770,1988,up,0,0
-770,1989,same,0,0
+770,1988,up,1,0
+770,1989,up,0,0
 770,1990,same,0,0
 770,1991,same,0,0
 770,1992,same,0,0
@@ -7454,9 +7454,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 770,1994,same,0,0
 770,1995,same,0,0
 770,1996,same,0,0
-770,1997,same,0,0
+770,1997,same,0,1
 770,1998,same,0,1
-770,1999,same,0,1
+770,1999,down,0,1
 770,2000,down,1,0
 770,2001,same,1,0
 770,2002,up,0,0
@@ -7480,25 +7480,25 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 770,2020,same,NA,NA
 770,2021,same,NA,NA
 771,1971,first year of independence,1,0
-771,1972,same,1,0
-771,1973,up,0,0
+771,1972,first year of independence,1,0
+771,1973,up,0,1
 771,1974,same,0,1
-771,1975,same,0,1
+771,1975,down,1,1
 771,1976,down,1,0
-771,1977,same,1,0
-771,1978,up,0,0
-771,1979,same,0,0
-771,1980,same,0,0
+771,1977,up,1,0
+771,1978,up,1,0
+771,1979,up,0,0
+771,1980,same,0,1
 771,1981,same,0,1
-771,1982,same,0,1
+771,1982,down,0,1
 771,1983,down,0,0
 771,1984,same,1,0
 771,1985,same,1,0
 771,1986,up,0,0
 771,1987,same,0,0
-771,1988,same,0,0
+771,1988,same,1,0
 771,1989,same,1,0
-771,1990,same,1,0
+771,1990,up,1,0
 771,1991,up,0,0
 771,1992,same,0,0
 771,1993,same,0,0
@@ -7531,13 +7531,13 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 771,2020,same,NA,NA
 771,2021,same,NA,NA
 775,1968,first year of independence,0,0
-775,1969,same,0,0
+775,1969,first year of independence,0,0
 775,1970,same,0,0
 775,1971,same,0,0
 775,1972,same,1,0
 775,1973,same,1,0
-775,1974,up,0,0
-775,1975,same,0,0
+775,1974,up,1,0
+775,1975,up,0,0
 775,1976,same,0,0
 775,1977,same,0,0
 775,1978,same,0,0
@@ -7573,9 +7573,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 775,2008,same,1,0
 775,2009,same,1,0
 775,2010,up,1,0
-775,2011,same,1,0
-775,2012,up,0,0
-775,2013,same,0,0
+775,2011,up,1,0
+775,2012,up,1,0
+775,2013,up,0,0
 775,2014,same,0,0
 775,2015,same,0,0
 775,2016,same,0,0
@@ -7585,7 +7585,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 775,2020,same,NA,NA
 775,2021,down,NA,NA
 780,1968,first year of independence,0,0
-780,1969,same,0,0
+780,1969,first year of independence,0,0
 780,1970,same,0,0
 780,1971,same,0,0
 780,1972,same,0,0
@@ -7639,7 +7639,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 780,2020,same,NA,NA
 780,2021,same,NA,NA
 781,1968,first year of independence,0,0
-781,1969,same,0,0
+781,1969,first year of independence,0,0
 781,1970,same,0,0
 781,1971,same,0,0
 781,1972,same,0,0
@@ -7675,25 +7675,25 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 781,2002,same,0,0
 781,2003,same,1,0
 781,2004,same,1,0
-781,2005,up,0,0
-781,2006,same,1,0
+781,2005,up,1,0
+781,2006,up,1,0
 781,2007,same,1,0
-781,2008,up,0,0
-781,2009,same,0,0
+781,2008,up,1,0
+781,2009,up,0,0
 781,2010,same,0,0
 781,2011,same,0,1
 781,2012,same,0,1
 781,2013,down,0,0
 781,2014,same,0,0
 781,2015,same,0,0
-781,2016,same,0,0
-781,2017,same,0,0
-781,2018,same,0,0
-781,2019,same,0,0
+781,2016,same,1,0
+781,2017,same,1,0
+781,2018,up,1,0
+781,2019,up,0,0
 781,2020,same,NA,NA
 781,2021,same,NA,NA
 790,1968,first year of independence,0,0
-790,1969,same,0,0
+790,1969,first year of independence,0,0
 790,1970,same,0,0
 790,1971,same,0,0
 790,1972,same,0,0
@@ -7712,9 +7712,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 790,1985,same,0,0
 790,1986,same,0,0
 790,1987,same,0,0
-790,1988,same,0,0
+790,1988,same,1,0
 790,1989,same,1,0
-790,1990,same,1,0
+790,1990,up,1,0
 790,1991,up,0,0
 790,1992,same,0,0
 790,1993,same,0,0
@@ -7724,14 +7724,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 790,1997,same,0,0
 790,1998,same,0,0
 790,1999,same,0,0
-790,2000,same,0,0
+790,2000,same,0,1
 790,2001,same,0,1
-790,2002,same,0,1
+790,2002,down,0,1
 790,2003,down,0,0
 790,2004,same,0,0
-790,2005,same,0,0
+790,2005,same,1,0
 790,2006,same,1,0
-790,2007,same,1,0
+790,2007,up,1,0
 790,2008,up,0,0
 790,2009,same,0,0
 790,2010,same,0,0
@@ -7746,19 +7746,19 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 790,2019,same,0,0
 790,2020,same,NA,NA
 790,2021,same,NA,NA
-800,1968,first year of independence,1,0
-800,1969,up,0,0
+800,1968,first year of independence,0,0
+800,1969,first year of independence,0,0
 800,1970,same,0,1
 800,1971,same,0,1
-800,1972,down,0,0
+800,1972,down,1,0
 800,1973,same,1,0
-800,1974,same,1,0
+800,1974,up,1,1
 800,1975,up,0,1
-800,1976,same,0,1
+800,1976,down,0,1
 800,1977,down,1,0
 800,1978,same,1,0
-800,1979,up,0,0
-800,1980,same,0,0
+800,1979,up,1,0
+800,1980,up,0,0
 800,1981,same,0,0
 800,1982,same,0,0
 800,1983,same,0,0
@@ -7782,27 +7782,27 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 800,2001,same,0,0
 800,2002,same,0,0
 800,2003,same,0,0
-800,2004,same,0,0
+800,2004,same,0,1
 800,2005,same,0,1
-800,2006,same,0,1
+800,2006,down,0,1
 800,2007,down,0,0
 800,2008,same,0,0
 800,2009,same,0,0
 800,2010,same,0,0
-800,2011,same,0,0
+800,2011,same,0,1
 800,2012,same,0,1
-800,2013,same,0,1
-800,2014,down,0,0
-800,2015,same,0,0
+800,2013,down,0,1
+800,2014,down,0,1
+800,2015,down,0,0
 800,2016,same,0,0
 800,2017,same,0,0
 800,2018,same,0,0
 800,2019,same,0,0
 800,2020,same,NA,NA
 800,2021,same,NA,NA
-811,1968,first year of independence,0,0
-811,1969,same,0,1
-811,1970,same,1,1
+811,1968,first year of independence,0,1
+811,1969,first year of independence,0,1
+811,1970,down,1,1
 811,1971,down,1,1
 811,1972,up,0,1
 811,1973,down,0,1
@@ -7822,9 +7822,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 811,1987,same,0,0
 811,1988,same,0,0
 811,1989,same,0,0
-811,1990,same,0,0
+811,1990,same,1,0
 811,1991,same,1,0
-811,1992,same,1,0
+811,1992,up,1,0
 811,1993,up,0,0
 811,1994,same,0,0
 811,1995,same,0,0
@@ -7855,7 +7855,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 811,2020,same,NA,NA
 811,2021,same,NA,NA
 812,1968,first year of independence,0,0
-812,1969,same,0,0
+812,1969,first year of independence,0,0
 812,1970,same,0,0
 812,1971,same,0,0
 812,1972,same,0,0
@@ -7909,7 +7909,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 812,2020,same,NA,NA
 812,2021,same,NA,NA
 816,1968,first year of independence,0,0
-816,1969,same,0,0
+816,1969,first year of independence,0,0
 816,1970,same,0,0
 816,1971,same,0,0
 816,1972,same,0,0
@@ -7963,7 +7963,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 816,2020,same,NA,NA
 816,2021,same,NA,NA
 817,1968,first year of independence,0,0
-817,1969,same,0,0
+817,1969,first year of independence,0,0
 817,1970,same,0,0
 817,1971,same,0,0
 817,1972,same,0,0
@@ -7971,7 +7971,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 817,1974,same,0,0
 817,1975,same,0,0
 820,1968,first year of independence,0,1
-820,1969,same,0,1
+820,1969,first year of independence,0,1
 820,1970,down,0,0
 820,1971,same,0,0
 820,1972,same,1,0
@@ -8018,14 +8018,14 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 820,2013,same,0,0
 820,2014,same,0,0
 820,2015,same,0,0
-820,2016,same,0,0
-820,2017,same,0,0
-820,2018,same,0,0
-820,2019,same,0,0
+820,2016,same,1,0
+820,2017,same,1,0
+820,2018,up,1,0
+820,2019,up,0,0
 820,2020,same,NA,NA
 820,2021,same,NA,NA
 830,1968,first year of independence,0,0
-830,1969,same,0,0
+830,1969,first year of independence,0,0
 830,1970,same,0,0
 830,1971,same,0,0
 830,1972,same,0,0
@@ -8079,24 +8079,24 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 830,2020,same,NA,NA
 830,2021,same,NA,NA
 840,1968,first year of independence,0,0
-840,1969,same,0,0
+840,1969,first year of independence,0,0
 840,1970,same,0,1
 840,1971,same,0,1
-840,1972,down,0,0
-840,1973,same,0,0
+840,1972,down,0,1
+840,1973,down,0,0
 840,1974,same,0,0
 840,1975,same,1,0
 840,1976,same,1,0
-840,1977,up,0,0
-840,1978,same,0,0
+840,1977,up,1,0
+840,1978,up,0,0
 840,1979,same,0,0
 840,1980,same,0,0
 840,1981,same,0,0
 840,1982,same,0,0
 840,1983,same,0,0
-840,1984,same,0,0
+840,1984,same,1,0
 840,1985,same,1,0
-840,1986,same,1,0
+840,1986,up,1,0
 840,1987,up,0,0
 840,1988,same,0,0
 840,1989,same,0,0
@@ -8133,7 +8133,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 840,2020,same,NA,NA
 840,2021,same,NA,NA
 850,1968,first year of independence,0,0
-850,1969,same,1,0
+850,1969,first year of independence,1,0
 850,1970,same,1,0
 850,1971,up,0,0
 850,1972,same,0,0
@@ -8141,8 +8141,8 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 850,1974,same,0,0
 850,1975,same,0,1
 850,1976,same,0,1
-850,1977,down,0,0
-850,1978,same,0,0
+850,1977,down,0,1
+850,1978,down,0,0
 850,1979,same,0,0
 850,1980,same,0,0
 850,1981,same,0,0
@@ -8159,12 +8159,12 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 850,1992,same,0,0
 850,1993,same,0,0
 850,1994,same,0,0
-850,1995,same,0,0
-850,1996,same,0,0
-850,1997,same,1,0
-850,1998,same,1,0
-850,1999,up,0,0
-850,2000,same,0,0
+850,1995,same,1,0
+850,1996,same,1,0
+850,1997,up,1,0
+850,1998,up,1,0
+850,1999,up,1,0
+850,2000,up,0,0
 850,2001,same,0,0
 850,2002,same,0,0
 850,2003,same,0,0
@@ -8187,7 +8187,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 850,2020,same,NA,NA
 850,2021,same,NA,NA
 860,2002,first year of independence,0,0
-860,2003,same,0,0
+860,2003,first year of independence,0,0
 860,2004,same,0,0
 860,2005,same,0,0
 860,2006,same,0,0
@@ -8207,7 +8207,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 860,2020,same,NA,NA
 860,2021,same,NA,NA
 900,1968,first year of independence,0,0
-900,1969,same,0,0
+900,1969,first year of independence,0,0
 900,1970,same,0,0
 900,1971,same,0,0
 900,1972,same,0,0
@@ -8261,7 +8261,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 900,2020,same,NA,NA
 900,2021,same,NA,NA
 910,1975,first year of independence,0,0
-910,1976,same,0,0
+910,1976,first year of independence,0,0
 910,1977,same,0,0
 910,1978,same,0,0
 910,1979,same,0,0
@@ -8308,7 +8308,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 910,2020,same,NA,NA
 910,2021,same,NA,NA
 920,1968,first year of independence,0,0
-920,1969,same,0,0
+920,1969,first year of independence,0,0
 920,1970,same,0,0
 920,1971,same,0,0
 920,1972,same,0,0
@@ -8362,7 +8362,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 920,2020,same,NA,NA
 920,2021,same,NA,NA
 940,1978,first year of independence,0,0
-940,1979,same,0,0
+940,1979,first year of independence,0,0
 940,1980,same,0,0
 940,1981,same,0,0
 940,1982,same,0,0
@@ -8406,7 +8406,7 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 940,2020,same,NA,NA
 940,2021,same,NA,NA
 950,1970,first year of independence,0,0
-950,1971,same,0,0
+950,1971,first year of independence,0,0
 950,1972,same,0,0
 950,1973,same,0,0
 950,1974,same,0,0
@@ -8420,9 +8420,9 @@ gwcode,year,dv_v2x_veracc_osp_change,dv_v2x_veracc_osp_up_next2,dv_v2x_veracc_os
 950,1982,same,0,0
 950,1983,same,0,0
 950,1984,same,0,0
-950,1985,same,0,0
+950,1985,same,0,1
 950,1986,same,0,1
-950,1987,same,0,1
+950,1987,down,0,1
 950,1988,down,0,0
 950,1989,same,0,0
 950,1990,same,1,0

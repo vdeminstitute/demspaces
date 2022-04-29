@@ -1,0 +1,16 @@
+data: spaces_for_app_mod
+year_start: 1948.0
+year_end: 2021.0
+points:
+  y_v2x_freexp_altinf_down: 941
+  y_v2x_freexp_altinf_up: 1292
+  y_v2x_horacc_osp_down: 865
+  y_v2x_horacc_osp_up: 1105
+  y_v2x_pubcorr_down: 1183
+  y_v2x_pubcorr_up: 952
+  y_v2x_veracc_osp_down: 618
+  y_v2x_veracc_osp_up: 870
+  y_v2xcl_rol_down: 910
+  y_v2xcl_rol_up: 1439
+  y_v2xcs_ccsi_down: 1038
+  y_v2xcs_ccsi_up: 1415

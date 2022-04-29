@@ -1,0 +1,16 @@
+data: spaces_for_app_orig
+year_start: 1948.0
+year_end: 2021.0
+points:
+  y_v2x_freexp_altinf_down: 622
+  y_v2x_freexp_altinf_up: 872
+  y_v2x_horacc_osp_down: 655
+  y_v2x_horacc_osp_up: 856
+  y_v2x_pubcorr_down: 1059
+  y_v2x_pubcorr_up: 834
+  y_v2x_veracc_osp_down: 532
+  y_v2x_veracc_osp_up: 728
+  y_v2xcl_rol_down: 608
+  y_v2xcl_rol_up: 975
+  y_v2xcs_ccsi_down: 800
+  y_v2xcs_ccsi_up: 1090

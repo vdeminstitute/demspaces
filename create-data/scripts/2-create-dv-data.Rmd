@@ -40,6 +40,15 @@ plotmiss <- function(x) {
   plot_missing(x, names(x), partial = "last")
 }
 
+# need this for changes_one_country()
+devtools::load_all()
+# options won't work correctly since we are not loading the package from 
+# base folder
+set_options(here::here("config.yml"))
+if (getOption("demspaces.version")=="") {
+  stop("Problem with demspaces option setting")
+}
+
 # needs devel version of states
 if (packageVersion("states") < "0.2.2.9007") {
   stop("Please re-install the latest dev version of states:\n  remotes::install_github(\"andybega/states\")")
@@ -80,7 +89,24 @@ for (var_i in dv_vars) {
       # set y2y_diff to 0 if missing (first year of independence)
       y2y_diff_var = ifelse(is.na(y2y_diff_var), 0, y2y_diff_var)
     ) 
-  dv_i <- dv_i %>%
+  
+  # Bypass the normal flow to produce modified data
+  if (getOption("demspaces.version")=="v12-mod") {
+    dv_i <- dv_i %>%
+      mutate(var_change = changes_one_country(var, cp[[var_i]], type = "mod", min_f = 0.1),
+             # actually the first 2 years of indy are missing with this algo,
+             # but let's keep the same name
+             var_change = ifelse(year < (min(year) + 2), 
+                                 "first year of independence",
+                                 var_change),
+             # there is also an additional NA at the tail, set these to "same"
+             # as with previous version of outcome coding
+             var_change = ifelse(year==max(year) & is.na(var_change),
+                                 "same",
+                                 var_change)
+             )
+  } else {
+    dv_i <- dv_i %>%
     mutate(var_change = case_when(
       y2y_diff_var > cp[[var_i]]  ~ "up",
       y2y_diff_var < -cp[[var_i]] ~ "down",
@@ -88,6 +114,9 @@ for (var_i in dv_vars) {
       is.na(y2y_diff_var) & year!=min(year) ~ NA_character_,
       TRUE ~ "same"
     ))
+  }
+  # END of bypass
+  
   dv_i <- dv_i %>%
     mutate(up = as.integer(var_change=="up"),
            lead1_up = lead(up, 1L),

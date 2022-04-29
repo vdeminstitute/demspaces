@@ -1,7 +1,7 @@
 # Don't use this for updating. I just added this as a convenience when
 # rebuilding the data with the same V-Dem version.
 
-STATES = output/states-v11.rds
+STATES = output/states-v12-mod.rds
 
 # made by scripts/0-split-raw-vdem.R
 $(STATES): output/country_year_set_1968_on.csv output/vdem_data_1968_on.csv

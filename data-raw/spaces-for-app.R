@@ -18,15 +18,13 @@ library(dplyr)
 library(readr)
 library(tidyr)
 library(demspacesR)
+library(yaml)
 
 oldwd <- getwd()
 setwd(here::here())
 
 # needed for changes_one_country()
 devtools::load_all()
-
-updown <- readRDS("create-data/output/dv-data.rds") %>%
-  select(gwcode, year, ends_with("change"))
 
 dvs <- readRDS("create-data/output/dv_data_1958_on.rds")
 
@@ -37,6 +35,26 @@ names(cp) <- cutpoints[["indicator"]]
 data(spaces)
 
 # Original version --------------------------------------------------------
+
+# I need to rebuild updown since I'm now also changing the upstream version (dv-data.rds)
+updown <- dvs[, c("gwcode", "year", spaces$Indicator)]
+updown <- updown %>% filter(!is.na(gwcode))
+for (ind in spaces$Indicator) {
+  cpi <- cp[[ind]]
+  new_col <- sprintf("dv_%s_change", ind)
+  updown <- updown %>%
+    dplyr::group_by(gwcode) %>%
+    dplyr::arrange(gwcode, year) %>%
+    dplyr::mutate(temp = changes_one_country(.data[[ind]], !!cpi, type = "orig"))
+  updown[[new_col]] <- updown$temp
+}
+updown$temp <- NULL
+updown[, spaces$Indicator] <- NULL
+
+# for the stuff below, we can't have NAs; set these to "same"
+for (var in setdiff(colnames(updown), c("gwcode", "year"))) {
+  updown[[var]][is.na(updown[[var]])] <- "same"
+}
 
 changes <- updown %>%
   filter(year >= min(dvs$year)) %>%
@@ -99,6 +117,19 @@ for (cc in cn) {
 spaces_for_app_orig <- time_series_dat
 usethis::use_data(spaces_for_app_orig, overwrite = TRUE)
 
+# record some data summary stats
+cn <- colnames(spaces_for_app_orig)
+cn <- cn[grepl("^y_", cn)]
+s <- lapply(spaces_for_app_orig[, cn], \(x) sum(!is.na(x)))
+stats <- list(
+  data = "spaces_for_app_orig",
+  year_start = min(spaces_for_app_orig$year),
+  year_end = max(spaces_for_app_orig$year),
+  # this is not the same as positive cases, since each case has two data points
+  points = s
+)
+write_yaml(stats, "data-raw/trackers/spaces_for_app_orig.yml")
+
 
 # ERT-lite version --------------------------------------------------------
 
@@ -111,7 +142,7 @@ for (ind in spaces$Indicator) {
   updown2 <- updown2 %>%
     dplyr::group_by(gwcode) %>%
     dplyr::arrange(gwcode, year) %>%
-    dplyr::mutate(temp = changes_one_country(.data[[ind]], !!cpi))
+    dplyr::mutate(temp = changes_one_country(.data[[ind]], !!cpi, min_f = 0.1))
   updown2[[new_col]] <- updown2$temp
 }
 updown2$temp <- NULL
@@ -190,6 +221,20 @@ stopifnot(all.equal(colnames(time_series_dat), colnames(time_series_dat_v2)))
 spaces_for_app_mod <- time_series_dat_v2
 usethis::use_data(spaces_for_app_mod, overwrite = TRUE)
 
+# record some data summary stats
+cn <- colnames(spaces_for_app_mod)
+cn <- cn[grepl("^y_", cn)]
+s <- lapply(spaces_for_app_mod[, cn], \(x) sum(!is.na(x)))
+stats <- list(
+  data = "spaces_for_app_mod",
+  year_start = min(spaces_for_app_mod$year),
+  year_end = max(spaces_for_app_mod$year),
+  # this is not the same as positive cases, since each case has two data points
+  points = s
+)
+write_yaml(stats, "data-raw/trackers/spaces_for_app_mod.yml")
 
+
+# END
 # reset old working directory
 setwd(oldwd)

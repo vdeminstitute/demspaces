@@ -20,7 +20,12 @@ Several of the data sources below are imputed in some fashion after merging. E.g
 END_YEAR <- 2021
 # UPDATE: this should be the V-Dem data version, but for development I've also
 # use sub-versions like 'v11a', ...
-VERSION  <- "v12"
+
+# use global options config (config.yml)
+devtools::load_all()
+set_options(here::here("config.yml"))
+VERSION  <- getOption("demspaces.version")
+print(VERSION)
 ```
 
 ```{r setup, include=FALSE}
