@@ -48,7 +48,7 @@ tbl <- pooled %>%
 
 tbl %>%
   setNames(c("Measure", "Modified", "Original")) %>%
-  knitr::kable("simple", digits = 2)
+  knitr::kable("latex", digits = 2, booktabs = TRUE)
 
 
 

@@ -332,7 +332,7 @@ blankTimeSeriesFun <- function(){
   blank_dat <- data.frame(year = YEAR_RANGE, Value = NA)
   plot_title <- "V-Dem index scores for [select country]"
 
-  blank_dat%>%
+  blank_dat %>%
     hchart(type = "line", hcaes(x = year, y = Value), name = "blank")%>%
     hc_yAxis(min = 0, max = 1,
              title = list(text = "",

@@ -5,9 +5,15 @@
 \alias{changes_one_country}
 \title{Episode coder}
 \usage{
-episode_coder(x, cp, direction = c("up", "down"), type = c("mod", "orig"))
+episode_coder(
+  x,
+  cp,
+  direction = c("up", "down"),
+  type = c("mod", "orig"),
+  min_f = 0.1
+)
 
-changes_one_country(x, cp)
+changes_one_country(x, cp, type = c("mod", "orig"), min_f = 0.1)
 }
 \arguments{
 \item{x}{vector containing values for one of the space indicators, for
@@ -18,6 +24,9 @@ changes_one_country(x, cp)
 \item{direction}{code opening ("up") or closing ("down") events?}
 
 \item{type}{use the original single-year event coding ("orig"), or the ERT-lite coding ("mod")?}
+
+\item{min_f}{for type="mod", the minimum yearly change threshold factor to use.
+This is multiplied with the space cutpoint to determine.}
 }
 \value{
 \code{episode_coder} returns a binary (integer) vector with \code{length(x)}

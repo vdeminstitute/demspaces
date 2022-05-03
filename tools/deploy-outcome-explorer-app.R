@@ -20,7 +20,7 @@ app_files <- c(
   "R"
 )
 
-deployApp(appDir = app_dir, appFiles = app_files)
+deployApp(appDir = app_dir, appFiles = app_files, appName = "demspaces-outcome-explorer")
 
 # to check how dependencies are resolved:
 #appDependencies(appDir = app_dir, appFiles = app_files)

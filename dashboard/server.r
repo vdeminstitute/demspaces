@@ -264,7 +264,8 @@ function(input, output, session) {
     #plotCIs <- input$plotCIs
     if(country_name != ""){
       dat_new <- time_series_dat[time_series_dat$country_name == country_name, ]
-      output$TimeSeriesPlot <-  renderHighchart({timeSeriesPlotFun(dat_new %>% filter(year >= 2011), clickedSelected, changes = input$tsPlotShowChanges)})
+      dat_new <- dat_new[dat_new$year >= 2011, ]
+      output$TimeSeriesPlot <-  renderHighchart({timeSeriesPlotFun(dat_new, clickedSelected, changes = input$tsPlotShowChanges)})
     }
   })
 

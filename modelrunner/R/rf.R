@@ -8,6 +8,7 @@
 #   **To start a fresh re-run, delete the year chunks in rf-chunks**
 #
 #   The 2021 update took 7 hours to run.
+#   For the 2022 update I fixed the remaining HP, it now runs in 30m
 #
 
 # Config settings
@@ -23,6 +24,10 @@ OVERWRITE = TRUE
 # Remove artifacts after run or leave in place? (This interacts with
 # OVERWRITE)
 CLEANUP = FALSE
+# Which verson of the data to use?
+devtools::load_all()
+set_options(here::here("config.yml"))
+VERSION = getOption("demspaces.version")
 
 # TODO: i don't think this works correctly with parallel workers; and in any
 # case maybe not a good idea
@@ -73,9 +78,8 @@ lgr$info("Running with %s workers", N_WORKERS)
 plan(multisession, workers = N_WORKERS)
 
 # Parse states data version so we can name the output forecasts correctly
-fn <- tail(dir("input", full.names = TRUE), 1)
-VERSION <- regmatches(fn, regexpr("v[0-9]+[a-z]?", fn))
-if (VERSION %in% c("", character(0))) stop("Could not parse VERSION")
+fn <- sprintf("input/states-%s.rds", VERSION)
+if (!file.exists(fn)) stop(sprintf("Could not find '%s'", fn))
 lgr$info("Using data version %s", VERSION)
 
 # Load data
@@ -196,7 +200,7 @@ if (length(warn) > 1) {
   call <- as.character(warn)
   msg  <- names(warn)
   warn_strings <- paste0("In ", call, " : ", msg)
-  lgr$warn("There were R warnings, printing below:")
-  for (x in warn_strings) lgr$warn(x)
+  lgr$info("There were R warnings, printing below:")
+  for (x in warn_strings) lgr$info(x)
 }
 
