@@ -2,7 +2,8 @@
 .onLoad <- function(libname, pkgname) {
   if (file.exists("config.yml")) {
     config <- yaml::read_yaml("config.yml")
-    options(demspaces.version = config$version)
+    options(demspaces.version = config$version,
+            demspaces.current_window = "2022 - 2023")
   }
 }
 

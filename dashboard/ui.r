@@ -6,58 +6,66 @@ navbarPage(
 
   tabPanel(
     "Dashboard",
-    wellPanel(
-      class = "panel panel-default",
-      fluidRow(
-        column(
-          12,
-          tags$span(
-            # UPDATE: two-year window
-            h3("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2022-2023)."), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
 
-            ## Adds hoverover popup text for each space
-            h3(tags$em(tags$b(a(id = "AssText", style = "text-decoration: none;", " Associational, "),
-                              bsPopover(id = "AssText", title = "<b>Civil Society",
-                                        content = "Measured using the <b>V-Dem&apos;s Core Civil Society Index</b>, which ranges from 0 to 1 and captures CSO autonomy from the state and citizens&apos; ability to freely and actively pursue their political and civic goals, however conceived. It takes into account CSO entry and exit, repression, and participation",
-                                        options = list(container = "body")),
+    # Top row with text ----
+    fluidRow(
+      column(
+        12,
+        style = "background-color:#F5F5F5;",
+        h2("2022-2023 Forecasts")
+      )
+    ),
 
-                              a(id = "EcoText", style = "text-decoration: none;", " Economic, "),
-                              bsPopover(id = "EcoText", title = "<b>Public Corruption",
-                                        content = "Measured using the <b>V-Dem&apos;s Public Corruption Index</b>, which ranges from 0 to 1 and captures the extent in which public sector employees grant favors in exchange for bribes (or other material inducements), and how often they steal, embezzle, or misappropriate public funds or other state resources for personal or family use.",
-                                        options = list(container = "body")),
+    fluidRow(
+      class = "content-row",
+      column(
+        6,
+        # UPDATE: two-year window
+        p("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2022-2023).")),
+      ),
+      column(
+        6,
+        ## Adds hoverover popup text for each space
+        p("We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
+        p(
+          tags$em(
+            tags$b(
+              a(id = "AssText", style = "text-decoration: none;", " Associational, "),
+              bsPopover(id = "AssText", title = "<b>Civil Society",
+                        content = "Measured using the <b>V-Dem&apos;s Core Civil Society Index</b>, which ranges from 0 to 1 and captures CSO autonomy from the state and citizens&apos; ability to freely and actively pursue their political and civic goals, however conceived. It takes into account CSO entry and exit, repression, and participation",
+                        options = list(container = "body")),
 
-                              a(id = "ElecText", style = "text-decoration: none;", " Electoral, "),
-                              bsPopover(id = "ElecText", title = "<b>Citizens&apos; check on government",
-                                        content = "Measured using the <b>V-Dem&apos;s Vertical Accountability Index</b>, which ranges from 0 to 1 and captures the ability of the population to hold their government accountable through elections and political parties. It captures election quality, enfranchisement, direct election of chief executive, and opposition party freedoms.",
-                                        options = list(container = "body")),
+              a(id = "EcoText", style = "text-decoration: none;", " Economic, "),
+              bsPopover(id = "EcoText", title = "<b>Public Corruption",
+                        content = "Measured using the <b>V-Dem&apos;s Public Corruption Index</b>, which ranges from 0 to 1 and captures the extent in which public sector employees grant favors in exchange for bribes (or other material inducements), and how often they steal, embezzle, or misappropriate public funds or other state resources for personal or family use.",
+                        options = list(container = "body")),
 
-                              a(id = "GovText", style = "text-decoration: none;", " Governing, "),
-                              bsPopover(id = "GovText", title = "<b>Government checks and balance",
-                                        content = "Measured using the <b>V-Dem&apos;s Horizontal Accountability Index</b>, which ranges from 0 to 1 and captures the degree to which the legislative and judicial branches can hold the executive branch accountable as well as legislative and judical oversight over the bureaucracy and security services.",
-                                        options = list(container = "body")),
+              a(id = "ElecText", style = "text-decoration: none;", " Electoral, "),
+              bsPopover(id = "ElecText", title = "<b>Citizens&apos; check on government",
+                        content = "Measured using the <b>V-Dem&apos;s Vertical Accountability Index</b>, which ranges from 0 to 1 and captures the ability of the population to hold their government accountable through elections and political parties. It captures election quality, enfranchisement, direct election of chief executive, and opposition party freedoms.",
+                        options = list(container = "body")),
 
-                              a(id = "IndText", style = "text-decoration: none;", " Individual, "),
-                              bsPopover(id = "IndText", title = "<b>Individual freedoms",
-                                        content = "Measured using the <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>, which ranges from 0 to 1 and captures the extent to which the laws are transparent and rigorously enforced and public administration impartial, and the extent to which citizens enjoy access to justice, secure property rights, freedom from forced labor, freedom of movement, physical integrity rights, and freedom of religion.",
-                                        options = list(container = "body")))), "and ",
+              a(id = "GovText", style = "text-decoration: none;", " Governing, "),
+              bsPopover(id = "GovText", title = "<b>Government checks and balance",
+                        content = "Measured using the <b>V-Dem&apos;s Horizontal Accountability Index</b>, which ranges from 0 to 1 and captures the degree to which the legislative and judicial branches can hold the executive branch accountable as well as legislative and judical oversight over the bureaucracy and security services.",
+                        options = list(container = "body")),
 
-               tags$em(tags$b(a(id = "infoText", style = "text-decoration: none;", "Informational"),
-                              bsPopover(id = "infoText", title = "<b>Media",
-                                        content = "Measured using the <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information Index</b>, which ranges from 0 to 1 and captures media censorship, harassment of journalists, media bias, media self-censorship, whether the media is critical and pluralistic, as well as the freedom of discussion and academic and cultural expression.",
-                                        options = list(container = "body")))))))),
-      fluidRow(
-        # UPDATE: 20xx-20xx forecasts
-        column(12, h2(tags$span(style = "font-size: 75%; font-weight:bold;", "2022-2023 Forecasts"))
-        )),
-
-      fluidRow(
-        column(
-          12,
-          tags$span(#style = "font-size: 80%;",
-            h3("Use the options below to compare the forecasts estimates for opening and closing events for specific spaces in different regions and countries.")
+              a(id = "IndText", style = "text-decoration: none;", " Individual, "),
+              bsPopover(id = "IndText", title = "<b>Individual freedoms",
+                        content = "Measured using the <b>V-Dem&apos;s Equality Before the Law and Individual Liberty Index</b>, which ranges from 0 to 1 and captures the extent to which the laws are transparent and rigorously enforced and public administration impartial, and the extent to which citizens enjoy access to justice, secure property rights, freedom from forced labor, freedom of movement, physical integrity rights, and freedom of religion.",
+                        options = list(container = "body")))),
+          "and ",
+          tags$em(
+            tags$b(
+              a(id = "infoText", style = "text-decoration: none;", "Informational"),
+              bsPopover(id = "infoText", title = "<b>Media",
+                        content = "Measured using the <b>V-Dem&apos;s Freedom of Expression and Alternative Sources of Information Index</b>, which ranges from 0 to 1 and captures media censorship, harassment of journalists, media bias, media self-censorship, whether the media is critical and pluralistic, as well as the freedom of discussion and academic and cultural expression.",
+                        options = list(container = "body"))
+            )
           )
         )
-      )),
+      )
+    ),
 
     # Global view (top half of dashboard with map) ----
 
@@ -135,13 +143,17 @@ navbarPage(
 
     fluidRow(
       column(12, style = "background-color:#F5F5F5;",
-             h2(tags$span("Country View"))),
+             h2(tags$span("Country View")))
+    ),
+
+    fluidRow(
+      class = "content-row",
       column(12,
-             h3(tags$span(#style = "font-size:85%",
-               "Select a country below or from the map above for case-specific information."))),
+             p("Select a country below or from the map above for case-specific information.")
+      ),
       column(5,
              selectInput("countrySelect", choices = countryNamesText,
-                         label = "", selectize = TRUE))
+                         label = NULL, selectize = TRUE))
     ),
 
     fluidRow(

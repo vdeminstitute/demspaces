@@ -11,6 +11,7 @@ demspaces 12 (2022 Update)
 
 - Added the ability to highlight past opening and closing evens in the V-Dem indicator time series plot on the bottom right. (#12; and fixed a subsequent related bug, #17)
 - Added a button for the V-Dem space indicator time series plot on the bottom right to select/de-select all 6 spaces. It's annoying to otherwise have to click each of the 6 checkboxes individually. (#13)
+- Dashboard layout and style changes: two-column layout for top text in dashboard tab (#20). 
 
 ### 'demspaces' R package
 

@@ -24,16 +24,26 @@ input[type=checkbox] {
   right: 0;
   bottom: 0;
 }
+
+/* main tab fluidRow with content, i.e. not header separating rows */
+.content-row {
+  margin-top: 0.5em;
+}
+
 body, label, input, button, select {
   font-family: 'Helvetica Neue', Helvetica;
-  font-weight: 200;
+  font-weight: 400;
 }
+
 h1, h2 {
   font-weight: 400;
   /*color: #861B58;*/
   /*color: #002649;*/
   color: #A51E36;
-  }
+}
+p {
+  color: #002649;
+}
 h4, h3 {
   font-size: 125%;
   color: #002649;
