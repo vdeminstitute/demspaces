@@ -35,15 +35,30 @@ body, label, input, button, select {
   font-weight: 400;
 }
 
-h1, h2 {
+/* Used for row labels in main dashboard */
+h1 {
+  font-size: 1.5em;
   font-weight: 400;
-  /*color: #861B58;*/
-  /*color: #002649;*/
   color: #A51E36;
 }
+
+/* Used as headers in text tabs */
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #A51E36;
+}
+
 p {
   color: #002649;
 }
+/* for the help text displayed below each visual element in main dash */
+p.help {
+  color: #002649;
+  font-size: 90%;
+  margin-top: 0.5em;
+}
+
 h4, h3 {
   font-size: 125%;
   color: #002649;
