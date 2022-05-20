@@ -7,7 +7,7 @@
 #
 #   library(abmisc)
 #   setwd("dashboard")
-#   check <- c("global.R", "server.R", "StartUp.R")
+#   check <- c("global.r", "server.r", "startup.r")
 #   deps <- sort(unique(unlist(sapply(check, find_packages))))
 #   dput(deps)
 

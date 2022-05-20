@@ -251,6 +251,12 @@ navbarPage(
               h2("Resources"),
               p("Data, code, including the dashboard, project reports and other materials can be found on Github at:"),
               p(a(href= "https://github.com/vdeminstitute/demspaces", "https://github.com/vdeminstitute/demspaces")),
+              h3("Running the dashboard locally"),
+              p("If you are a R user, you can also run the dashboard locally."),
+              p("First, check that the dependencies (R packages) listed in", a(href = "https://github.com/vdeminstitute/demspaces/blob/main/dashboard/setup.r", "dashboard/setup.r"), "are installed."),
+              p("Then, the following code will download and run the dashboard:"),
+              HTML("<pre><code class='language-r'>library(shiny)
+runUrl('https://github.com/vdeminstitute/demspaces/raw/main/dashboard/demspaces-dashboard.tar.gz')</code></pre>"),
 
               h2("Democratic Spaces"),
 
@@ -299,8 +305,7 @@ navbarPage(
 
               p("The estimated probability for \"any opening event within the next two years\" really captures three distinct combinations of events:", tags$b(" one opening and no closing, two opening and no closing, as well as one opening and one closing."), " Similarly for \"any closing event within the next two years\". The probability for \"no change\" on the other hand only captures one scenario: no opening or closing events in the two-year window."),
 
-              p("As a result of these relationships, it is sometimes the case that the forecast models produce relatively large probabilities for both opening and closing events in a country. This can be seen in the visualization tools we present in the 'Figures' tab. One way to think of these instances is that the situation in that country in that space is very fluid, potentially indicating that the country is at a crossroads and prime for intervention. This, of course, requires more case- and space-specific evidence than our models can provide."),
-              hr()
+              p("As a result of these relationships, it is sometimes the case that the forecast models produce relatively large probabilities for both opening and closing events in a country. This can be seen in the visualization tools we present in the 'Figures' tab. One way to think of these instances is that the situation in that country in that space is very fluid, potentially indicating that the country is at a crossroads and prime for intervention. This, of course, requires more case- and space-specific evidence than our models can provide.")
             )
           )
         )
