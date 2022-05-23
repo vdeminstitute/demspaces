@@ -65,7 +65,7 @@ VERSION  <- getOption("demspaces.version")
 print(VERSION)
 ```
 
-    ## [1] "v12-mod"
+    ## [1] "v12.1"
 
 ## Pieces
 
@@ -993,7 +993,7 @@ fn <- sprintf("../output/states-%s.rds", VERSION)
 cat("Saving data as %s", basename(fn))
 ```
 
-    ## Saving data as %s states-v12-mod.rds
+    ## Saving data as %s states-v12.1.rds
 
 ``` r
 write_rds(cy, fn)

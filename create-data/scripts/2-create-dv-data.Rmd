@@ -91,7 +91,7 @@ for (var_i in dv_vars) {
     ) 
   
   # Bypass the normal flow to produce modified data
-  if (getOption("demspaces.version")=="v12-mod") {
+  if (getOption("demspaces.version") >= "v12.1") {
     dv_i <- dv_i %>%
       mutate(var_change = changes_one_country(var, cp[[var_i]], type = "mod", min_f = 0.1),
              # actually the first 2 years of indy are missing with this algo,
