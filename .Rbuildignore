@@ -20,7 +20,6 @@
 ^dashboard$
 ^docs$
 ^modelrunner$
-^outcome-v2$
 
 ^CHANGELOG.md$
 ^required-packages.txt$
