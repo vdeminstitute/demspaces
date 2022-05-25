@@ -1,16 +1,13 @@
-Closing spaces dashboard
+Democratic Spaces Dashboard
 ========================
 
-This is the R Shiny app that is shown at https://www.v-dem.net/en/analysis/DemSpace/
+This is the R Shiny app that is shown at https://www.v-dem.net/demspace.
 
-Run `StartUp.R` to serve the dashboard prototype in a local browser. 
+[`setup.r`](setup.r) is a sourceable script that will check for and if neccessary ask to install the required packages.
 
-To update the dashboard with new data, see the 2020 data cleaning R script in the `Data/` folder and copy over the relevant output files from the `create-data` and `modelrunner` folders. 
+If you have cloned this repo, run `startup.R` to serve the dashboard in a local browser. 
 
-Also, search for all "2022-2023" strings in the dashboard files and replace.
-
-
-To run the dashboard locally (this also presupposes all neccessary packages are installed):
+To run the dashboard locally without cloning the whole repo (this still requires the packages listed in [`setup.r`](setup.r)):
 
 ```r
 library(shiny)
