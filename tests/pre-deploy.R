@@ -46,30 +46,30 @@ test_that("dashboard/data-raw/input/fcasts-rf.csv is current", {
 
 test_that("archived is current", {
   expect_gte(
-    get_mtime("archive/fcasts-rf-v12.csv"),
-    get_mtime("modelrunner/output/fcasts-rf-v12.csv")
+    get_mtime("archive/fcasts-rf-v12.1.csv"),
+    get_mtime("modelrunner/output/fcasts-rf-v12.1.csv")
   )
 
   expect_gte(
-    get_mtime("archive/scores/fcasts-rf-v12-score-summary.csv"),
-    get_mtime("archive/fcasts-rf-v12.csv")
+    get_mtime("archive/scores/fcasts-rf-v12.1-score-summary.csv"),
+    get_mtime("archive/fcasts-rf-v12.1.csv")
   )
 
   expect_gte(
-    get_mtime("archive/data/states-v12.rds"),
-    get_mtime("create-data/output/states-v12.rds")
+    get_mtime("archive/data/states-v12.1.rds"),
+    get_mtime("create-data/output/states-v12.1.rds")
   )
 
   expect_gte(
-    get_mtime("archive/data/states-v12-signature.yml"),
-    get_mtime("create-data/output/states-v12-signature.yml")
+    get_mtime("archive/data/states-v12.1-signature.yml"),
+    get_mtime("create-data/output/states-v12.1-signature.yml")
   )
 })
 
 test_that("archive human readable forecasts are current", {
   # Run human-readable.R if this fails
   expect_gte(
-    get_mtime("archive/forecasts-v12.csv"),
-    get_mtime("archive/fcasts-rf-v12.csv")
+    get_mtime("archive/forecasts-v12.1.csv"),
+    get_mtime("archive/fcasts-rf-v12.1.csv")
   )
 })

@@ -7,7 +7,7 @@ library(dplyr)
 library(stringr)
 
 states <- readRDS(here::here("archive/data/states-v12.rds"))
-states_mod <- readRDS(here::here("outcome-v2/data/states-v12-mod.rds"))
+states_mod <- readRDS(here::here("2022-update/outcome-v2/data/states-v12-mod.rds"))
 
 tbl1 <- states %>%
   select(ends_with("next2")) %>%

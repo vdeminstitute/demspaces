@@ -8,7 +8,8 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-setwd(here::here("outcome-v2"))
+oldwd <- getwd()
+setwd(here::here("2022-update/outcome-v2"))
 
 res_files <- dir("output", full.names = TRUE, pattern = "cv-results")
 res <- lapply(res_files, readRDS)
@@ -52,4 +53,4 @@ tbl %>%
 
 
 
-
+setwd(oldwd)

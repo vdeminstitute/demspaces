@@ -9,7 +9,7 @@ library(demspacesR)
 data(spaces)
 
 states <- readRDS(here::here("archive/data/states-v12.rds"))
-states_mod <- readRDS(here::here("create-data/output/states-v12-mod.rds"))
+states_mod <- readRDS(here::here("archive/data/states-v12.1.rds"))
 
 # Construct outcome column names
 next2 <- sort(

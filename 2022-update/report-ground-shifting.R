@@ -17,6 +17,7 @@ states9 <- readRDS(here::here("archive/data/states-v9.rds"))
 states10 <- readRDS(here::here("archive/data/states-v10.rds"))
 states11 <- readRDS(here::here("archive/data/states-v11.rds"))
 states12 <- readRDS(here::here("archive/data/states-v12.rds"))
+states12.1 <- readRDS(here::here("archive/data/states-v12.1.rds"))
 
 states9 <- states9 %>%
   select(gwcode, year, ends_with("change")) %>%
@@ -39,7 +40,12 @@ states12 <- states12 %>%
   pivot_longer(-c(gwcode, year), names_to = "space", values_to = "change") %>%
   mutate(version = 12)
 
-all <- bind_rows(states9, states10, states11, states12) %>%
+states12.1 <- states12.1 %>%
+  select(gwcode, year, ends_with("change"))  %>%
+  pivot_longer(-c(gwcode, year), names_to = "space", values_to = "change") %>%
+  mutate(version = 12.1)
+
+all <- bind_rows(states9, states10, states11, states12, states12.1) %>%
   mutate(space = str_remove(space, "_change")) %>%
   mutate(space = str_remove(space, "dv_")) %>%
   mutate(version = paste0("v", version)) %>%
@@ -159,7 +165,7 @@ recode <- function(x) {
 #
 
 pos_long <- pos %>%
-  pivot_longer(c(v9, v10, v11, v12), names_to = "version", values_to = "change")
+  pivot_longer(c(v9, v10, v11, v12, v12.1), names_to = "version", values_to = "change")
 to <- pos_long %>%
   rename(version2 = version, change2 = change)
 # joint the comparison groups and take out combinations of data versions that
@@ -173,9 +179,12 @@ comp <- comp %>%
 
 # Ok, now I can calculate the actual agreement rates
 tbl <- comp %>%
-  group_by(version, version2) %>%
-  summarize(ag_rate = mean(change==change2)) %>%
-  arrange(c(2, 5, 3, 1, 4))
+  group_by(comparison) %>%
+  summarize(ag_rate = mean(change==change2),
+            .groups = "drop") %>%
+  filter(comparison %in% c("v9-v10", "v10-v11", "v11-v12", "v9-v11", "v10-v12", "v12-v12.1")) %>%
+  mutate(comparison = factor(comparison, levels = c("v9-v10", "v10-v11", "v11-v12", "v9-v11", "v10-v12", "v12-v12.1"))) %>%
+  arrange(comparison)
 
 readr::write_csv(tbl, "report-data/tbl-agreement.csv")
 
@@ -194,6 +203,7 @@ pos_long %>%
 
 
 ##### old stuff
+stop("Old stuff below")
 
 # (Also by space if needed)
 comp %>%

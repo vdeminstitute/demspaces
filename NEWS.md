@@ -1,5 +1,13 @@
-demspaces 12 (2022 Update)
+demspaces 12.1 (2022 Update)
 ==========================
+
+### Change in outcomes
+
+A major change this year was in the way that opening and closing events are coded. Up to an including version "v12", this was based on space-specific thresholds: if the increase or decrease in the indicator for a space from the previous year's value exceeded that threshold, we coded an event. 
+
+This approach missed more gradual changes that over a period of multiple years could still lead to significant changes in the state of a country. The new outcome coding, used in version "v12.1", now considers more than just the year-on-year change, and is able to capture some of these more gradual transitions. 
+
+### Data and model changes
 
 - Moved external data scripts to a new repo, `ds-external-data`. This is because PART and DS both require some but no the same external data, so it is just easier to pool them in one repo where updating can be done. 
 - Removed "_squared" terms for the space indicator variables. Although these showed up highly in the 2021 variable importance investigation, there is no reason the a random forest model would need squared terms, and so I suspect they were getting picked just as surrogates for the untransformed indicator variables. 
