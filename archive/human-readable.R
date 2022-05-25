@@ -10,7 +10,7 @@ library(demspacesR)
 
 setwd(here::here("archive"))
 
-raw <- read_csv("fcasts-rf-v12.csv")
+raw <- read_csv("fcasts-rf-v12.1.csv")
 
 raw <- raw %>% filter(for_years == max(for_years))
 
@@ -27,4 +27,4 @@ raw <- raw %>%
   select(From_Year, For_Years, Space, Country, p_up, p_same, p_down) %>%
   mutate(p_up = round(p_up, 3), p_same = round(p_same, 3), p_down = round(p_down, 3))
 
-write_csv(raw, "forecasts-v12.csv")
+write_csv(raw, "forecasts-v12.1.csv")
