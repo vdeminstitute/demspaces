@@ -1,17 +1,21 @@
 ---
 title: "Democratic Spaces 2022"
 subtitle: "Updated forecasts and a refinement in how opening and closing events are measured"
-author: "Andreas Beger"
+author: "Andreas Beger (Basil Analytics)^[Email: andy@basilanalytics.com]"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output: 
   pdf_document:
     latex_engine: xelatex
     toc: yes
     keep_tex: yes
+    fig_caption: yes
 mainfont: Roboto
 sansfont: Roboto
 fontsize: 11pt
+colorlinks: yes
 bibliography: report.bib
+header-includes:
+  - \usepackage[labelfont=bf]{caption}
 ---
 
 ```{r setup, include=FALSE}
@@ -41,7 +45,7 @@ color_direction <- function(direction) {
 - The new forecasts overall indicate higher risks of continued closing events, reflecting the ongoing global worsening of democratic governance. While on balance the trend leans towards negative, there are also still significant potentials for opening movements in other countries and spaces. 
 - The accuracy of the v10 forecasts, which can now be fully assessed, is in line with the previous v9 accuracy. With AUC-ROC values of 0.7 the forecasts could be more accurate--0.8 or slightly higher is common in many political instability applications--but are informative additions over a naive baseline estimate. There is some indication that the stability of the most recent V-Dem version has increased, which would alleviate the shifting-ground problem induced by changes in historical data as each V-Dem version continues to refine the data.
 
-(Note: the forecasts are indexed with the V-Dem data version used to produce them. For the latest, v12 forecasts, I use "v12" to denote forecasts using the old outcome coding method, and "v12.1" for the new ERT-lite outcome coding method. Both sets of forecasts can be found at https://github.com/vdeminstitute/demspaces/tree/main/archive, but only the "v12.1" forecasts are shown in the dashboard.)
+(Note: the forecasts are indexed with the V-Dem data version used to produce them. For the latest, v12 forecasts, I use "v12" to denote forecasts using the old outcome coding method, and "v12.1" for the new ERT-lite outcome coding method. Both sets of forecasts can be found in the project repo [demspaces/archive](https://github.com/vdeminstitute/demspaces/tree/main/archive) folder, but only the "v12.1" forecasts are shown in the dashboard.)
 
 # ERT-lite: new method for identifying opening and closing events
 
@@ -77,13 +81,15 @@ tbl %>%
   add_header_above(c("", "Closing" = 2, "Same" = 2, "Opening" = 2))
 ```
 
-More details of this change are discussed in Section "\href{ert-lite-assessment}{ERT-lite Assessment}" below.
+More details of this change are discussed in Section "\hyperlink{ert-lite-assessment}{ERT-lite Assessment}" below.
 
 # Overview of the new 2022-2023 forecasts
 
-Because the new, ERT-style outcome coding method identifies more opening and closing events than the old method, we should expect that the forecasts generally are higher. But there may at the same time also be systemic changes in the global risk of opening and closing events, e.g. increasing instability. To untangle this, Figure \ref{fig:new-forecast-plot} summarizes last year's "v11" forecasts, the directly comparable new "v12" forecasts using the old-style outcome coding method, and the new ERT-lite "v12.1" forecasts. The only difference between the "v12" and "v12.1" forecasts is that the latter uses the new ERT-lite outcome coding method. We can see that the forecasts in general are indeed higher--from an average of 14.0% to 19.4% and 13.8% to 18.5% for closing and opening, respectively. By comparing the "v12" and "v11" forecasts, where the only difference is that the former is using updated data, we can assess whether there are global trends in the democratic spaces. There are no dramatic changes. The average opening risk is unchanged at 13.8% and the average closing risk slightly increases from 13.4% to 14.0%. 
+Because the new, ERT-style outcome coding method identifies more opening and closing events than the old method, we should expect that the forecasts generally are higher. But there may at the same time also be systemic changes in the global risk of opening and closing events, e.g. increasing instability. 
 
-```{r new-forecast-plot, fig.height=3, fig.cap="Distribution of last year's and this year's forecasts, pooled over spaces."}
+To untangle this, Figure \ref{fig:new-forecast-plot} summarizes last year's "v11" forecasts, the directly comparable new "v12" forecasts using the old-style outcome coding method, and the new ERT-lite "v12.1" forecasts. The only difference between the "v12" and "v12.1" forecasts is that the latter uses the new ERT-lite outcome coding method. We can see that the forecasts in general are indeed higher--from an average of 14.0% to 19.4% and 13.8% to 18.5% for closing and opening, respectively. By comparing the "v12" and "v11" forecasts, where the only difference is that the former is using updated data, we can assess whether there are global trends in the democratic spaces. There are no dramatic changes. The average opening risk is unchanged at 13.8% and the average closing risk slightly increases from 13.4% to 14.0%. 
+
+```{r new-forecast-plot, fig.height=3, fig.cap="Distribution of last year's and this year's forecasts, pooled over spaces.\\label{fig:new-forecast-plot}"}
 new_forecast_plot <- readRDS("report-data/new-forecast-plot.rds")
 ggplot(new_forecast_plot, aes(x = v, y = value, group = v)) +
   facet_wrap(~direction, scales = "free_x") +
@@ -94,7 +100,7 @@ ggplot(new_forecast_plot, aes(x = v, y = value, group = v)) +
   labs(x = "", y = "Pr(Event)")
 ```
 
-Table \ref{tab:topN} shows the 5 highest forecasts for opening and closing changes for each of the 6 spaces. 
+Table \ref{tab:topN} shows the 5 highest forecasts for opening and closing changes for each of the 6 spaces (using the "v12.1" forecasts). 
 
 ```{r topN}
 tbl <- readRDS("report-data/tbl-topN.rds")
@@ -134,36 +140,40 @@ The first two sets of forecasts can be fully assessed as enough new data has acc
 
 ## Shifting ground
 
-Forecast accuracy is influenced by changes in the democratic space indicator variables between V-Dem versions. In practice this has the effect of decreasing forecast accuracy.
+Forecast accuracy is influenced by changes in the democratic space indicator variables between V-Dem versions.^[This shifting-ground phenomenon is described in more detail in the 2021 update report, "[Democratic Spaces Dashboard: 2021 Update and Accuracy Assessments](https://github.com/vdeminstitute/demspaces/blob/main/2021-update/DemocraticSpaces2021.pdf)".] In practice this has the effect of decreasing forecast accuracy.
 
-Changes in the outcomes between V-Dem data versions are decreasing. 
+Fortunately, changes in the outcomes between V-Dem data versions are decreasing. 
 
 Table \ref{tab:agreement} shows year to year (first 3 rows), and year to year + 2 (this is how the forecasts are assessed) agreement rates for opening and closing outcome cases. This is for 1970 to 2018, when the v9 data ended. The "Agreement Rate" column shows agreement rates for cases that are a positive in either dataset version, i.e. the number of joint opening and closing events that _both_ dataset versions coded as opening or closing.
 
 ```{r agreement}
 # 1970 - 2018, positive cases in either version
 tbl <- read_csv("report-data/tbl-agreement.csv", show_col_types = FALSE)
+tbl <- head(tbl, -1)
 tbl %>%
   setNames(c("Comparison", "Agreement Rate")) %>%
-  knitr::kable(booktabs = TRUE, digits = 2, linesep = c("", "", "\\addlinespace", "", "\\addlinespace")) %>%
+  knitr::kable(booktabs = TRUE, digits = 2, linesep = c("", "", "\\addlinespace", "", "\\addlinespace"),
+               caption = "Agreement rates between opening and closing cases in different V-Dem data versions.") %>%
   kable_styling()
 ```
 
 The first three rows are year-to-year changes. For the first two years of DemSpaces, it was around 0.65. The outcomes with this year's v12 data however match 0.88 with the v11 data, much higher. That should mean that the accuracy of the current forecasts will be higher than it has been for the v9 and v10 forecasts. 
 
-Here is what all cases look like between v11 and v12^[Note that I am using the old-style outcome coding. That is the one relevant for scoring the older forecasts.]:
+Table \ref{tab:v11-v12} shows what all cases look like between v11 and v12^[Note that I am using the old-style outcome coding. That is the one relevant for scoring the older forecasts.]. This is with the full data from 1970 to 2021. More than 80% of opening and closing cases are coded as such in both dataset versions. When there are coding differences, it is always a opening or closing case that is considered as no change ("Same") in the other dataset. Never do the two datasets code changes in opposing directions. 
 
-```{r}
+```{r v11-v12}
 # 2009 - 2020
 tbl <- read_csv("report-data/tbl-v11-v12.csv", show_col_types = FALSE)
-tbl <- head(tbl, -1)
 tbl |>
   setNames(c("v11", "Closing", "Same", "Opening")) |>
-  knitr::kable(booktabs = TRUE) |>
-  add_header_above(c("", "v12" = 3))
+  transform(v11 = c("Closing", "Same", "Opening")) |>
+  knitr::kable(booktabs = TRUE, caption="Cross-tabulation of v11 and v12 outcomes") |>
+  add_header_above(c("", "v12" = 3)) |>
+  kable_styling()
 ```
 
-Since the forecasts are two years ahead, it takes two V-Dem data updates to fully observe the outcomes. Thus v9 forecasts are scored with v11 data, not v10 data. The second two rows in the table show the agreement rates for opening and closing cases with a two year version difference. It has also been increasing, although there still is a lot of shifting ground that the forecasts have to measure against. 
+Let's go back to the last two rows in Table \ref{tab:agreement}. Since the forecasts are two years ahead, it takes two V-Dem data updates to fully observe the outcomes. Thus v9 forecasts are scored with v11 data, not v10 data. The second two rows in the table show the agreement rates for opening and closing cases with a two year version difference. It has also been increasing, although there still is a lot of shifting ground that the forecasts have to measure against. 
+
 Generally, the higher this agreement is, the higher the accuracy of the forecasts will be. The test forecasts have for example AUC-ROC values greater than 0.8, so with more agreement the actual performance should converge to some value like that. 
 
 The good news is that the agreement rate has been becoming higher, indicating less changes in the historical data between updated versions of V-Dem. 
@@ -175,14 +185,17 @@ Table \ref{tab:v9-accuracy} shows the accuracy of the v9 (2019 - 2020) forecasts
 ```{r v9-accuracy}
 tbl <- read_csv("report-data/acc-v9.csv", show_col_types = FALSE)
 tbl$direction[is.na(tbl$direction)] <- "Average"
-tbl$Space[tbl$direction=="Average"] <- "Average"
+tbl$Space[tbl$direction=="Average"] <- "\\textbf{Average}"
+tbl$direction <- NULL
 tbl |>
-  setNames(c("Space", "Direction", "Cases", "High Risk", "AUC-ROC", "AUC-PR", "Pos. Rate")) |>
-  transform(Direction = NULL) |>
-  knitr::kable(booktabs = TRUE, digits = c(0, 0, 0, 2, 2, 2), caption = "Accuracy of the v9 (2019) forecasts, scored with v11 data.") |>
+  setNames(c("Space", "Cases", "High Risk", "AUC-ROC", "AUC-PR", "Pos. Rate")) |>
+  knitr::kable("latex", booktabs = TRUE, digits = c(0, 0, 0, 2, 2, 2), 
+               caption = "Accuracy of the v9 (2019) forecasts, scored with v11 data.",
+               escape = FALSE) |>
   kable_styling() |>
   pack_rows("Closing", 1, 6) |>
-  pack_rows("Opening", 7, 12)
+  pack_rows("Opening", 7, 12) |>
+  row_spec(12, extra_latex_after = "\\addlinespace[0.3em]") 
 ```
 
 The accuracy of the v10 (2020 - 2021) forecasts, scored with v12 data, is shown in Table \ref{tab:v10-accuracy}. It is overall comparable to the v9 forecast performance. 
@@ -190,47 +203,53 @@ The accuracy of the v10 (2020 - 2021) forecasts, scored with v12 data, is shown 
 ```{r v10-accuracy}
 tbl <- read_csv("report-data/acc-v10.csv", show_col_types = FALSE)
 tbl$direction[is.na(tbl$direction)] <- "Average"
-tbl$Space[tbl$direction=="Average"] <- "Average"
+tbl$Space[tbl$direction=="Average"] <- "\\textbf{Average}"
+tbl$direction <- NULL
 tbl |>
-  setNames(c("Space", "Direction", "Cases", "High Risk", "AUC-ROC", "AUC-PR", "Pos. Rate")) |>
-  transform(Direction = NULL) |>
-  knitr::kable(booktabs = TRUE, digits = c(0, 0, 0, 2, 2, 2), caption = "Accuracy of the v10 (2020) forecasts, scores with v12 data") |>
+  setNames(c("Space", "Cases", "High Risk", "AUC-ROC", "AUC-PR", "Pos. Rate")) |>
+  knitr::kable("latex", booktabs = TRUE, digits = c(0, 0, 0, 2, 2, 2), 
+               caption = "Accuracy of the v10 (2020) forecasts, scores with v12 data",
+               escape = FALSE) |>
   kable_styling() |>
   pack_rows("Closing", 1, 6) |>
-  pack_rows("Opening", 7, 12)
+  pack_rows("Opening", 7, 12) |>
+  row_spec(12, extra_latex_after = "\\addlinespace[0.3em]") 
 ```
 
 Table \ref{tab:v11-accuracy} shows the **partial** accuracy of the v11 (2021 - 2022) forecasts from last year, with outcomes for 2021 but missing for 2022. These numbers will go up when data for this year becomes available. Right now they are lower than the accuracy for the v9 and 10 forecasts. 
 
 ```{r v11-accuracy}
-
 tbl <- read_csv("report-data/acc-v11.csv", show_col_types = FALSE)
 tbl$direction[is.na(tbl$direction)] <- "Average"
-tbl$Space[tbl$direction=="Average"] <- "Average"
+tbl$Space[tbl$direction=="Average"] <- "\\textbf{Average}"
+tbl$direction <- NULL
 tbl |>
-  setNames(c("Space", "Direction", "Cases", "High Risk", "AUC-ROC", "AUC-PR", "Pos. Rate")) |>
-  transform(Direction = NULL) |>
-  knitr::kable(booktabs = TRUE, digits = c(0, 0, 0, 2, 2, 2), caption = "Partial accuracy of the v11 (2021) forecasts, scores with v12 data") |>
+  setNames(c("Space", "Cases", "High Risk", "AUC-ROC", "AUC-PR", "Pos. Rate")) |>
+  knitr::kable("latex", booktabs = TRUE, digits = c(0, 0, 0, 2, 2, 2), 
+               caption = "Partial accuracy of the v11 (2021) forecasts, scores with v12 data",
+               escape = FALSE) |>
   kable_styling() |>
   pack_rows("Closing", 1, 6) |>
-  pack_rows("Opening", 7, 12)
+  pack_rows("Opening", 7, 12) |>
+  row_spec(12, extra_latex_after = "\\addlinespace[0.3em]") 
 ```
 
-Overall, there is no change in the assessment of accuracy that was in last year's report: the DemSpaces forecasts are limited but informative indicators of opening and closing potential. If the V-Dem data become more stable, as they appear to be with the latest update, then there is reason to expect that the overall performance will converge to a level with AUC-ROC values of around 0.8, which is consistent with the performance in a variety of conflict forecasting applications. 
+Overall, there is no change in the assessment of accuracy from last year's report: the DemSpaces forecasts are limited but informative indicators of opening and closing potential. If the V-Dem data become more stable, as they appear to be with the latest update, then there is reason to expect that the overall performance will converge to a level with AUC-ROC values of around 0.8, which is consistent with the performance in a variety of conflict forecasting applications. 
 
 # Summary of other technical changes and additional resources
 
-This section briefly reviews some other changes that occurred during this year's update.
+This section reviews some other changes that occurred during this year's update.
 
 ## Dashboard changes
 
 - Added functionality to highlight past opening and closing events in the time series plot on the bottom right of the dashboard. ([Issue #12](https://github.com/vdeminstitute/demspaces/issues/12))
-- Minor dashboard design changes to make it easier to select/de-select all spaces on the time-series plot ([Issue #13](https://github.com/vdeminstitute/demspaces/issues/13)); better text layout for wide screens ([Issue #20](https://github.com/vdeminstitute/demspaces/issues/20)); various updates to the About tab ([Issue #21](https://github.com/vdeminstitute/demspaces/issues/21)); and overall changes to the design of the dashboard text, header formatting.
+- Minor dashboard design changes to make it easier to select/de-select all spaces on the time-series plot ([Issue #13](https://github.com/vdeminstitute/demspaces/issues/13)); better text layout for wide screens ([Issue #20](https://github.com/vdeminstitute/demspaces/issues/20)); various updates to the About tab ([Issue #21](https://github.com/vdeminstitute/demspaces/issues/21)); and overall changes to the design of the dashboard text, header formatting, etc. ([Issue #24](https://github.com/vdeminstitute/demspaces/issues/24)).
 
 ## Data and model changes
 
 - Eliminated impossible forecasts, e.g. when a country has such as high value in a space already that it cannot increase beyond the relevant space threshold to have an opening event. This is fixed by hard-coded post-processing of the raw model forecasts. ([Issue #15](https://github.com/vdeminstitute/demspaces/issues/15))
 - Removed "_squared" variable transforms and instead added a moving 10-year standard deviation as indicator of general recent instability ("_sd10"); this overall slightly improved model accuracy. ([Issue #18](https://github.com/vdeminstitute/demspaces/issues/18))
+- Tuning experiments to review and find better hyperparameter values for the random forest models. All hyperparameters are now fixed, which speeds up model estimation. The tuning experiments are described in the "[RF tuning experiments](https://github.com/vdeminstitute/demspaces/blob/main/2022-update/tuning-experiments.md)" note. The number of trees in the models is set at an intentionally higher value to reduce the random variation of point forecasts, see the "[RF Stability](https://github.com/vdeminstitute/demspaces/blob/main/2022-update/rf-stability.md)" note.
 
 ## ERT-lite Assessment
 
@@ -259,7 +278,6 @@ Governing & 4.4 & 6.9 & 58 & 2.9 & 5.1 & 75\\
 Economic & 4.7 & 5.9 & 25 & 5.6 & 6.6 & 19\\
 Electoral & 3.1 & 4.8 & 55 & 2.2 & 3.2 & 46\\
 Individual & 4.7 & 8.7 & 87 & 3.0 & 6.0 & 97\\
-\addlinespace
 Associational & 5.8 & 8.8 & 53 & 3.8 & 6.3 & 64\\
 \bottomrule
 \end{tabular}
@@ -267,9 +285,9 @@ Associational & 5.8 & 8.8 & 53 & 3.8 & 6.3 & 64\\
 
 The number of country-years coded as being in an opening or closing episode increases by 66% on average, from a rate of roughly 4% to 6.5% of all country-years. Opening and closing events are thus overall still rare situations.
 
-To assess the potential risk of reduced forecast model performance, I used cross-validation to obtain out-of-sample predictions for all cases we have in the data, from 1970 - 2021. To do this I split the data from 1970 to 2019^[The end date was determined by when the modified outcomes are fully resolved.] into 5 or 10 groups^[The splitting was done by year, i.e. I randomly assigned years to folds.], and then for each group, used the remaining 4 or 9 groups to estimate two models—for the original outcome and the other for the modified outcomes—that then predicted outcomes in the held-back group. These predictions were then used to calculate out-of-sample fit statistics. I repeated the cross-validation several times, giving an overall sample of N = 30 out-of-sample fit statistic values.
+To assess the potential risk of reduced forecast model performance, I used cross-validation to obtain out-of-sample predictions for all cases we have in the data, from 1970 - 2021. To do this I split the data from 1970 to 2019^[The end date was determined by when the modified outcomes are fully resolved.] into 5 or 10 groups^[The splitting was done by year, i.e. I randomly assigned years to folds.], and then for each group, used the remaining 4 or 9 groups to estimate two models, one for the original outcome and the other for the modified outcomes. These two models then predict outcomes in the held-back group, creating out-of-sample predictions. By doing this for all groups we can obtain out-of-sample predictions for the entire data. I repeated the cross-validation several times with different group splits, giving an overall sample of N = 30 out-of-sample fit statistic values.
 
-Table 2 shows the overall performance, pooled across spaces and directions. The first row shows the positive rate for the indicator that the models are forecasting—whether an opening or closing episode occurred during the subsequent 2 years.^[The rates are different from those in Table 1 because we are here additionally summarizing over 2 years. E.g. if only one year in the next 2 was part of an opening episode, it overall gets coded as a 1, thus essentially amplifying the positive rate.]  
+Table 2 shows the overall performance, pooled across spaces and directions. The first row shows the positive rate for the indicator that the models are forecasting—whether an opening or closing episode occurred during the subsequent 2 years.^[The rates are different from those in Table \ref{tab:positive-rates} because we are here additionally summarizing over 2 years. E.g. if only one year in the next 2 was part of an opening episode, it overall gets coded as a 1, thus essentially amplifying the positive rate.]  
 
 \begin{table}
 \centering
@@ -285,15 +303,18 @@ ROC-AUC & 0.81 & 0.81\\
 \end{tabular}
 \end{table}
 
-The new outcome coding does not seem to have a negative impact on performance. AUC-ROC is essentially the same. AUC-PR increases slightly, but part of that surely is because the positive rate increases, i.e. the prediction problem becomes slightly easier. 
+The new outcome coding does not seem to have a negative impact on performance. AUC-ROC is essentially the same. AUC-PR increases slightly, but part of that is because the positive rate increases, i.e. the prediction problem becomes slightly easier. 
 
-# Conclusion
+# Additional Resources
 
 The Democratic Spaces Dashboad can be found at: https://www.v-dem.net/demspace
 
-The data, code, and additional resources can be found in the GitHub repo at: https://github.com/vdeminstitute/demspaces
+The data, code, and additional resources can be found in the GitHub repo at: https://github.com/vdeminstitute/demspaces. This includes:
 
-Note, specifically, that on GitHub there is a folder for the 2022 update, which contains several additional technical notes. 
+- An overview of recent changes in "[NEWS.md](https://github.com/vdeminstitute/demspaces/blob/main/NEWS.md)".
+- Additional notes related to several of the technical changes mentioned above, see the "[2022-update](https://github.com/vdeminstitute/demspaces/tree/main/2022-update)" folder.
+- A note investigating the high risk of Associational closing in France, "[What-if France](https://github.com/vdeminstitute/demspaces/blob/main/2022-update/whatif-france.md)".
+
 
 # References
 

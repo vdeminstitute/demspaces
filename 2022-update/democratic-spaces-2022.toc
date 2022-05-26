@@ -1,0 +1,12 @@
+\contentsline {section}{Summary}{1}{section*.2}%
+\contentsline {section}{ERT-lite: new method for identifying opening and closing events}{2}{section*.3}%
+\contentsline {section}{Overview of the new 2022-2023 forecasts}{3}{section*.7}%
+\contentsline {section}{Accuracy for past forecasts}{4}{section*.10}%
+\contentsline {subsection}{Shifting ground}{6}{section*.12}%
+\contentsline {subsection}{Accuracy for v9 and v10 forecasts, partial assessment for v11}{7}{section*.15}%
+\contentsline {section}{Summary of other technical changes and additional resources}{8}{section*.19}%
+\contentsline {subsection}{Dashboard changes}{8}{section*.20}%
+\contentsline {subsection}{Data and model changes}{9}{section*.21}%
+\contentsline {subsection}{ERT-lite Assessment}{9}{section*.22}%
+\contentsline {section}{Additional Resources}{11}{section*.25}%
+\contentsline {section}{References}{11}{section*.26}%

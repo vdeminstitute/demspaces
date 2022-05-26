@@ -1,6 +1,7 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
   11pt,
@@ -40,8 +41,12 @@
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
   pdftitle={Democratic Spaces 2022},
-  pdfauthor={Andreas Beger},
-  hidelinks,
+  pdfauthor={Andreas Beger (Basil Analytics)},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
@@ -85,6 +90,7 @@
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\usepackage[labelfont=bf]{caption}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -112,13 +118,15 @@
 \makeatother
 \subtitle{Updated forecasts and a refinement in how opening and closing
 events are measured}
-\author{Andreas Beger}
-\date{25 May 2022}
+\author{Andreas Beger (Basil Analytics)\footnote{Email:
+  \href{mailto:andy@basilanalytics.com}{\nolinkurl{andy@basilanalytics.com}}}}
+\date{26 May 2022}
 
 \begin{document}
 \maketitle
 
 {
+\hypersetup{linkcolor=}
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
@@ -156,9 +164,10 @@ events are measured}
 (Note: the forecasts are indexed with the V-Dem data version used to
 produce them. For the latest, v12 forecasts, I use ``v12'' to denote
 forecasts using the old outcome coding method, and ``v12.1'' for the new
-ERT-lite outcome coding method. Both sets of forecasts can be found at
-\url{https://github.com/vdeminstitute/demspaces/tree/main/archive}, but
-only the ``v12.1'' forecasts are shown in the dashboard.)
+ERT-lite outcome coding method. Both sets of forecasts can be found in
+the project repo
+\href{https://github.com/vdeminstitute/demspaces/tree/main/archive}{demspaces/archive}
+folder, but only the ``v12.1'' forecasts are shown in the dashboard.)
 
 \hypertarget{ert-lite-new-method-for-identifying-opening-and-closing-events}{%
 \section{ERT-lite: new method for identifying opening and closing
@@ -240,7 +249,7 @@ Informational & 20 & 30 & 143 & 125 & 6 & 14\\
 \end{table}
 
 More details of this change are discussed in Section
-``\href{ert-lite-assessment}{ERT-lite Assessment}'' below.
+``\hyperlink{ert-lite-assessment}{ERT-lite Assessment}'' below.
 
 \hypertarget{overview-of-the-new-2022-2023-forecasts}{%
 \section{Overview of the new 2022-2023
@@ -250,29 +259,32 @@ Because the new, ERT-style outcome coding method identifies more opening
 and closing events than the old method, we should expect that the
 forecasts generally are higher. But there may at the same time also be
 systemic changes in the global risk of opening and closing events,
-e.g.~increasing instability. To untangle this, Figure
-\ref{fig:new-forecast-plot} summarizes last year's ``v11'' forecasts,
-the directly comparable new ``v12'' forecasts using the old-style
-outcome coding method, and the new ERT-lite ``v12.1'' forecasts. The
-only difference between the ``v12'' and ``v12.1'' forecasts is that the
-latter uses the new ERT-lite outcome coding method. We can see that the
-forecasts in general are indeed higher--from an average of 14.0\% to
-19.4\% and 13.8\% to 18.5\% for closing and opening, respectively. By
-comparing the ``v12'' and ``v11'' forecasts, where the only difference
-is that the former is using updated data, we can assess whether there
-are global trends in the democratic spaces. There are no dramatic
-changes. The average opening risk is unchanged at 13.8\% and the average
-closing risk slightly increases from 13.4\% to 14.0\%.
+e.g.~increasing instability.
+
+To untangle this, Figure \ref{fig:new-forecast-plot} summarizes last
+year's ``v11'' forecasts, the directly comparable new ``v12'' forecasts
+using the old-style outcome coding method, and the new ERT-lite
+``v12.1'' forecasts. The only difference between the ``v12'' and
+``v12.1'' forecasts is that the latter uses the new ERT-lite outcome
+coding method. We can see that the forecasts in general are indeed
+higher--from an average of 14.0\% to 19.4\% and 13.8\% to 18.5\% for
+closing and opening, respectively. By comparing the ``v12'' and ``v11''
+forecasts, where the only difference is that the former is using updated
+data, we can assess whether there are global trends in the democratic
+spaces. There are no dramatic changes. The average opening risk is
+unchanged at 13.8\% and the average closing risk slightly increases from
+13.4\% to 14.0\%.
 
 \begin{figure}
 \centering
 \includegraphics{democratic-spaces-2022_files/figure-latex/new-forecast-plot-1.pdf}
 \caption{Distribution of last year's and this year's forecasts, pooled
-over spaces.}
+over spaces.\label{fig:new-forecast-plot}}
 \end{figure}
 
 Table \ref{tab:topN} shows the 5 highest forecasts for opening and
-closing changes for each of the 6 spaces.
+closing changes for each of the 6 spaces (using the ``v12.1''
+forecasts).
 
 \begin{table}
 
@@ -362,10 +374,15 @@ We can partially score last year's (v11) forecasts with 2021 outcomes.
 \subsection{Shifting ground}\label{shifting-ground}}
 
 Forecast accuracy is influenced by changes in the democratic space
-indicator variables between V-Dem versions. In practice this has the
-effect of decreasing forecast accuracy.
+indicator variables between V-Dem versions.\footnote{This
+  shifting-ground phenomenon is described in more detail in the 2021
+  update report,
+  ``\href{https://github.com/vdeminstitute/demspaces/blob/main/2021-update/DemocraticSpaces2021.pdf}{Democratic
+  Spaces Dashboard: 2021 Update and Accuracy Assessments}''.} In
+practice this has the effect of decreasing forecast accuracy.
 
-Changes in the outcomes between V-Dem data versions are decreasing.
+Fortunately, changes in the outcomes between V-Dem data versions are
+decreasing.
 
 Table \ref{tab:agreement} shows year to year (first 3 rows), and year to
 year + 2 (this is how the forecasts are assessed) agreement rates for
@@ -376,8 +393,10 @@ joint opening and closing events that \emph{both} dataset versions coded
 as opening or closing.
 
 \begin{table}
+
+\caption{\label{tab:agreement}Agreement rates between opening and closing cases in different V-Dem data versions.}
 \centering
-\begin{tabular}{lr}
+\begin{tabular}[t]{lr}
 \toprule
 Comparison & Agreement Rate\\
 \midrule
@@ -387,8 +406,6 @@ v11-v12 & 0.88\\
 \addlinespace
 v9-v11 & 0.63\\
 v10-v12 & 0.66\\
-\addlinespace
-v12-v12.1 & 0.60\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -399,31 +416,44 @@ however match 0.88 with the v11 data, much higher. That should mean that
 the accuracy of the current forecasts will be higher than it has been
 for the v9 and v10 forecasts.
 
-Here is what all cases look like between v11 and v12\footnote{Note that
-  I am using the old-style outcome coding. That is the one relevant for
-  scoring the older forecasts.}:
+Table \ref{tab:v11-v12} shows what all cases look like between v11 and
+v12\footnote{Note that I am using the old-style outcome coding. That is
+  the one relevant for scoring the older forecasts.}. This is with the
+full data from 1970 to 2021. More than 80\% of opening and closing cases
+are coded as such in both dataset versions. When there are coding
+differences, it is always a opening or closing case that is considered
+as no change (``Same'') in the other dataset. Never do the two datasets
+code changes in opposing directions.
 
-\begin{tabular}{lrrr}
+\begin{table}
+
+\caption{\label{tab:v11-v12}Cross-tabulation of v11 and v12 outcomes}
+\centering
+\begin{tabular}[t]{lrrr}
 \toprule
 \multicolumn{1}{c}{} & \multicolumn{3}{c}{v12} \\
 \cmidrule(l{3pt}r{3pt}){2-4}
 v11 & Closing & Same & Opening\\
 \midrule
-down & 524 & 68 & 0\\
-same & 55 & 9937 & 40\\
+Closing & 524 & 68 & 0\\
+Same & 55 & 9937 & 40\\
+Opening & 0 & 57 & 461\\
 \bottomrule
 \end{tabular}
+\end{table}
 
-Since the forecasts are two years ahead, it takes two V-Dem data updates
-to fully observe the outcomes. Thus v9 forecasts are scored with v11
-data, not v10 data. The second two rows in the table show the agreement
-rates for opening and closing cases with a two year version difference.
-It has also been increasing, although there still is a lot of shifting
-ground that the forecasts have to measure against. Generally, the higher
-this agreement is, the higher the accuracy of the forecasts will be. The
-test forecasts have for example AUC-ROC values greater than 0.8, so with
-more agreement the actual performance should converge to some value like
-that.
+Let's go back to the last two rows in Table \ref{tab:agreement}. Since
+the forecasts are two years ahead, it takes two V-Dem data updates to
+fully observe the outcomes. Thus v9 forecasts are scored with v11 data,
+not v10 data. The second two rows in the table show the agreement rates
+for opening and closing cases with a two year version difference. It has
+also been increasing, although there still is a lot of shifting ground
+that the forecasts have to measure against.
+
+Generally, the higher this agreement is, the higher the accuracy of the
+forecasts will be. The test forecasts have for example AUC-ROC values
+greater than 0.8, so with more agreement the actual performance should
+converge to some value like that.
 
 The good news is that the agreement rate has been becoming higher,
 indicating less changes in the historical data between updated versions
@@ -443,7 +473,7 @@ from the 2021 update last year.
 \centering
 \begin{tabular}[t]{lrrrrr}
 \toprule
-Space & Cases & High.Risk & AUC.ROC & AUC.PR & Pos..Rate\\
+Space & Cases & High Risk & AUC-ROC & AUC-PR & Pos. Rate\\
 \midrule
 \addlinespace[0.3em]
 \multicolumn{6}{l}{\textbf{Closing}}\\
@@ -461,7 +491,8 @@ Space & Cases & High.Risk & AUC.ROC & AUC.PR & Pos..Rate\\
 \hspace{1em}Governing & 26 & 11 & 0.72 & 0.24 & 0.15\\
 \hspace{1em}Individual & 19 & 12 & 0.82 & 0.29 & 0.11\\
 \hspace{1em}Informational & 19 & 10 & 0.77 & 0.35 & 0.11\\
-Average & 23 & 10 & 0.71 & 0.25 & 0.14\\
+\addlinespace[0.3em]
+\textbf{Average} & 23 & 10 & 0.71 & 0.25 & 0.14\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -476,7 +507,7 @@ the v9 forecast performance.
 \centering
 \begin{tabular}[t]{lrrrrr}
 \toprule
-Space & Cases & High.Risk & AUC.ROC & AUC.PR & Pos..Rate\\
+Space & Cases & High Risk & AUC-ROC & AUC-PR & Pos. Rate\\
 \midrule
 \addlinespace[0.3em]
 \multicolumn{6}{l}{\textbf{Closing}}\\
@@ -494,7 +525,8 @@ Space & Cases & High.Risk & AUC.ROC & AUC.PR & Pos..Rate\\
 \hspace{1em}Governing & 20 & 8 & 0.74 & 0.19 & 0.12\\
 \hspace{1em}Individual & 17 & 6 & 0.66 & 0.13 & 0.10\\
 \hspace{1em}Informational & 13 & 4 & 0.64 & 0.19 & 0.08\\
-Average & 24 & 10 & 0.70 & 0.23 & 0.14\\
+\addlinespace[0.3em]
+\textbf{Average} & 24 & 10 & 0.70 & 0.23 & 0.14\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -511,7 +543,7 @@ and 10 forecasts.
 \centering
 \begin{tabular}[t]{lrrrrr}
 \toprule
-Space & Cases & High.Risk & AUC.ROC & AUC.PR & Pos..Rate\\
+Space & Cases & High Risk & AUC-ROC & AUC-PR & Pos. Rate\\
 \midrule
 \addlinespace[0.3em]
 \multicolumn{6}{l}{\textbf{Closing}}\\
@@ -529,13 +561,14 @@ Space & Cases & High.Risk & AUC.ROC & AUC.PR & Pos..Rate\\
 \hspace{1em}Governing & 8 & 5 & 0.80 & 0.10 & 0.05\\
 \hspace{1em}Individual & 9 & 5 & 0.71 & 0.11 & 0.05\\
 \hspace{1em}Informational & 6 & 3 & 0.73 & 0.06 & 0.04\\
-Average & 14 & 6 & 0.69 & 0.13 & 0.08\\
+\addlinespace[0.3em]
+\textbf{Average} & 14 & 6 & 0.69 & 0.13 & 0.08\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Overall, there is no change in the assessment of accuracy that was in
-last year's report: the DemSpaces forecasts are limited but informative
+Overall, there is no change in the assessment of accuracy from last
+year's report: the DemSpaces forecasts are limited but informative
 indicators of opening and closing potential. If the V-Dem data become
 more stable, as they appear to be with the latest update, then there is
 reason to expect that the overall performance will converge to a level
@@ -546,8 +579,8 @@ performance in a variety of conflict forecasting applications.
 \section{Summary of other technical changes and additional
 resources}\label{summary-of-other-technical-changes-and-additional-resources}}
 
-This section briefly reviews some other changes that occurred during
-this year's update.
+This section reviews some other changes that occurred during this year's
+update.
 
 \hypertarget{dashboard-changes}{%
 \subsection{Dashboard changes}\label{dashboard-changes}}
@@ -568,7 +601,9 @@ this year's update.
   \#20}); various updates to the About tab
   (\href{https://github.com/vdeminstitute/demspaces/issues/21}{Issue
   \#21}); and overall changes to the design of the dashboard text,
-  header formatting.
+  header formatting, etc.
+  (\href{https://github.com/vdeminstitute/demspaces/issues/24}{Issue
+  \#24}).
 \end{itemize}
 
 \hypertarget{data-and-model-changes}{%
@@ -589,6 +624,17 @@ this year's update.
   (``\_sd10''); this overall slightly improved model accuracy.
   (\href{https://github.com/vdeminstitute/demspaces/issues/18}{Issue
   \#18})
+\item
+  Tuning experiments to review and find better hyperparameter values for
+  the random forest models. All hyperparameters are now fixed, which
+  speeds up model estimation. The tuning experiments are described in
+  the
+  ``\href{https://github.com/vdeminstitute/demspaces/blob/main/2022-update/tuning-experiments.md}{RF
+  tuning experiments}'' note. The number of trees in the models is set
+  at an intentionally higher value to reduce the random variation of
+  point forecasts, see the
+  ``\href{https://github.com/vdeminstitute/demspaces/blob/main/2022-update/rf-stability.md}{RF
+  Stability}'' note.
 \end{itemize}
 
 \hypertarget{ert-lite-assessment}{%
@@ -651,7 +697,6 @@ Governing & 4.4 & 6.9 & 58 & 2.9 & 5.1 & 75\\
 Economic & 4.7 & 5.9 & 25 & 5.6 & 6.6 & 19\\
 Electoral & 3.1 & 4.8 & 55 & 2.2 & 3.2 & 46\\
 Individual & 4.7 & 8.7 & 87 & 3.0 & 6.0 & 97\\
-\addlinespace
 Associational & 5.8 & 8.8 & 53 & 3.8 & 6.3 & 64\\
 \bottomrule
 \end{tabular}
@@ -669,20 +714,21 @@ we have in the data, from 1970 - 2021. To do this I split the data from
   outcomes are fully resolved.} into 5 or 10 groups\footnote{The
   splitting was done by year, i.e.~I randomly assigned years to folds.},
 and then for each group, used the remaining 4 or 9 groups to estimate
-two models---for the original outcome and the other for the modified
-outcomes---that then predicted outcomes in the held-back group. These
-predictions were then used to calculate out-of-sample fit statistics. I
-repeated the cross-validation several times, giving an overall sample of
-N = 30 out-of-sample fit statistic values.
+two models, one for the original outcome and the other for the modified
+outcomes. These two models then predict outcomes in the held-back group,
+creating out-of-sample predictions. By doing this for all groups we can
+obtain out-of-sample predictions for the entire data. I repeated the
+cross-validation several times with different group splits, giving an
+overall sample of N = 30 out-of-sample fit statistic values.
 
 Table 2 shows the overall performance, pooled across spaces and
 directions. The first row shows the positive rate for the indicator that
 the models are forecasting---whether an opening or closing episode
 occurred during the subsequent 2 years.\footnote{The rates are different
-  from those in Table 1 because we are here additionally summarizing
-  over 2 years. E.g. if only one year in the next 2 was part of an
-  opening episode, it overall gets coded as a 1, thus essentially
-  amplifying the positive rate.}
+  from those in Table \ref{tab:positive-rates} because we are here
+  additionally summarizing over 2 years. E.g. if only one year in the
+  next 2 was part of an opening episode, it overall gets coded as a 1,
+  thus essentially amplifying the positive rate.}
 
 \begin{table}
 \centering
@@ -700,20 +746,33 @@ ROC-AUC & 0.81 & 0.81\\
 
 The new outcome coding does not seem to have a negative impact on
 performance. AUC-ROC is essentially the same. AUC-PR increases slightly,
-but part of that surely is because the positive rate increases, i.e.~the
+but part of that is because the positive rate increases, i.e.~the
 prediction problem becomes slightly easier.
 
-\hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
+\hypertarget{additional-resources}{%
+\section{Additional Resources}\label{additional-resources}}
 
 The Democratic Spaces Dashboad can be found at:
 \url{https://www.v-dem.net/demspace}
 
 The data, code, and additional resources can be found in the GitHub repo
-at: \url{https://github.com/vdeminstitute/demspaces}
+at: \url{https://github.com/vdeminstitute/demspaces}. This includes:
 
-Note, specifically, that on GitHub there is a folder for the 2022
-update, which contains several additional technical notes.
+\begin{itemize}
+\tightlist
+\item
+  An overview of recent changes in
+  ``\href{https://github.com/vdeminstitute/demspaces/blob/main/NEWS.md}{NEWS.md}''.
+\item
+  Additional notes related to several of the technical changes mentioned
+  above, see the
+  ``\href{https://github.com/vdeminstitute/demspaces/tree/main/2022-update}{2022-update}''
+  folder.
+\item
+  A note investigating the high risk of Associational closing in France,
+  ``\href{https://github.com/vdeminstitute/demspaces/blob/main/2022-update/whatif-france.md}{What-if
+  France}''.
+\end{itemize}
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
