@@ -25,7 +25,7 @@ For a general background and overall overview of the project, we wrote a technic
 Documentation for the spring 2021 update:
 
 - [2021 Update README](2021-update/)
-- [Spring 2021 Forecast Update Report](docs/DemocraticSpaces2021.pdf)
+- [2021 Update Report](docs/DemocraticSpaces2021.pdf)
 - [FAQ for the 2021 Forecast Update](docs/DemSpaces2021-Questions.pdf)
 - [Project Summary Memo](2021-update/project-summary.pdf): this is a good summary of all technical changes.
 - [Variable Importance Note](2021-update/variable-importance.md): details on how and why some external data sources and variables were removed during the 2021 update. 
@@ -33,6 +33,7 @@ Documentation for the spring 2021 update:
 Documentation for the spring 2022 update:
 
 - [2022 Update README](2022-update/)
+- [2022 Update Report](2022-update/democratic-spaces-2022.pdf)
 - Several technical notes (note that these were with the original dependent variables, "v12", before the ERT-lite "v12.1" change):
   + [Investigation into the high Associational closing risk for France](2022-update/whatif-france.md): Why does France have a high Associational closing risk in this year's forecasts?
   + [Variable Importance for Moving Standard Deviation Variable Transforms](2022-update/vi-sdvars.md): I added a small number of moving standard deviation transforms of V-Dem indices--as indicators of recent instability--based on the variable importance analysis in this note.
