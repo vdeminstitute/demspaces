@@ -1,7 +1,7 @@
 Democratic Spaces Barometer
 ===========================
 
-The Demoractic Spaces Barometer forecasts significant changes, both democratizing and autocratizing, for six facets of democratic governance for all major countries in the world 2 years ahead. The forecasts can be explored with the dashboard at https://www.v-dem.net/demspace/.
+The Demoractic Spaces Barometer forecasts significant changes, both democratizing and autocratizing, for six facets of democratic governance for all major countries in the world 2 years ahead. The forecasts can be explored with the dashboard at https://www.v-dem.net/demspace.
 
 To run the dashboard locally _without_ cloning the whole repo, you can use the code below, which will download and then run a tarball of the dashboard app. This presupposes all necessary packages are installed, see [dashboard/setup.R](dashboard/setup.R). 
 
