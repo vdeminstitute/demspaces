@@ -37,8 +37,8 @@ Documentation for the spring 2022 update:
 - Several technical notes (note that these were with the original dependent variables, "v12", before the ERT-lite "v12.1" change):
   + [Investigation into the high Associational closing risk for France](2022-update/whatif-france.md): Why does France have a high Associational closing risk in this year's forecasts?
   + [Variable Importance for Moving Standard Deviation Variable Transforms](2022-update/vi-sdvars.md): I added a small number of moving standard deviation transforms of V-Dem indices--as indicators of recent instability--based on the variable importance analysis in this note.
-  + [RF Stability (rf-stability.md)](rf-stability.md): What is the impact of the number of trees in a forest on the variability of point forecasts? In other words, how many trees buy you a sufficient reduction in the "randomness" of random forests?
-  + [Tuning experiments (tuning-experiments.md)](tuning-experiments.md): Tuning experiments to determine the fixed hyperparameters that are now used in all models.
+  + [RF Stability (rf-stability.md)](2022-update/rf-stability.md): What is the impact of the number of trees in a forest on the variability of point forecasts? In other words, how many trees buy you a sufficient reduction in the "randomness" of random forests?
+  + [Tuning experiments (tuning-experiments.md)](2022-update/tuning-experiments.md): Tuning experiments to determine the fixed hyperparameters that are now used in all models.
 
 
 Citation
