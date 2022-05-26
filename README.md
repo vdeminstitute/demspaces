@@ -1,7 +1,7 @@
 Democratic Spaces Barometer
 ===========================
 
-The Demoractic Spaces Barometer forecasts significant changes, both democratizing and autocratizing, for six facets of democratic governance for all major countries in the world 2 years ahead. The forecasts can be explored with the dashboard at https://www.v-dem.net/en/analysis/DemSpace/.
+The Demoractic Spaces Barometer forecasts significant changes, both democratizing and autocratizing, for six facets of democratic governance for all major countries in the world 2 years ahead. The forecasts can be explored with the dashboard at https://www.v-dem.net/demspace/.
 
 To run the dashboard locally _without_ cloning the whole repo, you can use the code below, which will download and then run a tarball of the dashboard app. This presupposes all necessary packages are installed, see [dashboard/setup.R](dashboard/setup.R). 
 
@@ -9,6 +9,9 @@ To run the dashboard locally _without_ cloning the whole repo, you can use the c
 library(shiny)
 runUrl('https://github.com/vdeminstitute/demspaces/raw/main/dashboard/demspaces-dashboard.tar.gz')
 ```
+
+The data and forecasts, going back to the original version in 2019, are archived in the [`archive/`](archive/) folder. 
+
 
 Documentation
 -------------
@@ -21,24 +24,28 @@ For a general background and overall overview of the project, we wrote a technic
 
 Documentation for the spring 2021 update:
 
+- [2021 Update README](2021-update/)
 - [Spring 2021 Forecast Update Report](docs/DemocraticSpaces2021.pdf)
 - [FAQ for the 2021 Forecast Update](docs/DemSpaces2021-Questions.pdf)
 - [Project Summary Memo](2021-update/project-summary.pdf): this is a good summary of all technical changes.
 - [Variable Importance Note](2021-update/variable-importance.md): details on how and why some external data sources and variables were removed during the 2021 update. 
 
-Documentation for the spring 2022 update (the final documentation is still in the works):
+Documentation for the spring 2022 update:
 
-- ...
-- Several technical notes (note that these were with the original dependent variables, before the ERT-lite change):
-  + [](2022-update/whatif-france.md):
+- [2022 Update README](2022-update/)
+- Several technical notes (note that these were with the original dependent variables, "v12", before the ERT-lite "v12.1" change):
+  + [Investigation into the high Associational closing risk for France](2022-update/whatif-france.md): Why does France have a high Associational closing risk in this year's forecasts?
   + [Variable Importance for Moving Standard Deviation Variable Transforms](2022-update/vi-sdvars.md): I added a small number of moving standard deviation transforms of V-Dem indices--as indicators of recent instability--based on the variable importance analysis in this note.
+  + [RF Stability (rf-stability.md)](rf-stability.md): What is the impact of the number of trees in a forest on the variability of point forecasts? In other words, how many trees buy you a sufficient reduction in the "randomness" of random forests?
+  + [Tuning experiments (tuning-experiments.md)](tuning-experiments.md): Tuning experiments to determine the fixed hyperparameters that are now used in all models.
+
 
 Citation
 --------
 
 If you refer to this project in academic work, we would appreciate it if you could cite:
 
-Andreas Beger, Richard K. Morgan, and Laura Maxwell, 2020, “The Democratic Spaces Barometer: global forecasts of autocratization and democratization”, <https://www.v-dem.net/en/analysis/DemSpace/>
+Andreas Beger, Richard K. Morgan, and Laura Maxwell, 2020, “The Democratic Spaces Barometer: Global Forecasts of Autocratization and Democratization”, <https://www.v-dem.net/demspace>.
 
 In Bibtex:
 
@@ -47,7 +54,7 @@ In Bibtex:
   auhor = {Beger, Andreas and Morgan, Richard K. and Maxwell, Laura},
   title = {The Democratic Spaces Barometer: Global Forecasts of Autocratization and Democratization},
   year  = {2020},
-  url   = {https://www.v-dem.net/en/analysis/DemSpace/},
+  url   = {https://www.v-dem.net/demspace},
 }
 ```
 
@@ -108,7 +115,7 @@ This repo is not under active development and mainly serves for the sake of tran
 
 ## Acknowledgement
 
-The Democratic Space Barometer is the product of a collaboration between Andreas Beger ([Predictive Heuristics](https://www.predictiveheuristics.com)), Richard K. Morgan ([V-Dem](https://www.v-dem.net/en/)), and Laura Maxwell ([V-Dem](https://www.v-dem.net/en/)).
+The Democratic Space Barometer is the product of a collaboration between Andreas Beger ([Basil Analytics](https://www.basilanalytics.com)), Richard K. Morgan ([V-Dem](https://www.v-dem.net/en/)), and Laura Maxwell ([V-Dem](https://www.v-dem.net/en/)).
 
 The six conceptual dimensions we focus on come from the International Republican Institute’s Closing Space Barometer, which includes an analytical framework for assessing the processes that facilitate a substantial reduction (closing events) within these six spaces. This framework was developed based on a series of workshops conducted with Democracy, Human Rights, and Governance (DRG) donors and implementing partners in 2016 and represent the conceptual features of democratic space which are most amenable to DRG assistance programs.
 

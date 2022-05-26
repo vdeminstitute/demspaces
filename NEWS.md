@@ -1,30 +1,36 @@
 demspaces 12.1 (2022 Update)
 ==========================
 
+Note that there are forecasts with two versions this year. The initial update resulted in the "v12" forecasts. After the incorporation of the change in how outcomes are coded ("ERT-lite"), these became the new and current "v12.1" forecasts. I.e., the forecasts using the old outcome coding method are "v12", those with the new ERT-lite method are "v12.1".
+
 ### Change in outcomes
 
 A major change this year was in the way that opening and closing events are coded. Up to an including version "v12", this was based on space-specific thresholds: if the increase or decrease in the indicator for a space from the previous year's value exceeded that threshold, we coded an event. 
 
 This approach missed more gradual changes that over a period of multiple years could still lead to significant changes in the state of a country. The new outcome coding, used in version "v12.1", now considers more than just the year-on-year change, and is able to capture some of these more gradual transitions. 
 
+Described in issue #16.
+
 ### Data and model changes
 
-- Moved external data scripts to a new repo, `ds-external-data`. This is because PART and DS both require some but no the same external data, so it is just easier to pool them in one repo where updating can be done. 
-- Removed "_squared" terms for the space indicator variables. Although these showed up highly in the 2021 variable importance investigation, there is no reason the a random forest model would need squared terms, and so I suspect they were getting picked just as surrogates for the untransformed indicator variables. 
+- Moved external data scripts to a new repo, [`ds-external-data`](https://github.com/andybega/ds-external-data). This is because PART and DS both require some but no the same external data, so it is just easier to pool them in one repo where updating can be done. 
+- Removed "_squared" terms for the space indicator variables. Although these showed up highly in the 2021 variable importance investigation, there is no reason the a random forest model would need squared terms, and so I suspect they were getting picked just as surrogates for the untransformed indicator variables. (#18)
 - Fix for impossible forecasts. These are situations where a country's indicator value is in the region between the possible range of values (0 - 1) and the relevant outcome cutpoints. For example, Tunisia had a high Governing opening forecast initially, even though it's Governing value was so high already that given the relevant cutpoint, no opening event was possible at all. Technically it could drop and then experience an opening in the 2nd year of the forecast, but this only happens once in the entire data. To fix this, the cutpoints are used to reset such forecasts to 0. The fix is actually implemented in demspacesR, in the `predict.ds_rf` function. (#15)
-- Added _sd variables
-- Changed the models to use a larger number of trees to stabilize the forecasts, and upped the mtry value slightly for accuracy. Fixed HP all around now, decreasing pipeline run time. 
+- Added "_sd10" variable transforms that are a 10-year moving standard deviation. The idea was to capture the extent of recent instability. This mildly improves fit. See the "[Variable importances for space indicator moving SD](https://github.com/vdeminstitute/demspaces/blob/main/2022-update/vi-sdvars.md)" note. (#18)
+- Changed the models to use a larger number of trees to stabilize the forecasts, and upped the "mtry"" value slightly for accuracy. All hyper-parameters are fixed now, decreasing pipeline run time. This is described in the "[RF tuning experiments](https://github.com/vdeminstitute/demspaces/blob/main/2022-update/tuning-experiments.md)" note. See also the "[Experiments on the randomness of random forest forecasts](https://github.com/vdeminstitute/demspaces/blob/main/2022-update/rf-stability.md)" note.
 
 ### Dashboard changes
 
 - Added the ability to highlight past opening and closing evens in the V-Dem indicator time series plot on the bottom right. (#12; and fixed a subsequent related bug, #17)
 - Added a button for the V-Dem space indicator time series plot on the bottom right to select/de-select all 6 spaces. It's annoying to otherwise have to click each of the 6 checkboxes individually. (#13)
-- Dashboard layout and style changes: two-column layout for top text in dashboard tab (#20). 
+- Dashboard layout and style changes: two-column layout for top text in dashboard tab (#20); updates to the text in the About tab (#21); and an overall redo of the dashboard design, e.g. font weights etc. (#24). 
 
 ### 'demspaces' R package
 
-- Added facility for global config settings. The purpose was to make it easier to control which version of data and related files is used, and specifically to make it easier to test out the new modified outcome (ERT-Lite).
+I added a skeleton R package this year, to help make some development tasks easier.
 
+- Added facility for global config settings. The purpose was to make it easier to control which version of data and related files is used, and specifically to make it easier to test out the new modified outcome (ERT-Lite).
+- The package includes a dashboard for visualizing the differences between the original and ERT-lite outcomes. This can be run by cloing the repo and running: `devtools::load_all(); outcome_explorer_app()`.
 
 
 demspaces 11 (2021 Update)
