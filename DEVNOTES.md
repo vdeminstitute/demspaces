@@ -6,7 +6,7 @@ Internal notes on the project developmet history.
 There were a lot of repos involved in this project.^[I think some of them were initially created by Rick, which is why we had some duplication. Plus then in 2021 moving them over to V-Dem.] Trying to sketch a history here. This diagram shows all involved repos (some of them are private):
 
 ```mermaid
-flowchart LR
+flowchart BT
     subgraph main [Main repo]
         direction LR
         vd[vdeminstitute/demspaces]
