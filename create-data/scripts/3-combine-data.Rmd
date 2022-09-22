@@ -22,7 +22,7 @@ END_YEAR <- 2021
 # use sub-versions like 'v11a', ...
 
 # use global options config (config.yml)
-devtools::load_all()
+devtools::load_all("demspaces"))
 set_options(here::here("config.yml"))
 VERSION  <- getOption("demspaces.version")
 print(VERSION)

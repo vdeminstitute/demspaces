@@ -30,7 +30,7 @@ Described in issue #16.
 I added a skeleton R package this year, to help make some development tasks easier.
 
 - Added facility for global config settings. The purpose was to make it easier to control which version of data and related files is used, and specifically to make it easier to test out the new modified outcome (ERT-Lite).
-- The package includes a dashboard for visualizing the differences between the original and ERT-lite outcomes. This can be run by cloing the repo and running: `devtools::load_all(); outcome_explorer_app()`.
+- The package includes a dashboard for visualizing the differences between the original and ERT-lite outcomes. This can be run by cloing the repo and running: `devtools::load_all()); outcome_explorer_app()`.
 
 
 demspaces 11 (2021 Update)

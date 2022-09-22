@@ -46,7 +46,7 @@ END_YEAR <- 2021
 # use sub-versions like 'v11a', ...
 
 # use global options config (config.yml)
-devtools::load_all()
+devtools::load_all("demspaces"))
 ```
 
     ## ℹ Loading demspaces

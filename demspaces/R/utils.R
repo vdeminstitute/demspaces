@@ -5,4 +5,6 @@
 set_options <- function(file = NULL) {
   config <- yaml::read_yaml(file)
   options(demspaces.version = config$version)
+  options(demspaces.current_window = config$current_window)
+  invisible(TRUE)
 }

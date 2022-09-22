@@ -9,7 +9,7 @@ library(dplyr)
 library(readr)
 
 # needed for changes_one_country()
-devtools::load_all()
+devtools::load_all("demspaces"))
 
 cutpoints <- read_csv(here::here("create-data/output/cutpoints.csv"))
 cp <- cutpoints$up

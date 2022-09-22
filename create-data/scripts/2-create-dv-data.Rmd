@@ -41,7 +41,7 @@ plotmiss <- function(x) {
 }
 
 # need this for changes_one_country()
-devtools::load_all()
+devtools::load_all("demspaces"))
 # options won't work correctly since we are not loading the package from 
 # base folder
 set_options(here::here("config.yml"))

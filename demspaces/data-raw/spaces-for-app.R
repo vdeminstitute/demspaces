@@ -24,7 +24,7 @@ oldwd <- getwd()
 setwd(here::here())
 
 # needed for changes_one_country()
-devtools::load_all()
+devtools::load_all("demspaces"))
 
 dvs <- readRDS("create-data/output/dv_data_1958_on.rds")
 

@@ -25,7 +25,7 @@ OVERWRITE = TRUE
 # OVERWRITE)
 CLEANUP = FALSE
 # Which verson of the data to use?
-devtools::load_all()
+devtools::load_all("demspaces"))
 set_options(here::here("config.yml"))
 VERSION = getOption("demspaces.version")
 

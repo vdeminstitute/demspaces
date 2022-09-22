@@ -2,7 +2,7 @@
 #   Comparison of the new and last year's forecasts: what has changed?
 #
 
-devtools::load_all()
+devtools::load_all("demspaces"))
 library(dplyr)
 library(readr)
 library(ggplot2)
