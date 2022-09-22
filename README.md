@@ -59,10 +59,16 @@ In Bibtex:
 }
 ```
 
-Code overview
+Repo overview
 -------------
 
-This repo contains the code and data needed to reproduce the forecasts and dashboard. It is organized into three self-contained folders:
+This repo consists of 3 groups of content:
+
+1. The {demspaces} R package in the `demspaces/` folder. This is used for some minor helper functions.
+2. The forecast pipeline in `create-data/`, `modelrunner/`, and `dashboard/`.
+3. Various bits of documentation and minor tools in the remaining folders.
+
+The forecast pipeline is organized into three self-contained folders:
 
 - `create-data/`: combine V-Dem and other data sources into the historical data that is used to code the dependent variables and estimate the forecast models
 - `modelrunner/`: contains the random forest forecast models and will generate both the test and live forecasts
@@ -70,7 +76,7 @@ This repo contains the code and data needed to reproduce the forecasts and dashb
 
 The folders are self-contained in the sense that each has a copy of the inputs it needs to run, and will not reach into other folders to pull code or data. For example, `modelrunner` saves the forecasts to `output/fcasts-rf.csv`, and `dashboard` contains a copy of these forecasts in `Data/fcasts-rf-2020.csv`. *(This also means that if there are any changes in relevant data, they need to be manually copied over.)*
 
-The `forecasts/` folder contains a record of the forecasts we since the first version with V-Dem v9 in 2019. 
+The `archive/` folder contains a record of the forecasts we since the first version with V-Dem v9 in 2019. 
 
 ## Setup
 
@@ -104,10 +110,6 @@ install.packages(need)
 2. In `modelrunner/`, run `R/rf.R` to run the forecast models and create the test and live forecasts. See `modelrunner/README.md` for more details.
 3. Update the forecast data in `dashboard`.
 
-## Updates
-
-See [UPDATING.md](UPDATING.md) for notes.
-
 ## Contributing
 
 We welcome any error and bug reports dealing with mistakes in the existing code and data. Please open an issue here on GitHub. 
@@ -122,14 +124,15 @@ The six conceptual dimensions we focus on come from the International Republican
 
 We adapted these conceptual spaces, expanded the scope to include substantial improvements (opening events), and developed an operationalization method to identify opening and closing events within each space. This dashboard, and the forecast that drive it, is the output of these efforts.
 
+
 ## Dev notes
 
-The original Democratic Spaces project development and code, which covers the 2019 and 2020 forecasts (V-Dem v9 and v10), was in these 3 repos:
+These are internal notes to remind myself next year.
 
-- [`andybega/closing-spaces`](https://github.com/andybega/closing-spaces) (private): development repo with all the ugly bits
-- [`andybega/democratic-spaces`](https://github.com/andybega/democratic-spaces): a cleaned-up subset of the development repo for reproducibility
-- [`andybega/demspaces`](https://github.com/andybega/demspaces): companion R package with helper functions
+See [UPDATING.md](UPDATING.md) for notes on updating the forecasts.
 
-For the 2021 V-Dem v11 update I copied over the existing code in the last two repos to the corresponding V-Dem owned repos. 
+See [DEVNOTES.md](DEVNOTES.md) for other development-related notes.
+
+
 
 

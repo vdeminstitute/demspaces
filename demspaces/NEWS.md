@@ -1,3 +1,9 @@
+demspcaes 12.1.9000
+===================
+
+- Moved the {demspaces} R package to the `demspaces/` sub-folder in order to reduce clutter at the top level and more clearly distinguish package from pipeline/documentation bits. (#25)
+
+
 demspaces 12.1 (2022 Update)
 ==========================
 
