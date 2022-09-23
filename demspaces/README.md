@@ -56,7 +56,8 @@ head(preds)
 
 ## Meta
 
-There is a Makefile to help with stuff. E.g. to open that static docs:
+There is a Makefile at the root level of this repo to help with stuff.
+E.g. to open that static docs:
 
 ``` bash
 make opendocs

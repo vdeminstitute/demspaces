@@ -1,0 +1,18 @@
+url: ~
+template:
+  bootstrap: 5
+destination: docs
+reference:
+- title: DS models
+  desc: Democratic spaces models. These are wrappers around the base models specific to the democratic spaces project.
+  contents:
+  - has_concept("ds_model")
+- title: Base models
+  desc: Generic models with wrappers so that the main arguments are x and y.
+  contents:
+  - has_concept("base_model")
+- title: Other
+  desc: Catch all for remaining ungrouped docs
+  contents:
+  - -has_concept("ds_model")
+  - -has_concept("base_model")

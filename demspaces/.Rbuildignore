@@ -6,5 +6,11 @@
 ^data-raw$
 ^man-roxygen$
 
+# pkgdown
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+
 # helper script for adding new models
 ^add_new_model.R$
+
