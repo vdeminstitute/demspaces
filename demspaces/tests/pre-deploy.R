@@ -32,6 +32,10 @@ get_mtime <- function(...) {
 #
 
 test_that("tarball is current", {
+
+  # #27
+  skip_on_ci()
+
   files <- c(
     "global.r", "server.r", "ui.r", "styles.css",
     paste0("data/", dir(correct_path("dashboard/data")))
@@ -49,6 +53,10 @@ test_that("tarball is current", {
 #
 
 test_that("dashboard/data-raw/input/fcasts-rf.csv is current", {
+
+  # #27
+  skip_on_ci()
+
   expect_gte(
     get_mtime("dashboard/data-raw/input/fcasts-rf.csv"),
     get_mtime("modelrunner/output/fcasts-rf.csv")
@@ -61,6 +69,10 @@ test_that("dashboard/data-raw/input/fcasts-rf.csv is current", {
 #
 
 test_that("archived is current", {
+
+  # #27
+  skip_on_ci()
+
   expect_gte(
     get_mtime("archive/fcasts-rf-v12.1.csv"),
     get_mtime("modelrunner/output/fcasts-rf-v12.1.csv")
@@ -83,6 +95,10 @@ test_that("archived is current", {
 })
 
 test_that("archive human readable forecasts are current", {
+
+  # #27
+  skip_on_ci()
+
   # Run human-readable.R if this fails
   expect_gte(
     get_mtime("archive/forecasts-v12.1.csv"),
