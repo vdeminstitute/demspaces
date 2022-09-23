@@ -6,6 +6,7 @@
 #
 
 library(here)
+library(testthat)
 
 get_mtime <- function(...) {
   file.info(here::here(...))[, "mtime"]

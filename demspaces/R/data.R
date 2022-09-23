@@ -30,3 +30,22 @@ NULL
 #' data("spaces")
 #' spaces
 NULL
+
+#' Original and new outcomes
+#'
+#' Original (<=v12) democratic spaces outcomes and new ERT-lite outcomes
+#' (>=v12.1). This data is used by the [outcome_explorer_app()].
+#'
+#' @name spaces_for_app
+#' @aliases spaces_for_app_orig, spaces_for_app_mod
+#' @docType data
+#'
+#' @keywords datasets
+NULL
+
+#' @rdname spaces_for_app
+"spaces_for_app_orig"
+
+#' @rdname spaces_for_app
+"spaces_for_app_mod"
+

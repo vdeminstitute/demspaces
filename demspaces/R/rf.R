@@ -157,8 +157,7 @@ predict.ds_rf <- function(object, new_data, cutpoint = NULL, ...) {
 #' @param ... other arguments passed to [ranger::ranger()]
 #'
 #' @examples
-#' library(modeldata)
-#' data(credit_data)
+#' credit_data <- modeldata::credit_data
 #' credit_data <- credit_data[complete.cases(credit_data), ]
 #'
 #' mdl <- rf(credit_data[, setdiff(colnames(credit_data), "Status")],

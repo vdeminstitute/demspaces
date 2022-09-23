@@ -31,8 +31,7 @@ absolute minimum, but closest value within 1 SD of the minimum value). Then
 the globally optimum alpha value is picked.
 }
 \examples{
-library(modeldata)
-data(credit_data)
+credit_data <- modeldata::credit_data
 credit_data <- credit_data[complete.cases(credit_data), ]
 
 mdl <- reg_logreg(credit_data[, setdiff(colnames(credit_data), "Status")],

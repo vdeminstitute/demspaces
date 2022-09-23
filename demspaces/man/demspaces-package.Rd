@@ -6,7 +6,16 @@
 \alias{demspaces-package}
 \title{demspaces: Democratic Spaces Barometer}
 \description{
-Democratic Spaces Barometer
+Helper package with model tooling and Shiny apps for the Democratic Spaces Barometer project.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://vdeminstitute.github.io/demspaces}
+  \item \url{https://github.com/vdeminstitute/demspaces}
+  \item Report bugs at \url{https://github.com/vdeminstitute/demspaces/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Andreas Beger \email{adbeger@gmail.com} (\href{https://orcid.org/0000-0003-1883-3169}{ORCID})

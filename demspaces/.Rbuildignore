@@ -1,6 +1,7 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README.md$
+^README\.Rmd$
 ^NEWS.md$
 ^data-raw$
 ^man-roxygen$

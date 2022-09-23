@@ -18,8 +18,7 @@ Standardized interface for logistic regression with a feature extraction
 step, e.g. PCA.
 }
 \examples{
-library(modeldata)
-data(credit_data)
+credit_data <- modeldata::credit_data
 credit_data <- credit_data[complete.cases(credit_data), ]
 
 mdl <- logistic_reg_featx(

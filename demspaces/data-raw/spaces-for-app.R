@@ -17,14 +17,14 @@
 library(dplyr)
 library(readr)
 library(tidyr)
-library(demspacesR)
+library(demspaces)
 library(yaml)
 
 oldwd <- getwd()
 setwd(here::here())
 
 # needed for changes_one_country()
-devtools::load_all("demspaces"))
+devtools::load_all("demspaces")
 
 dvs <- readRDS("create-data/output/dv_data_1958_on.rds")
 

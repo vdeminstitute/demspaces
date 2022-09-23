@@ -15,8 +15,7 @@ logistic_reg(x, y)
 Standardized interface for logistic regression
 }
 \examples{
-library(modeldata)
-data(credit_data)
+credit_data <- modeldata::credit_data
 
 mdl <- logistic_reg(credit_data[, setdiff(colnames(credit_data), "Status")],
                     credit_data$Status)

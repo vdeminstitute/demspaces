@@ -1,7 +1,12 @@
-demspcaes 12.1.9000
-===================
+demspaces 12.1.9000 (Fall 2022)
+===============================
 
-- Moved the {demspaces} R package to the `demspaces/` sub-folder in order to reduce clutter at the top level and more clearly distinguish package from pipeline/documentation bits. (#25)
+Two big changes (#25):
+- I moved the small {demspaces} R package I added in version 12.1 during the spring update to the `demspaces/` sub-folder to reduce clutter and more clearly distinguish package from pipeline/documentation bits.
+- I integrated the {demspacesR} helper package that was in the [vdeminstitute/demspacesR](https://github.com/vdeminstitute/demspacesR) repo with the {demspaces} package in this main repo. 
+
+- As part of the package integration I expanded this news document with that from {demspacesR}.
+
 
 
 demspaces 12.1 (2022 Update)
@@ -83,6 +88,14 @@ The first version of the forecasts in 2019 was created with V-Dem version 9 data
 - Fix a bug in the dashboard that prevented clicking on a bar in the bottom left plot to add/remove the corresponding index from the linechart on the right (#5). 
 - Fix a phantom nav item in the dashboard navigation bar by moving the nav bar style tags to the dashboard CSS file (#2).
 
+### demspacesR 0.3
+
+Development in February 2021. 
+
+- Moved package to **vdeminstitute** GitHub account; package renamed from **demspaces** to **demspacesR**
+- Added mean log loss to `score_ds_fcast()`. This is a better metric for comparing models to each other than AUC-ROC/PR. 
+
+
 demspaces 10 (2020 Update)
 ==========================
 
@@ -93,3 +106,24 @@ demspaces 9 (2019 Initial Version)
 ==================================
 
 Original forecasts produced during development of this project in the fall of 2019. 
+### demspacesR 0.2 
+
+Development in November 2019.
+
+* Added a tuner for `ds_rf()` that picks optimal `mtry` values. 
+
+### demspacesR 0.1
+
+Development in October 2019. 
+
+* `reg_logreg()` and `ds_reg_logreg()` implement a self-tuning regularized logistic regression model based on the **glmnet** package. Tuning is performed via cross-validation and successively picks alpha and then lambda values. 
+* `rf()` and `ds_rf()` implement a random forest probability tree model using the **ranger** package. 
+
+### demspacesR 0.0.1
+
+Initial version in September 2019. This had the following models:
+
+* `logistic_reg()` is a standard logistic regression model, with `ds_logistic_reg()` as a wrapper for modeling democratic spaces. It includes an option to standardize features prior to model estimation ("normalize" argument), using a standardizer function made by `make_standardizer()`. 
+* `logistic_reg_featx()` and `ds_logistic_reg_featx()` are standard logistic regression models with a feature extraction pre-processing step for the input feature data. This uses PCA (the only method implemented currently) to reduce the number of numeric input features to 5, via `make_extract_features()`. 
+
+The GitHub repo, but not package, includes a template for adding new models in `add_new_model.R`. 

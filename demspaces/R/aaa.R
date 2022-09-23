@@ -25,5 +25,5 @@ magrittr::`%>%`
 
 #' @importFrom utils globalVariables
 utils::globalVariables(
-  c(".")
+  c(".", "year", "Value", "v2xcs_ccsi_codelow", "v2xcs_ccsi_codehigh")
 )

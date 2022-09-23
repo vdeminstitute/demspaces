@@ -5,6 +5,9 @@
 *.DS_Store
 *.Rapp.history
 
+# Rcheck artifacts
+demspaces.Rcheck
+
 # Some of the modelrunner output consists of saved models and forecast chunks
 # that are later combined into the complete forecast data. These are quite
 # big and not needed. Keep root files and log files on git, but not model and

@@ -90,8 +90,8 @@ timeSeriesPlotFun <- function(dat, to_plot, CIs = FALSE, changes = FALSE,
   if (length(to_plot) > 0) {
     for (vv in to_plot) {
 
-      id <- paste0("p", match(vv, demspacesR::spaces$Indicator))
-      space_name <- demspacesR::spaces$Space[match(vv, demspacesR::spaces$Indicator)]
+      id <- paste0("p", match(vv, demspaces::spaces$Indicator))
+      space_name <- demspaces::spaces$Space[match(vv, demspaces::spaces$Indicator)]
       series_name <- paste0("<b>", space_name, " Space </b><br> <span style='font-size: 85%'> ", ind_label[[vv]])
 
       # Space series
@@ -237,13 +237,17 @@ outcome_explorer_server <- function(input, output, session) {
     if (length(checked)==6) {
       new_selection <- character(0)
     } else {
-      new_selection <- spaces$Indicator
+      new_selection <- demspaces::spaces$Indicator
     }
     shiny::updateCheckboxGroupInput(inputId = "checkGroup", selected = new_selection)
   })
   output
 }
 
+#' Outcome Explorer Shiny App
+#'
+#' For exploring the democratic spaces outcomes in different countries over time.
+#'
 #' @export
 outcome_explorer_app <- function() {
   shiny::shinyApp(outcome_explorer_ui, outcome_explorer_server)

@@ -59,7 +59,7 @@ episode_coder <- function(x, cp, direction = c("up", "down"), type = c("mod", "o
     # if the change from 2 years ago is > cp, and both the current xd1 and
     # xd1[t-1] are above some minimal treshold, we can code episode
     xd2 <- c(NA, NA, diff(x, lag = 2))
-    xd1_lg1 <- c(NA, head(xd1, -1))
+    xd1_lg1 <- c(NA, utils::head(xd1, -1))
     # condition 1: 2-year change is > cp
     # condition 2: 1-year change is < cp
     # condition 3: xd1[t-1] is above minimal threshold
@@ -71,8 +71,8 @@ episode_coder <- function(x, cp, direction = c("up", "down"), type = c("mod", "o
     # Look ahead version, same logic but we don't want to include the year
     # before opening started, so need to consider 2-year change from [t-1] to
     # [t+1] for point t
-    xd1_ld1 <- c(tail(xd1, -1), NA)
-    xd2_ld1 <- c(tail(xd2, -1), NA)
+    xd1_ld1 <- c(utils::tail(xd1, -1), NA)
+    xd2_ld1 <- c(utils::tail(xd2, -1), NA)
     c1 <- (xd2_ld1 > cp) %in% TRUE
     c2 <- (xd1 > (cp* min_f)) %in% TRUE
     c3 <- (xd1_ld1 > (cp* min_f)) %in% TRUE
