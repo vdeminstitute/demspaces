@@ -1,0 +1,54 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# demspaces
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/vdeminstitute/demspaces/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vdeminstitute/demspaces/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+demspaces contains helper functions for the Democratic Spaces Barometer project; see [vdeminstitute/demspaces](https://github.com/vdeminstitute/demspaces).
+
+## Installation
+
+Since this package is specific to the democratic spaces project, it will not end up on CRAN. Install from [GitHub](https://github.com/) instead, with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("vdeminstitute/demspaces")
+```
+
+## Example
+
+```{r}
+library("demspaces")
+
+data("states")
+
+mdl   <- ds_logistic_reg("v2x_veracc_osp", states)
+preds <- predict(mdl, new_data = states)
+head(preds)
+```
+
+## Meta
+
+There is a Makefile to help with stuff. E.g. to open that static docs:
+
+```bash
+make opendocs
+```
+
+To add new models, see the `add_new_model.R` script. It will use a template to setup the R and test files. 
+

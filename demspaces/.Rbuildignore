@@ -1,9 +1,9 @@
-^demspaces\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README.md$
 ^NEWS.md$
 ^data-raw$
+^man-roxygen$
 
-
-
+# helper script for adding new models
+^add_new_model.R$

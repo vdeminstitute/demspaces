@@ -1,0 +1,63 @@
+---
+title: "Model API"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Model API}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This note lays out the API for models in the package. 
+
+TODO:
+
+- clarify how NA values are allowed and handled. E.g. for predict, should the output always have same length as input, with NA's as appropriate?
+
+****
+
+Four basic functions:
+
+1. Low-level interface like `low_level_func()`. This is simply an interface that allows calling whatever the actual model implementation is with two `x` and `y` arguments. 
+2. Predict method for low-level interface, like `predict.low_level_func()`. 
+3. A DS wrapper like `ds_low_level_funct()`. This wrapper takes care of two things: 
+  - getting whatever representation of the DV is needed
+  - estimating the appropriate models using the low-level interface, e.g. for the one-hot binary classification approach, it estimates models for "up" and "down" movements
+4. Predict method for the DS wrapper. This turns the DV representation-specific model into a common and consistent prediction with probabilities for up/same/down. 
+
+## Low-level interface
+
+`low_level_func()`:
+
+- arguments: `x`, `y`
+- returns: a "low_level_func" class S3 object
+
+## Predict method for low-level interface
+
+`predict.low_level_func()`
+
+- arguments: 
+- returns: 
+
+## DS wrapper
+
+`ds_low_level_func()`:
+
+- arguments:
+- returns: 
+
+The DS wrapper takes the full country-year data and turns it into usable data given the DV representation needed by a lower-level model. To this end, it extracts the relevant DV variable(s) and creates a data set version that consists of features only. 
+
+## Predict method for DS wrapper
+
+`predict.ds_low_level_func()`
+
+- arguments: 
+- returns: 
+

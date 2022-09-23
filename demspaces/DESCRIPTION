@@ -11,16 +11,29 @@ LazyData: true
 Depends: 
     R (>= 2.10)
 Imports: 
-    demspacesR,
+    dplyr,
     highcharter,
     magrittr,
+    modeldata,
     pkgload,
+    recipes,
+    rlang,
+    shiny,
+    stringr,
+    tibble,
+    tidyr,
     yaml,
-    shiny
+    yardstick
 Suggests: 
+    covr,
+    ggplot2,
+    glmnet,
+    knitr,
+    pkgdown,
+    ranger,
+    rmarkdown,
+    scales,
     testthat (>= 3.0.0)
-Remotes:
-    vdeminstitute/demspacesR
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Config/testthat/edition: 3
