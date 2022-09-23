@@ -8,9 +8,24 @@
 library(here)
 library(testthat)
 
-get_mtime <- function(...) {
-  file.info(here::here(...))[, "mtime"]
+# The path will differ on GitHub and locally when tests are run, figure out
+# where we are
+correct_path <- function(...) {
+  curr_root <- here::here()
+  if (grepl("demspaces/demspaces/demspaces", curr_root)) {
+    out <- here::here("..", ...)
+  } else if (grepl("demspaces/demspaces", curr_root)) {
+    out <- here::here("..", ...)
+  } else {
+    out <- here::here(...)
+  }
+  out
 }
+
+get_mtime <- function(...) {
+  file.info(correct_path(...))[, "mtime"]
+}
+
 
 #
 #   Make sure the Shiny app tarball is current ----
@@ -19,7 +34,7 @@ get_mtime <- function(...) {
 test_that("tarball is current", {
   files <- c(
     "global.r", "server.r", "ui.r", "styles.css",
-    paste0("data/", dir(here::here("dashboard/data")))
+    paste0("data/", dir(correct_path("dashboard/data")))
   )
   files <- paste0("dashboard/", files)
   file_modtime <- get_mtime(files)
