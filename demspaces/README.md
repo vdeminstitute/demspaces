@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/vdeminstitute/demspaces/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vdeminstitute/demspaces/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/vdeminstitute/demspaces/branch/main/graph/badge.svg)](https://app.codecov.io/gh/vdeminstitute/demspaces?branch=main)
 <!-- badges: end -->
 
 demspaces contains helper functions for the Democratic Spaces Barometer
