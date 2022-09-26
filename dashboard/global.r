@@ -60,7 +60,7 @@ names(space_colors) <- c("v2xcs_ccsi", "v2x_pubcorr", "v2x_veracc_osp",
 plotsFontSize <- "13px"
 
 
-# demspacesR::spaces %>% select(Space, Indicator) %>% dput()
+# demspaces::spaces %>% select(Space, Indicator) %>% dput()
 spaces <- structure(list(
     Space = c("Electoral", "Associational", "Individual", "Informational",
               "Governing", "Economic"),

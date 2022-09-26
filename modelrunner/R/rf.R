@@ -44,7 +44,7 @@ library(future)
 library(doFuture)
 library(doRNG)
 library(jsonlite)
-library(demspacesR)
+library(demspaces)
 library(ranger)
 library(here)
 
@@ -71,7 +71,7 @@ if (!OVERWRITE) {
 lgr$add_appender(AppenderFile$new(log_file))
 
 lgr$info("Running random forest model")
-lgr$info("R package 'demspacesR' version %s", packageVersion("demspacesR"))
+lgr$info("R package 'demspaces' version %s", packageVersion("demspaces"))
 
 registerDoFuture()
 lgr$info("Running with %s workers", N_WORKERS)

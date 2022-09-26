@@ -32,7 +32,6 @@ library(readr)
 library(states)
 library(tidyr)
 library(zoo)
-library(demspacesR)
 library(skimr)
 
 # shortcut for plotting missing values when no date column is available
@@ -41,7 +40,7 @@ plotmiss <- function(x) {
 }
 
 # need this for changes_one_country()
-devtools::load_all("demspaces"))
+devtools::load_all("demspaces")
 # options won't work correctly since we are not loading the package from 
 # base folder
 set_options(here::here("config.yml"))

@@ -1,7 +1,8 @@
-demspaces 12.1.9000 (Fall 2022)
+demspaces 12.2 (Fall 2022)
 ===============================
 
 Two big changes (#25):
+
 - I moved the small {demspaces} R package I added in version 12.1 during the spring update to the `demspaces/` sub-folder to reduce clutter and more clearly distinguish package from pipeline/documentation bits.
 - I integrated the {demspacesR} helper package that was in the [vdeminstitute/demspacesR](https://github.com/vdeminstitute/demspacesR) repo with the {demspaces} package in this main repo. 
 

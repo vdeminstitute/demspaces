@@ -35,7 +35,7 @@ suppressPackageStartupMessages({
   library(doFuture)
   library(doRNG)
   library(jsonlite)
-  library(demspacesR)
+  library(demspaces)
   library(ranger)
   library(here)
 })

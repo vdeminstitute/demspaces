@@ -1,7 +1,7 @@
 #
 #   Deploy outcome explorer app to shinyapps.io
 #
-#   NOTE: make sure demspacesR is installed from GitHub, not local source,
+#   NOTE: make sure demspaces is installed from GitHub, not local source,
 #         otherwise rsconnect will not recognize it needs to be installed from
 #
 #   https://basil-analytics.shinyapps.io/demspaces/

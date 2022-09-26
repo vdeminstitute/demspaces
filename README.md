@@ -80,12 +80,8 @@ The `archive/` folder contains a record of the forecasts we since the first vers
 
 ## Setup
 
-The R packages needed to run all code in this repo are listed in `required-packages.txt`. Two packages need special treatment:
+The R packages needed to run all code in this repo are listed in `required-packages.txt`. One package needs special treatment:
 
-- **demspacesR** is not on CRAN. This package contains some custom model wrappers to make it easier to work with the 12 outcome variables we are modeling. It can be installed with:
-  ```r
-  remotes::install_github("vdeminstitute/demspacesR")
-  ```
 - **states** needs to be at least version 0.2.2.9007, which by the time you are reading this may be met by the version on CRAN. If not, you can also install the development version from GitHub:
   ```r
   # Check the package version

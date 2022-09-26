@@ -6,7 +6,7 @@ library(here)
 library(states)
 library(dplyr)
 library(readr)
-library(demspacesR)
+library(demspaces)
 
 setwd(here::here("archive"))
 

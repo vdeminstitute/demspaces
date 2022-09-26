@@ -16,7 +16,7 @@ suppressPackageStartupMessages({
   library("future")
   library("future.apply")
   library("jsonlite")
-  library("demspacesR")
+  library("demspaces")
   library("glmnet")
   library("ranger")
 })
@@ -32,7 +32,7 @@ log_file  <- sprintf("output/test/log/test-%s.txt", timestamp)
 lgr$add_appender(AppenderFile$new(log_file))
 
 # Start test script
-lgr$info("demspacesR version %s", packageVersion("demspacesR"))
+lgr$info("demspaces version %s", packageVersion("demspaces"))
 lgr$info("If there are any errors, see output/tests for artifacts")
 lgr$info("Starting tests")
 
