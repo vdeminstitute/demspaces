@@ -30,7 +30,7 @@ all_options <- function() {
 #'
 #' @export
 get_option <- function(x) {
-  if (!grepl(x, "demspaces")) {
+  if (!grepl("demspaces", x)) {
     op_id <- paste0("demspaces.", x)
   } else {
     op_id <- x
