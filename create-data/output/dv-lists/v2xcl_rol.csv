@@ -51,8 +51,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 2,2017,same,0,0
 2,2018,same,0,0
 2,2019,same,0,0
-2,2020,same,NA,NA
+2,2020,same,0,0
 2,2021,same,NA,NA
+2,2022,same,NA,NA
 20,1968,first year of independence,0,0
 20,1969,first year of independence,0,0
 20,1970,same,0,0
@@ -105,8 +106,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 20,2017,same,0,0
 20,2018,same,0,0
 20,2019,same,0,0
-20,2020,same,NA,NA
+20,2020,same,0,0
 20,2021,same,NA,NA
+20,2022,same,NA,NA
 40,1968,first year of independence,0,0
 40,1969,first year of independence,0,0
 40,1970,same,0,0
@@ -157,10 +159,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 40,2015,same,0,0
 40,2016,same,0,0
 40,2017,same,0,0
-40,2018,same,0,1
+40,2018,same,0,0
 40,2019,same,0,1
-40,2020,down,NA,NA
+40,2020,same,0,1
 40,2021,down,NA,NA
+40,2022,same,NA,NA
 41,1968,first year of independence,0,0
 41,1969,first year of independence,0,0
 41,1970,same,0,0
@@ -181,9 +184,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 41,1985,same,1,0
 41,1986,up,1,0
 41,1987,up,0,0
-41,1988,same,0,0
+41,1988,same,1,0
 41,1989,same,1,0
-41,1990,same,1,1
+41,1990,up,1,1
 41,1991,up,0,1
 41,1992,down,1,0
 41,1993,same,1,0
@@ -194,7 +197,7 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 41,1998,same,0,1
 41,1999,same,0,1
 41,2000,down,0,1
-41,2001,down,0,1
+41,2001,same,0,1
 41,2002,down,0,1
 41,2003,down,0,1
 41,2004,down,1,1
@@ -212,9 +215,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 41,2016,same,0,1
 41,2017,down,0,1
 41,2018,down,0,0
-41,2019,same,0,0
-41,2020,same,NA,NA
-41,2021,same,NA,NA
+41,2019,same,0,1
+41,2020,same,0,1
+41,2021,down,NA,NA
+41,2022,down,NA,NA
 42,1968,first year of independence,0,0
 42,1969,first year of independence,0,0
 42,1970,same,0,0
@@ -267,13 +271,14 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 42,2017,same,0,0
 42,2018,same,1,0
 42,2019,same,1,0
-42,2020,up,NA,NA
-42,2021,up,NA,NA
+42,2020,up,0,0
+42,2021,same,NA,NA
+42,2022,same,NA,NA
 51,1968,first year of independence,1,0
 51,1969,first year of independence,1,0
-51,1970,up,1,0
+51,1970,up,0,0
 51,1971,same,1,0
-51,1972,up,1,0
+51,1972,same,1,0
 51,1973,up,0,0
 51,1974,same,0,0
 51,1975,same,0,0
@@ -321,8 +326,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 51,2017,same,0,0
 51,2018,same,0,0
 51,2019,same,0,0
-51,2020,same,NA,NA
+51,2020,same,0,0
 51,2021,same,NA,NA
+51,2022,same,NA,NA
 52,1968,first year of independence,0,0
 52,1969,first year of independence,0,0
 52,1970,same,0,0
@@ -375,8 +381,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 52,2017,same,0,0
 52,2018,same,0,1
 52,2019,same,0,1
-52,2020,down,NA,NA
+52,2020,down,0,1
 52,2021,down,NA,NA
+52,2022,same,NA,NA
 53,1968,first year of independence,1,0
 53,1969,first year of independence,1,0
 53,1970,up,0,0
@@ -429,8 +436,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 53,2017,same,0,0
 53,2018,same,0,0
 53,2019,same,0,0
-53,2020,same,NA,NA
+53,2020,same,0,0
 53,2021,same,NA,NA
+53,2022,same,NA,NA
 70,1968,first year of independence,0,0
 70,1969,first year of independence,0,0
 70,1970,same,0,0
@@ -483,8 +491,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 70,2017,same,0,0
 70,2018,same,0,0
 70,2019,same,0,0
-70,2020,same,NA,NA
+70,2020,same,0,0
 70,2021,same,NA,NA
+70,2022,same,NA,NA
 90,1968,first year of independence,0,0
 90,1969,first year of independence,0,0
 90,1970,same,0,0
@@ -510,9 +519,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 90,1990,same,0,0
 90,1991,same,0,0
 90,1992,same,0,0
-90,1993,same,0,0
+90,1993,same,1,0
 90,1994,same,1,0
-90,1995,same,1,0
+90,1995,up,1,0
 90,1996,up,1,0
 90,1997,up,1,0
 90,1998,up,1,0
@@ -537,8 +546,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 90,2017,same,0,0
 90,2018,same,0,0
 90,2019,same,0,0
-90,2020,same,NA,NA
+90,2020,same,0,0
 90,2021,same,NA,NA
+90,2022,same,NA,NA
 91,1968,first year of independence,0,0
 91,1969,first year of independence,0,0
 91,1970,same,0,0
@@ -583,7 +593,7 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 91,2009,down,1,0
 91,2010,up,1,0
 91,2011,up,1,0
-91,2012,same,1,0
+91,2012,up,1,0
 91,2013,up,1,0
 91,2014,up,0,0
 91,2015,same,0,0
@@ -591,8 +601,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 91,2017,same,0,0
 91,2018,same,0,0
 91,2019,same,0,0
-91,2020,same,NA,NA
+91,2020,same,1,0
 91,2021,same,NA,NA
+91,2022,up,NA,NA
 92,1968,first year of independence,0,0
 92,1969,first year of independence,0,0
 92,1970,same,0,1
@@ -641,12 +652,13 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 92,2013,same,0,0
 92,2014,same,0,0
 92,2015,same,0,0
-92,2016,same,0,1
+92,2016,same,0,0
 92,2017,same,0,1
-92,2018,down,0,1
+92,2018,same,0,1
 92,2019,down,0,1
-92,2020,down,NA,NA
+92,2020,down,0,1
 92,2021,down,NA,NA
+92,2022,same,NA,NA
 93,1968,first year of independence,0,0
 93,1969,first year of independence,0,0
 93,1970,same,0,0
@@ -683,11 +695,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 93,2001,same,0,0
 93,2002,same,0,0
 93,2003,same,0,0
-93,2004,same,0,0
-93,2005,same,0,0
-93,2006,same,0,0
-93,2007,same,0,0
-93,2008,same,0,0
+93,2004,same,0,1
+93,2005,same,0,1
+93,2006,down,0,1
+93,2007,down,0,1
+93,2008,down,0,0
 93,2009,same,0,0
 93,2010,same,0,0
 93,2011,same,0,0
@@ -699,8 +711,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 93,2017,down,0,1
 93,2018,down,0,1
 93,2019,down,0,1
-93,2020,down,NA,NA
+93,2020,down,0,1
 93,2021,down,NA,NA
+93,2022,down,NA,NA
 94,1968,first year of independence,0,0
 94,1969,first year of independence,0,0
 94,1970,same,0,0
@@ -753,8 +766,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 94,2017,same,0,0
 94,2018,same,0,0
 94,2019,same,0,0
-94,2020,same,NA,NA
+94,2020,same,0,0
 94,2021,same,NA,NA
+94,2022,same,NA,NA
 95,1968,first year of independence,0,0
 95,1969,first year of independence,0,0
 95,1970,same,0,0
@@ -807,8 +821,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 95,2017,down,0,1
 95,2018,down,0,1
 95,2019,down,0,0
-95,2020,same,NA,NA
+95,2020,same,0,0
 95,2021,same,NA,NA
+95,2022,same,NA,NA
 100,1968,first year of independence,0,0
 100,1969,first year of independence,0,0
 100,1970,same,0,0
@@ -841,16 +856,16 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 100,1997,same,0,0
 100,1998,same,0,0
 100,1999,same,0,0
-100,2000,same,0,0
+100,2000,same,1,0
 100,2001,same,1,0
-100,2002,same,1,0
+100,2002,up,1,0
 100,2003,up,0,0
 100,2004,same,0,0
 100,2005,same,0,0
 100,2006,same,0,0
-100,2007,same,1,0
+100,2007,same,0,0
 100,2008,same,1,0
-100,2009,up,1,0
+100,2009,same,1,0
 100,2010,up,1,0
 100,2011,up,0,0
 100,2012,same,0,0
@@ -861,8 +876,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 100,2017,same,0,1
 100,2018,down,0,1
 100,2019,down,0,1
-100,2020,down,NA,NA
-100,2021,down,NA,NA
+100,2020,down,1,0
+100,2021,same,NA,NA
+100,2022,up,NA,NA
 101,1968,first year of independence,0,0
 101,1969,first year of independence,0,0
 101,1970,same,0,0
@@ -895,8 +911,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 101,1997,same,0,1
 101,1998,down,0,1
 101,1999,down,0,1
-101,2000,down,0,1
-101,2001,down,0,0
+101,2000,down,0,0
+101,2001,same,0,0
 101,2002,same,0,0
 101,2003,same,0,0
 101,2004,same,0,0
@@ -915,8 +931,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 101,2017,down,0,1
 101,2018,down,1,1
 101,2019,down,1,0
-101,2020,up,NA,NA
+101,2020,up,1,0
 101,2021,up,NA,NA
+101,2022,up,NA,NA
 110,1968,first year of independence,0,0
 110,1969,first year of independence,0,0
 110,1970,same,0,0
@@ -968,9 +985,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 110,2016,up,0,0
 110,2017,same,0,0
 110,2018,same,0,0
-110,2019,same,0,0
-110,2020,same,NA,NA
-110,2021,same,NA,NA
+110,2019,same,0,1
+110,2020,same,0,1
+110,2021,down,NA,NA
+110,2022,down,NA,NA
 115,1975,first year of independence,0,0
 115,1976,first year of independence,0,0
 115,1977,same,0,0
@@ -1016,8 +1034,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 115,2017,same,0,1
 115,2018,down,1,1
 115,2019,down,1,0
-115,2020,up,NA,NA
+115,2020,up,1,0
 115,2021,up,NA,NA
+115,2022,same,NA,NA
 130,1968,first year of independence,0,0
 130,1969,first year of independence,0,0
 130,1970,same,0,1
@@ -1034,8 +1053,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 130,1981,up,0,0
 130,1982,same,0,1
 130,1983,same,0,1
-130,1984,down,0,1
-130,1985,down,0,0
+130,1984,down,0,0
+130,1985,same,0,0
 130,1986,same,1,0
 130,1987,same,1,0
 130,1988,up,1,0
@@ -1070,8 +1089,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 130,2017,same,0,0
 130,2018,same,0,0
 130,2019,same,0,0
-130,2020,same,NA,NA
+130,2020,same,0,0
 130,2021,same,NA,NA
+130,2022,same,NA,NA
 135,1968,first year of independence,0,1
 135,1969,first year of independence,0,1
 135,1970,down,0,0
@@ -1122,10 +1142,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 135,2015,same,0,0
 135,2016,same,0,0
 135,2017,same,0,0
-135,2018,same,0,0
-135,2019,same,0,0
-135,2020,same,NA,NA
-135,2021,same,NA,NA
+135,2018,same,0,1
+135,2019,same,0,1
+135,2020,down,0,1
+135,2021,down,NA,NA
+135,2022,same,NA,NA
 140,1968,first year of independence,0,0
 140,1969,first year of independence,0,0
 140,1970,same,0,0
@@ -1145,7 +1166,7 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 140,1984,same,1,0
 140,1985,up,1,0
 140,1986,up,1,0
-140,1987,same,1,0
+140,1987,up,1,0
 140,1988,up,1,0
 140,1989,up,1,0
 140,1990,up,0,0
@@ -1178,8 +1199,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 140,2017,down,0,1
 140,2018,down,0,1
 140,2019,down,0,1
-140,2020,down,NA,NA
-140,2021,same,NA,NA
+140,2020,down,0,1
+140,2021,down,NA,NA
+140,2022,down,NA,NA
 145,1968,first year of independence,0,0
 145,1969,first year of independence,0,1
 145,1970,same,0,1
@@ -1230,10 +1252,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 145,2015,same,0,0
 145,2016,same,0,0
 145,2017,same,0,1
-145,2018,same,0,1
-145,2019,down,1,1
-145,2020,down,NA,NA
+145,2018,same,1,1
+145,2019,down,1,0
+145,2020,up,1,0
 145,2021,up,NA,NA
+145,2022,up,NA,NA
 150,1968,first year of independence,0,0
 150,1969,first year of independence,0,0
 150,1970,same,0,0
@@ -1286,8 +1309,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 150,2017,same,0,0
 150,2018,same,0,1
 150,2019,same,0,1
-150,2020,down,NA,NA
+150,2020,down,0,1
 150,2021,down,NA,NA
+150,2022,same,NA,NA
 155,1968,first year of independence,0,1
 155,1969,first year of independence,0,1
 155,1970,down,0,0
@@ -1339,9 +1363,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 155,2016,same,0,0
 155,2017,same,0,1
 155,2018,same,0,1
-155,2019,down,0,1
-155,2020,down,NA,NA
-155,2021,same,NA,NA
+155,2019,down,1,1
+155,2020,down,1,0
+155,2021,up,NA,NA
+155,2022,up,NA,NA
 160,1968,first year of independence,0,0
 160,1969,first year of independence,0,0
 160,1970,same,0,0
@@ -1350,8 +1375,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 160,1973,up,1,1
 160,1974,up,0,1
 160,1975,down,0,1
-160,1976,down,0,1
-160,1977,down,0,0
+160,1976,down,0,0
+160,1977,same,0,0
 160,1978,same,0,0
 160,1979,same,0,0
 160,1980,same,0,0
@@ -1394,8 +1419,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 160,2017,same,0,0
 160,2018,same,0,0
 160,2019,same,0,0
-160,2020,same,NA,NA
+160,2020,same,0,0
 160,2021,same,NA,NA
+160,2022,same,NA,NA
 165,1968,first year of independence,0,1
 165,1969,first year of independence,0,1
 165,1970,down,0,1
@@ -1448,8 +1474,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 165,2017,same,0,0
 165,2018,same,0,0
 165,2019,same,0,0
-165,2020,same,NA,NA
+165,2020,same,0,0
 165,2021,same,NA,NA
+165,2022,same,NA,NA
 200,1968,first year of independence,0,0
 200,1969,first year of independence,0,0
 200,1970,same,0,0
@@ -1502,8 +1529,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 200,2017,same,0,0
 200,2018,same,0,0
 200,2019,same,0,0
-200,2020,same,NA,NA
+200,2020,same,0,0
 200,2021,same,NA,NA
+200,2022,same,NA,NA
 205,1968,first year of independence,0,0
 205,1969,first year of independence,0,0
 205,1970,same,0,0
@@ -1556,8 +1584,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 205,2017,same,0,0
 205,2018,same,0,0
 205,2019,same,0,0
-205,2020,same,NA,NA
+205,2020,same,0,0
 205,2021,same,NA,NA
+205,2022,same,NA,NA
 210,1968,first year of independence,0,0
 210,1969,first year of independence,0,0
 210,1970,same,0,0
@@ -1610,8 +1639,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 210,2017,same,0,0
 210,2018,same,0,0
 210,2019,same,0,0
-210,2020,same,NA,NA
+210,2020,same,0,0
 210,2021,same,NA,NA
+210,2022,same,NA,NA
 211,1968,first year of independence,0,0
 211,1969,first year of independence,0,0
 211,1970,same,0,0
@@ -1664,8 +1694,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 211,2017,same,0,0
 211,2018,same,0,0
 211,2019,same,0,0
-211,2020,same,NA,NA
+211,2020,same,0,0
 211,2021,same,NA,NA
+211,2022,same,NA,NA
 212,1968,first year of independence,0,0
 212,1969,first year of independence,0,0
 212,1970,same,0,0
@@ -1718,8 +1749,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 212,2017,same,0,0
 212,2018,same,0,0
 212,2019,same,0,0
-212,2020,same,NA,NA
+212,2020,same,0,0
 212,2021,same,NA,NA
+212,2022,same,NA,NA
 220,1968,first year of independence,0,0
 220,1969,first year of independence,0,0
 220,1970,same,0,0
@@ -1772,8 +1804,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 220,2017,same,0,0
 220,2018,same,0,0
 220,2019,same,0,0
-220,2020,same,NA,NA
+220,2020,same,0,0
 220,2021,same,NA,NA
+220,2022,same,NA,NA
 225,1968,first year of independence,0,0
 225,1969,first year of independence,0,0
 225,1970,same,0,0
@@ -1826,8 +1859,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 225,2017,same,0,0
 225,2018,same,0,0
 225,2019,same,0,0
-225,2020,same,NA,NA
+225,2020,same,0,0
 225,2021,same,NA,NA
+225,2022,same,NA,NA
 230,1968,first year of independence,0,0
 230,1969,first year of independence,0,0
 230,1970,same,0,0
@@ -1838,7 +1872,7 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 230,1975,up,1,0
 230,1976,up,1,0
 230,1977,up,1,0
-230,1978,same,1,0
+230,1978,up,1,0
 230,1979,up,0,0
 230,1980,same,0,0
 230,1981,same,0,0
@@ -1880,8 +1914,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 230,2017,same,0,0
 230,2018,same,0,0
 230,2019,same,0,0
-230,2020,same,NA,NA
+230,2020,same,0,0
 230,2021,same,NA,NA
+230,2022,same,NA,NA
 235,1968,first year of independence,0,0
 235,1969,first year of independence,0,0
 235,1970,same,0,0
@@ -1934,8 +1969,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 235,2017,same,0,0
 235,2018,same,0,1
 235,2019,same,0,1
-235,2020,down,NA,NA
+235,2020,down,0,1
 235,2021,down,NA,NA
+235,2022,same,NA,NA
 260,1968,first year of independence,0,0
 260,1969,first year of independence,0,0
 260,1970,same,0,0
@@ -1988,8 +2024,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 260,2017,same,0,0
 260,2018,same,0,0
 260,2019,same,0,0
-260,2020,same,NA,NA
+260,2020,same,0,0
 260,2021,same,NA,NA
+260,2022,same,NA,NA
 265,1968,first year of independence,0,0
 265,1969,first year of independence,0,0
 265,1970,same,0,0
@@ -2023,9 +2060,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 290,1975,same,0,0
 290,1976,same,0,0
 290,1977,same,0,0
-290,1978,same,0,1
+290,1978,same,0,0
 290,1979,same,0,1
-290,1980,down,0,1
+290,1980,same,0,1
 290,1981,down,1,1
 290,1982,down,1,0
 290,1983,up,1,0
@@ -2063,10 +2100,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 290,2015,same,0,1
 290,2016,down,0,1
 290,2017,down,0,1
-290,2018,down,0,1
-290,2019,same,0,1
-290,2020,down,NA,NA
-290,2021,down,NA,NA
+290,2018,down,0,0
+290,2019,same,0,0
+290,2020,same,0,0
+290,2021,same,NA,NA
+290,2022,same,NA,NA
 305,1968,first year of independence,0,0
 305,1969,first year of independence,0,0
 305,1970,same,0,0
@@ -2119,8 +2157,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 305,2017,same,0,0
 305,2018,same,0,0
 305,2019,same,0,0
-305,2020,same,NA,NA
+305,2020,same,0,0
 305,2021,same,NA,NA
+305,2022,same,NA,NA
 310,1968,first year of independence,1,0
 310,1969,first year of independence,1,0
 310,1970,up,0,0
@@ -2173,8 +2212,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 310,2017,same,0,0
 310,2018,same,0,0
 310,2019,same,0,0
-310,2020,same,NA,NA
+310,2020,same,0,0
 310,2021,same,NA,NA
+310,2022,same,NA,NA
 315,1968,first year of independence,0,1
 315,1969,first year of independence,0,1
 315,1970,down,0,0
@@ -2227,15 +2267,16 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 316,2017,same,0,0
 316,2018,same,0,0
 316,2019,same,0,0
-316,2020,same,NA,NA
+316,2020,same,0,0
 316,2021,same,NA,NA
+316,2022,same,NA,NA
 317,1993,first year of independence,0,0
 317,1994,first year of independence,0,0
 317,1995,same,0,0
-317,1996,same,1,0
-317,1997,same,1,0
-317,1998,up,1,0
-317,1999,up,0,0
+317,1996,same,0,0
+317,1997,same,0,0
+317,1998,same,0,0
+317,1999,same,0,0
 317,2000,same,0,0
 317,2001,same,0,0
 317,2002,same,0,0
@@ -2256,8 +2297,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 317,2017,same,0,0
 317,2018,same,0,0
 317,2019,same,0,0
-317,2020,same,NA,NA
+317,2020,same,0,0
 317,2021,same,NA,NA
+317,2022,same,NA,NA
 325,1968,first year of independence,0,0
 325,1969,first year of independence,0,0
 325,1970,same,0,0
@@ -2310,8 +2352,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 325,2017,same,0,0
 325,2018,same,0,0
 325,2019,same,0,0
-325,2020,same,NA,NA
+325,2020,same,0,0
 325,2021,same,NA,NA
+325,2022,same,NA,NA
 339,1968,first year of independence,0,0
 339,1969,first year of independence,0,0
 339,1970,same,0,0
@@ -2340,9 +2383,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 339,1993,up,0,0
 339,1994,same,0,0
 339,1995,same,0,0
-339,1996,same,1,0
+339,1996,same,0,0
 339,1997,same,1,0
-339,1998,up,1,0
+339,1998,same,1,0
 339,1999,up,1,0
 339,2000,up,1,0
 339,2001,up,0,0
@@ -2364,24 +2407,26 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 339,2017,same,0,0
 339,2018,same,0,0
 339,2019,same,0,0
-339,2020,same,NA,NA
+339,2020,same,0,0
 339,2021,same,NA,NA
+339,2022,same,NA,NA
 340,2006,first year of independence,0,0
 340,2007,first year of independence,0,0
 340,2008,same,0,0
 340,2009,same,0,0
 340,2010,same,0,0
-340,2011,same,0,1
-340,2012,same,0,1
-340,2013,down,0,0
-340,2014,same,0,1
+340,2011,same,0,0
+340,2012,same,0,0
+340,2013,same,0,0
+340,2014,same,0,0
 340,2015,same,0,1
-340,2016,down,0,1
+340,2016,same,0,1
 340,2017,down,0,1
 340,2018,down,0,0
 340,2019,same,0,0
-340,2020,same,NA,NA
+340,2020,same,0,0
 340,2021,same,NA,NA
+340,2022,same,NA,NA
 341,2006,first year of independence,0,0
 341,2007,first year of independence,0,0
 341,2008,same,0,0
@@ -2391,13 +2436,14 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 341,2012,same,0,0
 341,2013,same,0,0
 341,2014,same,0,0
-341,2015,same,0,1
-341,2016,same,0,1
-341,2017,down,0,1
-341,2018,down,0,1
-341,2019,down,1,1
-341,2020,down,NA,NA
+341,2015,same,0,0
+341,2016,same,0,0
+341,2017,same,0,0
+341,2018,same,0,1
+341,2019,same,1,1
+341,2020,down,1,0
 341,2021,up,NA,NA
+341,2022,up,NA,NA
 343,1991,first year of independence,0,0
 343,1992,first year of independence,0,0
 343,1993,same,0,0
@@ -2420,19 +2466,20 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 343,2010,same,0,1
 343,2011,same,0,1
 343,2012,down,0,1
-343,2013,down,0,1
-343,2014,down,0,0
+343,2013,down,0,0
+343,2014,same,0,0
 343,2015,same,0,0
 343,2016,same,0,0
 343,2017,same,0,0
 343,2018,same,0,0
 343,2019,same,0,0
-343,2020,same,NA,NA
+343,2020,same,0,0
 343,2021,same,NA,NA
+343,2022,same,NA,NA
 344,1992,first year of independence,0,0
-344,1993,first year of independence,0,0
+344,1993,first year of independence,1,0
 344,1994,same,1,0
-344,1995,same,1,0
+344,1995,up,1,0
 344,1996,up,1,0
 344,1997,up,1,0
 344,1998,same,1,0
@@ -2457,8 +2504,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 344,2017,same,0,1
 344,2018,same,0,1
 344,2019,down,0,1
-344,2020,down,NA,NA
+344,2020,down,0,0
 344,2021,same,NA,NA
+344,2022,same,NA,NA
 345,1968,first year of independence,0,0
 345,1969,first year of independence,0,0
 345,1970,same,0,0
@@ -2504,7 +2552,7 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 346,1996,up,1,0
 346,1997,up,1,0
 346,1998,up,1,0
-346,1999,up,1,0
+346,1999,same,1,0
 346,2000,up,1,0
 346,2001,up,0,0
 346,2002,same,0,0
@@ -2520,27 +2568,29 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 346,2012,same,0,0
 346,2013,same,0,0
 346,2014,same,0,0
-346,2015,same,0,1
+346,2015,same,0,0
 346,2016,same,0,1
-346,2017,down,0,1
+346,2017,same,0,1
 346,2018,down,0,0
 346,2019,same,0,0
-346,2020,same,NA,NA
+346,2020,same,0,0
 346,2021,same,NA,NA
+346,2022,same,NA,NA
 347,2008,first year of independence,1,0
 347,2009,first year of independence,1,0
 347,2010,up,0,0
 347,2011,same,0,0
 347,2012,same,0,0
-347,2013,same,0,1
-347,2014,same,0,1
-347,2015,down,1,1
-347,2016,down,1,0
+347,2013,same,0,0
+347,2014,same,0,0
+347,2015,same,1,0
+347,2016,same,1,0
 347,2017,up,1,0
-347,2018,up,0,0
-347,2019,same,0,0
-347,2020,same,NA,NA
+347,2018,up,1,0
+347,2019,up,0,0
+347,2020,same,0,0
 347,2021,same,NA,NA
+347,2022,same,NA,NA
 349,1992,first year of independence,0,0
 349,1993,first year of independence,0,0
 349,1994,same,0,0
@@ -2569,8 +2619,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 349,2017,same,0,0
 349,2018,same,0,1
 349,2019,same,0,1
-349,2020,down,NA,NA
+349,2020,down,1,1
 349,2021,down,NA,NA
+349,2022,up,NA,NA
 350,1968,first year of independence,0,0
 350,1969,first year of independence,0,0
 350,1970,same,0,0
@@ -2623,8 +2674,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 350,2017,same,0,0
 350,2018,same,0,0
 350,2019,same,0,0
-350,2020,same,NA,NA
+350,2020,same,0,0
 350,2021,same,NA,NA
+350,2022,same,NA,NA
 352,1968,first year of independence,0,0
 352,1969,first year of independence,0,0
 352,1970,same,0,0
@@ -2677,8 +2729,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 352,2017,same,0,0
 352,2018,same,0,0
 352,2019,same,0,0
-352,2020,same,NA,NA
+352,2020,same,0,0
 352,2021,same,NA,NA
+352,2022,same,NA,NA
 355,1968,first year of independence,0,0
 355,1969,first year of independence,0,0
 355,1970,same,0,0
@@ -2698,9 +2751,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 355,1984,same,0,0
 355,1985,same,0,0
 355,1986,same,0,0
-355,1987,same,1,0
+355,1987,same,0,0
 355,1988,same,1,0
-355,1989,up,1,0
+355,1989,same,1,0
 355,1990,up,1,0
 355,1991,up,0,0
 355,1992,same,0,0
@@ -2731,8 +2784,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 355,2017,same,0,0
 355,2018,same,0,0
 355,2019,same,0,0
-355,2020,same,NA,NA
+355,2020,same,1,0
 355,2021,same,NA,NA
+355,2022,up,NA,NA
 359,1991,first year of independence,0,0
 359,1992,first year of independence,1,0
 359,1993,same,1,0
@@ -2760,10 +2814,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 359,2015,same,0,0
 359,2016,same,0,0
 359,2017,same,0,0
-359,2018,same,0,0
-359,2019,same,1,0
-359,2020,same,NA,NA
+359,2018,same,0,1
+359,2019,same,1,1
+359,2020,down,1,0
 359,2021,up,NA,NA
+359,2022,up,NA,NA
 360,1968,first year of independence,0,0
 360,1969,first year of independence,0,0
 360,1970,same,0,0
@@ -2816,8 +2871,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 360,2017,down,0,0
 360,2018,same,0,0
 360,2019,same,0,0
-360,2020,same,NA,NA
+360,2020,same,0,0
 360,2021,same,NA,NA
+360,2022,same,NA,NA
 365,1968,first year of independence,0,0
 365,1969,first year of independence,0,0
 365,1970,same,0,0
@@ -2837,13 +2893,13 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 365,1984,same,1,0
 365,1985,up,1,0
 365,1986,up,1,0
-365,1987,up,1,0
+365,1987,up,0,0
 365,1988,same,1,0
-365,1989,up,1,0
+365,1989,same,1,0
 365,1990,up,1,0
 365,1991,up,1,0
-365,1992,up,1,0
-365,1993,up,0,0
+365,1992,up,0,0
+365,1993,same,0,0
 365,1994,same,0,0
 365,1995,same,0,0
 365,1996,same,0,0
@@ -2851,7 +2907,7 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 365,1998,same,0,1
 365,1999,same,0,1
 365,2000,down,0,1
-365,2001,down,0,1
+365,2001,same,0,1
 365,2002,down,0,1
 365,2003,down,0,0
 365,2004,same,0,0
@@ -2870,8 +2926,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 365,2017,same,0,0
 365,2018,same,0,0
 365,2019,same,0,0
-365,2020,same,NA,NA
+365,2020,same,0,1
 365,2021,same,NA,NA
+365,2022,down,NA,NA
 366,1991,first year of independence,0,0
 366,1992,first year of independence,0,0
 366,1993,same,0,0
@@ -2901,8 +2958,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 366,2017,same,0,0
 366,2018,same,0,0
 366,2019,same,0,0
-366,2020,same,NA,NA
+366,2020,same,0,0
 366,2021,same,NA,NA
+366,2022,same,NA,NA
 367,1991,first year of independence,1,0
 367,1992,first year of independence,1,0
 367,1993,up,1,0
@@ -2932,8 +2990,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 367,2017,same,0,0
 367,2018,same,0,0
 367,2019,same,0,0
-367,2020,same,NA,NA
+367,2020,same,0,0
 367,2021,same,NA,NA
+367,2022,same,NA,NA
 368,1991,first year of independence,0,0
 368,1992,first year of independence,0,0
 368,1993,same,0,0
@@ -2963,8 +3022,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 368,2017,same,0,0
 368,2018,same,0,0
 368,2019,same,0,0
-368,2020,same,NA,NA
+368,2020,same,0,0
 368,2021,same,NA,NA
+368,2022,same,NA,NA
 369,1991,first year of independence,0,0
 369,1992,first year of independence,0,0
 369,1993,same,0,0
@@ -2980,35 +3040,36 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 369,2003,same,1,0
 369,2004,same,1,0
 369,2005,up,1,0
-369,2006,up,0,0
-369,2007,same,0,0
+369,2006,up,1,0
+369,2007,up,0,0
 369,2008,same,0,1
 369,2009,same,0,1
 369,2010,down,0,0
-369,2011,same,0,0
+369,2011,same,0,1
 369,2012,same,0,1
-369,2013,same,1,1
+369,2013,down,1,1
 369,2014,down,1,0
 369,2015,up,1,0
 369,2016,up,1,0
 369,2017,up,1,0
-369,2018,same,1,0
+369,2018,up,1,0
 369,2019,up,1,0
-369,2020,up,NA,NA
-369,2021,same,NA,NA
-370,1991,first year of independence,0,0
-370,1992,first year of independence,0,1
-370,1993,same,0,1
+369,2020,up,1,1
+369,2021,up,NA,NA
+369,2022,down,NA,NA
+370,1991,first year of independence,1,0
+370,1992,first year of independence,1,1
+370,1993,up,0,1
 370,1994,down,0,1
-370,1995,down,1,1
-370,1996,down,1,0
-370,1997,up,1,1
-370,1998,up,0,1
-370,1999,down,1,1
-370,2000,down,1,0
-370,2001,up,0,0
-370,2002,same,0,0
-370,2003,same,0,0
+370,1995,down,0,1
+370,1996,down,0,0
+370,1997,same,0,1
+370,1998,same,1,1
+370,1999,down,1,0
+370,2000,up,1,1
+370,2001,up,0,1
+370,2002,down,0,1
+370,2003,down,0,0
 370,2004,same,0,0
 370,2005,same,0,0
 370,2006,same,0,0
@@ -3025,26 +3086,27 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 370,2017,same,0,0
 370,2018,same,0,1
 370,2019,same,0,1
-370,2020,down,NA,NA
+370,2020,down,0,1
 370,2021,down,NA,NA
+370,2022,same,NA,NA
 371,1991,first year of independence,0,1
 371,1992,first year of independence,0,1
 371,1993,down,1,0
 371,1994,same,1,0
-371,1995,up,1,0
-371,1996,up,0,1
-371,1997,same,0,1
-371,1998,down,0,1
-371,1999,down,0,0
+371,1995,up,0,0
+371,1996,same,0,0
+371,1997,same,0,0
+371,1998,same,0,0
+371,1999,same,0,0
 371,2000,same,0,0
 371,2001,same,0,0
 371,2002,same,0,0
 371,2003,same,0,0
 371,2004,same,0,0
 371,2005,same,0,0
-371,2006,same,0,0
-371,2007,same,1,0
-371,2008,same,1,0
+371,2006,same,0,1
+371,2007,same,1,1
+371,2008,down,1,0
 371,2009,up,1,0
 371,2010,up,0,0
 371,2011,same,0,0
@@ -3056,8 +3118,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 371,2017,same,1,0
 371,2018,up,1,0
 371,2019,up,0,0
-371,2020,same,NA,NA
+371,2020,same,0,0
 371,2021,same,NA,NA
+371,2022,same,NA,NA
 372,1991,first year of independence,0,0
 372,1992,first year of independence,1,0
 372,1993,same,1,0
@@ -3077,18 +3140,19 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 372,2007,same,0,0
 372,2008,same,0,0
 372,2009,same,0,0
-372,2010,same,1,0
-372,2011,same,1,0
-372,2012,up,1,0
-372,2013,up,1,0
+372,2010,same,0,0
+372,2011,same,0,0
+372,2012,same,0,0
+372,2013,same,1,0
 372,2014,same,1,0
 372,2015,up,1,0
 372,2016,up,0,0
 372,2017,same,0,0
 372,2018,same,0,0
 372,2019,same,0,0
-372,2020,same,NA,NA
+372,2020,same,0,0
 372,2021,same,NA,NA
+372,2022,same,NA,NA
 373,1991,first year of independence,0,1
 373,1992,first year of independence,0,1
 373,1993,down,0,1
@@ -3099,9 +3163,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 373,1998,same,0,0
 373,1999,same,0,0
 373,2000,same,0,0
-373,2001,same,0,1
-373,2002,same,0,1
-373,2003,down,0,0
+373,2001,same,0,0
+373,2002,same,0,0
+373,2003,same,0,0
 373,2004,same,0,0
 373,2005,same,0,0
 373,2006,same,0,0
@@ -3118,8 +3182,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 373,2017,up,0,1
 373,2018,down,0,0
 373,2019,same,0,0
-373,2020,same,NA,NA
+373,2020,same,0,0
 373,2021,same,NA,NA
+373,2022,same,NA,NA
 375,1968,first year of independence,0,0
 375,1969,first year of independence,0,0
 375,1970,same,0,0
@@ -3172,8 +3237,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 375,2017,same,0,0
 375,2018,same,0,0
 375,2019,same,0,0
-375,2020,same,NA,NA
+375,2020,same,0,0
 375,2021,same,NA,NA
+375,2022,same,NA,NA
 380,1968,first year of independence,0,0
 380,1969,first year of independence,0,0
 380,1970,same,0,0
@@ -3226,8 +3292,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 380,2017,same,0,0
 380,2018,same,0,0
 380,2019,same,0,0
-380,2020,same,NA,NA
+380,2020,same,0,0
 380,2021,same,NA,NA
+380,2022,same,NA,NA
 385,1968,first year of independence,0,0
 385,1969,first year of independence,0,0
 385,1970,same,0,0
@@ -3280,8 +3347,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 385,2017,same,0,0
 385,2018,same,0,0
 385,2019,same,0,0
-385,2020,same,NA,NA
+385,2020,same,0,0
 385,2021,same,NA,NA
+385,2022,same,NA,NA
 390,1968,first year of independence,0,0
 390,1969,first year of independence,0,0
 390,1970,same,0,0
@@ -3334,8 +3402,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 390,2017,same,0,0
 390,2018,same,0,0
 390,2019,same,0,0
-390,2020,same,NA,NA
+390,2020,same,0,0
 390,2021,same,NA,NA
+390,2022,same,NA,NA
 395,1968,first year of independence,0,0
 395,1969,first year of independence,0,0
 395,1970,same,0,0
@@ -3388,8 +3457,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 395,2017,same,0,0
 395,2018,same,0,0
 395,2019,same,0,0
-395,2020,same,NA,NA
+395,2020,same,0,0
 395,2021,same,NA,NA
+395,2022,same,NA,NA
 402,1975,first year of independence,0,0
 402,1976,first year of independence,0,0
 402,1977,same,0,0
@@ -3406,8 +3476,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 402,1988,up,1,0
 402,1989,same,1,0
 402,1990,up,1,0
-402,1991,up,0,0
-402,1992,same,0,0
+402,1991,up,1,0
+402,1992,up,0,0
 402,1993,same,0,0
 402,1994,same,0,0
 402,1995,same,0,0
@@ -3435,8 +3505,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 402,2017,same,0,0
 402,2018,same,0,0
 402,2019,same,0,0
-402,2020,same,NA,NA
+402,2020,same,0,0
 402,2021,same,NA,NA
+402,2022,same,NA,NA
 404,1974,first year of independence,0,0
 404,1975,first year of independence,0,0
 404,1976,same,0,0
@@ -3457,13 +3528,13 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 404,1991,same,1,0
 404,1992,same,1,0
 404,1993,up,1,0
-404,1994,same,1,0
+404,1994,up,1,0
 404,1995,up,0,0
 404,1996,same,0,0
-404,1997,same,1,0
-404,1998,same,1,0
-404,1999,up,1,0
-404,2000,up,1,0
+404,1997,same,0,0
+404,1998,same,0,0
+404,1999,same,1,0
+404,2000,same,1,0
 404,2001,up,1,0
 404,2002,up,1,0
 404,2003,up,0,0
@@ -3476,15 +3547,16 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 404,2010,same,0,0
 404,2011,same,1,0
 404,2012,same,1,0
-404,2013,up,1,0
-404,2014,up,0,0
+404,2013,up,0,0
+404,2014,same,0,0
 404,2015,same,0,0
-404,2016,same,1,0
+404,2016,same,0,0
 404,2017,same,1,0
-404,2018,up,1,0
-404,2019,up,1,0
-404,2020,up,NA,NA
-404,2021,up,NA,NA
+404,2018,same,1,0
+404,2019,up,1,1
+404,2020,up,0,1
+404,2021,down,NA,NA
+404,2022,down,NA,NA
 411,1968,first year of independence,0,1
 411,1969,first year of independence,0,1
 411,1970,down,0,0
@@ -3537,8 +3609,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 411,2017,same,0,0
 411,2018,same,0,0
 411,2019,same,0,0
-411,2020,same,NA,NA
+411,2020,same,0,0
 411,2021,same,NA,NA
+411,2022,same,NA,NA
 420,1968,first year of independence,0,0
 420,1969,first year of independence,0,0
 420,1970,same,0,0
@@ -3568,10 +3641,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 420,1994,down,0,1
 420,1995,down,0,0
 420,1996,same,0,0
-420,1997,same,0,0
-420,1998,same,0,0
-420,1999,same,0,0
-420,2000,same,0,0
+420,1997,same,0,1
+420,1998,same,0,1
+420,1999,down,0,1
+420,2000,down,0,0
 420,2001,same,0,0
 420,2002,same,0,0
 420,2003,same,0,0
@@ -3581,9 +3654,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 420,2007,same,0,0
 420,2008,same,0,0
 420,2009,same,0,0
-420,2010,same,0,0
+420,2010,same,0,1
 420,2011,same,0,1
-420,2012,same,0,1
+420,2012,down,0,1
 420,2013,down,0,0
 420,2014,same,0,0
 420,2015,same,1,0
@@ -3591,8 +3664,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 420,2017,up,1,0
 420,2018,up,0,0
 420,2019,same,0,0
-420,2020,same,NA,NA
+420,2020,same,0,0
 420,2021,same,NA,NA
+420,2022,same,NA,NA
 432,1968,first year of independence,0,1
 432,1969,first year of independence,0,1
 432,1970,down,0,0
@@ -3635,18 +3709,19 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 432,2007,same,0,0
 432,2008,same,0,0
 432,2009,same,0,0
-432,2010,same,0,1
-432,2011,same,0,1
-432,2012,down,0,1
-432,2013,down,0,0
+432,2010,same,0,0
+432,2011,same,0,0
+432,2012,same,0,0
+432,2013,same,0,0
 432,2014,same,0,0
 432,2015,same,0,1
 432,2016,same,0,1
 432,2017,down,1,1
 432,2018,down,1,0
-432,2019,up,1,0
-432,2020,up,NA,NA
-432,2021,same,NA,NA
+432,2019,up,1,1
+432,2020,up,0,1
+432,2021,down,NA,NA
+432,2022,down,NA,NA
 433,1968,first year of independence,0,0
 433,1969,first year of independence,0,0
 433,1970,same,0,0
@@ -3699,15 +3774,16 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 433,2017,same,0,0
 433,2018,same,1,0
 433,2019,same,1,0
-433,2020,up,NA,NA
+433,2020,up,1,0
 433,2021,up,NA,NA
+433,2022,same,NA,NA
 434,1968,first year of independence,0,0
 434,1969,first year of independence,0,0
-434,1970,same,0,0
+434,1970,same,0,1
 434,1971,same,0,1
-434,1972,same,0,1
-434,1973,down,0,0
-434,1974,same,0,0
+434,1972,down,0,1
+434,1973,down,0,1
+434,1974,down,0,0
 434,1975,same,0,0
 434,1976,same,0,0
 434,1977,same,0,0
@@ -3753,8 +3829,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 434,2017,up,0,1
 434,2018,same,0,1
 434,2019,down,0,1
-434,2020,down,NA,NA
+434,2020,down,0,0
 434,2021,same,NA,NA
+434,2022,same,NA,NA
 435,1968,first year of independence,0,0
 435,1969,first year of independence,0,0
 435,1970,same,0,0
@@ -3789,12 +3866,12 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 435,1999,same,0,0
 435,2000,same,0,0
 435,2001,same,0,0
-435,2002,same,0,0
-435,2003,same,0,0
-435,2004,same,1,0
-435,2005,same,1,0
-435,2006,up,0,0
-435,2007,same,0,0
+435,2002,same,1,0
+435,2003,same,1,0
+435,2004,up,1,0
+435,2005,up,1,0
+435,2006,up,1,0
+435,2007,up,0,0
 435,2008,same,0,0
 435,2009,same,0,0
 435,2010,same,0,0
@@ -3807,15 +3884,16 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 435,2017,same,1,0
 435,2018,up,1,1
 435,2019,up,0,1
-435,2020,down,NA,NA
+435,2020,down,0,1
 435,2021,down,NA,NA
+435,2022,same,NA,NA
 436,1968,first year of independence,0,0
 436,1969,first year of independence,0,0
 436,1970,same,0,0
 436,1971,same,0,0
-436,1972,same,1,0
+436,1972,same,0,0
 436,1973,same,1,0
-436,1974,up,1,0
+436,1974,same,1,0
 436,1975,up,0,0
 436,1976,same,0,0
 436,1977,same,0,0
@@ -3832,8 +3910,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 436,1988,up,1,0
 436,1989,up,1,0
 436,1990,up,1,0
-436,1991,up,0,0
-436,1992,same,0,0
+436,1991,up,1,0
+436,1992,up,0,0
 436,1993,same,0,0
 436,1994,same,0,0
 436,1995,same,0,0
@@ -3856,13 +3934,14 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 436,2012,same,0,0
 436,2013,same,0,0
 436,2014,same,0,0
-436,2015,same,0,0
-436,2016,same,0,0
-436,2017,same,0,0
-436,2018,same,0,0
-436,2019,same,0,0
-436,2020,same,NA,NA
+436,2015,same,0,1
+436,2016,same,0,1
+436,2017,down,0,1
+436,2018,down,0,1
+436,2019,down,0,0
+436,2020,same,0,0
 436,2021,same,NA,NA
+436,2022,same,NA,NA
 437,1968,first year of independence,0,0
 437,1969,first year of independence,0,0
 437,1970,same,0,0
@@ -3889,10 +3968,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 437,1991,up,0,0
 437,1992,same,0,0
 437,1993,same,0,0
-437,1994,same,0,0
-437,1995,same,0,0
-437,1996,same,0,0
-437,1997,same,0,0
+437,1994,same,1,0
+437,1995,same,1,0
+437,1996,up,1,0
+437,1997,up,0,0
 437,1998,same,0,0
 437,1999,same,0,0
 437,2000,same,0,0
@@ -3915,8 +3994,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 437,2017,down,0,1
 437,2018,same,0,1
 437,2019,down,0,1
-437,2020,down,NA,NA
+437,2020,down,0,0
 437,2021,same,NA,NA
+437,2022,same,NA,NA
 438,1968,first year of independence,0,0
 438,1969,first year of independence,0,0
 438,1970,same,0,0
@@ -3934,14 +4014,14 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 438,1982,same,1,0
 438,1983,up,1,0
 438,1984,up,1,0
-438,1985,up,1,0
-438,1986,up,0,0
+438,1985,up,0,0
+438,1986,same,0,0
 438,1987,same,0,0
 438,1988,same,1,0
 438,1989,same,1,0
 438,1990,up,1,0
-438,1991,up,1,0
-438,1992,up,0,0
+438,1991,up,0,0
+438,1992,same,0,0
 438,1993,same,0,0
 438,1994,same,0,0
 438,1995,same,0,0
@@ -3969,8 +4049,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 438,2017,same,0,1
 438,2018,same,0,1
 438,2019,down,0,1
-438,2020,down,NA,NA
-438,2021,down,NA,NA
+438,2020,down,0,0
+438,2021,same,NA,NA
+438,2022,same,NA,NA
 439,1968,first year of independence,0,0
 439,1969,first year of independence,0,0
 439,1970,same,0,0
@@ -3986,8 +4067,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 439,1980,down,0,1
 439,1981,down,1,1
 439,1982,down,1,0
-439,1983,up,1,0
-439,1984,up,0,0
+439,1983,up,0,0
+439,1984,same,0,0
 439,1985,same,0,0
 439,1986,same,0,0
 439,1987,same,0,0
@@ -4014,17 +4095,18 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 439,2008,same,0,0
 439,2009,same,0,0
 439,2010,same,0,0
-439,2011,same,0,0
-439,2012,same,0,0
-439,2013,same,0,0
-439,2014,same,0,0
+439,2011,same,1,0
+439,2012,same,1,0
+439,2013,up,1,0
+439,2014,up,0,0
 439,2015,same,0,0
 439,2016,same,0,1
 439,2017,same,0,1
 439,2018,down,0,1
 439,2019,down,0,0
-439,2020,same,NA,NA
+439,2020,same,0,0
 439,2021,same,NA,NA
+439,2022,same,NA,NA
 450,1968,first year of independence,0,0
 450,1969,first year of independence,1,0
 450,1970,same,1,0
@@ -4067,18 +4149,19 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 450,2007,same,0,0
 450,2008,same,0,0
 450,2009,same,0,0
-450,2010,same,0,0
-450,2011,same,0,0
-450,2012,same,0,0
-450,2013,same,0,0
+450,2010,same,0,1
+450,2011,same,0,1
+450,2012,down,0,1
+450,2013,down,0,0
 450,2014,same,0,0
 450,2015,same,1,0
 450,2016,same,1,1
 450,2017,up,0,1
 450,2018,down,0,1
 450,2019,down,0,0
-450,2020,same,NA,NA
+450,2020,same,0,0
 450,2021,same,NA,NA
+450,2022,same,NA,NA
 451,1968,first year of independence,0,0
 451,1969,first year of independence,0,0
 451,1970,same,0,1
@@ -4103,23 +4186,23 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 451,1989,same,0,1
 451,1990,down,0,1
 451,1991,down,0,1
-451,1992,down,0,1
-451,1993,down,0,0
-451,1994,same,0,0
-451,1995,same,0,0
-451,1996,same,0,0
+451,1992,down,0,0
+451,1993,same,0,0
+451,1994,same,1,0
+451,1995,same,1,0
+451,1996,up,1,0
 451,1997,same,1,0
-451,1998,same,1,0
+451,1998,up,1,0
 451,1999,up,1,0
 451,2000,up,1,0
 451,2001,same,1,0
 451,2002,up,1,0
 451,2003,up,0,0
 451,2004,same,0,0
-451,2005,same,0,0
-451,2006,same,0,0
-451,2007,same,0,0
-451,2008,same,0,0
+451,2005,same,1,0
+451,2006,same,1,0
+451,2007,up,1,0
+451,2008,up,0,0
 451,2009,same,0,0
 451,2010,same,0,0
 451,2011,same,0,0
@@ -4129,10 +4212,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 451,2015,same,0,0
 451,2016,same,1,0
 451,2017,same,1,0
-451,2018,up,1,0
-451,2019,same,1,0
-451,2020,up,NA,NA
-451,2021,up,NA,NA
+451,2018,up,0,0
+451,2019,same,0,0
+451,2020,same,0,0
+451,2021,same,NA,NA
+451,2022,same,NA,NA
 452,1968,first year of independence,1,0
 452,1969,first year of independence,1,0
 452,1970,up,0,1
@@ -4185,8 +4269,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 452,2017,same,0,0
 452,2018,same,0,0
 452,2019,same,0,0
-452,2020,same,NA,NA
+452,2020,same,0,0
 452,2021,same,NA,NA
+452,2022,same,NA,NA
 461,1968,first year of independence,0,0
 461,1969,first year of independence,0,0
 461,1970,same,0,0
@@ -4236,11 +4321,12 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 461,2014,same,0,0
 461,2015,same,0,1
 461,2016,same,0,1
-461,2017,down,0,1
+461,2017,down,1,1
 461,2018,down,1,0
-461,2019,same,1,0
-461,2020,up,NA,NA
+461,2019,up,1,0
+461,2020,up,0,0
 461,2021,same,NA,NA
+461,2022,same,NA,NA
 471,1968,first year of independence,0,0
 471,1969,first year of independence,0,0
 471,1970,same,0,0
@@ -4264,9 +4350,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 471,1988,same,1,0
 471,1989,same,1,0
 471,1990,up,1,0
-471,1991,up,1,0
-471,1992,same,1,0
-471,1993,up,0,0
+471,1991,up,0,0
+471,1992,same,0,0
+471,1993,same,0,0
 471,1994,same,0,0
 471,1995,same,0,0
 471,1996,same,0,0
@@ -4286,15 +4372,16 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 471,2010,same,0,0
 471,2011,same,0,1
 471,2012,same,0,1
-471,2013,down,0,0
+471,2013,down,0,1
 471,2014,same,0,1
-471,2015,same,0,1
+471,2015,down,0,1
 471,2016,down,0,1
 471,2017,down,0,1
 471,2018,down,0,0
 471,2019,same,0,0
-471,2020,same,NA,NA
+471,2020,same,0,0
 471,2021,same,NA,NA
+471,2022,same,NA,NA
 475,1968,first year of independence,0,0
 475,1969,first year of independence,1,0
 475,1970,same,1,0
@@ -4307,10 +4394,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 475,1977,same,1,0
 475,1978,up,1,0
 475,1979,up,1,0
-475,1980,up,1,0
-475,1981,up,0,1
+475,1980,up,0,0
+475,1981,same,0,0
 475,1982,same,0,1
-475,1983,down,0,1
+475,1983,same,0,1
 475,1984,down,0,0
 475,1985,same,0,0
 475,1986,same,0,0
@@ -4347,8 +4434,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 475,2017,same,0,0
 475,2018,same,0,0
 475,2019,same,0,0
-475,2020,same,NA,NA
+475,2020,same,0,0
 475,2021,same,NA,NA
+475,2022,same,NA,NA
 481,1968,first year of independence,0,0
 481,1969,first year of independence,0,0
 481,1970,same,0,0
@@ -4401,8 +4489,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 481,2017,same,0,0
 481,2018,same,0,0
 481,2019,same,0,0
-481,2020,same,NA,NA
+481,2020,same,0,0
 481,2021,same,NA,NA
+481,2022,same,NA,NA
 482,1968,first year of independence,0,0
 482,1969,first year of independence,0,0
 482,1970,same,0,0
@@ -4424,10 +4513,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 482,1986,same,0,0
 482,1987,same,0,0
 482,1988,same,0,0
-482,1989,same,1,0
-482,1990,same,1,0
-482,1991,up,1,1
-482,1992,up,1,1
+482,1989,same,0,0
+482,1990,same,0,0
+482,1991,same,0,1
+482,1992,same,1,1
 482,1993,down,1,0
 482,1994,up,0,0
 482,1995,same,0,0
@@ -4455,8 +4544,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 482,2017,same,0,0
 482,2018,same,0,0
 482,2019,same,0,0
-482,2020,same,NA,NA
+482,2020,same,0,0
 482,2021,same,NA,NA
+482,2022,same,NA,NA
 483,1968,first year of independence,0,0
 483,1969,first year of independence,0,0
 483,1970,same,0,0
@@ -4508,9 +4598,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 483,2016,same,0,0
 483,2017,same,0,0
 483,2018,same,0,0
-483,2019,same,0,0
-483,2020,same,NA,NA
-483,2021,same,NA,NA
+483,2019,same,0,1
+483,2020,same,0,1
+483,2021,down,NA,NA
+483,2022,down,NA,NA
 484,1968,first year of independence,0,0
 484,1969,first year of independence,0,0
 484,1970,same,0,0
@@ -4563,8 +4654,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 484,2017,same,1,1
 484,2018,up,1,1
 484,2019,down,1,0
-484,2020,up,NA,NA
-484,2021,up,NA,NA
+484,2020,up,0,0
+484,2021,same,NA,NA
+484,2022,same,NA,NA
 490,1968,first year of independence,0,0
 490,1969,first year of independence,0,0
 490,1970,same,0,0
@@ -4604,10 +4696,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 490,2004,same,0,0
 490,2005,same,0,0
 490,2006,same,0,0
-490,2007,same,0,0
-490,2008,same,0,0
-490,2009,same,0,0
-490,2010,same,0,0
+490,2007,same,1,0
+490,2008,same,1,0
+490,2009,up,1,0
+490,2010,up,0,0
 490,2011,same,0,0
 490,2012,same,0,0
 490,2013,same,0,0
@@ -4615,10 +4707,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 490,2015,same,0,0
 490,2016,same,1,0
 490,2017,same,1,0
-490,2018,up,1,0
-490,2019,up,0,0
-490,2020,same,NA,NA
-490,2021,same,NA,NA
+490,2018,up,1,1
+490,2019,up,0,1
+490,2020,down,0,1
+490,2021,down,NA,NA
+490,2022,same,NA,NA
 500,1968,first year of independence,0,0
 500,1969,first year of independence,0,1
 500,1970,same,0,1
@@ -4671,8 +4764,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 500,2017,down,0,1
 500,2018,down,0,1
 500,2019,down,0,1
-500,2020,down,NA,NA
+500,2020,down,0,1
 500,2021,down,NA,NA
+500,2022,same,NA,NA
 501,1968,first year of independence,0,0
 501,1969,first year of independence,0,0
 501,1970,same,0,0
@@ -4725,8 +4819,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 501,2017,same,0,0
 501,2018,same,1,0
 501,2019,same,1,0
-501,2020,up,NA,NA
+501,2020,up,1,0
 501,2021,up,NA,NA
+501,2022,up,NA,NA
 510,1968,first year of independence,0,0
 510,1969,first year of independence,0,0
 510,1970,same,0,0
@@ -4748,9 +4843,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 510,1986,same,0,0
 510,1987,same,0,0
 510,1988,same,0,0
-510,1989,same,0,0
-510,1990,same,0,0
-510,1991,same,0,0
+510,1989,same,1,0
+510,1990,same,1,0
+510,1991,up,0,0
 510,1992,same,0,0
 510,1993,same,0,0
 510,1994,same,0,0
@@ -4775,12 +4870,13 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 510,2013,same,0,0
 510,2014,same,0,0
 510,2015,same,0,0
-510,2016,same,0,1
-510,2017,same,0,1
-510,2018,down,0,1
-510,2019,down,1,0
-510,2020,same,NA,NA
+510,2016,same,0,0
+510,2017,same,0,0
+510,2018,same,0,0
+510,2019,same,1,0
+510,2020,same,1,0
 510,2021,up,NA,NA
+510,2022,up,NA,NA
 516,1968,first year of independence,0,0
 516,1969,first year of independence,0,0
 516,1970,same,0,0
@@ -4797,17 +4893,17 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 516,1981,same,0,0
 516,1982,same,0,0
 516,1983,same,0,0
-516,1984,same,1,0
-516,1985,same,1,0
-516,1986,up,1,0
-516,1987,up,0,0
+516,1984,same,0,0
+516,1985,same,0,0
+516,1986,same,0,0
+516,1987,same,0,0
 516,1988,same,0,0
 516,1989,same,0,0
 516,1990,same,0,1
 516,1991,same,0,1
 516,1992,down,0,1
-516,1993,down,0,1
-516,1994,down,0,0
+516,1993,down,0,0
+516,1994,same,0,0
 516,1995,same,0,0
 516,1996,same,0,0
 516,1997,same,0,0
@@ -4833,16 +4929,17 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 516,2017,same,1,0
 516,2018,same,1,0
 516,2019,up,1,0
-516,2020,up,NA,NA
+516,2020,up,1,0
 516,2021,up,NA,NA
+516,2022,up,NA,NA
 517,1968,first year of independence,0,0
 517,1969,first year of independence,0,0
 517,1970,same,0,0
 517,1971,same,1,0
 517,1972,same,1,1
 517,1973,up,0,1
-517,1974,down,0,0
-517,1975,same,0,0
+517,1974,down,0,1
+517,1975,down,0,0
 517,1976,same,1,0
 517,1977,same,1,0
 517,1978,up,1,0
@@ -4867,8 +4964,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 517,1997,up,1,0
 517,1998,up,1,0
 517,1999,up,1,0
-517,2000,up,0,0
-517,2001,same,0,0
+517,2000,up,1,0
+517,2001,up,0,0
 517,2002,same,0,0
 517,2003,same,0,0
 517,2004,same,0,0
@@ -4880,15 +4977,16 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 517,2010,same,0,0
 517,2011,same,0,0
 517,2012,same,0,0
-517,2013,same,0,1
+517,2013,same,0,0
 517,2014,same,0,1
-517,2015,down,0,1
-517,2016,down,1,1
-517,2017,down,1,0
-517,2018,up,1,1
-517,2019,up,0,1
-517,2020,down,NA,NA
+517,2015,same,0,1
+517,2016,down,0,1
+517,2017,down,0,0
+517,2018,same,0,1
+517,2019,same,0,1
+517,2020,down,0,1
 517,2021,down,NA,NA
+517,2022,down,NA,NA
 520,1968,first year of independence,0,1
 520,1969,first year of independence,0,1
 520,1970,down,0,0
@@ -4941,8 +5039,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 520,2017,up,0,1
 520,2018,down,0,1
 520,2019,down,0,0
-520,2020,same,NA,NA
+520,2020,same,0,0
 520,2021,same,NA,NA
+520,2022,same,NA,NA
 522,1977,first year of independence,1,0
 522,1978,first year of independence,1,0
 522,1979,up,0,0
@@ -4955,9 +5054,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 522,1986,same,0,0
 522,1987,same,0,0
 522,1988,same,0,0
-522,1989,same,0,1
-522,1990,same,1,1
-522,1991,down,1,0
+522,1989,same,0,0
+522,1990,same,1,0
+522,1991,same,1,0
 522,1992,up,1,0
 522,1993,up,0,0
 522,1994,same,0,0
@@ -4986,14 +5085,15 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 522,2017,same,0,0
 522,2018,same,0,0
 522,2019,same,0,0
-522,2020,same,NA,NA
+522,2020,same,0,0
 522,2021,same,NA,NA
+522,2022,same,NA,NA
 530,1968,first year of independence,0,0
 530,1969,first year of independence,0,0
 530,1970,same,0,0
-530,1971,same,0,0
+530,1971,same,0,1
 530,1972,same,0,1
-530,1973,same,0,1
+530,1973,down,0,1
 530,1974,down,0,1
 530,1975,down,0,0
 530,1976,same,0,0
@@ -5012,8 +5112,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 530,1989,same,1,0
 530,1990,up,1,0
 530,1991,up,1,0
-530,1992,up,1,0
-530,1993,up,0,0
+530,1992,up,0,0
+530,1993,same,0,0
 530,1994,same,0,0
 530,1995,same,0,0
 530,1996,same,0,0
@@ -5040,8 +5140,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 530,2017,up,1,0
 530,2018,up,1,1
 530,2019,up,0,1
-530,2020,down,NA,NA
+530,2020,down,0,1
 530,2021,down,NA,NA
+530,2022,same,NA,NA
 531,1993,first year of independence,0,0
 531,1994,first year of independence,0,0
 531,1995,same,0,0
@@ -5069,8 +5170,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 531,2017,same,0,0
 531,2018,same,0,0
 531,2019,same,0,0
-531,2020,same,NA,NA
+531,2020,same,0,0
 531,2021,same,NA,NA
+531,2022,same,NA,NA
 540,1975,first year of independence,0,0
 540,1976,first year of independence,0,0
 540,1977,same,0,0
@@ -5116,8 +5218,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 540,2017,up,1,0
 540,2018,up,0,0
 540,2019,same,0,0
-540,2020,same,NA,NA
+540,2020,same,0,0
 540,2021,same,NA,NA
+540,2022,same,NA,NA
 541,1975,first year of independence,0,0
 541,1976,first year of independence,0,0
 541,1977,same,0,0
@@ -5163,8 +5266,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 541,2017,down,0,1
 541,2018,down,0,1
 541,2019,down,0,0
-541,2020,same,NA,NA
+541,2020,same,0,0
 541,2021,same,NA,NA
+541,2022,same,NA,NA
 551,1968,first year of independence,0,0
 551,1969,first year of independence,0,0
 551,1970,same,0,0
@@ -5217,8 +5321,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 551,2017,same,0,1
 551,2018,same,0,1
 551,2019,down,1,1
-551,2020,down,NA,NA
+551,2020,down,1,0
 551,2021,up,NA,NA
+551,2022,up,NA,NA
 552,1968,first year of independence,0,0
 552,1969,first year of independence,0,0
 552,1970,same,0,0
@@ -5266,13 +5371,14 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 552,2012,same,0,1
 552,2013,same,0,1
 552,2014,down,0,1
-552,2015,same,1,1
-552,2016,down,1,1
-552,2017,up,0,1
+552,2015,same,0,1
+552,2016,down,0,1
+552,2017,same,0,1
 552,2018,down,1,1
 552,2019,down,1,1
-552,2020,up,NA,NA
+552,2020,up,0,1
 552,2021,down,NA,NA
+552,2022,down,NA,NA
 553,1968,first year of independence,0,0
 553,1969,first year of independence,0,0
 553,1970,same,0,0
@@ -5325,8 +5431,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 553,2017,same,1,0
 553,2018,same,1,0
 553,2019,up,1,0
-553,2020,up,NA,NA
+553,2020,up,0,0
 553,2021,same,NA,NA
+553,2022,same,NA,NA
 560,1968,first year of independence,0,0
 560,1969,first year of independence,0,0
 560,1970,same,0,0
@@ -5346,16 +5453,16 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 560,1984,same,0,0
 560,1985,same,0,0
 560,1986,same,0,0
-560,1987,same,0,0
+560,1987,same,1,0
 560,1988,same,1,0
-560,1989,same,1,0
-560,1990,up,1,0
-560,1991,up,0,0
+560,1989,up,1,0
+560,1990,up,0,0
+560,1991,same,1,0
 560,1992,same,1,0
-560,1993,same,1,0
+560,1993,up,1,0
 560,1994,up,1,0
-560,1995,up,1,0
-560,1996,up,0,0
+560,1995,up,0,0
+560,1996,same,0,0
 560,1997,same,0,0
 560,1998,same,0,0
 560,1999,same,0,0
@@ -5379,8 +5486,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 560,2017,down,0,0
 560,2018,same,0,0
 560,2019,same,0,0
-560,2020,same,NA,NA
+560,2020,same,0,0
 560,2021,same,NA,NA
+560,2022,same,NA,NA
 565,1990,first year of independence,0,0
 565,1991,first year of independence,0,0
 565,1992,same,0,0
@@ -5411,8 +5519,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 565,2017,same,0,0
 565,2018,same,0,0
 565,2019,same,0,0
-565,2020,same,NA,NA
+565,2020,same,0,0
 565,2021,same,NA,NA
+565,2022,same,NA,NA
 570,1968,first year of independence,0,1
 570,1969,first year of independence,0,1
 570,1970,down,0,1
@@ -5455,9 +5564,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 570,2007,same,0,0
 570,2008,same,0,0
 570,2009,same,0,0
-570,2010,same,0,1
+570,2010,same,0,0
 570,2011,same,0,1
-570,2012,down,0,1
+570,2012,same,0,1
 570,2013,down,0,1
 570,2014,same,0,1
 570,2015,down,0,1
@@ -5465,8 +5574,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 570,2017,same,1,0
 570,2018,up,1,0
 570,2019,up,1,0
-570,2020,up,NA,NA
+570,2020,up,0,0
 570,2021,same,NA,NA
+570,2022,same,NA,NA
 571,1968,first year of independence,0,0
 571,1969,first year of independence,0,0
 571,1970,same,0,0
@@ -5517,10 +5627,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 571,2015,same,0,0
 571,2016,same,0,0
 571,2017,same,0,0
-571,2018,same,0,0
-571,2019,same,0,0
-571,2020,same,NA,NA
-571,2021,same,NA,NA
+571,2018,same,0,1
+571,2019,same,0,1
+571,2020,down,0,1
+571,2021,down,NA,NA
+571,2022,down,NA,NA
 572,1968,first year of independence,0,0
 572,1969,first year of independence,0,0
 572,1970,same,0,0
@@ -5571,10 +5682,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 572,2015,same,1,0
 572,2016,same,1,0
 572,2017,up,1,0
-572,2018,up,1,1
-572,2019,up,0,1
-572,2020,down,NA,NA
+572,2018,up,0,1
+572,2019,same,0,1
+572,2020,down,0,1
 572,2021,down,NA,NA
+572,2022,down,NA,NA
 580,1968,first year of independence,0,0
 580,1969,first year of independence,0,0
 580,1970,same,0,0
@@ -5627,8 +5739,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 580,2017,same,0,0
 580,2018,same,0,0
 580,2019,same,0,0
-580,2020,same,NA,NA
+580,2020,same,0,0
 580,2021,same,NA,NA
+580,2022,same,NA,NA
 581,1975,first year of independence,0,0
 581,1976,first year of independence,0,0
 581,1977,same,0,0
@@ -5641,9 +5754,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 581,1984,same,0,0
 581,1985,same,0,0
 581,1986,same,0,0
-581,1987,same,0,0
+581,1987,same,1,0
 581,1988,same,1,0
-581,1989,same,1,0
+581,1989,up,1,0
 581,1990,up,1,0
 581,1991,up,1,0
 581,1992,up,0,0
@@ -5674,8 +5787,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 581,2017,same,0,1
 581,2018,down,0,1
 581,2019,down,0,0
-581,2020,same,NA,NA
+581,2020,same,0,0
 581,2021,same,NA,NA
+581,2022,same,NA,NA
 590,1968,first year of independence,0,0
 590,1969,first year of independence,0,0
 590,1970,same,0,0
@@ -5728,8 +5842,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 590,2017,same,0,0
 590,2018,same,0,1
 590,2019,same,0,1
-590,2020,down,NA,NA
+590,2020,down,0,1
 590,2021,down,NA,NA
+590,2022,down,NA,NA
 600,1968,first year of independence,0,0
 600,1969,first year of independence,0,0
 600,1970,same,0,0
@@ -5782,8 +5897,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 600,2017,same,0,0
 600,2018,same,0,0
 600,2019,same,0,0
-600,2020,same,NA,NA
+600,2020,same,0,0
 600,2021,same,NA,NA
+600,2022,same,NA,NA
 615,1968,first year of independence,0,0
 615,1969,first year of independence,0,0
 615,1970,same,0,0
@@ -5795,8 +5911,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 615,1976,same,0,0
 615,1977,same,1,0
 615,1978,same,1,0
-615,1979,up,1,0
-615,1980,up,0,0
+615,1979,up,0,0
+615,1980,same,0,0
 615,1981,same,0,0
 615,1982,same,0,0
 615,1983,same,0,0
@@ -5836,8 +5952,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 615,2017,same,0,0
 615,2018,same,0,0
 615,2019,same,0,1
-615,2020,same,NA,NA
+615,2020,same,0,1
 615,2021,down,NA,NA
+615,2022,same,NA,NA
 616,1968,first year of independence,0,0
 616,1969,first year of independence,0,0
 616,1970,same,0,0
@@ -5881,8 +5998,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 616,2008,same,0,0
 616,2009,same,1,0
 616,2010,same,1,0
-616,2011,up,0,0
-616,2012,same,0,0
+616,2011,up,1,0
+616,2012,up,0,0
 616,2013,same,0,0
 616,2014,same,1,0
 616,2015,same,1,0
@@ -5890,8 +6007,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 616,2017,up,0,0
 616,2018,same,0,0
 616,2019,same,0,0
-616,2020,same,NA,NA
+616,2020,same,0,0
 616,2021,same,NA,NA
+616,2022,same,NA,NA
 620,1968,first year of independence,0,1
 620,1969,first year of independence,0,1
 620,1970,down,0,0
@@ -5933,19 +6051,20 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 620,2006,same,0,0
 620,2007,same,0,0
 620,2008,same,0,0
-620,2009,same,0,0
+620,2009,same,1,0
 620,2010,same,1,0
-620,2011,same,1,1
+620,2011,up,1,1
 620,2012,up,0,1
 620,2013,down,0,1
 620,2014,down,0,1
-620,2015,down,0,0
-620,2016,same,0,0
-620,2017,same,0,0
-620,2018,same,0,0
+620,2015,down,0,1
+620,2016,same,0,1
+620,2017,down,0,1
+620,2018,down,0,0
 620,2019,same,0,0
-620,2020,same,NA,NA
+620,2020,same,0,0
 620,2021,same,NA,NA
+620,2022,same,NA,NA
 625,1968,first year of independence,0,0
 625,1969,first year of independence,0,0
 625,1970,same,0,0
@@ -5996,10 +6115,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 625,2015,same,1,0
 625,2016,same,1,0
 625,2017,up,1,0
-625,2018,same,1,0
-625,2019,up,1,1
-625,2020,up,NA,NA
+625,2018,same,1,1
+625,2019,up,0,1
+625,2020,down,0,1
 625,2021,down,NA,NA
+625,2022,down,NA,NA
 626,2011,first year of independence,0,1
 626,2012,first year of independence,0,1
 626,2013,down,0,1
@@ -6009,8 +6129,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 626,2017,down,1,0
 626,2018,same,1,0
 626,2019,up,1,0
-626,2020,up,NA,NA
+626,2020,up,1,0
 626,2021,up,NA,NA
+626,2022,same,NA,NA
 630,1968,first year of independence,0,0
 630,1969,first year of independence,0,0
 630,1970,same,0,0
@@ -6037,17 +6158,17 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 630,1991,same,0,0
 630,1992,same,0,0
 630,1993,same,0,0
-630,1994,same,1,0
+630,1994,same,0,0
 630,1995,same,1,0
-630,1996,up,1,0
+630,1996,same,1,0
 630,1997,up,1,0
 630,1998,up,1,0
 630,1999,same,1,0
 630,2000,up,0,0
 630,2001,same,0,0
-630,2002,same,0,0
+630,2002,same,0,1
 630,2003,same,0,1
-630,2004,same,0,1
+630,2004,down,0,1
 630,2005,down,0,1
 630,2006,down,0,0
 630,2007,same,0,0
@@ -6063,8 +6184,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 630,2017,same,0,0
 630,2018,same,0,0
 630,2019,same,0,1
-630,2020,same,NA,NA
+630,2020,same,0,1
 630,2021,down,NA,NA
+630,2022,down,NA,NA
 640,1968,first year of independence,0,1
 640,1969,first year of independence,0,1
 640,1970,down,0,1
@@ -6098,7 +6220,7 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 640,1998,same,1,0
 640,1999,up,1,0
 640,2000,up,1,0
-640,2001,up,1,0
+640,2001,same,1,0
 640,2002,up,1,0
 640,2003,up,0,0
 640,2004,same,0,0
@@ -6107,9 +6229,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 640,2007,down,0,1
 640,2008,down,0,1
 640,2009,same,0,1
-640,2010,down,0,0
+640,2010,down,0,1
 640,2011,same,0,1
-640,2012,same,0,1
+640,2012,down,0,1
 640,2013,down,0,1
 640,2014,down,0,1
 640,2015,down,0,1
@@ -6117,8 +6239,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 640,2017,down,0,0
 640,2018,same,0,0
 640,2019,same,0,0
-640,2020,same,NA,NA
+640,2020,same,0,0
 640,2021,same,NA,NA
+640,2022,same,NA,NA
 645,1968,first year of independence,0,1
 645,1969,first year of independence,0,1
 645,1970,down,0,0
@@ -6170,9 +6293,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 645,2016,up,0,0
 645,2017,same,0,1
 645,2018,same,0,1
-645,2019,down,0,1
-645,2020,down,NA,NA
-645,2021,same,NA,NA
+645,2019,down,1,1
+645,2020,down,1,0
+645,2021,up,NA,NA
+645,2022,up,NA,NA
 651,1968,first year of independence,0,0
 651,1969,first year of independence,0,0
 651,1970,same,0,0
@@ -6215,18 +6339,19 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 651,2007,same,0,0
 651,2008,same,0,0
 651,2009,same,0,0
-651,2010,same,0,1
+651,2010,same,0,0
 651,2011,same,0,1
-651,2012,down,0,1
-651,2013,down,0,1
-651,2014,down,0,0
+651,2012,same,0,1
+651,2013,down,0,0
+651,2014,same,0,0
 651,2015,same,0,0
 651,2016,same,0,0
-651,2017,same,1,0
-651,2018,same,1,0
-651,2019,up,1,0
-651,2020,up,NA,NA
+651,2017,same,0,0
+651,2018,same,0,0
+651,2019,same,0,0
+651,2020,same,0,0
 651,2021,same,NA,NA
+651,2022,same,NA,NA
 652,1968,first year of independence,0,1
 652,1969,first year of independence,0,1
 652,1970,down,0,1
@@ -6256,9 +6381,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 652,1994,same,0,0
 652,1995,same,0,0
 652,1996,same,0,0
-652,1997,same,1,0
+652,1997,same,0,0
 652,1998,same,1,0
-652,1999,up,1,0
+652,1999,same,1,0
 652,2000,up,0,0
 652,2001,same,0,0
 652,2002,same,0,0
@@ -6279,8 +6404,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 652,2017,same,0,0
 652,2018,same,0,0
 652,2019,same,0,0
-652,2020,same,NA,NA
+652,2020,same,0,0
 652,2021,same,NA,NA
+652,2022,same,NA,NA
 660,1968,first year of independence,0,0
 660,1969,first year of independence,0,0
 660,1970,same,0,0
@@ -6333,13 +6459,14 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 660,2017,up,0,0
 660,2018,same,0,0
 660,2019,same,0,0
-660,2020,same,NA,NA
+660,2020,same,0,0
 660,2021,same,NA,NA
+660,2022,same,NA,NA
 663,1968,first year of independence,1,0
 663,1969,first year of independence,1,0
-663,1970,up,1,1
-663,1971,up,0,1
-663,1972,down,0,0
+663,1970,up,1,0
+663,1971,up,0,0
+663,1972,same,0,0
 663,1973,same,0,0
 663,1974,same,0,0
 663,1975,same,0,0
@@ -6386,9 +6513,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 663,2016,same,0,0
 663,2017,same,0,0
 663,2018,same,0,0
-663,2019,same,1,0
-663,2020,same,NA,NA
-663,2021,up,NA,NA
+663,2019,same,0,0
+663,2020,same,0,0
+663,2021,same,NA,NA
+663,2022,same,NA,NA
 666,1968,first year of independence,0,0
 666,1969,first year of independence,0,0
 666,1970,same,0,0
@@ -6441,8 +6569,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 666,2017,same,0,0
 666,2018,same,0,0
 666,2019,same,0,0
-666,2020,same,NA,NA
+666,2020,same,0,0
 666,2021,same,NA,NA
+666,2022,same,NA,NA
 670,1968,first year of independence,0,0
 670,1969,first year of independence,0,0
 670,1970,same,0,0
@@ -6480,8 +6609,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 670,2002,same,0,0
 670,2003,same,1,0
 670,2004,same,1,0
-670,2005,up,0,0
-670,2006,same,0,0
+670,2005,up,1,0
+670,2006,up,0,0
 670,2007,same,0,0
 670,2008,same,0,0
 670,2009,same,0,0
@@ -6495,8 +6624,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 670,2017,same,0,0
 670,2018,same,0,0
 670,2019,same,0,0
-670,2020,same,NA,NA
+670,2020,same,0,0
 670,2021,same,NA,NA
+670,2022,same,NA,NA
 678,1968,first year of independence,0,0
 678,1969,first year of independence,0,0
 678,1970,same,0,0
@@ -6521,9 +6651,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 678,1989,same,1,0
 678,1990,up,1,0
 678,1991,up,0,0
-678,1992,same,0,0
-678,1993,same,0,0
-678,1994,same,0,0
+678,1992,same,0,1
+678,1993,same,0,1
+678,1994,down,0,0
 678,1995,same,0,0
 678,1996,same,0,0
 678,1997,same,0,0
@@ -6549,8 +6679,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 678,2017,same,0,0
 678,2018,same,0,0
 678,2019,same,0,0
-678,2020,same,NA,NA
+678,2020,same,0,0
 678,2021,same,NA,NA
+678,2022,same,NA,NA
 680,1968,first year of independence,0,0
 680,1969,first year of independence,0,0
 680,1970,same,0,0
@@ -6626,8 +6757,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 690,2017,same,0,0
 690,2018,same,0,0
 690,2019,same,0,0
-690,2020,same,NA,NA
+690,2020,same,0,0
 690,2021,same,NA,NA
+690,2022,same,NA,NA
 694,1971,first year of independence,0,0
 694,1972,first year of independence,0,0
 694,1973,same,0,0
@@ -6644,9 +6776,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 694,1984,same,0,0
 694,1985,same,0,0
 694,1986,same,0,0
-694,1987,same,0,0
+694,1987,same,1,0
 694,1988,same,1,0
-694,1989,same,1,0
+694,1989,up,1,0
 694,1990,up,0,0
 694,1991,same,0,0
 694,1992,same,0,0
@@ -6677,8 +6809,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 694,2017,same,0,0
 694,2018,same,0,1
 694,2019,same,0,1
-694,2020,down,NA,NA
+694,2020,down,0,1
 694,2021,down,NA,NA
+694,2022,same,NA,NA
 696,1971,first year of independence,0,0
 696,1972,first year of independence,0,0
 696,1973,same,0,0
@@ -6717,19 +6850,20 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 696,2006,up,1,0
 696,2007,up,0,0
 696,2008,same,0,0
-696,2009,same,0,0
-696,2010,same,1,0
-696,2011,same,1,0
-696,2012,up,0,0
+696,2009,same,0,1
+696,2010,same,0,1
+696,2011,down,0,0
+696,2012,same,0,0
 696,2013,same,0,0
 696,2014,same,0,0
 696,2015,same,0,0
 696,2016,same,0,0
 696,2017,same,0,1
 696,2018,same,0,1
-696,2019,down,0,0
-696,2020,same,NA,NA
-696,2021,same,NA,NA
+696,2019,down,0,1
+696,2020,down,0,1
+696,2021,down,NA,NA
+696,2022,same,NA,NA
 698,1968,first year of independence,1,0
 698,1969,first year of independence,1,0
 698,1970,up,1,0
@@ -6782,13 +6916,14 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 698,2017,same,0,0
 698,2018,same,0,0
 698,2019,same,0,0
-698,2020,same,NA,NA
+698,2020,same,0,0
 698,2021,same,NA,NA
+698,2022,same,NA,NA
 700,1968,first year of independence,0,0
 700,1969,first year of independence,0,0
-700,1970,same,0,1
+700,1970,same,0,0
 700,1971,same,0,1
-700,1972,down,0,1
+700,1972,same,0,1
 700,1973,down,0,1
 700,1974,down,0,0
 700,1975,same,0,0
@@ -6834,10 +6969,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 700,2015,same,1,1
 700,2016,down,1,0
 700,2017,up,1,0
-700,2018,up,0,0
-700,2019,same,0,1
-700,2020,same,NA,NA
+700,2018,up,1,0
+700,2019,same,1,1
+700,2020,up,0,1
 700,2021,down,NA,NA
+700,2022,down,NA,NA
 701,1991,first year of independence,0,0
 701,1992,first year of independence,0,0
 701,1993,same,0,0
@@ -6867,39 +7003,41 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 701,2017,same,0,0
 701,2018,same,0,0
 701,2019,same,0,0
-701,2020,same,NA,NA
+701,2020,same,0,0
 701,2021,same,NA,NA
+701,2022,same,NA,NA
 702,1991,first year of independence,0,0
 702,1992,first year of independence,0,0
 702,1993,same,1,0
 702,1994,same,1,0
 702,1995,up,1,0
 702,1996,up,1,0
-702,1997,up,1,0
-702,1998,up,1,0
-702,1999,up,1,0
-702,2000,up,0,0
+702,1997,same,1,0
+702,1998,up,0,0
+702,1999,same,0,0
+702,2000,same,0,0
 702,2001,same,0,0
 702,2002,same,0,0
-702,2003,same,0,0
-702,2004,same,0,0
-702,2005,same,0,0
+702,2003,same,0,1
+702,2004,same,0,1
+702,2005,down,0,0
 702,2006,same,0,0
 702,2007,same,0,0
 702,2008,same,0,0
 702,2009,same,0,0
-702,2010,same,0,0
-702,2011,same,0,0
-702,2012,same,0,1
-702,2013,same,0,1
-702,2014,down,0,1
+702,2010,same,0,1
+702,2011,same,0,1
+702,2012,down,0,1
+702,2013,down,0,1
+702,2014,same,0,1
 702,2015,down,0,1
 702,2016,down,0,0
 702,2017,same,0,0
 702,2018,same,0,0
 702,2019,same,0,0
-702,2020,same,NA,NA
+702,2020,same,0,0
 702,2021,same,NA,NA
+702,2022,same,NA,NA
 703,1991,first year of independence,0,0
 703,1992,first year of independence,0,0
 703,1993,same,0,0
@@ -6929,11 +7067,12 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 703,2017,up,1,1
 703,2018,up,0,1
 703,2019,down,0,1
-703,2020,down,NA,NA
+703,2020,down,0,0
 703,2021,same,NA,NA
-704,1991,first year of independence,0,1
-704,1992,first year of independence,0,1
-704,1993,down,0,0
+703,2022,same,NA,NA
+704,1991,first year of independence,0,0
+704,1992,first year of independence,0,0
+704,1993,same,0,0
 704,1994,same,0,0
 704,1995,same,0,1
 704,1996,same,0,1
@@ -6943,9 +7082,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 704,2000,same,0,0
 704,2001,same,0,0
 704,2002,same,0,0
-704,2003,same,0,0
-704,2004,same,0,0
-704,2005,same,0,0
+704,2003,same,0,1
+704,2004,same,0,1
+704,2005,down,0,0
 704,2006,same,0,0
 704,2007,same,0,0
 704,2008,same,0,0
@@ -6954,14 +7093,15 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 704,2011,same,0,0
 704,2012,same,0,0
 704,2013,same,0,0
-704,2014,same,0,0
+704,2014,same,1,0
 704,2015,same,1,0
-704,2016,same,1,0
+704,2016,up,1,0
 704,2017,up,1,0
 704,2018,up,1,0
-704,2019,up,1,0
-704,2020,up,NA,NA
+704,2019,up,0,0
+704,2020,same,0,0
 704,2021,same,NA,NA
+704,2022,same,NA,NA
 705,1991,first year of independence,0,0
 705,1992,first year of independence,0,0
 705,1993,same,0,0
@@ -6991,8 +7131,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 705,2017,down,1,1
 705,2018,down,1,0
 705,2019,up,1,0
-705,2020,up,NA,NA
+705,2020,up,0,0
 705,2021,same,NA,NA
+705,2022,same,NA,NA
 710,1968,first year of independence,0,0
 710,1969,first year of independence,0,0
 710,1970,same,0,0
@@ -7005,8 +7146,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 710,1977,up,1,0
 710,1978,up,1,0
 710,1979,up,1,0
-710,1980,up,0,0
-710,1981,same,0,0
+710,1980,up,1,0
+710,1981,up,0,0
 710,1982,same,0,0
 710,1983,same,0,0
 710,1984,same,0,0
@@ -7045,8 +7186,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 710,2017,same,0,0
 710,2018,same,0,0
 710,2019,same,0,0
-710,2020,same,NA,NA
+710,2020,same,0,0
 710,2021,same,NA,NA
+710,2022,same,NA,NA
 712,1968,first year of independence,0,0
 712,1969,first year of independence,0,0
 712,1970,same,0,0
@@ -7099,8 +7241,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 712,2017,same,0,0
 712,2018,same,0,0
 712,2019,same,0,0
-712,2020,same,NA,NA
+712,2020,same,0,0
 712,2021,same,NA,NA
+712,2022,same,NA,NA
 713,1968,first year of independence,0,0
 713,1969,first year of independence,0,0
 713,1970,same,0,0
@@ -7153,8 +7296,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 713,2017,same,0,0
 713,2018,same,0,0
 713,2019,same,0,0
-713,2020,same,NA,NA
+713,2020,same,0,0
 713,2021,same,NA,NA
+713,2022,same,NA,NA
 731,1968,first year of independence,0,0
 731,1969,first year of independence,0,0
 731,1970,same,0,0
@@ -7207,14 +7351,15 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 731,2017,same,0,0
 731,2018,same,0,0
 731,2019,same,0,0
-731,2020,same,NA,NA
+731,2020,same,0,0
 731,2021,same,NA,NA
+731,2022,same,NA,NA
 732,1968,first year of independence,0,0
 732,1969,first year of independence,0,0
-732,1970,same,0,1
-732,1971,same,0,1
-732,1972,down,0,1
-732,1973,down,0,0
+732,1970,same,0,0
+732,1971,same,0,0
+732,1972,same,0,0
+732,1973,same,0,0
 732,1974,same,0,0
 732,1975,same,0,0
 732,1976,same,0,0
@@ -7223,8 +7368,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 732,1979,same,1,0
 732,1980,up,1,0
 732,1981,same,1,0
-732,1982,up,0,0
-732,1983,same,0,0
+732,1982,up,1,0
+732,1983,up,0,0
 732,1984,same,1,0
 732,1985,same,1,0
 732,1986,up,1,0
@@ -7261,8 +7406,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 732,2017,same,0,0
 732,2018,same,0,0
 732,2019,same,0,0
-732,2020,same,NA,NA
+732,2020,same,0,0
 732,2021,same,NA,NA
+732,2022,same,NA,NA
 740,1968,first year of independence,0,0
 740,1969,first year of independence,0,0
 740,1970,same,0,0
@@ -7315,8 +7461,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 740,2017,same,0,0
 740,2018,same,0,0
 740,2019,same,0,0
-740,2020,same,NA,NA
+740,2020,same,0,0
 740,2021,same,NA,NA
+740,2022,same,NA,NA
 750,1968,first year of independence,0,0
 750,1969,first year of independence,0,0
 750,1970,same,0,0
@@ -7360,17 +7507,18 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 750,2008,same,0,0
 750,2009,same,0,0
 750,2010,same,0,0
-750,2011,same,1,0
-750,2012,same,1,0
-750,2013,up,0,0
-750,2014,same,0,0
-750,2015,same,0,0
-750,2016,same,0,0
+750,2011,same,0,0
+750,2012,same,0,0
+750,2013,same,0,1
+750,2014,same,0,1
+750,2015,down,0,1
+750,2016,down,0,0
 750,2017,same,0,1
 750,2018,same,0,1
 750,2019,down,0,1
-750,2020,down,NA,NA
+750,2020,down,0,0
 750,2021,same,NA,NA
+750,2022,same,NA,NA
 760,1968,first year of independence,0,0
 760,1969,first year of independence,0,0
 760,1970,same,0,0
@@ -7422,9 +7570,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 760,2016,same,0,0
 760,2017,same,0,0
 760,2018,same,0,0
-760,2019,same,0,0
-760,2020,same,NA,NA
-760,2021,same,NA,NA
+760,2019,same,0,1
+760,2020,same,0,1
+760,2021,down,NA,NA
+760,2022,down,NA,NA
 770,1968,first year of independence,0,1
 770,1969,first year of independence,0,1
 770,1970,down,1,1
@@ -7443,9 +7592,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 770,1983,same,0,0
 770,1984,same,0,0
 770,1985,same,0,0
-770,1986,same,0,0
+770,1986,same,1,0
 770,1987,same,1,0
-770,1988,same,1,0
+770,1988,up,1,0
 770,1989,up,1,0
 770,1990,up,0,0
 770,1991,same,0,0
@@ -7472,13 +7621,14 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 770,2012,same,0,0
 770,2013,same,0,0
 770,2014,same,0,0
-770,2015,same,0,0
-770,2016,same,0,0
-770,2017,same,0,1
-770,2018,same,0,1
-770,2019,down,0,1
-770,2020,down,NA,NA
-770,2021,same,NA,NA
+770,2015,same,1,0
+770,2016,same,1,0
+770,2017,up,1,1
+770,2018,up,0,1
+770,2019,down,1,1
+770,2020,down,1,0
+770,2021,up,NA,NA
+770,2022,up,NA,NA
 771,1971,first year of independence,0,1
 771,1972,first year of independence,0,1
 771,1973,down,0,1
@@ -7510,26 +7660,27 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 771,1999,same,0,1
 771,2000,same,0,1
 771,2001,down,0,1
-771,2002,down,0,0
-771,2003,same,0,0
-771,2004,same,0,0
+771,2002,down,0,1
+771,2003,same,0,1
+771,2004,down,0,0
 771,2005,same,0,0
 771,2006,same,0,0
 771,2007,same,0,1
 771,2008,same,0,1
-771,2009,down,0,0
-771,2010,same,0,1
+771,2009,down,0,1
+771,2010,down,0,1
 771,2011,same,0,1
 771,2012,down,0,1
-771,2013,down,0,1
-771,2014,down,0,0
-771,2015,same,0,1
+771,2013,down,0,0
+771,2014,same,0,0
+771,2015,same,0,0
 771,2016,same,0,1
-771,2017,down,0,1
+771,2017,same,0,1
 771,2018,down,0,1
-771,2019,down,0,1
-771,2020,down,NA,NA
-771,2021,same,NA,NA
+771,2019,down,1,1
+771,2020,down,1,0
+771,2021,up,NA,NA
+771,2022,up,NA,NA
 775,1968,first year of independence,0,0
 775,1969,first year of independence,0,0
 775,1970,same,0,0
@@ -7578,12 +7729,13 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 775,2013,up,1,0
 775,2014,up,1,0
 775,2015,up,1,0
-775,2016,up,1,0
-775,2017,up,1,0
+775,2016,up,0,0
+775,2017,same,1,0
 775,2018,same,1,0
 775,2019,up,1,1
-775,2020,up,NA,NA
+775,2020,up,0,1
 775,2021,down,NA,NA
+775,2022,same,NA,NA
 780,1968,first year of independence,0,1
 780,1969,first year of independence,0,1
 780,1970,down,0,1
@@ -7604,10 +7756,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 780,1985,same,0,1
 780,1986,down,0,1
 780,1987,down,0,1
-780,1988,down,0,1
-780,1989,down,0,0
+780,1988,down,0,0
+780,1989,same,1,0
 780,1990,same,1,0
-780,1991,same,1,0
+780,1991,up,1,0
 780,1992,up,1,0
 780,1993,same,1,0
 780,1994,up,1,0
@@ -7630,14 +7782,15 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 780,2011,same,1,0
 780,2012,up,1,0
 780,2013,up,1,0
-780,2014,same,1,0
+780,2014,up,1,0
 780,2015,up,1,0
 780,2016,up,1,0
-780,2017,same,1,1
+780,2017,up,1,1
 780,2018,up,0,1
-780,2019,down,0,1
-780,2020,down,NA,NA
-780,2021,same,NA,NA
+780,2019,down,1,1
+780,2020,down,1,0
+780,2021,up,NA,NA
+780,2022,up,NA,NA
 781,1968,first year of independence,0,0
 781,1969,first year of independence,0,0
 781,1970,same,0,0
@@ -7690,8 +7843,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 781,2017,same,1,0
 781,2018,up,1,0
 781,2019,up,1,0
-781,2020,up,NA,NA
+781,2020,up,0,0
 781,2021,same,NA,NA
+781,2022,same,NA,NA
 790,1968,first year of independence,0,0
 790,1969,first year of independence,0,0
 790,1970,same,0,0
@@ -7715,8 +7869,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 790,1988,same,1,0
 790,1989,same,1,0
 790,1990,up,1,0
-790,1991,up,1,0
-790,1992,up,0,0
+790,1991,up,0,0
+790,1992,same,0,0
 790,1993,same,0,1
 790,1994,same,0,1
 790,1995,down,0,1
@@ -7744,8 +7898,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 790,2017,same,0,1
 790,2018,down,0,1
 790,2019,down,0,0
-790,2020,same,NA,NA
+790,2020,same,0,0
 790,2021,same,NA,NA
+790,2022,same,NA,NA
 800,1968,first year of independence,1,0
 800,1969,first year of independence,1,0
 800,1970,up,0,0
@@ -7758,10 +7913,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 800,1977,same,0,0
 800,1978,same,1,0
 800,1979,same,1,0
-800,1980,up,1,0
-800,1981,up,1,0
-800,1982,up,1,0
-800,1983,up,0,0
+800,1980,up,0,0
+800,1981,same,0,0
+800,1982,same,0,0
+800,1983,same,0,0
 800,1984,same,0,0
 800,1985,same,0,0
 800,1986,same,0,0
@@ -7771,8 +7926,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 800,1990,same,0,1
 800,1991,down,1,1
 800,1992,down,1,0
-800,1993,up,0,0
-800,1994,same,0,0
+800,1993,up,1,0
+800,1994,up,0,0
 800,1995,same,1,0
 800,1996,same,1,0
 800,1997,up,1,0
@@ -7781,12 +7936,12 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 800,2000,same,0,0
 800,2001,same,0,0
 800,2002,same,0,0
-800,2003,same,0,0
-800,2004,same,0,0
-800,2005,same,0,0
-800,2006,same,0,0
-800,2007,same,0,0
-800,2008,same,0,0
+800,2003,same,0,1
+800,2004,same,0,1
+800,2005,down,1,1
+800,2006,down,1,0
+800,2007,up,1,0
+800,2008,up,0,0
 800,2009,same,0,0
 800,2010,same,0,0
 800,2011,same,0,1
@@ -7794,12 +7949,13 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 800,2013,down,0,1
 800,2014,down,0,1
 800,2015,down,0,0
-800,2016,same,0,0
-800,2017,same,0,0
-800,2018,same,0,1
-800,2019,same,0,1
-800,2020,down,NA,NA
+800,2016,same,1,0
+800,2017,same,1,0
+800,2018,up,1,1
+800,2019,up,0,1
+800,2020,down,0,0
 800,2021,same,NA,NA
+800,2022,same,NA,NA
 811,1968,first year of independence,0,1
 811,1969,first year of independence,0,1
 811,1970,down,0,1
@@ -7846,14 +8002,15 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 811,2011,same,0,1
 811,2012,same,0,1
 811,2013,down,0,1
-811,2014,same,0,1
-811,2015,down,0,1
+811,2014,down,0,1
+811,2015,same,0,1
 811,2016,down,0,1
 811,2017,down,0,0
 811,2018,same,0,1
 811,2019,same,0,1
-811,2020,down,NA,NA
+811,2020,down,0,1
 811,2021,down,NA,NA
+811,2022,same,NA,NA
 812,1968,first year of independence,0,0
 812,1969,first year of independence,0,0
 812,1970,same,0,0
@@ -7905,9 +8062,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 812,2016,same,1,0
 812,2017,same,1,0
 812,2018,up,1,0
-812,2019,up,0,0
-812,2020,same,NA,NA
+812,2019,up,1,0
+812,2020,up,0,0
 812,2021,same,NA,NA
+812,2022,same,NA,NA
 816,1968,first year of independence,0,0
 816,1969,first year of independence,0,0
 816,1970,same,0,0
@@ -7923,17 +8081,17 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 816,1980,same,0,0
 816,1981,same,0,0
 816,1982,same,0,0
-816,1983,same,0,0
+816,1983,same,1,0
 816,1984,same,1,0
-816,1985,same,1,0
+816,1985,up,1,0
 816,1986,up,1,0
 816,1987,up,1,0
 816,1988,same,1,0
 816,1989,up,1,0
 816,1990,up,1,0
 816,1991,up,1,0
-816,1992,up,0,0
-816,1993,same,0,0
+816,1992,up,1,0
+816,1993,up,0,0
 816,1994,same,0,0
 816,1995,same,0,0
 816,1996,same,1,0
@@ -7960,8 +8118,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 816,2017,same,0,1
 816,2018,down,0,1
 816,2019,down,0,0
-816,2020,same,NA,NA
+816,2020,same,0,0
 816,2021,same,NA,NA
+816,2022,same,NA,NA
 817,1968,first year of independence,0,0
 817,1969,first year of independence,0,0
 817,1970,same,0,0
@@ -7985,11 +8144,11 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 820,1980,same,0,0
 820,1981,same,0,0
 820,1982,same,0,0
-820,1983,same,0,0
+820,1983,same,0,1
 820,1984,same,0,1
-820,1985,same,0,1
-820,1986,down,0,1
-820,1987,down,0,0
+820,1985,down,0,1
+820,1986,down,0,0
+820,1987,same,0,0
 820,1988,same,0,0
 820,1989,same,0,0
 820,1990,same,0,0
@@ -8022,11 +8181,12 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 820,2017,up,1,0
 820,2018,up,1,0
 820,2019,up,0,0
-820,2020,same,NA,NA
+820,2020,same,0,0
 820,2021,same,NA,NA
-830,1968,first year of independence,1,0
-830,1969,first year of independence,1,0
-830,1970,up,0,0
+820,2022,same,NA,NA
+830,1968,first year of independence,0,0
+830,1969,first year of independence,0,0
+830,1970,same,0,0
 830,1971,same,0,0
 830,1972,same,0,0
 830,1973,same,0,0
@@ -8076,8 +8236,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 830,2017,same,0,0
 830,2018,same,0,0
 830,2019,same,0,0
-830,2020,same,NA,NA
+830,2020,same,0,0
 830,2021,same,NA,NA
+830,2022,same,NA,NA
 840,1968,first year of independence,0,1
 840,1969,first year of independence,0,1
 840,1970,down,0,1
@@ -8123,22 +8284,23 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 840,2010,up,1,0
 840,2011,up,0,0
 840,2012,same,0,0
-840,2013,same,0,1
+840,2013,same,0,0
 840,2014,same,0,1
-840,2015,down,0,1
+840,2015,same,0,1
 840,2016,down,0,1
 840,2017,down,0,1
 840,2018,down,0,1
 840,2019,down,0,0
-840,2020,same,NA,NA
+840,2020,same,1,0
 840,2021,same,NA,NA
+840,2022,up,NA,NA
 850,1968,first year of independence,0,0
 850,1969,first year of independence,0,0
 850,1970,same,0,0
-850,1971,same,0,0
-850,1972,same,0,0
-850,1973,same,0,0
-850,1974,same,0,0
+850,1971,same,1,0
+850,1972,same,1,0
+850,1973,up,1,0
+850,1974,up,0,0
 850,1975,same,0,0
 850,1976,same,0,0
 850,1977,same,0,0
@@ -8163,8 +8325,8 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 850,1996,same,1,0
 850,1997,same,1,0
 850,1998,up,1,0
-850,1999,up,1,0
-850,2000,up,0,0
+850,1999,up,0,0
+850,2000,same,0,0
 850,2001,same,0,0
 850,2002,same,0,0
 850,2003,same,0,0
@@ -8181,11 +8343,12 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 850,2014,same,1,0
 850,2015,up,0,0
 850,2016,same,0,0
-850,2017,same,0,0
+850,2017,same,0,1
 850,2018,same,0,1
-850,2019,same,0,1
-850,2020,down,NA,NA
-850,2021,down,NA,NA
+850,2019,down,0,1
+850,2020,down,1,0
+850,2021,same,NA,NA
+850,2022,up,NA,NA
 860,2002,first year of independence,0,0
 860,2003,first year of independence,0,0
 860,2004,same,0,0
@@ -8203,9 +8366,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 860,2016,same,1,1
 860,2017,down,1,0
 860,2018,up,1,1
-860,2019,up,0,1
-860,2020,down,NA,NA
-860,2021,same,NA,NA
+860,2019,up,1,1
+860,2020,down,1,0
+860,2021,up,NA,NA
+860,2022,up,NA,NA
 900,1968,first year of independence,0,0
 900,1969,first year of independence,0,0
 900,1970,same,0,0
@@ -8258,8 +8422,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 900,2017,same,0,0
 900,2018,same,0,0
 900,2019,same,0,0
-900,2020,same,NA,NA
+900,2020,same,0,0
 900,2021,same,NA,NA
+900,2022,same,NA,NA
 910,1975,first year of independence,0,0
 910,1976,first year of independence,0,0
 910,1977,same,0,0
@@ -8305,8 +8470,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 910,2017,same,0,0
 910,2018,same,0,0
 910,2019,same,0,0
-910,2020,same,NA,NA
+910,2020,same,0,0
 910,2021,same,NA,NA
+910,2022,same,NA,NA
 920,1968,first year of independence,0,0
 920,1969,first year of independence,0,0
 920,1970,same,0,0
@@ -8359,8 +8525,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 920,2017,same,0,0
 920,2018,same,0,0
 920,2019,same,0,0
-920,2020,same,NA,NA
+920,2020,same,0,0
 920,2021,same,NA,NA
+920,2022,same,NA,NA
 940,1978,first year of independence,0,0
 940,1979,first year of independence,0,0
 940,1980,same,0,0
@@ -8402,9 +8569,10 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 940,2016,same,0,0
 940,2017,same,0,0
 940,2018,same,0,0
-940,2019,same,0,0
-940,2020,same,NA,NA
-940,2021,same,NA,NA
+940,2019,same,1,0
+940,2020,same,1,0
+940,2021,up,NA,NA
+940,2022,up,NA,NA
 950,1970,first year of independence,0,0
 950,1971,first year of independence,0,0
 950,1972,same,0,0
@@ -8421,9 +8589,9 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 950,1983,same,0,0
 950,1984,same,0,0
 950,1985,same,0,1
-950,1986,same,0,1
-950,1987,down,0,1
-950,1988,down,0,0
+950,1986,same,1,1
+950,1987,down,1,0
+950,1988,up,0,0
 950,1989,same,0,0
 950,1990,same,0,0
 950,1991,same,1,0
@@ -8434,26 +8602,27 @@ gwcode,year,dv_v2xcl_rol_change,dv_v2xcl_rol_up_next2,dv_v2xcl_rol_down_next2
 950,1996,same,1,0
 950,1997,up,0,0
 950,1998,same,0,1
-950,1999,same,0,1
-950,2000,down,0,1
-950,2001,down,0,0
-950,2002,same,0,0
+950,1999,same,1,1
+950,2000,down,1,0
+950,2001,up,1,0
+950,2002,up,0,0
 950,2003,same,0,0
 950,2004,same,0,1
 950,2005,same,0,1
 950,2006,down,0,1
 950,2007,down,0,0
-950,2008,same,1,0
-950,2009,same,1,0
-950,2010,up,0,0
+950,2008,same,0,0
+950,2009,same,0,0
+950,2010,same,1,0
 950,2011,same,1,0
-950,2012,same,1,0
+950,2012,up,1,0
 950,2013,up,1,0
 950,2014,up,1,0
 950,2015,up,0,0
-950,2016,same,0,0
-950,2017,same,0,0
-950,2018,same,0,0
-950,2019,same,0,0
-950,2020,same,NA,NA
+950,2016,same,0,1
+950,2017,same,0,1
+950,2018,down,0,1
+950,2019,down,0,0
+950,2020,same,0,0
 950,2021,same,NA,NA
+950,2022,same,NA,NA

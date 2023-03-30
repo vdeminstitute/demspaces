@@ -5,23 +5,21 @@ Calculate cutpoints
 in a file called “1-dv_notes.Rmd”, written by Rick. That file also
 created a memo/report. I split the cutpoint calculation part out because
 there was a circular dependency with “2-create-dv-data.Rmd”, and
-adjusted the code accordingly to remove this problem. See issue #26 on
+adjusted the code accordingly to remove this problem. See issue \#26 on
 GitHub (andybega) to see the commit that created this file.*
 
 ``` r
 dv <- read_csv("../output/dv_data_1968_on.csv") %>%
   select(-country_name, -country_id, -country_text_id) %>%
-  filter(complete.cases(.)) %>%
+  dplyr::filter(complete.cases(.)) %>%
   arrange(gwcode, year)
 ```
 
-    ## Rows: 8458 Columns: 11
-
+    ## Rows: 8627 Columns: 11
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
     ## chr (2): country_name, country_text_id
     ## dbl (9): gwcode, year, country_id, v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2...
-
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -51,21 +49,21 @@ dv_semi_long <- dv %>%
 dv_semi_long
 ```
 
-    ## # A tibble: 50,748 × 5
+    ## # A tibble: 51,762 × 5
     ## # Groups:   gwcode, variable [1,044]
     ##    gwcode  year variable          value diff_y2y
     ##     <dbl> <dbl> <chr>             <dbl>    <dbl>
     ##  1      2  1968 v2x_freexp_altinf 0.876  0      
-    ##  2      2  1969 v2x_freexp_altinf 0.885  0.00900
-    ##  3      2  1970 v2x_freexp_altinf 0.902  0.0170 
-    ##  4      2  1971 v2x_freexp_altinf 0.878 -0.0240 
-    ##  5      2  1972 v2x_freexp_altinf 0.902  0.0240 
-    ##  6      2  1973 v2x_freexp_altinf 0.928  0.0260 
-    ##  7      2  1974 v2x_freexp_altinf 0.936  0.00800
-    ##  8      2  1975 v2x_freexp_altinf 0.937  0.00100
-    ##  9      2  1976 v2x_freexp_altinf 0.951  0.0140 
-    ## 10      2  1977 v2x_freexp_altinf 0.944 -0.00700
-    ## # … with 50,738 more rows
+    ##  2      2  1969 v2x_freexp_altinf 0.887  0.0110 
+    ##  3      2  1970 v2x_freexp_altinf 0.904  0.0170 
+    ##  4      2  1971 v2x_freexp_altinf 0.877 -0.0270 
+    ##  5      2  1972 v2x_freexp_altinf 0.903  0.0260 
+    ##  6      2  1973 v2x_freexp_altinf 0.929  0.0260 
+    ##  7      2  1974 v2x_freexp_altinf 0.938  0.00900
+    ##  8      2  1975 v2x_freexp_altinf 0.939  0.00100
+    ##  9      2  1976 v2x_freexp_altinf 0.952  0.0130 
+    ## 10      2  1977 v2x_freexp_altinf 0.945 -0.00700
+    ## # … with 51,752 more rows
 
 ``` r
 # make wide again
@@ -80,46 +78,31 @@ dv_with_diffs <- dv_semi_long %>%
 dv_with_diffs
 ```
 
-    ## # A tibble: 8,458 × 14
+    ## # A tibble: 8,627 × 14
     ## # Groups:   gwcode [174]
-    ##    gwcode  year v2x_freexp_altinf v2x_horacc_osp v2x_pubcorr v2x_veracc_osp
-    ##     <dbl> <dbl>             <dbl>          <dbl>       <dbl>          <dbl>
-    ##  1      2  1968             0.876          0.907       0.952          0.85 
-    ##  2      2  1969             0.885          0.913       0.952          0.849
-    ##  3      2  1970             0.902          0.918       0.96           0.865
-    ##  4      2  1971             0.878          0.918       0.948          0.866
-    ##  5      2  1972             0.902          0.919       0.948          0.862
-    ##  6      2  1973             0.928          0.959       0.948          0.863
-    ##  7      2  1974             0.936          0.96        0.948          0.872
-    ##  8      2  1975             0.937          0.96        0.948          0.888
-    ##  9      2  1976             0.951          0.96        0.948          0.903
-    ## 10      2  1977             0.944          0.954       0.948          0.906
-    ## # … with 8,448 more rows, and 8 more variables: v2xcl_rol <dbl>,
-    ## #   v2xcs_ccsi <dbl>, v2x_freexp_altinf_diff_y2y <dbl>,
-    ## #   v2x_horacc_osp_diff_y2y <dbl>, v2x_pubcorr_diff_y2y <dbl>,
-    ## #   v2x_veracc_osp_diff_y2y <dbl>, v2xcl_rol_diff_y2y <dbl>,
-    ## #   v2xcs_ccsi_diff_y2y <dbl>
+    ##    gwcode  year v2x_freexp_al…¹ v2x_h…² v2x_p…³ v2x_v…⁴ v2xcl…⁵ v2xcs…⁶ v2x_fr…⁷
+    ##     <dbl> <dbl>           <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>    <dbl>
+    ##  1      2  1968           0.876   0.911   0.949   0.847   0.849   0.89   0      
+    ##  2      2  1969           0.887   0.913   0.949   0.847   0.892   0.89   0.0110 
+    ##  3      2  1970           0.904   0.916   0.962   0.863   0.919   0.922  0.0170 
+    ##  4      2  1971           0.877   0.919   0.944   0.864   0.927   0.922 -0.0270 
+    ##  5      2  1972           0.903   0.917   0.944   0.861   0.932   0.922  0.0260 
+    ##  6      2  1973           0.929   0.956   0.944   0.862   0.932   0.922  0.0260 
+    ##  7      2  1974           0.938   0.958   0.944   0.868   0.936   0.922  0.00900
+    ##  8      2  1975           0.939   0.958   0.944   0.886   0.941   0.922  0.00100
+    ##  9      2  1976           0.952   0.959   0.944   0.9     0.945   0.922  0.0130 
+    ## 10      2  1977           0.945   0.953   0.944   0.904   0.947   0.922 -0.00700
+    ## # … with 8,617 more rows, 5 more variables: v2x_horacc_osp_diff_y2y <dbl>,
+    ## #   v2x_pubcorr_diff_y2y <dbl>, v2x_veracc_osp_diff_y2y <dbl>,
+    ## #   v2xcl_rol_diff_y2y <dbl>, v2xcs_ccsi_diff_y2y <dbl>, and abbreviated
+    ## #   variable names ¹​v2x_freexp_altinf, ²​v2x_horacc_osp, ³​v2x_pubcorr,
+    ## #   ⁴​v2x_veracc_osp, ⁵​v2xcl_rol, ⁶​v2xcs_ccsi, ⁷​v2x_freexp_altinf_diff_y2y
 
 ``` r
 # make sure we did not mess up the original data values
 stopifnot(
   all.equal(cor(dv_with_diffs$v2x_freexp_altinf, dv$v2x_freexp_altinf), 1)
 )
-
-# Mimic what dv_BaseDatFun does, but without the hidden data read
-dv_base_dat <- function(dv_name, dv_data) {
-  dat <- dv_data %>%
-    ungroup() %>%
-    select(gwcode, year, contains(dv_name)) %>%
-    rename(var = all_of(dv_name),
-           var_y2y = paste0(dv_name, "_diff_y2y")) %>%
-    filter(complete.cases(.)) %>%
-    mutate(case = case_when(var_y2y > 0 ~ "up",
-                            var_y2y < 0 ~ "down",
-                            TRUE ~ "no change"),
-           case = as.factor(case))
-  dat
-}
 
 cp <- list()
 for (dv_name in dv_vars) {
@@ -139,7 +122,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator         all    up  down
     ##   <chr>           <dbl> <dbl> <dbl>
-    ## 1 v2x_veracc_osp 0.0819  0.08  0.08
+    ## 1 v2x_veracc_osp 0.0804  0.07  0.07
     ## 
     ## 
     ##  v2xcs_ccsi 
@@ -147,7 +130,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator     all    up  down
     ##   <chr>       <dbl> <dbl> <dbl>
-    ## 1 v2xcs_ccsi 0.0558  0.05  0.05
+    ## 1 v2xcs_ccsi 0.0556  0.05  0.05
     ## 
     ## 
     ##  v2xcl_rol 
@@ -155,7 +138,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator    all    up  down
     ##   <chr>      <dbl> <dbl> <dbl>
-    ## 1 v2xcl_rol 0.0431  0.04  0.04
+    ## 1 v2xcl_rol 0.0425  0.04  0.04
     ## 
     ## 
     ##  v2x_freexp_altinf 
@@ -163,7 +146,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator            all    up  down
     ##   <chr>              <dbl> <dbl> <dbl>
-    ## 1 v2x_freexp_altinf 0.0553  0.05  0.05
+    ## 1 v2x_freexp_altinf 0.0547  0.05  0.05
     ## 
     ## 
     ##  v2x_horacc_osp 
@@ -171,7 +154,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator         all    up  down
     ##   <chr>           <dbl> <dbl> <dbl>
-    ## 1 v2x_horacc_osp 0.0576  0.06  0.06
+    ## 1 v2x_horacc_osp 0.0566  0.05  0.05
     ## 
     ## 
     ##  v2x_pubcorr 
@@ -179,9 +162,39 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator      all    up  down
     ##   <chr>        <dbl> <dbl> <dbl>
-    ## 1 v2x_pubcorr 0.0412  0.03  0.03
+    ## 1 v2x_pubcorr 0.0415  0.04  0.04
 
 ``` r
 cp <- bind_rows(cp)
 write_csv(cp, "../output/cutpoints.csv")
+```
+
+## 2023 spring update
+
+I’m going to override the cutpoint re-calculations and keep the values
+from the past 2 years for consistency.
+
+``` r
+cp_vals <- c(0.08, 0.05, 0.04, 0.05, 0.06, 0.03)
+frozen_cp <- data.frame(
+  indicator = c("v2x_veracc_osp", "v2xcs_ccsi", "v2xcl_rol", 
+                "v2x_freexp_altinf", "v2x_horacc_osp", "v2x_pubcorr"),
+  up = cp_vals,
+  down = cp_vals
+)
+
+new_cp <- merge(cp[, c("indicator", "all")], frozen_cp)
+# fix order of rows after merge
+new_cp <- new_cp[match(frozen_cp$indicator, new_cp$indicator), ]
+write_csv(new_cp, "../output/cutpoints.csv")
+
+# keep track of the re-calculated cutpoints for monitoring
+tracker <- cp
+names(tracker) <- c("indicator", "diff_sd", "cp_up_this_year", "cp_down_this_year")
+
+tracker <- merge(tracker, frozen_cp)
+colnames(tracker)[5:6] <- c("frozen_up", "frozen_down")
+
+str <- knitr::kable(tracker)
+writeLines(str, here::here("create-data/output/tracker-cutpoints.md"))
 ```

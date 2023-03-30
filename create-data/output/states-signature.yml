@@ -1,10 +1,10 @@
 Class: tbl_df, tbl, data.frame
-Size_in_mem: 13.7 Mb
+Size_in_mem: 14 Mb
 N_countries: 174
-Years: 1970 - 2021
+Years: 1970 - 2022
 N_columns: 225
-N_rows: 8187
-N_complete_rows: 7849
+N_rows: 8356
+N_complete_rows: 8018
 Countries: 174
 Missing:
   gwcode: 0

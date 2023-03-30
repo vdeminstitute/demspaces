@@ -27,12 +27,16 @@ library(tidyverse)
 library(states)
 library(tidyr)
 library(here)
+library(zoo)
 
+devtools::load_all(here::here("demspaces"))
+
+oldwd <- getwd()
 setwd(here::here("create-data"))
 
 naCountFun <- function(dat, exclude_year){
   dat %>%
-    filter(year < exclude_year) %>%
+    dplyr::filter(year < exclude_year) %>%
     sapply(function(x) sum(is.na(x))) %>%
     sort()
 }
@@ -40,19 +44,20 @@ naCountFun <- function(dat, exclude_year){
 # The end year of observed data. Usually should be the year prior to the
 # current year.
 # UPDATE:
-END_YEAR   <- 2021L
-START_YEAR <- 1968L
+END_YEAR   <- get_option("data_end_year")
+START_YEAR <- get_option("data_start_year")
 
 # UPDATE: v[X]
-vdem_raw <- readRDS("input/V-Dem-CY-Full+Others-v12.rds")
+vdem_fn <- sprintf("input/V-Dem-CY-Full+Others-%s.rds", get_option("version"))
+vdem_raw <- readRDS(vdem_fn)
 
 ## Remove countries that have a lot of missingness in the VDem data... and make adjustments to merge with GW country-year set
 vdem_complete <- vdem_raw %>%
   mutate(country_name = ifelse(country_id == 196, "Sao Tome and Principe", country_name)) %>%
-  filter(year >= START_YEAR - 20 &
-           country_name != "Palestine/West Bank" & country_name != "Hong Kong" & country_name != "Bahrain" & country_name != "Malta" &
-           country_name != "Zanzibar" & country_name != "Somaliland" & country_name != "Palestine/Gaza") %>%
-  filter(!(country_name == "Timor-Leste" & year < 2002)) %>%
+  dplyr::filter(year >= START_YEAR - 20 &
+                  country_name != "Palestine/West Bank" & country_name != "Hong Kong" & country_name != "Bahrain" & country_name != "Malta" &
+                  country_name != "Zanzibar" & country_name != "Somaliland" & country_name != "Palestine/Gaza") %>%
+  dplyr::filter(!(country_name == "Timor-Leste" & year < 2002)) %>%
   mutate(gwcode = COWcode,
          gwcode = case_when(gwcode == 255 ~ 260,
                             gwcode == 679 ~ 678,
@@ -63,15 +68,15 @@ dim(vdem_complete)
 # 2020 update (v10): 8430, 4109
 # 2021 update (v11): 8602, 4177
 # 2022 update (v12): 8774, 4171
+# 2023 update (v13): 11929, 4603
 
 vdem_country_year0 <- vdem_complete %>%
   select(c(country_name, country_text_id, country_id, gwcode, year, v2x_pubcorr))
-summary(vdem_country_year0)
 # no_gwcode <- vdem_country_year0[is.na(vdem_country_year0$gwcode), c("country_name", "country_id", "year")]
 
 vdem_country_year <- vdem_country_year0 %>%
-  filter(year >= START_YEAR) %>%
-  filter(!is.na(gwcode)) %>%
+  dplyr::filter(year >= START_YEAR) %>%
+  dplyr::filter(!is.na(gwcode)) %>%
   group_by(gwcode) %>%
   complete(country_name, country_id, country_text_id, year = min(year):END_YEAR) %>%
   # fill(country_name) %>%
@@ -79,6 +84,7 @@ vdem_country_year <- vdem_country_year0 %>%
 dim(vdem_country_year)
 # v??: 8753, 6
 # v12: 8927, 6
+# v13: 9104, 6
 
 ## GW_template is a balanced gwcode yearly data frame from 1968 to 2019. Need to drop microstates.
 data(gwstates)
@@ -86,19 +92,22 @@ data(gwstates)
 keep <- gwstates$gwcode[gwstates$microstate == FALSE]
 
 GW_template <- state_panel(START_YEAR, END_YEAR, partial = "any", useGW = TRUE) %>%
-  filter(gwcode %in% keep)
+  dplyr::filter(gwcode %in% keep)
 dim(GW_template)
 # 8344 2
 # v12: 8692, 2
+# v13: 8866, 2
 
 country_year_set <- left_join(GW_template, vdem_country_year) %>%
-  filter(!is.na(country_id)) %>%
+  dplyr::filter(!is.na(country_id)) %>%
   mutate(keep = ifelse(is.na(v2x_pubcorr) & year != END_YEAR, 0, 1)) %>%
-  filter(keep == 1) %>%
+  dplyr::filter(keep == 1) %>%
   select(-c(keep, v2x_pubcorr))
 
 naCountFun(country_year_set, END_YEAR)
-dim(country_year_set) ## 8120    5
+dim(country_year_set)
+# 8120    5
+# v13: 8627, 5
 
 write_csv(country_year_set, "output/country_year_set_1968_on.csv")
 
@@ -111,7 +120,7 @@ write_csv(country_year_set, "output/country_year_set_1968_on.csv")
 
 # Check that gwcode uniquely maps to regions
 xx <- vdem_complete %>%
-  filter(year >= START_YEAR) %>%
+  dplyr::filter(year >= START_YEAR) %>%
   select(gwcode, e_regionpol_6C) %>%
   count(gwcode, e_regionpol_6C)
 stopifnot(
@@ -129,7 +138,7 @@ write_csv(region_mapping, "output/region-mapping.csv")
 #
 
 vdem_dvs <- vdem_complete %>%
-  filter(year >= START_YEAR) %>%
+  dplyr::filter(year >= START_YEAR) %>%
   select(c(country_name, country_text_id, country_id, gwcode, year,
            v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2x_freexp_altinf,
            v2x_horacc_osp, v2x_pubcorr)) %>%
@@ -148,7 +157,7 @@ write_csv(dvs, "output/dv_data_1968_on.csv")
 #
 
 vdem_ivs <- vdem_complete %>%
-  filter(year >= START_YEAR) %>%
+  dplyr::filter(year >= START_YEAR) %>%
     select(country_name, country_text_id, gwcode, country_id, year, v2x_polyarchy, v2x_liberal, v2xdl_delib, v2x_jucon,
            v2x_frassoc_thick, v2xel_frefair, v2x_elecoff, v2xlg_legcon, v2x_partip, v2x_cspart, v2x_egal, v2xeg_eqprotec,
            v2xeg_eqaccess, v2xeg_eqdr, v2x_diagacc, v2xex_elecleg, v2x_civlib, v2x_clphy, v2x_clpol, v2x_clpriv, v2x_corr,
@@ -247,7 +256,7 @@ dim(vdem_clean_data) ## 8430  190
 # DV transforms
 keep <- gwstates$gwcode[gwstates$microstate == FALSE]
 GW_template_longer <- state_panel(START_YEAR - 20, END_YEAR, partial = "any", useGW = TRUE) %>%
-  filter(gwcode %in% keep)
+  dplyr::filter(gwcode %in% keep)
 country_year_set_longer <- GW_template_longer
 
 vdem_dvs_longer <- vdem_complete %>%
@@ -267,7 +276,7 @@ vdem_dv_hist <- vdem_dvs_longer %>%
   mutate(across(all_of(spaces$Indicator), ~rollapplyr(.x, FUN = sd, width = 10, fill = NA, partial = TRUE),
                 .names = "{.col}_sd10"))
 vdem_dv_hist <- vdem_dv_hist %>%
-  filter(year >= START_YEAR) %>%
+  dplyr::filter(year >= START_YEAR) %>%
   select(gwcode, year, matches("_sd[0-9]+"))
 
 vdem_clean_data <- left_join(vdem_clean_data, vdem_dv_hist, by = c("gwcode", "year"))
@@ -288,7 +297,7 @@ vDem_GW_data <- country_year_set %>%
 dim(vDem_GW_data)
 # v??: 8120, 371
 # v12: 8458, 190
-# summary(vDem_GW_data)
+# v13: 8627, 196
 
 # naCountFun(vDem_GW_data, END_YEAR + 1)
 nas <- naCountFun(vDem_GW_data, END_YEAR)
@@ -296,3 +305,6 @@ table(nas)
 nas[nas > 0]
 
 write_csv(vDem_GW_data, "output/vdem_data_1968_on.csv")
+
+setwd(oldwd)
+

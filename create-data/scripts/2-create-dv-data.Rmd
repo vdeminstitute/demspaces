@@ -34,30 +34,23 @@ library(tidyr)
 library(zoo)
 library(skimr)
 
+# need this for changes_one_country()
+devtools::load_all(here::here("demspaces"))
+
 # shortcut for plotting missing values when no date column is available
 plotmiss <- function(x) {
   plot_missing(x, names(x), partial = "last")
 }
 
-# need this for changes_one_country()
-devtools::load_all("demspaces")
-# options won't work correctly since we are not loading the package from 
-# base folder
-set_options(here::here("config.yml"))
-if (getOption("demspaces.version")=="") {
-  stop("Problem with demspaces option setting")
-}
-
-# needs devel version of states
-if (packageVersion("states") < "0.2.2.9007") {
-  stop("Please re-install the latest dev version of states:\n  remotes::install_github(\"andybega/states\")")
-}
+# Minimum yearly threshold factor to use in the episode coder, see "min_f" in  
+# ?episode_coder
+MIN_F <- get_option("min_f")
 ```
 
 ```{r}
 dv <- read_csv("../output/dv_data_1968_on.csv") %>%
   select(-country_name, -country_id, -country_text_id) %>%
-  filter(complete.cases(.)) %>%
+  dplyr::filter(complete.cases(.)) %>%
   arrange(gwcode, year)
 
 range(dv$year)
@@ -90,9 +83,12 @@ for (var_i in dv_vars) {
     ) 
   
   # Bypass the normal flow to produce modified data
+  # This produces the ERT-lite version of the outcome that was added in the 
+  # spring 2022 update. 
   if (getOption("demspaces.version") >= "v12.1") {
     dv_i <- dv_i %>%
-      mutate(var_change = changes_one_country(var, cp[[var_i]], type = "mod", min_f = 0.1),
+      mutate(var_change = changes_one_country(var, cp[[var_i]], type = "mod", 
+                                              min_f = MIN_F),
              # actually the first 2 years of indy are missing with this algo,
              # but let's keep the same name
              var_change = ifelse(year < (min(year) + 2), 
@@ -237,9 +233,9 @@ Check the values for one outcome/country to make sure they make sense:
 
 ```{r}
 dv_data %>%
-  filter(gwcode==310) %>%
+  dplyr::filter(gwcode==310) %>%
   select(gwcode, year, contains("veracc")) %>%
-  filter(year > 2010)
+  dplyr::filter(year > 2010)
 ```
 
 

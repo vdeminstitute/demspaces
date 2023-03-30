@@ -7,7 +7,7 @@ output:
 
 ## NOTES FOR DATA UPDATES
 
-END_YEAR denotes the last year data have been observed. I.e. usually it should be the year prior to the current year. 
+END_YEAR denotes the last year data have been observed. I.e. usually it should be the year prior to the current year. It should come automatically from the config file.
 
 Data after this year will be discarded. E.g. to forecast 2020-2021 we don't want to use data after 2019 since it likely won't be available/incomplete at the time we are making the 2020-2021 forecasts. Conversely, if the data end early, e.g. in 2017, they will be lagged additionally so that they reach and cover the target year.
 
@@ -17,14 +17,13 @@ Several of the data sources below are imputed in some fashion after merging. E.g
 
 
 ```{r}
-END_YEAR <- 2021
-# UPDATE: this should be the V-Dem data version, but for development I've also
-# use sub-versions like 'v11a', ...
+# The options should be automatically updated from the config file. 
+devtools::load_all(here::here("demspaces"))
 
-# use global options config (config.yml)
-devtools::load_all("demspaces"))
-set_options(here::here("config.yml"))
-VERSION  <- getOption("demspaces.version")
+END_YEAR <- get_option("data_end_year")
+
+# For development I've also used sub-versions like 'v11a', ...
+VERSION  <- get_option("demspaces.version")
 print(VERSION)
 ```
 
@@ -36,6 +35,7 @@ library(readr)
 library(states)
 library(tidyr)
 library(stringr)
+library(yaml)
 
 # shortcut for plotting missing values when no date column is available
 plotmiss <- function(x) {
@@ -72,7 +72,7 @@ prefix_lag(c("year", "x", "lag2_y", "gwcode"), 1)
 # output will have gwcode, year range
 summarize_missing <- function(df) {
   df %>%
-    filter(!complete.cases(.)) %>%
+    dplyr::filter(!complete.cases(.)) %>%
     group_by(gwcode) %>%
     summarize(years = paste0(range(year), collapse = " - "),
               n = n(),
@@ -87,7 +87,7 @@ summarize_missing <- function(df) {
 
 ```{r blank-panel}
 cy <- read_csv("../output/country_year_set_1968_on.csv") %>%
-  filter(year > 1969, year <= END_YEAR)
+  dplyr::filter(year > 1969, year <= END_YEAR)
 cy_names <- cy
 cy <- cy[, c("gwcode", "year")]
 ```
@@ -122,7 +122,7 @@ These are the indicators from which the outcome variables are derived.
 ```{r}
 dv <- read_csv("../output/dv_data_1968_on.csv") %>%
   select(-country_name, -country_id, -country_text_id) %>%
-  filter(complete.cases(.)) %>%
+  dplyr::filter(complete.cases(.)) %>%
   arrange(gwcode, year)
 
 range(dv$year)
@@ -153,7 +153,7 @@ The missing are because the "next2" variables are missing for the last 2 years o
 ```{r}
 vdem_dat <- read_csv("../output/vdem_data_1968_on.csv") %>%
   select(-country_name, -country_id, -country_text_id) %>%
-  filter(complete.cases(.)) %>%
+  dplyr::filter(complete.cases(.)) %>%
   arrange(gwcode, year)
 
 # take out zero-variance vars
@@ -169,7 +169,7 @@ if (any(setdiff(names(vdem_dat), c("gwcode", "year")) %in% names(dv))) {
 }
 
 vdem_dat <- vdem_dat %>%
-  filter(year <= END_YEAR)
+  dplyr::filter(year <= END_YEAR)
 vdem_lag <- END_YEAR - max(vdem_dat$year)
 vdem_dat <- vdem_dat %>%
   mutate(year = year + vdem_lag) %>%
@@ -196,7 +196,7 @@ cy <- left_join(cy, vdem_dat, by = c("gwcode", "year")) %>%
 
 ```{r}
 age_dat <- read_csv("../input/gwstate-age.csv") %>%
-  filter(year <= END_YEAR) 
+  dplyr::filter(year <= END_YEAR) 
 age_lag <- END_YEAR - max(age_dat$year)
 age_dat <- age_dat %>%
   mutate(year = year + age_lag) %>%
@@ -228,7 +228,7 @@ cy <- left_join(cy, age_dat, by = c("gwcode", "year")) %>%
 
 ```{r}
 pop_dat <- read_csv("../input/population.csv") %>%
-  filter(year <= END_YEAR) %>%
+  dplyr::filter(year <= END_YEAR) %>%
   mutate(log_pop = log(pop),
          pop = NULL)
 pop_lag <- END_YEAR - max(pop_dat$year)
@@ -247,7 +247,7 @@ Check missing cases.
 
 ```{r}
 cy_temp <- left_join(cy, pop_dat, by = c("gwcode", "year"))
-tbl <- filter(cy_temp, is.na(lag0_log_pop)) %>% 
+tbl <- dplyr::filter(cy_temp, is.na(lag0_log_pop)) %>% 
   select(gwcode, year, lag0_log_pop)
 tbl
 ```
@@ -272,7 +272,7 @@ plotmiss(pop_dat)
 
 ```{r infmort-setup}
 infmort <- read_csv("../input/wdi-infmort.csv") %>%
-  filter(year <= END_YEAR) %>%
+  dplyr::filter(year <= END_YEAR) %>%
   select(gwcode, year, infmort, infmort_yearadj)
 infmort_lag <- END_YEAR - max(infmort$year)
 infmort$year <- infmort$year + infmort_lag
@@ -306,7 +306,7 @@ cy <- left_join(cy, infmort, by = c("gwcode", "year")) %>%
 
 ```{r}
 gdp_dat <- read_csv("../input/gdp.csv") %>%
-  filter(year <= END_YEAR) %>%
+  dplyr::filter(year <= END_YEAR) %>%
   dplyr::rename(gdp = NY.GDP.MKTP.KD,
                 gdp_growth = NY.GDP.MKTP.KD.ZG,
                 gdp_pc = NY.GDP.PCAP.KD,
@@ -340,7 +340,7 @@ cy <- left_join(cy, gdp_dat, by = c("gwcode", "year")) %>%
 
 ```{r}
 coup_dat <- read_csv("../input/ptcoups.csv") %>%
-  filter(year <= END_YEAR) %>%
+  dplyr::filter(year <= END_YEAR) %>%
   select(gwcode, year, years_since_last_pt_attempt)
 coup_lag <- END_YEAR - max(coup_dat$year)
 coup_dat <- coup_dat %>%
@@ -359,7 +359,7 @@ Missing some first years due to lagging; fill them with first observed value.
 
 ```{r}
 cy_temp <- left_join(cy, coup_dat, by = c("gwcode", "year")) 
-tbl <- filter(cy_temp, is.na(lag0_years_since_last_pt_attempt)) %>% select(gwcode, year)
+tbl <- dplyr::filter(cy_temp, is.na(lag0_years_since_last_pt_attempt)) %>% select(gwcode, year)
 tbl
 ```
 
@@ -408,7 +408,7 @@ Countries not covered
 ```{r}
 data("gwstates")
 gwstates %>% 
-  filter(start < "1970-01-01", end > "2019-01-01") %>%
+  dplyr::filter(start < "1970-01-01", end > "2019-01-01") %>%
   mutate(country_name = country_names(gwcode, shorten = TRUE)) %>%
   select(gwcode, country_name) %>%
   anti_join(cy, by = c("gwcode")) %>%
@@ -430,7 +430,6 @@ write_csv(vars, "../output/variables-in-dataset.csv")
 General summary stats
 
 ```{r}
-library(yaml)
 data_signature <- function(df) {
   out <- list()
   out$Class <- paste(class(df), collapse = ", ")
@@ -453,6 +452,12 @@ sig <- data_signature(cy)
 write_yaml(sig, sprintf("../output/states-%s-signature.yml",
                         VERSION))
 write_yaml(sig, "../output/states-signature.yml")
+
+# copy version to archive as well
+write_rds(sig, here::here(
+  "archive/data",
+  sprintf("states-%s-signature.yml", VERSION)
+))
 ```
 
 
@@ -475,9 +480,9 @@ format_years <- function(x) {
 
 incomplete_cases <- cy %>%
   gather(var, value, -gwcode, -year) %>%
-  filter(is.na(value)) %>%
+  dplyr::filter(is.na(value)) %>%
   # disregard missing DV values for last 2 years
-  filter(!(substr(var, 1, 3)=="dv_" & year %in% (max(year) + c(-1, 0)))) %>%
+  dplyr::filter(!(substr(var, 1, 3)=="dv_" & year %in% (max(year) + c(-1, 0)))) %>%
   group_by(gwcode, year, var) %>%
   summarize() %>%
   # summarize which vars are missing
@@ -511,7 +516,7 @@ sapply(cy, function(x) sum(is.na(x))) %>%
   as.list() %>%
   tibble::enframe(name = "Variable", value = "Missing") %>%
   unnest(Missing) %>%
-  filter(Missing > 0) %>%
+  dplyr::filter(Missing > 0) %>%
   knitr::kable()
 ```
 
@@ -521,5 +526,10 @@ sapply(cy, function(x) sum(is.na(x))) %>%
 fn <- sprintf("../output/states-%s.rds", VERSION)
 cat("Saving data as %s", basename(fn))
 write_rds(cy, fn)
+
+# copy version to archive as well
+write_rds(cy, here::here("archive/data", basename(fn)))
 ```
+
+
 
