@@ -1,1 +1,12 @@
-version: "v12.1"
+# Version of the V-Dem data that is used; this is also used to identify the
+# merge data, models, and forecasts.
+version: "v13"
+# Parameters related to the merge data
+# When to start the historical data
+data_start_year: 1968
+# UPDATE: The last year with data (V-Dem). Usually should be the year prior to
+# the current year.
+data_end_year: 2022
+# For the ERT-lite outcome episode coder, the minimum yearly change threshold
+# factor to use, see the "min_f" argument in ?episode_coder
+min_f: 0.1

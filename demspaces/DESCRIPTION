@@ -1,6 +1,6 @@
 Package: demspaces
 Title: Democratic Spaces Barometer
-Version: 12.2
+Version: 13.0.9000
 Authors@R: 
     person("Andreas", "Beger", , "adbeger@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-1883-3169"))

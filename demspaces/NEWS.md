@@ -1,12 +1,25 @@
+demspaces 13 (2023 Update)
+==========================
+
+
+- The cutpoints used to construct the opening and closing outcomes have been frozen to their values in the 2022 and 2021 updates. The reason is because this year the cut points change even though the overall standard deviations of the year-to-year differences for the 6 space indicators are similar to 2--3 decimal points. By happenstance the 2022 and 2021 cut points did not change. Freezing the cutpoints eliminates one of the sources of divergence between outcome values accross project versions (the remainder are inherent to the V-Dem data generation process itself).
+
+
+## demspaces R package
+
+- I expanded the config file with several additional data-related parameters that were previously hard-coded in scripts: "data_start_year", "data_end_year", "min_f" (parameter for the "mod" type episode coder, see `?episode_coder`). 
+
+
+
 demspaces 12.2 (Fall 2022)
 ===============================
 
 Two big changes (#25):
 
 - I moved the small {demspaces} R package I added in version 12.1 during the spring update to the `demspaces/` sub-folder to reduce clutter and more clearly distinguish package from pipeline/documentation bits.
-- I integrated the {demspacesR} helper package that was in the [vdeminstitute/demspacesR](https://github.com/vdeminstitute/demspacesR) repo with the {demspaces} package in this main repo. 
+- I integrated the _demspacesR_ helper package that was in the [vdeminstitute/demspacesR](https://github.com/vdeminstitute/demspacesR) repo with the _demspaces_ package in this main repo. 
 
-- As part of the package integration I expanded this news document with that from {demspacesR}.
+- As part of the package integration I expanded this news document with that from _demspacesR_.
 
 
 
@@ -107,6 +120,7 @@ demspaces 9 (2019 Initial Version)
 ==================================
 
 Original forecasts produced during development of this project in the fall of 2019. 
+
 ### demspacesR 0.2 
 
 Development in November 2019.
