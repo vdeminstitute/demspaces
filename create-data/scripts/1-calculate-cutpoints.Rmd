@@ -100,3 +100,34 @@ cp <- bind_rows(cp)
 write_csv(cp, "../output/cutpoints.csv")
 ```
 
+## 2023 spring update
+
+I'm going to override the cutpoint re-calculations and keep the values from the past 2 years for consistency. 
+
+```{r}
+cp_vals <- c(0.08, 0.05, 0.04, 0.05, 0.06, 0.03)
+frozen_cp <- data.frame(
+  indicator = c("v2x_veracc_osp", "v2xcs_ccsi", "v2xcl_rol", 
+                "v2x_freexp_altinf", "v2x_horacc_osp", "v2x_pubcorr"),
+  up = cp_vals,
+  down = cp_vals
+)
+
+new_cp <- merge(cp[, c("indicator", "all")], frozen_cp)
+# fix order of rows after merge
+new_cp <- new_cp[match(frozen_cp$indicator, new_cp$indicator), ]
+write_csv(new_cp, "../output/cutpoints.csv")
+
+# keep track of the re-calculated cutpoints for monitoring
+tracker <- cp
+names(tracker) <- c("indicator", "diff_sd", "cp_up_this_year", "cp_down_this_year")
+
+tracker <- merge(tracker, frozen_cp)
+colnames(tracker)[5:6] <- c("frozen_up", "frozen_down")
+
+str <- knitr::kable(tracker)
+writeLines(str, here::here("create-data/output/tracker-cutpoints.md"))
+
+```
+
+
