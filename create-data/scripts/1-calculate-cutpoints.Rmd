@@ -11,17 +11,44 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(stringr)
 
-source("../R/dv_notes_functions.R")
 
-if (packageVersion("states") < "0.2.2.9007") {
-  stop("Please re-install the latest dev version of states:\n  remotes::install_github(\"andybega/states\")")
+# Mimic what dv_BaseDatFun does, but without the hidden data read
+dv_base_dat <- function(dv_name, dv_data) {
+  dat <- dv_data %>%
+    ungroup() %>%
+    select(gwcode, year, contains(dv_name)) %>%
+    rename(var = all_of(dv_name),
+           var_y2y = paste0(dv_name, "_diff_y2y")) %>%
+    dplyr::filter(complete.cases(.)) %>%
+    mutate(case = case_when(var_y2y > 0 ~ "up",
+                            var_y2y < 0 ~ "down",
+                            TRUE ~ "no change"),
+           case = as.factor(case))
+  dat
 }
+
+dv_cutpointFun <- function(dat){
+
+  all  <- sd(dat$var_y2y)
+  # v1: up/down is sd of !down, !up data
+  # v2: average sd of !down, !up, round away from 0 and use that
+  avg  <- mean(c(sd(dat$var_y2y[dat$case != "down"]), sd(dat$var_y2y[dat$case != "up"])))
+  up <- down <- ceiling(avg*100)/100
+
+  cutpoints <- data.frame(all= all,
+                          up = up,
+                          down = down)
+  return(cutpoints)
+
+}
+
+
 ```
 
 ```{r}
 dv <- read_csv("../output/dv_data_1968_on.csv") %>%
   select(-country_name, -country_id, -country_text_id) %>%
-  filter(complete.cases(.)) %>%
+  dplyr::filter(complete.cases(.)) %>%
   arrange(gwcode, year)
 
 dv_vars <- setdiff(names(dv), c("gwcode", "year"))
@@ -57,21 +84,6 @@ dv_with_diffs
 stopifnot(
   all.equal(cor(dv_with_diffs$v2x_freexp_altinf, dv$v2x_freexp_altinf), 1)
 )
-
-# Mimic what dv_BaseDatFun does, but without the hidden data read
-dv_base_dat <- function(dv_name, dv_data) {
-  dat <- dv_data %>%
-    ungroup() %>%
-    select(gwcode, year, contains(dv_name)) %>%
-    rename(var = all_of(dv_name),
-           var_y2y = paste0(dv_name, "_diff_y2y")) %>%
-    filter(complete.cases(.)) %>%
-    mutate(case = case_when(var_y2y > 0 ~ "up",
-                            var_y2y < 0 ~ "down",
-                            TRUE ~ "no change"),
-           case = as.factor(case))
-  dat
-}
 
 cp <- list()
 for (dv_name in dv_vars) {
