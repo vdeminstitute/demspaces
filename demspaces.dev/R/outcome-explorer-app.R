@@ -156,7 +156,10 @@ outcome_explorer_ui <- function() {
       shiny::sidebarPanel(
 
         shiny::radioButtons("outcomeVersion", label = "Outcome version",
-                            choices = c("Original", "ERT-lite")),
+                            choices = c("Original", "2-year", "ERT-lite")),
+        # Highlight past opening/closing changes in the time series?
+        shiny::checkboxInput("tsPlotShowChanges", label = "Highlight past opening/closing events",
+                             value = TRUE),
 
         shiny::selectInput("countrySelect", choices = countryNamesText,
                            label = "Country", selectize = TRUE),
@@ -175,8 +178,6 @@ outcome_explorer_ui <- function() {
         ),
         # Toggle to select/deselect all (#13)
         shiny::actionButton("tsSelectAll", label = "Select all"),
-        # Highlight past opening/closing changes in the time series?
-        shiny::checkboxInput("tsPlotShowChanges", label = "Highlight past opening/closing events"),
 
         shiny::sliderInput("yearRange", "Years", step = 1L, sep = "", min = 1990L,
                            max = 2021L, value = c(2011L, 2021L))
@@ -211,6 +212,8 @@ outcome_explorer_server <- function(input, output, session) {
         # Check which data to use
         if (input$outcomeVersion=="Original") {
           dat <- demspaces::spaces_for_app_orig
+        } else if (input$outcomeVersion=="2-year") {
+          dat <- demspaces::spaces_for_app_2year
         } else {
           dat <- demspaces::spaces_for_app_mod
         }

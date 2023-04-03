@@ -1,11 +1,11 @@
-Package: demspaces
-Title: Democratic Spaces Barometer
+Package: demspaces.dev
+Title: Democratic Spaces Barometer Internal Package
 Version: 13.0.9000
 Authors@R: 
     person("Andreas", "Beger", , "adbeger@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-1883-3169"))
 Description: Helper package with model tooling and Shiny apps for the Democratic 
-    Spaces Barometer project.
+    Spaces Barometer project. For internal dev use.
 License: GPL (>= 3)
 URL: https://vdeminstitute.github.io/demspaces, https://github.com/vdeminstitute/demspaces
 BugReports: https://github.com/vdeminstitute/demspaces/issues

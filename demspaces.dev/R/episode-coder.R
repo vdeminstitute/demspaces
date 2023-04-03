@@ -12,14 +12,16 @@
 #' @param direction code opening ("up") or closing ("down") events?
 #' @param type use the original single-year event coding ("orig"), or the ERT-lite coding ("mod")?
 #' @param min_f for type="mod", the minimum yearly change threshold factor to use.
-#'   This is multiplied with the space cutpoint to determine.
+#'   This is multiplied with the space cutpoint to determine the minimum yearly
+#'   change threshold.
 #'
 #' @returns `episode_coder` returns a binary (integer) vector with `length(x)`
 #'   marking opening or closing events in `x`
 #'
 #' @export
 #' @aliases changes_one_country
-episode_coder <- function(x, cp, direction = c("up", "down"), type = c("mod", "orig"),
+episode_coder <- function(x, cp, direction = c("up", "down"),
+                          type = c("mod", "orig", "2year"),
                           min_f = 0.1) {
   stopifnot(
     "cp must be single number" = length(cp)==1,
@@ -34,16 +36,30 @@ episode_coder <- function(x, cp, direction = c("up", "down"), type = c("mod", "o
     x <- -1 * x
   }
 
-  ep <- integer(length(x))
-
-  # t:t-1 difference
-  xd1 <- c(NA, diff(x))
+  # Initialize to 0 and then below only set NA's and 1's as needed
+  # Easier than initializing to NA because 0's are non-trivial to code
+  # explicitly, just like 1's
+  ep <- rep(0L, length(x))
 
   if (type=="orig") {
+    # t:t-1 difference
+    xd1 <- c(NA, diff(x))
     ep[1] <- NA_integer_
 
     # Simple t:t-1 criterion
     ep[(xd1 > cp) %in% TRUE] <- 1L
+  }
+
+  if (type=="2year") {
+    # Instead of only looking at whether the year-to-year change is greater
+    # than the cutpoint, look at the change over a 2-year window, i.e. change
+    # from 2 years prior
+
+    # t:t-2 difference
+    xd2 <- c(NA, NA, diff(x, lag = 2))
+
+    ep[1:2] <- NA_integer_
+    ep[(xd2 > cp) %in% TRUE] <- 1L
   }
 
   if (type=="mod") {
@@ -55,10 +71,14 @@ episode_coder <- function(x, cp, direction = c("up", "down"), type = c("mod", "o
     ep[1:2] <- NA_integer_
     ep[length(ep)] <- NA_integer_
 
+    # t:t-1 difference
+    xd1 <- c(NA, diff(x))
+    # t:t-2 difference
+    xd2 <- c(NA, NA, diff(x, lag = 2))
+
     # 2-year window, looking back
     # if the change from 2 years ago is > cp, and both the current xd1 and
     # xd1[t-1] are above some minimal treshold, we can code episode
-    xd2 <- c(NA, NA, diff(x, lag = 2))
     xd1_lg1 <- c(NA, utils::head(xd1, -1))
     # condition 1: 2-year change is > cp
     # condition 2: 1-year change is < cp
@@ -96,7 +116,7 @@ episode_coder <- function(x, cp, direction = c("up", "down"), type = c("mod", "o
 #'   and values "same", "up", "down"
 #'
 #' @export
-changes_one_country <- function(x, cp, type = c("mod", "orig"), min_f = 0.1) {
+changes_one_country <- function(x, cp, type = c("mod", "orig", "2year"), min_f = 0.1) {
   type <- match.arg(type)
   up <- episode_coder(x, cp, "up", type, min_f)
   down <- episode_coder(x, cp, "down", type, min_f)
