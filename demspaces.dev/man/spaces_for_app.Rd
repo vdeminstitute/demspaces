@@ -8,9 +8,9 @@
 \alias{spaces_for_app_orig}
 \title{Original and new outcomes}
 \format{
-An object of class \code{data.frame} with 11758 rows and 33 columns.
+An object of class \code{data.frame} with 11929 rows and 33 columns.
 
-An object of class \code{data.frame} with 11758 rows and 33 columns.
+An object of class \code{data.frame} with 11929 rows and 33 columns.
 }
 \usage{
 spaces_for_app_orig

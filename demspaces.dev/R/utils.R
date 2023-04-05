@@ -60,3 +60,44 @@ get_option <- function(x) {
   }
   op
 }
+
+
+
+proj_root <- function(...) {
+  root_path <- get_option("root_path")
+  if (is.null(root_path) | root_path=="") {
+    stop("Invalid root path, is it set in the config file?")
+  }
+  file.path(root_path, ...)
+}
+
+#' @param version Data version, e.g. "v13"; default is the latest available.
+#'
+#' @details This function will preferentially look for data in
+#'   `create-data/output` so that during updates the latest available data is
+#'   read. As a backup it will check in `archive/data`.
+#'
+#' @export
+read_merge_data <- function(version = "latest") {
+  if (version=="latest") {
+    available <- dir(proj_root("create-data/output"), pattern = "v[0-9\\.]+.rds")
+    file_path <- proj_root("create-data/output", tail(available, 1))
+  } else {
+    file_name <- sprintf("states-%s.rds", version)
+    # check if available
+    exists_in_create_data <- file.exists(proj_root("create-data/output", file_name))
+    if (exists_in_create_data) {
+      file_path <- proj_root("create-data/output", file_name)
+    } else {
+      exists_in_archive <- file.exists(proj_root("archive/data", file_name))
+      if (!exists_in_archive) {
+        stop("Could not find data with this version")
+      }
+      file_path <- proj_root("archive/data", file_name)
+    }
+  }
+  readRDS(file_path)
+}
+
+
+

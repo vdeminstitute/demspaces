@@ -1,3 +1,6 @@
+#
+# NOTE: if you add parameters here, also
+#
 # Version of the V-Dem data that is used; this is also used to identify the
 # merge data, models, and forecasts.
 version: "v13"
@@ -10,3 +13,5 @@ data_end_year: 2022
 # For the ERT-lite outcome episode coder, the minimum yearly change threshold
 # factor to use, see the "min_f" argument in ?episode_coder
 min_f: 0.1
+# Root project path; used by read_merge_data() etc.
+root_path: "~/Work/2021-vdem-updates/demspaces"

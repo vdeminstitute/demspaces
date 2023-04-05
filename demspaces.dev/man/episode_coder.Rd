@@ -9,11 +9,11 @@ episode_coder(
   x,
   cp,
   direction = c("up", "down"),
-  type = c("mod", "orig"),
+  type = c("mod", "orig", "2year"),
   min_f = 0.1
 )
 
-changes_one_country(x, cp, type = c("mod", "orig"), min_f = 0.1)
+changes_one_country(x, cp, type = c("mod", "orig", "2year"), min_f = 0.1)
 }
 \arguments{
 \item{x}{vector containing values for one of the space indicators, for
@@ -26,7 +26,8 @@ changes_one_country(x, cp, type = c("mod", "orig"), min_f = 0.1)
 \item{type}{use the original single-year event coding ("orig"), or the ERT-lite coding ("mod")?}
 
 \item{min_f}{for type="mod", the minimum yearly change threshold factor to use.
-This is multiplied with the space cutpoint to determine.}
+This is multiplied with the space cutpoint to determine the minimum yearly
+change threshold.}
 }
 \value{
 \code{episode_coder} returns a binary (integer) vector with \code{length(x)}

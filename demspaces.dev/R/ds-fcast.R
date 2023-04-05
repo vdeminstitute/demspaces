@@ -1,5 +1,6 @@
 
-#' ds_fcast constructor
+#' ds_fcast constructor. This simply adds a "ds_fcast" class attribute and
+#' checks that the correct columns are present.
 #'
 #' @param x a data frame of forecasts
 #'
@@ -69,6 +70,13 @@ safe_roc_pr <- function(y, phat) {
 safe_mn_log_loss <- function(y, phat) {
   tryCatch({
     yardstick::mn_log_loss_vec(y, phat)
+  }, error = function(e) NA_real_)
+}
+
+safe_brier <- function(y, phat) {
+  y <- as.integer(y)
+  tryCatch({
+    mean((phat - y)^2)
   }, error = function(e) NA_real_)
 }
 

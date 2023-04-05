@@ -5,9 +5,10 @@ demspaces 13 (2023 Update)
 - The cutpoints used to construct the opening and closing outcomes have been frozen to their values in the 2022 and 2021 updates. The reason is because this year the cut points change even though the overall standard deviations of the year-to-year differences for the 6 space indicators are similar to 2--3 decimal points. By happenstance the 2022 and 2021 cut points did not change. Freezing the cutpoints eliminates one of the sources of divergence between outcome values accross project versions (the remainder are inherent to the V-Dem data generation process itself).
 
 
-## demspaces R package
+## demspaces.dev R package
 
 - I expanded the config file with several additional data-related parameters that were previously hard-coded in scripts: "data_start_year", "data_end_year", "min_f" (parameter for the "mod" type episode coder, see `?episode_coder`). 
+- Renamed the _internal_ dev package from _demspaces_ to _demspaces.dev_.
 
 
 

@@ -7,11 +7,11 @@
 
 .onAttach <- function(libname, pkgname) {
   if (!is.null(getOption("demspaces.version"))) {
-    msg <- paste0("---- demspaces\nUsing version: '",
+    msg <- paste0("---- demspaces.dev\nUsing version: '",
                   getOption("demspaces.version"),
                   "'\n----")
   } else {
-    msg <- paste0("---- demspaces\nWARNING: could not find 'config.yml', manually set options with 'set_options(\"path/to/config.yml\")'\n----")
+    msg <- paste0("---- demspaces.dev\nWARNING: could not find 'config.yml', manually set options with 'set_options(\"path/to/config.yml\")'\n----")
   }
 
   packageStartupMessage(msg)

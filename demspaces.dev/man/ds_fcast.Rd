@@ -2,7 +2,8 @@
 % Please edit documentation in R/ds-fcast.R
 \name{ds_fcast}
 \alias{ds_fcast}
-\title{ds_fcast constructor}
+\title{ds_fcast constructor. This simply adds a "ds_fcast" class attribute and
+checks that the correct columns are present.}
 \usage{
 ds_fcast(x)
 }
@@ -10,7 +11,8 @@ ds_fcast(x)
 \item{x}{a data frame of forecasts}
 }
 \description{
-ds_fcast constructor
+ds_fcast constructor. This simply adds a "ds_fcast" class attribute and
+checks that the correct columns are present.
 }
 \examples{
 data("states")
