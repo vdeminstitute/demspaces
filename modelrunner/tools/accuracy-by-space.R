@@ -10,7 +10,7 @@ data(spaces)
 
 fcasts <- read_csv(here::here("modelrunner/output/fcasts-rf.csv"))
 
-states <- readRDS(here::here("modelrunner/input/states-v12.rds"))
+states <- readRDS(here::here("modelrunner/input/states-v13.rds"))
 
 stats_list <- list()
 for (dv in unique(fcasts$outcome)) {

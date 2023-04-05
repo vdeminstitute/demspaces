@@ -15,9 +15,9 @@
 #
 # Years from which to walk-forward 2-years-ahead forecasts;
 # UPDATE: last year should probably be the end year in the data
-YEARS <- 2005:2021
+YEARS <- 2005:2022
 # How many parallel workers to use?
-N_WORKERS <- future::availableCores() - 1L
+N_WORKERS <- 4L
 # Redo existing chunks? (FALSE means progress for an interrupted run will be
 # used, not re-done)
 OVERWRITE = TRUE
@@ -25,9 +25,10 @@ OVERWRITE = TRUE
 # OVERWRITE)
 CLEANUP = FALSE
 # Which verson of the data to use?
-devtools::load_all("demspaces"))
-set_options(here::here("config.yml"))
-VERSION = getOption("demspaces.version")
+devtools::load_all(here::here("demspaces.dev"))
+VERSION = get_option("version")
+# Which model to use?
+MODEL <- "rf"  #xgboost
 
 # TODO: i don't think this works correctly with parallel workers; and in any
 # case maybe not a good idea
@@ -51,8 +52,8 @@ library(here)
 setwd(here::here("modelrunner"))
 
 # chunks will be saved to this directory
-chunk_dir <- "output/rf-chunks"
-model_dir <- "output/rf-models"
+chunk_dir <- "output/chunks"
+model_dir <- "output/models"
 
 # Setup directories, in case they don't exist
 dir.create("output", showWarnings = FALSE)
@@ -66,12 +67,12 @@ if (!OVERWRITE) {
   log_file <- tail(dir("output/log", full.names = TRUE), 1)
 } else {
   timestamp <- paste0(Sys.Date(), "_", format(Sys.time(), "%H%M"))
-  log_file  <- sprintf("output/log/rf_%s.txt", timestamp)
+  log_file  <- sprintf("output/log/%s_%s.txt", MODEL, timestamp)
 }
 lgr$add_appender(AppenderFile$new(log_file))
 
 lgr$info("Running random forest model")
-lgr$info("R package 'demspaces' version %s", packageVersion("demspaces"))
+lgr$info("R package 'demspaces' version %s", packageVersion("demspaces.dev"))
 
 registerDoFuture()
 lgr$info("Running with %s workers", N_WORKERS)
@@ -107,7 +108,7 @@ model_grid <- model_grid[, c("id", "outcome", "year", "chunk", "outfile", "model
 
 # Save model grid, in case something goes wrong
 mg <- model_grid[, c("id", "outcome", "year")]
-write_csv(mg, "output/rf-model-grid.csv")
+write_csv(mg, "output/model-grid.csv")
 
 # Record total model N for progress messages
 n_models <- nrow(mg)
@@ -145,9 +146,17 @@ model_grid <- foreach(i = 1:nrow(model_grid),
     ungroup() %>%
     filter(year == max(year))
 
-  mdl      <- ds_rf(outcome_i, train_data, num.threads = 1,
-                    num.trees = 2000, mtry = 20, min.node.size = 1)
-  fcasts_i <- predict(mdl, new_data = test_data, cutpoint = cutpoints[[outcome_i]])
+  if (MODEL=="rf") {
+    mdl      <- ds_rf(outcome_i, train_data, num.threads = 1,
+                      num.trees = 2000, mtry = 20, min.node.size = 1)
+    fcasts_i <- predict(mdl, new_data = test_data, cutpoint = cutpoints[[outcome_i]])
+  } else if (MODEL=="xgboost") {
+    mdl      <- ds_xgboost(outcome_i, train_data, num.threads = 1,
+                      num.trees = 2000, mtry = 20, min.node.size = 1)
+    fcasts_i <- predict(mdl, new_data = test_data, cutpoint = cutpoints[[outcome_i]])
+  } else {
+    stop("should not be here, unexpected MODEL")
+  }
 
   runtime <- round((proc.time() - t0)["elapsed"])
   model_grid$time[i] <- runtime
