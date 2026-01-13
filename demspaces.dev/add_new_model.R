@@ -7,11 +7,14 @@ library("whisker")
 library("stringr")
 library("usethis")
 
+oldwd <- getwd()
+setwd(here::here("demspaces.dev"))
+
 # set these data components
 # the short name should avoid R namespace clashes, e.g. don't use "glmnet"
 # as one of the functions created will equal the short_name
-data <- list(name       = "Random forest",
-             short_name = "rf")
+data <- list(name       = "XGBoost",
+             short_name = "xgb")
 
 
 
@@ -31,3 +34,6 @@ writeLines(test_str, con = test_fp)
 
 usethis::edit_file(r_fp)
 usethis::edit_file(test_fp)
+
+setwd(oldwd)
+

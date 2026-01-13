@@ -71,6 +71,10 @@ proj_root <- function(...) {
   file.path(root_path, ...)
 }
 
+#' Read the merge data
+#'
+#' Read the merge data.
+#'
 #' @param version Data version, e.g. "v13"; default is the latest available.
 #'
 #' @details This function will preferentially look for data in
@@ -100,4 +104,34 @@ read_merge_data <- function(version = "latest") {
 }
 
 
-
+#' Read the forecasts
+#'
+#' Read the forecast data.
+#'
+#' @param version Data version, e.g. "v13"; default is the latest available.
+#'
+#' @details This function will preferentially look for data in
+#'   `modelrunner/output` so that during updates the latest available data is
+#'   read. As a backup it will check in `archive`.
+#'
+#' @export
+read_forecasts <- function(version = "latest") {
+  if (version=="latest") {
+    available <- dir(proj_root("modelrunner/output"), pattern = "fcasts-rf-v[0-9\\.]+.csv")
+    file_path <- proj_root("modelrunner/output", tail(available, 1))
+  } else {
+    file_name <- sprintf("fcasts-rf-%s.csv", version)
+    # check if available
+    exists_in_modelrunner <- file.exists(proj_root("modelrunner/output", file_name))
+    if (exists_in_modelrunner) {
+      file_path <- proj_root("modelrunner/output", file_name)
+    } else {
+      exists_in_archive <- file.exists(proj_root("archive", file_name))
+      if (!exists_in_archive) {
+        stop("Could not find data with this version")
+      }
+      file_path <- proj_root("archive", file_name)
+    }
+  }
+  read.csv(file_path)
+}

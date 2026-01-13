@@ -1,3 +1,9 @@
+
+# UPDATE: these parameters
+# in the text below, sprintf() is used to drop these in
+FORECAST_WINDOW = "2023-2024"
+DATA_END = "2022"
+
 navbarPage(
   "The Democratic Space Barometer",
 
@@ -12,7 +18,7 @@ navbarPage(
       column(
         12,
         style = "background-color:#F5F5F5;",
-        h1("2022-2023 Forecasts")
+        h1(sprintf("%s Forecasts", FORECAST_WINDOW))
       )
     ),
 
@@ -20,8 +26,7 @@ navbarPage(
       class = "content-row",
       column(
         6,
-        # UPDATE: two-year window
-        p("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2022-2023).")),
+        p("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(sprintf(" two-year window (%s).", FORECAST_WINDOW))),
       ),
       column(
         6,
@@ -260,8 +265,7 @@ runUrl('https://github.com/vdeminstitute/demspaces/raw/main/dashboard/demspaces-
 
               h2("Democratic Spaces"),
 
-              # UPDATE: two-year window
-              p("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(" two-year window (2022-2023)."), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
+              p("The Democratic Space Barometer estimates the probability that a country will experience at least one ", tags$b("opening event"), " (shift towards more democratic governance) or at least one ", tags$b("closing event"), " (shift towards more autocratic governance) within a", tags$b(sprintf(" two-year window (%s).", FORECAST_WINDOW)), " We estimate the probability of opening and closing events across", tags$b("six spaces of democratic governance:")),
 
               ## Adds hoverover popup text for each space
               h3("Associational"),
@@ -286,8 +290,7 @@ runUrl('https://github.com/vdeminstitute/demspaces/raw/main/dashboard/demspaces-
                           content = "<b>Year-to-year changes in <br>select V-Dem index</b><br> Associational: <b>+/- 0.05</b><br> Economic: <b>+/- 0.03</b><br>Electoral: <b>+/- 0.08</b><br>Governing: <b>+/- 0.06</b><br>Individual: <b>+/- 0.04</b><br>Informational: <b>+/- 0.05</b><br><br>The V-Dem indices we use to measure each space are on a continuous scale from 0 (autocratic) to 1 (democratic).",
                           options = list(container = "body"))),
 
-              # UPDATE: from 1970 to ...
-              p("We use a set of", tags$b(" 12 random forest classification models")," and a country-year dataset with global coverage (169 countries) from 1970 to 2020 to derive our risk estimates."),
+              p("We use a set of", tags$b(sprintf(" 12 random forest classification models")," and a country-year dataset with global coverage (169 countries) from 1970 to %s to derive our risk estimates.", DATA_END)),
 
               h2("Interpretation of results"),
 

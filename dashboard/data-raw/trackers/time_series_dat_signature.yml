@@ -3,7 +3,7 @@ N_cols: 33
 N_missing: 1690
 size_in_mem: 371.7 Kb
 Countries: 169
-Years: 2012-2021
+Years: 2013-2022
 col_names: gwcode, year, country_name, v2x_veracc_osp, v2xcs_ccsi, v2xcl_rol, v2x_freexp_altinf,
   v2x_horacc_osp, v2x_pubcorr, group_v2x_freexp_altinf_down, group_v2x_freexp_altinf_up,
   group_v2x_horacc_osp_down, group_v2x_horacc_osp_up, group_v2x_pubcorr_down, group_v2x_pubcorr_up,

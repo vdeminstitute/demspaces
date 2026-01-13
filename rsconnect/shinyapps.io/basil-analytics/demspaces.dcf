@@ -1,0 +1,11 @@
+name: demspaces
+title:
+username:
+account: basil-analytics
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6175468
+bundleId: 5838691
+url: https://basil-analytics.shinyapps.io/demspaces/
+when: 1650984531.2527
+lastSyncTime: 1650984531.25271
