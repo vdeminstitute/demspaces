@@ -47,8 +47,8 @@ head(preds)
 }
 \seealso{
 Other Other base models: 
-\code{\link{logistic_reg_featx}()},
-\code{\link{logistic_reg}()}
+\code{\link{logistic_reg}()},
+\code{\link{logistic_reg_featx}()}
 }
 \concept{Other base models}
 \concept{base_model}

@@ -4,7 +4,7 @@
 \alias{new_xgb}
 \title{Constructor}
 \usage{
-new_xgb()
+new_xgb(model, y_classes)
 }
 \description{
 Constructor

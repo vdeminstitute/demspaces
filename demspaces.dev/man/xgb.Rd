@@ -4,7 +4,7 @@
 \alias{xgb}
 \title{XGBoost}
 \usage{
-xgb(x, y)
+xgb(x, y, ...)
 }
 \arguments{
 \item{x}{Data frame with features.}
@@ -15,7 +15,7 @@ xgb(x, y)
 Standardized interface for ...
 }
 \examples{
-credit_data <- recipes::credit_data
+credit_data <- modeldata::credit_data
 
 mdl <- xgb(credit_data[, setdiff(colnames(credit_data), "Status")],
                     credit_data$Status)
