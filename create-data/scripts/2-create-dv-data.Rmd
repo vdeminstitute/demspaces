@@ -35,7 +35,7 @@ library(zoo)
 library(skimr)
 
 # need this for changes_one_country()
-devtools::load_all(here::here("demspaces"))
+devtools::load_all(here::here("demspaces.dev"))
 
 # shortcut for plotting missing values when no date column is available
 plotmiss <- function(x) {

@@ -63,7 +63,7 @@ dv_semi_long
     ##  8      2  1975 v2x_freexp_altinf 0.939  0.00100
     ##  9      2  1976 v2x_freexp_altinf 0.952  0.0130 
     ## 10      2  1977 v2x_freexp_altinf 0.945 -0.00700
-    ## # … with 51,752 more rows
+    ## # ℹ 51,752 more rows
 
 ``` r
 # make wide again
@@ -80,23 +80,23 @@ dv_with_diffs
 
     ## # A tibble: 8,627 × 14
     ## # Groups:   gwcode [174]
-    ##    gwcode  year v2x_freexp_al…¹ v2x_h…² v2x_p…³ v2x_v…⁴ v2xcl…⁵ v2xcs…⁶ v2x_fr…⁷
-    ##     <dbl> <dbl>           <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>    <dbl>
-    ##  1      2  1968           0.876   0.911   0.949   0.847   0.849   0.89   0      
-    ##  2      2  1969           0.887   0.913   0.949   0.847   0.892   0.89   0.0110 
-    ##  3      2  1970           0.904   0.916   0.962   0.863   0.919   0.922  0.0170 
-    ##  4      2  1971           0.877   0.919   0.944   0.864   0.927   0.922 -0.0270 
-    ##  5      2  1972           0.903   0.917   0.944   0.861   0.932   0.922  0.0260 
-    ##  6      2  1973           0.929   0.956   0.944   0.862   0.932   0.922  0.0260 
-    ##  7      2  1974           0.938   0.958   0.944   0.868   0.936   0.922  0.00900
-    ##  8      2  1975           0.939   0.958   0.944   0.886   0.941   0.922  0.00100
-    ##  9      2  1976           0.952   0.959   0.944   0.9     0.945   0.922  0.0130 
-    ## 10      2  1977           0.945   0.953   0.944   0.904   0.947   0.922 -0.00700
-    ## # … with 8,617 more rows, 5 more variables: v2x_horacc_osp_diff_y2y <dbl>,
+    ##    gwcode  year v2x_freexp_altinf v2x_horacc_osp v2x_pubcorr v2x_veracc_osp
+    ##     <dbl> <dbl>             <dbl>          <dbl>       <dbl>          <dbl>
+    ##  1      2  1968             0.876          0.911       0.949          0.847
+    ##  2      2  1969             0.887          0.913       0.949          0.847
+    ##  3      2  1970             0.904          0.916       0.962          0.863
+    ##  4      2  1971             0.877          0.919       0.944          0.864
+    ##  5      2  1972             0.903          0.917       0.944          0.861
+    ##  6      2  1973             0.929          0.956       0.944          0.862
+    ##  7      2  1974             0.938          0.958       0.944          0.868
+    ##  8      2  1975             0.939          0.958       0.944          0.886
+    ##  9      2  1976             0.952          0.959       0.944          0.9  
+    ## 10      2  1977             0.945          0.953       0.944          0.904
+    ## # ℹ 8,617 more rows
+    ## # ℹ 8 more variables: v2xcl_rol <dbl>, v2xcs_ccsi <dbl>,
+    ## #   v2x_freexp_altinf_diff_y2y <dbl>, v2x_horacc_osp_diff_y2y <dbl>,
     ## #   v2x_pubcorr_diff_y2y <dbl>, v2x_veracc_osp_diff_y2y <dbl>,
-    ## #   v2xcl_rol_diff_y2y <dbl>, v2xcs_ccsi_diff_y2y <dbl>, and abbreviated
-    ## #   variable names ¹​v2x_freexp_altinf, ²​v2x_horacc_osp, ³​v2x_pubcorr,
-    ## #   ⁴​v2x_veracc_osp, ⁵​v2xcl_rol, ⁶​v2xcs_ccsi, ⁷​v2x_freexp_altinf_diff_y2y
+    ## #   v2xcl_rol_diff_y2y <dbl>, v2xcs_ccsi_diff_y2y <dbl>
 
 ``` r
 # make sure we did not mess up the original data values

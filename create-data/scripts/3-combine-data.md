@@ -42,15 +42,15 @@ output of all chunks below for new changes in missing case sets!
 
 ``` r
 # The options should be automatically updated from the config file. 
-devtools::load_all(here::here("demspaces"))
+devtools::load_all(here::here("demspaces.dev"))
 ```
 
-    ## ℹ Loading demspaces
+    ## ℹ Loading demspaces.dev
     ## Registered S3 method overwritten by 'quantmod':
     ##   method            from
     ##   as.zoo.data.frame zoo 
     ## 
-    ## ---- demspaces
+    ## ---- demspaces.dev
     ## Using version: 'v13'
     ## ----
 
@@ -115,7 +115,7 @@ report(overlap)
 drop <- anti_join(cy, master)
 ```
 
-    ## Joining, by = c("gwcode", "year")
+    ## Joining with `by = join_by(gwcode, year)`
 
 ``` r
 drop$drop <- TRUE
@@ -123,7 +123,7 @@ cy <- left_join(cy, drop) %>%
   mutate(drop = ifelse(is.na(drop), FALSE, drop))
 ```
 
-    ## Joining, by = c("gwcode", "year")
+    ## Joining with `by = join_by(gwcode, year)`
 
 ``` r
 cy <- cy[!cy$drop, ]
@@ -458,7 +458,7 @@ tbl
 ```
 
     ## # A tibble: 0 × 3
-    ## # … with 3 variables: gwcode <dbl>, year <dbl>, lag0_log_pop <dbl>
+    ## # ℹ 3 variables: gwcode <dbl>, year <dbl>, lag0_log_pop <dbl>
 
 No missing cases.
 
@@ -537,7 +537,7 @@ cy_temp %>%
     ##  8    344 1992 - 1992     1
     ##  9    346 1992 - 1992     1
     ## 10    347 2008 - 2008     1
-    ## # … with 33 more rows
+    ## # ℹ 33 more rows
 
 ``` r
 plotmiss(infmort)
@@ -663,7 +663,7 @@ tbl
 ```
 
     ## # A tibble: 0 × 2
-    ## # … with 2 variables: gwcode <dbl>, year <dbl>
+    ## # ℹ 2 variables: gwcode <dbl>, year <dbl>
 
 No missing cases.
 
@@ -899,7 +899,7 @@ write_yaml(sig, sprintf("../output/states-%s-signature.yml",
 write_yaml(sig, "../output/states-signature.yml")
 
 # copy version to archive as well
-write_rds(sig, here::here(
+write_yaml(sig, here::here(
   "archive/data",
   sprintf("states-%s-signature.yml", VERSION)
 ))

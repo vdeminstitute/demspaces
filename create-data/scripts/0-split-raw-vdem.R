@@ -29,7 +29,7 @@ library(tidyr)
 library(here)
 library(zoo)
 
-devtools::load_all(here::here("demspaces"))
+devtools::load_all(here::here("demspaces.dev"))
 
 oldwd <- getwd()
 setwd(here::here("create-data"))

@@ -18,7 +18,7 @@ Several of the data sources below are imputed in some fashion after merging. E.g
 
 ```{r}
 # The options should be automatically updated from the config file. 
-devtools::load_all(here::here("demspaces"))
+devtools::load_all(here::here("demspaces.dev"))
 
 END_YEAR <- get_option("data_end_year")
 
@@ -454,7 +454,7 @@ write_yaml(sig, sprintf("../output/states-%s-signature.yml",
 write_yaml(sig, "../output/states-signature.yml")
 
 # copy version to archive as well
-write_rds(sig, here::here(
+write_yaml(sig, here::here(
   "archive/data",
   sprintf("states-%s-signature.yml", VERSION)
 ))
