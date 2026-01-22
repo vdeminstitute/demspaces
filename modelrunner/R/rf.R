@@ -15,7 +15,7 @@
 #
 # Years from which to walk-forward 2-years-ahead forecasts;
 # UPDATE: last year should probably be the end year in the data
-YEARS <- 2005:2022
+YEARS <- 2005:2023
 # How many parallel workers to use?
 N_WORKERS <- 4L
 # Redo existing chunks? (FALSE means progress for an interrupted run will be
@@ -38,6 +38,8 @@ MODEL <- "rf"  #xgboost
 
 t0 <- proc.time()
 
+remotes::install_github("vdeminstitute/demspaces/demspaces.dev")
+
 library(dplyr)
 library(lgr)
 library(readr)
@@ -45,9 +47,10 @@ library(future)
 library(doFuture)
 library(doRNG)
 library(jsonlite)
-library(demspaces)
+library(demspaces.dev)
 library(ranger)
 library(here)
+
 
 setwd(here::here("modelrunner"))
 
@@ -72,7 +75,7 @@ if (!OVERWRITE) {
 lgr$add_appender(AppenderFile$new(log_file))
 
 lgr$info("Running random forest model")
-lgr$info("R package 'demspaces' version %s", packageVersion("demspaces.dev"))
+lgr$info("R package 'demspaces.dev' version %s", packageVersion("demspaces.dev"))
 
 registerDoFuture()
 lgr$info("Running with %s workers", N_WORKERS)
@@ -122,7 +125,7 @@ if (!OVERWRITE) {
 }
 
 model_grid <- foreach(i = 1:nrow(model_grid),
-                      .combine = bind_rows,
+                      .combine = dplyr::bind_rows,
                       .export = c("model_grid", "n_models", "cutpoints")) %dorng% {
 
   t0 <- proc.time()

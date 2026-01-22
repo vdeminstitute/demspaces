@@ -16,19 +16,20 @@ knitr::opts_chunk$set(
 # demspaces.dev
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/vdeminstitute/demspaces/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vdeminstitute/demspaces/actions/workflows/R-CMD-check.yaml)
-[![Codecov test coverage](https://codecov.io/gh/vdeminstitute/demspaces/branch/main/graph/badge.svg)](https://app.codecov.io/gh/vdeminstitute/demspaces?branch=main)
+
+[![R-CMD-check](https://github.com/vdeminstitute/demspaces/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vdeminstitute/demspaces/actions/workflows/R-CMD-check.yaml) [![Codecov test coverage](https://codecov.io/gh/vdeminstitute/demspaces/branch/main/graph/badge.svg)](https://app.codecov.io/gh/vdeminstitute/demspaces?branch=main)
+
 <!-- badges: end -->
 
-**demspaces** contains helper functions for the Democratic Spaces Barometer project. 
+**demspaces** contains helper functions for the Democratic Spaces Barometer project.
 
 ## Installation
 
 Since this package is specific to the democratic spaces project, it will not end up on CRAN. Install from [GitHub](https://github.com/) instead, with:
 
-``` r
+```{r}
 # install.packages("remotes")
-remotes::install_github("vdeminstitute/demspaces")
+remotes::install_github("vdeminstitute/demspacesR")
 ```
 
 ## Example
@@ -47,10 +48,9 @@ head(preds)
 
 There is a Makefile at the root level of this repo to help with stuff. E.g. to open that static docs:
 
-```bash
+``` bash
 make docs
 make opendocs
 ```
 
-To add new models, see the `demspaces/add_new_model.R` script. It will use a template to setup the R and test files. 
-
+To add new models, see the `demspaces/add_new_model.R` script. It will use a template to setup the R and test files.
