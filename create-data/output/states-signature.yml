@@ -1,38 +1,38 @@
 Class: tbl_df, tbl, data.frame
-Size_in_mem: 14 Mb
+Size_in_mem: 14.3 Mb
 N_countries: 174
-Years: 1970 - 2022
+Years: 1970 - 2023
 N_columns: 225
-N_rows: 8356
+N_rows: 8525
 N_complete_rows: 8018
 Countries: 174
 Missing:
   gwcode: 0
   year: 0
-  v2x_veracc_osp: 0
-  dv_v2x_veracc_osp_change: 0
-  dv_v2x_veracc_osp_up_next2: 338
-  dv_v2x_veracc_osp_down_next2: 338
-  v2xcs_ccsi: 0
-  dv_v2xcs_ccsi_change: 0
-  dv_v2xcs_ccsi_up_next2: 338
-  dv_v2xcs_ccsi_down_next2: 338
-  v2xcl_rol: 0
-  dv_v2xcl_rol_change: 0
-  dv_v2xcl_rol_up_next2: 338
-  dv_v2xcl_rol_down_next2: 338
-  v2x_freexp_altinf: 0
-  dv_v2x_freexp_altinf_change: 0
-  dv_v2x_freexp_altinf_up_next2: 338
-  dv_v2x_freexp_altinf_down_next2: 338
-  v2x_horacc_osp: 0
-  dv_v2x_horacc_osp_change: 0
-  dv_v2x_horacc_osp_up_next2: 338
-  dv_v2x_horacc_osp_down_next2: 338
-  v2x_pubcorr: 0
-  dv_v2x_pubcorr_change: 0
-  dv_v2x_pubcorr_up_next2: 338
-  dv_v2x_pubcorr_down_next2: 338
+  v2x_veracc_osp: 169
+  dv_v2x_veracc_osp_change: 169
+  dv_v2x_veracc_osp_up_next2: 507
+  dv_v2x_veracc_osp_down_next2: 507
+  v2xcs_ccsi: 169
+  dv_v2xcs_ccsi_change: 169
+  dv_v2xcs_ccsi_up_next2: 507
+  dv_v2xcs_ccsi_down_next2: 507
+  v2xcl_rol: 169
+  dv_v2xcl_rol_change: 169
+  dv_v2xcl_rol_up_next2: 507
+  dv_v2xcl_rol_down_next2: 507
+  v2x_freexp_altinf: 169
+  dv_v2x_freexp_altinf_change: 169
+  dv_v2x_freexp_altinf_up_next2: 507
+  dv_v2x_freexp_altinf_down_next2: 507
+  v2x_horacc_osp: 169
+  dv_v2x_horacc_osp_change: 169
+  dv_v2x_horacc_osp_up_next2: 507
+  dv_v2x_horacc_osp_down_next2: 507
+  v2x_pubcorr: 169
+  dv_v2x_pubcorr_change: 169
+  dv_v2x_pubcorr_up_next2: 507
+  dv_v2x_pubcorr_down_next2: 507
   lag0_is_leg: 0
   lag0_is_elec: 0
   lag0_is_election_year: 0
@@ -225,12 +225,12 @@ Missing:
   lag0_v2x_pubcorr_sd10: 0
   lag0_state_age: 0
   lag0_log_pop: 0
-  lag1_infmort: 0
-  lag1_infmort_yearadj: 0
-  lag1_gdp_growth: 0
-  lag1_gdp_pc_growth: 0
-  lag1_log_gdp: 0
-  lag1_log_gdp_pc: 0
+  lag0_infmort: 0
+  lag0_infmort_yearadj: 0
+  lag0_gdp_growth: 0
+  lag0_gdp_pc_growth: 0
+  lag0_log_gdp: 0
+  lag0_log_gdp_pc: 0
   lag0_years_since_last_pt_attempt: 0
 Col_types:
   gwcode: double
@@ -451,10 +451,10 @@ Col_types:
   lag0_v2x_pubcorr_sd10: double
   lag0_state_age: double
   lag0_log_pop: double
-  lag1_infmort: double
-  lag1_infmort_yearadj: double
-  lag1_gdp_growth: double
-  lag1_gdp_pc_growth: double
-  lag1_log_gdp: double
-  lag1_log_gdp_pc: double
+  lag0_infmort: double
+  lag0_infmort_yearadj: double
+  lag0_gdp_growth: double
+  lag0_gdp_pc_growth: double
+  lag0_log_gdp: double
+  lag0_log_gdp_pc: double
   lag0_years_since_last_pt_attempt: double

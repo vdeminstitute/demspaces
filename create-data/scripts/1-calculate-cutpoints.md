@@ -1,6 +1,8 @@
 Calculate cutpoints
 ================
 
+*Last ran with v14 data on 2026/01 for MPSA panel*
+
 *Note (AB, 2020-03-24): the cutpoint calculations were originally done
 in a file called “1-dv_notes.Rmd”, written by Rick. That file also
 created a memo/report. I split the cutpoint calculation part out because
@@ -15,7 +17,7 @@ dv <- read_csv("../output/dv_data_1968_on.csv") %>%
   arrange(gwcode, year)
 ```
 
-    ## Rows: 8627 Columns: 11
+    ## Rows: 8796 Columns: 11
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
     ## chr (2): country_name, country_text_id
@@ -49,21 +51,21 @@ dv_semi_long <- dv %>%
 dv_semi_long
 ```
 
-    ## # A tibble: 51,762 × 5
+    ## # A tibble: 52,776 × 5
     ## # Groups:   gwcode, variable [1,044]
     ##    gwcode  year variable          value diff_y2y
     ##     <dbl> <dbl> <chr>             <dbl>    <dbl>
-    ##  1      2  1968 v2x_freexp_altinf 0.876  0      
-    ##  2      2  1969 v2x_freexp_altinf 0.887  0.0110 
-    ##  3      2  1970 v2x_freexp_altinf 0.904  0.0170 
-    ##  4      2  1971 v2x_freexp_altinf 0.877 -0.0270 
-    ##  5      2  1972 v2x_freexp_altinf 0.903  0.0260 
-    ##  6      2  1973 v2x_freexp_altinf 0.929  0.0260 
-    ##  7      2  1974 v2x_freexp_altinf 0.938  0.00900
-    ##  8      2  1975 v2x_freexp_altinf 0.939  0.00100
-    ##  9      2  1976 v2x_freexp_altinf 0.952  0.0130 
-    ## 10      2  1977 v2x_freexp_altinf 0.945 -0.00700
-    ## # ℹ 51,752 more rows
+    ##  1      2  1968 v2x_freexp_altinf 0.874  0      
+    ##  2      2  1969 v2x_freexp_altinf 0.881  0.00700
+    ##  3      2  1970 v2x_freexp_altinf 0.899  0.0180 
+    ##  4      2  1971 v2x_freexp_altinf 0.869 -0.0300 
+    ##  5      2  1972 v2x_freexp_altinf 0.896  0.0270 
+    ##  6      2  1973 v2x_freexp_altinf 0.925  0.0290 
+    ##  7      2  1974 v2x_freexp_altinf 0.935  0.0100 
+    ##  8      2  1975 v2x_freexp_altinf 0.938  0.00300
+    ##  9      2  1976 v2x_freexp_altinf 0.951  0.0130 
+    ## 10      2  1977 v2x_freexp_altinf 0.943 -0.00800
+    ## # ℹ 52,766 more rows
 
 ``` r
 # make wide again
@@ -78,21 +80,21 @@ dv_with_diffs <- dv_semi_long %>%
 dv_with_diffs
 ```
 
-    ## # A tibble: 8,627 × 14
+    ## # A tibble: 8,796 × 14
     ## # Groups:   gwcode [174]
     ##    gwcode  year v2x_freexp_altinf v2x_horacc_osp v2x_pubcorr v2x_veracc_osp
     ##     <dbl> <dbl>             <dbl>          <dbl>       <dbl>          <dbl>
-    ##  1      2  1968             0.876          0.911       0.949          0.847
-    ##  2      2  1969             0.887          0.913       0.949          0.847
-    ##  3      2  1970             0.904          0.916       0.962          0.863
-    ##  4      2  1971             0.877          0.919       0.944          0.864
-    ##  5      2  1972             0.903          0.917       0.944          0.861
-    ##  6      2  1973             0.929          0.956       0.944          0.862
-    ##  7      2  1974             0.938          0.958       0.944          0.868
-    ##  8      2  1975             0.939          0.958       0.944          0.886
-    ##  9      2  1976             0.952          0.959       0.944          0.9  
-    ## 10      2  1977             0.945          0.953       0.944          0.904
-    ## # ℹ 8,617 more rows
+    ##  1      2  1968             0.874          0.91        0.945          0.846
+    ##  2      2  1969             0.881          0.916       0.945          0.845
+    ##  3      2  1970             0.899          0.921       0.961          0.861
+    ##  4      2  1971             0.869          0.923       0.948          0.862
+    ##  5      2  1972             0.896          0.922       0.948          0.859
+    ##  6      2  1973             0.925          0.958       0.948          0.86 
+    ##  7      2  1974             0.935          0.959       0.948          0.867
+    ##  8      2  1975             0.938          0.961       0.948          0.886
+    ##  9      2  1976             0.951          0.96        0.948          0.901
+    ## 10      2  1977             0.943          0.954       0.948          0.902
+    ## # ℹ 8,786 more rows
     ## # ℹ 8 more variables: v2xcl_rol <dbl>, v2xcs_ccsi <dbl>,
     ## #   v2x_freexp_altinf_diff_y2y <dbl>, v2x_horacc_osp_diff_y2y <dbl>,
     ## #   v2x_pubcorr_diff_y2y <dbl>, v2x_veracc_osp_diff_y2y <dbl>,
@@ -122,7 +124,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator         all    up  down
     ##   <chr>           <dbl> <dbl> <dbl>
-    ## 1 v2x_veracc_osp 0.0804  0.07  0.07
+    ## 1 v2x_veracc_osp 0.0796  0.07  0.07
     ## 
     ## 
     ##  v2xcs_ccsi 
@@ -130,7 +132,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator     all    up  down
     ##   <chr>       <dbl> <dbl> <dbl>
-    ## 1 v2xcs_ccsi 0.0556  0.05  0.05
+    ## 1 v2xcs_ccsi 0.0547  0.05  0.05
     ## 
     ## 
     ##  v2xcl_rol 
@@ -138,7 +140,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator    all    up  down
     ##   <chr>      <dbl> <dbl> <dbl>
-    ## 1 v2xcl_rol 0.0425  0.04  0.04
+    ## 1 v2xcl_rol 0.0421  0.04  0.04
     ## 
     ## 
     ##  v2x_freexp_altinf 
@@ -146,7 +148,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator            all    up  down
     ##   <chr>              <dbl> <dbl> <dbl>
-    ## 1 v2x_freexp_altinf 0.0547  0.05  0.05
+    ## 1 v2x_freexp_altinf 0.0543  0.05  0.05
     ## 
     ## 
     ##  v2x_horacc_osp 
@@ -154,7 +156,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator         all    up  down
     ##   <chr>           <dbl> <dbl> <dbl>
-    ## 1 v2x_horacc_osp 0.0566  0.05  0.05
+    ## 1 v2x_horacc_osp 0.0564  0.05  0.05
     ## 
     ## 
     ##  v2x_pubcorr 
@@ -162,7 +164,7 @@ for (dv_name in dv_vars) {
     ## # A tibble: 1 × 4
     ##   indicator      all    up  down
     ##   <chr>        <dbl> <dbl> <dbl>
-    ## 1 v2x_pubcorr 0.0415  0.04  0.04
+    ## 1 v2x_pubcorr 0.0414  0.04  0.04
 
 ``` r
 cp <- bind_rows(cp)

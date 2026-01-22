@@ -2,6 +2,7 @@
 title: "Calculate cutpoints"
 output: github_document
 ---
+*Last ran with v14 data on 2026/01 for MPSA panel*
 
 *Note (AB, 2020-03-24): the cutpoint calculations were originally done in a file called "1-dv_notes.Rmd", written by Rick. That file also created a memo/report. I split the cutpoint calculation part out because there was a circular dependency with "2-create-dv-data.Rmd", and adjusted the code accordingly to remove this problem. See issue #26 on GitHub (andybega) to see the commit that created this file.*
 

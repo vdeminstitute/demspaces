@@ -189,7 +189,7 @@ dim(vdem_ivs) ## 8430  186
 vdem_clean_data <- vdem_ivs %>%
   group_by(country_id) %>%
   arrange(year) %>%
-  mutate(is_jud = ifelse(is.na(v2x_jucon), 0, 1),
+  mutate(# is_jud = ifelse(is.na(v2x_jucon), 0, 1), this is unnecessary as of v14 update
          is_leg = ifelse(v2lgbicam > 0, 1, 0),
          is_elec = ifelse(v2x_elecreg == 0, 0, 1),
          is_election_year = ifelse(!is.na(v2elirreg), 1, 0)) %>%
@@ -225,20 +225,14 @@ vdem_clean_data <- vdem_ivs %>%
                   v2elmonref = ifelse(is.na(v2elmonref) & v2x_elecreg == 0, 0, v2elmonref),
                   v2elmonden = ifelse(is.na(v2elmonden) & v2x_elecreg == 0, 0, v2elmonden)) %>%#,
            ungroup() %>%
-           mutate(v2x_jucon = ifelse(is_jud == 0, 0, v2x_jucon),
+           mutate(#v2x_jucon = ifelse(is_jud == 0, 0, v2x_jucon), v14 note above
                   v2xlg_legcon = ifelse(is_leg == 0, 0, v2xlg_legcon),
                   v2elmonref = ifelse(is.na(v2elmonref) & is_elec == 1, 0, v2elmonref),
                   v2elmonden = ifelse(is.na(v2elmonden) & is_elec == 1, 0, v2elmonden),
-                  # v2ellocgov = ifelse(is.na(v2ellocgov) & country_name == "Singapore" & year == 2019, 0, v2ellocgov), ## Not sure why it's NA. All other years are 0
-                  # v2elrsthos = ifelse(is.na(v2elrsthos) & country_name == "Jamaica" & year == 2019, 0, v2elrsthos), ## Not sure why this is NA. All other years are 0
-                  # v2elrstrct = ifelse(is.na(v2elrstrct) & country_name == "Jamaica" & year == 2019, 1, v2elrstrct), ## Not sure why this is NA. All other years are 1
-                  # v2exhoshog = ifelse(is.na(v2exhoshog) & country_name == "Jamaica" & year == 2019, 0, v2exhoshog), ## Not sure why this is NA. All other years are 0
-                  # v2exhoshog = ifelse(is.na(v2exhoshog) & country_name == "Kazakhstan" & year == 2019, 0, v2exhoshog), ## Not sure why this is NA. All other years are 0
+# update: check if these are necessary with each update.
                   v2svstterr = ifelse(is.na(v2svstterr) & country_name == "South Yemen" & year == 1990, 97.4, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward
                   v2svstterr = ifelse(is.na(v2svstterr) & country_name == "Republic of Vietnam" & year == 1975, 48, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward
                   v2svstterr = ifelse(is.na(v2svstterr) & country_name == "German Democratic Republic" & year == 1990, 99, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward
-                  # v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Saudi Arabia" & between(year, 1970, 2019), -3.527593, v2psoppaut), ## Opposition parties are banned in Saudi Arabia. Going with the min score in the data (1970-2017)
-                  # v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Kuwait" & between(year, 1970, 2019), -2.250289, v2psoppaut), ## Carry forward. has the same score 1970-2016
                   v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Qatar" & between(year, 1971, 2023), -3.527593, v2psoppaut), ## Opposition parties are banned in Qatar. Going with the min score in the data (1970-2017)
                   v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "United Arab Emirates" & between(year, 2020, 2023), -2.468, v2psoppaut), ## Opposition parties are banned in UAE. Going with the min score in the data (1970-2017)
                   v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Oman" & between(year, 2000, 2023), -2.573, v2psoppaut), ## Carry forward. There are a handful of nominal opposition parties, but they are co-opted. No much changed after 1999...
@@ -254,9 +248,9 @@ vdem_clean_data <- vdem_ivs %>%
                   v2lglegplo = ifelse(is_leg == 0, 0, v2lglegplo),
                   v2lgcomslo = ifelse(is_leg == 0, 0, v2lgcomslo),
                   v2lgsrvlo =  ifelse(is_leg == 0, 0, v2lgsrvlo)) %>%
-  select(country_name, country_text_id, gwcode, country_id, year, is_jud, is_leg, is_elec, is_election_year, everything())
+  select(country_name, country_text_id, gwcode, country_id, year, is_leg, is_elec, is_election_year, everything())
 dim(vdem_clean_data) ## 8430  190
-# v14: 9118, 190
+# v14: 9118, 189 (removed `is_jud`)
 
 # START add sdX vars
 #
@@ -302,7 +296,7 @@ vdem_clean_data <- left_join(vdem_clean_data, vdem_dv_hist, by = c("gwcode", "ye
 
 vdem_data <- vdem_clean_data
 dim(vdem_data) ## 8430  371
-# v14: 9118, 196
+# v14: 9118, 195
 naCountFun(vdem_data, END_YEAR)
 
 vDem_GW_data <- country_year_set %>%
@@ -316,7 +310,7 @@ dim(vDem_GW_data)
 # v??: 8120, 371
 # v12: 8458, 190
 # v13: 8627, 196
-# v14: 8796, 196
+# v14: 8796, 195
 
 # naCountFun(vDem_GW_data, END_YEAR + 1)
 nas <- naCountFun(vDem_GW_data, END_YEAR)

@@ -217,10 +217,10 @@ lag0_v2x_horacc_osp_sd10
 lag0_v2x_pubcorr_sd10
 lag0_state_age
 lag0_log_pop
-lag1_infmort
-lag1_infmort_yearadj
-lag1_gdp_growth
-lag1_gdp_pc_growth
-lag1_log_gdp
-lag1_log_gdp_pc
+lag0_infmort
+lag0_infmort_yearadj
+lag0_gdp_growth
+lag0_gdp_pc_growth
+lag0_log_gdp
+lag0_log_gdp_pc
 lag0_years_since_last_pt_attempt
