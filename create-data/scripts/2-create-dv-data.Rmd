@@ -92,7 +92,7 @@ for (var_i in dv_vars) {
              # actually the first 2 years of indy are missing with this algo,
              # but let's keep the same name
              var_change = ifelse(year < (min(year) + 2), 
-                                 "first year of independence",
+                                 "first year of independence", 
                                  var_change),
              # there is also an additional NA at the tail, set these to "same"
              # as with previous version of outcome coding
@@ -199,8 +199,8 @@ for (ind in spaces$Indicator) {
     }
     # for debug/check, print these crosstabs
     # almost all column 1's should be in the 0 row, see #15
-    #cat(paste0(ind, " ", dir), "\n")
-    #print(table(dv_data[[marker]], dv_data[[paste0("dv_", ind, "_", dir, "_next2")]]))
+    cat(paste0(ind, " ", dir), "\n")
+    print(table(dv_data[[marker]], dv_data[[paste0("dv_", ind, "_", dir, "_next2")]]))
   }
 }
 ```

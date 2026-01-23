@@ -12,7 +12,8 @@
 #
 
 # Config settings
-#
+
+
 # Years from which to walk-forward 2-years-ahead forecasts;
 # UPDATE: last year should probably be the end year in the data
 YEARS <- 2005:2023
@@ -25,6 +26,8 @@ OVERWRITE = TRUE
 # OVERWRITE)
 CLEANUP = FALSE
 # Which verson of the data to use?
+# install.packages(here::here("demspaces.dev"))
+
 devtools::load_all(here::here("demspaces.dev"))
 VERSION = get_option("version")
 # Which model to use?
@@ -37,8 +40,6 @@ MODEL <- "rf"  #xgboost
 # End config settings
 
 t0 <- proc.time()
-
-remotes::install_github("vdeminstitute/demspaces/demspaces.dev")
 
 library(dplyr)
 library(lgr)
@@ -181,6 +182,9 @@ model_grid <- foreach(i = 1:nrow(model_grid),
 chunk_files <- dir(chunk_dir, full.names = TRUE)
 chunks      <- lapply(chunk_files, readr::read_csv, col_types = cols())
 fcasts_y    <- do.call(rbind, chunks)
+
+dim(fcasts_y)
+# v14: 18192, 7
 
 # Score forecasts
 score <- score_ds_fcast(fcasts_y, states)

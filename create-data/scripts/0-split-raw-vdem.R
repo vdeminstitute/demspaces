@@ -28,8 +28,6 @@ library(states)
 library(tidyr)
 library(here)
 library(zoo)
-
-
 devtools::load_all(here::here("demspaces.dev"))
 
 oldwd <- getwd()
@@ -65,6 +63,7 @@ vdem_complete <- vdem_raw %>%
                             gwcode == 345 & year >= 2006 ~ 340,
                             TRUE ~ gwcode)) %>%
   select(gwcode, everything())
+
 dim(vdem_complete)
 # 2020 update (v10): 8430, 4109
 # 2021 update (v11): 8602, 4177
@@ -75,6 +74,7 @@ dim(vdem_complete)
 vdem_country_year0 <- vdem_complete %>%
   select(c(country_name, country_text_id, country_id, gwcode, year, v2x_pubcorr))
 # no_gwcode <- vdem_country_year0[is.na(vdem_country_year0$gwcode), c("country_name", "country_id", "year")]
+naCountFun(vdem_country_year0, 2024)
 
 vdem_country_year <- vdem_country_year0 %>%
   dplyr::filter(year >= START_YEAR) %>%
@@ -83,13 +83,14 @@ vdem_country_year <- vdem_country_year0 %>%
   complete(country_name, country_id, country_text_id, year = min(year):END_YEAR) %>%
   # fill(country_name) %>%
   ungroup()
+
 dim(vdem_country_year)
 # v??: 8753, 6
 # v12: 8927, 6
 # v13: 9104, 6
 # v14: 9281, 6
 
-## GW_template is a balanced gwcode yearly data frame from 1968 to 2019. Need to drop microstates.
+## GW_template is a balanced gwcode yearly data frame from START_YEAR to END_YEAR Need to drop microstates.
 data(gwstates)
 
 keep <- gwstates$gwcode[gwstates$microstate == FALSE]
@@ -149,6 +150,8 @@ vdem_dvs <- vdem_complete %>%
            v2x_horacc_osp, v2x_pubcorr)) %>%
   mutate(v2x_pubcorr = 1 - v2x_pubcorr)
 
+naCountFun(vdem_dvs, 2023)
+
 dvs <- left_join(country_year_set, vdem_dvs)
 naCountFun(dvs, END_YEAR)  # no NAs
 
@@ -159,7 +162,7 @@ write_csv(dvs, "output/dv_data_1968_on.csv")
 # V-Dem predictor data ----------------------------------------------------
 #
 #   Predictor (IV) data from V-Dem
-#
+# This needs to be changed
 
 vdem_ivs <- vdem_complete %>%
   dplyr::filter(year >= START_YEAR) %>%
@@ -279,6 +282,7 @@ naCountFun(dvs_longer, END_YEAR)  # nope there are NAs :(
 # Bahamas - 51, Belize - 43, Malta - 60, Yugoslavia - 1,
 # Armenia - 1, Zanzibar - 2, Bahrain - 53, Tibet - 3, Brunei - 40)
 
+naCountFun(vdem_dvs_longer, 2023)
 saveRDS(vdem_dvs_longer, "output/dv_data_1958_on.rds")
 
 data("spaces")
