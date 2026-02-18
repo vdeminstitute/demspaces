@@ -47,7 +47,7 @@ plotmiss <- function(x) {
 MIN_F <- get_option("min_f")
 
 # Flag to shortcut which outcome version is used
-USE_ERT_LITE <- TRUE
+USE_ERT_LITE <- FALSE
 ```
 
 ```{r}
@@ -109,14 +109,16 @@ for (var_i in dv_vars) {
              )
   } else {
     cat("Using original (non-ERT-lite) outcome version\n")
-    dv_i <- dv_i %>%
-    mutate(var_change = case_when(
-      y2y_diff_var > cp[[var_i]]  ~ "up",
-      y2y_diff_var < -cp[[var_i]] ~ "down",
-      year==min(year)      ~ "first year of independence",
-      is.na(y2y_diff_var) & year!=min(year) ~ NA_character_,
-      TRUE ~ "same"
-    ))
+    dv_i <- dv_i |>
+      mutate(var_change = changes_one_country(var, cp[[var_i]], type = "orig"
+                                              ),
+             # actually the first 2 years of indy are missing with this algo,
+             # but let's keep the same name
+             var_change = ifelse(year < (min(year) + 2), 
+                                 "first year of independence", 
+                                 var_change)
+             )
+    
   }
   # END of bypass
   

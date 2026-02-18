@@ -106,14 +106,16 @@ for (var_i in dv_vars) {
              )
   } else {
     cat("Using original (non-ERT-lite) outcome version\n")
-    dv_i <- dv_i %>%
-    mutate(var_change = case_when(
-      y2y_diff_var > cp[[var_i]]  ~ "up",
-      y2y_diff_var < -cp[[var_i]] ~ "down",
-      year==min(year)      ~ "first year of independence",
-      is.na(y2y_diff_var) & year!=min(year) ~ NA_character_,
-      TRUE ~ "same"
-    ))
+    dv_i <- dv_i |>
+      mutate(var_change = changes_one_country(var, cp[[var_i]], type = "orig"
+                                              ),
+             # actually the first 2 years of indy are missing with this algo,
+             # but let's keep the same name
+             var_change = ifelse(year < (min(year) + 2), 
+                                 "first year of independence", 
+                                 var_change)
+             )
+    
   }
   # END of bypass
   
@@ -159,12 +161,12 @@ for (var_i in dv_vars) {
 }
 ```
 
-    ## Using ERT-lite outcome version
-    ## Using ERT-lite outcome version
-    ## Using ERT-lite outcome version
-    ## Using ERT-lite outcome version
-    ## Using ERT-lite outcome version
-    ## Using ERT-lite outcome version
+    ## Using original (non-ERT-lite) outcome version
+    ## Using original (non-ERT-lite) outcome version
+    ## Using original (non-ERT-lite) outcome version
+    ## Using original (non-ERT-lite) outcome version
+    ## Using original (non-ERT-lite) outcome version
+    ## Using original (non-ERT-lite) outcome version
 
 Write the pieces to CSV files so we can quickly see on git when anything
 changes.
@@ -316,20 +318,20 @@ Data summary
 | gwcode | 0 | 1.00 | 462.59 | 240.31 | 2.00 | 305.00 | 461.00 | 663.00 | 950.00 | ▅▆▇▇▃ |
 | year | 0 | 1.00 | 1995.12 | 15.15 | 1968.00 | 1982.00 | 1996.00 | 2008.00 | 2020.00 | ▆▆▇▇▇ |
 | v2x_veracc_osp | 0 | 1.00 | 0.63 | 0.27 | 0.06 | 0.41 | 0.70 | 0.89 | 0.96 | ▃▂▃▃▇ |
-| dv_v2x_veracc_osp_up_next2 | 338 | 0.96 | 0.08 | 0.27 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
-| dv_v2x_veracc_osp_down_next2 | 338 | 0.96 | 0.05 | 0.22 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2x_veracc_osp_up_next2 | 338 | 0.96 | 0.06 | 0.24 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2x_veracc_osp_down_next2 | 338 | 0.96 | 0.04 | 0.20 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
 | v2xcs_ccsi | 0 | 1.00 | 0.57 | 0.32 | 0.01 | 0.28 | 0.65 | 0.89 | 0.98 | ▃▃▂▃▇ |
-| dv_v2xcs_ccsi_up_next2 | 338 | 0.96 | 0.13 | 0.33 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
-| dv_v2xcs_ccsi_down_next2 | 338 | 0.96 | 0.09 | 0.29 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2xcs_ccsi_up_next2 | 338 | 0.96 | 0.10 | 0.29 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2xcs_ccsi_down_next2 | 338 | 0.96 | 0.06 | 0.24 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
 | v2xcl_rol | 0 | 1.00 | 0.60 | 0.30 | 0.00 | 0.36 | 0.65 | 0.89 | 0.99 | ▃▃▃▅▇ |
-| dv_v2xcl_rol_up_next2 | 338 | 0.96 | 0.12 | 0.33 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
-| dv_v2xcl_rol_down_next2 | 338 | 0.96 | 0.09 | 0.28 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2xcl_rol_up_next2 | 338 | 0.96 | 0.08 | 0.27 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2xcl_rol_down_next2 | 338 | 0.96 | 0.05 | 0.22 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
 | v2x_freexp_altinf | 0 | 1.00 | 0.56 | 0.34 | 0.01 | 0.21 | 0.67 | 0.88 | 0.99 | ▆▂▂▅▇ |
-| dv_v2x_freexp_altinf_up_next2 | 338 | 0.96 | 0.13 | 0.33 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
-| dv_v2x_freexp_altinf_down_next2 | 338 | 0.96 | 0.09 | 0.28 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2x_freexp_altinf_up_next2 | 338 | 0.96 | 0.08 | 0.27 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2x_freexp_altinf_down_next2 | 338 | 0.96 | 0.05 | 0.22 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
 | v2x_horacc_osp | 0 | 1.00 | 0.55 | 0.31 | 0.01 | 0.25 | 0.58 | 0.85 | 0.99 | ▅▅▃▅▇ |
-| dv_v2x_horacc_osp_up_next2 | 338 | 0.96 | 0.11 | 0.32 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
-| dv_v2x_horacc_osp_down_next2 | 338 | 0.96 | 0.08 | 0.27 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2x_horacc_osp_up_next2 | 338 | 0.96 | 0.08 | 0.28 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2x_horacc_osp_down_next2 | 338 | 0.96 | 0.05 | 0.22 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
 | v2x_pubcorr | 0 | 1.00 | 0.53 | 0.30 | 0.01 | 0.26 | 0.52 | 0.82 | 1.00 | ▆▇▅▅▇ |
-| dv_v2x_pubcorr_up_next2 | 338 | 0.96 | 0.09 | 0.29 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
-| dv_v2x_pubcorr_down_next2 | 338 | 0.96 | 0.11 | 0.31 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2x_pubcorr_up_next2 | 338 | 0.96 | 0.08 | 0.28 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
+| dv_v2x_pubcorr_down_next2 | 338 | 0.96 | 0.10 | 0.30 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | ▇▁▁▁▁ |
