@@ -11,6 +11,30 @@ The forecasts prior to v12.1 used the original DV calculation method,
 - `dv-data_v11.1_original.rds`
 
 
+- The v12 data versions and ERT lite versions for v13 and v14 come from the archive:
+
+```r
+library(readr)
+library(dplyr)
+
+read_rds("archive/data/states-v12.rds") |>
+  select(gwcode:dv_v2x_pubcorr_down_next2) |>
+  write_rds("2026-mpsa/input/dv-data_v12_original.rds")
+
+read_rds("archive/data/states-v12.1.rds") |>
+  select(gwcode:dv_v2x_pubcorr_down_next2) |>
+  write_rds("2026-mpsa/input/dv-data_v12_ert-lite.rds")
+  
+read_rds("archive/data/states-v13.rds") |>
+  select(gwcode:dv_v2x_pubcorr_down_next2) |>
+  write_rds("2026-mpsa/input/dv-data_v13_ert-lite.rds")
+  
+read_rds("archive/data/states-v14.rds") |>
+  select(gwcode:dv_v2x_pubcorr_down_next2) |>
+  write_rds("2026-mpsa/input/dv-data_v14_ert-lite.rds")
+```
+
+
 I checked `dv-data_v11.1_original.rds` against `archive/data/states-v11.rds`, and aside from 1968 and 1679 data (which is taken out), it has these cases:
 
 ```
