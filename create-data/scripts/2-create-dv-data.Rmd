@@ -45,6 +45,9 @@ plotmiss <- function(x) {
 # Minimum yearly threshold factor to use in the episode coder, see "min_f" in  
 # ?episode_coder
 MIN_F <- get_option("min_f")
+
+# Flag to shortcut which outcome version is used
+USE_ERT_LITE <- TRUE
 ```
 
 ```{r}
@@ -85,7 +88,11 @@ for (var_i in dv_vars) {
   # Bypass the normal flow to produce modified data
   # This produces the ERT-lite version of the outcome that was added in the 
   # spring 2022 update. 
-  if (getOption("demspaces.version") >= "v12.1") {
+  use_ert_lite <- ifelse(is.null(USE_ERT_LITE), 
+                         getOption("demspaces.version") >= "v12.1",
+                         USE_ERT_LITE %in% TRUE)
+  if (use_ert_lite) {
+    cat("Using ERT-lite outcome version\n")
     dv_i <- dv_i %>%
       mutate(var_change = changes_one_country(var, cp[[var_i]], type = "mod", 
                                               min_f = MIN_F),
@@ -101,6 +108,7 @@ for (var_i in dv_vars) {
                                  var_change)
              )
   } else {
+    cat("Using original (non-ERT-lite) outcome version\n")
     dv_i <- dv_i %>%
     mutate(var_change = case_when(
       y2y_diff_var > cp[[var_i]]  ~ "up",
