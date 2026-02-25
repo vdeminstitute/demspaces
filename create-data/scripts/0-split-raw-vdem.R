@@ -102,6 +102,7 @@ dim(GW_template)
 # v12: 8692, 2
 # v13: 8866, 2
 # v14: 9040, 2
+# v15: 9214, 2
 
 country_year_set <- left_join(GW_template, vdem_country_year) %>%
   dplyr::filter(!is.na(country_id)) %>%
@@ -114,9 +115,9 @@ dim(country_year_set)
 # 8120    5
 # v13: 8627, 5
 # v14: 8796, 5
+# v15: 8965, 5
 
 write_csv(country_year_set, "output/country_year_set_1968_on.csv")
-
 
 # Country to region mapping -----------------------------------------------
 #
@@ -137,7 +138,6 @@ stopifnot(
 region_mapping <- xx[, c("gwcode", "e_regionpol_6C")]
 write_csv(region_mapping, "output/region-mapping.csv")
 
-
 # DVs ---------------------------------------------------------------------
 #
 #   Get the 6 indicators for our DV outcomes
@@ -150,14 +150,12 @@ vdem_dvs <- vdem_complete %>%
            v2x_horacc_osp, v2x_pubcorr)) %>%
   mutate(v2x_pubcorr = 1 - v2x_pubcorr)
 
-naCountFun(vdem_dvs, 2023)
+naCountFun(vdem_dvs, 2024)
 
 dvs <- left_join(country_year_set, vdem_dvs)
 naCountFun(dvs, END_YEAR)  # no NAs
 
 write_csv(dvs, "output/dv_data_1968_on.csv")
-
-
 
 # V-Dem predictor data ----------------------------------------------------
 #
@@ -188,6 +186,7 @@ vdem_ivs <- vdem_complete %>%
            v2mecorrpt, v2pepwrses, v2pepwrsoc, v2pepwrgen, v2pepwrort, v2peedueq, v2pehealth)
 dim(vdem_ivs) ## 8430  186
 # v14: 9118, 186
+# v15: 9290, 186
 
 vdem_clean_data <- vdem_ivs %>%
   group_by(country_id) %>%
@@ -232,15 +231,15 @@ vdem_clean_data <- vdem_ivs %>%
                   v2xlg_legcon = ifelse(is_leg == 0, 0, v2xlg_legcon),
                   v2elmonref = ifelse(is.na(v2elmonref) & is_elec == 1, 0, v2elmonref),
                   v2elmonden = ifelse(is.na(v2elmonden) & is_elec == 1, 0, v2elmonden),
-# update: check if these are necessary with each update.
-                  v2svstterr = ifelse(is.na(v2svstterr) & country_name == "South Yemen" & year == 1990, 97.4, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward
-                  v2svstterr = ifelse(is.na(v2svstterr) & country_name == "Republic of Vietnam" & year == 1975, 48, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward
-                  v2svstterr = ifelse(is.na(v2svstterr) & country_name == "German Democratic Republic" & year == 1990, 99, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward
+# UPDATE: check if these are necessary with each update.
+                  v2svstterr = ifelse(is.na(v2svstterr) & country_name == "South Yemen" & year == 1990, 97.4, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward (SAME IN v14 & v15 UPDATE:)
+                  v2svstterr = ifelse(is.na(v2svstterr) & country_name == "Republic of Vietnam" & year == 1975, 48, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward  (SAME IN v14 & v15 UPDATE:)
+                  v2svstterr = ifelse(is.na(v2svstterr) & country_name == "German Democratic Republic" & year == 1990, 99, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward (SAME IN v14 & v15 UPDATE:)
                   v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Qatar" & between(year, 1971, 2023), -3.527593, v2psoppaut), ## Opposition parties are banned in Qatar. Going with the min score in the data (1970-2017)
                   v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "United Arab Emirates" & between(year, 2020, 2023), -2.468, v2psoppaut), ## Opposition parties are banned in UAE. Going with the min score in the data (1970-2017)
-                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Oman" & between(year, 2000, 2023), -2.573, v2psoppaut), ## Carry forward. There are a handful of nominal opposition parties, but they are co-opted. No much changed after 1999...
-                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Eswatini" & between(year, 2021, 2023), -1.821, v2psoppaut), ## Carry forward. It was the same value for since 1973
-                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Vietnam" & between(year, 2021, 2023), -3.418, v2psoppaut), ## Carry forward. It was the same value for since 1990
+                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Oman" & between(year, 2000, 2023), -2.6, v2psoppaut), ## Carry forward. There are a handful of nominal opposition parties, but they are co-opted. No much changed after 1999... (UPDATE: Small change in v15: score in 1999 when from -2.573 to -2.6)
+                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Eswatini" & between(year, 2021, 2023), -1.821, v2psoppaut), ## Carry forward. It was the same value for since 1973 (SAME IN v14 & v15 UPDATE:)
+                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Vietnam" & between(year, 2021, 2023), -3.388, v2psoppaut), ## Carry forward. It was the same value for since 1990 (UPDATE: Small change in v15: 2021 score went from -3.418 to -3.388)
                   v2lgqstexp = ifelse(is_leg == 0, 0, v2lgqstexp),
                   v2lginvstp = ifelse(is_leg == 0, 0, v2lginvstp),
                   v2lgotovst = ifelse(is_leg == 0, 0, v2lgotovst),
@@ -254,6 +253,7 @@ vdem_clean_data <- vdem_ivs %>%
   select(country_name, country_text_id, gwcode, country_id, year, is_leg, is_elec, is_election_year, everything())
 dim(vdem_clean_data) ## 8430  190
 # v14: 9118, 189 (removed `is_jud`)
+# v15: 9290, 189
 
 # START add sdX vars
 #
@@ -270,19 +270,19 @@ vdem_dvs_longer <- vdem_complete %>%
            v2x_horacc_osp, v2x_pubcorr)) %>%
   mutate(v2x_pubcorr = 1 - v2x_pubcorr)
 
+naCountFun(vdem_dvs_longer, END_YEAR)
+
 # I'm not sure what this is doing dvs_longer isn't used elsewhere...
 dvs_longer <- left_join(country_year_set_longer, vdem_dvs_longer)
 naCountFun(dvs_longer, END_YEAR)  # nope there are NAs :(
 # table(dvs_longer$gwcode[is.na(dvs_longer$country_name)])
-
 # !!! DOES THIS MATTER???
-# NOTE 2026: there were 249 NAs in v14
-# gwcode: 31  80 338 345 471 511 692 711 835
-# freq:   51  43  60   1   1   2  53   3  40
+# NOTE 2026: there were 249 (254) NAs in v14 (v15)
+# gwcode: 31       80       338       345 471 511 692       711 835
+# freq:   51 (52)  43 (44)  60 (61)   1   1   2   53 (54)   3   40 (41)
 # Bahamas - 51, Belize - 43, Malta - 60, Yugoslavia - 1,
 # Armenia - 1, Zanzibar - 2, Bahrain - 53, Tibet - 3, Brunei - 40)
 
-naCountFun(vdem_dvs_longer, 2023)
 saveRDS(vdem_dvs_longer, "output/dv_data_1958_on.rds")
 
 data("spaces")
@@ -301,6 +301,8 @@ vdem_clean_data <- left_join(vdem_clean_data, vdem_dv_hist, by = c("gwcode", "ye
 vdem_data <- vdem_clean_data
 dim(vdem_data) ## 8430  371
 # v14: 9118, 195
+# v15: 9290, 195
+
 naCountFun(vdem_data, END_YEAR)
 
 vDem_GW_data <- country_year_set %>%
@@ -315,14 +317,14 @@ dim(vDem_GW_data)
 # v12: 8458, 190
 # v13: 8627, 196
 # v14: 8796, 195
+# v15: 8965, 195
 
-# naCountFun(vDem_GW_data, END_YEAR + 1)
+naCountFun(vDem_GW_data, END_YEAR)
 nas <- naCountFun(vDem_GW_data, END_YEAR)
 table(nas)
 nas[nas > 0]
-#
-# # # v2psoppaut has 12 NAs
-# # I'm going to fix this above. Requires hard coding...
+
+# ## # UPDATE: this is to check the hard coded values
 # check_ids <- vDem_GW_data |>
 #   dplyr::filter(year < END_YEAR,
 #                 (is.na(v2psoppaut) | is.na(v2svstterr))) |>
@@ -332,6 +334,9 @@ nas[nas > 0]
 # check <- vDem_GW_data |>
 #   dplyr::filter(gwcode %in% check_ids) |>
 #   select(gwcode, country_name, year, v2psoppaut, v2svstterr)
+#
+# check1 <- check |>
+#   dplyr::filter(is.na(v2psoppaut) | is.na(v2svstterr))
 
 write_csv(vDem_GW_data, "output/vdem_data_1968_on.csv")
 
