@@ -1,7 +1,7 @@
 Updating the data and forecasts
 ===============================
 
-The `create-data`, `modelrunner`, and `dashboard` folders contain the core components of the project. They are designed to be self-contained, and outputs from one that serve as inputs in others have to be manually copied over. See the respective README's for more details. I also tried to mark all places that require manual updates with "UPDATE:".
+The `create-data`, `modelrunner`, and `dashboard` folders contain the core components of the project. They are designed to be self-contained, and outputs from one that serve as inputs in others have to be manually copied over. See the respective README's for more details. I also tried to mark all places that require manual updates with "-3.388".
 
 The general process is to:
 

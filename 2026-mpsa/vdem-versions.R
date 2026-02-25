@@ -7,7 +7,7 @@ library(readr)
 library(stringr)
 
 versions <- c(
-  "v9", "v10", "v11", "v12", "v13", "v14"
+  "v9", "v10", "v11", "v12", "v13", "v14", "v15"
 )
 # Construct the file paths for where the data are in create-data/input
 file_paths = paste0("create-data/input/V-Dem-CY-Full+Others-", versions, ".rds")
