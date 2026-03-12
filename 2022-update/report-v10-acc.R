@@ -4,7 +4,7 @@
 
 library(tidyverse)
 library(here)
-library(demspacesR)
+library(demspaces.dev)
 library(yardstick)
 library(ggrepel)
 library(kableExtra)

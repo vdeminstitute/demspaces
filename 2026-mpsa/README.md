@@ -28,6 +28,14 @@ For he v12 data versions (both) and ERT lite versions for v13 and v14 we already
 library(readr)
 library(dplyr)
 
+read_rds("archive/data/states-v9.rds") |>
+  select(gwcode:dv_v2x_pubcorr_down_next2) |>
+  write_rds("2026-mpsa/input/dv-data_v9_original.rds")
+  
+read_rds("archive/data/states-v10.rds") |>
+  select(gwcode:dv_v2x_pubcorr_down_next2) |>
+  write_rds("2026-mpsa/input/dv-data_v10_original.rds")
+
 read_rds("archive/data/states-v12.rds") |>
   select(gwcode:dv_v2x_pubcorr_down_next2) |>
   write_rds("2026-mpsa/input/dv-data_v12_original.rds")
