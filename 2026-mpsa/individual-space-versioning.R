@@ -25,8 +25,7 @@ library(plotly)
 dv_files <- paste0("2026-mpsa/input/", glue("dv-data_v{v}_ert-lite.rds", v=13:15))
 ert_lite <- dv_files |>
   map(\(path) {
-    # version <- str_extract(path, "v[0-9]{1,2}") |> str_remove("v")
-    version <- gsub(".*v([0-9]{1,2}).*", "\\1", path)
+    version <- str_extract(path, "v([0-9]{1,2})", group = 1)
     dv <- read_rds(path)
     dv <- dv |> filter(year > 2015)
     dv$vdem_version <- version
@@ -52,8 +51,7 @@ v <- c(as.character(9:10), "11.1", as.character(12:15))
 vdem_files <- glue("create-data/input/V-Dem-CY-Full+Others-v{v}.rds")
 index_data <- vdem_files |>
   map(\(path) {
-    # version <- str_extract(path, "v[0-9]{1,2}") |> str_remove("v")
-    version <- gsub(".*v([0-9]{1,2}).*", "\\1", path)
+    version <- str_extract(path, "v([0-9]{1,2})", group = 1)
 
     vdem <- read_rds(path) |>
       as_tibble()
