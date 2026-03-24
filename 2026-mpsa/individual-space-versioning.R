@@ -232,7 +232,7 @@ pairs <- combn(version_cols, 2, simplify = FALSE)
 # Compute pairwise differences and bind as new columns
 diff_cols <- pairs |>
   map(\(p) index_data_wide[[p[1]]] - index_data_wide[[p[2]]]) |>         # compute difference for each pair
-  set_names(map_chr(pairs, \(p) paste0(p[1], "_minus_", p[2]))) |>  # name "v9_minus_v10"
+  set_names(map_chr(pairs, \(p) paste0(p[1], "_minus_", p[2]))) |>  # name "v10_minus_v9"
   as_tibble()
 diff_col_names <- names(diff_cols)
 
@@ -252,7 +252,7 @@ index_data_difs_long <- index_data_difs  |>
 
 # Let's just look at v9 relative to others for 2018
 
-compare_versions_fun <- function(dat, ref_version = "v9", version_last_yr, interactive = F){
+compare_versions_boxplot <- function(dat, ref_version = "v9", version_last_yr, interactive = F){
   use_version_last_yr <- as.numeric(version_last_yr[ref_version]) # this is made above. sloppy but ehh
 
   title_text <- "Comparing country-year coding of v2xcl_rol across versions"
@@ -294,11 +294,12 @@ compare_versions_fun <- function(dat, ref_version = "v9", version_last_yr, inter
 }
 
 use_version <- version_cols[1]
-compare_versions_fun(index_data_difs_long, ref_version = use_version, version_last_yr, interactive = F)
+compare_versions_boxplot(dat = index_data_difs_long, ref_version = use_version, version_last_yr, interactive = T)
 
 plot_ert_lite_and_index(517)+ plot_annotation(title = "Rwanda")
 
-# Comapring change in how
+# Comparing change in how the last year of the data is coded in the following version
+# ie last year in v9 is 2018, so how much different are the v10's 2018 scores from v9
 use_versions <- c("last_yr_diff", "v9_minus_v10", "v10_minus_v11", "v11_minus_v12",
                   "v12_minus_v13", "v13_minus_v14", "v14_minus_v15")
 version_last_yr_c <- as.numeric(version_last_yr)
@@ -313,9 +314,8 @@ use_dat <- index_data_difs_long |>
                           str_detect(version_diff, "v14_") & year == version_last_yr_c[6] ~ 1,
                           str_detect(version_diff, "v15_") & year == version_last_yr_c[7] ~ 1,
                           TRUE ~ 0),
-         version_diff = factor(version_diff, levels = use_versions))
-
-
+         version_diff = factor(version_diff, levels = use_versions)) |>
+  filter(keep == 1 | version_diff == "last_yr_diff")
 
 use_dat |>
   ggplot(aes(x = version_diff, y = value, fill = version_diff)) +
