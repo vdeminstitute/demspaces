@@ -201,62 +201,63 @@ vdem_clean_data <- vdem_ivs %>%
          is_leg = ifelse(v2lgbicam > 0, 1, 0),
          is_elec = ifelse(v2x_elecreg == 0, 0, 1),
          is_election_year = ifelse(!is.na(v2elirreg), 1, 0)) %>%
-         fill(v2elrgstry) %>%
-           fill(v2elvotbuy) %>%
-           fill(v2elirreg) %>%
-           fill(v2elintim) %>%
-           fill(v2elpeace) %>%
-           fill(v2elfrfair) %>%
-           fill(v2elmulpar) %>%
-           fill(v2elboycot) %>%
-           fill(v2elaccept) %>%
-           fill(v2elasmoff) %>%
-           fill(v2elfrcamp) %>%
-           fill(v2elpdcamp) %>%
-           fill(v2elpaidig) %>%
-           fill(v2elmonref) %>%
-           fill(v2elmonden) %>%
-           mutate(v2elrgstry = ifelse(is.na(v2elrgstry) & v2x_elecreg == 0, 0, v2elrgstry),
-                  v2elvotbuy = ifelse(is.na(v2elvotbuy) & v2x_elecreg == 0, 0, v2elvotbuy),
-                  v2elirreg = ifelse(is.na(v2elirreg) & v2x_elecreg == 0, 0, v2elirreg),
-                  v2elintim = ifelse(is.na(v2elintim) & v2x_elecreg == 0, 0, v2elintim),
-                  v2elpeace = ifelse(is.na(v2elpeace) & v2x_elecreg == 0, 0, v2elpeace),
-                  v2elfrfair = ifelse(is.na(v2elfrfair) & v2x_elecreg == 0, 0, v2elfrfair),
-                  v2elmulpar = ifelse(is.na(v2elmulpar) & v2x_elecreg == 0, 0, v2elmulpar),
-                  v2elboycot = ifelse(is.na(v2elboycot) & v2x_elecreg == 0, 0, v2elboycot),
-                  v2elaccept = ifelse(is.na(v2elaccept) & v2x_elecreg == 0, 0, v2elaccept),
-                  v2elasmoff = ifelse(is.na(v2elasmoff) & v2x_elecreg == 0, 0, v2elasmoff),
-                  v2elpaidig = ifelse(is.na(v2elpaidig) & v2x_elecreg == 0, 0, v2elpaidig),
-                  v2elfrcamp = ifelse(is.na(v2elfrcamp) & v2x_elecreg == 0, 0, v2elfrcamp),
-                  v2elpdcamp = ifelse(is.na(v2elpdcamp) & v2x_elecreg == 0, 0, v2elpdcamp),
-                  v2elpdcamp = ifelse(is.na(v2elpdcamp) & v2x_elecreg == 0, 0, v2elpdcamp),
-                  v2elmonref = ifelse(is.na(v2elmonref) & v2x_elecreg == 0, 0, v2elmonref),
-                  v2elmonden = ifelse(is.na(v2elmonden) & v2x_elecreg == 0, 0, v2elmonden)) %>%#,
-           ungroup() %>%
-           mutate(#v2x_jucon = ifelse(is_jud == 0, 0, v2x_jucon), v14 note above
-                  v2xlg_legcon = ifelse(is_leg == 0, 0, v2xlg_legcon),
-                  v2elmonref = ifelse(is.na(v2elmonref) & is_elec == 1, 0, v2elmonref),
-                  v2elmonden = ifelse(is.na(v2elmonden) & is_elec == 1, 0, v2elmonden),
+  fill(v2elrgstry) %>%
+  fill(v2elvotbuy) %>%
+  fill(v2elirreg) %>%
+  fill(v2elintim) %>%
+  fill(v2elpeace) %>%
+  fill(v2elfrfair) %>%
+  fill(v2elmulpar) %>%
+  fill(v2elboycot) %>%
+  fill(v2elaccept) %>%
+  fill(v2elasmoff) %>%
+  fill(v2elfrcamp) %>%
+  fill(v2elpdcamp) %>%
+  fill(v2elpaidig) %>%
+  fill(v2elmonref) %>%
+  fill(v2elmonden) %>%
+  mutate(v2elrgstry = ifelse(is.na(v2elrgstry) & v2x_elecreg == 0, 0, v2elrgstry),
+         v2elvotbuy = ifelse(is.na(v2elvotbuy) & v2x_elecreg == 0, 0, v2elvotbuy),
+         v2elirreg = ifelse(is.na(v2elirreg) & v2x_elecreg == 0, 0, v2elirreg),
+         v2elintim = ifelse(is.na(v2elintim) & v2x_elecreg == 0, 0, v2elintim),
+         v2elpeace = ifelse(is.na(v2elpeace) & v2x_elecreg == 0, 0, v2elpeace),
+         v2elfrfair = ifelse(is.na(v2elfrfair) & v2x_elecreg == 0, 0, v2elfrfair),
+         v2elmulpar = ifelse(is.na(v2elmulpar) & v2x_elecreg == 0, 0, v2elmulpar),
+         v2elboycot = ifelse(is.na(v2elboycot) & v2x_elecreg == 0, 0, v2elboycot),
+         v2elaccept = ifelse(is.na(v2elaccept) & v2x_elecreg == 0, 0, v2elaccept),
+         v2elasmoff = ifelse(is.na(v2elasmoff) & v2x_elecreg == 0, 0, v2elasmoff),
+         v2elpaidig = ifelse(is.na(v2elpaidig) & v2x_elecreg == 0, 0, v2elpaidig),
+         v2elfrcamp = ifelse(is.na(v2elfrcamp) & v2x_elecreg == 0, 0, v2elfrcamp),
+         v2elpdcamp = ifelse(is.na(v2elpdcamp) & v2x_elecreg == 0, 0, v2elpdcamp),
+         v2elpdcamp = ifelse(is.na(v2elpdcamp) & v2x_elecreg == 0, 0, v2elpdcamp),
+         v2elmonref = ifelse(is.na(v2elmonref) & v2x_elecreg == 0, 0, v2elmonref),
+         v2elmonden = ifelse(is.na(v2elmonden) & v2x_elecreg == 0, 0, v2elmonden)) %>%#,
+  ungroup() %>%
+  mutate(#v2x_jucon = ifelse(is_jud == 0, 0, v2x_jucon), v14 note above
+    v2xlg_legcon = ifelse(is_leg == 0, 0, v2xlg_legcon),
+    v2elmonref = ifelse(is.na(v2elmonref) & is_elec == 1, 0, v2elmonref),
+    v2elmonden = ifelse(is.na(v2elmonden) & is_elec == 1, 0, v2elmonden),
 # # update: check if these are necessary with each update.
-                  v2svstterr = ifelse(is.na(v2svstterr) & country_name == "South Yemen" & year == 1990, 97.4, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward (SAME IN v14 & v15 UPDATE:)
-                  v2svstterr = ifelse(is.na(v2svstterr) & country_name == "Republic of Vietnam" & year == 1975, 48, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward  (SAME IN v14 & v15 UPDATE:)
-                  v2svstterr = ifelse(is.na(v2svstterr) & country_name == "German Democratic Republic" & year == 1990, 99, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward (SAME IN v14 & v15 UPDATE:)
-                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Qatar" & between(year, 1971, 2023), -3.527593, v2psoppaut), ## Opposition parties are banned in Qatar. Going with the min score in the data (1970-2017)
-                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "United Arab Emirates" & between(year, 2020, 2023), -2.468, v2psoppaut), ## Opposition parties are banned in UAE. Going with the min score in the data (1970-2017)
-                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Oman" & between(year, 2000, 2023), -2.6, v2psoppaut), ## Carry forward. There are a handful of nominal opposition parties, but they are co-opted. No much changed after 1999... (UPDATE: Small change in v15: score in 1999 when from -2.573 to -2.6)
-                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Eswatini" & between(year, 2021, 2023), -1.821, v2psoppaut), ## Carry forward. It was the same value for since 1973 (SAME IN v14 & v15 UPDATE:)
-                  v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Vietnam" & between(year, 2021, 2023), -3.388, v2psoppaut), ## Carry forward. It was the same value for since 1990 (UPDATE: Small change in v15: 2021 score went from -3.418 to -3.388)
-                  v2lgqstexp = ifelse(is_leg == 0, 0, v2lgqstexp),
-                  v2lginvstp = ifelse(is_leg == 0, 0, v2lginvstp),
-                  v2lgotovst = ifelse(is_leg == 0, 0, v2lgotovst),
-                  v2lgcrrpt = ifelse(is_leg == 0, 0, v2lgcrrpt),
-                  v2lgoppart = ifelse(is_leg == 0, 0, v2lgoppart),
-                  v2lgfunds = ifelse(is_leg == 0, 0, v2lgfunds),
-                  v2lgdsadlobin = ifelse(is_leg == 0, 0, v2lgdsadlobin),
-                  v2lglegplo = ifelse(is_leg == 0, 0, v2lglegplo),
-                  v2lgcomslo = ifelse(is_leg == 0, 0, v2lgcomslo),
-                  v2lgsrvlo =  ifelse(is_leg == 0, 0, v2lgsrvlo)) %>%
+    v2svstterr = ifelse(is.na(v2svstterr) & country_name == "South Yemen" & year == 1990, 97.4, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward (SAME IN v14 & v15 UPDATE:)
+    v2svstterr = ifelse(is.na(v2svstterr) & country_name == "Republic of Vietnam" & year == 1975, 48, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward  (SAME IN v14 & v15 UPDATE:)
+    v2svstterr = ifelse(is.na(v2svstterr) & country_name == "German Democratic Republic" & year == 1990, 99, v2svstterr), ## Not sure why this is NA. last year in the series, carry forward (SAME IN v14 & v15 UPDATE:)
+    v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Qatar" & between(year, 1971, 2023), -3.527593, v2psoppaut), ## Opposition parties are banned in Qatar. Going with the min score in the data (1970-2017)
+    v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "United Arab Emirates" & between(year, 2020, 2023), -2.468, v2psoppaut), ## Opposition parties are banned in UAE. Going with the min score in the data (1970-2017)
+    v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Oman" & between(year, 2000, 2023), -2.6, v2psoppaut), ## Carry forward. There are a handful of nominal opposition parties, but they are co-opted. No much changed after 1999... (UPDATE: Small change in v15: score in 1999 when from -2.573 to -2.6)
+    v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Eswatini" & between(year, 2021, 2023), -1.821, v2psoppaut), ## Carry forward. It was the same value for since 1973 (SAME IN v14 & v15 UPDATE:)
+    v2psoppaut = ifelse(is.na(v2psoppaut) & country_name == "Vietnam" & between(year, 2021, 2023), -3.388, v2psoppaut), ## Carry forward. It was the same value for since 1990 (UPDATE: Small change in v15: 2021 score went from -3.418 to -3.388)
+    v2lgqstexp = ifelse(is_leg == 0, 0, v2lgqstexp),
+    v2lginvstp = ifelse(is_leg == 0, 0, v2lginvstp),
+    v2lgotovst = ifelse(is_leg == 0, 0, v2lgotovst),
+    v2lgcrrpt = ifelse(is_leg == 0, 0, v2lgcrrpt),
+    v2lgoppart = ifelse(is_leg == 0, 0, v2lgoppart),
+    v2lgfunds = ifelse(is_leg == 0, 0, v2lgfunds),
+    v2lgdsadlobin = ifelse(is_leg == 0, 0, v2lgdsadlobin),
+    v2lglegplo = ifelse(is_leg == 0, 0, v2lglegplo),
+    v2lgcomslo = ifelse(is_leg == 0, 0, v2lgcomslo),
+    v2lgsrvlo =  ifelse(is_leg == 0, 0, v2lgsrvlo)) %>%
   select(country_name, country_text_id, gwcode, country_id, year, is_leg, is_elec, is_election_year, everything())
+
 dim(vdem_clean_data) ## 8430  190
 # v14: 9118, 189 (removed `is_jud`)
 # v15: 9290, 189
