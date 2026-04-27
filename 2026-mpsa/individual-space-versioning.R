@@ -327,26 +327,32 @@ compare_versions_boxplot <- function(dat, ref_version = "v9", version_last_yr, i
 use_version <- version_cols[1]
 compare_versions_boxplot(dat = index_data_difs_long, ref_version = use_version, version_last_yr, interactive = T)
 
-plot_ert_lite_and_index(517)+ plot_annotation(title = "Rwanda")
+plot_ert_lite_and_index(770) + plot_annotation(title = "Pakistan")
+plot_ert_lite_and_index(517) + plot_annotation(title = "Rwanda")
+plot_ert_lite_and_index(92) + plot_annotation(title = "El Salvador")
+plot_ert_lite_and_index(435) + plot_annotation(title = "Mauritania")
+plot_ert_lite_and_index(750) + plot_annotation(title = "India")
+plot_ert_lite_and_index(581) + plot_annotation(title = "Comoros")
 
 # Comparing change in how the last year of the data is coded in the following version
 # ie last year in v9 is 2018, so how much different are the v10's 2018 scores from v9
 use_versions <- c("last_yr_diff", "v9_minus_v10", "v10_minus_v11", "v11_minus_v12",
                   "v12_minus_v13", "v13_minus_v14", "v14_minus_v15")
-version_last_yr_c <- as.numeric(version_last_yr)
+version_last_yr_n <- as.numeric(version_last_yr)
 
 use_dat <- index_data_difs_long |>
   filter(version_diff %in% use_versions) |>
-  mutate(keep = case_when(str_detect(version_diff, "v9_") & year == version_last_yr_c[1] ~ 1,
-                          str_detect(version_diff, "v10_") & year == version_last_yr_c[2] ~ 1,
-                          str_detect(version_diff, "v11_") & year == version_last_yr_c[3] ~ 1,
-                          str_detect(version_diff, "v12_") & year == version_last_yr_c[4] ~ 1,
-                          str_detect(version_diff, "v13_") & year == version_last_yr_c[5] ~ 1,
-                          str_detect(version_diff, "v14_") & year == version_last_yr_c[6] ~ 1,
-                          str_detect(version_diff, "v15_") & year == version_last_yr_c[7] ~ 1,
+  mutate(keep = case_when(str_detect(version_diff, "v9_") & year == version_last_yr_n[1] ~ 1,
+                          str_detect(version_diff, "v10_") & year == version_last_yr_n[2] ~ 1,
+                          str_detect(version_diff, "v11_") & year == version_last_yr_n[3] ~ 1,
+                          str_detect(version_diff, "v12_") & year == version_last_yr_n[4] ~ 1,
+                          str_detect(version_diff, "v13_") & year == version_last_yr_n[5] ~ 1,
+                          str_detect(version_diff, "v14_") & year == version_last_yr_n[6] ~ 1,
+                          str_detect(version_diff, "v15_") & year == version_last_yr_n[7] ~ 1,
+                          version_diff == "last_yr_diff" ~ 1,
                           TRUE ~ 0),
          version_diff = factor(version_diff, levels = use_versions)) |>
-  filter(keep == 1 | version_diff == "last_yr_diff")
+  filter(keep == 1)
 
 use_dat |>
   ggplot(aes(x = version_diff, y = value, fill = version_diff)) +
@@ -354,6 +360,15 @@ use_dat |>
   labs(x = NULL, y = "Difference") +
   plot_annotation(title = "Comparing how v2xcl_rol was coded in last year of  each version to how that year was coded in the next version") +
   theme_minimal()
+
+use_dat |>
+  ggplot(aes(x = value)) +
+  geom_histogram(bins = 1000) +
+  labs(x = NULL, y = "Difference") +
+  plot_annotation(title = "Comparing how v2xcl_rol was coded in last year of  each version to how that year was coded in the next version") +
+  facet_wrap(~version_diff) +
+  theme_minimal()
+
 
 plot_ly(use_dat,
         x = ~version_diff,
