@@ -12,7 +12,9 @@ library(purrr)
 library(states)
 library(ggplot2)
 library(patchwork)
-
+library(purrr)
+library(stringr)
+library(tinytable)
 library(ggridges)
 library(plotly)
 
@@ -58,7 +60,7 @@ index_data <- vdem_files |>
 
     vdem <- vdem |>
       filter(year > 2015) |>
-      select(COWcode, year, v2xcl_rol)
+      select(COWcode, year, v2xcl_rol, v2xcl_rol_sd, v2xcl_rol_codehigh, v2xcl_rol_codelow)
 
     vdem <- vdem |>
       mutate(
@@ -74,7 +76,7 @@ index_data <- vdem_files |>
     vdem$vdem_version <- version
 
     vdem |>
-      select(gwcode, year, vdem_version, v2xcl_rol)
+      select(gwcode, year, vdem_version, v2xcl_rol, v2xcl_rol_sd, v2xcl_rol_codehigh, v2xcl_rol_codelow)
   }) |>
   list_rbind() |>
   arrange(gwcode, year, vdem_version)
@@ -215,13 +217,42 @@ ggsave("~/Desktop/individual-pakistan.png")
 # Germany, low low low
 plot_ert_lite_and_index(260) + plot_annotation(title = "Germany")
 
-# RM start ####
+
+
+# Pakistan example plot ---------------------------------------------------
+
+x_limits = c(2015.5, 2025)
+index_data |>
+  filter(gwcode==770) |>
+  mutate(vdem_version = factor(vdem_version, levels = c("9", "10", "11", "12", "13", "14", "15"))) |>
+  ggplot(aes(x = year, fill = vdem_version)) +
+  geom_ribbon(aes(ymin = v2xcl_rol_codelow, ymax = v2xcl_rol_codehigh), alpha = 0.05) +
+  geom_line(aes(y = v2xcl_rol, color = vdem_version)) +
+  scale_x_continuous(limits = x_limits, breaks = c(2016:2024)) +
+  scale_color_brewer("V-Dem", type = "qual", palette = 3) +
+  scale_fill_brewer(guide = "none", type = "qual", palette = 3) +
+  annotate("segment", x = 2024.4, xend = 2024.4, y = 0.35, yend = 0.4, linewidth = 2) +
+  annotate("segment", x = 2024.4, xend = 2024.4, y = 0.20, yend = 0.25, linewidth = 2) +
+  annotate("segment", x = 2024.2, xend = 2024.2, y = 0.29, yend = 0.25, linewidth = 2) +
+  annotate("segment", x = 2024.2, xend = 2024.2, y = 0.31, yend = 0.35, linewidth = 2) +
+  annotate("segment", x = 2024.0, xend = 2024.0, y = 0.29, yend = 0.31, linewidth = 2) +
+  theme_bw() +
+  labs(x = "")
+
+ggsave(here::here("2026-mpsa/figures/pakistan-v2xcl_rol.png"), height = 3, width = 5)
+
+
+# RM start ----------------------------------------------------------------
+
+
+
 
 
 # Fixed year, e.g. 2018, v2xcs_rol, if you compare v9 to v10, what is the distribution of differences; v9 to v11, ..., v10 to v11, ... etc.
 # How much can I expect the most recent year of data to change next year? Take v9 last year, compare it to v10 same year; take v10 last year, compare it to v11 same year; etc.
 
 index_data_wide <- index_data |>
+  select(gwcode, year, vdem_version, v2xcl_rol) |>
   pivot_wider(id_cols = c(gwcode, year), names_from = "vdem_version", names_prefix = "v", values_from = "v2xcl_rol") |>
   select(gwcode, year, v9, v10, v11, v12, v13, v14, v15)
 
@@ -340,3 +371,115 @@ plot_ly(use_dat,
     xaxis = list(title = ""),
     yaxis = list(title = "Difference")
   )
+
+
+
+# v9 vs all others 2018 ---------------------------------------------------
+#
+#   Table of diff magnitude for v9 2018 vs all subsequent versions
+#
+
+row_tbl <- index_data_difs |>
+  filter(country_name!="Zanzibar") |>
+  filter(year==2018) |>
+  select(country_name, starts_with("v9_minus")) |>
+  pivot_longer(-country_name, names_to = "comp", values_to = "diff")
+
+row_tbl <- row_tbl |>
+  group_by(comp) |>
+  summarize(
+    max = max(abs(diff)),
+    c1e0 = mean(abs(diff) >= 0.1),
+    c1em1 = mean(abs(diff) >= 0.05 & abs(diff) < 0.1),
+    c1em2 = mean(abs(diff) >= 0.01 & abs(diff) < 0.05),
+    c1em3 = mean(abs(diff) < 0.01)
+  ) |>
+  pivot_longer(-comp, names_to = "category", values_to = "value") |>
+  pivot_wider(names_from = comp, values_from = value)
+
+row_tbl |>
+  filter(category=="max")
+# Max values range from 0.2 to 0.3
+
+row_tbl |>
+  filter(category!="max") |>
+  mutate(across(where(is.numeric), ~round(.x*100))) |>
+  tt() |>
+  print("typst")
+
+
+# Last year in subsequent version -----------------------------------------
+#
+#
+
+diag_tbl <- index_data_difs |>
+  filter(country_name!="Zanzibar") |>
+  select(country_name, year, v9_minus_v10, v10_minus_v11, v11_minus_v12, v12_minus_v13, v13_minus_v14, v14_minus_v15) |>
+  pivot_longer(-c(country_name, year), names_to = "comp", values_to = "diff") |>
+  filter(!is.na(diff)) |>
+  group_by(comp) |>
+  filter(year==max(year)) |>
+  ungroup()
+
+diag_tbl <- diag_tbl |>
+  group_by(comp) |>
+  summarize(
+    max = max(abs(diff)),
+    c1e0 = mean(abs(diff) >= 0.1),
+    c1em1 = mean(abs(diff) >= 0.05 & abs(diff) < 0.1),
+    c1em2 = mean(abs(diff) >= 0.01 & abs(diff) < 0.05),
+    c1em3 = mean(abs(diff) < 0.01)
+  ) |>
+  pivot_longer(-comp, names_to = "category", values_to = "value") |>
+  pivot_wider(names_from = comp, values_from = value) |>
+  # Get column order correct
+  select(category, v9_minus_v10, v10_minus_v11, v11_minus_v12, v12_minus_v13, v13_minus_v14, v14_minus_v15)
+
+diag_tbl |>
+  filter(category=="max")
+# Max values range from 0.2 to 0.3
+
+diag_tbl |>
+  filter(category!="max") |>
+  mutate(across(where(is.numeric), ~round(.x*100))) |>
+  tt() |>
+  print("typst")
+
+
+
+
+# HPD vs SD ---------------------------------------------------------------
+#
+#  Compare cases with high/low HPD intervals and high SD
+#
+
+
+index_hpd = index_data |>
+  dplyr::group_by(gwcode, year) |>
+  dplyr::summarize(
+    mean = mean(v2xcl_rol),
+    sd = sd(v2xcl_rol),
+    mean_hpd = mean(v2xcl_rol_codehigh - v2xcl_rol_codelow)
+  )
+
+with(index_hpd |> filter(year==2016), plot(sd, mean_hpd))
+
+index_hpd |> filter(year==2016, sd > 0.04, mean_hpd < 0.15)
+# 616, Tunisia, had some large shifts betwen (v9, v10) and (rest)
+
+with(index_hpd |> filter(year==2017), plot(sd, mean_hpd))
+with(index_hpd |> filter(year==2018), plot(sd, mean_hpd))
+with(index_hpd |> filter(year==2022), plot(sd, mean_hpd))
+
+x_limits = c(2015.5, 2024.5)
+index_data |>
+  filter(gwcode==616) |>
+  mutate(vdem_version = factor(vdem_version, levels = c("9", "10", "11", "12", "13", "14", "15"))) |>
+  ggplot(aes(x = year, fill = vdem_version)) +
+  geom_ribbon(aes(ymin = v2xcl_rol_codelow, ymax = v2xcl_rol_codehigh), alpha = 0.05) +
+  geom_line(aes(y = v2xcl_rol, color = vdem_version)) +
+  scale_x_continuous(limits = x_limits, breaks = c(2016:2024)) +
+  scale_color_brewer("V-Dem", type = "qual", palette = 3) +
+  scale_fill_brewer(guide = "none", type = "qual", palette = 3) +
+  theme_bw() +
+  labs(x = "")

@@ -23,6 +23,15 @@ file_path <- function(...) {
   file.path("2026-mpsa", ...)
 }
 
+# Convert a V-Dem version to relative version, given a DS version, e.g.
+# "v14", "v12.1" -> "v+2"
+vd_version_relative <- function(vd_version, ds_version) {
+  base <- ds_version_to_vd_version(ds_version) |> str_remove("v") |> as.integer()
+  int_v <- suppressWarnings(str_remove(vd_version, "v") |> as.integer())
+  paste0("v+", int_v - base)
+}
+
+
 fcast_files <- dir(file_path("input"), pattern = "fcasts", full.names = TRUE)
 fcasts <- list()
 for (ff in fcast_files) {
@@ -150,7 +159,7 @@ stats_micro <- joint_list |>
          VD = factor(VD, levels = paste0("v", 11:15))) |>
   arrange(DS, direction, VD)
 
-stats_macro_auc_pr <- stats_micro_auc_pr |>
+stats_macro_auc_pr <- stats_micro |>
   group_by(DS, VD) |>
   summarize(
     baserate = 0.33,
@@ -163,7 +172,7 @@ stats_macro_auc_pr |>
   pivot_wider(names_from = "VD", values_from = "auc_pr", names_sort = TRUE)
 
 
-stats_macro_change_auc_pr <- stats_micro_auc_pr |>
+stats_macro_change_auc_pr <- stats_micro |>
   dplyr::filter(direction!="same") |>
   group_by(DS, VD) |>
   summarize(
@@ -188,9 +197,7 @@ stats_macro_change_auc_pr |>
   pivot_wider(names_from = "VD", values_from = "auc_pr", names_sort = TRUE)
 
 
-micro_auc_pr(joint_list[[1]])
-
-
+calculate_stats(joint_list[[1]])
 
 
 # Get test accuracy
@@ -271,6 +278,9 @@ stats_macro_up_down_only <- stats_micro_with_test |>
             auc_pr = mean(auc_pr), auc_roc = mean(auc_roc),
             .groups = "drop")
 
+
+# First iteration of a plot. This is clearer in regard to timeline, but obscures
+# the central point.
 stats_macro_up_down_only |>
   mutate(test = as.integer(VD=="test"),
          VD = ifelse(VD=="test", ds_version_to_vd_version(as.character(DS)), as.character(VD)),
@@ -280,15 +290,9 @@ stats_macro_up_down_only |>
   geom_point() +
   geom_line()
 
-# Convert a V-Dem version to relative version, given a DS version, e.g.
-# "v14", "v12.1" -> "v+2"
-vd_version_relative <- function(vd_version, ds_version) {
-  base <- ds_version_to_vd_version(ds_version) |> str_remove("v") |> as.integer()
-  int_v <- suppressWarnings(str_remove(vd_version, "v") |> as.integer())
-  paste0("v+", int_v - base)
-}
 
-
+# Second iteration: align the different forecasts with relative versions numbers,
+# so that e.g. v9 fcast with v9 (test) eval is first column, v11 is v+2, etc.
 stats_macro_up_down_only |>
   mutate(
     x_var = as.character(VD),
@@ -302,10 +306,33 @@ stats_macro_up_down_only |>
   geom_line() +
   labs(x = "V-Dem version used to score forecasts",
        y = "AUC-ROC",
-       color = "Forecast version") +
-  scale_y_continuous(limits = c(0.75, 1))
+       color = "Forecast") +
+  scale_y_continuous(limits = c(0.75, 1)) +
+  theme_bw()
 
-ggsave(filename="2026-mpsa/figures/auc-roc.png")
+ggsave(filename="2026-mpsa/figures/auc-roc.png", height = 3, width = 5)
+
+
+# For the presentation, do a buildup
+stats_macro_up_down_only |>
+  mutate(
+    x_var = as.character(VD),
+    x_var = ifelse(x_var=="test",
+                   "Same (test)",
+                   vd_version_relative(as.character(VD), as.character(DS))
+    )
+  ) |>
+  mutate(x_var = factor(x_var)) |>
+  filter(x_var=="Same (test)") |>
+  ggplot(aes(x = x_var, y = auc_roc, color = DS, group = DS)) +
+  geom_point() +
+  labs(x = "V-Dem version used to score forecasts",
+       y = "AUC-ROC",
+       color = "Forecast") +
+  scale_y_continuous(limits = c(0.75, 1)) +
+  theme_bw() +
+  scale_x_discrete(drop = FALSE)
+ggsave(filename = "2026-mpsa/figures/auc-roc-buildup-1.png", height = 3, width = 5)
 
 
 stats_macro_up_down_only |>
@@ -319,13 +346,14 @@ stats_macro_up_down_only |>
   ggplot() +
   geom_point(aes(x = x_var, y = auc_pr, color = DS, group = DS)) +
   geom_line(aes(x = x_var, y = auc_pr, color = DS, group = DS)) +
-  geom_hline(aes(yintercept = baserate)) +
+  geom_point(aes(x = x_var, y = baserate, color = DS, group = DS), shape = 15) +
   labs(x = "V-Dem version used to score forecasts",
        y = "AUC-PR",
-       color = "Forecast version") +
-  scale_y_continuous(limits = c(0, 0.75))
+       color = "Forecast") +
+  scale_y_continuous(limits = c(0, 0.75)) +
+  theme_bw()
 
-ggsave(filename="2026-mpsa/figures/auc-pr.png")
+ggsave(filename="2026-mpsa/figures/auc-pr.png", height = 3, width = 5)
 
 
 stats_macro_up_down_only |>
@@ -406,8 +434,54 @@ base <- base |>
   mutate(VD = factor(VD, levels = paste0("v", 9:15))) |>
   arrange(key, VD)
 
+#
+#   Compare the positve cases in v9 to positive cases in all subsequent V-Dem
+#   versions.
+#
+v9 <- all_truth[["v9"]][["original"]] |>
+  filter(year==max(year)) |>
+  select(gwcode, year, outcome, change) |>
+  rename(change_v9 = change)
+# How many positives (up, down) did v9 have? We will use this as baseline for
+# percentages.
+v9_pos_n <- sum(v9$change_v9 %in% c("up", "down"))
 
+res <- list()
+for (v in setdiff(names(all_truth), "v9")) {
+  vnewer <- all_truth[[v]][["original"]] |>
+    filter(year %in% unique(v9$year)) |>
+    select(gwcode, year, outcome, change) |>
+    rename(change_newer = change)
+  both <- v9 |>
+    left_join(vnewer, by = c("gwcode", "year", "outcome"))
+  counts <- both |>
+    count(change_v9, change_newer)
+  counts <- counts |>
+    tidyr::unite("cell", change_v9, change_newer) |>
+    mutate(category = case_when(
+      cell=="down_down" | cell=="up_up"   ~ "Positive, same direction",
+      cell=="up_same" | cell=="down_same" ~ "Drop out",
+      cell=="up_down" | cell=="down_up"   ~ "Opposite direction",
+      cell=="same_up" | cell=="same_down" ~ "New positives",
+      TRUE ~ "Same same"
+    ))
+  counts <- counts |>
+    group_by(category) |>
+    summarize(n = sum(n),
+              .groups = "drop")
+  counts[[v]] <- counts$n
+  counts$n <- NULL
+  res[[v]] <- counts
+}
+res <- Reduce(\(x, y) full_join(x, y, by = "category"), res)
+tbl_v9_evolution <- res |>
+  mutate(
+    across(everything(), \(x) replace_na(x, replace = 0))
+  )
 
+tbl_v9_evolution |>
+  tt() |>
+  print("typst")
 
 
 # Of the positive cases (up | down) in v9, what were the sequences of directions
@@ -439,3 +513,46 @@ all_seq <- base |>
       TRUE ~ "?"
     ), collapse = ",")
   )
+
+
+
+#
+#   The positive counts continue decreasing beyond the first new V-Dem version,
+#   why does the AUC-ROC/PR not chagne that much after the test dropoff?
+#
+
+v9_fcasts_v2xcl_rol_up <- map(13:17, \(i) {
+  joint_list[[i]] |>
+    filter(outcome=="v2xcl_rol") |>
+    select(vd_version, p_up, p_same, p_down, truth_up, truth_same, truth_down) |>
+    pivot_longer(
+      cols = -vd_version,
+      names_to = c(".value", "direction"),
+      names_sep = "_"
+    ) |>
+    filter(direction=="up")
+}) |>
+  list_rbind() |>
+  arrange(p)
+
+
+col<-c("gray90", "red")
+
+
+ggplot(data = v9_fcasts_v2xcl_rol_up) +
+  facet_wrap(~vd_version) +
+  geom_rect(aes(xmin = 0, xmax = seq(length.out = length(truth)), ymin = 0, ymax = 1),
+            fill = col[1]) +
+  geom_linerange(aes(color = factor(truth), ymin = 0, ymax = 1, x = seq(length.out = length(truth))),
+                 alpha = 0.5) +
+  geom_line(aes(y = p, x = seq(length.out = length(truth))), lwd = 0.8) +
+  scale_color_manual(values = col) +
+  scale_y_continuous("Y-hat\n", breaks = c(0, 0.25, 0.5, 0.75, 1.0)) +
+  scale_x_continuous("", breaks = NULL) +
+  theme(legend.position = "none", panel.background = element_blank(), panel.grid = element_blank(),
+        axis.title.y = element_text(face = "bold", angle = 90))
+
+ggsave("2026-mpsa/figures/v9-fcasts-separation-plots.png", width = 8, height = 2.5)
+
+
+
